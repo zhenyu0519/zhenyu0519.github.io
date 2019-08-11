@@ -253,6 +253,23 @@
   
 
   
+        <div id="gitalk-container"></div>
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script>
+        var gitalk = new Gitalk({
+            id: '/2017/12/03/tcp-connect-between-android-emulators/',
+            clientID: '4cef70907f5b36353d59',
+            clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
+            repo: 'gitalk',
+            owner: 'zhenyu0519',
+            admin: ['zhenyu0519'],
+            labels: ['gitment'],
+            perPage: 50,
+        })
+        gitalk.render('gitalk-container')
+        </script>
+  
 
 
     </div>
