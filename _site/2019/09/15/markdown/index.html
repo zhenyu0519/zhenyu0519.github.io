@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>一份简明的 Markdown 笔记与教程 &mdash; J Diary</title>
+    <title>简明的 Markdown 笔记 &mdash; J Diary</title>
     <link rel="stylesheet" href="http://localhost:4000/assets/vendor/primer-css/css/primer.css">
     <link rel="stylesheet" href="http://localhost:4000/assets/vendor/primer-markdown/dist/user-content.min.css">
     <link rel="stylesheet" href="http://localhost:4000/assets/vendor/octicons/octicons/octicons.css">
@@ -21,28 +21,28 @@
     
 
     
-    <link rel="canonical" href="http://localhost:4000/2018/09/06/markdown-intro/">
+    <link rel="canonical" href="http://localhost:4000/2019/09/15/markdown/">
     <link rel="alternate" type="application/atom+xml" title="J Diary" href="http://localhost:4000/feed.xml">
     <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
     
-    <meta property="og:title" content="一份简明的 Markdown 笔记与教程">
+    <meta property="og:title" content="简明的 Markdown 笔记">
       
-    <meta name="keywords" content="Markdown, VSCode">
-    <meta name="og:keywords" content="Markdown, VSCode">
+    <meta name="keywords" content="Markdown">
+    <meta name="og:keywords" content="Markdown">
       
-    <meta name="description" content="为部门内知识分享准备的素材，记录了 Markdown 的优点、应用场景和编辑工具，介绍了标准语法与扩展语法，以及一些应用 Markdown 的奇技淫巧。个人使用 Markdown 的经验持续补充中，最新完整版请参见">
-    <meta name="og:description" content="为部门内知识分享准备的素材，记录了 Markdown 的优点、应用场景和编辑工具，介绍了标准语法与扩展语法，以及一些应用 Markdown 的奇技淫巧。个人使用 Markdown 的经验持续补充中，最新完整版请参见">
+    <meta name="description" content="Github Pages 推荐使用 Markdown 语言编写博客内容。今天就来说一下Markdown">
+    <meta name="og:description" content="Github Pages 推荐使用 Markdown 语言编写博客内容。今天就来说一下Markdown">
       
     
     
         
     
-    <meta property="og:url" content="http://localhost:4000/2018/09/06/markdown-intro/">
+    <meta property="og:url" content="http://localhost:4000/2019/09/15/markdown/">
     <meta property="og:site_name" content="J Diary">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="zh_CN" />
     
-    <meta property="article:published_time" content="2018-09-06">
+    <meta property="article:published_time" content="2019-09-15">
     
     <script src="http://localhost:4000/assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="http://localhost:4000/assets/js/jquery-ui.js"></script>
@@ -70,16 +70,16 @@
     </header>
     <!-- / header -->
 
-    <section class="collection-head small geopattern" data-pattern-id="一份简明的 Markdown ">
+    <section class="collection-head small geopattern" data-pattern-id="简明的 Markdown 笔记">
   <div class="container">
     <div class="columns">
       <div class="column three-fourths">
         <div class="collection-title">
-          <h1 class="collection-header">一份简明的 Markdown 笔记与教程</h1>
+          <h1 class="collection-header">简明的 Markdown 笔记</h1>
           <div class="collection-info">
             
             <span class="meta-info">
-              <span class="octicon octicon-calendar"></span> 2018/09/06
+              <span class="octicon octicon-calendar"></span> 2019/09/15
             </span>
             
             
@@ -99,13 +99,11 @@
   <div class="columns">
     <div class="column three-fourths">
       <article class="article-content markdown-body">
-        <p>为部门内知识分享准备的素材，记录了 Markdown 的优点、应用场景和编辑工具，介绍了标准语法与扩展语法，以及一些应用 Markdown 的奇技淫巧。个人使用 Markdown 的经验持续补充中，最新完整版请参见</p>
-
-<p><a href="https://github.com/mzlogin/markdown-intro">https://github.com/mzlogin/markdown-intro</a></p>
+        <p>Github Pages 推荐使用 Markdown 语言编写博客内容。今天就来说一下Markdown</p>
 
 <hr>
 
-<p>自从 2014 年左右接触到 Markdown 以来，对它的使用就一发而不可收拾。从最开始使用它在 GitHub Pages 里写博客，到用它编辑项目的 README 文件，再到撰写开发文档，编辑微信公众号文章和邮件内容等等，这期间也见证了它在各类平台和网站上的普及和被原生支持，可以说，Markdown 如今已经渗透了我在技术和网络活动的方方面面，成为了我撰写文本文档的首选。</p>
+<p>上学那会短暂的接触过Markdown，学了点皮毛就放下了，工作中比较少用到，所以不曾重视，直到有一天需要用的时候发现竟然连最基本的语法都可以写错，于是决定花点时间重新温习一下。真正开始使用它是在 GitHub Pages 里写博客和用它编辑项目的 README 文件。做了一点research发现撰写开发文档，编辑微信公众号文章和邮件内容等等都可以完美的原生支持，突然发现原来Markdown并不鸡肋。相反，可以说，Markdown 如今已经渗透了技术的方方面面，成为了撰写文本文档的首选。</p>
 
 <p>那么首先我们一起来看一下它的「定义」：</p>
 
@@ -113,9 +111,7 @@
   <p>Markdown 是一种轻量级标记语言，创始人为 John Gruber。它允许人们「使用易读易写的纯文本格式编写文档，然后转换成有效的 XHTML（或者 HTML）文档」。——维基百科</p>
 </blockquote>
 
-<p>本文档的目的不在于面面俱到地介绍 Markdown，只是作为我对其理解的笔记整理，希望能同时帮助一些对 Markdown 感兴趣的人快速上手，或是作为一个工具，供对其已经有所了解的人在需要时参考。</p>
-
-<p>接下来请随我一起深入了解这门并不神秘的实用标记语言。</p>
+<p>一起看看这门语言吧！</p>
 
 <p><strong>目录</strong></p>
 
@@ -166,16 +162,8 @@
           <li><a href="#emoji" id="markdown-toc-emoji">emoji</a></li>
         </ul>
       </li>
-      <li>
-<a href="#%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7" id="markdown-toc-奇技淫巧">奇技淫巧</a>        <ul>
-          <li><a href="#%E7%94%BB%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%92%8C%E6%97%B6%E5%BA%8F%E5%9B%BE" id="markdown-toc-画流程图和时序图">画流程图和时序图</a></li>
-          <li><a href="#%E6%8F%92%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F" id="markdown-toc-插入数学公式">插入数学公式</a></li>
-          <li><a href="#%E7%94%A8-markdown-%E5%81%9A-ppt" id="markdown-toc-用-markdown-做-ppt">用 Markdown 做 PPT</a></li>
-          <li><a href="#%E7%94%A8-markdown-%E5%86%99%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7" id="markdown-toc-用-markdown-写微信公众号">用 Markdown 写微信公众号</a></li>
-          <li><a href="#%E6%9B%B4%E5%A4%9A" id="markdown-toc-更多">更多</a></li>
-        </ul>
-      </li>
       <li><a href="#%E5%8F%82%E8%80%83" id="markdown-toc-参考">参考</a></li>
+      <li><a href="#github-flavored-markdown-spec" id="markdown-toc-github-flavored-markdown-spec">GitHub Flavored Markdown Spec</a></li>
     </ul>
   </li>
 </ul>
@@ -207,12 +195,7 @@
   <li>
     <p>技术社区和写作平台</p>
 
-    <p>StackOverflow、CSDN、掘金、简书、GitBook、有道云笔记</p>
-  </li>
-  <li>
-    <p>论坛</p>
-
-    <p>V2EX、光谷社区</p>
+    <p>StackOverflow、掘金、简书、GitBook</p>
   </li>
 </ul>
 
@@ -226,17 +209,17 @@
   <li>
     <p>现代编辑器</p>
 
-    <p>VSCode / Atom</p>
+    <p>VSCode</p>
   </li>
   <li>
     <p>传统编辑器</p>
 
-    <p>Vim / Emacs / Sublime Text / Notepad++</p>
+    <p>Vim / Sublime Text / Notepad++</p>
   </li>
   <li>
     <p>IDE 自带编辑器</p>
 
-    <p>IntelliJ IDEA / Android Studio / WebStorm</p>
+    <p>IntelliJ IDEA / WebStorm</p>
   </li>
   <li>
     <p>专用编辑器</p>
@@ -414,37 +397,37 @@ Setext-style 一级标题
 
 <p><strong>Markdown：</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>行内式 [博客](https://mazhuang.org "我的个人博客") 链接，带 title。
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>行内式 [Blog](https://zhenyu0519.github.io "My Personal Blog") 链接，带 title。
 
-行内式 [GitHub](https://github.com/mzlogin) 链接。
+行内式 [GitHub](https://github.com/zhenyu0519) 链接。
 
 引用式 [博客][1] 链接。
 
 引用式 [GitHub][2] 链接，带 title。
 
-[1]: https://mazhuang.org
-[2]: https://github.com/mzlogin "我的 GitHub 主页"
+[1]: https://zhenyu0519.github.io
+[2]: https://github.com/zhenyu0519 "我的 GitHub 主页"
 </code></pre></div></div>
 
 <p><strong>预览效果：</strong></p>
 
-<p>行内式 <a href="https://mazhuang.org" title="我的个人博客">博客</a> 链接，带 title。</p>
+<p>行内式 <a href="https://zhenyu0519.github.io" title="我的个人博客">博客</a> 链接，带 title。</p>
 
-<p>行内式 <a href="https://github.com/mzlogin">GitHub</a> 链接。</p>
+<p>行内式 <a href="https://github.com/zhenyu0519">GitHub</a> 链接。</p>
 
-<p>引用式 <a href="https://mazhuang.org">博客</a> 链接。</p>
+<p>引用式 <a href="https://zhenyu0519.github.io">博客</a> 链接。</p>
 
-<p>引用式 <a href="https://github.com/mzlogin" title="我的 GitHub 主页">GitHub</a> 链接，带 title。</p>
+<p>引用式 <a href="https://github.com/zhenyu0519" title="我的 GitHub 主页">GitHub</a> 链接，带 title。</p>
 
 <p><strong>对应 HTML：</strong></p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p&gt;</span>行内式 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://mazhuang.org"</span> <span class="na">title=</span><span class="s">"我的个人博客"</span><span class="nt">&gt;</span>博客<span class="nt">&lt;/a&gt;</span> 链接，带 title。<span class="nt">&lt;/p&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p&gt;</span>行内式 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://zhenyu0519.github.io"</span> <span class="na">title=</span><span class="s">"我的个人博客"</span><span class="nt">&gt;</span>博客<span class="nt">&lt;/a&gt;</span> 链接，带 title。<span class="nt">&lt;/p&gt;</span>
 
-<span class="nt">&lt;p&gt;</span>行内式 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://github.com/mzlogin"</span><span class="nt">&gt;</span>GitHub<span class="nt">&lt;/a&gt;</span> 链接。<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>行内式 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://github.com/zhenyu0519"</span><span class="nt">&gt;</span>GitHub<span class="nt">&lt;/a&gt;</span> 链接。<span class="nt">&lt;/p&gt;</span>
 
-<span class="nt">&lt;p&gt;</span>引用式 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://mazhuang.org"</span><span class="nt">&gt;</span>博客<span class="nt">&lt;/a&gt;</span> 链接。<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>引用式 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://zhenyu0519.github.io"</span><span class="nt">&gt;</span>博客<span class="nt">&lt;/a&gt;</span> 链接。<span class="nt">&lt;/p&gt;</span>
 
-<span class="nt">&lt;p&gt;</span>引用式 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://github.com/mzlogin"</span> <span class="na">title=</span><span class="s">"我的 GitHub 主页"</span><span class="nt">&gt;</span>GitHub<span class="nt">&lt;/a&gt;</span> 链接，带 title。<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>引用式 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://github.com/zhenyu0519"</span> <span class="na">title=</span><span class="s">"我的 GitHub 主页"</span><span class="nt">&gt;</span>GitHub<span class="nt">&lt;/a&gt;</span> 链接，带 title。<span class="nt">&lt;/p&gt;</span>
 </code></pre></div></div>
 
 <h3 id="图片">图片</h3>
@@ -453,16 +436,16 @@ Setext-style 一级标题
 
 <p><strong>Markdown：</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![Alt text](https://mazhuang.org/favicon.ico "favicon")
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![Alt text](https://zhenyu0519.github.io/favicon.ico "favicon")
 </code></pre></div></div>
 
 <p><strong>预览效果：</strong></p>
 
-<p><img src="https://mazhuang.org/favicon.ico" alt="Alt text" title="favicon"></p>
+<p><img src="https://zhenyu0519.github.io/favicon.ico" alt="Alt text" title="favicon"></p>
 
 <p><strong>对应 HTML：</strong></p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://mazhuang.org/favicon.ico"</span> <span class="na">alt=</span><span class="s">"Alt text"</span> <span class="na">title=</span><span class="s">"favicon"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://zhenyu0519.github.io/favicon.ico"</span> <span class="na">alt=</span><span class="s">"Alt text"</span> <span class="na">title=</span><span class="s">"favicon"</span><span class="nt">&gt;</span>
 </code></pre></div></div>
 
 <h3 id="列表">列表</h3>
@@ -516,34 +499,37 @@ Setext-style 一级标题
 
 <p><strong>Markdown：</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Android 里使用 `TextUtils` 类的 `isEmpty` 方法来判断字符串是否为空。
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
-```java
-if (TextUtils.isEmpty(text)) {
-    return null;
-}
+``` python
+def twoSum(self, nums: 'List[int]', target: 'int') -&gt; 'List[int]':
+    dict = {}
+    for i, v in enumerate(nums):
+        another = target - v
+        if another not in dict:
+            dict[v] = [another, i]
+        else:
+            return [dict[another][1],i]
 ```
 </code></pre></div></div>
 
 <p><strong>预览效果：</strong></p>
 
-<p>Android 里使用 <code class="highlighter-rouge">TextUtils</code> 类的 <code class="highlighter-rouge">isEmpty</code> 方法来判断字符串是否为空。</p>
+<p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">(</span><span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">text</span><span class="o">))</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-<span class="o">}</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">twoSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="s">'List[int]'</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="s">'int'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s">'List[int]'</span><span class="p">:</span>
+        <span class="nb">dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+            <span class="n">another</span> <span class="o">=</span> <span class="n">target</span> <span class="o">-</span> <span class="n">v</span>
+            <span class="k">if</span> <span class="n">another</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">:</span>
+                <span class="nb">dict</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">another</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="n">another</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span><span class="n">i</span><span class="p">]</span>
 </code></pre></div></div>
 
-<p><strong>对应 HTML：</strong></p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p&gt;</span>Android 里使用 <span class="nt">&lt;code&gt;</span>TextUtils<span class="nt">&lt;/code&gt;</span> 类的 <span class="nt">&lt;code&gt;</span>isEmpty<span class="nt">&lt;/code&gt;</span> 方法来判断字符串是否为空。<span class="nt">&lt;/p&gt;</span>
-
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"highlight highlight-source-java"</span><span class="nt">&gt;&lt;pre&gt;&lt;span</span> <span class="na">class=</span><span class="s">"pl-k"</span><span class="nt">&gt;</span>if<span class="nt">&lt;/span&gt;</span> (<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"pl-smi"</span><span class="nt">&gt;</span>TextUtils<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">"pl-k"</span><span class="nt">&gt;</span>.<span class="nt">&lt;/span&gt;</span>isEmpty(text)) {
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"pl-k"</span><span class="nt">&gt;</span>return<span class="nt">&lt;/span&gt;</span> <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"pl-c1"</span><span class="nt">&gt;</span>null<span class="nt">&lt;/span&gt;</span>;
-}<span class="nt">&lt;/pre&gt;&lt;/div&gt;</span>
-</code></pre></div></div>
-
-<p>上例中的语言标记 <code class="highlighter-rouge">java</code> 可选填，可用于在编辑器和渲染后的效果里添加语法高亮。</p>
+<p>上例中的语言标记 <code class="highlighter-rouge">python</code> 可选填，可用于在编辑器和渲染后的效果里添加语法高亮。</p>
 
 <p>块式代码也可以对整个代码段缩进四个空格，或一个 Tab 来实现。</p>
 
@@ -683,14 +669,6 @@ if (TextUtils.isEmpty(text)) {
 <span class="nt">&lt;/ul&gt;</span>
 </code></pre></div></div>
 
-<p>如果是在 GitHub / GitLab 的 Issue 里，会附赠任务完成比例提示效果：</p>
-
-<p><img src="https://raw.githubusercontent.com/mzlogin/markdown-intro/master/assets/task-list-1.png" alt="task list 1"></p>
-
-<p>还可以直接在网页上拖动调整顺序，勾选和取消勾选。</p>
-
-<p><img src="https://raw.githubusercontent.com/mzlogin/markdown-intro/master/assets/task-list-2.png" alt="task list 2"></p>
-
 <h3 id="删除线">删除线</h3>
 
 <p><strong>Markdown：</strong></p>
@@ -752,68 +730,15 @@ if (TextUtils.isEmpty(text)) {
   <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"emoji"</span> <span class="na">title=</span><span class="s">":smile:"</span> <span class="na">alt=</span><span class="s">":smile:"</span> <span class="na">src=</span><span class="s">"https://assets-cdn.github.com/images/icons/emoji/unicode/1f604.png"</span> <span class="na">height=</span><span class="s">"20"</span> <span class="na">width=</span><span class="s">"20"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/p&gt;</span>
 </code></pre></div></div>
-
-<h2 id="奇技淫巧">奇技淫巧</h2>
-
-<p>脑洞清奇的工程师们还发掘了很多使用 Markdown 的方法，大部分都是引入第三方 JavaScript 插件来实现。对这部分我只做简述，对其中的部分功能比如作图等，还是推荐用专门的可视化工具去做。</p>
-
-<h3 id="画流程图和时序图">画流程图和时序图</h3>
-
-<p>有部分网站和编辑器实现了对 Markdown 里流程图和时序图的支持，比如我们使用的项目管理工具 TAPD 的在线编辑器，还有 VSCode + 插件 Markdown Preview Enhanced 等。</p>
-
-<p>以我们使用的项目管理工具 TAPD 的在线编辑器为例：</p>
-
-<p><img src="https://raw.githubusercontent.com/mzlogin/markdown-intro/master/assets/tapd-markdown-flowchart.png" alt="流程图"></p>
-
-<p><img src="https://raw.githubusercontent.com/mzlogin/markdown-intro/master/assets/tapd-markdown-seq.png" alt="时序图"></p>
-
-<h3 id="插入数学公式">插入数学公式</h3>
-
-<p>仍然以 TAPD 为例：</p>
-
-<p><img src="https://raw.githubusercontent.com/mzlogin/markdown-intro/master/assets/tapd-markdown-math.png" alt="数学公式"></p>
-
-<p>应该是利用 JavaScript 支持了 LaTeX 公式语法。</p>
-
-<h3 id="用-markdown-做-ppt">用 Markdown 做 PPT</h3>
-
-<p>有专门的工具 <a href="https://github.com/yhatt/marp">Marp</a>，另外使用 VSCode + 插件 Markdown Preview Enhanced 也可以实现。</p>
-
-<h3 id="用-markdown-写微信公众号">用 Markdown 写微信公众号</h3>
-
-<p>可以将公众号素材用 Markdown 编辑好后，贴到在线排版工具以后，复制到公众号编辑器里即可。有多种页面主题和代码主题可选择。</p>
-
-<p>我维护的工具地址：<a href="https://md.mazhuang.org">https://md.mazhuang.org</a></p>
-
-<p><img src="https://raw.githubusercontent.com/mzlogin/markdown-intro/master/assets/wechat-markdown.png" alt="微信公众号"></p>
-
-<h3 id="更多">更多</h3>
-
-<p>想象力丰富的工程师们还扩展了很多基于 Markdown 的玩法，包括但不限于：</p>
-
-<ul>
-  <li>自动生成 / 更新 Table of Contents</li>
-  <li>流程图 / 时序图</li>
-  <li>制作幻灯片</li>
-  <li>集成 PlantUML / GraphViz 的能力</li>
-  <li>导出 HTML / PDF / 电子书</li>
-  <li>…</li>
-</ul>
-
-<p>以上功能基本都可以用 VSCode + 插件 Markdown Preview Enhanced 实现。</p>
-
-<p>另外可以参考我以前的一篇博客 <a href="https://mazhuang.org/2017/09/01/markdown-odd-skills/">关于 Markdown 的一些奇技淫巧</a>。</p>
-
 <h2 id="参考">参考</h2>
 
 <ul>
   <li><a href="https://daringfireball.net/projects/markdown/syntax">Markdown: Syntax - DARING FIREBALL</a></li>
   <li><a href="https://zh.wikipedia.org/wiki/Markdown">Markdown - 维基百科</a></li>
-  <li><a href="https://github.github.com/gfm/">GitHub Flavored Markdown Spec</a></li>
-  <li><a href="https://mazhuang.org/2017/09/01/markdown-odd-skills/">关于 Markdown 的一些奇技淫巧</a></li>
+  <li>
+    <h2 id="github-flavored-markdown-spec"><a href="https://github.github.com/gfm/">GitHub Flavored Markdown Spec</a></h2>
+  </li>
 </ul>
-
-<hr>
 
 
       </article>
@@ -831,7 +756,7 @@ if (TextUtils.isEmpty(text)) {
         <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
         <script>
         var gitalk = new Gitalk({
-            id: '/2018/09/06/markdown-intro/',
+            id: '/2019/09/15/markdown/',
             clientID: '4cef70907f5b36353d59',
             clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
             repo: 'zhenyu0519.github.io',

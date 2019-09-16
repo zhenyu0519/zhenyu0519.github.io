@@ -52,17 +52,17 @@
 
   
     {
-      "title"    : "一份简明的 Markdown 笔记与教程",
-      "category" : "Markdown",
+      "title"    : "新博客开篇，献给过去，现在，未来的自己",
+      "category" : "Life",
       
-      "url"      : "http://localhost:4000/2018/09/06/markdown-intro/"
+      "url"      : "http://localhost:4000/2019/08/15/Intro/"
     } ,
   
     {
-      "title"    : "我的 2018 盘点",
-      "category" : "Blog",
+      "title"    : "简明的 Markdown 笔记",
+      "category" : "Markdown",
       
-      "url"      : "http://localhost:4000/2019/01/20/my-2018/"
+      "url"      : "http://localhost:4000/2019/09/15/markdown/"
     } 
   
 ]
