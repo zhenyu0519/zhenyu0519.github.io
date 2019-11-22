@@ -4,10 +4,10 @@
 baseurl:
 url: https://zhenyu0519.github.io
 date_format: "ordinal"
-title: J Diary
-subtitle: "Everything Is Time Related"
-description: "Jeffrey's Blog"
-keywords: Diary, Jeffrey, Techonlogy, github pages
+title: 杰弗里 · 时光博客(Jeffrey's Blog)
+subtitle: "深情不及久伴"
+description: "Personal Blog"
+keywords: Diary, Jeffrey, Techonlogy, github pages, Post, North America
 timezone: America/Vancouver
 encoding: "utf-8"
 side_bar_repo_limit: 5
