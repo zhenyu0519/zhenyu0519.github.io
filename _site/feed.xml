@@ -1,18 +1,146 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-11-21T16:52:37-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">J Diary</title><subtitle>Jeffrey's Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">记第一次白板面试</title><link href="http://localhost:4000/2019/11/21/first_white_boarding_interview/" rel="alternate" type="text/html" title="记第一次白板面试" /><published>2019-11-21T00:00:00-08:00</published><updated>2019-11-21T00:00:00-08:00</updated><id>http://localhost:4000/2019/11/21/first_white_boarding_interview</id><content type="html" xml:base="http://localhost:4000/2019/11/21/first_white_boarding_interview/">&lt;p&gt;最近得到一个面试，这刚好是一个检验最近刷题成果的好机会。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-11-21T21:48:47-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">J Diary</title><subtitle>Jeffrey's Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">MAC Mojave下，gem安装package(jekyll)出现的问题以及解决方法/Trouble shooting gem install packages (jekyll) under Mac Mojave(中文/英语)</title><link href="http://localhost:4000/2019/11/21/gem_install_jekyll_permission/" rel="alternate" type="text/html" title="MAC Mojave下，gem安装package(jekyll)出现的问题以及解决方法/Trouble shooting gem install packages (jekyll) under Mac Mojave(中文/英语)" /><published>2019-11-21T00:00:00-08:00</published><updated>2019-11-21T00:00:00-08:00</updated><id>http://localhost:4000/2019/11/21/gem_install_jekyll_permission</id><content type="html" xml:base="http://localhost:4000/2019/11/21/gem_install_jekyll_permission/">&lt;h3 id=&quot;今天踩坑了用gem安装jekyll的时候各种报错网上的一些解决方法要不就是行不通要不就是零散破碎不完整花了点时间把这个问题搞定整理完之后顺便分享一下帮助大家节省一点时间&quot;&gt;今天踩坑了，用gem安装jekyll的时候各种报错，网上的一些解决方法，要不就是行不通，要不就是零散破碎不完整，花了点时间把这个问题搞定，整理完之后顺便分享一下，帮助大家节省一点时间。&lt;/h3&gt;
+
+&lt;h3 id=&quot;when-using-gem-to-install-or-update-some-packages-there-may-be-some-wired-problems-and-messages-pop-up-if-you-met-same-problems-like-me-here-are-the-reason-and-solution&quot;&gt;When using gem to install or update some packages, there may be some wired problems and messages pop-up. If you met same problems like me, here are the reason and solution.&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;起因start&quot;&gt;起因(Start)&lt;/h2&gt;
+
+&lt;p&gt;构建Github Pages免不了要和jekyll打交道，至于它是什么，&lt;a href=&quot;https://jekyllrb.com/&quot;&gt;看这里&lt;/a&gt;。网上有个不错的教程，可惜仅限中文，跟着教程走，在安装jekyll的时候出了问题。偏偏又是我，好吧已经习惯了。先看看是什么问题：&lt;/p&gt;
+
+&lt;p&gt;When I try to build up my github pages, I need to install jekyll, (what is it? &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;click here&lt;/a&gt;) and when I install jekyll, the below message pop-up. Apparentlly, something wrong!&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo gem install jekyll
+
+Building native extensions. This could take a while...
+ERROR:  Error installing jekyll:
+	ERROR: Failed to build gem native extension.
+
+current directory: /Library/Ruby/Gems/2.3.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+/System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby -I /Library/Ruby/Site/2.3.0 -r ./siteconf20191121-70645-4kcf1p.rb extconf.rb
+mkmf.rb can't find header files for ruby at /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/ruby/include/ruby.h
+
+extconf failed, exit code 1
+
+Gem files will remain installed in /Library/Ruby/Gems/2.3.0/gems/http_parser.rb-0.6.0 for inspection.
+Results logged to /Library/Ruby/Gems/2.3.0/extensions/universal-darwin-18/2.3.0/http_parser.rb-0.6.0/gem_make.out
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;上面说了一长串其实重点就是can’t find header files for ruby。网上建议安装xcode command line tool:&lt;/p&gt;
+
+&lt;p&gt;The point is acctually ‘can’t find header files for ruby’. Someone suggest to install xcode command line tool:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo xcode-select --install
+sudo xcodebuild -license accept
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;安装完之后，然并卵（虽然上面的没有解决这个问题还是建议大家安装一下xcode command line tool）。做了些search后发现，找不到header file的根本原因是header file的地址变了。重新分配一下地址可能会起到作用。&lt;/p&gt;
+
+&lt;p&gt;Thank you and it does not work! (xcode command line tool is necessary so please install anyway). After some searches, I found the true reason is header file location changed. re-assign the location may work.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;On Xcode 11 / macOS Catalina, the header files are no longer in the old location:
+/Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
+Instead, the headers are now installed to the /usr/include directory of the current SDK path:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;这个方法我没有试过，嫌麻烦，考虑到变更地址，重新配置，我决定直接安装新版ruby 2.6 因为:&lt;/p&gt;
+
+&lt;p&gt;However, I will not do that, change exsiting location may make trouble easily. So I decide to install new version of ruby because:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Xcode 11 ships the macOS 10.15 SDK which includes headers for ruby2.6 but not for macOS 10.14's ruby2.3.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;就是说 &lt;strong&gt;Xcode 11 里面的SDK包含了ruby 2.6的头文件但是不包含ruby 2.3的头文件&lt;/strong&gt;。那好办，那就装ruby 2.6好了，之所以选择这样做还有其他原因。使用系统自带ruby 2.3的gem安装或者更新package的时候经常会出现权限问题，例如：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Xcode 11 SDK include header files of ruby 2.6 but not for ruby 2.3&lt;/strong&gt;. Another reason is when you use gem to update or install packages, there are sometimes permission problems happend due to ruby 2.3 which comes with system, for example:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem update --system
+
+Updating rubygems-update
+Fetching rubygems-update-3.0.6.gem
+
+ERROR:  While executing gem ... (Gem::FilePermissionError)
+    You don't have write permissions for the /Library/Ruby/Gems/2.3.0 directory.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;又或者
+or&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install bundler
+
+Fetching bundler-2.0.2.gem
+ERROR:  While executing gem ... (Gem::FilePermissionError)
+    You don't have write permissions for the /Library/Ruby/Gems/2.3.0 directory.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;原因即字面意思, 就是 gem 要往某个神奇的目录写文件但是你的权限不够。 因为你使用的是Apple家自带的ruby, 在尝试往 Apple自家的库中塞东西。所以就算你用sudo也不行，网上有人提供一些方法帮助做强制修改的，但是&lt;strong&gt;个人不推荐&lt;/strong&gt;，因为更新系统的时候很容易出现兼容性问题。&lt;/p&gt;
+
+&lt;p&gt;The reason is Apple does not allow you to change its own libraries even using sudo. Well there are some articles will help you force to change but it is not recommand because when you upgrade system, there may be compatiable problems happend. So, &lt;strong&gt;don’t do that!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;划重点solutions&quot;&gt;划重点(Solutions)&lt;/h2&gt;
+
+&lt;p&gt;好了说这么多就直接说一个合理可行的方案：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;额外安装一个新的ruby版本（默认最新就行）这样也可以隔离开系统自带的ruby版本，以免对原版本造成破坏，进而触发依赖或者兼容性问题 &lt;code class=&quot;highlighter-rouge&quot;&gt;brew install ruby&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;然后需要把新版本ruby的路径添加的路径文件里面，方便命令行操作。打开bash_profile &lt;code class=&quot;highlighter-rouge&quot;&gt;nano ~/.bash_profile&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;添加路径到bash_profile里面 &lt;code class=&quot;highlighter-rouge&quot;&gt;export PATH=&quot;/usr/local/lib/ruby/gems/2.6.0/bin:$PATH&quot;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;添加完成后需要reload一下 &lt;code class=&quot;highlighter-rouge&quot;&gt;. ~/.bash_profile&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;确认是否产生变化 &lt;code class=&quot;highlighter-rouge&quot;&gt;echo $PATH&lt;/code&gt;，结果显示 &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/lib/ruby/gems/2.6.0/bin&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;如果用的terminal终端是zsh不是bash那么你需要 &lt;code class=&quot;highlighter-rouge&quot;&gt;echo 'export PATH=&quot;/usr/local/opt/ruby/bin:$PATH&quot;' &amp;gt;&amp;gt; ~/.zshrc&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;接下来需要让编译器找到ruby &lt;code class=&quot;highlighter-rouge&quot;&gt;export LDFLAGS=&quot;-L/usr/local/opt/ruby/lib&quot;&lt;/code&gt;,  &lt;code class=&quot;highlighter-rouge&quot;&gt;export CPPFLAGS=&quot;-I/usr/local/opt/ruby/include&quot;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;确认ruby路径,重启一下终端 &lt;code class=&quot;highlighter-rouge&quot;&gt;which ruby&lt;/code&gt;,结果显示 &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/opt/ruby/bin/ruby&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;确认ruby版本，&lt;code class=&quot;highlighter-rouge&quot;&gt;ruby -v&lt;/code&gt;,结果显示 &lt;code class=&quot;highlighter-rouge&quot;&gt;ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-darwin18]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here is the solution：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;install new version ruby（defaule to be latest）it will seperate system ruby version to avoid unexpected problem &lt;code class=&quot;highlighter-rouge&quot;&gt;brew install ruby&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;then add path. open bash_profile &lt;code class=&quot;highlighter-rouge&quot;&gt;nano ~/.bash_profile&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;add path to bash_profile &lt;code class=&quot;highlighter-rouge&quot;&gt;export PATH=&quot;/usr/local/lib/ruby/gems/2.6.0/bin:$PATH&quot;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;reload after adding &lt;code class=&quot;highlighter-rouge&quot;&gt;. ~/.bash_profile&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;confirm effection &lt;code class=&quot;highlighter-rouge&quot;&gt;echo $PATH&lt;/code&gt;，display &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/lib/ruby/gems/2.6.0/bin&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;if you use zsh not bash you need &lt;code class=&quot;highlighter-rouge&quot;&gt;echo 'export PATH=&quot;/usr/local/opt/ruby/bin:$PATH&quot;' &amp;gt;&amp;gt; ~/.zshrc&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;let compliers find ruby &lt;code class=&quot;highlighter-rouge&quot;&gt;export LDFLAGS=&quot;-L/usr/local/opt/ruby/lib&quot;&lt;/code&gt;,  &lt;code class=&quot;highlighter-rouge&quot;&gt;export CPPFLAGS=&quot;-I/usr/local/opt/ruby/include&quot;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;relaunch the terminal and confirm ruby path &lt;code class=&quot;highlighter-rouge&quot;&gt;which ruby&lt;/code&gt;,display &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/opt/ruby/bin/ruby&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;confirm ruby version，&lt;code class=&quot;highlighter-rouge&quot;&gt;ruby -v&lt;/code&gt;, display &lt;code class=&quot;highlighter-rouge&quot;&gt;ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-darwin18]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;接下来可以愉快的安装jekyll啦：
+done!&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo gem install jekyll
+
+Fetching jekyll-sass-converter-2.0.1.gem
+Fetching jekyll-4.0.0.gem
+Fetching kramdown-2.1.0.gem
+Fetching kramdown-parser-gfm-1.1.0.gem
+Fetching sassc-2.2.1.gem
+Building native extensions. This could take a while...
+Successfully installed sassc-2.2.1
+Successfully installed jekyll-sass-converter-2.0.1
+Successfully installed kramdown-2.1.0
+Successfully installed kramdown-parser-gfm-1.1.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;希望对你们有点帮助！
+I hope it helps!&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">今天踩坑了，用gem安装jekyll的时候各种报错，网上的一些解决方法，要不就是行不通，要不就是零散破碎不完整，花了点时间把这个问题搞定，整理完之后顺便分享一下，帮助大家节省一点时间。</summary></entry><entry><title type="html">记第一次白板面试</title><link href="http://localhost:4000/2019/11/21/first_white_boarding_interview/" rel="alternate" type="text/html" title="记第一次白板面试" /><published>2019-11-21T00:00:00-08:00</published><updated>2019-11-21T00:00:00-08:00</updated><id>http://localhost:4000/2019/11/21/first_white_boarding_interview</id><content type="html" xml:base="http://localhost:4000/2019/11/21/first_white_boarding_interview/">&lt;p&gt;最近得到一个面试，这刚好是一个检验最近刷题成果的好机会。&lt;/p&gt;
 
 &lt;hr /&gt;
+&lt;h2 id=&quot;介绍&quot;&gt;介绍&lt;/h2&gt;
 &lt;p&gt;最近得到一次面试机会。坐标维多利亚，公司为某金融集团收购的子公司，公司主营开发航海软件，听说北美这边市场占有率为第二，公司规模在50人左右，对于维多利亚这样不足40万人口的小城市来讲，已经很不错了。而且猎头说这个公司氛围不错，薪资待遇也可以，并且跟这边一般的中小公司招聘不一样，它们会有白板做题环节，（可能我存在偏见，个人感觉招聘没有白板做题的公司应该竞争力不强，哈哈）不管怎么说，这对于最近在刷题的我来说刚好是一次检验的机会，在这之前，本人并没有过白板做题的经历！&lt;/p&gt;
 
+&lt;h2 id=&quot;要求&quot;&gt;要求&lt;/h2&gt;
 &lt;p&gt;先说一下公司的招聘要求，初级到中级全栈开发工程师，工作经验1～3年，良好的前端开发经验，以及对后端开发有基本的认识，此外也需要了解一些数据库查询和一些基本算法，语言方面偏向JavaScript和C#，python也行。面试时间定在早上10:00，两位面试官，时间90分钟，包括介绍， 技术背景， 项目经验（30分钟），白板做题（1小时）。&lt;/p&gt;
 
 &lt;p&gt;由于得到面试晚，时间比较紧迫，从通知面试到面试总共不到48小时，也只能临时抱佛脚的看一下子，主要还是看平时的积累啊。&lt;/p&gt;
 
+&lt;h2 id=&quot;过程&quot;&gt;过程&lt;/h2&gt;
 &lt;p&gt;面试氛围相对比较轻松，不得不说我高估了面试内容，准备面试的过程我特别看了一下以前的代码，以及各种框架，知识点，概念，特别是花了很长时间看了CSS，其实工作当中用js，css框架比较多，纯js，css反而比较少写，所以总感觉自己头重脚轻，借机也算是复习一下。后端这部分也拿出了相当一部分时间做了梳理，什么restful apis，oauth认证，mvc之类的，数据库查询这部分确实没看，因为过往经验就是很多公司要求有数据库查询的功底，但是往往面试不会考，这也算是偷懒了。至于算法，我倒是觉得应该不会很难，毕竟这个级别的公司难度总不会和flag级别的相比，也就没怎么复习了。所以总体来讲心里是有底的，心态调整得还算不错。&lt;/p&gt;
 
-&lt;p&gt;面试前30分钟，我个人还比较满意，虽然相关技术背景有交代，自己特别准备的东西好像并没有得到关注，这也无可厚非，时间有限，公司肯定捡自己感兴趣的问。大概的考察了一下js的基本知识，比如，ajax的回调函数，循环和递归，题目类型就是运行之后返回什么结果，然后问如何优化这部分代码，这部分答得不错，也很基础。接着，竟然真的考察了数据库查询语言，是的，没错，就是我偷懒没复习的部分…! 题目其实很基础，考察的inner join和left join，以及数据库注入攻击。唉，真的是靠大学的记忆在回答，在考官的一点提示下才回答出来。这部分表现一般般。没答出来的题目已经做了笔记，同样的地方不能摔倒第二次。接下来开始白板，莫名其妙有些兴奋。题目不难，把两个列表相同的元素挑出来组成新的列表。应该是到简单题，我很快给出了第一个方案，两个循环嵌套，O（n^2）。这显然不是最佳答案，但是先给出一个中庸的答案，在进行优化，这可以说是一个解题套路，让面试官看到你的思考过程和改进过程。最终，通过使用set（）把结果优化到O（n），这个题完成。第二道题，难度就大一点了，应该也不是难题，只是站在白板前确实很容易放空。题目是信号塔a向信号塔b发射一段字符串信息里面可能会包括目标字符串和垃圾字符串。判断一下这段信息里面是否存在目标字符串，附加条件是只有nextChar（）和exit（）两个api可以调用，nextChar的作用是得到下一个字符，其实就是一个从stack里取值，而exit（）的作用是如果没有目标字符串就退出。我的想法是先初始化一个空字符串作为结果，然后通过调用nextChar（）来遍历整个栈，当遇到目标字符串的首字母时候，就开始把字符压到结果空字符串里去，并进行比较，如过字符串全部匹配返回存在，如果字符串不完全匹配，那么清空结果字符串，从不匹配的那个字母开始重新调用nextChar比较，重复上面的过程。这个过程应该可以是O（1）的，不过可惜这道题没有想完整，最终的思路并没有完全表达出来，所以结果应该是不算太好。好在这道题其实是我额外要求的，本来不在考察过程中，只是我想借着这个机会多练习一下，考官也配合。&lt;/p&gt;
+&lt;h2 id=&quot;上半场&quot;&gt;上半场&lt;/h2&gt;
+&lt;p&gt;面试前30分钟，我个人还比较满意，虽然相关技术背景有交代，自己特别准备的东西好像并没有得到关注，这也无可厚非，时间有限，公司肯定捡自己感兴趣的问。大概的考察了一下js的基本知识，比如，ajax的回调函数，循环和递归，题目类型就是运行之后返回什么结果，然后问如何优化这部分代码，这部分答得不错，也很基础。接着，竟然真的考察了数据库查询语言，是的，没错，就是我偷懒没复习的部分…! 题目其实很基础，考察的inner join和left join，以及数据库注入攻击。唉，真的是靠大学的记忆在回答，在考官的一点提示下才回答出来。这部分表现一般般。没答出来的题目已经做了笔记，同样的地方不能摔倒第二次。&lt;/p&gt;
 
+&lt;h2 id=&quot;下半场&quot;&gt;下半场&lt;/h2&gt;
+&lt;p&gt;接下来开始白板，莫名其妙有些兴奋。题目不难，把两个列表相同的元素挑出来组成新的列表。应该是到简单题，我很快给出了第一个方案，两个循环嵌套，O（n^2）。这显然不是最佳答案，但是先给出一个中庸的答案，在进行优化，这可以说是一个解题套路，让面试官看到你的思考过程和改进过程。最终，通过使用set（）把结果优化到O（n），这个题完成。第二道题，难度就大一点了，应该也不是难题，只是站在白板前确实很容易放空。题目是信号塔a向信号塔b发射一段字符串信息里面可能会包括目标字符串和垃圾字符串。判断一下这段信息里面是否存在目标字符串，附加条件是只有nextChar（）和exit（）两个api可以调用，nextChar的作用是得到下一个字符，其实就是一个从stack里取值，而exit（）的作用是如果没有目标字符串就退出。我的想法是先初始化一个空字符串作为结果，然后通过调用nextChar（）来遍历整个栈，当遇到目标字符串的首字母时候，就开始把字符压到结果空字符串里去，并进行比较，如过字符串全部匹配返回存在，如果字符串不完全匹配，那么清空结果字符串，从不匹配的那个字母开始重新调用nextChar比较，重复上面的过程。这个过程应该可以是O（1）的，不过可惜这道题没有想完整，最终的思路并没有完全表达出来，所以结果应该是不算太好。好在这道题其实是我额外要求的，本来不在考察过程中，只是我想借着这个机会多练习一下，考官也配合。&lt;/p&gt;
+
+&lt;h2 id=&quot;评估&quot;&gt;评估&lt;/h2&gt;
 &lt;p&gt;总体来讲，给自己打70分吧，没有达到预期，可以做得更好的，但是这个面试经验确实不错。对我很有启发，总结如下：&lt;/p&gt;
 
+&lt;h2 id=&quot;总结&quot;&gt;总结&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;备战的时候不能偷懒，不要自作主张，应该全面准备，看清楚考察内容，有针对性的复习，切勿好高骛远&lt;/li&gt;
   &lt;li&gt;需要强化自己的沟通交流能力，多总结，多概括，让表达更简练，清楚&lt;/li&gt;
@@ -21,6 +149,7 @@
   &lt;li&gt;面试前要休息好，调整好情绪，合理控制好时间&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h2 id=&quot;感谢&quot;&gt;感谢&lt;/h2&gt;
 &lt;p&gt;特别感谢猎头Nash Geng提供的机会，以及主考官，Shaw Lu的考察（大概是叫这个吧）&lt;/p&gt;
 
 &lt;p&gt;接下来还要继续坚持，Desmond Zhou说凡事做到极致，必有回应。还有Baron和强哥也给了我莫大的勇气和信心。&lt;/p&gt;

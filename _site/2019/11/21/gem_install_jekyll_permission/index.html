@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" prefix="og: http://ogp.me/ns#" class="han-init">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>MAC Mojave下，gem安装package(jekyll)出现的问题以及解决方法/Trouble shooting gem install packages (jekyll) under Mac Mojave(中文/英语) &mdash; J Diary</title>
+    <link rel="stylesheet" href="http://localhost:4000/assets/vendor/primer-css/css/primer.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/vendor/primer-markdown/dist/user-content.min.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/vendor/octicons/octicons/octicons.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/components/collection.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/components/repo-card.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/sections/repo-list.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/sections/mini-repo-list.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/components/boxed-group.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/globals/common.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/vendor/share.js/dist/css/share.min.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/globals/responsive.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/posts/index.css">
+    <!-- Latest compiled and minified CSS -->
+    
+
+    
+    <link rel="canonical" href="http://localhost:4000/2019/11/21/gem_install_jekyll_permission/">
+    <link rel="alternate" type="application/atom+xml" title="J Diary" href="http://localhost:4000/feed.xml">
+    <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+    
+    <meta property="og:title" content="MAC Mojave下，gem安装package(jekyll)出现的问题以及解决方法/Trouble shooting gem install packages (jekyll) under Mac Mojave(中文/英语)">
+      
+    <meta name="keywords" content="MAC Mojave, jekyll, Github Pages, Failed to build gem native extension, Gem, Permission">
+    <meta name="og:keywords" content="MAC Mojave, jekyll, Github Pages, Failed to build gem native extension, Gem, Permission">
+      
+    <meta name="description" content="今天踩坑了，用gem安装jekyll的时候各种报错，网上的一些解决方法，要不就是行不通，要不就是零散破碎不完整，花了点时间把这个问题搞定，整理完之后顺便分享一下，帮助大家节省一点时间。">
+    <meta name="og:description" content="今天踩坑了，用gem安装jekyll的时候各种报错，网上的一些解决方法，要不就是行不通，要不就是零散破碎不完整，花了点时间把这个问题搞定，整理完之后顺便分享一下，帮助大家节省一点时间。">
+      
+    
+    
+        
+    
+    <meta property="og:url" content="http://localhost:4000/2019/11/21/gem_install_jekyll_permission/">
+    <meta property="og:site_name" content="J Diary">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_CN" />
+    
+    <meta property="article:published_time" content="2019-11-21">
+    
+    <script src="http://localhost:4000/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="http://localhost:4000/assets/js/jquery-ui.js"></script>
+    <script src="http://localhost:4000/assets/js/main.js"></script>
+</head>
+<body class="" data-mz="">
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="http://localhost:4000/" title="J Diary"><span class="octicon octicon-mark-github"></span> J Diary</a></h1>
+            <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <nav class="site-header-nav" role="navigation">
+                
+                <a href="http://localhost:4000/" class=" site-header-nav-item" target="" title="Home">Home</a>
+                
+                <a href="http://localhost:4000/categories/" class=" site-header-nav-item" target="" title="Categories">Categories</a>
+                
+                <a href="http://localhost:4000/about/" class=" site-header-nav-item" target="" title="About">About</a>
+                
+            </nav>
+        </div>
+    </header>
+    <!-- / header -->
+
+    <section class="collection-head small geopattern" data-pattern-id="MAC Mojave下，gem">
+  <div class="container">
+    <div class="columns">
+      <div class="column three-fourths">
+        <div class="collection-title">
+          <h1 class="collection-header">MAC Mojave下，gem安装package(jekyll)出现的问题以及解决方法/Trouble shooting gem install packages (jekyll) under Mac Mojave(中文/英语)</h1>
+          <div class="collection-info">
+            
+            <span class="meta-info">
+              <span class="octicon octicon-calendar"></span> 2019/11/21
+            </span>
+            
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="http://localhost:4000/categories/#TroubleShoot" title="TroubleShoot">TroubleShoot</a>
+            </span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- / .banner -->
+<section class="container content">
+  <div class="columns">
+    <div class="column three-fourths">
+      <article class="article-content markdown-body">
+        <h3 id="今天踩坑了用gem安装jekyll的时候各种报错网上的一些解决方法要不就是行不通要不就是零散破碎不完整花了点时间把这个问题搞定整理完之后顺便分享一下帮助大家节省一点时间">今天踩坑了，用gem安装jekyll的时候各种报错，网上的一些解决方法，要不就是行不通，要不就是零散破碎不完整，花了点时间把这个问题搞定，整理完之后顺便分享一下，帮助大家节省一点时间。</h3>
+
+<h3 id="when-using-gem-to-install-or-update-some-packages-there-may-be-some-wired-problems-and-messages-pop-up-if-you-met-same-problems-like-me-here-are-the-reason-and-solution">When using gem to install or update some packages, there may be some wired problems and messages pop-up. If you met same problems like me, here are the reason and solution.</h3>
+<hr />
+
+<h2 id="起因start">起因(Start)</h2>
+
+<p>构建Github Pages免不了要和jekyll打交道，至于它是什么，<a href="https://jekyllrb.com/">看这里</a>。网上有个不错的教程，可惜仅限中文，跟着教程走，在安装jekyll的时候出了问题。偏偏又是我，好吧已经习惯了。先看看是什么问题：</p>
+
+<p>When I try to build up my github pages, I need to install jekyll, (what is it? <a href="https://jekyllrb.com/">click here</a>) and when I install jekyll, the below message pop-up. Apparentlly, something wrong!</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo gem install jekyll
+
+Building native extensions. This could take a while...
+ERROR:  Error installing jekyll:
+	ERROR: Failed to build gem native extension.
+
+current directory: /Library/Ruby/Gems/2.3.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+/System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby -I /Library/Ruby/Site/2.3.0 -r ./siteconf20191121-70645-4kcf1p.rb extconf.rb
+mkmf.rb can't find header files for ruby at /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/ruby/include/ruby.h
+
+extconf failed, exit code 1
+
+Gem files will remain installed in /Library/Ruby/Gems/2.3.0/gems/http_parser.rb-0.6.0 for inspection.
+Results logged to /Library/Ruby/Gems/2.3.0/extensions/universal-darwin-18/2.3.0/http_parser.rb-0.6.0/gem_make.out
+
+</code></pre></div></div>
+<p>上面说了一长串其实重点就是can’t find header files for ruby。网上建议安装xcode command line tool:</p>
+
+<p>The point is acctually ‘can’t find header files for ruby’. Someone suggest to install xcode command line tool:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo xcode-select --install
+sudo xcodebuild -license accept
+</code></pre></div></div>
+<p>安装完之后，然并卵（虽然上面的没有解决这个问题还是建议大家安装一下xcode command line tool）。做了些search后发现，找不到header file的根本原因是header file的地址变了。重新分配一下地址可能会起到作用。</p>
+
+<p>Thank you and it does not work! (xcode command line tool is necessary so please install anyway). After some searches, I found the true reason is header file location changed. re-assign the location may work.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>On Xcode 11 / macOS Catalina, the header files are no longer in the old location:
+/Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
+Instead, the headers are now installed to the /usr/include directory of the current SDK path:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
+</code></pre></div></div>
+<p>这个方法我没有试过，嫌麻烦，考虑到变更地址，重新配置，我决定直接安装新版ruby 2.6 因为:</p>
+
+<p>However, I will not do that, change exsiting location may make trouble easily. So I decide to install new version of ruby because:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Xcode 11 ships the macOS 10.15 SDK which includes headers for ruby2.6 but not for macOS 10.14's ruby2.3.
+</code></pre></div></div>
+<p>就是说 <strong>Xcode 11 里面的SDK包含了ruby 2.6的头文件但是不包含ruby 2.3的头文件</strong>。那好办，那就装ruby 2.6好了，之所以选择这样做还有其他原因。使用系统自带ruby 2.3的gem安装或者更新package的时候经常会出现权限问题，例如：</p>
+
+<p><strong>Xcode 11 SDK include header files of ruby 2.6 but not for ruby 2.3</strong>. Another reason is when you use gem to update or install packages, there are sometimes permission problems happend due to ruby 2.3 which comes with system, for example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem update --system
+
+Updating rubygems-update
+Fetching rubygems-update-3.0.6.gem
+
+ERROR:  While executing gem ... (Gem::FilePermissionError)
+    You don't have write permissions for the /Library/Ruby/Gems/2.3.0 directory.
+</code></pre></div></div>
+<p>又或者
+or</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install bundler
+
+Fetching bundler-2.0.2.gem
+ERROR:  While executing gem ... (Gem::FilePermissionError)
+    You don't have write permissions for the /Library/Ruby/Gems/2.3.0 directory.
+</code></pre></div></div>
+<p>原因即字面意思, 就是 gem 要往某个神奇的目录写文件但是你的权限不够。 因为你使用的是Apple家自带的ruby, 在尝试往 Apple自家的库中塞东西。所以就算你用sudo也不行，网上有人提供一些方法帮助做强制修改的，但是<strong>个人不推荐</strong>，因为更新系统的时候很容易出现兼容性问题。</p>
+
+<p>The reason is Apple does not allow you to change its own libraries even using sudo. Well there are some articles will help you force to change but it is not recommand because when you upgrade system, there may be compatiable problems happend. So, <strong>don’t do that!</strong></p>
+
+<h2 id="划重点solutions">划重点(Solutions)</h2>
+
+<p>好了说这么多就直接说一个合理可行的方案：</p>
+<ul>
+  <li>额外安装一个新的ruby版本（默认最新就行）这样也可以隔离开系统自带的ruby版本，以免对原版本造成破坏，进而触发依赖或者兼容性问题 <code class="highlighter-rouge">brew install ruby</code></li>
+  <li>然后需要把新版本ruby的路径添加的路径文件里面，方便命令行操作。打开bash_profile <code class="highlighter-rouge">nano ~/.bash_profile</code></li>
+  <li>添加路径到bash_profile里面 <code class="highlighter-rouge">export PATH="/usr/local/lib/ruby/gems/2.6.0/bin:$PATH"</code></li>
+  <li>添加完成后需要reload一下 <code class="highlighter-rouge">. ~/.bash_profile</code></li>
+  <li>确认是否产生变化 <code class="highlighter-rouge">echo $PATH</code>，结果显示 <code class="highlighter-rouge">/usr/local/lib/ruby/gems/2.6.0/bin</code></li>
+  <li>如果用的terminal终端是zsh不是bash那么你需要 <code class="highlighter-rouge">echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' &gt;&gt; ~/.zshrc</code></li>
+  <li>接下来需要让编译器找到ruby <code class="highlighter-rouge">export LDFLAGS="-L/usr/local/opt/ruby/lib"</code>,  <code class="highlighter-rouge">export CPPFLAGS="-I/usr/local/opt/ruby/include"</code></li>
+  <li>确认ruby路径,重启一下终端 <code class="highlighter-rouge">which ruby</code>,结果显示 <code class="highlighter-rouge">/usr/local/opt/ruby/bin/ruby</code></li>
+  <li>确认ruby版本，<code class="highlighter-rouge">ruby -v</code>,结果显示 <code class="highlighter-rouge">ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-darwin18]</code></li>
+</ul>
+
+<p>Here is the solution：</p>
+<ul>
+  <li>install new version ruby（defaule to be latest）it will seperate system ruby version to avoid unexpected problem <code class="highlighter-rouge">brew install ruby</code></li>
+  <li>then add path. open bash_profile <code class="highlighter-rouge">nano ~/.bash_profile</code></li>
+  <li>add path to bash_profile <code class="highlighter-rouge">export PATH="/usr/local/lib/ruby/gems/2.6.0/bin:$PATH"</code></li>
+  <li>reload after adding <code class="highlighter-rouge">. ~/.bash_profile</code></li>
+  <li>confirm effection <code class="highlighter-rouge">echo $PATH</code>，display <code class="highlighter-rouge">/usr/local/lib/ruby/gems/2.6.0/bin</code></li>
+  <li>if you use zsh not bash you need <code class="highlighter-rouge">echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' &gt;&gt; ~/.zshrc</code></li>
+  <li>let compliers find ruby <code class="highlighter-rouge">export LDFLAGS="-L/usr/local/opt/ruby/lib"</code>,  <code class="highlighter-rouge">export CPPFLAGS="-I/usr/local/opt/ruby/include"</code></li>
+  <li>relaunch the terminal and confirm ruby path <code class="highlighter-rouge">which ruby</code>,display <code class="highlighter-rouge">/usr/local/opt/ruby/bin/ruby</code></li>
+  <li>confirm ruby version，<code class="highlighter-rouge">ruby -v</code>, display <code class="highlighter-rouge">ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-darwin18]</code></li>
+</ul>
+
+<p>接下来可以愉快的安装jekyll啦：
+done!</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo gem install jekyll
+
+Fetching jekyll-sass-converter-2.0.1.gem
+Fetching jekyll-4.0.0.gem
+Fetching kramdown-2.1.0.gem
+Fetching kramdown-parser-gfm-1.1.0.gem
+Fetching sassc-2.2.1.gem
+Building native extensions. This could take a while...
+Successfully installed sassc-2.2.1
+Successfully installed jekyll-sass-converter-2.0.1
+Successfully installed kramdown-2.1.0
+Successfully installed kramdown-parser-gfm-1.1.0
+</code></pre></div></div>
+
+<p>希望对你们有点帮助！
+I hope it helps!</p>
+
+
+      </article>
+      <div class="share">
+        <div class="share-component"></div>
+      </div>
+      <div class="comment">
+        
+
+  
+
+  
+        <div id="gitalk-container"></div>
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script>
+        var gitalk = new Gitalk({
+            id: '/2019/11/21/gem_install_jekyll_permission/',
+            clientID: '4cef70907f5b36353d59',
+            clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
+            repo: 'zhenyu0519.github.io',
+            owner: 'zhenyu0519',
+            admin: ['zhenyu0519'],
+            labels: ['gitment'],
+            perPage: 50,
+        })
+        gitalk.render('gitalk-container')
+        </script>
+  
+
+
+      </div>
+    </div>
+    <div class="column one-fourth">
+      
+<h3>Search</h3>
+<div id="site_search">
+    <input type="text" id="search_box" placeholder="Search">
+</div>
+
+<ul id="search_results"></ul>
+
+<link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/modules/sidebar-search.css">
+<script src="http://localhost:4000/assets/js/simple-jekyll-search.min.js"></script>
+<script src="http://localhost:4000/assets/js/search.js"></script>
+
+<script type="text/javascript">
+SimpleJekyllSearch({
+    searchInput: document.getElementById('search_box'),
+    resultsContainer: document.getElementById('search_results'),
+    json: 'http://localhost:4000/assets/search_data.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No results found',
+    limit: 10,
+    fuzzy: false,
+    exclude: ['Welcome']
+})
+</script>
+
+      
+<h3 class="post-directory-title mobile-hidden">Table of Contents</h3>
+<div id="post-directory-module" class="mobile-hidden">
+  <section class="post-directory">
+  <!-- Links that trigger the jumping -->
+  <!-- Added by javascript below -->
+  <dl></dl>
+  </section>
+</div>
+
+<script src="http://localhost:4000/assets/js/jquery.toc.js"></script>
+
+    </div>
+  </div>
+</section>
+<!-- /section.content -->
+    <footer class="container">
+        <div class="site-footer" role="contentinfo">
+            <div class="copyright left mobile-block">
+                    © 2019
+                    <span title="Jeffrey">Jeffrey</span>
+                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
+            </div>
+
+            <ul class="site-footer-links right mobile-hidden">
+                <li>
+                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
+                </li>
+            </ul>
+            <a href="https://github.com/zhenyu0519/zhenyu0519.github.io" target="_blank" aria-label="view source code">
+                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+            </a>
+            <ul class="site-footer-links mobile-hidden">
+                
+                <li>
+                    <a href="http://localhost:4000/" title="Home" target="">Home</a>
+                </li>
+                
+                <li>
+                    <a href="http://localhost:4000/categories/" title="Categories" target="">Categories</a>
+                </li>
+                
+                <li>
+                    <a href="http://localhost:4000/about/" title="About" target="">About</a>
+                </li>
+                
+                <li><a href="http://localhost:4000/feed.xml"><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
+            </ul>
+
+        </div>
+    </footer>
+    <div class="tools-wrapper">
+      <a class="gotop" href="#" title="回到顶部"><span class="octicon octicon-arrow-up"></span></a>
+    </div>
+    <!-- / footer -->
+    <script src="http://localhost:4000/assets/vendor/share.js/dist/js/share.min.js"></script>
+    <script src="http://localhost:4000/assets/js/geopattern.js"></script>
+    <script src="http://localhost:4000/assets/js/prism.js"></script>
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/globals/prism.css">
+    <script>
+      jQuery(document).ready(function($) {
+        // geopattern
+        $('.geopattern').each(function(){
+          $(this).geopattern($(this).data('pattern-id'));
+        });
+       // hljs.initHighlightingOnLoad();
+      });
+    </script>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div style="display:none">
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-113380665-1', 'auto');
+        ga('send', 'pageview');
+
+      </script>
+    </div>
+    
+</body>
+</html>

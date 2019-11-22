@@ -66,6 +66,13 @@
     } ,
   
     {
+      "title"    : "MAC Mojave下，gem安装package(jekyll)出现的问题以及解决方法/Trouble shooting gem install packages (jekyll) under Mac Mojave(中文/英语)",
+      "category" : "TroubleShoot",
+      
+      "url"      : "http://localhost:4000/2019/11/21/gem_install_jekyll_permission/"
+    } ,
+  
+    {
       "title"    : "记第一次白板面试",
       "category" : "Interview",
       
