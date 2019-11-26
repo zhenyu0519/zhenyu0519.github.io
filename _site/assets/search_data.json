@@ -77,6 +77,13 @@
       "category" : "Interview",
       
       "url"      : "http://localhost:4000/2019/11/21/first_white_boarding_interview/"
+    } ,
+  
+    {
+      "title"    : "继续前行",
+      "category" : "Life",
+      
+      "url"      : "http://localhost:4000/2019/11/26/keep_it_up/"
     } 
   
 ]
