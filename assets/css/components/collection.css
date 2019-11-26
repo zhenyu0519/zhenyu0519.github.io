@@ -18,13 +18,17 @@
 }
 .collection-head.small {
   background-image: url("/assets/images/lego-backgroud.jpg");
-  padding: 0.8rem 0;
+  /* padding: 0.8rem 0; */
+  height: 25rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .collection-head.small .collection-title {
   padding: 10px 0;
 }
 .collection-head.small .collection-title h1.collection-header {
-  font-size: 30px;
+  font-size: 25px;
 }
 .collection-head a {
   color: #fff;
@@ -56,7 +60,7 @@
   left: 0;
 }
 .collection-head .collection-header {
-  margin-top: 70%;
+  margin-top: 10%;
   font-size: 35px;
   line-height: 1.5;
   font-weight: 400;
