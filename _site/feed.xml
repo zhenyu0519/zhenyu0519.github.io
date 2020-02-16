@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-11-26T08:46:35-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">继续前行</title><link href="http://localhost:4000/2019/11/26/keep_it_up/" rel="alternate" type="text/html" title="继续前行" /><published>2019-11-26T00:00:00-08:00</published><updated>2019-11-26T00:00:00-08:00</updated><id>http://localhost:4000/2019/11/26/keep_it_up</id><content type="html" xml:base="http://localhost:4000/2019/11/26/keep_it_up/">&lt;h2&gt;&lt;img src=&quot;/images/blog/lake_tree.jpg&quot; alt=&quot;Lake And Tree&quot; /&gt;&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-02-16T01:13:38-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">刷了300道题后的心得</title><link href="http://localhost:4000/2020/02/15/Leetcode_milestone/" rel="alternate" type="text/html" title="刷了300道题后的心得" /><published>2020-02-15T00:00:00-08:00</published><updated>2020-02-15T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/15/Leetcode_milestone</id><content type="html" xml:base="http://localhost:4000/2020/02/15/Leetcode_milestone/">&lt;p&gt;跌跌撞撞的刷完了300道题，有点心得和感概&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;停下来品味&quot;&gt;停下来，品味&lt;/h2&gt;
+&lt;p&gt;这个礼拜结束，总共刷了302道题，参加了三次线上算法比赛。感觉旅途应该是走走停停的。所以，现在是时候回头看一下过往的风景，品味一番走过的旅程。&lt;/p&gt;
+
+&lt;h2 id=&quot;感慨&quot;&gt;感慨&lt;/h2&gt;
+&lt;p&gt;时间退回半年前。还记得刚开始刷题的时候一头雾水，题目读不懂，读懂了，没思路，有思路了，又写不出代码，写出来了，又没办法优化，一度想要放弃。人最强大的不是身体而是信念。为了让自己不受打扰，一个人跑到学校图书馆，假装学生，蹭电蹭网蹭座椅。现在想来还蛮有趣的。那时候给自己定了目标是275道题，后来发现有些经典的题目没刷到，果断把目标定为300道。&lt;/p&gt;
+
+&lt;h2 id=&quot;收获&quot;&gt;收获&lt;/h2&gt;
+&lt;p&gt;最大的收获应该是对数据结构以及一些算法的了解。在此之前，我连最基本的递归都搞不明白，一道斐波那契数列我要想好半天。从算法上来说，以前基本只用循环嵌套，其他的基本不用也就不会了。现在通过刷题我掌握了递归，回溯，双指针，深度优先，广度优先，动态规划，前缀和，分治等算法。而数据结构方面，除了常用的数组之外，我还练习了大量的链表，哈希表，树，字典，集合。当然，我距离精通还有一定的距离，算法和数据结构其实可以刨的很深。我也见识过这方面真的很牛的大神。跟他们比起来，我就像星辰一样暗淡。但于我而言，我终究是踏过了这道门槛，终于开始走向进阶之路。很多人在门外徘徊很久后最终选择放弃，然后归咎于自己的智商和天赋。我觉得其实归咎于懒惰和恐惧。我也走过相同的日子，但是最终我选择坚持。现在的我并不恐惧算法数据结构，甚至我已经喜欢上了接受这样的挑战，我享受自信的同时也享受挫折，因为每一次挫折的背后都可以让我学到更多的东西。&lt;/p&gt;
+
+&lt;h2 id=&quot;接下来&quot;&gt;接下来&lt;/h2&gt;
+&lt;p&gt;接下来我要开始复刷，这主要是为了查漏补缺自己的知识点，此外巩固加深印象。对于一个资质平凡的普通程序员来说，最好的方法就是读书三遍，其义自现。复刷的速度要跟上，因为都是做过的题，所以重在总结方法。每周的线上比赛不能停，每周定期做mock up面试，同时简历要跟上。接下来又会很忙，这是开心的。每天都要定期更新博客分享思路，如果能把一道题给别人讲明白，这才叫掌握。然后每天至少一道数据库的题目。&lt;/p&gt;
+
+&lt;h2 id=&quot;写在最后&quot;&gt;写在最后&lt;/h2&gt;
+&lt;p&gt;很多人都知道，刷题是FLAG这些公司的敲门砖。但是真的去做的没多少。其实刷题真的没有那么可怕，我相信每一个决心开始，并且坚持下去的程序员一定会得到自己想要的结果。我对此深信不疑！&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">跌跌撞撞的刷完了300道题，有点心得和感概</summary></entry><entry><title type="html">继续前行</title><link href="http://localhost:4000/2019/11/26/keep_it_up/" rel="alternate" type="text/html" title="继续前行" /><published>2019-11-26T00:00:00-08:00</published><updated>2019-11-26T00:00:00-08:00</updated><id>http://localhost:4000/2019/11/26/keep_it_up</id><content type="html" xml:base="http://localhost:4000/2019/11/26/keep_it_up/">&lt;h2&gt;&lt;img src=&quot;/images/blog/lake_tree.jpg&quot; alt=&quot;Lake And Tree&quot; /&gt;&lt;/h2&gt;
 &lt;h3 id=&quot;提醒自己不要忘记从青铜变成王者的初心&quot;&gt;提醒自己，不要忘记从青铜变成王者的初心！&lt;/h3&gt;
 
 &lt;hr /&gt;
