@@ -94,10 +94,17 @@
     } ,
   
     {
-      "title"    : "leetcode 5.Longest Palindromic Substring (Python)",
+      "title"    : "leetcode 5. Longest Palindromic Substring (Python)",
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/02/17/lc05/"
+    } ,
+  
+    {
+      "title"    : "leetcode 654. Maximum Binary Tree (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/02/17/lc654/"
     } 
   
 ]

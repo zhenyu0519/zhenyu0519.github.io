@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>leetcode 5. Longest Palindromic Substring (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <title>leetcode 654. Maximum Binary Tree (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
     <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-css/css/primer.css">
     <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-markdown/dist/user-content.min.css">
     <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/octicons/octicons/octicons.css">
@@ -21,23 +21,23 @@
     
 
     
-    <link rel="canonical" href="https://zhenyu0519.github.io/2020/02/17/lc05/">
+    <link rel="canonical" href="https://zhenyu0519.github.io/2020/02/17/lc654/">
     <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="https://zhenyu0519.github.io/feed.xml">
     <link rel="shortcut icon" href="https://zhenyu0519.github.io/favicon.ico">
     
-    <meta property="og:title" content="leetcode 5. Longest Palindromic Substring (Python)">
+    <meta property="og:title" content="leetcode 654. Maximum Binary Tree (Python)">
       
-    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 5, Longest Palindromic Substring, zhenyu">
-    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 5, Longest Palindromic Substring, zhenyu">
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 654, Maximum Binary Tree, zhenyu">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 654, Maximum Binary Tree, zhenyu">
       
-    <meta name="description" content="Related TopicDynamic Programming, String">
-    <meta name="og:description" content="Related TopicDynamic Programming, String">
+    <meta name="description" content="Related TopicTree, Depth-First-Search">
+    <meta name="og:description" content="Related TopicTree, Depth-First-Search">
       
     
     
         
     
-    <meta property="og:url" content="https://zhenyu0519.github.io/2020/02/17/lc05/">
+    <meta property="og:url" content="https://zhenyu0519.github.io/2020/02/17/lc654/">
     <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="zh_CN" />
@@ -70,12 +70,12 @@
     </header>
     <!-- / header -->
 
-    <section class="collection-head small" data-pattern-id="leetcode 5. Lon">
+    <section class="collection-head small" data-pattern-id="leetcode 654. M">
   <div class="container">
     <div class="columns">
       <div class="column three-fourths">
         <div class="collection-title">
-          <h1 class="collection-header">leetcode 5. Longest Palindromic Substring (Python)</h1>
+          <h1 class="collection-header">leetcode 654. Maximum Binary Tree (Python)</h1>
           <div class="collection-info">
             
             <span class="meta-info">
@@ -90,12 +90,12 @@
             
             <span class="meta-info">
               <span class="octicon octicon-file-directory"></span>
-              <a href="https://zhenyu0519.github.io/categories/#Dynamic-Programming" title="Dynamic-Programming">Dynamic-Programming</a>
+              <a href="https://zhenyu0519.github.io/categories/#Depth-First-Search" title="Depth-First-Search">Depth-First-Search</a>
             </span>
             
             <span class="meta-info">
               <span class="octicon octicon-file-directory"></span>
-              <a href="https://zhenyu0519.github.io/categories/#String" title="String">String</a>
+              <a href="https://zhenyu0519.github.io/categories/#Tree" title="Tree">Tree</a>
             </span>
             
           </div>
@@ -110,61 +110,61 @@
     <div class="column three-fourths">
       <article class="article-content markdown-body">
         <h1 id="related-topic">Related Topic</h1>
-<p>Dynamic Programming, String</p>
+<p>Tree, Depth-First-Search</p>
 
 <h1 id="description">Description</h1>
-<p>Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.</p>
+<p>Given an integer array with no duplicates. A maximum tree building on this array is defined as follow:</p>
+
+<ol>
+  <li>The root is the maximum number in the array.</li>
+  <li>The left subtree is the maximum tree constructed from left part subarray divided by the maximum number.</li>
+  <li>The right subtree is the maximum tree constructed from right part subarray divided by the maximum number.
+Construct the maximum tree by the given array and output the root node of this tree.</li>
+</ol>
 
 <h2 id="sample-io">Sample I/O</h2>
 <h3 id="example-1">Example 1</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "babad"
-Output: "bab"
-Note: "aba" is also a valid answer.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: [3,2,1,6,0,5]
+Output: return the tree root node representing the following tree:
+
+      6
+    /   \
+   3     5
+    \    / 
+     2  0   
+       \
+        1
 </code></pre></div></div>
 
-<h3 id="example-2">Example 2</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "cbbd"
-Output: "bb"
-</code></pre></div></div>
+<h3 id="note">Note:</h3>
+<p>The size of the given array will be in the range [1,1000].</p>
 
 <h1 id="methodology">Methodology</h1>
-<p>Iterate the whole string by each character.
-For each character, there are two pointers.</p>
-<ul>
-  <li>The left pointer: The index of previous character in terms of current character.</li>
-  <li>The right pointer: The index of next character in terms of current character.</li>
-</ul>
+<p>Using DFS to recursively get the sub-list which contains the numbers that represented node values for left sub-stree. 
+Convert the maximum value of current list be the root node of sub-tree.
+Then the left parts of list that exclusice the maximum value will constructed as left sub-stree of the current root.
+And the right parts of list that exclusice the maximum value will constructed as right substree of the current root.</p>
 
 <h4 id="conditions">Conditions</h4>
 <ul>
-  <li>If previous character and next character are same. We move the left pointer one index to the left and move the right pointer on index to the right.</li>
-  <li>If the left pointer or right pointer out of index or previous character and next character are not equal, return the string that in range between left and right pointers.
-If the returned string is longer than the longest string, replace the longest string by returned string.</li>
+  <li>If there is no value in the list, which means there are no more nodes to construct the sub-tree, terminate the current recursion.</li>
 </ul>
 
-<p>After done the iteration, return longest string as answer</p>
+<p>After done the recursion, return the root node of the tree</p>
 
 <h1 id="code">Code</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">longestPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="n">longest</span> <span class="o">=</span> <span class="s">''</span>
-        <span class="k">def</span> <span class="nf">findLongest</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
-            <span class="k">while</span> <span class="n">l</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">r</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">==</span> <span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="p">]:</span>
-                <span class="n">l</span><span class="o">-=</span><span class="mi">1</span>
-                <span class="n">r</span><span class="o">+=</span><span class="mi">1</span>
-            <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">r</span><span class="p">]</span>
-        
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
-            <span class="n">s1</span> <span class="o">=</span> <span class="n">findLongest</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">longest</span><span class="p">):</span> <span class="n">longest</span> <span class="o">=</span> <span class="n">s1</span>
-            
-            <span class="n">s2</span> <span class="o">=</span> <span class="n">findLongest</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">longest</span><span class="p">):</span> <span class="n">longest</span> <span class="o">=</span> <span class="n">s2</span>
-                
-        <span class="k">return</span> <span class="n">longest</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">constructMaximumBinaryTree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">TreeNode</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">nums</span><span class="p">:</span><span class="k">return</span>
+        <span class="n">mx</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+        <span class="n">index</span><span class="o">=</span><span class="n">nums</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">mx</span><span class="p">)</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">mx</span><span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">constructMaximumBinaryTree</span><span class="p">(</span><span class="n">nums</span><span class="p">[:</span><span class="n">index</span><span class="p">])</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">constructMaximumBinaryTree</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">:])</span>
+        <span class="k">return</span> <span class="n">root</span>
 </code></pre></div></div>
 
 <h1 id="bigo">BigO</h1>
-<p>When iterate the whole string, the BigO is O(n) where n is size of the string. Each character will need at most n/2 iteration to find if the string block is palindromic. So bigO is O(n*n/2) which is O(n^2)</p>
+<p>When use recursion to get sub-list for left sub-tree, the BigO is logN and to get sub-list for right sub-tree will be same. Therefor the BigO is O(2*logN) Which is O(logN)</p>
 
 
       </article>
@@ -182,7 +182,7 @@ If the returned string is longer than the longest string, replace the longest st
         <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
         <script>
         var gitalk = new Gitalk({
-            id: '/2020/02/17/lc05/',
+            id: '/2020/02/17/lc654/',
             clientID: '4cef70907f5b36353d59',
             clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
             repo: 'zhenyu0519.github.io',
