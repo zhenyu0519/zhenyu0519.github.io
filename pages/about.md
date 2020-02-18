@@ -7,17 +7,14 @@ comments: true
 menu: About
 permalink: /about/
 ---
-
-Jeffrey Is A Programmer
-
-## Connect
-
+# Connect
+<div class="btn-inline">
 {% for website in site.data.social %}
-* {{ website.sitename }}：[@{{ website.name }}]({{ website.url }})
+<a href="{{ website.url }}" class="btn btn-outline" type="button">{{ website.sitename }}</a>
 {% endfor %}
+</div>
 
-## Skill Keywords
-
+# Skill Keywords
 {% for category in site.data.skills %}
 ### {{ category.name }}
 <div class="btn-inline">

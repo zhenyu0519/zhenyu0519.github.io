@@ -27,7 +27,7 @@
     <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="https://zhenyu0519.github.io/feed.xml">
     <link rel="shortcut icon" href="https://zhenyu0519.github.io/favicon.ico">
     
-    <meta name="keywords" content="Diary, Jeffrey, Techonlogy, github pages, Post, North America">
+    <meta name="keywords" content="Diary, Jeffrey, Techonlogy, github pages, Post, North America, Leetcode, Interview">
     <meta name="description" content="Personal Blog">
     
     
@@ -99,8 +99,8 @@
 Tree, Depth-First-Search
                     </p>
                     <p class="repo-list-meta">
-                        <span class="meta-info">
-                          <span class="octicon octicon-calendar"></span> 2020/02/17
+                        <span class="meta-info posts-list-meta">
+                          <span class="octicon octicon-calendar"></span> 17 Feb 2020
                         </span>
                         
                         <span class="meta-info">
@@ -130,8 +130,8 @@ Tree, Depth-First-Search
 Dynamic Programming, String
                     </p>
                     <p class="repo-list-meta">
-                        <span class="meta-info">
-                          <span class="octicon octicon-calendar"></span> 2020/02/17
+                        <span class="meta-info posts-list-meta">
+                          <span class="octicon octicon-calendar"></span> 17 Feb 2020
                         </span>
                         
                         <span class="meta-info">
@@ -160,8 +160,8 @@ Dynamic Programming, String
                         跌跌撞撞的刷完了300道题，有点心得和感概
                     </p>
                     <p class="repo-list-meta">
-                        <span class="meta-info">
-                          <span class="octicon octicon-calendar"></span> 2020/02/15
+                        <span class="meta-info posts-list-meta">
+                          <span class="octicon octicon-calendar"></span> 15 Feb 2020
                         </span>
                         
                         <span class="meta-info">
@@ -180,8 +180,8 @@ Dynamic Programming, String
                         提醒自己，不要忘记从青铜变成王者的初心！
                     </p>
                     <p class="repo-list-meta">
-                        <span class="meta-info">
-                          <span class="octicon octicon-calendar"></span> 2019/11/26
+                        <span class="meta-info posts-list-meta">
+                          <span class="octicon octicon-calendar"></span> 26 Nov 2019
                         </span>
                         
                         <span class="meta-info">
@@ -200,8 +200,8 @@ Dynamic Programming, String
                         最近得到一个面试，这刚好是一个检验最近刷题成果的好机会。
                     </p>
                     <p class="repo-list-meta">
-                        <span class="meta-info">
-                          <span class="octicon octicon-calendar"></span> 2019/11/21
+                        <span class="meta-info posts-list-meta">
+                          <span class="octicon octicon-calendar"></span> 21 Nov 2019
                         </span>
                         
                         <span class="meta-info">
@@ -220,8 +220,8 @@ Dynamic Programming, String
                         今天踩坑了，用gem安装jekyll的时候各种报错，网上的一些解决方法，要不就是行不通，要不就是零散破碎不完整，花了点时间把这个问题搞定，整理完之后顺便分享一下，帮助大家节省一点时间。
                     </p>
                     <p class="repo-list-meta">
-                        <span class="meta-info">
-                          <span class="octicon octicon-calendar"></span> 2019/11/21
+                        <span class="meta-info posts-list-meta">
+                          <span class="octicon octicon-calendar"></span> 21 Nov 2019
                         </span>
                         
                         <span class="meta-info">
@@ -240,8 +240,8 @@ Dynamic Programming, String
                         Github Pages 推荐使用 Markdown 语言编写博客内容。今天就来说一下Markdown
                     </p>
                     <p class="repo-list-meta">
-                        <span class="meta-info">
-                          <span class="octicon octicon-calendar"></span> 2019/09/15
+                        <span class="meta-info posts-list-meta">
+                          <span class="octicon octicon-calendar"></span> 15 Sep 2019
                         </span>
                         
                         <span class="meta-info">
@@ -260,8 +260,8 @@ Dynamic Programming, String
                         很久以前就知道有GitHub Pages，只是最近才有时间创建。并不很难，因为模版用别人的，只是做了一些配置上的调整，然后稍稍的改了一些样式就上线了。GitHub Pages本身只是个静态网站，而且部署，后台什么的都不用自己操心。当然，如果要完全做成自己的风格，那就另说，因为写一个稍微好看点的主题还是需要时间的。朴素一点，大家都能接受就足够了。这样我有更多的时间将重点放在内容上。也许后面会慢慢更新布局，外观。但是现在就先这样好了。
                     </p>
                     <p class="repo-list-meta">
-                        <span class="meta-info">
-                          <span class="octicon octicon-calendar"></span> 2019/08/15
+                        <span class="meta-info posts-list-meta">
+                          <span class="octicon octicon-calendar"></span> 15 Aug 2019
                         </span>
                         
                         <span class="meta-info">
@@ -277,7 +277,7 @@ Dynamic Programming, String
         <div class="column one-third">
             
 <h3>Search</h3>
-<div id="site_search">
+<div id="site_search" class="site_search">
     <input type="text" id="search_box" placeholder="Search">
 </div>
 
@@ -294,9 +294,9 @@ SimpleJekyllSearch({
     json: 'https://zhenyu0519.github.io/assets/search_data.json',
     searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
     noResultsText: 'No results found',
-    limit: 10,
     fuzzy: false,
-    exclude: ['Welcome']
+    exclude: ['Welcome'],
+    limit: 10
 })
 </script>
 

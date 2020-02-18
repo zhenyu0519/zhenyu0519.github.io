@@ -79,7 +79,7 @@
           <div class="collection-info">
             
             <span class="meta-info">
-              <span class="octicon octicon-calendar"></span> 2020/02/17
+              <span class="octicon octicon-calendar"></span> 17 Feb 2020
             </span>
             
             
@@ -201,7 +201,7 @@ If the returned string is longer than the longest string, replace the longest st
     <div class="column one-fourth">
       
 <h3>Search</h3>
-<div id="site_search">
+<div id="site_search" class="site_search">
     <input type="text" id="search_box" placeholder="Search">
 </div>
 
@@ -218,9 +218,9 @@ SimpleJekyllSearch({
     json: 'https://zhenyu0519.github.io/assets/search_data.json',
     searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
     noResultsText: 'No results found',
-    limit: 10,
     fuzzy: false,
-    exclude: ['Welcome']
+    exclude: ['Welcome'],
+    limit: 10
 })
 </script>
 

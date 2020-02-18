@@ -1,6 +1,6 @@
 
 <h3>Search</h3>
-<div id="site_search">
+<div id="site_search" class="site_search">
     <input type="text" id="search_box" placeholder="Search">
 </div>
 
@@ -17,8 +17,8 @@ SimpleJekyllSearch({
     json: '{{ site.url }}/assets/search_data.json',
     searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
     noResultsText: 'No results found',
-    limit: {{ site.simple_jekyll_search.limit }},
     fuzzy: false,
-    exclude: ['Welcome']
+    exclude: ['Welcome'],
+    limit: {{ site.simple_jekyll_search.limit }}
 })
 </script>

@@ -44,8 +44,8 @@ comments: false
                         {{ post.excerpt | strip_html | strip }}
                     </p>
                     <p class="repo-list-meta">
-                        <span class="meta-info">
-                          <span class="octicon octicon-calendar"></span> {{ post.date | date: "%Y/%m/%d" }}
+                        <span class="meta-info posts-list-meta">
+                          <span class="octicon octicon-calendar"></span> {{ post.date | date_to_string }}
                         </span>
                         {% for cat in post.categories %}
                         <span class="meta-info">

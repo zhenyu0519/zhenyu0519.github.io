@@ -1,21 +1,21 @@
 - sitename: GitHub
   name: Jeffrey
-  url: https://github.com/zhenyu0519
+  url: "https://github.com/zhenyu0519"
 
 
 - sitename: LinkedIn
   name: Jeffrey
-  url: https://www.linkedin.com/in/zhenyu-zhang
+  url: "https://www.linkedin.com/in/zhenyu-zhang"
 
 
-- sitename: Facebook
-  name: Jeffrey
-  url: https://www.facebook.com/chuang.chenyoo
+# - sitename: Facebook
+#   name: Jeffrey
+#   url: https://www.facebook.com/chuang.chenyoo
 
 
-- sitename: Instagram
-  name: Jeffrey
-  url: https://www.instagram.com/zhenyuzzy
+# - sitename: Instagram
+#   name: Jeffrey
+#   url: https://www.instagram.com/zhenyuzzy
 
 
 

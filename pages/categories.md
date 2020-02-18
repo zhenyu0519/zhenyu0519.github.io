@@ -1,7 +1,7 @@
 ---
 layout: categories
 title: Categories
-description: 哈哈，你找到了我的文章基因库
+description: categories template
 keywords: 分类
 comments: false
 menu: 分类
@@ -15,7 +15,7 @@ permalink: /categories/
 <ol class="posts-list" id="{{ category[0] }}">
 {% for post in category.last %}
 <li class="posts-list-item">
-<span class="posts-list-meta">{{ post.date | date:"%Y-%m-%d" }}</span>
+<span class="posts-list-meta">{{ post.date | date_to_string }}/</span>
 <a class="posts-list-name" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
 </li>
 {% endfor %}
