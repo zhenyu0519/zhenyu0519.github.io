@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Categories &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <title>leetcode 5.Longest Palindromic Substring (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
     <link rel="stylesheet" href="http://localhost:4000/assets/vendor/primer-css/css/primer.css">
     <link rel="stylesheet" href="http://localhost:4000/assets/vendor/primer-markdown/dist/user-content.min.css">
     <link rel="stylesheet" href="http://localhost:4000/assets/vendor/octicons/octicons/octicons.css">
@@ -21,26 +21,28 @@
     
 
     
-    <link rel="canonical" href="http://localhost:4000/categories/">
+    <link rel="canonical" href="http://localhost:4000/2020/02/17/lc05/">
     <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="http://localhost:4000/feed.xml">
     <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
     
-    <meta property="og:title" content="Categories">
+    <meta property="og:title" content="leetcode 5.Longest Palindromic Substring (Python)">
       
-    <meta name="keywords" content="分类">
-    <meta name="og:keywords" content="分类">
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python">
       
-    <meta name="description" content="哈哈，你找到了我的文章基因库">
-    <meta name="og:description" content="哈哈，你找到了我的文章基因库">
+    <meta name="description" content="DescriptionGiven a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.">
+    <meta name="og:description" content="DescriptionGiven a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.">
       
     
     
         
     
-    <meta property="og:url" content="http://localhost:4000/categories/">
+    <meta property="og:url" content="http://localhost:4000/2020/02/17/lc05/">
     <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="zh_CN" />
+    
+    <meta property="article:published_time" content="2020-02-17">
     
     <script src="http://localhost:4000/assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="http://localhost:4000/assets/js/jquery-ui.js"></script>
@@ -68,129 +70,138 @@
     </header>
     <!-- / header -->
 
-    <section class="collection-head small" data-pattern-id="Categories">
-    <div class="container">
-        <div class="columns">
-            <div class="column three-fourths">
-                <div class="collection-title">
-                    <h1 class="collection-header">Categories</h1>
-                </div>
-            </div>
+    <section class="collection-head small" data-pattern-id="leetcode 5.Long">
+  <div class="container">
+    <div class="columns">
+      <div class="column three-fourths">
+        <div class="collection-title">
+          <h1 class="collection-header">leetcode 5.Longest Palindromic Substring (Python)</h1>
+          <div class="collection-info">
+            
+            <span class="meta-info">
+              <span class="octicon octicon-calendar"></span> 2020/02/17
+            </span>
+            
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="http://localhost:4000/categories/#Leetcode," title="Leetcode,">Leetcode,</a>
+            </span>
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="http://localhost:4000/categories/#Dynamic" title="Dynamic">Dynamic</a>
+            </span>
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="http://localhost:4000/categories/#Programming," title="Programming,">Programming,</a>
+            </span>
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="http://localhost:4000/categories/#String" title="String">String</a>
+            </span>
+            
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 <!-- / .banner -->
 <section class="container content">
-    <div class="columns">
-        <div class="column three-fourths">
-            <article class="article-content markdown-body">
-                <section class="container posts-content">
+  <div class="columns">
+    <div class="column three-fourths">
+      <article class="article-content markdown-body">
+        <h1 id="description">Description</h1>
+<p>Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.</p>
 
+<h2 id="sample-io">Sample I/O</h2>
+<h3 id="example-1">Example 1</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "babad"
+Output: "bab"
+Note: "aba" is also a valid answer.
+</code></pre></div></div>
 
-<h3>Dynamic</h3>
-<ol class="posts-list" id="Dynamic">
+<h3 id="example-2">Example 2</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "cbbd"
+Output: "bb"
+</code></pre></div></div>
 
-<li class="posts-list-item">
-<span class="posts-list-meta">2020-02-17</span>
-<a class="posts-list-name" href="http://localhost:4000/2020/02/17/lc05/">leetcode 5.Longest Palindromic Substring (Python)</a>
-</li>
+<h1 id="methodology">Methodology</h1>
+<p>Iterate the whole string by each character.
+For each character, there are two pointers.</p>
+<ul>
+  <li>The left pointer: The index of previous character in terms of current character.</li>
+  <li>The right pointer: The index of next character in terms of current character.</li>
+</ul>
 
-</ol>
+<h4 id="conditions">Conditions</h4>
+<ul>
+  <li>If previous character and next character are same. We move the left pointer one index to the left and move the right pointer on index to the right.</li>
+  <li>If the left pointer or right pointer out of index or previous character and next character are not equal, return the string that in range between left and right pointers.
+If the returned string is longer than the longest string, replace the longest string by returned string.</li>
+</ul>
 
-<h3>Interview</h3>
-<ol class="posts-list" id="Interview">
+<p>After done the iteration, return longest string as answer</p>
 
-<li class="posts-list-item">
-<span class="posts-list-meta">2020-02-15</span>
-<a class="posts-list-name" href="http://localhost:4000/2020/02/15/Leetcode_milestone/">刷了300道题后的心得</a>
-</li>
-
-<li class="posts-list-item">
-<span class="posts-list-meta">2019-11-21</span>
-<a class="posts-list-name" href="http://localhost:4000/2019/11/21/first_white_boarding_interview/">记第一次白板面试</a>
-</li>
-
-</ol>
-
-<h3>Leetcode,</h3>
-<ol class="posts-list" id="Leetcode,">
-
-<li class="posts-list-item">
-<span class="posts-list-meta">2020-02-17</span>
-<a class="posts-list-name" href="http://localhost:4000/2020/02/17/lc05/">leetcode 5.Longest Palindromic Substring (Python)</a>
-</li>
-
-</ol>
-
-<h3>Life</h3>
-<ol class="posts-list" id="Life">
-
-<li class="posts-list-item">
-<span class="posts-list-meta">2019-11-26</span>
-<a class="posts-list-name" href="http://localhost:4000/2019/11/26/keep_it_up/">继续前行</a>
-</li>
-
-<li class="posts-list-item">
-<span class="posts-list-meta">2019-08-15</span>
-<a class="posts-list-name" href="http://localhost:4000/2019/08/15/Intro/">新博客开篇，献给过去，现在，未来的自己</a>
-</li>
-
-</ol>
-
-<h3>Markdown</h3>
-<ol class="posts-list" id="Markdown">
-
-<li class="posts-list-item">
-<span class="posts-list-meta">2019-09-15</span>
-<a class="posts-list-name" href="http://localhost:4000/2019/09/15/markdown/">简明的 Markdown 笔记</a>
-</li>
-
-</ol>
-
-<h3>Programming,</h3>
-<ol class="posts-list" id="Programming,">
-
-<li class="posts-list-item">
-<span class="posts-list-meta">2020-02-17</span>
-<a class="posts-list-name" href="http://localhost:4000/2020/02/17/lc05/">leetcode 5.Longest Palindromic Substring (Python)</a>
-</li>
-
-</ol>
-
-<h3>String</h3>
-<ol class="posts-list" id="String">
-
-<li class="posts-list-item">
-<span class="posts-list-meta">2020-02-17</span>
-<a class="posts-list-name" href="http://localhost:4000/2020/02/17/lc05/">leetcode 5.Longest Palindromic Substring (Python)</a>
-</li>
-
-</ol>
-
-<h3>TroubleShoot</h3>
-<ol class="posts-list" id="TroubleShoot">
-
-<li class="posts-list-item">
-<span class="posts-list-meta">2019-11-21</span>
-<a class="posts-list-name" href="http://localhost:4000/2019/11/21/gem_install_jekyll_permission/">MAC Mojave下，gem安装package(jekyll)出现的问题以及解决方法/Trouble shooting gem install packages (jekyll) under Mac Mojave(中文/英语)</a>
-</li>
-
-</ol>
-
-</section>
-<!-- /section.content -->
-
-            </article>
-            <div class="share">
-                <div class="share-component"></div>
-            </div>
-            <div class="comment">
-                
-
-            </div>
-        </div>
-        <div class="column one-fourth">
+<h1 id="code">Code</h1>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def longestPalindrome(self, s: str) -&gt; str:
+        longest = ''
+        def findLongest(s, l, r):
+            while l&gt;=0 and r&lt;len(s) and s[l] == s[r]:
+                l-=1
+                r+=1
+            return s[l+1:r]
+        
+        for i in range(len(s)):
+            s1 = findLongest(s, i, i)
+            if len(s1) &gt; len(longest): longest = s1
             
+            s2 = findLongest(s, i, i+1)
+            if len(s2) &gt; len(longest): longest = s2
+                
+        return longest
+</code></pre></div></div>
+
+<h1 id="bigo">BigO</h1>
+<p>When iterate the whole string, the BigO is O(n) where n is size of the string. Each character will need at most n/2 iteration to find if the string block is palindromic. So bigO is O(n*n/2) which is O(n^2)</p>
+
+
+      </article>
+      <div class="share">
+        <div class="share-component"></div>
+      </div>
+      <div class="comment">
+        
+
+  
+
+  
+        <div id="gitalk-container"></div>
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script>
+        var gitalk = new Gitalk({
+            id: '/2020/02/17/lc05/',
+            clientID: '4cef70907f5b36353d59',
+            clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
+            repo: 'zhenyu0519.github.io',
+            owner: 'zhenyu0519',
+            admin: ['zhenyu0519'],
+            labels: ['gitment'],
+            perPage: 50,
+        })
+        gitalk.render('gitalk-container')
+        </script>
+  
+
+
+      </div>
+    </div>
+    <div class="column one-fourth">
+      
 <h3>Search</h3>
 <div id="site_search">
     <input type="text" id="search_box" placeholder="Search">
@@ -215,66 +226,20 @@ SimpleJekyllSearch({
 })
 </script>
 
-            
-<h3>Blog Categories</h3>
-<div id="blog-categories">
-  <ul class="list-group">
-    
-    
-    <li class="list-group-item">
-    <a href="#Dynamic">Dynamic</a>
-    <span class="badge">1</span>
-    </li>
-    
-    <li class="list-group-item">
-    <a href="#Interview">Interview</a>
-    <span class="badge">2</span>
-    </li>
-    
-    <li class="list-group-item">
-    <a href="#Leetcode,">Leetcode,</a>
-    <span class="badge">1</span>
-    </li>
-    
-    <li class="list-group-item">
-    <a href="#Life">Life</a>
-    <span class="badge">2</span>
-    </li>
-    
-    <li class="list-group-item">
-    <a href="#Markdown">Markdown</a>
-    <span class="badge">1</span>
-    </li>
-    
-    <li class="list-group-item">
-    <a href="#Programming,">Programming,</a>
-    <span class="badge">1</span>
-    </li>
-    
-    <li class="list-group-item">
-    <a href="#String">String</a>
-    <span class="badge">1</span>
-    </li>
-    
-    <li class="list-group-item">
-    <a href="#TroubleShoot">TroubleShoot</a>
-    <span class="badge">1</span>
-    </li>
-    
-  </ul>
+      
+<h3 class="post-directory-title mobile-hidden">Table of Contents</h3>
+<div id="post-directory-module" class="mobile-hidden">
+  <section class="post-directory">
+  <!-- Links that trigger the jumping -->
+  <!-- Added by javascript below -->
+  <dl></dl>
+  </section>
 </div>
 
-<script type="text/javascript">
+<script src="http://localhost:4000/assets/js/jquery.toc.js"></script>
 
-  $(document).ready(function(){
-    $("#blog-categories li").css('text-transform','capitalize')
-  });
-
-</script>
-
-
-        </div>
     </div>
+  </div>
 </section>
 <!-- /section.content -->
     <footer class="container">
