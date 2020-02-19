@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>leetcode 5. Longest Palindromic Substring (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <title>leetcode 70. Climbing Stairs (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
     <link rel="stylesheet" href="http://localhost:4000/assets/vendor/primer-css/css/primer.css">
     <link rel="stylesheet" href="http://localhost:4000/assets/vendor/primer-markdown/dist/user-content.min.css">
     <link rel="stylesheet" href="http://localhost:4000/assets/vendor/octicons/octicons/octicons.css">
@@ -21,28 +21,28 @@
     
 
     
-    <link rel="canonical" href="http://localhost:4000/2020/02/17/lc05/">
+    <link rel="canonical" href="http://localhost:4000/2020/02/18/lc70/">
     <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="http://localhost:4000/feed.xml">
     <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
     
-    <meta property="og:title" content="leetcode 5. Longest Palindromic Substring (Python)">
+    <meta property="og:title" content="leetcode 70. Climbing Stairs (Python)">
       
-    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 5, Longest Palindromic Substring, zhenyu">
-    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 5, Longest Palindromic Substring, zhenyu">
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 70, Climbing Stairs, zhenyu">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 70, Climbing Stairs, zhenyu">
       
-    <meta name="description" content="Related TopicDynamic Programming, String">
-    <meta name="og:description" content="Related TopicDynamic Programming, String">
+    <meta name="description" content="Related TopicDynamic-Programming">
+    <meta name="og:description" content="Related TopicDynamic-Programming">
       
     
     
         
     
-    <meta property="og:url" content="http://localhost:4000/2020/02/17/lc05/">
+    <meta property="og:url" content="http://localhost:4000/2020/02/18/lc70/">
     <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="zh_CN" />
     
-    <meta property="article:published_time" content="2020-02-17">
+    <meta property="article:published_time" content="2020-02-18">
     
     <script src="http://localhost:4000/assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="http://localhost:4000/assets/js/jquery-ui.js"></script>
@@ -70,16 +70,16 @@
     </header>
     <!-- / header -->
 
-    <section class="collection-head small" data-pattern-id="leetcode 5. Lon">
+    <section class="collection-head small" data-pattern-id="leetcode 70. Cl">
   <div class="container">
     <div class="columns">
       <div class="column three-fourths">
         <div class="collection-title">
-          <h1 class="collection-header">leetcode 5. Longest Palindromic Substring (Python)</h1>
+          <h1 class="collection-header">leetcode 70. Climbing Stairs (Python)</h1>
           <div class="collection-info">
             
             <span class="meta-info">
-              <span class="octicon octicon-calendar"></span> 17 Feb 2020
+              <span class="octicon octicon-calendar"></span> 18 Feb 2020
             </span>
             
             
@@ -91,11 +91,6 @@
             <span class="meta-info">
               <span class="octicon octicon-file-directory"></span>
               <a href="http://localhost:4000/categories/#Dynamic-Programming" title="Dynamic-Programming">Dynamic-Programming</a>
-            </span>
-            
-            <span class="meta-info">
-              <span class="octicon octicon-file-directory"></span>
-              <a href="http://localhost:4000/categories/#String" title="String">String</a>
             </span>
             
           </div>
@@ -110,61 +105,86 @@
     <div class="column three-fourths">
       <article class="article-content markdown-body">
         <h1 id="related-topic">Related Topic</h1>
-<p>Dynamic Programming, String</p>
+<p>Dynamic-Programming</p>
 
 <h1 id="description">Description</h1>
-<p>Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.</p>
+<p>You are climbing a stair case. It takes n steps to reach to the top.</p>
+
+<p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p>
 
 <h2 id="sample-io">Sample I/O</h2>
 <h3 id="example-1">Example 1</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "babad"
-Output: "bab"
-Note: "aba" is also a valid answer.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: 2
+Output: 2
+Explanation: There are two ways to climb to the top.
+1. 1 step + 1 step
+2. 2 steps
 </code></pre></div></div>
 
 <h3 id="example-2">Example 2</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "cbbd"
-Output: "bb"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: 3
+Output: 3
+Explanation: There are three ways to climb to the top.
+1. 1 step + 1 step + 1 step
+2. 1 step + 2 steps
+3. 2 steps + 1 step
 </code></pre></div></div>
 
+<h3 id="note">Note:</h3>
+<p>Given n will be a positive integer.</p>
+
 <h1 id="methodology">Methodology</h1>
-<p>Iterate the whole string by each character.
-For each character, there are two pointers.</p>
-<ul>
-  <li>The left pointer: The index of previous character in terms of current character.</li>
-  <li>The right pointer: The index of next character in terms of current character.</li>
-</ul>
+<p>This question solved by Dynamic Programming.</p>
+<ol>
+  <li>Find the base case
+    <ol>
+      <li>When climb 1 stair, we need 1 step</li>
+      <li>when climb 2 stairs, we need 2 steps which 1+1 or 2</li>
+      <li>when climb 3 stairs, we need 3 steps which 1+1+1, 1+2, 2+1</li>
+      <li>when climb 4 stairs, we need 5 steps which 1+1+1+1, 1+1+2, 1+2+1, 2+1+1, 2+2
+….
+The base case will be:
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dp[1]=1,
+dp[2]=2,
+dp[3]=3,
+dp[4]=5
+.
+.
+.
+</code></pre></div>        </div>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Find the pattern:</p>
+
+    <p>To reach the current stairs for example (stair 4), we can easily add 1 step from last stair (stair 3) and that will give us 1+1+1+1, 1+2+1, 2+1+1. Or we can easily add 2 steps from the one before last stair (stair 2) and that will give us 1+1+2 and 2+2. Since we can only move 1 or 2 steps each time. We do not need more previous stairs. So we get answer 5 in total.</p>
+  </li>
+  <li>
+    <p>Extended option:</p>
+
+    <p>If we can move 1, 2 and 3 steps each time. we only need to add up total ways of last 3 stairs together.</p>
+  </li>
+</ol>
 
 <h4 id="conditions">Conditions</h4>
 <ul>
-  <li>If previous character and next character are same. We move the left pointer one index to the left and move the right pointer on index to the right.</li>
-  <li>If the left pointer or right pointer out of index or previous character and next character are not equal, return the string that in range between left and right pointers.
-If the returned string is longer than the longest string, replace the longest string by returned string.</li>
+  <li>If stair is 0, we will need 1 step to reach that, I guess this is because, no matter what, you have to pick up 1 or 2 steps. So dp[0] = 1</li>
 </ul>
 
-<p>After done the iteration, return longest string as answer</p>
-
 <h1 id="code">Code</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">longestPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="n">longest</span> <span class="o">=</span> <span class="s">''</span>
-        <span class="k">def</span> <span class="nf">findLongest</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
-            <span class="k">while</span> <span class="n">l</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">r</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">==</span> <span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="p">]:</span>
-                <span class="n">l</span><span class="o">-=</span><span class="mi">1</span>
-                <span class="n">r</span><span class="o">+=</span><span class="mi">1</span>
-            <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">r</span><span class="p">]</span>
-        
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
-            <span class="n">s1</span> <span class="o">=</span> <span class="n">findLongest</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">longest</span><span class="p">):</span> <span class="n">longest</span> <span class="o">=</span> <span class="n">s1</span>
-            
-            <span class="n">s2</span> <span class="o">=</span> <span class="n">findLongest</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">longest</span><span class="p">):</span> <span class="n">longest</span> <span class="o">=</span> <span class="n">s2</span>
-                
-        <span class="k">return</span> <span class="n">longest</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">climbStairs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">n</span><span class="o">&lt;=</span><span class="mi">2</span><span class="p">:</span> <span class="k">return</span> <span class="n">n</span>
+        <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">dp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">dp</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
 </code></pre></div></div>
 
 <h1 id="bigo">BigO</h1>
-<p>When iterate the whole string, the BigO is O(n) where n is size of the string. Each character will need at most n/2 iteration to find if the string block is palindromic. So bigO is O(n*n/2) which is O(n^2)</p>
+<p>We iterate all dp array, it will cost O(n), each value will add up last two value as result, it will cost (1+2), in total will be O(n+2n) and It is O(n)</p>
 
 
       </article>
@@ -182,7 +202,7 @@ If the returned string is longer than the longest string, replace the longest st
         <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
         <script>
         var gitalk = new Gitalk({
-            id: '/2020/02/17/lc05/',
+            id: '/2020/02/18/lc70/',
             clientID: '4cef70907f5b36353d59',
             clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
             repo: 'zhenyu0519.github.io',
