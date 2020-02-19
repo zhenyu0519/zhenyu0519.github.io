@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-02-18T20:18:39-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 70. Climbing Stairs (Python)</title><link href="http://localhost:4000/2020/02/18/lc70/" rel="alternate" type="text/html" title="leetcode 70. Climbing Stairs (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/18/lc70</id><content type="html" xml:base="http://localhost:4000/2020/02/18/lc70/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-02-18T23:28:19-08:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 70. Climbing Stairs (Python)</title><link href="https://zhenyu0519.github.io/2020/02/18/lc70/" rel="alternate" type="text/html" title="leetcode 70. Climbing Stairs (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/18/lc70</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/18/lc70/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;Dynamic-Programming&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
@@ -78,7 +78,50 @@ dp[4]=5
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up last two value as result, it will cost (1+2), in total will be O(n+2n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 509. Fibonacci Number (Python)</title><link href="http://localhost:4000/2020/02/18/lc509/" rel="alternate" type="text/html" title="leetcode 509. Fibonacci Number (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/18/lc509</id><content type="html" xml:base="http://localhost:4000/2020/02/18/lc509/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up last two value as result, it will cost (1+2), in total will be O(n+2n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 53. Maximum Subarray (Python)</title><link href="https://zhenyu0519.github.io/2020/02/18/lc53/" rel="alternate" type="text/html" title="leetcode 53. Maximum Subarray (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/18/lc53</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/18/lc53/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;Dynamic-Programming&lt;/p&gt;
+
+&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
+&lt;p&gt;Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [-2,1,-3,4,-1,2,1,-5,4],
+Output: 6
+Explanation: [4,-1,2,1] has the largest sum = 6.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
+&lt;p&gt;This question solved by Dynamic Programming.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Find the base case
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dp[0] = nums[0]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Find the pattern
+The basic idea is append the current value to the subarry of largest sum.
+    &lt;ol&gt;
+      &lt;li&gt;If the subarray’sum greater than the current value, we keep the value in the subarry and make it become new subarray of largest sum.&lt;/li&gt;
+      &lt;li&gt;If the subarray’sum less than the current value, we abandon the former subarray of largest sum and create a new subarray of largest sum with head index value of current value.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To use dynamic programming for this question, we actually do not need continously create or abandon subarray. we can use prefix sum to always get the maxmium sum of previous subarry and compare the current value with this sum. This will lead to same result.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;maxSubArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;max_num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max_num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max_num&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;We iterate all dp array, it will cost O(n), each current value will compare with the sum of current value and last value, it will cost (1+1), in total will be O(n+n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 509. Fibonacci Number (Python)</title><link href="https://zhenyu0519.github.io/2020/02/18/lc509/" rel="alternate" type="text/html" title="leetcode 509. Fibonacci Number (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/18/lc509</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/18/lc509/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;Dynamic-Programming&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
@@ -149,7 +192,7 @@ Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up last two value as result, it will cost (1+2), in total will be O(n+2n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 1137. N-th Tribonacci Number (Python)</title><link href="http://localhost:4000/2020/02/18/lc1137/" rel="alternate" type="text/html" title="leetcode 1137. N-th Tribonacci Number (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/18/lc1137</id><content type="html" xml:base="http://localhost:4000/2020/02/18/lc1137/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up last two value as result, it will cost (1+2), in total will be O(n+2n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 1137. N-th Tribonacci Number (Python)</title><link href="https://zhenyu0519.github.io/2020/02/18/lc1137/" rel="alternate" type="text/html" title="leetcode 1137. N-th Tribonacci Number (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/18/lc1137</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/18/lc1137/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;Dynamic-Programming&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
@@ -216,7 +259,7 @@ Output: 1389537
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up last two value as result, it will cost (1+3), in total will be O(n+3n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 746. Min Cost Climbing Stairs (Python)</title><link href="http://localhost:4000/2020/02/18/lc746/" rel="alternate" type="text/html" title="leetcode 746. Min Cost Climbing Stairs (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/18/lc746</id><content type="html" xml:base="http://localhost:4000/2020/02/18/lc746/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up last two value as result, it will cost (1+3), in total will be O(n+3n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 746. Min Cost Climbing Stairs (Python)</title><link href="https://zhenyu0519.github.io/2020/02/18/lc746/" rel="alternate" type="text/html" title="leetcode 746. Min Cost Climbing Stairs (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/18/lc746</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/18/lc746/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;Dynamic-Programming&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
@@ -287,7 +330,7 @@ Here the reason why we update current value is for next step cost if you have ne
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up minimum value of last two cost as result, it will cost (1+2), in total will be O(n+2n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 654. Maximum Binary Tree (Python)</title><link href="http://localhost:4000/2020/02/17/lc654/" rel="alternate" type="text/html" title="leetcode 654. Maximum Binary Tree (Python)" /><published>2020-02-17T00:00:00-08:00</published><updated>2020-02-17T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/17/lc654</id><content type="html" xml:base="http://localhost:4000/2020/02/17/lc654/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up minimum value of last two cost as result, it will cost (1+2), in total will be O(n+2n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 654. Maximum Binary Tree (Python)</title><link href="https://zhenyu0519.github.io/2020/02/17/lc654/" rel="alternate" type="text/html" title="leetcode 654. Maximum Binary Tree (Python)" /><published>2020-02-17T00:00:00-08:00</published><updated>2020-02-17T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/17/lc654</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/17/lc654/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;Tree, Depth-First-Search&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
@@ -342,7 +385,7 @@ And the right parts of list that exclusice the maximum value will constructed as
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;When use recursion to get sub-list for left sub-tree, the BigO is logN and to get sub-list for right sub-tree will be same. Therefor the BigO is O(2*logN) Which is O(logN)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Tree, Depth-First-Search</summary></entry><entry><title type="html">leetcode 5. Longest Palindromic Substring (Python)</title><link href="http://localhost:4000/2020/02/17/lc05/" rel="alternate" type="text/html" title="leetcode 5. Longest Palindromic Substring (Python)" /><published>2020-02-17T00:00:00-08:00</published><updated>2020-02-17T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/17/lc05</id><content type="html" xml:base="http://localhost:4000/2020/02/17/lc05/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;When use recursion to get sub-list for left sub-tree, the BigO is logN and to get sub-list for right sub-tree will be same. Therefor the BigO is O(2*logN) Which is O(logN)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Tree, Depth-First-Search</summary></entry><entry><title type="html">leetcode 5. Longest Palindromic Substring (Python)</title><link href="https://zhenyu0519.github.io/2020/02/17/lc05/" rel="alternate" type="text/html" title="leetcode 5. Longest Palindromic Substring (Python)" /><published>2020-02-17T00:00:00-08:00</published><updated>2020-02-17T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/17/lc05</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/17/lc05/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;Dynamic Programming, String&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
@@ -397,7 +440,7 @@ If the returned string is longer than the longest string, replace the longest st
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;When iterate the whole string, the BigO is O(n) where n is size of the string. Each character will need at most n/2 iteration to find if the string block is palindromic. So bigO is O(n*n/2) which is O(n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic Programming, String</summary></entry><entry><title type="html">刷了300道题后的心得</title><link href="http://localhost:4000/2020/02/15/Leetcode_milestone/" rel="alternate" type="text/html" title="刷了300道题后的心得" /><published>2020-02-15T00:00:00-08:00</published><updated>2020-02-15T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/15/Leetcode_milestone</id><content type="html" xml:base="http://localhost:4000/2020/02/15/Leetcode_milestone/">&lt;p&gt;跌跌撞撞的刷完了300道题，有点心得和感概&lt;/p&gt;
+&lt;p&gt;When iterate the whole string, the BigO is O(n) where n is size of the string. Each character will need at most n/2 iteration to find if the string block is palindromic. So bigO is O(n*n/2) which is O(n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic Programming, String</summary></entry><entry><title type="html">刷了300道题后的心得</title><link href="https://zhenyu0519.github.io/2020/02/15/Leetcode_milestone/" rel="alternate" type="text/html" title="刷了300道题后的心得" /><published>2020-02-15T00:00:00-08:00</published><updated>2020-02-15T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/15/Leetcode_milestone</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/15/Leetcode_milestone/">&lt;p&gt;跌跌撞撞的刷完了300道题，有点心得和感概&lt;/p&gt;
 
 &lt;hr /&gt;
 &lt;h2 id=&quot;停下来品味&quot;&gt;停下来，品味&lt;/h2&gt;
@@ -413,7 +456,7 @@ If the returned string is longer than the longest string, replace the longest st
 &lt;p&gt;接下来我要开始复刷，这主要是为了查漏补缺自己的知识点，此外巩固加深印象。对于一个资质平凡的普通程序员来说，最好的方法就是读书三遍，其义自现。复刷的速度要跟上，因为都是做过的题，所以重在总结方法。每周的线上比赛不能停，每周定期做mock up面试，同时简历要跟上。接下来又会很忙，这是开心的。每天都要定期更新博客分享思路，如果能把一道题给别人讲明白，这才叫掌握。然后每天至少一道数据库的题目。&lt;/p&gt;
 
 &lt;h2 id=&quot;写在最后&quot;&gt;写在最后&lt;/h2&gt;
-&lt;p&gt;很多人都知道，刷题是FLAG这些公司的敲门砖。但是真的去做的没多少。其实刷题真的没有那么可怕，我相信每一个决心开始，并且坚持下去的程序员一定会得到自己想要的结果。我对此深信不疑！&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">跌跌撞撞的刷完了300道题，有点心得和感概</summary></entry><entry><title type="html">继续前行</title><link href="http://localhost:4000/2019/11/26/keep_it_up/" rel="alternate" type="text/html" title="继续前行" /><published>2019-11-26T00:00:00-08:00</published><updated>2019-11-26T00:00:00-08:00</updated><id>http://localhost:4000/2019/11/26/keep_it_up</id><content type="html" xml:base="http://localhost:4000/2019/11/26/keep_it_up/">&lt;h2&gt;&lt;img src=&quot;/images/blog/lake_tree.jpg&quot; alt=&quot;Lake And Tree&quot; /&gt;&lt;/h2&gt;
+&lt;p&gt;很多人都知道，刷题是FLAG这些公司的敲门砖。但是真的去做的没多少。其实刷题真的没有那么可怕，我相信每一个决心开始，并且坚持下去的程序员一定会得到自己想要的结果。我对此深信不疑！&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">跌跌撞撞的刷完了300道题，有点心得和感概</summary></entry><entry><title type="html">继续前行</title><link href="https://zhenyu0519.github.io/2019/11/26/keep_it_up/" rel="alternate" type="text/html" title="继续前行" /><published>2019-11-26T00:00:00-08:00</published><updated>2019-11-26T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2019/11/26/keep_it_up</id><content type="html" xml:base="https://zhenyu0519.github.io/2019/11/26/keep_it_up/">&lt;h2&gt;&lt;img src=&quot;/images/blog/lake_tree.jpg&quot; alt=&quot;Lake And Tree&quot; /&gt;&lt;/h2&gt;
 &lt;h3 id=&quot;提醒自己不要忘记从青铜变成王者的初心&quot;&gt;提醒自己，不要忘记从青铜变成王者的初心！&lt;/h3&gt;
 
 &lt;hr /&gt;
@@ -424,7 +467,7 @@ If the returned string is longer than the longest string, replace the longest st
 &lt;p&gt;你放不下的迟早都会放下，你看得很重的东西有一天或许一文不值，你深深信仰的不一定是对的，而你认为错的也可能是正确的。
 这个世界允许青铜存在，但只有王者才会真正的活着。&lt;/p&gt;
 
-&lt;h3 id=&quot;今天到这吧希望明天更美好&quot;&gt;今天到这吧，希望明天更美好！&lt;/h3&gt;</content><author><name>Jeffrey</name></author><summary type="html">提醒自己，不要忘记从青铜变成王者的初心！</summary></entry><entry><title type="html">记第一次白板面试</title><link href="http://localhost:4000/2019/11/21/first_white_boarding_interview/" rel="alternate" type="text/html" title="记第一次白板面试" /><published>2019-11-21T00:00:00-08:00</published><updated>2019-11-21T00:00:00-08:00</updated><id>http://localhost:4000/2019/11/21/first_white_boarding_interview</id><content type="html" xml:base="http://localhost:4000/2019/11/21/first_white_boarding_interview/">&lt;p&gt;最近得到一个面试，这刚好是一个检验最近刷题成果的好机会。&lt;/p&gt;
+&lt;h3 id=&quot;今天到这吧希望明天更美好&quot;&gt;今天到这吧，希望明天更美好！&lt;/h3&gt;</content><author><name>Jeffrey</name></author><summary type="html">提醒自己，不要忘记从青铜变成王者的初心！</summary></entry><entry><title type="html">记第一次白板面试</title><link href="https://zhenyu0519.github.io/2019/11/21/first_white_boarding_interview/" rel="alternate" type="text/html" title="记第一次白板面试" /><published>2019-11-21T00:00:00-08:00</published><updated>2019-11-21T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2019/11/21/first_white_boarding_interview</id><content type="html" xml:base="https://zhenyu0519.github.io/2019/11/21/first_white_boarding_interview/">&lt;p&gt;最近得到一个面试，这刚好是一个检验最近刷题成果的好机会。&lt;/p&gt;
 
 &lt;hr /&gt;
 &lt;h2 id=&quot;介绍&quot;&gt;介绍&lt;/h2&gt;
@@ -461,123 +504,4 @@ If the returned string is longer than the longest string, replace the longest st
 
 &lt;p&gt;接下来还要继续坚持，Desmond Zhou说凡事做到极致，必有回应。还有Baron和强哥也给了我莫大的勇气和信心。&lt;/p&gt;
 
-&lt;p&gt;加油！Fighting!&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">最近得到一个面试，这刚好是一个检验最近刷题成果的好机会。</summary></entry><entry><title type="html">MAC Mojave下，gem安装package(jekyll)出现的问题以及解决方法/Trouble shooting gem install packages (jekyll) under Mac Mojave(中文/英语)</title><link href="http://localhost:4000/2019/11/21/gem_install_jekyll_permission/" rel="alternate" type="text/html" title="MAC Mojave下，gem安装package(jekyll)出现的问题以及解决方法/Trouble shooting gem install packages (jekyll) under Mac Mojave(中文/英语)" /><published>2019-11-21T00:00:00-08:00</published><updated>2019-11-21T00:00:00-08:00</updated><id>http://localhost:4000/2019/11/21/gem_install_jekyll_permission</id><content type="html" xml:base="http://localhost:4000/2019/11/21/gem_install_jekyll_permission/">&lt;h3 id=&quot;今天踩坑了用gem安装jekyll的时候各种报错网上的一些解决方法要不就是行不通要不就是零散破碎不完整花了点时间把这个问题搞定整理完之后顺便分享一下帮助大家节省一点时间&quot;&gt;今天踩坑了，用gem安装jekyll的时候各种报错，网上的一些解决方法，要不就是行不通，要不就是零散破碎不完整，花了点时间把这个问题搞定，整理完之后顺便分享一下，帮助大家节省一点时间。&lt;/h3&gt;
-
-&lt;h3 id=&quot;when-using-gem-to-install-or-update-some-packages-there-may-be-some-wired-problems-and-messages-pop-up-if-you-met-same-problems-like-me-here-are-the-reason-and-solution&quot;&gt;When using gem to install or update some packages, there may be some wired problems and messages pop-up. If you met same problems like me, here are the reason and solution.&lt;/h3&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;起因start&quot;&gt;起因(Start)&lt;/h2&gt;
-
-&lt;p&gt;构建Github Pages免不了要和jekyll打交道，至于它是什么，&lt;a href=&quot;https://jekyllrb.com/&quot;&gt;看这里&lt;/a&gt;。网上有个不错的教程，可惜仅限中文，跟着教程走，在安装jekyll的时候出了问题。偏偏又是我，好吧已经习惯了。先看看是什么问题：&lt;/p&gt;
-
-&lt;p&gt;When I try to build up my github pages, I need to install jekyll, (what is it? &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;click here&lt;/a&gt;) and when I install jekyll, the below message pop-up. Apparentlly, something wrong!&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo gem install jekyll
-
-Building native extensions. This could take a while...
-ERROR:  Error installing jekyll:
-	ERROR: Failed to build gem native extension.
-
-current directory: /Library/Ruby/Gems/2.3.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
-/System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby -I /Library/Ruby/Site/2.3.0 -r ./siteconf20191121-70645-4kcf1p.rb extconf.rb
-mkmf.rb can't find header files for ruby at /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/ruby/include/ruby.h
-
-extconf failed, exit code 1
-
-Gem files will remain installed in /Library/Ruby/Gems/2.3.0/gems/http_parser.rb-0.6.0 for inspection.
-Results logged to /Library/Ruby/Gems/2.3.0/extensions/universal-darwin-18/2.3.0/http_parser.rb-0.6.0/gem_make.out
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;上面说了一长串其实重点就是can’t find header files for ruby。网上建议安装xcode command line tool:&lt;/p&gt;
-
-&lt;p&gt;The point is acctually ‘can’t find header files for ruby’. Someone suggest to install xcode command line tool:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo xcode-select --install
-sudo xcodebuild -license accept
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;安装完之后，然并卵（虽然上面的没有解决这个问题还是建议大家安装一下xcode command line tool）。做了些search后发现，找不到header file的根本原因是header file的地址变了。重新分配一下地址可能会起到作用。&lt;/p&gt;
-
-&lt;p&gt;Thank you and it does not work! (xcode command line tool is necessary so please install anyway). After some searches, I found the true reason is header file location changed. re-assign the location may work.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;On Xcode 11 / macOS Catalina, the header files are no longer in the old location:
-/Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
-Instead, the headers are now installed to the /usr/include directory of the current SDK path:
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;这个方法我没有试过，嫌麻烦，考虑到变更地址，重新配置，我决定直接安装新版ruby 2.6 因为:&lt;/p&gt;
-
-&lt;p&gt;However, I will not do that, change exsiting location may make trouble easily. So I decide to install new version of ruby because:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Xcode 11 ships the macOS 10.15 SDK which includes headers for ruby2.6 but not for macOS 10.14's ruby2.3.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;就是说 &lt;strong&gt;Xcode 11 里面的SDK包含了ruby 2.6的头文件但是不包含ruby 2.3的头文件&lt;/strong&gt;。那好办，那就装ruby 2.6好了，之所以选择这样做还有其他原因。使用系统自带ruby 2.3的gem安装或者更新package的时候经常会出现权限问题，例如：&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Xcode 11 SDK include header files of ruby 2.6 but not for ruby 2.3&lt;/strong&gt;. Another reason is when you use gem to update or install packages, there are sometimes permission problems happend due to ruby 2.3 which comes with system, for example:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem update --system
-
-Updating rubygems-update
-Fetching rubygems-update-3.0.6.gem
-
-ERROR:  While executing gem ... (Gem::FilePermissionError)
-    You don't have write permissions for the /Library/Ruby/Gems/2.3.0 directory.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;又或者
-or&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install bundler
-
-Fetching bundler-2.0.2.gem
-ERROR:  While executing gem ... (Gem::FilePermissionError)
-    You don't have write permissions for the /Library/Ruby/Gems/2.3.0 directory.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;原因即字面意思, 就是 gem 要往某个神奇的目录写文件但是你的权限不够。 因为你使用的是Apple家自带的ruby, 在尝试往 Apple自家的库中塞东西。所以就算你用sudo也不行，网上有人提供一些方法帮助做强制修改的，但是&lt;strong&gt;个人不推荐&lt;/strong&gt;，因为更新系统的时候很容易出现兼容性问题。&lt;/p&gt;
-
-&lt;p&gt;The reason is Apple does not allow you to change its own libraries even using sudo. Well there are some articles will help you force to change but it is not recommand because when you upgrade system, there may be compatiable problems happend. So, &lt;strong&gt;don’t do that!&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;划重点solutions&quot;&gt;划重点(Solutions)&lt;/h2&gt;
-
-&lt;p&gt;好了说这么多就直接说一个合理可行的方案：&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;额外安装一个新的ruby版本（默认最新就行）这样也可以隔离开系统自带的ruby版本，以免对原版本造成破坏，进而触发依赖或者兼容性问题 &lt;code class=&quot;highlighter-rouge&quot;&gt;brew install ruby&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;然后需要把新版本ruby的路径添加的路径文件里面，方便命令行操作。打开bash_profile &lt;code class=&quot;highlighter-rouge&quot;&gt;nano ~/.bash_profile&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;添加路径到bash_profile里面 &lt;code class=&quot;highlighter-rouge&quot;&gt;export PATH=&quot;/usr/local/lib/ruby/gems/2.6.0/bin:$PATH&quot;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;添加完成后需要reload一下 &lt;code class=&quot;highlighter-rouge&quot;&gt;. ~/.bash_profile&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;确认是否产生变化 &lt;code class=&quot;highlighter-rouge&quot;&gt;echo $PATH&lt;/code&gt;，结果显示 &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/lib/ruby/gems/2.6.0/bin&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;如果用的terminal终端是zsh不是bash那么你需要 &lt;code class=&quot;highlighter-rouge&quot;&gt;echo 'export PATH=&quot;/usr/local/opt/ruby/bin:$PATH&quot;' &amp;gt;&amp;gt; ~/.zshrc&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;接下来需要让编译器找到ruby &lt;code class=&quot;highlighter-rouge&quot;&gt;export LDFLAGS=&quot;-L/usr/local/opt/ruby/lib&quot;&lt;/code&gt;,  &lt;code class=&quot;highlighter-rouge&quot;&gt;export CPPFLAGS=&quot;-I/usr/local/opt/ruby/include&quot;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;确认ruby路径,重启一下终端 &lt;code class=&quot;highlighter-rouge&quot;&gt;which ruby&lt;/code&gt;,结果显示 &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/opt/ruby/bin/ruby&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;确认ruby版本，&lt;code class=&quot;highlighter-rouge&quot;&gt;ruby -v&lt;/code&gt;,结果显示 &lt;code class=&quot;highlighter-rouge&quot;&gt;ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-darwin18]&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Here is the solution：&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;install new version ruby（defaule to be latest）it will seperate system ruby version to avoid unexpected problem &lt;code class=&quot;highlighter-rouge&quot;&gt;brew install ruby&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;then add path. open bash_profile &lt;code class=&quot;highlighter-rouge&quot;&gt;nano ~/.bash_profile&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;add path to bash_profile &lt;code class=&quot;highlighter-rouge&quot;&gt;export PATH=&quot;/usr/local/lib/ruby/gems/2.6.0/bin:$PATH&quot;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;reload after adding &lt;code class=&quot;highlighter-rouge&quot;&gt;. ~/.bash_profile&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;confirm effection &lt;code class=&quot;highlighter-rouge&quot;&gt;echo $PATH&lt;/code&gt;，display &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/lib/ruby/gems/2.6.0/bin&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;if you use zsh not bash you need &lt;code class=&quot;highlighter-rouge&quot;&gt;echo 'export PATH=&quot;/usr/local/opt/ruby/bin:$PATH&quot;' &amp;gt;&amp;gt; ~/.zshrc&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;let compliers find ruby &lt;code class=&quot;highlighter-rouge&quot;&gt;export LDFLAGS=&quot;-L/usr/local/opt/ruby/lib&quot;&lt;/code&gt;,  &lt;code class=&quot;highlighter-rouge&quot;&gt;export CPPFLAGS=&quot;-I/usr/local/opt/ruby/include&quot;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;relaunch the terminal and confirm ruby path &lt;code class=&quot;highlighter-rouge&quot;&gt;which ruby&lt;/code&gt;,display &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/opt/ruby/bin/ruby&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;confirm ruby version，&lt;code class=&quot;highlighter-rouge&quot;&gt;ruby -v&lt;/code&gt;, display &lt;code class=&quot;highlighter-rouge&quot;&gt;ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-darwin18]&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;接下来可以愉快的安装jekyll啦：
-done!&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo gem install jekyll
-
-Fetching jekyll-sass-converter-2.0.1.gem
-Fetching jekyll-4.0.0.gem
-Fetching kramdown-2.1.0.gem
-Fetching kramdown-parser-gfm-1.1.0.gem
-Fetching sassc-2.2.1.gem
-Building native extensions. This could take a while...
-Successfully installed sassc-2.2.1
-Successfully installed jekyll-sass-converter-2.0.1
-Successfully installed kramdown-2.1.0
-Successfully installed kramdown-parser-gfm-1.1.0
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;希望对你们有点帮助！
-I hope it helps!&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">今天踩坑了，用gem安装jekyll的时候各种报错，网上的一些解决方法，要不就是行不通，要不就是零散破碎不完整，花了点时间把这个问题搞定，整理完之后顺便分享一下，帮助大家节省一点时间。</summary></entry></feed>
+&lt;p&gt;加油！Fighting!&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">最近得到一个面试，这刚好是一个检验最近刷题成果的好机会。</summary></entry></feed>
