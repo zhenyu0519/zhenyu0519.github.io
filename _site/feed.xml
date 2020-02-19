@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-02-18T16:44:17-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 70. Climbing Stairs (Python)</title><link href="http://localhost:4000/2020/02/18/lc70/" rel="alternate" type="text/html" title="leetcode 70. Climbing Stairs (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/18/lc70</id><content type="html" xml:base="http://localhost:4000/2020/02/18/lc70/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-02-18T19:30:38-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 70. Climbing Stairs (Python)</title><link href="http://localhost:4000/2020/02/18/lc70/" rel="alternate" type="text/html" title="leetcode 70. Climbing Stairs (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/18/lc70</id><content type="html" xml:base="http://localhost:4000/2020/02/18/lc70/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;Dynamic-Programming&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
@@ -78,7 +78,78 @@ dp[4]=5
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up last two value as result, it will cost (1+2), in total will be O(n+2n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 654. Maximum Binary Tree (Python)</title><link href="http://localhost:4000/2020/02/17/lc654/" rel="alternate" type="text/html" title="leetcode 654. Maximum Binary Tree (Python)" /><published>2020-02-17T00:00:00-08:00</published><updated>2020-02-17T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/17/lc654</id><content type="html" xml:base="http://localhost:4000/2020/02/17/lc654/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up last two value as result, it will cost (1+2), in total will be O(n+2n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 746. Min Cost Climbing Stairs (Python)</title><link href="http://localhost:4000/2020/02/18/lc746/" rel="alternate" type="text/html" title="leetcode 746. Min Cost Climbing Stairs (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/18/lc746</id><content type="html" xml:base="http://localhost:4000/2020/02/18/lc746/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;Dynamic-Programming&lt;/p&gt;
+
+&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
+&lt;p&gt;On a staircase, the i-th step has some non-negative cost cost[i] assigned (0 indexed).&lt;/p&gt;
+
+&lt;p&gt;Once you pay the cost, you can either climb one or two steps. You need to find minimum cost to reach the top of the floor, and you can either start from the step with index 0, or the step with index 1.&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: cost = [10, 15, 20]
+Output: 15
+Explanation: Cheapest is start on cost[1], pay that cost and go to the top.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]
+Output: 6
+Explanation: Cheapest is start on cost[0], and only step on 1s, skipping cost[3].
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;note&quot;&gt;Note:&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;cost will have a length in the range [2, 1000].&lt;/li&gt;
+  &lt;li&gt;Every cost[i] will be an integer in the range [0, 999].&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
+&lt;p&gt;This question solved by Dynamic Programming. It is similar with question 70 &lt;a href=&quot;https://leetcode.com/problems/climbing-stairs/&quot; target=&quot;_blank&quot;&gt;Click Here!&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Find the base case (Given [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]):&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;when there are 2 stars, there is only 1 cost which is cost of stair 1 here is cost[0] = 1&lt;/li&gt;
+      &lt;li&gt;When there are 3 stars, you can either choose stair 1 or stair 2 to reach stair 3, we want the minimum cost, so we will choose the minimum between(cost[0], cost[1]) which is min(1, 100) = 1
+….&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Find the pattern:&lt;/p&gt;
+
+    &lt;p&gt;When there are 3 stars, you can either choose stair 1 or stair 2 to reach stair 3, we want the minimum cost,  so we will choose the minimum between(stair 1, stair 2) which is min(cost[0], cost[1]) = 1 and then add minimum value of previous two steps cost to the current stair value, in this case, the current(cost[2]=cost[2]+min(cost[0], cost[1])=2), the cost list become [1,100,2].
+Here the reason why we update current value is for next step cost if you have next step.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Answer:&lt;/p&gt;
+
+    &lt;p&gt;The answer will be the minimum value of previous two steps, not the current value!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Extended Options:&lt;/p&gt;
+
+    &lt;p&gt;If minimum cost is from previous 3 steps, we simply need to find the min(cost[-2], cost[-3], cost[-4])&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;conditions&quot;&gt;Conditions&lt;/h4&gt;
+&lt;p&gt;The length of stair is at least 2 steps.&lt;/p&gt;
+
+&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;minCostClimbingStairs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#The base condition is optional here, it may slightly increase performance which is nearly no effection here&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up minimum value of last two cost as result, it will cost (1+2), in total will be O(n+2n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 654. Maximum Binary Tree (Python)</title><link href="http://localhost:4000/2020/02/17/lc654/" rel="alternate" type="text/html" title="leetcode 654. Maximum Binary Tree (Python)" /><published>2020-02-17T00:00:00-08:00</published><updated>2020-02-17T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/17/lc654</id><content type="html" xml:base="http://localhost:4000/2020/02/17/lc654/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;Tree, Depth-First-Search&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" prefix="og: http://ogp.me/ns#" class="han-init">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>leetcode 746. Min Cost Climbing Stairs (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <link rel="stylesheet" href="http://localhost:4000/assets/vendor/primer-css/css/primer.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/vendor/primer-markdown/dist/user-content.min.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/vendor/octicons/octicons/octicons.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/components/collection.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/components/repo-card.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/sections/repo-list.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/sections/mini-repo-list.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/components/boxed-group.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/globals/common.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/vendor/share.js/dist/css/share.min.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/globals/responsive.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/posts/index.css">
+    <!-- Latest compiled and minified CSS -->
+    
+
+    
+    <link rel="canonical" href="http://localhost:4000/2020/02/18/lc746/">
+    <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="http://localhost:4000/feed.xml">
+    <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+    
+    <meta property="og:title" content="leetcode 746. Min Cost Climbing Stairs (Python)">
+      
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 746, Min Cost Climbing Stairs, zhenyu">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 746, Min Cost Climbing Stairs, zhenyu">
+      
+    <meta name="description" content="Related TopicDynamic-Programming">
+    <meta name="og:description" content="Related TopicDynamic-Programming">
+      
+    
+    
+        
+    
+    <meta property="og:url" content="http://localhost:4000/2020/02/18/lc746/">
+    <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_CN" />
+    
+    <meta property="article:published_time" content="2020-02-18">
+    
+    <script src="http://localhost:4000/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="http://localhost:4000/assets/js/jquery-ui.js"></script>
+    <script src="http://localhost:4000/assets/js/main.js"></script>
+</head>
+<body class="" data-mz="">
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="http://localhost:4000/" title="杰弗里 · 时光博客(Jeffrey's Blog)"><span class="octicon octicon-mark-github"></span> 杰弗里 · 时光博客(Jeffrey's Blog)</a></h1>
+            <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <nav class="site-header-nav" role="navigation">
+                
+                <a href="http://localhost:4000/" class=" site-header-nav-item" target="" title="Home">Home</a>
+                
+                <a href="http://localhost:4000/categories/" class=" site-header-nav-item" target="" title="Categories">Categories</a>
+                
+                <a href="http://localhost:4000/about/" class=" site-header-nav-item" target="" title="About">About</a>
+                
+            </nav>
+        </div>
+    </header>
+    <!-- / header -->
+
+    <section class="collection-head small" data-pattern-id="leetcode 746. M">
+  <div class="container">
+    <div class="columns">
+      <div class="column three-fourths">
+        <div class="collection-title">
+          <h1 class="collection-header">leetcode 746. Min Cost Climbing Stairs (Python)</h1>
+          <div class="collection-info">
+            
+            <span class="meta-info">
+              <span class="octicon octicon-calendar"></span> 18 Feb 2020
+            </span>
+            
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="http://localhost:4000/categories/#Leetcode" title="Leetcode">Leetcode</a>
+            </span>
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="http://localhost:4000/categories/#Dynamic-Programming" title="Dynamic-Programming">Dynamic-Programming</a>
+            </span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- / .banner -->
+<section class="container content">
+  <div class="columns">
+    <div class="column three-fourths">
+      <article class="article-content markdown-body">
+        <h1 id="related-topic">Related Topic</h1>
+<p>Dynamic-Programming</p>
+
+<h1 id="description">Description</h1>
+<p>On a staircase, the i-th step has some non-negative cost cost[i] assigned (0 indexed).</p>
+
+<p>Once you pay the cost, you can either climb one or two steps. You need to find minimum cost to reach the top of the floor, and you can either start from the step with index 0, or the step with index 1.</p>
+
+<h2 id="sample-io">Sample I/O</h2>
+<h3 id="example-1">Example 1</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: cost = [10, 15, 20]
+Output: 15
+Explanation: Cheapest is start on cost[1], pay that cost and go to the top.
+</code></pre></div></div>
+
+<h3 id="example-2">Example 2</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]
+Output: 6
+Explanation: Cheapest is start on cost[0], and only step on 1s, skipping cost[3].
+</code></pre></div></div>
+
+<h3 id="note">Note:</h3>
+<ol>
+  <li>cost will have a length in the range [2, 1000].</li>
+  <li>Every cost[i] will be an integer in the range [0, 999].</li>
+</ol>
+
+<h1 id="methodology">Methodology</h1>
+<p>This question solved by Dynamic Programming. It is similar with question 70 <a href="https://leetcode.com/problems/climbing-stairs/" target="_blank">Click Here!</a></p>
+
+<ol>
+  <li>
+    <p>Find the base case (Given [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]):</p>
+
+    <ol>
+      <li>when there are 2 stars, there is only 1 cost which is cost of stair 1 here is cost[0] = 1</li>
+      <li>When there are 3 stars, you can either choose stair 1 or stair 2 to reach stair 3, we want the minimum cost, so we will choose the minimum between(cost[0], cost[1]) which is min(1, 100) = 1
+….</li>
+    </ol>
+  </li>
+  <li>
+    <p>Find the pattern:</p>
+
+    <p>When there are 3 stars, you can either choose stair 1 or stair 2 to reach stair 3, we want the minimum cost,  so we will choose the minimum between(stair 1, stair 2) which is min(cost[0], cost[1]) = 1 and then add minimum value of previous two steps cost to the current stair value, in this case, the current(cost[2]=cost[2]+min(cost[0], cost[1])=2), the cost list become [1,100,2].
+Here the reason why we update current value is for next step cost if you have next step.</p>
+  </li>
+  <li>
+    <p>Answer:</p>
+
+    <p>The answer will be the minimum value of previous two steps, not the current value!</p>
+  </li>
+  <li>
+    <p>Extended Options:</p>
+
+    <p>If minimum cost is from previous 3 steps, we simply need to find the min(cost[-2], cost[-3], cost[-4])</p>
+  </li>
+</ol>
+
+<h4 id="conditions">Conditions</h4>
+<p>The length of stair is at least 2 steps.</p>
+
+<h1 id="code">Code</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">minCostClimbingStairs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cost</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span> <span class="c">#The base condition is optional here, it may slightly increase performance which is nearly no effection here</span>
+            <span class="k">return</span> <span class="n">cost</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">cost</span><span class="p">)):</span>
+            <span class="n">cost</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">min</span><span class="p">(</span><span class="n">cost</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">cost</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+        <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">cost</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span><span class="n">cost</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h1 id="bigo">BigO</h1>
+<p>We iterate all dp array, it will cost O(n), each value will add up minimum value of last two cost as result, it will cost (1+2), in total will be O(n+2n) and It is O(n)</p>
+
+
+      </article>
+      <div class="share">
+        <div class="share-component"></div>
+      </div>
+      <div class="comment">
+        
+
+  
+
+  
+        <div id="gitalk-container"></div>
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script>
+        var gitalk = new Gitalk({
+            id: '/2020/02/18/lc746/',
+            clientID: '4cef70907f5b36353d59',
+            clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
+            repo: 'zhenyu0519.github.io',
+            owner: 'zhenyu0519',
+            admin: ['zhenyu0519'],
+            labels: ['gitment'],
+            perPage: 50,
+        })
+        gitalk.render('gitalk-container')
+        </script>
+  
+
+
+      </div>
+    </div>
+    <div class="column one-fourth">
+      
+<h3>Search</h3>
+<div id="site_search" class="site_search">
+    <input type="text" id="search_box" placeholder="Search">
+</div>
+
+<ul id="search_results"></ul>
+
+<link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/modules/sidebar-search.css">
+<script src="http://localhost:4000/assets/js/simple-jekyll-search.min.js"></script>
+<script src="http://localhost:4000/assets/js/search.js"></script>
+
+<script type="text/javascript">
+SimpleJekyllSearch({
+    searchInput: document.getElementById('search_box'),
+    resultsContainer: document.getElementById('search_results'),
+    json: 'http://localhost:4000/assets/search_data.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No results found',
+    fuzzy: false,
+    exclude: ['Welcome'],
+    limit: 10
+})
+</script>
+
+      
+<h3 class="post-directory-title mobile-hidden">Table of Contents</h3>
+<div id="post-directory-module" class="mobile-hidden">
+  <section class="post-directory">
+  <!-- Links that trigger the jumping -->
+  <!-- Added by javascript below -->
+  <dl></dl>
+  </section>
+</div>
+
+<script src="http://localhost:4000/assets/js/jquery.toc.js"></script>
+
+    </div>
+  </div>
+</section>
+<!-- /section.content -->
+    <footer class="container">
+        <div class="site-footer" role="contentinfo">
+            <div class="copyright left mobile-block">
+                    © 2019
+                    <span title="Jeffrey">Jeffrey</span>
+                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
+            </div>
+
+            <ul class="site-footer-links right mobile-hidden">
+                <li>
+                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
+                </li>
+            </ul>
+            <a href="https://github.com/zhenyu0519/zhenyu0519.github.io" target="_blank" aria-label="view source code">
+                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+            </a>
+            <ul class="site-footer-links mobile-hidden">
+                
+                <li>
+                    <a href="http://localhost:4000/" title="Home" target="">Home</a>
+                </li>
+                
+                <li>
+                    <a href="http://localhost:4000/categories/" title="Categories" target="">Categories</a>
+                </li>
+                
+                <li>
+                    <a href="http://localhost:4000/about/" title="About" target="">About</a>
+                </li>
+                
+                <li><a href="http://localhost:4000/feed.xml"><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
+            </ul>
+
+        </div>
+    </footer>
+    <div class="tools-wrapper">
+      <a class="gotop" href="#" title="回到顶部"><span class="octicon octicon-arrow-up"></span></a>
+    </div>
+    <!-- / footer -->
+    <script src="http://localhost:4000/assets/vendor/share.js/dist/js/share.min.js"></script>
+    <script src="http://localhost:4000/assets/js/geopattern.js"></script>
+    <script src="http://localhost:4000/assets/js/prism.js"></script>
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/globals/prism.css">
+    <script>
+      jQuery(document).ready(function($) {
+        // geopattern
+        $('.geopattern').each(function(){
+          $(this).geopattern($(this).data('pattern-id'));
+        });
+       // hljs.initHighlightingOnLoad();
+      });
+    </script>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div style="display:none">
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-113380665-1', 'auto');
+        ga('send', 'pageview');
+
+      </script>
+    </div>
+    
+</body>
+</html>

@@ -112,6 +112,13 @@
       "category" : "Leetcode",
       
       "url"      : "http://localhost:4000/2020/02/18/lc70/"
+    } ,
+  
+    {
+      "title"    : "leetcode 746. Min Cost Climbing Stairs (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "http://localhost:4000/2020/02/18/lc746/"
     } 
   
 ]
