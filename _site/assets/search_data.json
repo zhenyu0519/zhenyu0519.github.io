@@ -49,6 +49,8 @@
   
   
   
+  
+  
 
   
     {
@@ -105,6 +107,20 @@
       "category" : "Leetcode",
       
       "url"      : "http://localhost:4000/2020/02/17/lc654/"
+    } ,
+  
+    {
+      "title"    : "leetcode 1137. N-th Tribonacci Number (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "http://localhost:4000/2020/02/18/lc1137/"
+    } ,
+  
+    {
+      "title"    : "leetcode 509. Fibonacci Number (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "http://localhost:4000/2020/02/18/lc509/"
     } ,
   
     {

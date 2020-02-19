@@ -33,6 +33,14 @@
 <lastmod>2020-02-17T00:00:00-08:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/2020/02/18/lc1137/</loc>
+<lastmod>2020-02-18T00:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2020/02/18/lc509/</loc>
+<lastmod>2020-02-18T00:00:00-08:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/2020/02/18/lc70/</loc>
 <lastmod>2020-02-18T00:00:00-08:00</lastmod>
 </url>
@@ -54,5 +62,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/open-source/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page2/</loc>
 </url>
 </urlset>

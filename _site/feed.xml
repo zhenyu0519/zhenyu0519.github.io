@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-02-18T19:30:38-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 70. Climbing Stairs (Python)</title><link href="http://localhost:4000/2020/02/18/lc70/" rel="alternate" type="text/html" title="leetcode 70. Climbing Stairs (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/18/lc70</id><content type="html" xml:base="http://localhost:4000/2020/02/18/lc70/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-02-18T20:18:39-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 70. Climbing Stairs (Python)</title><link href="http://localhost:4000/2020/02/18/lc70/" rel="alternate" type="text/html" title="leetcode 70. Climbing Stairs (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/18/lc70</id><content type="html" xml:base="http://localhost:4000/2020/02/18/lc70/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;Dynamic-Programming&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
@@ -78,7 +78,145 @@ dp[4]=5
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up last two value as result, it will cost (1+2), in total will be O(n+2n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 746. Min Cost Climbing Stairs (Python)</title><link href="http://localhost:4000/2020/02/18/lc746/" rel="alternate" type="text/html" title="leetcode 746. Min Cost Climbing Stairs (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/18/lc746</id><content type="html" xml:base="http://localhost:4000/2020/02/18/lc746/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up last two value as result, it will cost (1+2), in total will be O(n+2n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 509. Fibonacci Number (Python)</title><link href="http://localhost:4000/2020/02/18/lc509/" rel="alternate" type="text/html" title="leetcode 509. Fibonacci Number (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/18/lc509</id><content type="html" xml:base="http://localhost:4000/2020/02/18/lc509/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;Dynamic-Programming&lt;/p&gt;
+
+&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
+&lt;p&gt;The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1. That is,&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;F(0) = 0,   F(1) = 1
+F(N) = F(N - 1) + F(N - 2), for N &amp;gt; 1.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Given N, calculate F(N).&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: 2
+Output: 1
+Explanation: F(2) = F(1) + F(0) = 1 + 0 = 1.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: 3
+Output: 2
+Explanation: F(3) = F(2) + F(1) = 1 + 1 = 2.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-3&quot;&gt;Example 3&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: 4
+Output: 3
+Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;note&quot;&gt;Note:&lt;/h3&gt;
+&lt;p&gt;0 ≤ N ≤ 30.&lt;/p&gt;
+
+&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
+&lt;p&gt;This question solved by Dynamic Programming. It is similar with question 70 &lt;a href=&quot;https://leetcode.com/problems/climbing-stairs/&quot; target=&quot;_blank&quot;&gt;70. Climbing Stairs!&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Find the base case (Already given)&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;When N = 0, F(0) = 0&lt;/li&gt;
+      &lt;li&gt;When N = 1, F(1) = 1
+….
+```&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Find the pattern (Already given):&lt;/p&gt;
+
+    &lt;p&gt;F(N) = F(N - 1) + F(N - 2), for N &amp;gt; 1.&lt;/p&gt;
+
+    &lt;p&gt;The traditional way is using recursion. If so, the BigO is O(2^N), appearently this is bad performance.&lt;/p&gt;
+
+    &lt;p&gt;We use dynamic programming to optimaze it to O(n). The basic idea is create a dp list and init all values with a number, apply the base case for the dp list and then update current value (start from index 2) by adding previous two values so the current value become to store the current result.&lt;/p&gt;
+
+    &lt;p&gt;The final result will be the last value of the dp list.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up last two value as result, it will cost (1+2), in total will be O(n+2n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 1137. N-th Tribonacci Number (Python)</title><link href="http://localhost:4000/2020/02/18/lc1137/" rel="alternate" type="text/html" title="leetcode 1137. N-th Tribonacci Number (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/18/lc1137</id><content type="html" xml:base="http://localhost:4000/2020/02/18/lc1137/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;Dynamic-Programming&lt;/p&gt;
+
+&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
+&lt;p&gt;The Tribonacci sequence Tn is defined as follows:&lt;/p&gt;
+
+&lt;p&gt;T0 = 0, T1 = 1, T2 = 1, and Tn+3 = Tn + Tn+1 + Tn+2 for n &amp;gt;= 0.&lt;/p&gt;
+
+&lt;p&gt;Given n, return the value of Tn.&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: n = 4
+Output: 4
+Explanation:
+T_3 = 0 + 1 + 1 = 2
+T_4 = 1 + 1 + 2 = 4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: n = 25
+Output: 1389537
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;note&quot;&gt;Note:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;0 &amp;lt;= n &amp;lt;= 37&lt;/li&gt;
+  &lt;li&gt;The answer is guaranteed to fit within a 32-bit integer, ie. answer &amp;lt;= 2^31 - 1.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
+&lt;p&gt;This question solved by Dynamic Programming. It is similar with question 509 &lt;a href=&quot;https://leetcode.com/problems/fibonacci-number/&quot; target=&quot;_blank&quot;&gt;509. Fibonacci Number!&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Find the base case (Already given)&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;When N = 0, F(0) = 0&lt;/li&gt;
+      &lt;li&gt;When N = 1, F(1) = 1&lt;/li&gt;
+      &lt;li&gt;When N = 2, F(1) = 1
+….
+```&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Find the pattern (Already given):&lt;/p&gt;
+
+    &lt;p&gt;F(N) = F(N - 1) + F(N - 2) + F(N-3)&lt;/p&gt;
+
+    &lt;p&gt;The traditional way is using recursion. If so, the BigO is O(3^N), appearently this is bad performance.&lt;/p&gt;
+
+    &lt;p&gt;We use dynamic programming to optimaze it to O(n). The basic idea is create a dp list and init all values with a number, apply the base case for the dp list and then update current value (start from index 3) by adding previous three values so the current value become to store the current result.&lt;/p&gt;
+
+    &lt;p&gt;The final result will be the last value of the dp list.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;tribonacci&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up last two value as result, it will cost (1+3), in total will be O(n+3n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 746. Min Cost Climbing Stairs (Python)</title><link href="http://localhost:4000/2020/02/18/lc746/" rel="alternate" type="text/html" title="leetcode 746. Min Cost Climbing Stairs (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/18/lc746</id><content type="html" xml:base="http://localhost:4000/2020/02/18/lc746/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;Dynamic-Programming&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
@@ -286,7 +424,44 @@ If the returned string is longer than the longest string, replace the longest st
 &lt;p&gt;你放不下的迟早都会放下，你看得很重的东西有一天或许一文不值，你深深信仰的不一定是对的，而你认为错的也可能是正确的。
 这个世界允许青铜存在，但只有王者才会真正的活着。&lt;/p&gt;
 
-&lt;h3 id=&quot;今天到这吧希望明天更美好&quot;&gt;今天到这吧，希望明天更美好！&lt;/h3&gt;</content><author><name>Jeffrey</name></author><summary type="html">提醒自己，不要忘记从青铜变成王者的初心！</summary></entry><entry><title type="html">MAC Mojave下，gem安装package(jekyll)出现的问题以及解决方法/Trouble shooting gem install packages (jekyll) under Mac Mojave(中文/英语)</title><link href="http://localhost:4000/2019/11/21/gem_install_jekyll_permission/" rel="alternate" type="text/html" title="MAC Mojave下，gem安装package(jekyll)出现的问题以及解决方法/Trouble shooting gem install packages (jekyll) under Mac Mojave(中文/英语)" /><published>2019-11-21T00:00:00-08:00</published><updated>2019-11-21T00:00:00-08:00</updated><id>http://localhost:4000/2019/11/21/gem_install_jekyll_permission</id><content type="html" xml:base="http://localhost:4000/2019/11/21/gem_install_jekyll_permission/">&lt;h3 id=&quot;今天踩坑了用gem安装jekyll的时候各种报错网上的一些解决方法要不就是行不通要不就是零散破碎不完整花了点时间把这个问题搞定整理完之后顺便分享一下帮助大家节省一点时间&quot;&gt;今天踩坑了，用gem安装jekyll的时候各种报错，网上的一些解决方法，要不就是行不通，要不就是零散破碎不完整，花了点时间把这个问题搞定，整理完之后顺便分享一下，帮助大家节省一点时间。&lt;/h3&gt;
+&lt;h3 id=&quot;今天到这吧希望明天更美好&quot;&gt;今天到这吧，希望明天更美好！&lt;/h3&gt;</content><author><name>Jeffrey</name></author><summary type="html">提醒自己，不要忘记从青铜变成王者的初心！</summary></entry><entry><title type="html">记第一次白板面试</title><link href="http://localhost:4000/2019/11/21/first_white_boarding_interview/" rel="alternate" type="text/html" title="记第一次白板面试" /><published>2019-11-21T00:00:00-08:00</published><updated>2019-11-21T00:00:00-08:00</updated><id>http://localhost:4000/2019/11/21/first_white_boarding_interview</id><content type="html" xml:base="http://localhost:4000/2019/11/21/first_white_boarding_interview/">&lt;p&gt;最近得到一个面试，这刚好是一个检验最近刷题成果的好机会。&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;介绍&quot;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;最近得到一次面试机会。坐标维多利亚，公司为某金融集团收购的子公司，公司主营开发航海软件，听说北美这边市场占有率为第二，公司规模在50人左右，对于维多利亚这样不足40万人口的小城市来讲，已经很不错了。而且猎头说这个公司氛围不错，薪资待遇也可以，并且跟这边一般的中小公司招聘不一样，它们会有白板做题环节，（可能我存在偏见，个人感觉招聘没有白板做题的公司应该竞争力不强，哈哈）不管怎么说，这对于最近在刷题的我来说刚好是一次检验的机会，在这之前，本人并没有过白板做题的经历！&lt;/p&gt;
+
+&lt;h2 id=&quot;要求&quot;&gt;要求&lt;/h2&gt;
+&lt;p&gt;先说一下公司的招聘要求，初级到中级全栈开发工程师，工作经验1～3年，良好的前端开发经验，以及对后端开发有基本的认识，此外也需要了解一些数据库查询和一些基本算法，语言方面偏向JavaScript和C#，python也行。面试时间定在早上10:00，两位面试官，时间90分钟，包括介绍， 技术背景， 项目经验（30分钟），白板做题（1小时）。&lt;/p&gt;
+
+&lt;p&gt;由于得到面试晚，时间比较紧迫，从通知面试到面试总共不到48小时，也只能临时抱佛脚的看一下子，主要还是看平时的积累啊。&lt;/p&gt;
+
+&lt;h2 id=&quot;过程&quot;&gt;过程&lt;/h2&gt;
+&lt;p&gt;面试氛围相对比较轻松，不得不说我高估了面试内容，准备面试的过程我特别看了一下以前的代码，以及各种框架，知识点，概念，特别是花了很长时间看了CSS，其实工作当中用js，css框架比较多，纯js，css反而比较少写，所以总感觉自己头重脚轻，借机也算是复习一下。后端这部分也拿出了相当一部分时间做了梳理，什么restful apis，oauth认证，mvc之类的，数据库查询这部分确实没看，因为过往经验就是很多公司要求有数据库查询的功底，但是往往面试不会考，这也算是偷懒了。至于算法，我倒是觉得应该不会很难，毕竟这个级别的公司难度总不会和flag级别的相比，也就没怎么复习了。所以总体来讲心里是有底的，心态调整得还算不错。&lt;/p&gt;
+
+&lt;h2 id=&quot;上半场&quot;&gt;上半场&lt;/h2&gt;
+&lt;p&gt;面试前30分钟，我个人还比较满意，虽然相关技术背景有交代，自己特别准备的东西好像并没有得到关注，这也无可厚非，时间有限，公司肯定捡自己感兴趣的问。大概的考察了一下js的基本知识，比如，ajax的回调函数，循环和递归，题目类型就是运行之后返回什么结果，然后问如何优化这部分代码，这部分答得不错，也很基础。接着，竟然真的考察了数据库查询语言，是的，没错，就是我偷懒没复习的部分…! 题目其实很基础，考察的inner join和left join，以及数据库注入攻击。唉，真的是靠大学的记忆在回答，在考官的一点提示下才回答出来。这部分表现一般般。没答出来的题目已经做了笔记，同样的地方不能摔倒第二次。&lt;/p&gt;
+
+&lt;h2 id=&quot;下半场&quot;&gt;下半场&lt;/h2&gt;
+&lt;p&gt;接下来开始白板，莫名其妙有些兴奋。题目不难，把两个列表相同的元素挑出来组成新的列表。应该是到简单题，我很快给出了第一个方案，两个循环嵌套，O（n^2）。这显然不是最佳答案，但是先给出一个中庸的答案，在进行优化，这可以说是一个解题套路，让面试官看到你的思考过程和改进过程。最终，通过使用set（）把结果优化到O（n），这个题完成。第二道题，难度就大一点了，应该也不是难题，只是站在白板前确实很容易放空。题目是信号塔a向信号塔b发射一段字符串信息里面可能会包括目标字符串和垃圾字符串。判断一下这段信息里面是否存在目标字符串，附加条件是只有nextChar（）和exit（）两个api可以调用，nextChar的作用是得到下一个字符，其实就是一个从stack里取值，而exit（）的作用是如果没有目标字符串就退出。我的想法是先初始化一个空字符串作为结果，然后通过调用nextChar（）来遍历整个栈，当遇到目标字符串的首字母时候，就开始把字符压到结果空字符串里去，并进行比较，如过字符串全部匹配返回存在，如果字符串不完全匹配，那么清空结果字符串，从不匹配的那个字母开始重新调用nextChar比较，重复上面的过程。这个过程应该可以是O（1）的，不过可惜这道题没有想完整，最终的思路并没有完全表达出来，所以结果应该是不算太好。好在这道题其实是我额外要求的，本来不在考察过程中，只是我想借着这个机会多练习一下，考官也配合。&lt;/p&gt;
+
+&lt;h2 id=&quot;评估&quot;&gt;评估&lt;/h2&gt;
+&lt;p&gt;总体来讲，给自己打70分吧，没有达到预期，可以做得更好的，但是这个面试经验确实不错。对我很有启发，总结如下：&lt;/p&gt;
+
+&lt;h2 id=&quot;总结&quot;&gt;总结&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;备战的时候不能偷懒，不要自作主张，应该全面准备，看清楚考察内容，有针对性的复习，切勿好高骛远&lt;/li&gt;
+  &lt;li&gt;需要强化自己的沟通交流能力，多总结，多概括，让表达更简练，清楚&lt;/li&gt;
+  &lt;li&gt;面试暴露出来的问题还是基本功不扎实，针对的方法应该是多刷题，此外数据库刷题也要提上日程&lt;/li&gt;
+  &lt;li&gt;锻炼自己的临场应变能力，需要找到一个方法，解决面对白板成白痴的问题&lt;/li&gt;
+  &lt;li&gt;面试前要休息好，调整好情绪，合理控制好时间&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;感谢&quot;&gt;感谢&lt;/h2&gt;
+&lt;p&gt;特别感谢猎头Nash Geng提供的机会，以及主考官，Shaw Lu的考察（大概是叫这个吧）&lt;/p&gt;
+
+&lt;p&gt;接下来还要继续坚持，Desmond Zhou说凡事做到极致，必有回应。还有Baron和强哥也给了我莫大的勇气和信心。&lt;/p&gt;
+
+&lt;p&gt;加油！Fighting!&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">最近得到一个面试，这刚好是一个检验最近刷题成果的好机会。</summary></entry><entry><title type="html">MAC Mojave下，gem安装package(jekyll)出现的问题以及解决方法/Trouble shooting gem install packages (jekyll) under Mac Mojave(中文/英语)</title><link href="http://localhost:4000/2019/11/21/gem_install_jekyll_permission/" rel="alternate" type="text/html" title="MAC Mojave下，gem安装package(jekyll)出现的问题以及解决方法/Trouble shooting gem install packages (jekyll) under Mac Mojave(中文/英语)" /><published>2019-11-21T00:00:00-08:00</published><updated>2019-11-21T00:00:00-08:00</updated><id>http://localhost:4000/2019/11/21/gem_install_jekyll_permission</id><content type="html" xml:base="http://localhost:4000/2019/11/21/gem_install_jekyll_permission/">&lt;h3 id=&quot;今天踩坑了用gem安装jekyll的时候各种报错网上的一些解决方法要不就是行不通要不就是零散破碎不完整花了点时间把这个问题搞定整理完之后顺便分享一下帮助大家节省一点时间&quot;&gt;今天踩坑了，用gem安装jekyll的时候各种报错，网上的一些解决方法，要不就是行不通，要不就是零散破碎不完整，花了点时间把这个问题搞定，整理完之后顺便分享一下，帮助大家节省一点时间。&lt;/h3&gt;
 
 &lt;h3 id=&quot;when-using-gem-to-install-or-update-some-packages-there-may-be-some-wired-problems-and-messages-pop-up-if-you-met-same-problems-like-me-here-are-the-reason-and-solution&quot;&gt;When using gem to install or update some packages, there may be some wired problems and messages pop-up. If you met same problems like me, here are the reason and solution.&lt;/h3&gt;
 &lt;hr /&gt;
@@ -405,686 +580,4 @@ Successfully installed kramdown-parser-gfm-1.1.0
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;希望对你们有点帮助！
-I hope it helps!&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">今天踩坑了，用gem安装jekyll的时候各种报错，网上的一些解决方法，要不就是行不通，要不就是零散破碎不完整，花了点时间把这个问题搞定，整理完之后顺便分享一下，帮助大家节省一点时间。</summary></entry><entry><title type="html">记第一次白板面试</title><link href="http://localhost:4000/2019/11/21/first_white_boarding_interview/" rel="alternate" type="text/html" title="记第一次白板面试" /><published>2019-11-21T00:00:00-08:00</published><updated>2019-11-21T00:00:00-08:00</updated><id>http://localhost:4000/2019/11/21/first_white_boarding_interview</id><content type="html" xml:base="http://localhost:4000/2019/11/21/first_white_boarding_interview/">&lt;p&gt;最近得到一个面试，这刚好是一个检验最近刷题成果的好机会。&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;h2 id=&quot;介绍&quot;&gt;介绍&lt;/h2&gt;
-&lt;p&gt;最近得到一次面试机会。坐标维多利亚，公司为某金融集团收购的子公司，公司主营开发航海软件，听说北美这边市场占有率为第二，公司规模在50人左右，对于维多利亚这样不足40万人口的小城市来讲，已经很不错了。而且猎头说这个公司氛围不错，薪资待遇也可以，并且跟这边一般的中小公司招聘不一样，它们会有白板做题环节，（可能我存在偏见，个人感觉招聘没有白板做题的公司应该竞争力不强，哈哈）不管怎么说，这对于最近在刷题的我来说刚好是一次检验的机会，在这之前，本人并没有过白板做题的经历！&lt;/p&gt;
-
-&lt;h2 id=&quot;要求&quot;&gt;要求&lt;/h2&gt;
-&lt;p&gt;先说一下公司的招聘要求，初级到中级全栈开发工程师，工作经验1～3年，良好的前端开发经验，以及对后端开发有基本的认识，此外也需要了解一些数据库查询和一些基本算法，语言方面偏向JavaScript和C#，python也行。面试时间定在早上10:00，两位面试官，时间90分钟，包括介绍， 技术背景， 项目经验（30分钟），白板做题（1小时）。&lt;/p&gt;
-
-&lt;p&gt;由于得到面试晚，时间比较紧迫，从通知面试到面试总共不到48小时，也只能临时抱佛脚的看一下子，主要还是看平时的积累啊。&lt;/p&gt;
-
-&lt;h2 id=&quot;过程&quot;&gt;过程&lt;/h2&gt;
-&lt;p&gt;面试氛围相对比较轻松，不得不说我高估了面试内容，准备面试的过程我特别看了一下以前的代码，以及各种框架，知识点，概念，特别是花了很长时间看了CSS，其实工作当中用js，css框架比较多，纯js，css反而比较少写，所以总感觉自己头重脚轻，借机也算是复习一下。后端这部分也拿出了相当一部分时间做了梳理，什么restful apis，oauth认证，mvc之类的，数据库查询这部分确实没看，因为过往经验就是很多公司要求有数据库查询的功底，但是往往面试不会考，这也算是偷懒了。至于算法，我倒是觉得应该不会很难，毕竟这个级别的公司难度总不会和flag级别的相比，也就没怎么复习了。所以总体来讲心里是有底的，心态调整得还算不错。&lt;/p&gt;
-
-&lt;h2 id=&quot;上半场&quot;&gt;上半场&lt;/h2&gt;
-&lt;p&gt;面试前30分钟，我个人还比较满意，虽然相关技术背景有交代，自己特别准备的东西好像并没有得到关注，这也无可厚非，时间有限，公司肯定捡自己感兴趣的问。大概的考察了一下js的基本知识，比如，ajax的回调函数，循环和递归，题目类型就是运行之后返回什么结果，然后问如何优化这部分代码，这部分答得不错，也很基础。接着，竟然真的考察了数据库查询语言，是的，没错，就是我偷懒没复习的部分…! 题目其实很基础，考察的inner join和left join，以及数据库注入攻击。唉，真的是靠大学的记忆在回答，在考官的一点提示下才回答出来。这部分表现一般般。没答出来的题目已经做了笔记，同样的地方不能摔倒第二次。&lt;/p&gt;
-
-&lt;h2 id=&quot;下半场&quot;&gt;下半场&lt;/h2&gt;
-&lt;p&gt;接下来开始白板，莫名其妙有些兴奋。题目不难，把两个列表相同的元素挑出来组成新的列表。应该是到简单题，我很快给出了第一个方案，两个循环嵌套，O（n^2）。这显然不是最佳答案，但是先给出一个中庸的答案，在进行优化，这可以说是一个解题套路，让面试官看到你的思考过程和改进过程。最终，通过使用set（）把结果优化到O（n），这个题完成。第二道题，难度就大一点了，应该也不是难题，只是站在白板前确实很容易放空。题目是信号塔a向信号塔b发射一段字符串信息里面可能会包括目标字符串和垃圾字符串。判断一下这段信息里面是否存在目标字符串，附加条件是只有nextChar（）和exit（）两个api可以调用，nextChar的作用是得到下一个字符，其实就是一个从stack里取值，而exit（）的作用是如果没有目标字符串就退出。我的想法是先初始化一个空字符串作为结果，然后通过调用nextChar（）来遍历整个栈，当遇到目标字符串的首字母时候，就开始把字符压到结果空字符串里去，并进行比较，如过字符串全部匹配返回存在，如果字符串不完全匹配，那么清空结果字符串，从不匹配的那个字母开始重新调用nextChar比较，重复上面的过程。这个过程应该可以是O（1）的，不过可惜这道题没有想完整，最终的思路并没有完全表达出来，所以结果应该是不算太好。好在这道题其实是我额外要求的，本来不在考察过程中，只是我想借着这个机会多练习一下，考官也配合。&lt;/p&gt;
-
-&lt;h2 id=&quot;评估&quot;&gt;评估&lt;/h2&gt;
-&lt;p&gt;总体来讲，给自己打70分吧，没有达到预期，可以做得更好的，但是这个面试经验确实不错。对我很有启发，总结如下：&lt;/p&gt;
-
-&lt;h2 id=&quot;总结&quot;&gt;总结&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;备战的时候不能偷懒，不要自作主张，应该全面准备，看清楚考察内容，有针对性的复习，切勿好高骛远&lt;/li&gt;
-  &lt;li&gt;需要强化自己的沟通交流能力，多总结，多概括，让表达更简练，清楚&lt;/li&gt;
-  &lt;li&gt;面试暴露出来的问题还是基本功不扎实，针对的方法应该是多刷题，此外数据库刷题也要提上日程&lt;/li&gt;
-  &lt;li&gt;锻炼自己的临场应变能力，需要找到一个方法，解决面对白板成白痴的问题&lt;/li&gt;
-  &lt;li&gt;面试前要休息好，调整好情绪，合理控制好时间&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;感谢&quot;&gt;感谢&lt;/h2&gt;
-&lt;p&gt;特别感谢猎头Nash Geng提供的机会，以及主考官，Shaw Lu的考察（大概是叫这个吧）&lt;/p&gt;
-
-&lt;p&gt;接下来还要继续坚持，Desmond Zhou说凡事做到极致，必有回应。还有Baron和强哥也给了我莫大的勇气和信心。&lt;/p&gt;
-
-&lt;p&gt;加油！Fighting!&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">最近得到一个面试，这刚好是一个检验最近刷题成果的好机会。</summary></entry><entry><title type="html">简明的 Markdown 笔记</title><link href="http://localhost:4000/2019/09/15/markdown/" rel="alternate" type="text/html" title="简明的 Markdown 笔记" /><published>2019-09-15T00:00:00-07:00</published><updated>2019-09-15T00:00:00-07:00</updated><id>http://localhost:4000/2019/09/15/markdown</id><content type="html" xml:base="http://localhost:4000/2019/09/15/markdown/">&lt;p&gt;Github Pages 推荐使用 Markdown 语言编写博客内容。今天就来说一下Markdown&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;上学那会短暂的接触过Markdown，学了点皮毛就放下了，工作中比较少用到，所以不曾重视，直到有一天需要用的时候发现竟然连最基本的语法都可以写错，于是决定花点时间重新温习一下。真正开始使用它是在 GitHub Pages 里写博客和用它编辑项目的 README 文件。做了一点research发现撰写开发文档，编辑微信公众号文章和邮件内容等等都可以完美的原生支持，突然发现原来Markdown并不鸡肋。相反，可以说，Markdown 如今已经渗透了技术的方方面面，成为了撰写文本文档的首选。&lt;/p&gt;
-
-&lt;p&gt;那么首先我们一起来看一下它的「定义」：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Markdown 是一种轻量级标记语言，创始人为 John Gruber。它允许人们「使用易读易写的纯文本格式编写文档，然后转换成有效的 XHTML（或者 HTML）文档」。——维基百科&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;一起看看这门语言吧！&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;目录&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#背景&quot; id=&quot;markdown-toc-背景&quot;&gt;背景&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#优点&quot; id=&quot;markdown-toc-优点&quot;&gt;优点&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#使用场景&quot; id=&quot;markdown-toc-使用场景&quot;&gt;使用场景&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#编辑工具&quot; id=&quot;markdown-toc-编辑工具&quot;&gt;编辑工具&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#语法&quot; id=&quot;markdown-toc-语法&quot;&gt;语法&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#标题&quot; id=&quot;markdown-toc-标题&quot;&gt;标题&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#atx-style-一级标题&quot; id=&quot;markdown-toc-atx-style-一级标题&quot;&gt;atx-style 一级标题&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#二级标题&quot; id=&quot;markdown-toc-二级标题&quot;&gt;二级标题&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#六级标题&quot; id=&quot;markdown-toc-六级标题&quot;&gt;六级标题&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#setext-style-一级标题&quot; id=&quot;markdown-toc-setext-style-一级标题&quot;&gt;Setext-style 一级标题&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#二级标题-1&quot; id=&quot;markdown-toc-二级标题-1&quot;&gt;二级标题&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#段落&quot; id=&quot;markdown-toc-段落&quot;&gt;段落&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#行内格式&quot; id=&quot;markdown-toc-行内格式&quot;&gt;行内格式&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#引用块&quot; id=&quot;markdown-toc-引用块&quot;&gt;引用块&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#引用块内的标题&quot; id=&quot;markdown-toc-引用块内的标题&quot;&gt;引用块内的标题&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#超链接&quot; id=&quot;markdown-toc-超链接&quot;&gt;超链接&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#图片&quot; id=&quot;markdown-toc-图片&quot;&gt;图片&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#列表&quot; id=&quot;markdown-toc-列表&quot;&gt;列表&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#代码块&quot; id=&quot;markdown-toc-代码块&quot;&gt;代码块&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#水平分割线&quot; id=&quot;markdown-toc-水平分割线&quot;&gt;水平分割线&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#嵌入-html&quot; id=&quot;markdown-toc-嵌入-html&quot;&gt;嵌入 HTML&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#扩展语法&quot; id=&quot;markdown-toc-扩展语法&quot;&gt;扩展语法&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#表格&quot; id=&quot;markdown-toc-表格&quot;&gt;表格&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#任务列表&quot; id=&quot;markdown-toc-任务列表&quot;&gt;任务列表&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#删除线&quot; id=&quot;markdown-toc-删除线&quot;&gt;删除线&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#自动链接&quot; id=&quot;markdown-toc-自动链接&quot;&gt;自动链接&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#emoji&quot; id=&quot;markdown-toc-emoji&quot;&gt;emoji&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#参考&quot; id=&quot;markdown-toc-参考&quot;&gt;参考&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#github-flavored-markdown-spec&quot; id=&quot;markdown-toc-github-flavored-markdown-spec&quot;&gt;GitHub Flavored Markdown Spec&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;背景&quot;&gt;背景&lt;/h2&gt;
-
-&lt;h3 id=&quot;优点&quot;&gt;优点&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;专注于文字内容；&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;纯文本，易读易写，可以方便地纳入版本控制；&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;语法简单，没有什么学习成本，能轻松在码字的同时做出美观大方的排版。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;使用场景&quot;&gt;使用场景&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;各类代码托管平台&lt;/p&gt;
-
-    &lt;p&gt;主流的代码托管平台，如 GitHub、GitLab、BitBucket、Coding、Gitee 等等，都支持 Markdown 语法，很多开源项目的 README、开发文档、帮助文档、Wiki 等都用 Markdown 写作。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;技术社区和写作平台&lt;/p&gt;
-
-    &lt;p&gt;StackOverflow、掘金、简书、GitBook&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;个人感觉比较遗憾的一点是各平台可能采用不同语言实现的 Markdown 解析引擎，或采用同一解析引擎的不同版本，而且可能有不同程度的定制与扩展，这导致在不同平台上使用 Markdown 写作时体验并不完全一致。不过幸好对于大家公认的一些标准语法，各家都是支持的。&lt;/p&gt;
-
-&lt;h3 id=&quot;编辑工具&quot;&gt;编辑工具&lt;/h3&gt;
-
-&lt;p&gt;理论上任何一款文本编辑器都能用于编辑 Markdown 文档，它们分别提供了不同程度的语法高亮、预览等功能，以下只是列举其中一部分，选择自己称手的即可。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;现代编辑器&lt;/p&gt;
-
-    &lt;p&gt;VSCode&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;传统编辑器&lt;/p&gt;
-
-    &lt;p&gt;Vim / Sublime Text / Notepad++&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;IDE 自带编辑器&lt;/p&gt;
-
-    &lt;p&gt;IntelliJ IDEA / WebStorm&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;专用编辑器&lt;/p&gt;
-
-    &lt;p&gt;Ulysses / Mou / Typora / Markpad&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;在线编辑器&lt;/p&gt;
-
-    &lt;p&gt;各种支持 Markdown 的网站都提供了在线编辑器&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;语法&quot;&gt;语法&lt;/h2&gt;
-
-&lt;h3 id=&quot;标题&quot;&gt;标题&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Markdown：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# atx-style 一级标题
-
-## 二级标题
-
-###### 六级标题
-
-Setext-style 一级标题
-===
-
-二级标题
----
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;预览效果：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;h1 id=&quot;atx-style-一级标题&quot;&gt;atx-style 一级标题&lt;/h1&gt;
-
-  &lt;h2 id=&quot;二级标题&quot;&gt;二级标题&lt;/h2&gt;
-
-  &lt;h6 id=&quot;六级标题&quot;&gt;六级标题&lt;/h6&gt;
-
-  &lt;h1 id=&quot;setext-style-一级标题&quot;&gt;Setext-style 一级标题&lt;/h1&gt;
-
-  &lt;h2 id=&quot;二级标题-1&quot;&gt;二级标题&lt;/h2&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;对应 HTML：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;atx-style 一级标题&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;二级标题&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;h6&amp;gt;&lt;/span&gt;六级标题&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h6&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Setext-style 一级标题&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;二级标题&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;段落&quot;&gt;段落&lt;/h3&gt;
-
-&lt;p&gt;中间没有空行的连续不断的几行文字被视为一个段落。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Markdown：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;白日依山尽，
-
-黄河入海流。
-（句号后面没空格）
-
-欲穷千里目，
-
-更上一层楼。  
-（句号后面有俩空格）
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;预览效果：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;白日依山尽，&lt;/p&gt;
-
-&lt;p&gt;黄河入海流。
-（句号后面没空格）&lt;/p&gt;
-
-&lt;p&gt;欲穷千里目，&lt;/p&gt;
-
-&lt;p&gt;更上一层楼。&lt;br /&gt;
-（句号后面有俩空格）&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;对应 HTML：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;白日依山尽，&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;黄河入海流。
-（句号后面没有空格）&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;欲穷千里目，&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;
-  更上一层楼。
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;br&amp;gt;&lt;/span&gt;
-  （句号后面有俩空格）
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;行内格式&quot;&gt;行内格式&lt;/h3&gt;
-
-&lt;p&gt;对段落或者部分文本的强调效果。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Markdown：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;后面俩字**加黑**
-
-后面俩字*斜体*
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;预览效果：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;后面俩字&lt;strong&gt;加黑&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;后面俩字&lt;em&gt;斜体&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;对应 HTML：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;
-  后面俩字
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;strong&amp;gt;&lt;/span&gt;加黑&lt;span class=&quot;nt&quot;&gt;&amp;lt;/strong&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;
-  后面俩字
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;em&amp;gt;&lt;/span&gt;斜体&lt;span class=&quot;nt&quot;&gt;&amp;lt;/em&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;引用块&quot;&gt;引用块&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Markdown：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; 引用块段落一。
-&amp;gt;
-&amp;gt; 引用块段落二。
-&amp;gt;&amp;gt; 内嵌引用块段落一。
-&amp;gt;
-&amp;gt; ### 引用块内的标题
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;预览效果：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;引用块段落一。&lt;/p&gt;
-
-  &lt;p&gt;引用块段落二。&lt;/p&gt;
-
-  &lt;blockquote&gt;
-    &lt;p&gt;内嵌引用块段落一。&lt;/p&gt;
-  &lt;/blockquote&gt;
-
-  &lt;h3 id=&quot;引用块内的标题&quot;&gt;引用块内的标题&lt;/h3&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;对应 HTML：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;blockquote&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;引用块段落一。&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;引用块段落二。&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;blockquote&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;内嵌引用块段落一。&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/blockquote&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;h3&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;引用块内的标题&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;引用块内的标题&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/blockquote&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;超链接&quot;&gt;超链接&lt;/h3&gt;
-
-&lt;p&gt;Markdown 支持行内式链接和引用式链接。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Markdown：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;行内式 [Blog](https://zhenyu0519.github.io &quot;My Personal Blog&quot;) 链接，带 title。
-
-行内式 [GitHub](https://github.com/zhenyu0519) 链接。
-
-引用式 [博客][1] 链接。
-
-引用式 [GitHub][2] 链接，带 title。
-
-[1]: https://zhenyu0519.github.io
-[2]: https://github.com/zhenyu0519 &quot;我的 GitHub 主页&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;预览效果：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;行内式 &lt;a href=&quot;https://zhenyu0519.github.io&quot; title=&quot;我的个人博客&quot;&gt;博客&lt;/a&gt; 链接，带 title。&lt;/p&gt;
-
-&lt;p&gt;行内式 &lt;a href=&quot;https://github.com/zhenyu0519&quot;&gt;GitHub&lt;/a&gt; 链接。&lt;/p&gt;
-
-&lt;p&gt;引用式 &lt;a href=&quot;https://zhenyu0519.github.io&quot;&gt;博客&lt;/a&gt; 链接。&lt;/p&gt;
-
-&lt;p&gt;引用式 &lt;a href=&quot;https://github.com/zhenyu0519&quot; title=&quot;我的 GitHub 主页&quot;&gt;GitHub&lt;/a&gt; 链接，带 title。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;对应 HTML：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;行内式 &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://zhenyu0519.github.io&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;我的个人博客&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;博客&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt; 链接，带 title。&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;行内式 &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://github.com/zhenyu0519&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;GitHub&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt; 链接。&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;引用式 &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://zhenyu0519.github.io&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;博客&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt; 链接。&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;引用式 &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://github.com/zhenyu0519&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;我的 GitHub 主页&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;GitHub&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt; 链接，带 title。&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;图片&quot;&gt;图片&lt;/h3&gt;
-
-&lt;p&gt;在超链接的写法前加一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;!&lt;/code&gt;，就是引用图片的方法。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Markdown：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![Alt text](https://zhenyu0519.github.io/favicon.ico &quot;favicon&quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;预览效果：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://zhenyu0519.github.io/favicon.ico&quot; alt=&quot;Alt text&quot; title=&quot;favicon&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;对应 HTML：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://zhenyu0519.github.io/favicon.ico&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Alt text&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;favicon&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;列表&quot;&gt;列表&lt;/h3&gt;
-
-&lt;p&gt;包括有序列表和无序列表。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Markdown：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- 苹果
-- 葡萄
-- 榴莲
-
-1. 苹果
-2. 葡萄
-3. 榴莲
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;预览效果：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;苹果&lt;/li&gt;
-  &lt;li&gt;葡萄&lt;/li&gt;
-  &lt;li&gt;榴莲&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;苹果&lt;/li&gt;
-  &lt;li&gt;葡萄&lt;/li&gt;
-  &lt;li&gt;榴莲&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;对应 HTML：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;苹果&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;葡萄&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;榴莲&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;ol&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;苹果&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;葡萄&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&lt;/span&gt;榴莲&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ol&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;其中无序列表的标记可以使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt; 或 &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;，有序列表前的数字可以是乱序的。&lt;/p&gt;
-
-&lt;h3 id=&quot;代码块&quot;&gt;代码块&lt;/h3&gt;
-
-&lt;p&gt;支持行内代码和代码块。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Markdown：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-You may assume that each input would have exactly one solution, and you may not use the same element twice.
-
-``` python
-def twoSum(self, nums: 'List[int]', target: 'int') -&amp;gt; 'List[int]':
-    dict = {}
-    for i, v in enumerate(nums):
-        another = target - v
-        if another not in dict:
-            dict[v] = [another, i]
-        else:
-            return [dict[another][1],i]
-```
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;预览效果：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-You may assume that each input would have exactly one solution, and you may not use the same element twice.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;twoSum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'List[int]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'int'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'List[int]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;nb&quot;&gt;dict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;another&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;another&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;nb&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;another&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;another&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;上例中的语言标记 &lt;code class=&quot;highlighter-rouge&quot;&gt;python&lt;/code&gt; 可选填，可用于在编辑器和渲染后的效果里添加语法高亮。&lt;/p&gt;
-
-&lt;p&gt;块式代码也可以对整个代码段缩进四个空格，或一个 Tab 来实现。&lt;/p&gt;
-
-&lt;h3 id=&quot;水平分割线&quot;&gt;水平分割线&lt;/h3&gt;
-
-&lt;p&gt;使用一个单独行里的三个或以上 &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt; 来生产一条水平分割线，它们之间可以有空格。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Markdown：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;***
-
------
-
-- - -
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;预览效果：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;hr /&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;对应 HTML：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;hr /&amp;gt;
-
-&amp;lt;hr /&amp;gt;
-
-&amp;lt;hr /&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;嵌入-html&quot;&gt;嵌入 HTML&lt;/h3&gt;
-
-&lt;p&gt;Markdown 标记语言的目的不是替代 HTML，也不是发明一种更便捷的插入 HTML 标签的方式。它对应的只是 HTML 标签的一个很小的子集。&lt;/p&gt;
-
-&lt;p&gt;对于那些没有办法用 Markdown 语法来对应的 HTML 标签，直接使用 HTML 来写就好了。&lt;/p&gt;
-
-&lt;h2 id=&quot;扩展语法&quot;&gt;扩展语法&lt;/h2&gt;
-
-&lt;p&gt;本节的内容是介绍一些受到广泛支持的 Markdown 扩展语法。&lt;/p&gt;
-
-&lt;h3 id=&quot;表格&quot;&gt;表格&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Markdown：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;| 编号  | 姓名（左） | 年龄（右） | 性别（中） |
-| ----- | :--------  | ---------: | :------:   |
-| 0     | 张三       | 28         | 男         |
-| 1     | 李四       | 29         | 男         |
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;预览效果：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;编号&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;姓名（左）&lt;/th&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt;年龄（右）&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;性别（中）&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;张三&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;28&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;男&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;李四&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;29&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;男&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;对应 HTML：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;table&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;thead&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&amp;gt;&lt;/span&gt;编号&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;align=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;left&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;姓名（左）&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;align=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;right&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;年龄（右）&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;align=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;center&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;性别（中）&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/thead&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;tbody&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;align=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;left&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;张三&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;align=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;right&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;28&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;align=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;center&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;男&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;align=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;left&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;李四&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;align=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;right&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;29&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;align=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;center&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;男&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/tbody&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/table&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;任务列表&quot;&gt;任务列表&lt;/h3&gt;
-
-&lt;p&gt;在 GitHub / GitLab 里有较好的支持。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Markdown：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- [x] 洗碗
-- [ ] 清洗油烟机
-- [ ] 拖地
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;预览效果：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul class=&quot;task-list&quot;&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;洗碗&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;清洗油烟机&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;拖地&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;对应 HTML：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;contains-task-list&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;task-list-item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;checkbox&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;disabled=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;task-list-item-checkbox&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;checked=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; 洗碗&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;task-list-item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;checkbox&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;disabled=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;task-list-item-checkbox&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; 清洗油烟机&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;task-list-item&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;checkbox&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;disabled=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;task-list-item-checkbox&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; 拖地&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;删除线&quot;&gt;删除线&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Markdown：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;后面三个字打上~~删除线~~。
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;预览效果：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;后面三个字打上&lt;del&gt;删除线&lt;/del&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;对应 HTML：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;后面三个字打上&lt;span class=&quot;nt&quot;&gt;&amp;lt;del&amp;gt;&lt;/span&gt;删除线&lt;span class=&quot;nt&quot;&gt;&amp;lt;/del&amp;gt;&lt;/span&gt;。&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;自动链接&quot;&gt;自动链接&lt;/h3&gt;
-
-&lt;p&gt;自动链接扩展，即：当识别到 URL，或用 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt; 包括的 URL 时，会自动为其生成 &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt; 标签。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Markdown：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://github.com
-
-&amp;lt;example@gmail.com&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;预览效果：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;https://github.com&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;mailto:example@gmail.com&quot;&gt;example@gmail.com&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;对应 HTML：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://github.com&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;https://github.com&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;mailto:example@gmail.com&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;example@gmail.com&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;emoji&quot;&gt;emoji&lt;/h3&gt;
-
-&lt;p&gt;以 GitHub Pages 为例。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Markdown：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;:camel: :blush: :smile:
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;预览效果：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;:camel: :blush: :smile:&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;对应 HTML：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;emoji&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;:camel:&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;:camel:&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://assets-cdn.github.com/images/icons/emoji/unicode/1f42b.png&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;20&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;20&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;emoji&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;:blush:&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;:blush:&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://assets-cdn.github.com/images/icons/emoji/unicode/1f60a.png&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;20&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;20&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;emoji&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;:smile:&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;:smile:&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://assets-cdn.github.com/images/icons/emoji/unicode/1f604.png&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;20&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;20&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h2 id=&quot;参考&quot;&gt;参考&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://daringfireball.net/projects/markdown/syntax&quot;&gt;Markdown: Syntax - DARING FIREBALL&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/Markdown&quot;&gt;Markdown - 维基百科&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;
-    &lt;h2 id=&quot;github-flavored-markdown-spec&quot;&gt;&lt;a href=&quot;https://github.github.com/gfm/&quot;&gt;GitHub Flavored Markdown Spec&lt;/a&gt;&lt;/h2&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Jeffrey</name></author><summary type="html">Github Pages 推荐使用 Markdown 语言编写博客内容。今天就来说一下Markdown</summary></entry><entry><title type="html">新博客开篇，献给过去，现在，未来的自己</title><link href="http://localhost:4000/2019/08/15/Intro/" rel="alternate" type="text/html" title="新博客开篇，献给过去，现在，未来的自己" /><published>2019-08-15T00:00:00-07:00</published><updated>2019-08-15T00:00:00-07:00</updated><id>http://localhost:4000/2019/08/15/Intro</id><content type="html" xml:base="http://localhost:4000/2019/08/15/Intro/">&lt;p&gt;很久以前就知道有GitHub Pages，只是最近才有时间创建。并不很难，因为模版用别人的，只是做了一些配置上的调整，然后稍稍的改了一些样式就上线了。GitHub Pages本身只是个静态网站，而且部署，后台什么的都不用自己操心。当然，如果要完全做成自己的风格，那就另说，因为写一个稍微好看点的主题还是需要时间的。朴素一点，大家都能接受就足够了。这样我有更多的时间将重点放在内容上。也许后面会慢慢更新布局，外观。但是现在就先这样好了。&lt;/p&gt;
-
-&lt;p&gt;开篇打算写一点关于自己的内容&lt;/p&gt;
-
-&lt;p&gt;我于加拿大维多利亚大学毕业，计算机本科。大学的时候选了网络方向，毕业后如数都还给了老师。7月份以前一直供职于位于温哥华的一家医疗公司，担任前端开发工程师。最近裸辞，想要重新规划一下人生的路线，很多时候工作让人变的麻木，让人没有时间去总结和憧憬。我一直担心，等我老的时候是否会后悔年轻时没有足够多的尝试。所以，就这样。&lt;/p&gt;
-
-&lt;p&gt;这绝不是一时头脑发热的决定。&lt;/p&gt;
-
-&lt;p&gt;每个看似盲目的决定，实为反复斗争的产物。而这个过程花了我两个月时间。事情像上天的安排。某个时间段，突然觉醒，然后诸多的巧合最终把也许的事情变成必须的事情。既然这样，那么这应该是一件好事。&lt;/p&gt;
-
-&lt;p&gt;头两个星期，我心里有着各种各样的规划，虽然也算是任性了一把，但是时间再也不允许我犯错误和走弯路，我必须要找到真正适合自己的路。一直在准备着，也一直在做着不同的尝试，当然也不断在摒弃那些属于理想不属于现实的东西。我总结过往的经验，对标身边的成功范例，同时结合自己的性格，能力等做了一个初步的切实可行的决定，没错考证+刷题+项目三管齐下。当然现在跟三年前比，做的东西会更具体，而不会贪多嚼不烂。最近在看工作方面的网站，做了一些调查，感觉我的想法机会应该是蛮大的。那就不多说废话，前进。&lt;/p&gt;
-
-&lt;p&gt;以后会把所以有关技术，生活，感悟之类的东西放在这上面，以前的那个Blog，就不更新了，回头做项目的时候好好利用那台服务器。&lt;/p&gt;
-
-&lt;p&gt;我会尽量的每周更新一次这个Blog，跟大家分享我学到的不错的东西。我觉得这是一个很好的起点。也希望关注我页面的人留言，讨论。&lt;/p&gt;
-
-&lt;p&gt;加油！&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">很久以前就知道有GitHub Pages，只是最近才有时间创建。并不很难，因为模版用别人的，只是做了一些配置上的调整，然后稍稍的改了一些样式就上线了。GitHub Pages本身只是个静态网站，而且部署，后台什么的都不用自己操心。当然，如果要完全做成自己的风格，那就另说，因为写一个稍微好看点的主题还是需要时间的。朴素一点，大家都能接受就足够了。这样我有更多的时间将重点放在内容上。也许后面会慢慢更新布局，外观。但是现在就先这样好了。</summary></entry></feed>
+I hope it helps!&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">今天踩坑了，用gem安装jekyll的时候各种报错，网上的一些解决方法，要不就是行不通，要不就是零散破碎不完整，花了点时间把这个问题搞定，整理完之后顺便分享一下，帮助大家节省一点时间。</summary></entry></feed>
