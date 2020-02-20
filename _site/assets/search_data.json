@@ -156,6 +156,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/02/19/lc63/"
+    } ,
+  
+    {
+      "title"    : "leetcode 64. Minimum Path Sum (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/02/19/lc64/"
     } 
   
 ]
