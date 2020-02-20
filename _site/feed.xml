@@ -1,4 +1,151 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-02-18T23:28:34-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 70. Climbing Stairs (Python)</title><link href="http://localhost:4000/2020/02/18/lc70/" rel="alternate" type="text/html" title="leetcode 70. Climbing Stairs (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/18/lc70</id><content type="html" xml:base="http://localhost:4000/2020/02/18/lc70/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-02-19T18:19:37-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 62. Unique Paths (Python)</title><link href="http://localhost:4000/2020/02/19/lc62/" rel="alternate" type="text/html" title="leetcode 62. Unique Paths (Python)" /><published>2020-02-19T00:00:00-08:00</published><updated>2020-02-19T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/19/lc62</id><content type="html" xml:base="http://localhost:4000/2020/02/19/lc62/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;Dynamic-Programming&lt;/p&gt;
+
+&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
+&lt;p&gt;A robot is located at the top-left corner of a m x n grid (marked ‘Start’ in the diagram below).&lt;/p&gt;
+
+&lt;p&gt;The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked ‘Finish’ in the diagram below).&lt;/p&gt;
+
+&lt;p&gt;How many possible unique paths are there?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blog/robot_maze.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: m = 3, n = 2
+Output: 3
+Explanation:
+From the top-left corner, there are a total of 3 ways to reach the bottom-right corner:
+1. Right -&amp;gt; Right -&amp;gt; Down
+2. Right -&amp;gt; Down -&amp;gt; Right
+3. Down -&amp;gt; Right -&amp;gt; Right
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: m = 7, n = 3
+Output: 28
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;note&quot;&gt;Note:&lt;/h3&gt;
+&lt;p&gt;m and n will be at most 100.&lt;/p&gt;
+
+&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
+&lt;p&gt;This question solved by Dynamic Programming.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Find the base case:&lt;/p&gt;
+
+    &lt;p&gt;There is only one way to reach the left most edge and there is only one way to reach the bottom most edge. So we init the first row and first column of 2D list with 1.&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1,1,1,1,1,1,1
+1,x,x,x,x,x,x
+1,x,x,x,x,x,x
+1,x,x,x,x,x,x
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;….&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Find the pattern:&lt;/p&gt;
+
+    &lt;p&gt;The robot can only move either down or right. For each target cell that the robot want to reach, it is either from left cell of the tagret or from up cell of the target. Therefor we need sum up target’s left cell and up cell to get the total path to reach the target cell.
+&lt;img src=&quot;/images/blog/new_robot_maze.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Answer:&lt;/p&gt;
+
+    &lt;p&gt;When reach to the bottom-right corner, then number in the bottom-right corner will be the answer.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;conditions&quot;&gt;Conditions&lt;/h4&gt;
+&lt;p&gt;The length of stair is at least 2 steps.&lt;/p&gt;
+
+&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;uniquePaths&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;Init the first row and first column that will cost O(m+n). Then iterate all 2D dp array, it will cost O(m*n). In total will cost (m+n+mn), So generally, it is O(n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 746. Min Cost Climbing Stairs (Python)</title><link href="http://localhost:4000/2020/02/18/lc746/" rel="alternate" type="text/html" title="leetcode 746. Min Cost Climbing Stairs (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/18/lc746</id><content type="html" xml:base="http://localhost:4000/2020/02/18/lc746/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;Dynamic-Programming&lt;/p&gt;
+
+&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
+&lt;p&gt;On a staircase, the i-th step has some non-negative cost cost[i] assigned (0 indexed).&lt;/p&gt;
+
+&lt;p&gt;Once you pay the cost, you can either climb one or two steps. You need to find minimum cost to reach the top of the floor, and you can either start from the step with index 0, or the step with index 1.&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: cost = [10, 15, 20]
+Output: 15
+Explanation: Cheapest is start on cost[1], pay that cost and go to the top.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]
+Output: 6
+Explanation: Cheapest is start on cost[0], and only step on 1s, skipping cost[3].
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;note&quot;&gt;Note:&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;cost will have a length in the range [2, 1000].&lt;/li&gt;
+  &lt;li&gt;Every cost[i] will be an integer in the range [0, 999].&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
+&lt;p&gt;This question solved by Dynamic Programming. It is similar with question 70 &lt;a href=&quot;https://leetcode.com/problems/climbing-stairs/&quot; target=&quot;_blank&quot;&gt;Click Here!&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Find the base case (Given [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]):&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;when there are 2 stars, there is only 1 cost which is cost of stair 1 here is cost[0] = 1&lt;/li&gt;
+      &lt;li&gt;When there are 3 stars, you can either choose stair 1 or stair 2 to reach stair 3, we want the minimum cost, so we will choose the minimum between(cost[0], cost[1]) which is min(1, 100) = 1
+….&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Find the pattern:&lt;/p&gt;
+
+    &lt;p&gt;When there are 3 stars, you can either choose stair 1 or stair 2 to reach stair 3, we want the minimum cost,  so we will choose the minimum between(stair 1, stair 2) which is min(cost[0], cost[1]) = 1 and then add minimum value of previous two steps cost to the current stair value, in this case, the current(cost[2]=cost[2]+min(cost[0], cost[1])=2), the cost list become [1,100,2].
+Here the reason why we update current value is for next step cost if you have next step.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Answer:&lt;/p&gt;
+
+    &lt;p&gt;The answer will be the minimum value of previous two steps, not the current value!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Extended Options:&lt;/p&gt;
+
+    &lt;p&gt;If minimum cost is from previous 3 steps, we simply need to find the min(cost[-2], cost[-3], cost[-4])&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;conditions&quot;&gt;Conditions&lt;/h4&gt;
+&lt;p&gt;The length of stair is at least 2 steps.&lt;/p&gt;
+
+&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;minCostClimbingStairs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#The base condition is optional here, it may slightly increase performance which is nearly no effection here&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up minimum value of last two cost as result, it will cost (1+2), in total will be O(n+2n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 70. Climbing Stairs (Python)</title><link href="http://localhost:4000/2020/02/18/lc70/" rel="alternate" type="text/html" title="leetcode 70. Climbing Stairs (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/18/lc70</id><content type="html" xml:base="http://localhost:4000/2020/02/18/lc70/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;Dynamic-Programming&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
@@ -259,78 +406,7 @@ Output: 1389537
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up last two value as result, it will cost (1+3), in total will be O(n+3n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 746. Min Cost Climbing Stairs (Python)</title><link href="http://localhost:4000/2020/02/18/lc746/" rel="alternate" type="text/html" title="leetcode 746. Min Cost Climbing Stairs (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/18/lc746</id><content type="html" xml:base="http://localhost:4000/2020/02/18/lc746/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
-&lt;p&gt;Dynamic-Programming&lt;/p&gt;
-
-&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
-&lt;p&gt;On a staircase, the i-th step has some non-negative cost cost[i] assigned (0 indexed).&lt;/p&gt;
-
-&lt;p&gt;Once you pay the cost, you can either climb one or two steps. You need to find minimum cost to reach the top of the floor, and you can either start from the step with index 0, or the step with index 1.&lt;/p&gt;
-
-&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
-&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: cost = [10, 15, 20]
-Output: 15
-Explanation: Cheapest is start on cost[1], pay that cost and go to the top.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]
-Output: 6
-Explanation: Cheapest is start on cost[0], and only step on 1s, skipping cost[3].
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;note&quot;&gt;Note:&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;cost will have a length in the range [2, 1000].&lt;/li&gt;
-  &lt;li&gt;Every cost[i] will be an integer in the range [0, 999].&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
-&lt;p&gt;This question solved by Dynamic Programming. It is similar with question 70 &lt;a href=&quot;https://leetcode.com/problems/climbing-stairs/&quot; target=&quot;_blank&quot;&gt;Click Here!&lt;/a&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Find the base case (Given [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]):&lt;/p&gt;
-
-    &lt;ol&gt;
-      &lt;li&gt;when there are 2 stars, there is only 1 cost which is cost of stair 1 here is cost[0] = 1&lt;/li&gt;
-      &lt;li&gt;When there are 3 stars, you can either choose stair 1 or stair 2 to reach stair 3, we want the minimum cost, so we will choose the minimum between(cost[0], cost[1]) which is min(1, 100) = 1
-….&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Find the pattern:&lt;/p&gt;
-
-    &lt;p&gt;When there are 3 stars, you can either choose stair 1 or stair 2 to reach stair 3, we want the minimum cost,  so we will choose the minimum between(stair 1, stair 2) which is min(cost[0], cost[1]) = 1 and then add minimum value of previous two steps cost to the current stair value, in this case, the current(cost[2]=cost[2]+min(cost[0], cost[1])=2), the cost list become [1,100,2].
-Here the reason why we update current value is for next step cost if you have next step.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Answer:&lt;/p&gt;
-
-    &lt;p&gt;The answer will be the minimum value of previous two steps, not the current value!&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Extended Options:&lt;/p&gt;
-
-    &lt;p&gt;If minimum cost is from previous 3 steps, we simply need to find the min(cost[-2], cost[-3], cost[-4])&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;conditions&quot;&gt;Conditions&lt;/h4&gt;
-&lt;p&gt;The length of stair is at least 2 steps.&lt;/p&gt;
-
-&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;minCostClimbingStairs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#The base condition is optional here, it may slightly increase performance which is nearly no effection here&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up minimum value of last two cost as result, it will cost (1+2), in total will be O(n+2n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 654. Maximum Binary Tree (Python)</title><link href="http://localhost:4000/2020/02/17/lc654/" rel="alternate" type="text/html" title="leetcode 654. Maximum Binary Tree (Python)" /><published>2020-02-17T00:00:00-08:00</published><updated>2020-02-17T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/17/lc654</id><content type="html" xml:base="http://localhost:4000/2020/02/17/lc654/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up last two value as result, it will cost (1+3), in total will be O(n+3n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 654. Maximum Binary Tree (Python)</title><link href="http://localhost:4000/2020/02/17/lc654/" rel="alternate" type="text/html" title="leetcode 654. Maximum Binary Tree (Python)" /><published>2020-02-17T00:00:00-08:00</published><updated>2020-02-17T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/17/lc654</id><content type="html" xml:base="http://localhost:4000/2020/02/17/lc654/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;Tree, Depth-First-Search&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
@@ -467,41 +543,4 @@ If the returned string is longer than the longest string, replace the longest st
 &lt;p&gt;你放不下的迟早都会放下，你看得很重的东西有一天或许一文不值，你深深信仰的不一定是对的，而你认为错的也可能是正确的。
 这个世界允许青铜存在，但只有王者才会真正的活着。&lt;/p&gt;
 
-&lt;h3 id=&quot;今天到这吧希望明天更美好&quot;&gt;今天到这吧，希望明天更美好！&lt;/h3&gt;</content><author><name>Jeffrey</name></author><summary type="html">提醒自己，不要忘记从青铜变成王者的初心！</summary></entry><entry><title type="html">记第一次白板面试</title><link href="http://localhost:4000/2019/11/21/first_white_boarding_interview/" rel="alternate" type="text/html" title="记第一次白板面试" /><published>2019-11-21T00:00:00-08:00</published><updated>2019-11-21T00:00:00-08:00</updated><id>http://localhost:4000/2019/11/21/first_white_boarding_interview</id><content type="html" xml:base="http://localhost:4000/2019/11/21/first_white_boarding_interview/">&lt;p&gt;最近得到一个面试，这刚好是一个检验最近刷题成果的好机会。&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;h2 id=&quot;介绍&quot;&gt;介绍&lt;/h2&gt;
-&lt;p&gt;最近得到一次面试机会。坐标维多利亚，公司为某金融集团收购的子公司，公司主营开发航海软件，听说北美这边市场占有率为第二，公司规模在50人左右，对于维多利亚这样不足40万人口的小城市来讲，已经很不错了。而且猎头说这个公司氛围不错，薪资待遇也可以，并且跟这边一般的中小公司招聘不一样，它们会有白板做题环节，（可能我存在偏见，个人感觉招聘没有白板做题的公司应该竞争力不强，哈哈）不管怎么说，这对于最近在刷题的我来说刚好是一次检验的机会，在这之前，本人并没有过白板做题的经历！&lt;/p&gt;
-
-&lt;h2 id=&quot;要求&quot;&gt;要求&lt;/h2&gt;
-&lt;p&gt;先说一下公司的招聘要求，初级到中级全栈开发工程师，工作经验1～3年，良好的前端开发经验，以及对后端开发有基本的认识，此外也需要了解一些数据库查询和一些基本算法，语言方面偏向JavaScript和C#，python也行。面试时间定在早上10:00，两位面试官，时间90分钟，包括介绍， 技术背景， 项目经验（30分钟），白板做题（1小时）。&lt;/p&gt;
-
-&lt;p&gt;由于得到面试晚，时间比较紧迫，从通知面试到面试总共不到48小时，也只能临时抱佛脚的看一下子，主要还是看平时的积累啊。&lt;/p&gt;
-
-&lt;h2 id=&quot;过程&quot;&gt;过程&lt;/h2&gt;
-&lt;p&gt;面试氛围相对比较轻松，不得不说我高估了面试内容，准备面试的过程我特别看了一下以前的代码，以及各种框架，知识点，概念，特别是花了很长时间看了CSS，其实工作当中用js，css框架比较多，纯js，css反而比较少写，所以总感觉自己头重脚轻，借机也算是复习一下。后端这部分也拿出了相当一部分时间做了梳理，什么restful apis，oauth认证，mvc之类的，数据库查询这部分确实没看，因为过往经验就是很多公司要求有数据库查询的功底，但是往往面试不会考，这也算是偷懒了。至于算法，我倒是觉得应该不会很难，毕竟这个级别的公司难度总不会和flag级别的相比，也就没怎么复习了。所以总体来讲心里是有底的，心态调整得还算不错。&lt;/p&gt;
-
-&lt;h2 id=&quot;上半场&quot;&gt;上半场&lt;/h2&gt;
-&lt;p&gt;面试前30分钟，我个人还比较满意，虽然相关技术背景有交代，自己特别准备的东西好像并没有得到关注，这也无可厚非，时间有限，公司肯定捡自己感兴趣的问。大概的考察了一下js的基本知识，比如，ajax的回调函数，循环和递归，题目类型就是运行之后返回什么结果，然后问如何优化这部分代码，这部分答得不错，也很基础。接着，竟然真的考察了数据库查询语言，是的，没错，就是我偷懒没复习的部分…! 题目其实很基础，考察的inner join和left join，以及数据库注入攻击。唉，真的是靠大学的记忆在回答，在考官的一点提示下才回答出来。这部分表现一般般。没答出来的题目已经做了笔记，同样的地方不能摔倒第二次。&lt;/p&gt;
-
-&lt;h2 id=&quot;下半场&quot;&gt;下半场&lt;/h2&gt;
-&lt;p&gt;接下来开始白板，莫名其妙有些兴奋。题目不难，把两个列表相同的元素挑出来组成新的列表。应该是到简单题，我很快给出了第一个方案，两个循环嵌套，O（n^2）。这显然不是最佳答案，但是先给出一个中庸的答案，在进行优化，这可以说是一个解题套路，让面试官看到你的思考过程和改进过程。最终，通过使用set（）把结果优化到O（n），这个题完成。第二道题，难度就大一点了，应该也不是难题，只是站在白板前确实很容易放空。题目是信号塔a向信号塔b发射一段字符串信息里面可能会包括目标字符串和垃圾字符串。判断一下这段信息里面是否存在目标字符串，附加条件是只有nextChar（）和exit（）两个api可以调用，nextChar的作用是得到下一个字符，其实就是一个从stack里取值，而exit（）的作用是如果没有目标字符串就退出。我的想法是先初始化一个空字符串作为结果，然后通过调用nextChar（）来遍历整个栈，当遇到目标字符串的首字母时候，就开始把字符压到结果空字符串里去，并进行比较，如过字符串全部匹配返回存在，如果字符串不完全匹配，那么清空结果字符串，从不匹配的那个字母开始重新调用nextChar比较，重复上面的过程。这个过程应该可以是O（1）的，不过可惜这道题没有想完整，最终的思路并没有完全表达出来，所以结果应该是不算太好。好在这道题其实是我额外要求的，本来不在考察过程中，只是我想借着这个机会多练习一下，考官也配合。&lt;/p&gt;
-
-&lt;h2 id=&quot;评估&quot;&gt;评估&lt;/h2&gt;
-&lt;p&gt;总体来讲，给自己打70分吧，没有达到预期，可以做得更好的，但是这个面试经验确实不错。对我很有启发，总结如下：&lt;/p&gt;
-
-&lt;h2 id=&quot;总结&quot;&gt;总结&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;备战的时候不能偷懒，不要自作主张，应该全面准备，看清楚考察内容，有针对性的复习，切勿好高骛远&lt;/li&gt;
-  &lt;li&gt;需要强化自己的沟通交流能力，多总结，多概括，让表达更简练，清楚&lt;/li&gt;
-  &lt;li&gt;面试暴露出来的问题还是基本功不扎实，针对的方法应该是多刷题，此外数据库刷题也要提上日程&lt;/li&gt;
-  &lt;li&gt;锻炼自己的临场应变能力，需要找到一个方法，解决面对白板成白痴的问题&lt;/li&gt;
-  &lt;li&gt;面试前要休息好，调整好情绪，合理控制好时间&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;感谢&quot;&gt;感谢&lt;/h2&gt;
-&lt;p&gt;特别感谢猎头Nash Geng提供的机会，以及主考官，Shaw Lu的考察（大概是叫这个吧）&lt;/p&gt;
-
-&lt;p&gt;接下来还要继续坚持，Desmond Zhou说凡事做到极致，必有回应。还有Baron和强哥也给了我莫大的勇气和信心。&lt;/p&gt;
-
-&lt;p&gt;加油！Fighting!&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">最近得到一个面试，这刚好是一个检验最近刷题成果的好机会。</summary></entry></feed>
+&lt;h3 id=&quot;今天到这吧希望明天更美好&quot;&gt;今天到这吧，希望明天更美好！&lt;/h3&gt;</content><author><name>Jeffrey</name></author><summary type="html">提醒自己，不要忘记从青铜变成王者的初心！</summary></entry></feed>

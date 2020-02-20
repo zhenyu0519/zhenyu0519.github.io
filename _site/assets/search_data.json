@@ -142,6 +142,13 @@
       "category" : "Leetcode",
       
       "url"      : "http://localhost:4000/2020/02/18/lc746/"
+    } ,
+  
+    {
+      "title"    : "leetcode 62. Unique Paths (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "http://localhost:4000/2020/02/19/lc62/"
     } 
   
 ]
