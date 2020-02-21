@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>leetcode 5. Longest Palindromic Substring (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <title>leetcode 96. Unique Binary Search Trees (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
     <link rel="stylesheet" href="http://localhost:4000/assets/vendor/primer-css/css/primer.css">
     <link rel="stylesheet" href="http://localhost:4000/assets/vendor/primer-markdown/dist/user-content.min.css">
     <link rel="stylesheet" href="http://localhost:4000/assets/vendor/octicons/octicons/octicons.css">
@@ -21,28 +21,28 @@
     
 
     
-    <link rel="canonical" href="http://localhost:4000/2020/02/17/lc05/">
+    <link rel="canonical" href="http://localhost:4000/2020/02/20/lc96/">
     <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="http://localhost:4000/feed.xml">
     <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
     
-    <meta property="og:title" content="leetcode 5. Longest Palindromic Substring (Python)">
+    <meta property="og:title" content="leetcode 96. Unique Binary Search Trees (Python)">
       
-    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 5, Longest Palindromic Substring, zhenyu">
-    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 5, Longest Palindromic Substring, zhenyu">
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 96, Unique Binary Search Trees, zhenyu">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 96, Unique Binary Search Trees, zhenyu">
       
-    <meta name="description" content="Related TopicDynamic Programming, String">
-    <meta name="og:description" content="Related TopicDynamic Programming, String">
+    <meta name="description" content="Related TopicDynamic-Programming">
+    <meta name="og:description" content="Related TopicDynamic-Programming">
       
     
     
         
     
-    <meta property="og:url" content="http://localhost:4000/2020/02/17/lc05/">
+    <meta property="og:url" content="http://localhost:4000/2020/02/20/lc96/">
     <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="zh_CN" />
     
-    <meta property="article:published_time" content="2020-02-17">
+    <meta property="article:published_time" content="2020-02-20">
     
     <script src="http://localhost:4000/assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="http://localhost:4000/assets/js/jquery-ui.js"></script>
@@ -70,16 +70,16 @@
     </header>
     <!-- / header -->
 
-    <section class="collection-head small" data-pattern-id="leetcode 5. Lon">
+    <section class="collection-head small" data-pattern-id="leetcode 96. Un">
   <div class="container">
     <div class="columns">
       <div class="column three-fourths">
         <div class="collection-title">
-          <h1 class="collection-header">leetcode 5. Longest Palindromic Substring (Python)</h1>
+          <h1 class="collection-header">leetcode 96. Unique Binary Search Trees (Python)</h1>
           <div class="collection-info">
             
             <span class="meta-info">
-              <span class="octicon octicon-calendar"></span> 17 Feb 2020
+              <span class="octicon octicon-calendar"></span> 20 Feb 2020
             </span>
             
             
@@ -91,11 +91,6 @@
             <span class="meta-info">
               <span class="octicon octicon-file-directory"></span>
               <a href="http://localhost:4000/categories/#Dynamic-Programming" title="Dynamic-Programming">Dynamic-Programming</a>
-            </span>
-            
-            <span class="meta-info">
-              <span class="octicon octicon-file-directory"></span>
-              <a href="http://localhost:4000/categories/#String" title="String">String</a>
             </span>
             
           </div>
@@ -110,61 +105,82 @@
     <div class="column three-fourths">
       <article class="article-content markdown-body">
         <h1 id="related-topic">Related Topic</h1>
-<p>Dynamic Programming, String</p>
+<p>Dynamic-Programming</p>
 
 <h1 id="description">Description</h1>
-<p>Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.</p>
+<p>Given n, how many structurally unique BST’s (binary search trees) that store values 1 … n?</p>
 
 <h2 id="sample-io">Sample I/O</h2>
 <h3 id="example-1">Example 1</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "babad"
-Output: "bab"
-Note: "aba" is also a valid answer.
-</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: 3
+Output: 5
+Explanation:
+Given n = 3, there are a total of 5 unique BST's:
 
-<h3 id="example-2">Example 2</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "cbbd"
-Output: "bb"
+   1         3     3      2      1
+    \       /     /      / \      \
+     3     2     1      1   3      2
+    /     /       \                 \
+   2     1         2                 3
 </code></pre></div></div>
 
 <h1 id="methodology">Methodology</h1>
-<p>Iterate the whole string by each character.
-For each character, there are two pointers.</p>
-<ul>
-  <li>The left pointer: The index of previous character in terms of current character.</li>
-  <li>The right pointer: The index of next character in terms of current character.</li>
-</ul>
+<p>Unlike most people use list as cache, I use dictionary here. The performance for add and get will be exactly same. It is only good for when you want to print the DP result.</p>
 
-<h4 id="conditions">Conditions</h4>
-<ul>
-  <li>If previous character and next character are same. We move the left pointer one index to the left and move the right pointer on index to the right.</li>
-  <li>If the left pointer or right pointer out of index or previous character and next character are not equal, return the string that in range between left and right pointers.
-If the returned string is longer than the longest string, replace the longest string by returned string.</li>
-</ul>
+<p>So DP dictionary has key, value pair. The key represent the number of left side children or the number of right side children and the value represnt the number of possible subtree. The answer is sum of each root’s posibilities of substree</p>
 
-<p>After done the iteration, return longest string as answer</p>
+<p>For example:</p>
+
+<p>n = 1, the root is 1</p>
+
+<p>there is 0 left childen or 0 right children, root is the only node
+dp[0] = 1 represnt there is 1 possible substree for the root has 0 left children or 0 right children. Here 1 possible subtree is node(None)</p>
+
+<p>so when n = 1, ans is dp[0]xdp[0] = 1</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	1
+</code></pre></div></div>
+<p>n = 2, the root is either 1 or 2</p>
+
+<p>when root is 1 there is 0 left children and 1 right children
+when root is 2 there is 1 left children and 0 right children
+dp[1]=1 represent there is 1 possible substree for the root has 1 left children or 1 right children. Here the 1 possible substree is left child node(1) when 2 is the root and right child node(2) when 1 is the root.</p>
+
+<p>so when n =2, the ans is dp[1]xdp[0]+dp[0]xdp[1] = 2</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	   2                   1 
+	  /          or          \
+	 1                        2
+</code></pre></div></div>
+<p>n = 3, the root is 1,2 or 3</p>
+
+<p>when root is 1 there is 0 left children and 2 right children
+when root is 2 there is 1 left children and 1 right children
+when root is 3 there is 2 left children and 0 right children
+dp[2] = 2 represent there is 2 possible substree for the root has 2 left children or 2 right children.</p>
+
+<p>and based on the above pattern we know that when root has 1 left children or 1 right children, here the 2 possible substree is left children node(1or 2) when root is 3 or right children node (2,3) when root is 1.</p>
+
+<p>so when n = 3, the ans is dp[0]xdp[2] + dp[2]xdp[0] + dp[2]xdp[0] + dp[1]xdp[1] + dp[0]xdp[1]=5</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   1         3     3      2      1
+    \       /     /      / \      \
+     3     2     1      1   3      2
+    /     /       \                 \
+   2     1         2                 3
+</code></pre></div></div>
 
 <h1 id="code">Code</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">longestPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="n">longest</span> <span class="o">=</span> <span class="s">''</span>
-        <span class="k">def</span> <span class="nf">findLongest</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
-            <span class="k">while</span> <span class="n">l</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">r</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">==</span> <span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="p">]:</span>
-                <span class="n">l</span><span class="o">-=</span><span class="mi">1</span>
-                <span class="n">r</span><span class="o">+=</span><span class="mi">1</span>
-            <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">r</span><span class="p">]</span>
-        
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
-            <span class="n">s1</span> <span class="o">=</span> <span class="n">findLongest</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">longest</span><span class="p">):</span> <span class="n">longest</span> <span class="o">=</span> <span class="n">s1</span>
-            
-            <span class="n">s2</span> <span class="o">=</span> <span class="n">findLongest</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">longest</span><span class="p">):</span> <span class="n">longest</span> <span class="o">=</span> <span class="n">s2</span>
-                
-        <span class="k">return</span> <span class="n">longest</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">numTrees</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">dp</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span> <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+                <span class="n">num</span> <span class="o">+=</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">num</span>
+        <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
 </code></pre></div></div>
 
 <h1 id="bigo">BigO</h1>
-<p>When iterate the whole string, the BigO is O(n) where n is size of the string. Each character will need at most n/2 iteration to find if the string block is palindromic. So bigO is O(n*n/2) which is O(n^2)</p>
+<p>We iterate all input list, it will cost O(n-2), each value will add up previous value as result, it will cost ((n-2)n/2) It is O(n^2)</p>
 
 
       </article>
@@ -182,7 +198,7 @@ If the returned string is longer than the longest string, replace the longest st
         <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
         <script>
         var gitalk = new Gitalk({
-            id: '/2020/02/17/lc05/',
+            id: '/2020/02/20/lc96/',
             clientID: '4cef70907f5b36353d59',
             clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
             repo: 'zhenyu0519.github.io',
