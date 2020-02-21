@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" prefix="og: http://ogp.me/ns#" class="han-init">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>leetcode 91. Decode Ways (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-css/css/primer.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-markdown/dist/user-content.min.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/octicons/octicons/octicons.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/collection.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/repo-card.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/sections/repo-list.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/sections/mini-repo-list.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/boxed-group.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/common.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/share.js/dist/css/share.min.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/responsive.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/posts/index.css">
+    <!-- Latest compiled and minified CSS -->
+    
+
+    
+    <link rel="canonical" href="https://zhenyu0519.github.io/2020/02/20/lc91/">
+    <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="https://zhenyu0519.github.io/feed.xml">
+    <link rel="shortcut icon" href="https://zhenyu0519.github.io/favicon.ico">
+    
+    <meta property="og:title" content="leetcode 91. Decode Ways (Python)">
+      
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 91, Decode Ways, zhenyu">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 91, Decode Ways, zhenyu">
+      
+    <meta name="description" content="Related TopicDynamic-Programming">
+    <meta name="og:description" content="Related TopicDynamic-Programming">
+      
+    
+    
+        
+    
+    <meta property="og:url" content="https://zhenyu0519.github.io/2020/02/20/lc91/">
+    <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_CN" />
+    
+    <meta property="article:published_time" content="2020-02-20">
+    
+    <script src="https://zhenyu0519.github.io/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/jquery-ui.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/main.js"></script>
+</head>
+<body class="" data-mz="">
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="https://zhenyu0519.github.io/" title="杰弗里 · 时光博客(Jeffrey's Blog)"><span class="octicon octicon-mark-github"></span> 杰弗里 · 时光博客(Jeffrey's Blog)</a></h1>
+            <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <nav class="site-header-nav" role="navigation">
+                
+                <a href="https://zhenyu0519.github.io/" class=" site-header-nav-item" target="" title="Home">Home</a>
+                
+                <a href="https://zhenyu0519.github.io/categories/" class=" site-header-nav-item" target="" title="Categories">Categories</a>
+                
+                <a href="https://zhenyu0519.github.io/about/" class=" site-header-nav-item" target="" title="About">About</a>
+                
+            </nav>
+        </div>
+    </header>
+    <!-- / header -->
+
+    <section class="collection-head small" data-pattern-id="leetcode 91. De">
+  <div class="container">
+    <div class="columns">
+      <div class="column three-fourths">
+        <div class="collection-title">
+          <h1 class="collection-header">leetcode 91. Decode Ways (Python)</h1>
+          <div class="collection-info">
+            
+            <span class="meta-info">
+              <span class="octicon octicon-calendar"></span> 20 Feb 2020
+            </span>
+            
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Leetcode" title="Leetcode">Leetcode</a>
+            </span>
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Dynamic-Programming" title="Dynamic-Programming">Dynamic-Programming</a>
+            </span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- / .banner -->
+<section class="container content">
+  <div class="columns">
+    <div class="column three-fourths">
+      <article class="article-content markdown-body">
+        <h1 id="related-topic">Related Topic</h1>
+<p>Dynamic-Programming</p>
+
+<h1 id="description">Description</h1>
+<p>A message containing letters from A-Z is being encoded to numbers using the following mapping:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'A' -&gt; 1
+'B' -&gt; 2
+...
+'Z' -&gt; 26
+</code></pre></div></div>
+<p>Given a non-empty string containing only digits, determine the total number of ways to decode it.</p>
+
+<h2 id="sample-io">Sample I/O</h2>
+<h3 id="example-1">Example 1</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "12"
+Output: 2
+Explanation: It could be decoded as "AB" (1 2) or "L" (12).
+</code></pre></div></div>
+
+<h3 id="example-2">Example 2</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "226"
+Output: 3
+Explanation: It could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
+</code></pre></div></div>
+
+<h1 id="methodology">Methodology</h1>
+<p>This question solved by Dynamic Programming. It is similar with question 70 <a href="https://leetcode.com/problems/climbing-stairs/" target="_blank"> Climbing Stairs</a>.
+For climbing stair qusetion, each time you can either climb 1 or 2 steps and in this question, each combination of the number must in range 1 and 26 inclusive, so that means for each combination, it has to be 1 digit or 2 digits.</p>
+
+<ol>
+  <li>
+    <p>Before we find the pattern, there are some special case need to consider, if the combination is less than 1 it is invalid, if is is greater than 26, for example 27, we can not find the matched letter for that, so we can only split it to 2 and 7. For 0, there are only two case will be valid, 10 and 20.</p>
+  </li>
+  <li>Now we find the base case (with valid number)
+    <ol>
+      <li>If there is only 1 digit, then there is only 1 combination
+The base case will be:
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dp[0]=1,
+</code></pre></div>        </div>
+      </li>
+    </ol>
+  </li>
+  <li>Find the pattern: (with valid number for example 22226)
+    <ol>
+      <li>2: [2]</li>
+      <li>22: [2,2],[22]</li>
+      <li>222: [2,2,2],[22,2],[2,22]</li>
+      <li>2222: [2,2,2,2],[22,2,2],[2,22,2],[2,2,22],[2,2,22],[22,22]</li>
+      <li>22226:[2,2,2,2,6],[22,2,2,6],[2,22,2,6],[2,2,22,6],[2,2,22,6],[22,22,6],[2,2,2,26],[22,2,26],[2,22,26]</li>
+    </ol>
+
+    <p>Based the climbing stair question, for each move we have either 1 steps or 2 steps, we focus on last two moves, same here! Plus, we need to identify each combination is invalid. 
+Now, the key point to identify each combination is determined by position of ‘0’.</p>
+    <ol>
+      <li>If the last digit is not ‘0’, then there are at least dp[i-1] ways. Based on the pattern above. This is first identification.</li>
+      <li>Now, we check last two digits. If the last two digit is in greater than ‘09’ and smaller than ‘27’, based on the above pattern, we will add the total ways of step before the last step.</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="note">Note</h3>
+<p>Some hide case:</p>
+<ol>
+  <li>leading ‘0’ will return 0</li>
+  <li>consective ‘0’ will return 0</li>
+</ol>
+
+<h1 id="code">Code</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">numDecodings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dp</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">1</span> <span class="ow">and</span> <span class="s">'09'</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="s">'27'</span><span class="p">:</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h1 id="bigo">BigO</h1>
+<p>We iterate all dp array, it will cost O(n+1), each value will add up last two value as result, it will cost (1+2), in total will be O((n+1)+2(n+1)) and It is O(n)</p>
+
+
+      </article>
+      <div class="share">
+        <div class="share-component"></div>
+      </div>
+      <div class="comment">
+        
+
+  
+
+  
+        <div id="gitalk-container"></div>
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script>
+        var gitalk = new Gitalk({
+            id: '/2020/02/20/lc91/',
+            clientID: '4cef70907f5b36353d59',
+            clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
+            repo: 'zhenyu0519.github.io',
+            owner: 'zhenyu0519',
+            admin: ['zhenyu0519'],
+            labels: ['gitment'],
+            perPage: 50,
+        })
+        gitalk.render('gitalk-container')
+        </script>
+  
+
+
+      </div>
+    </div>
+    <div class="column one-fourth">
+      
+<h3>Search</h3>
+<div id="site_search" class="site_search">
+    <input type="text" id="search_box" placeholder="Search">
+</div>
+
+<ul id="search_results"></ul>
+
+<link rel="stylesheet" type="text/css" href="https://zhenyu0519.github.io/assets/css/modules/sidebar-search.css">
+<script src="https://zhenyu0519.github.io/assets/js/simple-jekyll-search.min.js"></script>
+<script src="https://zhenyu0519.github.io/assets/js/search.js"></script>
+
+<script type="text/javascript">
+SimpleJekyllSearch({
+    searchInput: document.getElementById('search_box'),
+    resultsContainer: document.getElementById('search_results'),
+    json: 'https://zhenyu0519.github.io/assets/search_data.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No results found',
+    fuzzy: false,
+    exclude: ['Welcome'],
+    limit: 10
+})
+</script>
+
+      
+<h3 class="post-directory-title mobile-hidden">Table of Contents</h3>
+<div id="post-directory-module" class="mobile-hidden">
+  <section class="post-directory">
+  <!-- Links that trigger the jumping -->
+  <!-- Added by javascript below -->
+  <dl></dl>
+  </section>
+</div>
+
+<script src="https://zhenyu0519.github.io/assets/js/jquery.toc.js"></script>
+
+    </div>
+  </div>
+</section>
+<!-- /section.content -->
+    <footer class="container">
+        <div class="site-footer" role="contentinfo">
+            <div class="copyright left mobile-block">
+                    © 2019
+                    <span title="Jeffrey">Jeffrey</span>
+                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
+            </div>
+
+            <ul class="site-footer-links right mobile-hidden">
+                <li>
+                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
+                </li>
+            </ul>
+            <a href="https://github.com/zhenyu0519/zhenyu0519.github.io" target="_blank" aria-label="view source code">
+                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+            </a>
+            <ul class="site-footer-links mobile-hidden">
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/" title="Home" target="">Home</a>
+                </li>
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/categories/" title="Categories" target="">Categories</a>
+                </li>
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/about/" title="About" target="">About</a>
+                </li>
+                
+                <li><a href="https://zhenyu0519.github.io/feed.xml"><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
+            </ul>
+
+        </div>
+    </footer>
+    <div class="tools-wrapper">
+      <a class="gotop" href="#" title="回到顶部"><span class="octicon octicon-arrow-up"></span></a>
+    </div>
+    <!-- / footer -->
+    <script src="https://zhenyu0519.github.io/assets/vendor/share.js/dist/js/share.min.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/geopattern.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/prism.js"></script>
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/prism.css">
+    <script>
+      jQuery(document).ready(function($) {
+        // geopattern
+        $('.geopattern').each(function(){
+          $(this).geopattern($(this).data('pattern-id'));
+        });
+       // hljs.initHighlightingOnLoad();
+      });
+    </script>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div style="display:none">
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-113380665-1', 'auto');
+        ga('send', 'pageview');
+
+      </script>
+    </div>
+    
+</body>
+</html>

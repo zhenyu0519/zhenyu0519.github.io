@@ -163,6 +163,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/02/19/lc64/"
+    } ,
+  
+    {
+      "title"    : "leetcode 91. Decode Ways (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/02/20/lc91/"
     } 
   
 ]
