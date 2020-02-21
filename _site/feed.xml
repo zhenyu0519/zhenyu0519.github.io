@@ -1,4 +1,96 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-02-21T01:57:07-08:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 91. Decode Ways (Python)</title><link href="https://zhenyu0519.github.io/2020/02/20/lc91/" rel="alternate" type="text/html" title="leetcode 91. Decode Ways (Python)" /><published>2020-02-20T00:00:00-08:00</published><updated>2020-02-20T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/20/lc91</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/20/lc91/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-02-21T15:23:12-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">二刷原来更难</title><link href="http://localhost:4000/2020/02/21/second_time_leetcode/" rel="alternate" type="text/html" title="二刷原来更难" /><published>2020-02-21T00:00:00-08:00</published><updated>2020-02-21T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/21/second_time_leetcode</id><content type="html" xml:base="http://localhost:4000/2020/02/21/second_time_leetcode/">&lt;h2&gt;&lt;img src=&quot;/images/blog/jack_ma.jpg&quot; alt=&quot;Lake And Tree&quot; /&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;二刷的速度严重比预期慢压力山大&quot;&gt;二刷的速度严重比预期慢，压力山大！&lt;/h3&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;最近&quot;&gt;最近&lt;/h2&gt;
+&lt;p&gt;最近结束了一刷之后，原本以为二刷会轻松一些，没想到二刷反而难度更大。一刷的难度在于题型，数据结构，算法不熟悉，所以一刷的目的是熟悉题型，数据结构和算法，最终遇到题目应该知道用什么方法和数据结构来解决的同时要考虑好一些特殊情况。这些差不多都做到了，目前简单的题型应该可以比较快的做出来。中等题型花点时间也差不多。&lt;/p&gt;
+
+&lt;p&gt;说一下二刷，之所以觉得难，是因为‘客户需求改变了’。不再局限于是否做出来而在于理解这些题的思考过程，古人说得好，授人予鱼不及授人予渔。一种类型的题如果明白了其中的原理，那么加以适当的练习便可以达到甚至超过题海战术的效果，所谓磨刀不误砍柴功。&lt;/p&gt;
+
+&lt;p&gt;同时二刷带来的压力也远远高于一刷，因为理论上说二刷应该要开始投简历了，所有的模拟都到了实战演练的阶段，同时二刷要准备的不仅仅是题目，更是面试技巧，简历， 人脉，以及针对不同公司要做的不同准备。&lt;/p&gt;
+
+&lt;p&gt;这就要求这个阶段有更好的体力，更科学的作息，更有效率的工作学习。&lt;/p&gt;
+
+&lt;p&gt;加油，你能行&lt;/p&gt;
+
+&lt;h2 id=&quot;激励&quot;&gt;激励&lt;/h2&gt;
+&lt;p&gt;所有成功的背后是压抑，容忍，不屈，坚持。离开comfort zone那一刻，你就应该知道，你已经告别了过去，未来不管是光明还是黑暗，迈出了这一步就要走下去。人生没有回头路！&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">二刷的速度严重比预期慢，压力山大！</summary></entry><entry><title type="html">leetcode 96. Unique Binary Search Trees (Python)</title><link href="http://localhost:4000/2020/02/20/lc96/" rel="alternate" type="text/html" title="leetcode 96. Unique Binary Search Trees (Python)" /><published>2020-02-20T00:00:00-08:00</published><updated>2020-02-20T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/20/lc96</id><content type="html" xml:base="http://localhost:4000/2020/02/20/lc96/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;Dynamic-Programming&lt;/p&gt;
+
+&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
+&lt;p&gt;Given n, how many structurally unique BST’s (binary search trees) that store values 1 … n?&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: 3
+Output: 5
+Explanation:
+Given n = 3, there are a total of 5 unique BST's:
+
+   1         3     3      2      1
+    \       /     /      / \      \
+     3     2     1      1   3      2
+    /     /       \                 \
+   2     1         2                 3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
+&lt;p&gt;Unlike most people use list as cache, I use dictionary here. The performance for add and get will be exactly same. It is only good for when you want to print the DP result.&lt;/p&gt;
+
+&lt;p&gt;So DP dictionary has key, value pair. The key represent the number of left side children or the number of right side children and the value represnt the number of possible subtree. The answer is sum of each root’s posibilities of substree&lt;/p&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;p&gt;n = 1, the root is 1&lt;/p&gt;
+
+&lt;p&gt;there is 0 left childen or 0 right children, root is the only node
+dp[0] = 1 represnt there is 1 possible substree for the root has 0 left children or 0 right children. Here 1 possible subtree is node(None)&lt;/p&gt;
+
+&lt;p&gt;so when n = 1, ans is dp[0]xdp[0] = 1&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;n = 2, the root is either 1 or 2&lt;/p&gt;
+
+&lt;p&gt;when root is 1 there is 0 left children and 1 right children
+when root is 2 there is 1 left children and 0 right children
+dp[1]=1 represent there is 1 possible substree for the root has 1 left children or 1 right children. Here the 1 possible substree is left child node(1) when 2 is the root and right child node(2) when 1 is the root.&lt;/p&gt;
+
+&lt;p&gt;so when n =2, the ans is dp[1]xdp[0]+dp[0]xdp[1] = 2&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	   2                   1 
+	  /          or          \
+	 1                        2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;n = 3, the root is 1,2 or 3&lt;/p&gt;
+
+&lt;p&gt;when root is 1 there is 0 left children and 2 right children
+when root is 2 there is 1 left children and 1 right children
+when root is 3 there is 2 left children and 0 right children
+dp[2] = 2 represent there is 2 possible substree for the root has 2 left children or 2 right children.&lt;/p&gt;
+
+&lt;p&gt;and based on the above pattern we know that when root has 1 left children or 1 right children, here the 2 possible substree is left children node(1or 2) when root is 3 or right children node (2,3) when root is 1.&lt;/p&gt;
+
+&lt;p&gt;so when n = 3, the ans is dp[0]xdp[2] + dp[2]xdp[0] + dp[2]xdp[0] + dp[1]xdp[1] + dp[0]xdp[1]=5&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   1         3     3      2      1
+    \       /     /      / \      \
+     3     2     1      1   3      2
+    /     /       \                 \
+   2     1         2                 3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;numTrees&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;We iterate all input list, it will cost O(n-2), each value will add up previous value as result, it will cost ((n-2)n/2) It is O(n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 91. Decode Ways (Python)</title><link href="http://localhost:4000/2020/02/20/lc91/" rel="alternate" type="text/html" title="leetcode 91. Decode Ways (Python)" /><published>2020-02-20T00:00:00-08:00</published><updated>2020-02-20T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/20/lc91</id><content type="html" xml:base="http://localhost:4000/2020/02/20/lc91/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;Dynamic-Programming&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
@@ -78,7 +170,7 @@ Now, the key point to identify each combination is determined by position of ‘
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n+1), each value will add up last two value as result, it will cost (1+2), in total will be O((n+1)+2(n+1)) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 198. House Robber (Python)</title><link href="https://zhenyu0519.github.io/2020/02/20/lc198/" rel="alternate" type="text/html" title="leetcode 198. House Robber (Python)" /><published>2020-02-20T00:00:00-08:00</published><updated>2020-02-20T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/20/lc198</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/20/lc198/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;We iterate all dp array, it will cost O(n+1), each value will add up last two value as result, it will cost (1+2), in total will be O((n+1)+2(n+1)) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 198. House Robber (Python)</title><link href="http://localhost:4000/2020/02/20/lc198/" rel="alternate" type="text/html" title="leetcode 198. House Robber (Python)" /><published>2020-02-20T00:00:00-08:00</published><updated>2020-02-20T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/20/lc198</id><content type="html" xml:base="http://localhost:4000/2020/02/20/lc198/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;Dynamic-Programming&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
@@ -153,83 +245,7 @@ Because you can rob the adjacent house, so the final answer should be the mixmiu
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up last two value as result, it will cost (1+2), in total will be O(n+2n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 96. Unique Binary Search Trees (Python)</title><link href="https://zhenyu0519.github.io/2020/02/20/lc96/" rel="alternate" type="text/html" title="leetcode 96. Unique Binary Search Trees (Python)" /><published>2020-02-20T00:00:00-08:00</published><updated>2020-02-20T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/20/lc96</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/20/lc96/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
-&lt;p&gt;Dynamic-Programming&lt;/p&gt;
-
-&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
-&lt;p&gt;Given n, how many structurally unique BST’s (binary search trees) that store values 1 … n?&lt;/p&gt;
-
-&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
-&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: 3
-Output: 5
-Explanation:
-Given n = 3, there are a total of 5 unique BST's:
-
-   1         3     3      2      1
-    \       /     /      / \      \
-     3     2     1      1   3      2
-    /     /       \                 \
-   2     1         2                 3
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
-&lt;p&gt;Unlike most people use list as cache, I use dictionary here. The performance for add and get will be exactly same. It is only good for when you want to print the DP result.&lt;/p&gt;
-
-&lt;p&gt;So DP dictionary has key, value pair. The key represent the number of left side children or the number of right side children and the value represnt the number of possible subtree. The answer is sum of each root’s posibilities of substree&lt;/p&gt;
-
-&lt;p&gt;For example:&lt;/p&gt;
-
-&lt;p&gt;n = 1, the root is 1&lt;/p&gt;
-
-&lt;p&gt;there is 0 left childen or 0 right children, root is the only node
-dp[0] = 1 represnt there is 1 possible substree for the root has 0 left children or 0 right children. Here 1 possible subtree is node(None)&lt;/p&gt;
-
-&lt;p&gt;so when n = 1, ans is dp[0]xdp[0] = 1&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;n = 2, the root is either 1 or 2&lt;/p&gt;
-
-&lt;p&gt;when root is 1 there is 0 left children and 1 right children
-when root is 2 there is 1 left children and 0 right children
-dp[1]=1 represent there is 1 possible substree for the root has 1 left children or 1 right children. Here the 1 possible substree is left child node(1) when 2 is the root and right child node(2) when 1 is the root.&lt;/p&gt;
-
-&lt;p&gt;so when n =2, the ans is dp[1]xdp[0]+dp[0]xdp[1] = 2&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	   2                   1 
-	  /          or          \
-	 1                        2
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;n = 3, the root is 1,2 or 3&lt;/p&gt;
-
-&lt;p&gt;when root is 1 there is 0 left children and 2 right children
-when root is 2 there is 1 left children and 1 right children
-when root is 3 there is 2 left children and 0 right children
-dp[2] = 2 represent there is 2 possible substree for the root has 2 left children or 2 right children.&lt;/p&gt;
-
-&lt;p&gt;and based on the above pattern we know that when root has 1 left children or 1 right children, here the 2 possible substree is left children node(1or 2) when root is 3 or right children node (2,3) when root is 1.&lt;/p&gt;
-
-&lt;p&gt;so when n = 3, the ans is dp[0]xdp[2] + dp[2]xdp[0] + dp[2]xdp[0] + dp[1]xdp[1] + dp[0]xdp[1]=5&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   1         3     3      2      1
-    \       /     /      / \      \
-     3     2     1      1   3      2
-    /     /       \                 \
-   2     1         2                 3
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;numTrees&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all input list, it will cost O(n-2), each value will add up previous value as result, it will cost ((n-2)n/2) It is O(n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 64. Minimum Path Sum (Python)</title><link href="https://zhenyu0519.github.io/2020/02/19/lc64/" rel="alternate" type="text/html" title="leetcode 64. Minimum Path Sum (Python)" /><published>2020-02-19T00:00:00-08:00</published><updated>2020-02-19T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/19/lc64</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/19/lc64/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up last two value as result, it will cost (1+2), in total will be O(n+2n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 64. Minimum Path Sum (Python)</title><link href="http://localhost:4000/2020/02/19/lc64/" rel="alternate" type="text/html" title="leetcode 64. Minimum Path Sum (Python)" /><published>2020-02-19T00:00:00-08:00</published><updated>2020-02-19T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/19/lc64</id><content type="html" xml:base="http://localhost:4000/2020/02/19/lc64/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;Dynamic-Programming&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
@@ -286,7 +302,7 @@ For each target cell, it is either from right or down, all we need to do is smal
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Init the first row and first column that will cost O(m+n). Then iterate all 2D dp array, it will cost O(m*n). In total will cost (m+n+mn), So generally, it is O(n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 63. Unique Paths II (Python)</title><link href="https://zhenyu0519.github.io/2020/02/19/lc63/" rel="alternate" type="text/html" title="leetcode 63. Unique Paths II (Python)" /><published>2020-02-19T00:00:00-08:00</published><updated>2020-02-19T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/19/lc63</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/19/lc63/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;Init the first row and first column that will cost O(m+n). Then iterate all 2D dp array, it will cost O(m*n). In total will cost (m+n+mn), So generally, it is O(n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 63. Unique Paths II (Python)</title><link href="http://localhost:4000/2020/02/19/lc63/" rel="alternate" type="text/html" title="leetcode 63. Unique Paths II (Python)" /><published>2020-02-19T00:00:00-08:00</published><updated>2020-02-19T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/19/lc63</id><content type="html" xml:base="http://localhost:4000/2020/02/19/lc63/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;Dynamic-Programming&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
@@ -393,7 +409,7 @@ After that, we need sum up target’s left cell and up cell to get the total pat
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Init the first row and first column that will cost O(m+n). Then iterate all 2D dp array, it will cost O(m*n). In total will cost (m+n+mn), So generally, it is O(n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 62. Unique Paths (Python)</title><link href="https://zhenyu0519.github.io/2020/02/19/lc62/" rel="alternate" type="text/html" title="leetcode 62. Unique Paths (Python)" /><published>2020-02-19T00:00:00-08:00</published><updated>2020-02-19T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/19/lc62</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/19/lc62/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;Init the first row and first column that will cost O(m+n). Then iterate all 2D dp array, it will cost O(m*n). In total will cost (m+n+mn), So generally, it is O(n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 62. Unique Paths (Python)</title><link href="http://localhost:4000/2020/02/19/lc62/" rel="alternate" type="text/html" title="leetcode 62. Unique Paths (Python)" /><published>2020-02-19T00:00:00-08:00</published><updated>2020-02-19T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/19/lc62</id><content type="html" xml:base="http://localhost:4000/2020/02/19/lc62/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;Dynamic-Programming&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
@@ -466,7 +482,7 @@ Output: 28
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Init the first row and first column that will cost O(m+n). Then iterate all 2D dp array, it will cost O(m*n). In total will cost (m+n+mn), So generally, it is O(n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 1137. N-th Tribonacci Number (Python)</title><link href="https://zhenyu0519.github.io/2020/02/18/lc1137/" rel="alternate" type="text/html" title="leetcode 1137. N-th Tribonacci Number (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/18/lc1137</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/18/lc1137/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;Init the first row and first column that will cost O(m+n). Then iterate all 2D dp array, it will cost O(m*n). In total will cost (m+n+mn), So generally, it is O(n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 1137. N-th Tribonacci Number (Python)</title><link href="http://localhost:4000/2020/02/18/lc1137/" rel="alternate" type="text/html" title="leetcode 1137. N-th Tribonacci Number (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/18/lc1137</id><content type="html" xml:base="http://localhost:4000/2020/02/18/lc1137/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;Dynamic-Programming&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
@@ -533,7 +549,7 @@ Output: 1389537
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up last two value as result, it will cost (1+3), in total will be O(n+3n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 53. Maximum Subarray (Python)</title><link href="https://zhenyu0519.github.io/2020/02/18/lc53/" rel="alternate" type="text/html" title="leetcode 53. Maximum Subarray (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/18/lc53</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/18/lc53/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up last two value as result, it will cost (1+3), in total will be O(n+3n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 53. Maximum Subarray (Python)</title><link href="http://localhost:4000/2020/02/18/lc53/" rel="alternate" type="text/html" title="leetcode 53. Maximum Subarray (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/18/lc53</id><content type="html" xml:base="http://localhost:4000/2020/02/18/lc53/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;Dynamic-Programming&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
@@ -576,7 +592,7 @@ The basic idea is append the current value to the subarry of largest sum.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n), each current value will compare with the sum of current value and last value, it will cost (1+1), in total will be O(n+n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 70. Climbing Stairs (Python)</title><link href="https://zhenyu0519.github.io/2020/02/18/lc70/" rel="alternate" type="text/html" title="leetcode 70. Climbing Stairs (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/18/lc70</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/18/lc70/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;We iterate all dp array, it will cost O(n), each current value will compare with the sum of current value and last value, it will cost (1+1), in total will be O(n+n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 70. Climbing Stairs (Python)</title><link href="http://localhost:4000/2020/02/18/lc70/" rel="alternate" type="text/html" title="leetcode 70. Climbing Stairs (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/18/lc70</id><content type="html" xml:base="http://localhost:4000/2020/02/18/lc70/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;Dynamic-Programming&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
@@ -656,75 +672,4 @@ dp[4]=5
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up last two value as result, it will cost (1+2), in total will be O(n+2n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry><entry><title type="html">leetcode 746. Min Cost Climbing Stairs (Python)</title><link href="https://zhenyu0519.github.io/2020/02/18/lc746/" rel="alternate" type="text/html" title="leetcode 746. Min Cost Climbing Stairs (Python)" /><published>2020-02-18T00:00:00-08:00</published><updated>2020-02-18T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/18/lc746</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/18/lc746/">&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
-&lt;p&gt;Dynamic-Programming&lt;/p&gt;
-
-&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
-&lt;p&gt;On a staircase, the i-th step has some non-negative cost cost[i] assigned (0 indexed).&lt;/p&gt;
-
-&lt;p&gt;Once you pay the cost, you can either climb one or two steps. You need to find minimum cost to reach the top of the floor, and you can either start from the step with index 0, or the step with index 1.&lt;/p&gt;
-
-&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
-&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: cost = [10, 15, 20]
-Output: 15
-Explanation: Cheapest is start on cost[1], pay that cost and go to the top.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]
-Output: 6
-Explanation: Cheapest is start on cost[0], and only step on 1s, skipping cost[3].
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;note&quot;&gt;Note:&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;cost will have a length in the range [2, 1000].&lt;/li&gt;
-  &lt;li&gt;Every cost[i] will be an integer in the range [0, 999].&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
-&lt;p&gt;This question solved by Dynamic Programming. It is similar with question 70 &lt;a href=&quot;https://leetcode.com/problems/climbing-stairs/&quot; target=&quot;_blank&quot;&gt;Click Here!&lt;/a&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Find the base case (Given [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]):&lt;/p&gt;
-
-    &lt;ol&gt;
-      &lt;li&gt;when there are 2 stars, there is only 1 cost which is cost of stair 1 here is cost[0] = 1&lt;/li&gt;
-      &lt;li&gt;When there are 3 stars, you can either choose stair 1 or stair 2 to reach stair 3, we want the minimum cost, so we will choose the minimum between(cost[0], cost[1]) which is min(1, 100) = 1
-….&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Find the pattern:&lt;/p&gt;
-
-    &lt;p&gt;When there are 3 stars, you can either choose stair 1 or stair 2 to reach stair 3, we want the minimum cost,  so we will choose the minimum between(stair 1, stair 2) which is min(cost[0], cost[1]) = 1 and then add minimum value of previous two steps cost to the current stair value, in this case, the current(cost[2]=cost[2]+min(cost[0], cost[1])=2), the cost list become [1,100,2].
-Here the reason why we update current value is for next step cost if you have next step.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Answer:&lt;/p&gt;
-
-    &lt;p&gt;The answer will be the minimum value of previous two steps, not the current value!&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Extended Options:&lt;/p&gt;
-
-    &lt;p&gt;If minimum cost is from previous 3 steps, we simply need to find the min(cost[-2], cost[-3], cost[-4])&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;conditions&quot;&gt;Conditions&lt;/h4&gt;
-&lt;p&gt;The length of stair is at least 2 steps.&lt;/p&gt;
-
-&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;minCostClimbingStairs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#The base condition is optional here, it may slightly increase performance which is nearly no effection here&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up minimum value of last two cost as result, it will cost (1+2), in total will be O(n+2n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry></feed>
+&lt;p&gt;We iterate all dp array, it will cost O(n), each value will add up last two value as result, it will cost (1+2), in total will be O(n+2n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Related Topic Dynamic-Programming</summary></entry></feed>

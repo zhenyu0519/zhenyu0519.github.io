@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>leetcode 654. Maximum Binary Tree (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <title>二刷原来更难 &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
     <!-- add google search console -->
     <meta name="google-site-verification" content="Hh37wMK9MFpx6xtWD91RDJzIy-PTLn7ocpNyQ1kPI6M" />
     <link rel="stylesheet" href="http://localhost:4000/assets/vendor/primer-css/css/primer.css">
@@ -23,28 +23,28 @@
     
 
     
-    <link rel="canonical" href="http://localhost:4000/2020/02/17/lc654/">
+    <link rel="canonical" href="http://localhost:4000/2020/02/21/second_time_leetcode/">
     <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="http://localhost:4000/feed.xml">
     <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
     
-    <meta property="og:title" content="leetcode 654. Maximum Binary Tree (Python)">
+    <meta property="og:title" content="二刷原来更难">
       
-    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 654, Maximum Binary Tree, zhenyu">
-    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 654, Maximum Binary Tree, zhenyu">
+    <meta name="keywords" content="2019， hurt">
+    <meta name="og:keywords" content="2019， hurt">
       
-    <meta name="description" content="Related TopicTree, Depth-First-Search">
-    <meta name="og:description" content="Related TopicTree, Depth-First-Search">
+    <meta name="description" content="二刷的速度严重比预期慢，压力山大！">
+    <meta name="og:description" content="二刷的速度严重比预期慢，压力山大！">
       
     
     
         
     
-    <meta property="og:url" content="http://localhost:4000/2020/02/17/lc654/">
+    <meta property="og:url" content="http://localhost:4000/2020/02/21/second_time_leetcode/">
     <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="zh_CN" />
     
-    <meta property="article:published_time" content="2020-02-17">
+    <meta property="article:published_time" content="2020-02-21">
     
     <script src="http://localhost:4000/assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="http://localhost:4000/assets/js/jquery-ui.js"></script>
@@ -72,32 +72,22 @@
     </header>
     <!-- / header -->
 
-    <section class="collection-head small" data-pattern-id="leetcode 654. M">
+    <section class="collection-head small" data-pattern-id="二刷原来更难">
   <div class="container">
     <div class="columns">
       <div class="column three-fourths">
         <div class="collection-title">
-          <h1 class="collection-header">leetcode 654. Maximum Binary Tree (Python)</h1>
+          <h1 class="collection-header">二刷原来更难</h1>
           <div class="collection-info">
             
             <span class="meta-info">
-              <span class="octicon octicon-calendar"></span> 17 Feb 2020
+              <span class="octicon octicon-calendar"></span> 21 Feb 2020
             </span>
             
             
             <span class="meta-info">
               <span class="octicon octicon-file-directory"></span>
-              <a href="http://localhost:4000/categories/#Leetcode" title="Leetcode">Leetcode</a>
-            </span>
-            
-            <span class="meta-info">
-              <span class="octicon octicon-file-directory"></span>
-              <a href="http://localhost:4000/categories/#Depth-First-Search" title="Depth-First-Search">Depth-First-Search</a>
-            </span>
-            
-            <span class="meta-info">
-              <span class="octicon octicon-file-directory"></span>
-              <a href="http://localhost:4000/categories/#Tree" title="Tree">Tree</a>
+              <a href="http://localhost:4000/categories/#Life" title="Life">Life</a>
             </span>
             
           </div>
@@ -111,63 +101,23 @@
   <div class="columns">
     <div class="column three-fourths">
       <article class="article-content markdown-body">
-        <h1 id="related-topic">Related Topic</h1>
-<p>Tree, Depth-First-Search</p>
+        <h2><img src="/images/blog/jack_ma.jpg" alt="Lake And Tree" /></h2>
+<h3 id="二刷的速度严重比预期慢压力山大">二刷的速度严重比预期慢，压力山大！</h3>
 
-<h1 id="description">Description</h1>
-<p>Given an integer array with no duplicates. A maximum tree building on this array is defined as follow:</p>
+<hr />
+<h2 id="最近">最近</h2>
+<p>最近结束了一刷之后，原本以为二刷会轻松一些，没想到二刷反而难度更大。一刷的难度在于题型，数据结构，算法不熟悉，所以一刷的目的是熟悉题型，数据结构和算法，最终遇到题目应该知道用什么方法和数据结构来解决的同时要考虑好一些特殊情况。这些差不多都做到了，目前简单的题型应该可以比较快的做出来。中等题型花点时间也差不多。</p>
 
-<ol>
-  <li>The root is the maximum number in the array.</li>
-  <li>The left subtree is the maximum tree constructed from left part subarray divided by the maximum number.</li>
-  <li>The right subtree is the maximum tree constructed from right part subarray divided by the maximum number.
-Construct the maximum tree by the given array and output the root node of this tree.</li>
-</ol>
+<p>说一下二刷，之所以觉得难，是因为‘客户需求改变了’。不再局限于是否做出来而在于理解这些题的思考过程，古人说得好，授人予鱼不及授人予渔。一种类型的题如果明白了其中的原理，那么加以适当的练习便可以达到甚至超过题海战术的效果，所谓磨刀不误砍柴功。</p>
 
-<h2 id="sample-io">Sample I/O</h2>
-<h3 id="example-1">Example 1</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: [3,2,1,6,0,5]
-Output: return the tree root node representing the following tree:
+<p>同时二刷带来的压力也远远高于一刷，因为理论上说二刷应该要开始投简历了，所有的模拟都到了实战演练的阶段，同时二刷要准备的不仅仅是题目，更是面试技巧，简历， 人脉，以及针对不同公司要做的不同准备。</p>
 
-      6
-    /   \
-   3     5
-    \    / 
-     2  0   
-       \
-        1
-</code></pre></div></div>
+<p>这就要求这个阶段有更好的体力，更科学的作息，更有效率的工作学习。</p>
 
-<h3 id="note">Note:</h3>
-<p>The size of the given array will be in the range [1,1000].</p>
+<p>加油，你能行</p>
 
-<h1 id="methodology">Methodology</h1>
-<p>Using DFS to recursively get the sub-list which contains the numbers that represented node values for left sub-stree. 
-Convert the maximum value of current list be the root node of sub-tree.
-Then the left parts of list that exclusice the maximum value will constructed as left sub-stree of the current root.
-And the right parts of list that exclusice the maximum value will constructed as right substree of the current root.</p>
-
-<h4 id="conditions">Conditions</h4>
-<ul>
-  <li>If there is no value in the list, which means there are no more nodes to construct the sub-tree, terminate the current recursion.</li>
-</ul>
-
-<p>After done the recursion, return the root node of the tree</p>
-
-<h1 id="code">Code</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">constructMaximumBinaryTree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">TreeNode</span><span class="p">:</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">nums</span><span class="p">:</span><span class="k">return</span>
-        <span class="n">mx</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
-        <span class="n">index</span><span class="o">=</span><span class="n">nums</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">mx</span><span class="p">)</span>
-        <span class="n">root</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">mx</span><span class="p">)</span>
-        <span class="n">root</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">constructMaximumBinaryTree</span><span class="p">(</span><span class="n">nums</span><span class="p">[:</span><span class="n">index</span><span class="p">])</span>
-        <span class="n">root</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">constructMaximumBinaryTree</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">:])</span>
-        <span class="k">return</span> <span class="n">root</span>
-</code></pre></div></div>
-
-<h1 id="bigo">BigO</h1>
-<p>When use recursion to get sub-list for left sub-tree, the BigO is logN and to get sub-list for right sub-tree will be same. Therefor the BigO is O(2*logN) Which is O(logN)</p>
-
+<h2 id="激励">激励</h2>
+<p>所有成功的背后是压抑，容忍，不屈，坚持。离开comfort zone那一刻，你就应该知道，你已经告别了过去，未来不管是光明还是黑暗，迈出了这一步就要走下去。人生没有回头路！</p>
 
       </article>
       <div class="share">
@@ -184,7 +134,7 @@ And the right parts of list that exclusice the maximum value will constructed as
         <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
         <script>
         var gitalk = new Gitalk({
-            id: '/2020/02/17/lc654/',
+            id: '/2020/02/21/second_time_leetcode/',
             clientID: '4cef70907f5b36353d59',
             clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
             repo: 'zhenyu0519.github.io',
