@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>leetcode 91. Decode Ways (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <title>leetcode 213. House Robber II (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
     <!-- add google search console -->
     <meta name="google-site-verification" content="Hh37wMK9MFpx6xtWD91RDJzIy-PTLn7ocpNyQ1kPI6M" />
     <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-css/css/primer.css">
@@ -23,14 +23,14 @@
     
 
     
-    <link rel="canonical" href="https://zhenyu0519.github.io/2020/02/20/lc91/">
+    <link rel="canonical" href="https://zhenyu0519.github.io/2020/02/21/lc213/">
     <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="https://zhenyu0519.github.io/feed.xml">
     <link rel="shortcut icon" href="https://zhenyu0519.github.io/favicon.ico">
     
-    <meta property="og:title" content="leetcode 91. Decode Ways (Python)">
+    <meta property="og:title" content="leetcode 213. House Robber II (Python)">
       
-    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 91, Decode Ways, zhenyu">
-    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 91, Decode Ways, zhenyu">
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 213, House Robber II, zhenyu">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 213, House Robber II, zhenyu">
       
     <meta name="description" content="Related TopicDynamic-Programming">
     <meta name="og:description" content="Related TopicDynamic-Programming">
@@ -39,12 +39,12 @@
     
         
     
-    <meta property="og:url" content="https://zhenyu0519.github.io/2020/02/20/lc91/">
+    <meta property="og:url" content="https://zhenyu0519.github.io/2020/02/21/lc213/">
     <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="zh_CN" />
     
-    <meta property="article:published_time" content="2020-02-20">
+    <meta property="article:published_time" content="2020-02-21">
     
     <script src="https://zhenyu0519.github.io/assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="https://zhenyu0519.github.io/assets/js/jquery-ui.js"></script>
@@ -72,16 +72,16 @@
     </header>
     <!-- / header -->
 
-    <section class="collection-head small" data-pattern-id="leetcode 91. De">
+    <section class="collection-head small" data-pattern-id="leetcode 213. H">
   <div class="container">
     <div class="columns">
       <div class="column three-fourths">
         <div class="collection-title">
-          <h1 class="collection-header">leetcode 91. Decode Ways (Python)</h1>
+          <h1 class="collection-header">leetcode 213. House Robber II (Python)</h1>
           <div class="collection-info">
             
             <span class="meta-info">
-              <span class="octicon octicon-calendar"></span> 20 Feb 2020
+              <span class="octicon octicon-calendar"></span> 21 Feb 2020
             </span>
             
             
@@ -110,83 +110,48 @@
 <p>Dynamic-Programming</p>
 
 <h1 id="description">Description</h1>
-<p>A message containing letters from A-Z is being encoded to numbers using the following mapping:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'A' -&gt; 1
-'B' -&gt; 2
-...
-'Z' -&gt; 26
-</code></pre></div></div>
-<p>Given a non-empty string containing only digits, determine the total number of ways to decode it.</p>
+<p>You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed. All houses at this place are arranged in a circle. That means the first house is the neighbor of the last one. Meanwhile, adjacent houses have security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night.</p>
+
+<p>Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight without alerting the police.</p>
 
 <h2 id="sample-io">Sample I/O</h2>
 <h3 id="example-1">Example 1</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "12"
-Output: 2
-Explanation: It could be decoded as "AB" (1 2) or "L" (12).
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: [2,3,2]
+Output: 3
+Explanation: You cannot rob house 1 (money = 2) and then rob house 3 (money = 2),
+because they are adjacent houses.
 </code></pre></div></div>
 
 <h3 id="example-2">Example 2</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "226"
-Output: 3
-Explanation: It could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: [1,2,3,1]
+Output: 4
+Explanation: Rob house 1 (money = 1) and then rob house 3 (money = 3).
+Total amount you can rob = 1 + 3 = 4.
 </code></pre></div></div>
 
 <h1 id="methodology">Methodology</h1>
-<p>This question solved by Dynamic Programming. It is similar with question 70 <a href="https://leetcode.com/problems/climbing-stairs/" target="_blank"> Climbing Stairs</a>.
-For climbing stair qusetion, each time you can either climb 1 or 2 steps and in this question, each combination of the number must in range 1 and 26 inclusive, so that means for each combination, it has to be 1 digit or 2 digits.</p>
+<p>This question solved by Dynamic Programming. It is similar with question 198 <a href="https://zhenyu0519.github.io/2020/02/20/lc198/" target="_blank"> House Robber I</a>.</p>
 
-<ol>
-  <li>
-    <p>Before we find the pattern, there are some special case need to consider, if the combination is less than 1 it is invalid, if is is greater than 26, for example 27, we can not find the matched letter for that, so we can only split it to 2 and 7. For 0, there are only two case will be valid, 10 and 20.</p>
-  </li>
-  <li>Now we find the base case (with valid number)
-    <ol>
-      <li>If there is only 1 digit, then there is only 1 combination
-The base case will be:
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dp[0]=1,
-</code></pre></div>        </div>
-      </li>
-    </ol>
-  </li>
-  <li>Find the pattern: (with valid number for example 22226)
-    <ol>
-      <li>2: [2]</li>
-      <li>22: [2,2],[22]</li>
-      <li>222: [2,2,2],[22,2],[2,22]</li>
-      <li>2222: [2,2,2,2],[22,2,2],[2,22,2],[2,2,22],[2,2,22],[22,22]</li>
-      <li>22226:[2,2,2,2,6],[22,2,2,6],[2,22,2,6],[2,2,22,6],[2,2,22,6],[22,22,6],[2,2,2,26],[22,2,26],[2,22,26]</li>
-    </ol>
+<p>The difference is ‘All houses at this place are arranged in a circle’.</p>
 
-    <p>Based the climbing stair question, for each move we have either 1 steps or 2 steps, we focus on last two moves, same here! Plus, we need to identify each combination is invalid. 
-Now, the key point to identify each combination is determined by position of ‘0’.</p>
-    <ol>
-      <li>If the last digit is not ‘0’, then there are at least dp[i-1] ways. Based on the pattern above. This is first identification.</li>
-      <li>Now, we check last two digits. If the last two digit is in greater than ‘09’ and smaller than ‘27’, based on the above pattern, we will add the total ways of step before the last step.</li>
-    </ol>
-  </li>
-</ol>
+<p>That means the robber can either rob the first house or last house but not both.
+So we will give the two input list. One with first house and without the last house. The other one with last house and without the first house. Then we compare the two input list results.</p>
 
-<h3 id="note">Note</h3>
-<p>Some hide case:</p>
-<ol>
-  <li>leading ‘0’ will return 0</li>
-  <li>consective ‘0’ will return 0</li>
-</ol>
+<p>I just slightly modify my previous code to match this need.</p>
 
 <h1 id="code">Code</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">numDecodings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dp</span><span class="p">)):</span>
-            <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-            <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">1</span> <span class="ow">and</span> <span class="s">'09'</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="s">'27'</span><span class="p">:</span>
-                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">rob</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">nums</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">def</span> <span class="nf">max_money</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+            <span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">nums</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
+                <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+=</span><span class="nb">max</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">3</span><span class="p">],</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+            <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">nums</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_money</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">:]),</span><span class="n">max_money</span><span class="p">(</span><span class="n">nums</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="k">else</span> <span class="nb">max</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h1 id="bigo">BigO</h1>
-<p>We iterate all dp array, it will cost O(n+1), each value will add up last two value as result, it will cost (1+2), in total will be O((n+1)+2(n+1)) and It is O(n)</p>
+<p>We iterate all dp array, it will cost O(n), we have to input list, that give n+n cost. Therefore, it is O(n)</p>
 
 
       </article>
@@ -204,7 +169,7 @@ Now, the key point to identify each combination is determined by position of ‘
         <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
         <script>
         var gitalk = new Gitalk({
-            id: '/2020/02/20/lc91/',
+            id: '/2020/02/21/lc213/',
             clientID: '4cef70907f5b36353d59',
             clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
             repo: 'zhenyu0519.github.io',
