@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 二刷原来更难
+title: 好吧，二刷更难
 categories: Life
 description: Life should be cool
 keywords: 2019， hurt

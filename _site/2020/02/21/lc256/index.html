@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>leetcode 213. House Robber II (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <title>leetcode 256. Paint House (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
     <!-- add google search console -->
     <meta name="google-site-verification" content="Hh37wMK9MFpx6xtWD91RDJzIy-PTLn7ocpNyQ1kPI6M" />
     <link rel="stylesheet" href="http://localhost:4000/assets/vendor/primer-css/css/primer.css">
@@ -23,23 +23,23 @@
     
 
     
-    <link rel="canonical" href="http://localhost:4000/2020/02/21/lc213/">
+    <link rel="canonical" href="http://localhost:4000/2020/02/21/lc256/">
     <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="http://localhost:4000/feed.xml">
     <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
     
-    <meta property="og:title" content="leetcode 213. House Robber II (Python)">
+    <meta property="og:title" content="leetcode 256. Paint House (Python)">
       
-    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 213, House Robber II, zhenyu">
-    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 213, House Robber II, zhenyu">
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 256, Paint House, zhenyu">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 256, Paint House, zhenyu">
       
-    <meta name="description" content="Related TopicDynamic-Programming">
-    <meta name="og:description" content="Related TopicDynamic-Programming">
+    <meta name="description" content="Leetcode 256. Paint House (Python)">
+    <meta name="og:description" content="Leetcode 256. Paint House (Python)">
       
     
     
         
     
-    <meta property="og:url" content="http://localhost:4000/2020/02/21/lc213/">
+    <meta property="og:url" content="http://localhost:4000/2020/02/21/lc256/">
     <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="zh_CN" />
@@ -72,12 +72,12 @@
     </header>
     <!-- / header -->
 
-    <section class="collection-head small" data-pattern-id="leetcode 213. H">
+    <section class="collection-head small" data-pattern-id="leetcode 256. P">
   <div class="container">
     <div class="columns">
       <div class="column three-fourths">
         <div class="collection-title">
-          <h1 class="collection-header">leetcode 213. House Robber II (Python)</h1>
+          <h1 class="collection-header">leetcode 256. Paint House (Python)</h1>
           <div class="collection-info">
             
             <span class="meta-info">
@@ -106,52 +106,69 @@
   <div class="columns">
     <div class="column three-fourths">
       <article class="article-content markdown-body">
-        <h1 id="related-topic">Related Topic</h1>
-<p>Dynamic-Programming</p>
+        <h1 id="leetcode-256-paint-house-python">Leetcode 256. Paint House (Python)</h1>
+
+<h1 id="related-topic">Related Topic</h1>
+<p><a href="/categories/#Dynamic-Programming" target="_blank"> Dynamic-Programming</a>.</p>
 
 <h1 id="description">Description</h1>
-<p>You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed. All houses at this place are arranged in a circle. That means the first house is the neighbor of the last one. Meanwhile, adjacent houses have security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night.</p>
+<p>There are a row of n houses, each house can be painted with one of the three colors: red, blue or green. The cost of painting each house with a certain color is different. You have to paint all the houses such that no two adjacent houses have the same color.</p>
 
-<p>Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight without alerting the police.</p>
+<p>The cost of painting each house with a certain color is represented by a n x 3 cost matrix. For example, costs[0][0] is the cost of painting house 0 with color red; costs[1][2] is the cost of painting house 1 with color green, and so on… Find the minimum cost to paint all houses.</p>
 
 <h2 id="sample-io">Sample I/O</h2>
 <h3 id="example-1">Example 1</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: [2,3,2]
-Output: 3
-Explanation: You cannot rob house 1 (money = 2) and then rob house 3 (money = 2),
-because they are adjacent houses.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: [[17,2,17],[16,16,5],[14,3,19]]
+Output: 10
+Explanation: Paint house 0 into blue, paint house 1 into green, paint house 2 into blue. 
+Minimum cost: 2 + 5 + 3 = 10.
 </code></pre></div></div>
 
-<h3 id="example-2">Example 2</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: [1,2,3,1]
-Output: 4
-Explanation: Rob house 1 (money = 1) and then rob house 3 (money = 3).
-Total amount you can rob = 1 + 3 = 4.
-</code></pre></div></div>
+<h3 id="note">Note:</h3>
+<p>All costs are positive integers.</p>
 
 <h1 id="methodology">Methodology</h1>
-<p>This question solved by Dynamic Programming. It is similar with question 198 <a href="https://zhenyu0519.github.io/2020/02/20/lc198/" target="_blank"> House Robber I</a>.</p>
+<p>This question solved by Dynamic Programming.
+Each house have three color options and adjacent houses can not be same color.</p>
 
-<p>The difference is ‘All houses at this place are arranged in a circle’.</p>
+<ol>
+  <li>
+    <p>Find the pattern:</p>
 
-<p>That means the robber can either rob the first house or last house but not both.
-So we will give the two input list. One with first house and without the last house. The other one with last house and without the first house. Then we compare the two input list results.</p>
+    <p>Suppose we choose red color for the current house then the previous adjacent house can only either be blue or green. We gonna choose the minimum cost from those two colors and then add up to my cost of current house with red color. This will be the total min cost from current house to previous house when the current is red.</p>
 
-<p>I just slightly modify my previous code to match this need.</p>
+    <p>If we are not choose red but green for the current house then the previous adjacent house can only either be blue or red. We gonna choose the minimum cost from those two colors and then add up to my cost of current house with green color. This will be the total min cost from current house to previous house when the current is green.</p>
 
-<h1 id="code">Code</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">rob</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">nums</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
-        <span class="k">def</span> <span class="nf">max_money</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
-            <span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">nums</span>
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
-                <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+=</span><span class="nb">max</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">3</span><span class="p">],</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
-            <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">nums</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
-        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_money</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">:]),</span><span class="n">max_money</span><span class="p">(</span><span class="n">nums</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="k">else</span> <span class="nb">max</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+    <p>If we are now choose blue for the current house then the previous adjacent house can only either be red or green. We gonna choose the minimum cost from those two colors and then add up to my cost of current house with blue color. This will be the total min cost from current house to previous house when the current is blue.</p>
+  </li>
+  <li>
+    <p>Extended option:</p>
+
+    <p>Could be more than three colors or every three houses are not same color!</p>
+  </li>
+</ol>
+
+<h1 id="code-1-original-idea">Code 1 (original idea)</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">minCost</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">costs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">costs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">size</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">costs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">):</span>
+            <span class="n">costs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">+=</span><span class="nb">min</span><span class="p">(</span><span class="n">costs</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span><span class="n">costs</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>
+            <span class="n">costs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">+=</span><span class="nb">min</span><span class="p">(</span><span class="n">costs</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">costs</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>
+            <span class="n">costs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">+=</span><span class="nb">min</span><span class="p">(</span><span class="n">costs</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span><span class="n">costs</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">costs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </code></pre></div></div>
 
+<h1 id="code-2-simplify-the-code">Code 2 (simplify the code)</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">minCost</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">costs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">red</span><span class="p">,</span> <span class="n">blue</span><span class="p">,</span> <span class="n">green</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
+            <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">costs</span><span class="p">:</span>
+                <span class="n">red</span><span class="p">,</span> <span class="n">blue</span><span class="p">,</span> <span class="n">green</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">blue</span><span class="p">,</span> <span class="n">green</span><span class="p">)</span> <span class="o">+</span> <span class="n">r</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">red</span><span class="p">,</span> <span class="n">blue</span><span class="p">)</span> <span class="o">+</span> <span class="n">g</span>
+            <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">red</span><span class="p">,</span> <span class="n">blue</span><span class="p">,</span> <span class="n">green</span><span class="p">)</span>
+</code></pre></div></div>
 <h1 id="bigo">BigO</h1>
-<p>We iterate all dp array, it will cost O(n), we have to input list, that give n+n cost. Therefore, it is O(n)</p>
+<p>We iterate all dp list, it will cost O(n), each value will add up last 1 value as result, it will cost (1+1), in total will be O(n+n) and It is O(n)</p>
 
 
       </article>
@@ -169,7 +186,7 @@ So we will give the two input list. One with first house and without the last ho
         <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
         <script>
         var gitalk = new Gitalk({
-            id: '/2020/02/21/lc213/',
+            id: '/2020/02/21/lc256/',
             clientID: '4cef70907f5b36353d59',
             clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
             repo: 'zhenyu0519.github.io',
