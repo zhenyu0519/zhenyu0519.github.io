@@ -5,28 +5,28 @@
   
     {
       "title"    : "Page Not Found",
-      "url"      : "http://localhost:4000/404.html"
+      "url"      : "https://zhenyu0519.github.io/404.html"
     } ,
   
   
   
     {
       "title"    : "About",
-      "url"      : "http://localhost:4000/about/"
+      "url"      : "https://zhenyu0519.github.io/about/"
     } ,
   
   
   
     {
       "title"    : "归档",
-      "url"      : "http://localhost:4000/archives/"
+      "url"      : "https://zhenyu0519.github.io/archives/"
     } ,
   
   
   
     {
       "title"    : "Categories",
-      "url"      : "http://localhost:4000/categories/"
+      "url"      : "https://zhenyu0519.github.io/categories/"
     } ,
   
   
@@ -35,7 +35,7 @@
   
     {
       "title"    : "Open Source Projects",
-      "url"      : "http://localhost:4000/open-source/"
+      "url"      : "https://zhenyu0519.github.io/open-source/"
     } ,
   
   
@@ -59,161 +59,168 @@
       "title"    : "新博客开篇，献给过去，现在，未来的自己",
       "category" : "Life",
       
-      "url"      : "http://localhost:4000/2019/08/15/Intro/"
+      "url"      : "https://zhenyu0519.github.io/2019/08/15/Intro/"
     } ,
   
     {
       "title"    : "简明的 Markdown 笔记",
       "category" : "Markdown",
       
-      "url"      : "http://localhost:4000/2019/09/15/markdown/"
+      "url"      : "https://zhenyu0519.github.io/2019/09/15/markdown/"
     } ,
   
     {
       "title"    : "MAC Mojave下，gem安装package(jekyll)出现的问题以及解决方法/Trouble shooting gem install packages (jekyll) under Mac Mojave(中文/英语)",
       "category" : "TroubleShoot",
       
-      "url"      : "http://localhost:4000/2019/11/21/gem_install_jekyll_permission/"
+      "url"      : "https://zhenyu0519.github.io/2019/11/21/gem_install_jekyll_permission/"
     } ,
   
     {
       "title"    : "记第一次白板面试",
       "category" : "Interview",
       
-      "url"      : "http://localhost:4000/2019/11/21/first_white_boarding_interview/"
+      "url"      : "https://zhenyu0519.github.io/2019/11/21/first_white_boarding_interview/"
     } ,
   
     {
       "title"    : "继续前行",
       "category" : "Life",
       
-      "url"      : "http://localhost:4000/2019/11/26/keep_it_up/"
+      "url"      : "https://zhenyu0519.github.io/2019/11/26/keep_it_up/"
     } ,
   
     {
       "title"    : "刷了300道题后的心得",
       "category" : "Interview",
       
-      "url"      : "http://localhost:4000/2020/02/15/Leetcode_milestone/"
+      "url"      : "https://zhenyu0519.github.io/2020/02/15/Leetcode_milestone/"
     } ,
   
     {
       "title"    : "leetcode 5. Longest Palindromic Substring (Python)",
       "category" : "Leetcode",
       
-      "url"      : "http://localhost:4000/2020/02/17/lc05/"
+      "url"      : "https://zhenyu0519.github.io/2020/02/17/lc05/"
     } ,
   
     {
       "title"    : "leetcode 654. Maximum Binary Tree (Python)",
       "category" : "Leetcode",
       
-      "url"      : "http://localhost:4000/2020/02/17/lc654/"
+      "url"      : "https://zhenyu0519.github.io/2020/02/17/lc654/"
     } ,
   
     {
       "title"    : "leetcode 1137. N-th Tribonacci Number (Python)",
       "category" : "Leetcode",
       
-      "url"      : "http://localhost:4000/2020/02/18/lc1137/"
+      "url"      : "https://zhenyu0519.github.io/2020/02/18/lc1137/"
     } ,
   
     {
       "title"    : "leetcode 509. Fibonacci Number (Python)",
       "category" : "Leetcode",
       
-      "url"      : "http://localhost:4000/2020/02/18/lc509/"
+      "url"      : "https://zhenyu0519.github.io/2020/02/18/lc509/"
     } ,
   
     {
       "title"    : "leetcode 53. Maximum Subarray (Python)",
       "category" : "Leetcode",
       
-      "url"      : "http://localhost:4000/2020/02/18/lc53/"
+      "url"      : "https://zhenyu0519.github.io/2020/02/18/lc53/"
     } ,
   
     {
       "title"    : "leetcode 70. Climbing Stairs (Python)",
       "category" : "Leetcode",
       
-      "url"      : "http://localhost:4000/2020/02/18/lc70/"
+      "url"      : "https://zhenyu0519.github.io/2020/02/18/lc70/"
     } ,
   
     {
       "title"    : "leetcode 746. Min Cost Climbing Stairs (Python)",
       "category" : "Leetcode",
       
-      "url"      : "http://localhost:4000/2020/02/18/lc746/"
+      "url"      : "https://zhenyu0519.github.io/2020/02/18/lc746/"
     } ,
   
     {
       "title"    : "leetcode 62. Unique Paths (Python)",
       "category" : "Leetcode",
       
-      "url"      : "http://localhost:4000/2020/02/19/lc62/"
+      "url"      : "https://zhenyu0519.github.io/2020/02/19/lc62/"
     } ,
   
     {
       "title"    : "leetcode 63. Unique Paths II (Python)",
       "category" : "Leetcode",
       
-      "url"      : "http://localhost:4000/2020/02/19/lc63/"
+      "url"      : "https://zhenyu0519.github.io/2020/02/19/lc63/"
     } ,
   
     {
       "title"    : "leetcode 64. Minimum Path Sum (Python)",
       "category" : "Leetcode",
       
-      "url"      : "http://localhost:4000/2020/02/19/lc64/"
+      "url"      : "https://zhenyu0519.github.io/2020/02/19/lc64/"
     } ,
   
     {
       "title"    : "leetcode 198. House Robber (Python)",
       "category" : "Leetcode",
       
-      "url"      : "http://localhost:4000/2020/02/20/lc198/"
+      "url"      : "https://zhenyu0519.github.io/2020/02/20/lc198/"
     } ,
   
     {
       "title"    : "leetcode 91. Decode Ways (Python)",
       "category" : "Leetcode",
       
-      "url"      : "http://localhost:4000/2020/02/20/lc91/"
+      "url"      : "https://zhenyu0519.github.io/2020/02/20/lc91/"
     } ,
   
     {
       "title"    : "leetcode 96. Unique Binary Search Trees (Python)",
       "category" : "Leetcode",
       
-      "url"      : "http://localhost:4000/2020/02/20/lc96/"
+      "url"      : "https://zhenyu0519.github.io/2020/02/20/lc96/"
     } ,
   
     {
       "title"    : "好吧，二刷更难",
       "category" : "Life",
       
-      "url"      : "http://localhost:4000/2020/02/21/second_time_leetcode/"
+      "url"      : "https://zhenyu0519.github.io/2020/02/21/second_time_leetcode/"
     } ,
   
     {
       "title"    : "leetcode 213. House Robber II (Python)",
       "category" : "Leetcode",
       
-      "url"      : "http://localhost:4000/2020/02/21/lc213/"
+      "url"      : "https://zhenyu0519.github.io/2020/02/21/lc213/"
     } ,
   
     {
       "title"    : "leetcode 256. Paint House (Python)",
       "category" : "Leetcode",
       
-      "url"      : "http://localhost:4000/2020/02/21/lc256/"
+      "url"      : "https://zhenyu0519.github.io/2020/02/21/lc256/"
     } ,
   
     {
       "title"    : "leetcode 265. Paint House II (Python)",
       "category" : "Leetcode",
       
-      "url"      : "http://localhost:4000/2020/02/21/lc265/"
+      "url"      : "https://zhenyu0519.github.io/2020/02/21/lc265/"
+    } ,
+  
+    {
+      "title"    : "leetcode 338. Counting Bits (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/02/22/lc338/"
     } 
   
 ]
