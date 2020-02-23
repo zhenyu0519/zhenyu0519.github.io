@@ -217,6 +217,13 @@
     } ,
   
     {
+      "title"    : "leetcode 139. Word Break (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/02/22/lc139/"
+    } ,
+  
+    {
       "title"    : "leetcode 338. Counting Bits (Python)",
       "category" : "Leetcode",
       

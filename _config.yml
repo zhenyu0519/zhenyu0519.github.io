@@ -67,6 +67,7 @@ plugins:
     - jekyll-sitemap
     - jekyll-feed
     - jemoji
+    - jekyll-seo-tag
 
 repository: zhenyu0519/zhenyu0519.github.io
 
