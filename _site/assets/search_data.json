@@ -235,6 +235,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/02/24/lc241/"
+    } ,
+  
+    {
+      "title"    : "leetcode 152. Maximum Product Subarray (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/02/25/lc152/"
     } 
   
 ]
