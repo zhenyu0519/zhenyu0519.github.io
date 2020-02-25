@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>leetcode 53. Maximum Subarray (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <title>leetcode 238. Product of Array Except Self (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
     <!-- add google search console -->
     <meta name="google-site-verification" content="Hh37wMK9MFpx6xtWD91RDJzIy-PTLn7ocpNyQ1kPI6M" />
     <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-css/css/primer.css">
@@ -23,47 +23,47 @@
     
 
     
-    <link rel="canonical" href="https://zhenyu0519.github.io/2020/02/18/lc53/">
+    <link rel="canonical" href="https://zhenyu0519.github.io/2020/02/25/lc238/">
     <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="https://zhenyu0519.github.io/feed.xml">
     <link rel="shortcut icon" href="https://zhenyu0519.github.io/favicon.ico">
     
-    <meta property="og:title" content="leetcode 53. Maximum Subarray (Python)">
+    <meta property="og:title" content="leetcode 238. Product of Array Except Self (Python)">
       
-    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 53, Maximum Subarray, zhenyu">
-    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 53, Maximum Subarray, zhenyu">
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 238, Product of Array Except Self, zhenyu">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 238, Product of Array Except Self, zhenyu">
       
-    <meta name="description" content="Leetcode 53. Maximum Subarray (Python)">
-    <meta name="og:description" content="Leetcode 53. Maximum Subarray (Python)">
+    <meta name="description" content="Leetcode 238. Product of Array Except Self (Python)">
+    <meta name="og:description" content="Leetcode 238. Product of Array Except Self (Python)">
       
     
     
         
     
-    <meta property="og:url" content="https://zhenyu0519.github.io/2020/02/18/lc53/">
+    <meta property="og:url" content="https://zhenyu0519.github.io/2020/02/25/lc238/">
     <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="zh_CN" />
     
-    <meta property="article:published_time" content="2020-02-18">
+    <meta property="article:published_time" content="2020-02-25">
     
     <script src="https://zhenyu0519.github.io/assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="https://zhenyu0519.github.io/assets/js/jquery-ui.js"></script>
     <script src="https://zhenyu0519.github.io/assets/js/main.js"></script>
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>leetcode 53. Maximum Subarray (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
+<title>leetcode 238. Product of Array Except Self (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="leetcode 53. Maximum Subarray (Python)" />
+<meta property="og:title" content="leetcode 238. Product of Array Except Self (Python)" />
 <meta name="author" content="Jeffrey" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="leetcode 53. Maximum Subarray (Python Solution)" />
-<meta property="og:description" content="leetcode 53. Maximum Subarray (Python Solution)" />
-<link rel="canonical" href="https://zhenyu0519.github.io/2020/02/18/lc53/" />
-<meta property="og:url" content="https://zhenyu0519.github.io/2020/02/18/lc53/" />
+<meta name="description" content="leetcode 238. Product of Array Except Self (Python Solution)" />
+<meta property="og:description" content="leetcode 238. Product of Array Except Self (Python Solution)" />
+<link rel="canonical" href="https://zhenyu0519.github.io/2020/02/25/lc238/" />
+<meta property="og:url" content="https://zhenyu0519.github.io/2020/02/25/lc238/" />
 <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey’s Blog)" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-02-18T00:00:00-08:00" />
+<meta property="article:published_time" content="2020-02-25T00:00:00-08:00" />
 <script type="application/ld+json">
-{"description":"leetcode 53. Maximum Subarray (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/02/18/lc53/"},"url":"https://zhenyu0519.github.io/2020/02/18/lc53/","headline":"leetcode 53. Maximum Subarray (Python)","dateModified":"2020-02-18T00:00:00-08:00","datePublished":"2020-02-18T00:00:00-08:00","@context":"http://schema.org"}</script>
+{"description":"leetcode 238. Product of Array Except Self (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/02/25/lc238/"},"url":"https://zhenyu0519.github.io/2020/02/25/lc238/","headline":"leetcode 238. Product of Array Except Self (Python)","dateModified":"2020-02-25T00:00:00-08:00","datePublished":"2020-02-25T00:00:00-08:00","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -89,16 +89,16 @@
     </header>
     <!-- / header -->
 
-    <section class="collection-head small" data-pattern-id="leetcode 53. Ma">
+    <section class="collection-head small" data-pattern-id="leetcode 238. P">
   <div class="container">
     <div class="columns">
       <div class="column three-fourths">
         <div class="collection-title">
-          <h1 class="collection-header">leetcode 53. Maximum Subarray (Python)</h1>
+          <h1 class="collection-header">leetcode 238. Product of Array Except Self (Python)</h1>
           <div class="collection-info">
             
             <span class="meta-info">
-              <span class="octicon octicon-calendar"></span> 18 Feb 2020
+              <span class="octicon octicon-calendar"></span> 25 Feb 2020
             </span>
             
             
@@ -123,52 +123,72 @@
   <div class="columns">
     <div class="column three-fourths">
       <article class="article-content markdown-body">
-        <h1 id="leetcode-53-maximum-subarray-python">Leetcode 53. Maximum Subarray (Python)</h1>
+        <h1 id="leetcode-238-product-of-array-except-self-python">Leetcode 238. Product of Array Except Self (Python)</h1>
 
 <h1 id="related-topic">Related Topic</h1>
 <p><a href="/categories/#Dynamic-Programming" target="_blank"> Dynamic-Programming</a>.</p>
 
 <h1 id="description">Description</h1>
-<p>Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p>
+<p>Given an array nums of n integers where n &gt; 1,  return an array output such that output[i] is equal to the product of all the elements of nums except nums[i].</p>
 
 <h2 id="sample-io">Sample I/O</h2>
 <h3 id="example-1">Example 1</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: [-2,1,-3,4,-1,2,1,-5,4],
-Output: 6
-Explanation: [4,-1,2,1] has the largest sum = 6.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input:  [1,2,3,4]
+Output: [24,12,8,6]
 </code></pre></div></div>
+
+<h3 id="note">Note:</h3>
+<p>Please solve it without division and in O(n).</p>
+
+<h3 id="follow-up">Follow up:</h3>
+<p>Could you solve it with constant space complexity? (The output array does not count as extra space for the purpose of space complexity analysis.)</p>
 
 <h1 id="methodology">Methodology</h1>
 <p>This question solved by Dynamic Programming.</p>
 
-<ol>
-  <li>Find the base case
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dp[0] = nums[0]
-</code></pre></div>    </div>
-  </li>
-  <li>Find the pattern
-The basic idea is append the current value to the subarry of largest sum.
-    <ol>
-      <li>If the subarray’sum greater than the current value, we keep the value in the subarry and make it become new subarray of largest sum.</li>
-      <li>If the subarray’sum less than the current value, we abandon the former subarray of largest sum and create a new subarray of largest sum with head index value of current value.</li>
-    </ol>
-  </li>
-  <li>To use dynamic programming for this question, we actually do not need continously create or abandon subarray. we can use prefix sum to always get the maxmium sum of previous subarry and compare the current value with this sum. This will lead to same result.</li>
-</ol>
+<p>This question is not hard to solve, even brute force will not give you a bad performance, the brute force will cost O(n^2). However, the question ask you to solve it in O(n), that means you can only iterate in linear time. So we choose DP array. There is a better readable solution that I will show you later</p>
 
-<h1 id="code">Code</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">maxSubArray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
-        <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">max_num</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
-            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-            <span class="k">if</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;</span><span class="n">max_num</span><span class="p">:</span> <span class="n">max_num</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">max_num</span>
+<h3 id="basic-idea">Basic Idea</h3>
+<p>The basic idea is really easy understand.</p>
+
+<p>For each current value except itself can divide into two parts: the previous total product and next total product.</p>
+
+<p>The basic idea here is previous total product multiple next total product will return the expected value in the current position.</p>
+
+<p>In classic way, we need to generate two lists, one for previous total product, the other one is for next total product, then we multiple two elements with same index to get the value we wanted.</p>
+
+<p>Or in this solution, we can generate previous total product as output first, then go through the output again to multiple each next product to save space.</p>
+
+<p>I would say this is more like a dynamic programming question implicitly.</p>
+
+<h1 id="code-1">Code 1</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">productExceptSelf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">):</span>
+    <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">n</span> 
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*=</span> <span class="n">start</span>
+        <span class="n">start</span> <span class="o">*=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">out</span><span class="p">[</span><span class="o">~</span><span class="n">i</span><span class="p">]</span> <span class="o">*=</span> <span class="n">end</span>
+        <span class="n">end</span> <span class="o">*=</span> <span class="n">nums</span><span class="p">[</span><span class="o">~</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">out</span>
 </code></pre></div></div>
+<h1 id="code-2">Code 2</h1>
+<pre><code class="language-Python">def productExceptSelf(self, nums: List[int]) -&gt; List[int]:        
+        #scan from left to i
+        for i in range(n):
+            output.append(p)
+            p = p * nums[i]
+        p = 1
+        #scan from right to i
+        for i in range(n-1,-1,-1):
+            output[i] = output[i] * p
+            p = p * nums[i]
+        return output
+</code></pre>
 
 <h1 id="bigo">BigO</h1>
-<p>We iterate all dp array, it will cost O(n), each current value will compare with the sum of current value and last value, it will cost (1+1), in total will be O(n+n) and It is O(n)</p>
+<p>We iterate all dp array, it will cost O(n)</p>
+
 
       </article>
       <div class="share">
@@ -185,7 +205,7 @@ The basic idea is append the current value to the subarry of largest sum.
         <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
         <script>
         var gitalk = new Gitalk({
-            id: '/2020/02/18/lc53/',
+            id: '/2020/02/25/lc238/',
             clientID: '4cef70907f5b36353d59',
             clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
             repo: 'zhenyu0519.github.io',

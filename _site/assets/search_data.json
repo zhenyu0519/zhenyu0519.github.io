@@ -242,6 +242,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/02/25/lc152/"
+    } ,
+  
+    {
+      "title"    : "leetcode 238. Product of Array Except Self (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/02/25/lc238/"
     } 
   
 ]
