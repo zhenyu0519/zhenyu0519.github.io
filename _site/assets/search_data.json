@@ -228,6 +228,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/02/22/lc338/"
+    } ,
+  
+    {
+      "title"    : "leetcode 241. Different Ways to Add Parentheses (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/02/24/lc241/"
     } 
   
 ]
