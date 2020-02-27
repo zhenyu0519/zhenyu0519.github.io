@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>leetcode 53. Maximum Subarray (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <title>leetcode 357. Count Numbers with Unique Digits (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
     <!-- add google search console -->
     <meta name="google-site-verification" content="Hh37wMK9MFpx6xtWD91RDJzIy-PTLn7ocpNyQ1kPI6M" />
     <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-css/css/primer.css">
@@ -23,47 +23,47 @@
     
 
     
-    <link rel="canonical" href="https://zhenyu0519.github.io/2020/02/18/lc53/">
+    <link rel="canonical" href="https://zhenyu0519.github.io/2020/02/27/lc357/">
     <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="https://zhenyu0519.github.io/feed.xml">
     <link rel="shortcut icon" href="https://zhenyu0519.github.io/favicon.ico">
     
-    <meta property="og:title" content="leetcode 53. Maximum Subarray (Python)">
+    <meta property="og:title" content="leetcode 357. Count Numbers with Unique Digits (Python)">
       
-    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 53, Maximum Subarray, zhenyu">
-    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 53, Maximum Subarray, zhenyu">
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 357, Count Numbers with Unique Digits, zhenyu">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 357, Count Numbers with Unique Digits, zhenyu">
       
-    <meta name="description" content="Leetcode 53. Maximum Subarray (Python)">
-    <meta name="og:description" content="Leetcode 53. Maximum Subarray (Python)">
+    <meta name="description" content="Leetcode 357. Count Numbers with Unique Digits (Python)">
+    <meta name="og:description" content="Leetcode 357. Count Numbers with Unique Digits (Python)">
       
     
     
         
     
-    <meta property="og:url" content="https://zhenyu0519.github.io/2020/02/18/lc53/">
+    <meta property="og:url" content="https://zhenyu0519.github.io/2020/02/27/lc357/">
     <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="zh_CN" />
     
-    <meta property="article:published_time" content="2020-02-18">
+    <meta property="article:published_time" content="2020-02-27">
     
     <script src="https://zhenyu0519.github.io/assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="https://zhenyu0519.github.io/assets/js/jquery-ui.js"></script>
     <script src="https://zhenyu0519.github.io/assets/js/main.js"></script>
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>leetcode 53. Maximum Subarray (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
+<title>leetcode 357. Count Numbers with Unique Digits (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="leetcode 53. Maximum Subarray (Python)" />
+<meta property="og:title" content="leetcode 357. Count Numbers with Unique Digits (Python)" />
 <meta name="author" content="Jeffrey" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="leetcode 53. Maximum Subarray (Python Solution)" />
-<meta property="og:description" content="leetcode 53. Maximum Subarray (Python Solution)" />
-<link rel="canonical" href="https://zhenyu0519.github.io/2020/02/18/lc53/" />
-<meta property="og:url" content="https://zhenyu0519.github.io/2020/02/18/lc53/" />
+<meta name="description" content="leetcode 357. Count Numbers with Unique Digits (Python Solution)" />
+<meta property="og:description" content="leetcode 357. Count Numbers with Unique Digits (Python Solution)" />
+<link rel="canonical" href="https://zhenyu0519.github.io/2020/02/27/lc357/" />
+<meta property="og:url" content="https://zhenyu0519.github.io/2020/02/27/lc357/" />
 <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey’s Blog)" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-02-18T00:00:00-08:00" />
+<meta property="article:published_time" content="2020-02-27T00:00:00-08:00" />
 <script type="application/ld+json">
-{"description":"leetcode 53. Maximum Subarray (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/02/18/lc53/"},"url":"https://zhenyu0519.github.io/2020/02/18/lc53/","headline":"leetcode 53. Maximum Subarray (Python)","dateModified":"2020-02-18T00:00:00-08:00","datePublished":"2020-02-18T00:00:00-08:00","@context":"http://schema.org"}</script>
+{"description":"leetcode 357. Count Numbers with Unique Digits (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/02/27/lc357/"},"url":"https://zhenyu0519.github.io/2020/02/27/lc357/","headline":"leetcode 357. Count Numbers with Unique Digits (Python)","dateModified":"2020-02-27T00:00:00-08:00","datePublished":"2020-02-27T00:00:00-08:00","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -89,16 +89,16 @@
     </header>
     <!-- / header -->
 
-    <section class="collection-head small" data-pattern-id="leetcode 53. Ma">
+    <section class="collection-head small" data-pattern-id="leetcode 357. C">
   <div class="container">
     <div class="columns">
       <div class="column three-fourths">
         <div class="collection-title">
-          <h1 class="collection-header">leetcode 53. Maximum Subarray (Python)</h1>
+          <h1 class="collection-header">leetcode 357. Count Numbers with Unique Digits (Python)</h1>
           <div class="collection-info">
             
             <span class="meta-info">
-              <span class="octicon octicon-calendar"></span> 18 Feb 2020
+              <span class="octicon octicon-calendar"></span> 27 Feb 2020
             </span>
             
             
@@ -123,52 +123,51 @@
   <div class="columns">
     <div class="column three-fourths">
       <article class="article-content markdown-body">
-        <h1 id="leetcode-53-maximum-subarray-python">Leetcode 53. Maximum Subarray (Python)</h1>
+        <h1 id="leetcode-357-count-numbers-with-unique-digits-python">Leetcode 357. Count Numbers with Unique Digits (Python)</h1>
 
 <h1 id="related-topic">Related Topic</h1>
 <p><a href="/categories/#Dynamic-Programming" target="_blank"> Dynamic-Programming</a>.</p>
 
 <h1 id="description">Description</h1>
-<p>Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p>
+<p>Given a non-negative integer n, count all numbers with unique digits, x, where 0 ≤ x &lt; 10^n.</p>
 
 <h2 id="sample-io">Sample I/O</h2>
 <h3 id="example-1">Example 1</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: [-2,1,-3,4,-1,2,1,-5,4],
-Output: 6
-Explanation: [4,-1,2,1] has the largest sum = 6.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: 2
+Output: 91 
+Explanation: The answer should be the total numbers in the range of 0 ≤ x &lt; 100,
+excluding 11,22,33,44,55,66,77,88,99
 </code></pre></div></div>
 
 <h1 id="methodology">Methodology</h1>
-<p>This question solved by Dynamic Programming.</p>
+<p>This question can be solved by Dynamic Programming. However, dp is not the only best solution.</p>
 
-<ol>
-  <li>Find the base case
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dp[0] = nums[0]
-</code></pre></div>    </div>
-  </li>
-  <li>Find the pattern
-The basic idea is append the current value to the subarry of largest sum.
-    <ol>
-      <li>If the subarray’sum greater than the current value, we keep the value in the subarry and make it become new subarray of largest sum.</li>
-      <li>If the subarray’sum less than the current value, we abandon the former subarray of largest sum and create a new subarray of largest sum with head index value of current value.</li>
-    </ol>
-  </li>
-  <li>To use dynamic programming for this question, we actually do not need continously create or abandon subarray. we can use prefix sum to always get the maxmium sum of previous subarry and compare the current value with this sum. This will lead to same result.</li>
-</ol>
+<p>This question is really easy to find the base case and pattern, basiclly you need find the the number of unique digits in current range and add the previous number to get the current total unique digits.</p>
 
-<h1 id="code">Code</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">maxSubArray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
-        <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">max_num</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
-            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-            <span class="k">if</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;</span><span class="n">max_num</span><span class="p">:</span> <span class="n">max_num</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">max_num</span>
+<h2 id="base-case">Base case:</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>When n = 0, there is 1 and only digit so dp[0] = 1
+when n = 1, there is 10 unqiue digits so dp[1] = 10
+</code></pre></div></div>
+
+<h2 id="pattern">Pattern</h2>
+<p>Every time when the n increase 1, there will be split to two range. The previous range which is [10^0,10^n-1) and the current range which is [10^n-1, 10^n). The current range you can apply permutation on it. Because the first digit always has 9 options, second has 8 options, third has 7 options….until you reach to the last digit.</p>
+
+<p>After you get the current unique digits, the total unique digits is unique digits in current range plus the unique digits in previous range.</p>
+
+<h1 id="code-1">Code 1</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">countNumbersWithUniqueDigits</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">dp</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>    
+            <span class="n">base</span> <span class="o">=</span> <span class="mi">9</span>
+            <span class="k">for</span> <span class="n">digit</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+                <span class="n">base</span> <span class="o">=</span> <span class="n">base</span><span class="o">*</span><span class="p">(</span><span class="mi">10</span><span class="o">-</span><span class="n">digit</span><span class="p">)</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">base</span><span class="o">+</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div></div>
 
 <h1 id="bigo">BigO</h1>
-<p>We iterate all dp array, it will cost O(n), each current value will compare with the sum of current value and last value, it will cost (1+1), in total will be O(n+n) and It is O(n)</p>
+<p>We iterate the dp array, it will cost O(n+1), each iteration need to iterate O(n+1-1), so the total time complexity is O((n+1)/*n) which is O(n^2)</p>
+
 
       </article>
       <div class="share">
@@ -185,7 +184,7 @@ The basic idea is append the current value to the subarry of largest sum.
         <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
         <script>
         var gitalk = new Gitalk({
-            id: '/2020/02/18/lc53/',
+            id: '/2020/02/27/lc357/',
             clientID: '4cef70907f5b36353d59',
             clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
             repo: 'zhenyu0519.github.io',

@@ -1,4 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-02-27T12:52:21-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 264. Ugly Number II (Python)</title><link href="http://localhost:4000/2020/02/27/lc264/" rel="alternate" type="text/html" title="leetcode 264. Ugly Number II (Python)" /><published>2020-02-27T00:00:00-08:00</published><updated>2020-02-27T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/27/lc264</id><content type="html" xml:base="http://localhost:4000/2020/02/27/lc264/">&lt;h1 id=&quot;leetcode-264-ugly-number-ii-python&quot;&gt;Leetcode 264. Ugly Number II (Python)&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-02-27T14:38:25-08:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 357. Count Numbers with Unique Digits (Python)</title><link href="https://zhenyu0519.github.io/2020/02/27/lc357/" rel="alternate" type="text/html" title="leetcode 357. Count Numbers with Unique Digits (Python)" /><published>2020-02-27T00:00:00-08:00</published><updated>2020-02-27T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/27/lc357</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/27/lc357/">&lt;h1 id=&quot;leetcode-357-count-numbers-with-unique-digits-python&quot;&gt;Leetcode 357. Count Numbers with Unique Digits (Python)&lt;/h1&gt;
+
+&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
+&lt;p&gt;Given a non-negative integer n, count all numbers with unique digits, x, where 0 ≤ x &amp;lt; 10^n.&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: 2
+Output: 91 
+Explanation: The answer should be the total numbers in the range of 0 ≤ x &amp;lt; 100,
+excluding 11,22,33,44,55,66,77,88,99
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
+&lt;p&gt;This question can be solved by Dynamic Programming. However, dp is not the only best solution.&lt;/p&gt;
+
+&lt;p&gt;This question is really easy to find the base case and pattern, basiclly you need find the the number of unique digits in current range and add the previous number to get the current total unique digits.&lt;/p&gt;
+
+&lt;h2 id=&quot;base-case&quot;&gt;Base case:&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;When n = 0, there is 1 and only digit so dp[0] = 1
+when n = 1, there is 10 unqiue digits so dp[1] = 10
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;pattern&quot;&gt;Pattern&lt;/h2&gt;
+&lt;p&gt;Every time when the n increase 1, there will be split to two range. The previous range which is [10^0,10^n-1) and the current range which is [10^n-1, 10^n). The current range you can apply permutation on it. Because the first digit always has 9 options, second has 8 options, third has 7 options….until you reach to the last digit.&lt;/p&gt;
+
+&lt;p&gt;After you get the current unique digits, the total unique digits is unique digits in current range plus the unique digits in previous range.&lt;/p&gt;
+
+&lt;h1 id=&quot;code-1&quot;&gt;Code 1&lt;/h1&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;countNumbersWithUniqueDigits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;    
+            &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;digit&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;digit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;We iterate the dp array, it will cost O(n+1), each iteration need to iterate O(n+1-1), so the total time complexity is O((n+1)/*n) which is O(n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 357. Count Numbers with Unique Digits (Python)</summary></entry><entry><title type="html">leetcode 264. Ugly Number II (Python)</title><link href="https://zhenyu0519.github.io/2020/02/27/lc264/" rel="alternate" type="text/html" title="leetcode 264. Ugly Number II (Python)" /><published>2020-02-27T00:00:00-08:00</published><updated>2020-02-27T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/27/lc264</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/27/lc264/">&lt;h1 id=&quot;leetcode-264-ugly-number-ii-python&quot;&gt;Leetcode 264. Ugly Number II (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -35,7 +78,7 @@ Explanation: 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 is the sequence of the first 10 ugly
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;O(1) to retrieve preliminary computed ugly number, and about 1690 x times 5 = 84501690×5=8450 operations for preliminary computations.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 264. Ugly Number II (Python)</summary></entry><entry><title type="html">动态规划真的折磨人啊</title><link href="http://localhost:4000/2020/02/27/Dynamic_Programming_Drive_Me_Crazy/" rel="alternate" type="text/html" title="动态规划真的折磨人啊" /><published>2020-02-27T00:00:00-08:00</published><updated>2020-02-27T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/27/Dynamic_Programming_Drive_Me_Crazy</id><content type="html" xml:base="http://localhost:4000/2020/02/27/Dynamic_Programming_Drive_Me_Crazy/">&lt;p&gt;&lt;img src=&quot;/images/blog/nevergiveup.jpeg&quot; alt=&quot;我不会放弃&quot; /&gt;&lt;img src=&quot;/images/blog/noshit.jpg&quot; alt=&quot;I don't give shit&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;O(1) to retrieve preliminary computed ugly number, and about 1690 x times 5 = 84501690×5=8450 operations for preliminary computations.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 264. Ugly Number II (Python)</summary></entry><entry><title type="html">动态规划真的折磨人啊</title><link href="https://zhenyu0519.github.io/2020/02/27/Dynamic_Programming_Drive_Me_Crazy/" rel="alternate" type="text/html" title="动态规划真的折磨人啊" /><published>2020-02-27T00:00:00-08:00</published><updated>2020-02-27T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/27/Dynamic_Programming_Drive_Me_Crazy</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/27/Dynamic_Programming_Drive_Me_Crazy/">&lt;p&gt;&lt;img src=&quot;/images/blog/nevergiveup.jpeg&quot; alt=&quot;我不会放弃&quot; /&gt;&lt;img src=&quot;/images/blog/noshit.jpg&quot; alt=&quot;I don't give shit&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 &lt;p&gt;这段时间在复刷题目同时也在做新的相关题目。感觉自己对动态规划题目还是不能掌握。动态规划题目真的是千变万化，很难总结出一条可以一劳永逸的规律。难怪这样的题目会成为大公司的门槛，因为确实不好做啊。我对动态规划的理解，很基础，相比做过类似题目的小伙伴也都是这样。动态规划说白了是为了节省时间复杂度而产生的，也可以说是将需要重复运算的结果存到缓存里，下次需要做同样计算的时候只需要直接从缓存里那结果就好而不再需要重复计算，不要小看这样的改变。举个例子，斐波那契数列的时间复杂度是o(2^n)，通过使用动态规划可以将性能优化到o(n)。&lt;/p&gt;
@@ -68,7 +111,7 @@ Explanation: 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 is the sequence of the first 10 ugly
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;平日&quot;&gt;平日&lt;/h2&gt;
-&lt;p&gt;做大量的练习积累做题经验，然后总结概括，一定要能啃硬骨头。把每道题吃透，确保遇到类似的题可以做出来。&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html"></summary></entry><entry><title type="html">leetcode 279. Perfect Squares (Python)</title><link href="http://localhost:4000/2020/02/26/lc279/" rel="alternate" type="text/html" title="leetcode 279. Perfect Squares (Python)" /><published>2020-02-26T00:00:00-08:00</published><updated>2020-02-26T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/26/lc279</id><content type="html" xml:base="http://localhost:4000/2020/02/26/lc279/">&lt;h1 id=&quot;leetcode-279-perfect-squares-python&quot;&gt;Leetcode 279. Perfect Squares (Python)&lt;/h1&gt;
+&lt;p&gt;做大量的练习积累做题经验，然后总结概括，一定要能啃硬骨头。把每道题吃透，确保遇到类似的题可以做出来。&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html"></summary></entry><entry><title type="html">leetcode 279. Perfect Squares (Python)</title><link href="https://zhenyu0519.github.io/2020/02/26/lc279/" rel="alternate" type="text/html" title="leetcode 279. Perfect Squares (Python)" /><published>2020-02-26T00:00:00-08:00</published><updated>2020-02-26T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/26/lc279</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/26/lc279/">&lt;h1 id=&quot;leetcode-279-perfect-squares-python&quot;&gt;Leetcode 279. Perfect Squares (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -126,7 +169,7 @@ Explanation: 13 = 4 + 9.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n), inside the first iteration, we need to iterate the squares which is O(√n) So the total time complexity is O(n√n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 279. Perfect Squares (Python)</summary></entry><entry><title type="html">leetcode 238. Product of Array Except Self (Python)</title><link href="http://localhost:4000/2020/02/25/lc238/" rel="alternate" type="text/html" title="leetcode 238. Product of Array Except Self (Python)" /><published>2020-02-25T00:00:00-08:00</published><updated>2020-02-25T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/25/lc238</id><content type="html" xml:base="http://localhost:4000/2020/02/25/lc238/">&lt;h1 id=&quot;leetcode-238-product-of-array-except-self-python&quot;&gt;Leetcode 238. Product of Array Except Self (Python)&lt;/h1&gt;
+&lt;p&gt;We iterate all dp array, it will cost O(n), inside the first iteration, we need to iterate the squares which is O(√n) So the total time complexity is O(n√n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 279. Perfect Squares (Python)</summary></entry><entry><title type="html">leetcode 238. Product of Array Except Self (Python)</title><link href="https://zhenyu0519.github.io/2020/02/25/lc238/" rel="alternate" type="text/html" title="leetcode 238. Product of Array Except Self (Python)" /><published>2020-02-25T00:00:00-08:00</published><updated>2020-02-25T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/25/lc238</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/25/lc238/">&lt;h1 id=&quot;leetcode-238-product-of-array-except-self-python&quot;&gt;Leetcode 238. Product of Array Except Self (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -190,7 +233,7 @@ Output: [24,12,8,6]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 238. Product of Array Except Self (Python)</summary></entry><entry><title type="html">leetcode 152. Maximum Product Subarray (Python)</title><link href="http://localhost:4000/2020/02/25/lc152/" rel="alternate" type="text/html" title="leetcode 152. Maximum Product Subarray (Python)" /><published>2020-02-25T00:00:00-08:00</published><updated>2020-02-25T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/25/lc152</id><content type="html" xml:base="http://localhost:4000/2020/02/25/lc152/">&lt;h1 id=&quot;leetcode-152-maximum-product-subarray-python&quot;&gt;Leetcode 152. Maximum Product Subarray (Python)&lt;/h1&gt;
+&lt;p&gt;We iterate all dp array, it will cost O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 238. Product of Array Except Self (Python)</summary></entry><entry><title type="html">leetcode 152. Maximum Product Subarray (Python)</title><link href="https://zhenyu0519.github.io/2020/02/25/lc152/" rel="alternate" type="text/html" title="leetcode 152. Maximum Product Subarray (Python)" /><published>2020-02-25T00:00:00-08:00</published><updated>2020-02-25T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/25/lc152</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/25/lc152/">&lt;h1 id=&quot;leetcode-152-maximum-product-subarray-python&quot;&gt;Leetcode 152. Maximum Product Subarray (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -279,7 +322,7 @@ Explanation: The result cannot be 2, because [-2,-1] is not a subarray.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;When iterate the whole list, the BigO is O(n) where n is size of the list. Each element will need to compare to previous pair, this give us O(1), in total O(n+1) which is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 152. Maximum Product Subarray (Python)</summary></entry><entry><title type="html">leetcode 241. Different Ways to Add Parentheses (Python)</title><link href="http://localhost:4000/2020/02/24/lc241/" rel="alternate" type="text/html" title="leetcode 241. Different Ways to Add Parentheses (Python)" /><published>2020-02-24T00:00:00-08:00</published><updated>2020-02-24T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/24/lc241</id><content type="html" xml:base="http://localhost:4000/2020/02/24/lc241/">&lt;h1 id=&quot;leetcode-241-different-ways-to-add-parentheses-python&quot;&gt;Leetcode 241. Different Ways to Add Parentheses (Python)&lt;/h1&gt;
+&lt;p&gt;When iterate the whole list, the BigO is O(n) where n is size of the list. Each element will need to compare to previous pair, this give us O(1), in total O(n+1) which is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 152. Maximum Product Subarray (Python)</summary></entry><entry><title type="html">leetcode 241. Different Ways to Add Parentheses (Python)</title><link href="https://zhenyu0519.github.io/2020/02/24/lc241/" rel="alternate" type="text/html" title="leetcode 241. Different Ways to Add Parentheses (Python)" /><published>2020-02-24T00:00:00-08:00</published><updated>2020-02-24T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/24/lc241</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/24/lc241/">&lt;h1 id=&quot;leetcode-241-different-ways-to-add-parentheses-python&quot;&gt;Leetcode 241. Different Ways to Add Parentheses (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Divide-And-Conquer&quot; target=&quot;_blank&quot;&gt; Divide-And-Conquer&lt;/a&gt;.&lt;/p&gt;
@@ -386,74 +429,7 @@ So the solution is [3,1,-1,3,1]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all input list, it will cost O(n), each value we split into two parts, that cost O(logn), after that, we need to merge left and right in order to get answer so this give O(n), so total is(n^(logn+n)) which is n^2.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 241. Different Ways to Add Parentheses (Python)</summary></entry><entry><title type="html">leetcode 139. Word Break (Python)</title><link href="http://localhost:4000/2020/02/22/lc139/" rel="alternate" type="text/html" title="leetcode 139. Word Break (Python)" /><published>2020-02-22T00:00:00-08:00</published><updated>2020-02-22T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/22/lc139</id><content type="html" xml:base="http://localhost:4000/2020/02/22/lc139/">&lt;h1 id=&quot;leetcode-139-word-break-python&quot;&gt;Leetcode 139. Word Break (Python)&lt;/h1&gt;
-
-&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
-&lt;p&gt;Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, determine if s can be segmented into a space-separated sequence of one or more dictionary words.&lt;/p&gt;
-
-&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
-&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: s = &quot;leetcode&quot;, wordDict = [&quot;leet&quot;, &quot;code&quot;]
-Output: true
-Explanation: Return true because &quot;leetcode&quot; can be segmented as &quot;leet code&quot;.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: s = &quot;applepenapple&quot;, wordDict = [&quot;apple&quot;, &quot;pen&quot;]
-Output: true
-Explanation: Return true because &quot;applepenapple&quot; can be segmented as &quot;apple pen apple&quot;.Note that you are allowed to reuse a dictionary word.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;example-3&quot;&gt;Example 3&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: s = &quot;catsandog&quot;, wordDict = [&quot;cats&quot;, &quot;dog&quot;, &quot;sand&quot;, &quot;and&quot;, &quot;cat&quot;]
-Output: false
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;note&quot;&gt;Note:&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;he same word in the dictionary may be reused multiple times in the segmentation.&lt;/li&gt;
-  &lt;li&gt;You may assume the dictionary does not contain duplicate words.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Base case:&lt;/p&gt;
-
-    &lt;p&gt;Create a dp list to indicate each word start character position and end position (end position is one step more than the position of end character)
-dp[0] = True&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Find the pattern:&lt;/p&gt;
-
-    &lt;p&gt;Go throught the string character by character. Use the previous characters to form words. Check if those words are in dictionary. If so, we mark the next position of the word as True to indicate that before this True mark, there is word that appear in dictionary. In the meanwhile, the True mark will also be the start character for next word.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;result:&lt;/p&gt;
-
-    &lt;p&gt;the last value in dp list indicate if all characters are used out to form dictionary’s word.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;wordBreak&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wordDict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;L&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wordDict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n+1), each value will iterate all it’s previous value, it will cost ((n+1)*(n+1-1)), in total will be O(n^2+n) and It is O(n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 139. Word Break (Python)</summary></entry><entry><title type="html">leetcode 338. Counting Bits (Python)</title><link href="http://localhost:4000/2020/02/22/lc338/" rel="alternate" type="text/html" title="leetcode 338. Counting Bits (Python)" /><published>2020-02-22T00:00:00-08:00</published><updated>2020-02-22T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/22/lc338</id><content type="html" xml:base="http://localhost:4000/2020/02/22/lc338/">&lt;h1 id=&quot;leetcode-338-counting-bits-python&quot;&gt;Leetcode 338. Counting Bits (Python)&lt;/h1&gt;
+&lt;p&gt;We iterate all input list, it will cost O(n), each value we split into two parts, that cost O(logn), after that, we need to merge left and right in order to get answer so this give O(n), so total is(n^(logn+n)) which is n^2.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 241. Different Ways to Add Parentheses (Python)</summary></entry><entry><title type="html">leetcode 338. Counting Bits (Python)</title><link href="https://zhenyu0519.github.io/2020/02/22/lc338/" rel="alternate" type="text/html" title="leetcode 338. Counting Bits (Python)" /><published>2020-02-22T00:00:00-08:00</published><updated>2020-02-22T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/22/lc338</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/22/lc338/">&lt;h1 id=&quot;leetcode-338-counting-bits-python&quot;&gt;Leetcode 338. Counting Bits (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -530,7 +506,74 @@ Output: [0,1,1,2,1,2]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We only iterate the dp list, so the time and spact complexity is O(n).&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 338. Counting Bits (Python)</summary></entry><entry><title type="html">leetcode 256. Paint House (Python)</title><link href="http://localhost:4000/2020/02/21/lc256/" rel="alternate" type="text/html" title="leetcode 256. Paint House (Python)" /><published>2020-02-21T00:00:00-08:00</published><updated>2020-02-21T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/21/lc256</id><content type="html" xml:base="http://localhost:4000/2020/02/21/lc256/">&lt;h1 id=&quot;leetcode-256-paint-house-python&quot;&gt;Leetcode 256. Paint House (Python)&lt;/h1&gt;
+&lt;p&gt;We only iterate the dp list, so the time and spact complexity is O(n).&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 338. Counting Bits (Python)</summary></entry><entry><title type="html">leetcode 139. Word Break (Python)</title><link href="https://zhenyu0519.github.io/2020/02/22/lc139/" rel="alternate" type="text/html" title="leetcode 139. Word Break (Python)" /><published>2020-02-22T00:00:00-08:00</published><updated>2020-02-22T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/22/lc139</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/22/lc139/">&lt;h1 id=&quot;leetcode-139-word-break-python&quot;&gt;Leetcode 139. Word Break (Python)&lt;/h1&gt;
+
+&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
+&lt;p&gt;Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, determine if s can be segmented into a space-separated sequence of one or more dictionary words.&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: s = &quot;leetcode&quot;, wordDict = [&quot;leet&quot;, &quot;code&quot;]
+Output: true
+Explanation: Return true because &quot;leetcode&quot; can be segmented as &quot;leet code&quot;.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: s = &quot;applepenapple&quot;, wordDict = [&quot;apple&quot;, &quot;pen&quot;]
+Output: true
+Explanation: Return true because &quot;applepenapple&quot; can be segmented as &quot;apple pen apple&quot;.Note that you are allowed to reuse a dictionary word.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-3&quot;&gt;Example 3&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: s = &quot;catsandog&quot;, wordDict = [&quot;cats&quot;, &quot;dog&quot;, &quot;sand&quot;, &quot;and&quot;, &quot;cat&quot;]
+Output: false
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;note&quot;&gt;Note:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;he same word in the dictionary may be reused multiple times in the segmentation.&lt;/li&gt;
+  &lt;li&gt;You may assume the dictionary does not contain duplicate words.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Base case:&lt;/p&gt;
+
+    &lt;p&gt;Create a dp list to indicate each word start character position and end position (end position is one step more than the position of end character)
+dp[0] = True&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Find the pattern:&lt;/p&gt;
+
+    &lt;p&gt;Go throught the string character by character. Use the previous characters to form words. Check if those words are in dictionary. If so, we mark the next position of the word as True to indicate that before this True mark, there is word that appear in dictionary. In the meanwhile, the True mark will also be the start character for next word.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;result:&lt;/p&gt;
+
+    &lt;p&gt;the last value in dp list indicate if all characters are used out to form dictionary’s word.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;wordBreak&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wordDict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;L&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wordDict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;We iterate all dp array, it will cost O(n+1), each value will iterate all it’s previous value, it will cost ((n+1)*(n+1-1)), in total will be O(n^2+n) and It is O(n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 139. Word Break (Python)</summary></entry><entry><title type="html">leetcode 256. Paint House (Python)</title><link href="https://zhenyu0519.github.io/2020/02/21/lc256/" rel="alternate" type="text/html" title="leetcode 256. Paint House (Python)" /><published>2020-02-21T00:00:00-08:00</published><updated>2020-02-21T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/21/lc256</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/21/lc256/">&lt;h1 id=&quot;leetcode-256-paint-house-python&quot;&gt;Leetcode 256. Paint House (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -592,51 +635,4 @@ Each house have three color options and adjacent houses can not be same color.&l
             &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp list, it will cost O(n), each value will add up last 1 value as result, it will cost (1+1), in total will be O(n+n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 256. Paint House (Python)</summary></entry><entry><title type="html">leetcode 213. House Robber II (Python)</title><link href="http://localhost:4000/2020/02/21/lc213/" rel="alternate" type="text/html" title="leetcode 213. House Robber II (Python)" /><published>2020-02-21T00:00:00-08:00</published><updated>2020-02-21T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/21/lc213</id><content type="html" xml:base="http://localhost:4000/2020/02/21/lc213/">&lt;h1 id=&quot;leetcode-213-house-robber-ii-python&quot;&gt;Leetcode 213. House Robber II (Python)&lt;/h1&gt;
-
-&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
-&lt;p&gt;You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed. All houses at this place are arranged in a circle. That means the first house is the neighbor of the last one. Meanwhile, adjacent houses have security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night.&lt;/p&gt;
-
-&lt;p&gt;Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight without alerting the police.&lt;/p&gt;
-
-&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
-&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [2,3,2]
-Output: 3
-Explanation: You cannot rob house 1 (money = 2) and then rob house 3 (money = 2),
-because they are adjacent houses.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [1,2,3,1]
-Output: 4
-Explanation: Rob house 1 (money = 1) and then rob house 3 (money = 3).
-Total amount you can rob = 1 + 3 = 4.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
-&lt;p&gt;This question solved by Dynamic Programming. It is similar with question 198 &lt;a href=&quot;https://zhenyu0519.github.io/2020/02/20/lc198/&quot; target=&quot;_blank&quot;&gt; House Robber I&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The difference is ‘All houses at this place are arranged in a circle’.&lt;/p&gt;
-
-&lt;p&gt;That means the robber can either rob the first house or last house but not both.
-So we will give the two input list. One with first house and without the last house. The other one with last house and without the first house. Then we compare the two input list results.&lt;/p&gt;
-
-&lt;p&gt;I just slightly modify my previous code to match this need.&lt;/p&gt;
-
-&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;rob&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;max_money&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_money&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:]),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_money&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n), we have to input list, that give n+n cost. Therefore, it is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 213. House Robber II (Python)</summary></entry></feed>
+&lt;p&gt;We iterate all dp list, it will cost O(n), each value will add up last 1 value as result, it will cost (1+1), in total will be O(n+n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 256. Paint House (Python)</summary></entry></feed>
