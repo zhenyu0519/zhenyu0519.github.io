@@ -117,6 +117,10 @@
 <lastmod>2020-02-26T00:00:00-08:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/2020/02/27/Dynamic_Programming_Drive_Me_Crazy/</loc>
+<lastmod>2020-02-27T00:00:00-08:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/2020/02/27/lc264/</loc>
 <lastmod>2020-02-27T00:00:00-08:00</lastmod>
 </url>
@@ -140,5 +144,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page3/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page4/</loc>
 </url>
 </urlset>

@@ -53,6 +53,8 @@
   
   
   
+  
+  
 
   
     {
@@ -256,6 +258,13 @@
       "category" : "Leetcode",
       
       "url"      : "http://localhost:4000/2020/02/26/lc279/"
+    } ,
+  
+    {
+      "title"    : "动态规划真的折磨人啊",
+      "category" : "Life",
+      
+      "url"      : "http://localhost:4000/2020/02/27/Dynamic_Programming_Drive_Me_Crazy/"
     } ,
   
     {

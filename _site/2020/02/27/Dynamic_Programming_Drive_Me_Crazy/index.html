@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" prefix="og: http://ogp.me/ns#" class="han-init">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>动态规划真的折磨人啊 &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <!-- add google search console -->
+    <meta name="google-site-verification" content="Hh37wMK9MFpx6xtWD91RDJzIy-PTLn7ocpNyQ1kPI6M" />
+    <link rel="stylesheet" href="http://localhost:4000/assets/vendor/primer-css/css/primer.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/vendor/primer-markdown/dist/user-content.min.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/vendor/octicons/octicons/octicons.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/components/collection.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/components/repo-card.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/sections/repo-list.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/sections/mini-repo-list.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/components/boxed-group.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/globals/common.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/vendor/share.js/dist/css/share.min.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/globals/responsive.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/posts/index.css">
+    <!-- Latest compiled and minified CSS -->
+    
+
+    
+    <link rel="canonical" href="http://localhost:4000/2020/02/27/Dynamic_Programming_Drive_Me_Crazy/">
+    <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="http://localhost:4000/feed.xml">
+    <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+    
+    <meta property="og:title" content="动态规划真的折磨人啊">
+      
+    <meta name="keywords" content="2020，动态规划，折磨，leetcode">
+    <meta name="og:keywords" content="2020，动态规划，折磨，leetcode">
+      
+    <meta name="description" content="">
+    <meta name="og:description" content="">
+      
+    
+    
+        
+    
+    <meta property="og:url" content="http://localhost:4000/2020/02/27/Dynamic_Programming_Drive_Me_Crazy/">
+    <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_CN" />
+    
+    <meta property="article:published_time" content="2020-02-27">
+    
+    <script src="http://localhost:4000/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="http://localhost:4000/assets/js/jquery-ui.js"></script>
+    <script src="http://localhost:4000/assets/js/main.js"></script>
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>动态规划真的折磨人啊 | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="动态规划真的折磨人啊" />
+<meta name="author" content="Jeffrey" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Life should be cool" />
+<meta property="og:description" content="Life should be cool" />
+<link rel="canonical" href="http://localhost:4000/2020/02/27/Dynamic_Programming_Drive_Me_Crazy/" />
+<meta property="og:url" content="http://localhost:4000/2020/02/27/Dynamic_Programming_Drive_Me_Crazy/" />
+<meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey’s Blog)" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-02-27T00:00:00-08:00" />
+<script type="application/ld+json">
+{"description":"Life should be cool","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/02/27/Dynamic_Programming_Drive_Me_Crazy/"},"url":"http://localhost:4000/2020/02/27/Dynamic_Programming_Drive_Me_Crazy/","headline":"动态规划真的折磨人啊","dateModified":"2020-02-27T00:00:00-08:00","datePublished":"2020-02-27T00:00:00-08:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body class="" data-mz="">
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="http://localhost:4000/" title="杰弗里 · 时光博客(Jeffrey's Blog)"><span class="octicon octicon-mark-github"></span> 杰弗里 · 时光博客(Jeffrey's Blog)</a></h1>
+            <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <nav class="site-header-nav" role="navigation">
+                
+                <a href="http://localhost:4000/" class=" site-header-nav-item" target="" title="Home">Home</a>
+                
+                <a href="http://localhost:4000/categories/" class=" site-header-nav-item" target="" title="Categories">Categories</a>
+                
+                <a href="http://localhost:4000/about/" class=" site-header-nav-item" target="" title="About">About</a>
+                
+            </nav>
+        </div>
+    </header>
+    <!-- / header -->
+
+    <section class="collection-head small" data-pattern-id="动态规划真的折磨人啊">
+  <div class="container">
+    <div class="columns">
+      <div class="column three-fourths">
+        <div class="collection-title">
+          <h1 class="collection-header">动态规划真的折磨人啊</h1>
+          <div class="collection-info">
+            
+            <span class="meta-info">
+              <span class="octicon octicon-calendar"></span> 27 Feb 2020
+            </span>
+            
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="http://localhost:4000/categories/#Life" title="Life">Life</a>
+            </span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- / .banner -->
+<section class="container content">
+  <div class="columns">
+    <div class="column three-fourths">
+      <article class="article-content markdown-body">
+        <p><img src="/images/blog/nevergiveup.jpeg" alt="我不会放弃" /><img src="/images/blog/noshit.jpg" alt="I don't give shit" /></p>
+
+<hr />
+<p>这段时间在复刷题目同时也在做新的相关题目。感觉自己对动态规划题目还是不能掌握。动态规划题目真的是千变万化，很难总结出一条可以一劳永逸的规律。难怪这样的题目会成为大公司的门槛，因为确实不好做啊。我对动态规划的理解，很基础，相比做过类似题目的小伙伴也都是这样。动态规划说白了是为了节省时间复杂度而产生的，也可以说是将需要重复运算的结果存到缓存里，下次需要做同样计算的时候只需要直接从缓存里那结果就好而不再需要重复计算，不要小看这样的改变。举个例子，斐波那契数列的时间复杂度是o(2^n)，通过使用动态规划可以将性能优化到o(n)。</p>
+
+<h3 id="通常动态规划的题目一般分为三个步骤">通常，动态规划的题目，一般分为三个步骤。</h3>
+<ul>
+  <li>首先根据输出的需要，找到base case, 一般来说，base case是最显而易见的输出结果，创建一个数组用来记录输出。</li>
+  <li>有了base case就需要借机拓展，这时候需要一定的推理，找到前后输出的关联性。根据之前输出来更新当前输出。</li>
+  <li>从输出数组中，找到对应的结果。</li>
+</ul>
+
+<p>估计小伙伴们，大概也都是这样想的。</p>
+
+<h3 id="那么动态规划为什么难呢我认为有以下几点">那么，动态规划为什么难呢？我认为有以下几点：</h3>
+<ol>
+  <li>很多题目将动态规划包装的很隐蔽，遇到题目的时候会比较难想到动态规划。</li>
+  <li>推理难，大部分人思考方式是线性的，遇到一些非线性的动态规划题目，就会比较难推理出前后输出的关联性。例如当动态规划和树这种结构结合一般来说都会比较难。这时候大概最好的方法就是拿起笔，在纸上把结果一点一点写出来，直到你发现规律为止。</li>
+  <li>动态规划的题目有时候并不仅仅用到动态规划，所谓的隐性动态规划才是真正的杀手。比如说结合了BFS和动态规划，或者DFS和动态规划，一不小心就会让你的推理跑偏。</li>
+  <li>动态规划很容易陷入到暴力破解的陷阱。</li>
+</ol>
+
+<p>这几年大厂考动态规划的频率颇高，大概是因为想要提高门槛吧。leetcode论坛里时不时有人会透漏一些动态规划的面试题，对于比较初级的面试者来讲还是很有挑战性的。</p>
+
+<h3 id="遇到动态规划题目怎么办">遇到动态规划题目怎么办？</h3>
+<p>我个人认为主要看平日练习和对基础的掌握</p>
+<ul>
+  <li>大量的练习可以让你更快的找到前后输出的关联性。</li>
+  <li>一定要用笔演算，这样可以减少推理时候出现的错误，让输出更直观。</li>
+  <li>如果有可能尽量把它和生活联系起来。</li>
+</ul>
+
+<h2 id="平日">平日</h2>
+<p>做大量的练习积累做题经验，然后总结概括，一定要能啃硬骨头。把每道题吃透，确保遇到类似的题可以做出来。</p>
+
+
+      </article>
+      <div class="share">
+        <div class="share-component"></div>
+      </div>
+      <div class="comment">
+        
+
+  
+
+  
+        <div id="gitalk-container"></div>
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script>
+        var gitalk = new Gitalk({
+            id: '/2020/02/27/Dynamic_Programming_Drive_Me_Crazy/',
+            clientID: '4cef70907f5b36353d59',
+            clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
+            repo: 'zhenyu0519.github.io',
+            owner: 'zhenyu0519',
+            admin: ['zhenyu0519'],
+            labels: ['gitment'],
+            perPage: 50,
+        })
+        gitalk.render('gitalk-container')
+        </script>
+  
+
+
+      </div>
+    </div>
+    <div class="column one-fourth">
+      
+<h3>Search</h3>
+<div id="site_search" class="site_search">
+    <input type="text" id="search_box" placeholder="Search">
+</div>
+
+<ul id="search_results"></ul>
+
+<link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/modules/sidebar-search.css">
+<script src="http://localhost:4000/assets/js/simple-jekyll-search.min.js"></script>
+<script src="http://localhost:4000/assets/js/search.js"></script>
+
+<script type="text/javascript">
+SimpleJekyllSearch({
+    searchInput: document.getElementById('search_box'),
+    resultsContainer: document.getElementById('search_results'),
+    json: 'http://localhost:4000/assets/search_data.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No results found',
+    fuzzy: false,
+    exclude: ['Welcome'],
+    limit: 10
+})
+</script>
+
+      
+<h3 class="post-directory-title mobile-hidden">Table of Contents</h3>
+<div id="post-directory-module" class="mobile-hidden">
+  <section class="post-directory">
+  <!-- Links that trigger the jumping -->
+  <!-- Added by javascript below -->
+  <dl></dl>
+  </section>
+</div>
+
+<script src="http://localhost:4000/assets/js/jquery.toc.js"></script>
+
+    </div>
+  </div>
+</section>
+<!-- /section.content -->
+    <footer class="container">
+        <div class="site-footer" role="contentinfo">
+            <div class="copyright left mobile-block">
+                    © 2019
+                    <span title="Jeffrey">Jeffrey</span>
+                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
+            </div>
+
+            <ul class="site-footer-links right mobile-hidden">
+                <li>
+                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
+                </li>
+            </ul>
+            <a href="https://github.com/zhenyu0519/zhenyu0519.github.io" target="_blank" aria-label="view source code">
+                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+            </a>
+            <ul class="site-footer-links mobile-hidden">
+                
+                <li>
+                    <a href="http://localhost:4000/" title="Home" target="">Home</a>
+                </li>
+                
+                <li>
+                    <a href="http://localhost:4000/categories/" title="Categories" target="">Categories</a>
+                </li>
+                
+                <li>
+                    <a href="http://localhost:4000/about/" title="About" target="">About</a>
+                </li>
+                
+                <li><a href="http://localhost:4000/feed.xml"><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
+            </ul>
+
+        </div>
+    </footer>
+    <div class="tools-wrapper">
+      <a class="gotop" href="#" title="回到顶部"><span class="octicon octicon-arrow-up"></span></a>
+    </div>
+    <!-- / footer -->
+    <script src="http://localhost:4000/assets/vendor/share.js/dist/js/share.min.js"></script>
+    <script src="http://localhost:4000/assets/js/geopattern.js"></script>
+    <script src="http://localhost:4000/assets/js/prism.js"></script>
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/globals/prism.css">
+    <script>
+      jQuery(document).ready(function($) {
+        // geopattern
+        $('.geopattern').each(function(){
+          $(this).geopattern($(this).data('pattern-id'));
+        });
+       // hljs.initHighlightingOnLoad();
+      });
+    </script>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div style="display:none">
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-113380665-1', 'auto');
+        ga('send', 'pageview');
+
+      </script>
+    </div>
+    
+</body>
+</html>

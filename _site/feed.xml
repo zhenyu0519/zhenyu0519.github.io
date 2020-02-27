@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-02-27T11:55:13-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 264. Ugly Number II (Python)</title><link href="http://localhost:4000/2020/02/27/lc264/" rel="alternate" type="text/html" title="leetcode 264. Ugly Number II (Python)" /><published>2020-02-27T00:00:00-08:00</published><updated>2020-02-27T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/27/lc264</id><content type="html" xml:base="http://localhost:4000/2020/02/27/lc264/">&lt;h1 id=&quot;leetcode-264-ugly-number-ii-python&quot;&gt;Leetcode 264. Ugly Number II (Python)&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-02-27T12:52:21-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 264. Ugly Number II (Python)</title><link href="http://localhost:4000/2020/02/27/lc264/" rel="alternate" type="text/html" title="leetcode 264. Ugly Number II (Python)" /><published>2020-02-27T00:00:00-08:00</published><updated>2020-02-27T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/27/lc264</id><content type="html" xml:base="http://localhost:4000/2020/02/27/lc264/">&lt;h1 id=&quot;leetcode-264-ugly-number-ii-python&quot;&gt;Leetcode 264. Ugly Number II (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -35,7 +35,40 @@ Explanation: 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 is the sequence of the first 10 ugly
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;O(1) to retrieve preliminary computed ugly number, and about 1690 x times 5 = 84501690×5=8450 operations for preliminary computations.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 264. Ugly Number II (Python)</summary></entry><entry><title type="html">leetcode 279. Perfect Squares (Python)</title><link href="http://localhost:4000/2020/02/26/lc279/" rel="alternate" type="text/html" title="leetcode 279. Perfect Squares (Python)" /><published>2020-02-26T00:00:00-08:00</published><updated>2020-02-26T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/26/lc279</id><content type="html" xml:base="http://localhost:4000/2020/02/26/lc279/">&lt;h1 id=&quot;leetcode-279-perfect-squares-python&quot;&gt;Leetcode 279. Perfect Squares (Python)&lt;/h1&gt;
+&lt;p&gt;O(1) to retrieve preliminary computed ugly number, and about 1690 x times 5 = 84501690×5=8450 operations for preliminary computations.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 264. Ugly Number II (Python)</summary></entry><entry><title type="html">动态规划真的折磨人啊</title><link href="http://localhost:4000/2020/02/27/Dynamic_Programming_Drive_Me_Crazy/" rel="alternate" type="text/html" title="动态规划真的折磨人啊" /><published>2020-02-27T00:00:00-08:00</published><updated>2020-02-27T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/27/Dynamic_Programming_Drive_Me_Crazy</id><content type="html" xml:base="http://localhost:4000/2020/02/27/Dynamic_Programming_Drive_Me_Crazy/">&lt;p&gt;&lt;img src=&quot;/images/blog/nevergiveup.jpeg&quot; alt=&quot;我不会放弃&quot; /&gt;&lt;img src=&quot;/images/blog/noshit.jpg&quot; alt=&quot;I don't give shit&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;这段时间在复刷题目同时也在做新的相关题目。感觉自己对动态规划题目还是不能掌握。动态规划题目真的是千变万化，很难总结出一条可以一劳永逸的规律。难怪这样的题目会成为大公司的门槛，因为确实不好做啊。我对动态规划的理解，很基础，相比做过类似题目的小伙伴也都是这样。动态规划说白了是为了节省时间复杂度而产生的，也可以说是将需要重复运算的结果存到缓存里，下次需要做同样计算的时候只需要直接从缓存里那结果就好而不再需要重复计算，不要小看这样的改变。举个例子，斐波那契数列的时间复杂度是o(2^n)，通过使用动态规划可以将性能优化到o(n)。&lt;/p&gt;
+
+&lt;h3 id=&quot;通常动态规划的题目一般分为三个步骤&quot;&gt;通常，动态规划的题目，一般分为三个步骤。&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;首先根据输出的需要，找到base case, 一般来说，base case是最显而易见的输出结果，创建一个数组用来记录输出。&lt;/li&gt;
+  &lt;li&gt;有了base case就需要借机拓展，这时候需要一定的推理，找到前后输出的关联性。根据之前输出来更新当前输出。&lt;/li&gt;
+  &lt;li&gt;从输出数组中，找到对应的结果。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;估计小伙伴们，大概也都是这样想的。&lt;/p&gt;
+
+&lt;h3 id=&quot;那么动态规划为什么难呢我认为有以下几点&quot;&gt;那么，动态规划为什么难呢？我认为有以下几点：&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;很多题目将动态规划包装的很隐蔽，遇到题目的时候会比较难想到动态规划。&lt;/li&gt;
+  &lt;li&gt;推理难，大部分人思考方式是线性的，遇到一些非线性的动态规划题目，就会比较难推理出前后输出的关联性。例如当动态规划和树这种结构结合一般来说都会比较难。这时候大概最好的方法就是拿起笔，在纸上把结果一点一点写出来，直到你发现规律为止。&lt;/li&gt;
+  &lt;li&gt;动态规划的题目有时候并不仅仅用到动态规划，所谓的隐性动态规划才是真正的杀手。比如说结合了BFS和动态规划，或者DFS和动态规划，一不小心就会让你的推理跑偏。&lt;/li&gt;
+  &lt;li&gt;动态规划很容易陷入到暴力破解的陷阱。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;这几年大厂考动态规划的频率颇高，大概是因为想要提高门槛吧。leetcode论坛里时不时有人会透漏一些动态规划的面试题，对于比较初级的面试者来讲还是很有挑战性的。&lt;/p&gt;
+
+&lt;h3 id=&quot;遇到动态规划题目怎么办&quot;&gt;遇到动态规划题目怎么办？&lt;/h3&gt;
+&lt;p&gt;我个人认为主要看平日练习和对基础的掌握&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;大量的练习可以让你更快的找到前后输出的关联性。&lt;/li&gt;
+  &lt;li&gt;一定要用笔演算，这样可以减少推理时候出现的错误，让输出更直观。&lt;/li&gt;
+  &lt;li&gt;如果有可能尽量把它和生活联系起来。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;平日&quot;&gt;平日&lt;/h2&gt;
+&lt;p&gt;做大量的练习积累做题经验，然后总结概括，一定要能啃硬骨头。把每道题吃透，确保遇到类似的题可以做出来。&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html"></summary></entry><entry><title type="html">leetcode 279. Perfect Squares (Python)</title><link href="http://localhost:4000/2020/02/26/lc279/" rel="alternate" type="text/html" title="leetcode 279. Perfect Squares (Python)" /><published>2020-02-26T00:00:00-08:00</published><updated>2020-02-26T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/26/lc279</id><content type="html" xml:base="http://localhost:4000/2020/02/26/lc279/">&lt;h1 id=&quot;leetcode-279-perfect-squares-python&quot;&gt;Leetcode 279. Perfect Squares (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -353,7 +386,74 @@ So the solution is [3,1,-1,3,1]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all input list, it will cost O(n), each value we split into two parts, that cost O(logn), after that, we need to merge left and right in order to get answer so this give O(n), so total is(n^(logn+n)) which is n^2.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 241. Different Ways to Add Parentheses (Python)</summary></entry><entry><title type="html">leetcode 338. Counting Bits (Python)</title><link href="http://localhost:4000/2020/02/22/lc338/" rel="alternate" type="text/html" title="leetcode 338. Counting Bits (Python)" /><published>2020-02-22T00:00:00-08:00</published><updated>2020-02-22T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/22/lc338</id><content type="html" xml:base="http://localhost:4000/2020/02/22/lc338/">&lt;h1 id=&quot;leetcode-338-counting-bits-python&quot;&gt;Leetcode 338. Counting Bits (Python)&lt;/h1&gt;
+&lt;p&gt;We iterate all input list, it will cost O(n), each value we split into two parts, that cost O(logn), after that, we need to merge left and right in order to get answer so this give O(n), so total is(n^(logn+n)) which is n^2.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 241. Different Ways to Add Parentheses (Python)</summary></entry><entry><title type="html">leetcode 139. Word Break (Python)</title><link href="http://localhost:4000/2020/02/22/lc139/" rel="alternate" type="text/html" title="leetcode 139. Word Break (Python)" /><published>2020-02-22T00:00:00-08:00</published><updated>2020-02-22T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/22/lc139</id><content type="html" xml:base="http://localhost:4000/2020/02/22/lc139/">&lt;h1 id=&quot;leetcode-139-word-break-python&quot;&gt;Leetcode 139. Word Break (Python)&lt;/h1&gt;
+
+&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
+&lt;p&gt;Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, determine if s can be segmented into a space-separated sequence of one or more dictionary words.&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: s = &quot;leetcode&quot;, wordDict = [&quot;leet&quot;, &quot;code&quot;]
+Output: true
+Explanation: Return true because &quot;leetcode&quot; can be segmented as &quot;leet code&quot;.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: s = &quot;applepenapple&quot;, wordDict = [&quot;apple&quot;, &quot;pen&quot;]
+Output: true
+Explanation: Return true because &quot;applepenapple&quot; can be segmented as &quot;apple pen apple&quot;.Note that you are allowed to reuse a dictionary word.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-3&quot;&gt;Example 3&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: s = &quot;catsandog&quot;, wordDict = [&quot;cats&quot;, &quot;dog&quot;, &quot;sand&quot;, &quot;and&quot;, &quot;cat&quot;]
+Output: false
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;note&quot;&gt;Note:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;he same word in the dictionary may be reused multiple times in the segmentation.&lt;/li&gt;
+  &lt;li&gt;You may assume the dictionary does not contain duplicate words.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Base case:&lt;/p&gt;
+
+    &lt;p&gt;Create a dp list to indicate each word start character position and end position (end position is one step more than the position of end character)
+dp[0] = True&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Find the pattern:&lt;/p&gt;
+
+    &lt;p&gt;Go throught the string character by character. Use the previous characters to form words. Check if those words are in dictionary. If so, we mark the next position of the word as True to indicate that before this True mark, there is word that appear in dictionary. In the meanwhile, the True mark will also be the start character for next word.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;result:&lt;/p&gt;
+
+    &lt;p&gt;the last value in dp list indicate if all characters are used out to form dictionary’s word.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;wordBreak&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wordDict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;L&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wordDict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;We iterate all dp array, it will cost O(n+1), each value will iterate all it’s previous value, it will cost ((n+1)*(n+1-1)), in total will be O(n^2+n) and It is O(n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 139. Word Break (Python)</summary></entry><entry><title type="html">leetcode 338. Counting Bits (Python)</title><link href="http://localhost:4000/2020/02/22/lc338/" rel="alternate" type="text/html" title="leetcode 338. Counting Bits (Python)" /><published>2020-02-22T00:00:00-08:00</published><updated>2020-02-22T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/22/lc338</id><content type="html" xml:base="http://localhost:4000/2020/02/22/lc338/">&lt;h1 id=&quot;leetcode-338-counting-bits-python&quot;&gt;Leetcode 338. Counting Bits (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -430,122 +530,69 @@ Output: [0,1,1,2,1,2]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We only iterate the dp list, so the time and spact complexity is O(n).&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 338. Counting Bits (Python)</summary></entry><entry><title type="html">leetcode 139. Word Break (Python)</title><link href="http://localhost:4000/2020/02/22/lc139/" rel="alternate" type="text/html" title="leetcode 139. Word Break (Python)" /><published>2020-02-22T00:00:00-08:00</published><updated>2020-02-22T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/22/lc139</id><content type="html" xml:base="http://localhost:4000/2020/02/22/lc139/">&lt;h1 id=&quot;leetcode-139-word-break-python&quot;&gt;Leetcode 139. Word Break (Python)&lt;/h1&gt;
+&lt;p&gt;We only iterate the dp list, so the time and spact complexity is O(n).&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 338. Counting Bits (Python)</summary></entry><entry><title type="html">leetcode 256. Paint House (Python)</title><link href="http://localhost:4000/2020/02/21/lc256/" rel="alternate" type="text/html" title="leetcode 256. Paint House (Python)" /><published>2020-02-21T00:00:00-08:00</published><updated>2020-02-21T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/21/lc256</id><content type="html" xml:base="http://localhost:4000/2020/02/21/lc256/">&lt;h1 id=&quot;leetcode-256-paint-house-python&quot;&gt;Leetcode 256. Paint House (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
-&lt;p&gt;Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, determine if s can be segmented into a space-separated sequence of one or more dictionary words.&lt;/p&gt;
+&lt;p&gt;There are a row of n houses, each house can be painted with one of the three colors: red, blue or green. The cost of painting each house with a certain color is different. You have to paint all the houses such that no two adjacent houses have the same color.&lt;/p&gt;
+
+&lt;p&gt;The cost of painting each house with a certain color is represented by a n x 3 cost matrix. For example, costs[0][0] is the cost of painting house 0 with color red; costs[1][2] is the cost of painting house 1 with color green, and so on… Find the minimum cost to paint all houses.&lt;/p&gt;
 
 &lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
 &lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: s = &quot;leetcode&quot;, wordDict = [&quot;leet&quot;, &quot;code&quot;]
-Output: true
-Explanation: Return true because &quot;leetcode&quot; can be segmented as &quot;leet code&quot;.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: s = &quot;applepenapple&quot;, wordDict = [&quot;apple&quot;, &quot;pen&quot;]
-Output: true
-Explanation: Return true because &quot;applepenapple&quot; can be segmented as &quot;apple pen apple&quot;.Note that you are allowed to reuse a dictionary word.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;example-3&quot;&gt;Example 3&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: s = &quot;catsandog&quot;, wordDict = [&quot;cats&quot;, &quot;dog&quot;, &quot;sand&quot;, &quot;and&quot;, &quot;cat&quot;]
-Output: false
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [[17,2,17],[16,16,5],[14,3,19]]
+Output: 10
+Explanation: Paint house 0 into blue, paint house 1 into green, paint house 2 into blue. 
+Minimum cost: 2 + 5 + 3 = 10.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;note&quot;&gt;Note:&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;he same word in the dictionary may be reused multiple times in the segmentation.&lt;/li&gt;
-  &lt;li&gt;You may assume the dictionary does not contain duplicate words.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Base case:&lt;/p&gt;
-
-    &lt;p&gt;Create a dp list to indicate each word start character position and end position (end position is one step more than the position of end character)
-dp[0] = True&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Find the pattern:&lt;/p&gt;
-
-    &lt;p&gt;Go throught the string character by character. Use the previous characters to form words. Check if those words are in dictionary. If so, we mark the next position of the word as True to indicate that before this True mark, there is word that appear in dictionary. In the meanwhile, the True mark will also be the start character for next word.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;result:&lt;/p&gt;
-
-    &lt;p&gt;the last value in dp list indicate if all characters are used out to form dictionary’s word.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;wordBreak&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wordDict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;L&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wordDict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n+1), each value will iterate all it’s previous value, it will cost ((n+1)*(n+1-1)), in total will be O(n^2+n) and It is O(n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 139. Word Break (Python)</summary></entry><entry><title type="html">leetcode 265. Paint House II (Python)</title><link href="http://localhost:4000/2020/02/21/lc265/" rel="alternate" type="text/html" title="leetcode 265. Paint House II (Python)" /><published>2020-02-21T00:00:00-08:00</published><updated>2020-02-21T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/21/lc265</id><content type="html" xml:base="http://localhost:4000/2020/02/21/lc265/">&lt;h1 id=&quot;leetcode-265-paint-house-ii-python&quot;&gt;Leetcode 265. Paint House II (Python)&lt;/h1&gt;
-
-&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
-&lt;p&gt;There are a row of n houses, each house can be painted with one of the k colors. The cost of painting each house with a certain color is different. You have to paint all the houses such that no two adjacent houses have the same color.&lt;/p&gt;
-
-&lt;p&gt;The cost of painting each house with a certain color is represented by a n x k cost matrix. For example, costs[0][0] is the cost of painting house 0 with color 0; costs[1][2] is the cost of painting house 1 with color 2, and so on… Find the minimum cost to paint all houses.&lt;/p&gt;
-
-&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
-&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [[1,5,3],[2,9,4]]
-Output: 5
-Explanation: Paint house 0 into color 0, paint house 1 into color 2. Minimum cost: 1 + 4 = 5; Or paint house 0 into color 2, paint house 1 into color 0. Minimum cost: 3 + 2 = 5. 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;note&quot;&gt;Note:&lt;/h2&gt;
 &lt;p&gt;All costs are positive integers.&lt;/p&gt;
 
-&lt;h2 id=&quot;follow-up&quot;&gt;Follow up:&lt;/h2&gt;
-&lt;p&gt;Could you solve it in O(nk) runtime?&lt;/p&gt;
-
 &lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
-&lt;p&gt;This question solved by Dynamic Programming. It is similar with question &lt;a href=&quot;/2020/02/21/lc256/&quot; target=&quot;_blank&quot;&gt; 256. Paint House&lt;/a&gt;. The difference is color options get expand to k now.&lt;/p&gt;
+&lt;p&gt;This question solved by Dynamic Programming.
+Each house have three color options and adjacent houses can not be same color.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
     &lt;p&gt;Find the pattern:&lt;/p&gt;
 
-    &lt;p&gt;The pattern should be just same as question 256 but we need one more step to iterate the color options.&lt;/p&gt;
+    &lt;p&gt;Suppose we choose red color for the current house then the previous adjacent house can only either be blue or green. We gonna choose the minimum cost from those two colors and then add up to my cost of current house with red color. This will be the total min cost from current house to previous house when the current is red.&lt;/p&gt;
+
+    &lt;p&gt;If we are not choose red but green for the current house then the previous adjacent house can only either be blue or red. We gonna choose the minimum cost from those two colors and then add up to my cost of current house with green color. This will be the total min cost from current house to previous house when the current is green.&lt;/p&gt;
+
+    &lt;p&gt;If we are now choose blue for the current house then the previous adjacent house can only either be red or green. We gonna choose the minimum cost from those two colors and then add up to my cost of current house with blue color. This will be the total min cost from current house to previous house when the current is blue.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Extended option:&lt;/p&gt;
+
+    &lt;p&gt;Could be more than three colors or every three houses are not same color!&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;costs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;h1 id=&quot;code-1-original-idea&quot;&gt;Code 1 (original idea)&lt;/h1&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;minCost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;costs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;costs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;costs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;colors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;costs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;pre_house&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;costs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;costs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pre_house&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pre_house&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:])&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;costs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;costs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;costs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;costs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;costs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;costs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;costs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;costs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;costs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;costs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;h1 id=&quot;code-2-simplify-the-code&quot;&gt;Code 2 (simplify the code)&lt;/h1&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;minCost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;costs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;green&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;costs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;green&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all costs list O(n). for each cost in costs list, we need to iterate all the color options except the current option O(k-1), in total will be O(n(k-1)) and It is O(nk)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 265. Paint House II (Python)</summary></entry><entry><title type="html">leetcode 213. House Robber II (Python)</title><link href="http://localhost:4000/2020/02/21/lc213/" rel="alternate" type="text/html" title="leetcode 213. House Robber II (Python)" /><published>2020-02-21T00:00:00-08:00</published><updated>2020-02-21T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/21/lc213</id><content type="html" xml:base="http://localhost:4000/2020/02/21/lc213/">&lt;h1 id=&quot;leetcode-213-house-robber-ii-python&quot;&gt;Leetcode 213. House Robber II (Python)&lt;/h1&gt;
+&lt;p&gt;We iterate all dp list, it will cost O(n), each value will add up last 1 value as result, it will cost (1+1), in total will be O(n+n) and It is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 256. Paint House (Python)</summary></entry><entry><title type="html">leetcode 213. House Robber II (Python)</title><link href="http://localhost:4000/2020/02/21/lc213/" rel="alternate" type="text/html" title="leetcode 213. House Robber II (Python)" /><published>2020-02-21T00:00:00-08:00</published><updated>2020-02-21T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/21/lc213</id><content type="html" xml:base="http://localhost:4000/2020/02/21/lc213/">&lt;h1 id=&quot;leetcode-213-house-robber-ii-python&quot;&gt;Leetcode 213. House Robber II (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -592,20 +639,4 @@ So we will give the two input list. One with first house and without the last ho
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n), we have to input list, that give n+n cost. Therefore, it is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 213. House Robber II (Python)</summary></entry><entry><title type="html">好吧，二刷更难</title><link href="http://localhost:4000/2020/02/21/second_time_leetcode/" rel="alternate" type="text/html" title="好吧，二刷更难" /><published>2020-02-21T00:00:00-08:00</published><updated>2020-02-21T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/21/second_time_leetcode</id><content type="html" xml:base="http://localhost:4000/2020/02/21/second_time_leetcode/">&lt;h2&gt;&lt;img src=&quot;/images/blog/jack_ma.jpg&quot; alt=&quot;Lake And Tree&quot; /&gt;&lt;/h2&gt;
-&lt;h3 id=&quot;二刷的速度严重比预期慢压力山大&quot;&gt;二刷的速度严重比预期慢，压力山大！&lt;/h3&gt;
-
-&lt;hr /&gt;
-&lt;h2 id=&quot;最近&quot;&gt;最近&lt;/h2&gt;
-&lt;p&gt;最近结束了一刷之后，原本以为二刷会轻松一些，没想到二刷反而难度更大。一刷的难度在于题型，数据结构，算法不熟悉，所以一刷的目的是熟悉题型，数据结构和算法，最终遇到题目应该知道用什么方法和数据结构来解决的同时要考虑好一些特殊情况。这些差不多都做到了，目前简单的题型应该可以比较快的做出来。中等题型花点时间也差不多。&lt;/p&gt;
-
-&lt;p&gt;说一下二刷，之所以觉得难，是因为‘客户需求改变了’。不再局限于是否做出来而在于理解这些题的思考过程，古人说得好，授人予鱼不及授人予渔。一种类型的题如果明白了其中的原理，那么加以适当的练习便可以达到甚至超过题海战术的效果，所谓磨刀不误砍柴功。&lt;/p&gt;
-
-&lt;p&gt;同时二刷带来的压力也远远高于一刷，因为理论上说二刷应该要开始投简历了，所有的模拟都到了实战演练的阶段，同时二刷要准备的不仅仅是题目，更是面试技巧，简历， 人脉，以及针对不同公司要做的不同准备。&lt;/p&gt;
-
-&lt;p&gt;这就要求这个阶段有更好的体力，更科学的作息，更有效率的工作学习。&lt;/p&gt;
-
-&lt;p&gt;加油，你能行&lt;/p&gt;
-
-&lt;h2 id=&quot;激励&quot;&gt;激励&lt;/h2&gt;
-&lt;p&gt;所有成功的背后是压抑，容忍，不屈，坚持。离开comfort zone那一刻，你就应该知道，你已经告别了过去，未来不管是光明还是黑暗，迈出了这一步就要走下去。人生没有回头路！&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">二刷的速度严重比预期慢，压力山大！</summary></entry></feed>
+&lt;p&gt;We iterate all dp array, it will cost O(n), we have to input list, that give n+n cost. Therefore, it is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 213. House Robber II (Python)</summary></entry></feed>
