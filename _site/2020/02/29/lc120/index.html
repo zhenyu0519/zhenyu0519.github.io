@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>leetcode 64. Minimum Path Sum (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <title>leetcode 120. Triangle (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
     <!-- add google search console -->
     <meta name="google-site-verification" content="Hh37wMK9MFpx6xtWD91RDJzIy-PTLn7ocpNyQ1kPI6M" />
     <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-css/css/primer.css">
@@ -23,47 +23,47 @@
     
 
     
-    <link rel="canonical" href="https://zhenyu0519.github.io/2020/02/19/lc64/">
+    <link rel="canonical" href="https://zhenyu0519.github.io/2020/02/29/lc120/">
     <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="https://zhenyu0519.github.io/feed.xml">
     <link rel="shortcut icon" href="https://zhenyu0519.github.io/favicon.ico">
     
-    <meta property="og:title" content="leetcode 64. Minimum Path Sum (Python)">
+    <meta property="og:title" content="leetcode 120. Triangle (Python)">
       
-    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 64, Minimum Path Sum, zhenyu">
-    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 64, Minimum Path Sum, zhenyu">
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 120, Triangle, zhenyu">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 120, Triangle, zhenyu">
       
-    <meta name="description" content="Leetcode 64. Minimum Path Sum (Python)">
-    <meta name="og:description" content="Leetcode 64. Minimum Path Sum (Python)">
+    <meta name="description" content="Leetcode 120. Triangle (Python)">
+    <meta name="og:description" content="Leetcode 120. Triangle (Python)">
       
     
     
         
     
-    <meta property="og:url" content="https://zhenyu0519.github.io/2020/02/19/lc64/">
+    <meta property="og:url" content="https://zhenyu0519.github.io/2020/02/29/lc120/">
     <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="zh_CN" />
     
-    <meta property="article:published_time" content="2020-02-19">
+    <meta property="article:published_time" content="2020-02-29">
     
     <script src="https://zhenyu0519.github.io/assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="https://zhenyu0519.github.io/assets/js/jquery-ui.js"></script>
     <script src="https://zhenyu0519.github.io/assets/js/main.js"></script>
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>leetcode 64. Minimum Path Sum (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
+<title>leetcode 120. Triangle (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="leetcode 64. Minimum Path Sum (Python)" />
+<meta property="og:title" content="leetcode 120. Triangle (Python)" />
 <meta name="author" content="Jeffrey" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="leetcode 64. Minimum Path Sum (Python Solution)" />
-<meta property="og:description" content="leetcode 64. Minimum Path Sum (Python Solution)" />
-<link rel="canonical" href="https://zhenyu0519.github.io/2020/02/19/lc64/" />
-<meta property="og:url" content="https://zhenyu0519.github.io/2020/02/19/lc64/" />
+<meta name="description" content="leetcode 120. Triangle (Python Solution)" />
+<meta property="og:description" content="leetcode 120. Triangle (Python Solution)" />
+<link rel="canonical" href="https://zhenyu0519.github.io/2020/02/29/lc120/" />
+<meta property="og:url" content="https://zhenyu0519.github.io/2020/02/29/lc120/" />
 <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey’s Blog)" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-02-19T00:00:00-08:00" />
+<meta property="article:published_time" content="2020-02-29T00:00:00-08:00" />
 <script type="application/ld+json">
-{"description":"leetcode 64. Minimum Path Sum (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/02/19/lc64/"},"url":"https://zhenyu0519.github.io/2020/02/19/lc64/","headline":"leetcode 64. Minimum Path Sum (Python)","dateModified":"2020-02-19T00:00:00-08:00","datePublished":"2020-02-19T00:00:00-08:00","@context":"http://schema.org"}</script>
+{"description":"leetcode 120. Triangle (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/02/29/lc120/"},"url":"https://zhenyu0519.github.io/2020/02/29/lc120/","headline":"leetcode 120. Triangle (Python)","dateModified":"2020-02-29T00:00:00-08:00","datePublished":"2020-02-29T00:00:00-08:00","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -89,16 +89,16 @@
     </header>
     <!-- / header -->
 
-    <section class="collection-head small" data-pattern-id="leetcode 64. Mi">
+    <section class="collection-head small" data-pattern-id="leetcode 120. T">
   <div class="container">
     <div class="columns">
       <div class="column three-fourths">
         <div class="collection-title">
-          <h1 class="collection-header">leetcode 64. Minimum Path Sum (Python)</h1>
+          <h1 class="collection-header">leetcode 120. Triangle (Python)</h1>
           <div class="collection-info">
             
             <span class="meta-info">
-              <span class="octicon octicon-calendar"></span> 19 Feb 2020
+              <span class="octicon octicon-calendar"></span> 29 Feb 2020
             </span>
             
             
@@ -123,67 +123,67 @@
   <div class="columns">
     <div class="column three-fourths">
       <article class="article-content markdown-body">
-        <h1 id="leetcode-64-minimum-path-sum-python">Leetcode 64. Minimum Path Sum (Python)</h1>
+        <h1 id="leetcode-120-triangle-python">Leetcode 120. Triangle (Python)</h1>
 
 <h1 id="related-topic">Related Topic</h1>
 <p><a href="/categories/#Dynamic-Programming" target="_blank"> Dynamic-Programming</a>.</p>
 
 <h1 id="description">Description</h1>
-<p>Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right which minimizes the sum of all numbers along its path.</p>
+<p>Given a triangle, find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.</p>
+
+<p>For example, given the following triangle</p>
 
 <h2 id="sample-io">Sample I/O</h2>
 <h3 id="example-1">Example 1</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input:
-[
-  [1,3,1],
-  [1,5,1],
-  [4,2,1]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[
+     [2],
+    [3,4],
+   [6,5,7],
+  [4,1,8,3]
 ]
-Output: 7
-Explanation: Because the path 1→3→1→1→1 minimizes the sum.
 </code></pre></div></div>
 
-<h3 id="note">Note:</h3>
-<p>You can only move either down or right at any point in time.</p>
+<p>The minimum path sum from top to bottom is 11 (i.e., 2 + 3 + 5 + 1 = 11).</p>
+
+<h1 id="note">Note:</h1>
+
+<p>Bonus point if you are able to do this using only O(n) extra space, where n is the total number of rows in the triangle.</p>
 
 <h1 id="methodology">Methodology</h1>
-<p>This question solved by Dynamic Programming. It is similar with question 62 <a href="https://leetcode.com/problems/unique-paths-ii/" target="_blank">Unique Paths</a>.</p>
+<p>This question solved by Dynamic Programming. It is similar with question 64 <a href="/2020/02/19/lc64/" target="_blank">64. Minimum Path Sum</a>.</p>
 
 <ol>
   <li>
     <p>Find the base case:
-The base case can be original 2D list, we will replace the value of each cell with minimum sum.
-However, to use dynamic programming, we need to sum up each cell of the first row and first column with it’s previous cell.</p>
+The base case can be original 2D list, we will replace the value of each cell with minimum sum.</p>
   </li>
   <li>
     <p>Find the pattern:</p>
 
-    <p>This question is actually easier than qustion 62, you do not need to create a dp list to store the value. 
-For each target cell, it is either from right or down, all we need to do is smaller sum from right and down, then add the minimum sum to the current target</p>
+    <p>However, to use dynamic programming, we need to sum up each cell with it’s previous adjancent cell.</p>
   </li>
   <li>
     <p>Answer:</p>
 
-    <p>When reach to the bottom-right corner, then number in the bottom-right corner will be the answer.</p>
+    <p>When reach to the bottom row, then minimum number in the bottom row will be the answer.</p>
   </li>
 </ol>
 
 <h1 id="code">Code</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">minPathSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">grid</span><span class="p">:</span> <span class="k">return</span>
-        <span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">grid</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">minimumTotal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">triangle</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">triangle</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">m</span><span class="p">):</span>
-            <span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-            <span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">m</span><span class="p">):</span>
-            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-                <span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">+=</span><span class="nb">min</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">],</span><span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-        <span class="k">return</span> <span class="n">grid</span><span class="p">[</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">triangle</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">+=</span><span class="n">triangle</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">triangle</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+=</span><span class="n">triangle</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">m</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">):</span>
+                <span class="n">triangle</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">+=</span><span class="nb">min</span><span class="p">(</span><span class="n">triangle</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">triangle</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">triangle</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">triangle</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </code></pre></div></div>
 
 <h1 id="bigo">BigO</h1>
-<p>Init the first row and first column that will cost O(m-1+n-1). Then iterate all 2D dp array, it will cost O((m-1)*(n-1)). In total will cost (m^2-2mn+m+n-1) which generally is O(m^2-2mn)</p>
+<p>Init the triangle will cost O(m-1). Then iterate all 2D dp array, it will cost O((m-2)*(m-4)). In total will cost (m-1+(m-2)*(m-4)) equal to (m^2-5m+7) so generally is O(n^2)</p>
 
 
       </article>
@@ -201,7 +201,7 @@ For each target cell, it is either from right or down, all we need to do is smal
         <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
         <script>
         var gitalk = new Gitalk({
-            id: '/2020/02/19/lc64/',
+            id: '/2020/02/29/lc120/',
             clientID: '4cef70907f5b36353d59',
             clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
             repo: 'zhenyu0519.github.io',
