@@ -286,6 +286,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/02/27/lc357/"
+    } ,
+  
+    {
+      "title"    : "leetcode 983. Minimum Cost For Tickets (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/02/28/lc983/"
     } 
   
 ]
