@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-02-29T01:21:49-08:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 120. Triangle (Python)</title><link href="https://zhenyu0519.github.io/2020/02/29/lc120/" rel="alternate" type="text/html" title="leetcode 120. Triangle (Python)" /><published>2020-02-29T00:00:00-08:00</published><updated>2020-02-29T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/29/lc120</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/29/lc120/">&lt;h1 id=&quot;leetcode-120-triangle-python&quot;&gt;Leetcode 120. Triangle (Python)&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-02-29T19:52:29-08:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 120. Triangle (Python)</title><link href="https://zhenyu0519.github.io/2020/02/29/lc120/" rel="alternate" type="text/html" title="leetcode 120. Triangle (Python)" /><published>2020-02-29T00:00:00-08:00</published><updated>2020-02-29T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/29/lc120</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/29/lc120/">&lt;h1 id=&quot;leetcode-120-triangle-python&quot;&gt;Leetcode 120. Triangle (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -58,7 +58,93 @@ The base case can be original 2D list, we will replace the value of each cell wi
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Init the triangle will cost O(m-1). Then iterate all 2D dp array, it will cost O((m-2)*(m-4)). In total will cost (m-1+(m-2)*(m-4)) equal to (m^2-5m+7) so generally is O(n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 120. Triangle (Python)</summary></entry><entry><title type="html">leetcode 983. Minimum Cost For Tickets (Python)</title><link href="https://zhenyu0519.github.io/2020/02/28/lc983/" rel="alternate" type="text/html" title="leetcode 983. Minimum Cost For Tickets (Python)" /><published>2020-02-28T00:00:00-08:00</published><updated>2020-02-28T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/28/lc983</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/28/lc983/">&lt;h1 id=&quot;leetcode-983-minimum-cost-for-tickets-python&quot;&gt;Leetcode 983. Minimum Cost For Tickets (Python)&lt;/h1&gt;
+&lt;p&gt;Init the triangle will cost O(m-1). Then iterate all 2D dp array, it will cost O((m-2)*(m-4)). In total will cost (m-1+(m-2)*(m-4)) equal to (m^2-5m+7) so generally is O(n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 120. Triangle (Python)</summary></entry><entry><title type="html">leetcode 309. Best Time to Buy and Sell Stock with Cooldown (Python)</title><link href="https://zhenyu0519.github.io/2020/02/29/lc309/" rel="alternate" type="text/html" title="leetcode 309. Best Time to Buy and Sell Stock with Cooldown (Python)" /><published>2020-02-29T00:00:00-08:00</published><updated>2020-02-29T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/29/lc309</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/29/lc309/">&lt;h1 id=&quot;leetcode-309-best-time-to-buy-and-sell-stock-with-cooldown-python&quot;&gt;Leetcode 309. Best Time to Buy and Sell Stock with Cooldown (Python)&lt;/h1&gt;
+
+&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
+&lt;p&gt;Say you have an array for which the ith element is the price of a given stock on day i.&lt;/p&gt;
+
+&lt;p&gt;Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times) with the following restrictions:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).&lt;/li&gt;
+  &lt;li&gt;After you sell your stock, you cannot buy stock on next day. (ie, cooldown 1 day)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [1,2,3,0,2]
+Output: 3 
+Explanation: transactions = [buy, sell, cooldown, buy, sell]
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
+&lt;p&gt;This question solved by Dynamic Programming.&lt;/p&gt;
+
+&lt;p&gt;This question is hard. I found a great solution from some other sits.&lt;/p&gt;
+
+&lt;p&gt;Based on the question, each element should have three status which are buy, sell and cool down. I was struggled here for quite long time to try to make dp list. However, you can actually sort of convert these three status to 2 status. Hold stock or unhold stock:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Hold stock: At the end of today, the maxmium profit if you hold stock and these can be two conditions:
+    &lt;ol&gt;
+      &lt;li&gt;You bought the stock today&lt;/li&gt;
+      &lt;li&gt;You did not sell the stock that you bought before&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Unhold stock: At the end of today, the maxmium profit if you unhold stock and these can be two conditions as well:
+    &lt;ol&gt;
+      &lt;li&gt;You sold the stock today&lt;/li&gt;
+      &lt;li&gt;You did not buy any stock after you sold last stock&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The answer should be when you not hold stock, the maxmium profit.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Find the base case:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Create two dp list one is called hold, the other called unhold. each element represent the maxmium profit at the end of ith day.
+Init the first element of hold to -price[0]
+Init the first element of unhold to 0&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Find the pattern:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;There should be two patterns one for hold stock and the other one for unhold stock:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;hold stock: max(you bought the stock today, you bought the stock before but not sold it yet)&lt;/li&gt;
+  &lt;li&gt;unhold stock: max(you sold the stock today, you did not buy any stock after sold last stock)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Answer:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;last element of unhold stock.&lt;/p&gt;
+
+&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;maxProfit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;hold&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#hold[i]: the ith day profit when you hold stock&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;unhold&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#unhold[i]: the ith day profit when you not hold stock&lt;/span&gt;
+        
+        &lt;span class=&quot;n&quot;&gt;hold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;unhold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;hold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unhold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;#max(today buy in, last buy in)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;unhold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unhold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;#max(today sell out, not sell out)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unhold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;Then iterate both dp lists, it will cost O(2L). generally it is O(L)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 309. Best Time to Buy and Sell Stock with Cooldown (Python)</summary></entry><entry><title type="html">leetcode 983. Minimum Cost For Tickets (Python)</title><link href="https://zhenyu0519.github.io/2020/02/28/lc983/" rel="alternate" type="text/html" title="leetcode 983. Minimum Cost For Tickets (Python)" /><published>2020-02-28T00:00:00-08:00</published><updated>2020-02-28T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/28/lc983</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/28/lc983/">&lt;h1 id=&quot;leetcode-983-minimum-cost-for-tickets-python&quot;&gt;Leetcode 983. Minimum Cost For Tickets (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -364,71 +450,7 @@ Explanation: 13 = 4 + 9.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n), inside the first iteration, we need to iterate the squares which is O(√n) So the total time complexity is O(n√n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 279. Perfect Squares (Python)</summary></entry><entry><title type="html">leetcode 238. Product of Array Except Self (Python)</title><link href="https://zhenyu0519.github.io/2020/02/25/lc238/" rel="alternate" type="text/html" title="leetcode 238. Product of Array Except Self (Python)" /><published>2020-02-25T00:00:00-08:00</published><updated>2020-02-25T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/25/lc238</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/25/lc238/">&lt;h1 id=&quot;leetcode-238-product-of-array-except-self-python&quot;&gt;Leetcode 238. Product of Array Except Self (Python)&lt;/h1&gt;
-
-&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
-&lt;p&gt;Given an array nums of n integers where n &amp;gt; 1,  return an array output such that output[i] is equal to the product of all the elements of nums except nums[i].&lt;/p&gt;
-
-&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
-&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input:  [1,2,3,4]
-Output: [24,12,8,6]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;note&quot;&gt;Note:&lt;/h3&gt;
-&lt;p&gt;Please solve it without division and in O(n).&lt;/p&gt;
-
-&lt;h3 id=&quot;follow-up&quot;&gt;Follow up:&lt;/h3&gt;
-&lt;p&gt;Could you solve it with constant space complexity? (The output array does not count as extra space for the purpose of space complexity analysis.)&lt;/p&gt;
-
-&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
-&lt;p&gt;This question solved by Dynamic Programming.&lt;/p&gt;
-
-&lt;p&gt;This question is not hard to solve, even brute force will not give you a bad performance, the brute force will cost O(n^2). However, the question ask you to solve it in O(n), that means you can only iterate in linear time. So we choose DP array. There is a better readable solution that I will show you later&lt;/p&gt;
-
-&lt;h3 id=&quot;basic-idea&quot;&gt;Basic Idea&lt;/h3&gt;
-&lt;p&gt;The basic idea is really easy understand.&lt;/p&gt;
-
-&lt;p&gt;For each current value except itself can divide into two parts: the previous total product and next total product.&lt;/p&gt;
-
-&lt;p&gt;The basic idea here is previous total product multiple next total product will return the expected value in the current position.&lt;/p&gt;
-
-&lt;p&gt;In classic way, we need to generate two lists, one for previous total product, the other one is for next total product, then we multiple two elements with same index to get the value we wanted.&lt;/p&gt;
-
-&lt;p&gt;Or in this solution, we can generate previous total product as output first, then go through the output again to multiple each next product to save space.&lt;/p&gt;
-
-&lt;p&gt;I would say this is more like a dynamic programming question implicitly.&lt;/p&gt;
-
-&lt;h1 id=&quot;code-1&quot;&gt;Code 1&lt;/h1&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;productExceptSelf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; 
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h1 id=&quot;code-2&quot;&gt;Code 2&lt;/h1&gt;
-&lt;pre&gt;&lt;code class=&quot;language-Python&quot;&gt;def productExceptSelf(self, nums: List[int]) -&amp;gt; List[int]:        
-        #scan from left to i
-        for i in range(n):
-            output.append(p)
-            p = p * nums[i]
-        p = 1
-        #scan from right to i
-        for i in range(n-1,-1,-1):
-            output[i] = output[i] * p
-            p = p * nums[i]
-        return output
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 238. Product of Array Except Self (Python)</summary></entry><entry><title type="html">leetcode 152. Maximum Product Subarray (Python)</title><link href="https://zhenyu0519.github.io/2020/02/25/lc152/" rel="alternate" type="text/html" title="leetcode 152. Maximum Product Subarray (Python)" /><published>2020-02-25T00:00:00-08:00</published><updated>2020-02-25T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/25/lc152</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/25/lc152/">&lt;h1 id=&quot;leetcode-152-maximum-product-subarray-python&quot;&gt;Leetcode 152. Maximum Product Subarray (Python)&lt;/h1&gt;
+&lt;p&gt;We iterate all dp array, it will cost O(n), inside the first iteration, we need to iterate the squares which is O(√n) So the total time complexity is O(n√n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 279. Perfect Squares (Python)</summary></entry><entry><title type="html">leetcode 152. Maximum Product Subarray (Python)</title><link href="https://zhenyu0519.github.io/2020/02/25/lc152/" rel="alternate" type="text/html" title="leetcode 152. Maximum Product Subarray (Python)" /><published>2020-02-25T00:00:00-08:00</published><updated>2020-02-25T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/25/lc152</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/25/lc152/">&lt;h1 id=&quot;leetcode-152-maximum-product-subarray-python&quot;&gt;Leetcode 152. Maximum Product Subarray (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -517,111 +539,68 @@ Explanation: The result cannot be 2, because [-2,-1] is not a subarray.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;When iterate the whole list, the BigO is O(n) where n is size of the list. Each element will need to compare to previous pair, this give us O(1), in total O(n+1) which is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 152. Maximum Product Subarray (Python)</summary></entry><entry><title type="html">leetcode 241. Different Ways to Add Parentheses (Python)</title><link href="https://zhenyu0519.github.io/2020/02/24/lc241/" rel="alternate" type="text/html" title="leetcode 241. Different Ways to Add Parentheses (Python)" /><published>2020-02-24T00:00:00-08:00</published><updated>2020-02-24T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/24/lc241</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/24/lc241/">&lt;h1 id=&quot;leetcode-241-different-ways-to-add-parentheses-python&quot;&gt;Leetcode 241. Different Ways to Add Parentheses (Python)&lt;/h1&gt;
+&lt;p&gt;When iterate the whole list, the BigO is O(n) where n is size of the list. Each element will need to compare to previous pair, this give us O(1), in total O(n+1) which is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 152. Maximum Product Subarray (Python)</summary></entry><entry><title type="html">leetcode 238. Product of Array Except Self (Python)</title><link href="https://zhenyu0519.github.io/2020/02/25/lc238/" rel="alternate" type="text/html" title="leetcode 238. Product of Array Except Self (Python)" /><published>2020-02-25T00:00:00-08:00</published><updated>2020-02-25T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/25/lc238</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/25/lc238/">&lt;h1 id=&quot;leetcode-238-product-of-array-except-self-python&quot;&gt;Leetcode 238. Product of Array Except Self (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Divide-And-Conquer&quot; target=&quot;_blank&quot;&gt; Divide-And-Conquer&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
-&lt;p&gt;Given a string of numbers and operators, return all possible results from computing all the different possible ways to group numbers and operators. The valid operators are +, - and *.&lt;/p&gt;
+&lt;p&gt;Given an array nums of n integers where n &amp;gt; 1,  return an array output such that output[i] is equal to the product of all the elements of nums except nums[i].&lt;/p&gt;
 
 &lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
 &lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: &quot;2-1-1&quot;
-Output: [0, 2]
-Explanation: 
-((2-1)-1) = 0 
-(2-(1-1)) = 2
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input:  [1,2,3,4]
+Output: [24,12,8,6]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: &quot;2*3-4*5&quot;
-Output: [-34, -14, -10, -10, 10]
-Explanation: 
-(2*(3-(4*5))) = -34 
-((2*3)-(4*5)) = -14 
-((2*(3-4))*5) = -10 
-(2*((3-4)*5)) = -10 
-(((2*3)-4)*5) = 10
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;note&quot;&gt;Note:&lt;/h3&gt;
+&lt;p&gt;Please solve it without division and in O(n).&lt;/p&gt;
+
+&lt;h3 id=&quot;follow-up&quot;&gt;Follow up:&lt;/h3&gt;
+&lt;p&gt;Could you solve it with constant space complexity? (The output array does not count as extra space for the purpose of space complexity analysis.)&lt;/p&gt;
 
 &lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
-&lt;p&gt;This is a great question to practice the recursion. It solved by divide and conquer and the most difficult part is finding the pattern.&lt;/p&gt;
+&lt;p&gt;This question solved by Dynamic Programming.&lt;/p&gt;
 
-&lt;p&gt;Let’s set example to show the pattern I found:
-Say if you got input 2-1-1+1, you can think it like a tree with root, left child and right child, every time when you read the operator you will split it into left part and right part:&lt;/p&gt;
+&lt;p&gt;This question is not hard to solve, even brute force will not give you a bad performance, the brute force will cost O(n^2). However, the question ask you to solve it in O(n), that means you can only iterate in linear time. So we choose DP array. There is a better readable solution that I will show you later&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Find the pattern:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&quot;basic-idea&quot;&gt;Basic Idea&lt;/h3&gt;
+&lt;p&gt;The basic idea is really easy understand.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   iteration 1:
-			2 - 1- 1 + 1
-		   /   \
-		  2 - (1-1+1)
-		 /	   /  \
-		2	- (1 - (1+1))
-		
-		then
-		
-			2 - 1- 1 + 1
-		   /   \
-		  2 - (1-1+1)
-		 /	     /  \
-		2 - ((1 -1)+1)
-		
-This give us
-1. 2- (1 - (1+1))=3
-2. 2 - (1 -1)+1))=1
+&lt;p&gt;For each current value except itself can divide into two parts: the previous total product and next total product.&lt;/p&gt;
 
+&lt;p&gt;The basic idea here is previous total product multiple next total product will return the expected value in the current position.&lt;/p&gt;
 
-iteration 2:
-		2 - 1 - 1 + 1
-		    /   \
-		(2 -1)-(1 + 1)
-this give us
-1. (2-1)-(1+1) = -1
+&lt;p&gt;In classic way, we need to generate two lists, one for previous total product, the other one is for next total product, then we multiple two elements with same index to get the value we wanted.&lt;/p&gt;
 
-iteration 3:
-			2 - 1- 1 + 1
-				   /   \
-		   (2 - 1 - 1) + 1
-			 / \          \
-		   (2 - (1 -  1)) +  1
-		   
-		   then 
-		   
-		   2 - 1- 1 + 1
-				   /   \
-		   (2 - 1 - 1) + 1
-			     / \      \
-		 ((2 - 1) -  1) +  1
-this give us
-1.2 - (1 -  1)) +  1=3
-2.((2 - 1) -  1) +  1=1
+&lt;p&gt;Or in this solution, we can generate previous total product as output first, then go through the output again to multiple each next product to save space.&lt;/p&gt;
 
-So the solution is [3,1,-1,3,1]
+&lt;p&gt;I would say this is more like a dynamic programming question implicitly.&lt;/p&gt;
+
+&lt;h1 id=&quot;code-1&quot;&gt;Code 1&lt;/h1&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;productExceptSelf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; 
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;diffWaysToCompute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isdigit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;-+*&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;diffWaysToCompute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;diffWaysToCompute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:])&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'+'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                            &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                        &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'-'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                            &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                        &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'*'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                            &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;code-2&quot;&gt;Code 2&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Python&quot;&gt;def productExceptSelf(self, nums: List[int]) -&amp;gt; List[int]:        
+        #scan from left to i
+        for i in range(n):
+            output.append(p)
+            p = p * nums[i]
+        p = 1
+        #scan from right to i
+        for i in range(n-1,-1,-1):
+            output[i] = output[i] * p
+            p = p * nums[i]
+        return output
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all input list, it will cost O(n), each value we split into two parts, that cost O(logn), after that, we need to merge left and right in order to get answer so this give O(n), so total is(n^(logn+n)) which is n^2.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 241. Different Ways to Add Parentheses (Python)</summary></entry></feed>
+&lt;p&gt;We iterate all dp array, it will cost O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 238. Product of Array Except Self (Python)</summary></entry></feed>
