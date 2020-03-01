@@ -307,6 +307,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/02/29/lc309/"
+    } ,
+  
+    {
+      "title"    : "leetcode 714. Best Time to Buy and Sell Stock with Transaction Fee (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/02/29/lc714/"
     } 
   
 ]
