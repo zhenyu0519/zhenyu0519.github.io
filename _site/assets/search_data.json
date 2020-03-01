@@ -314,6 +314,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/02/29/lc714/"
+    } ,
+  
+    {
+      "title"    : "leetcode 304. Range Sum Query 2D - Immutable (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/01/lc304/"
     } 
   
 ]
