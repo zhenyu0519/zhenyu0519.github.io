@@ -324,6 +324,13 @@
     } ,
   
     {
+      "title"    : "leetcode 516. Longest Palindromic Subsequence (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/01/lc516/"
+    } ,
+  
+    {
       "title"    : "leetcode 647. Palindromic Substrings (Python)",
       "category" : "Leetcode",
       
