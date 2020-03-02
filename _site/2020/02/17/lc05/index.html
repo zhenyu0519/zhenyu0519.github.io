@@ -29,8 +29,8 @@
     
     <meta property="og:title" content="leetcode 5. Longest Palindromic Substring (Python)">
       
-    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 5, Longest Palindromic Substring, zhenyu">
-    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 5, Longest Palindromic Substring, zhenyu">
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 5, Longest Palindromic Substring, Dynamic Programming, Two Pointers, zhenyu">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 5, Longest Palindromic Substring, Dynamic Programming, Two Pointers, zhenyu">
       
     <meta name="description" content="Leetcode 5. Longest Palindromic Substring (Python)">
     <meta name="og:description" content="Leetcode 5. Longest Palindromic Substring (Python)">
@@ -117,6 +117,11 @@
               <a href="https://zhenyu0519.github.io/categories/#String" title="String">String</a>
             </span>
             
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Two-Pointers" title="Two-Pointers">Two-Pointers</a>
+            </span>
+            
           </div>
         </div>
       </div>
@@ -132,6 +137,7 @@
 
 <h1 id="related-topic">Related Topic</h1>
 <p><a href="/categories/#Dynamic-Programming" target="_blank"> Dynamic-Programming</a>.
+<a href="/categories/#Two-Pointers" target="_blank"> Two-Pointers</a>.
 <a href="/categories/#String" target="_blank"> String</a>.</p>
 
 <h1 id="description">Description</h1>
@@ -149,7 +155,10 @@ Note: "aba" is also a valid answer.
 Output: "bb"
 </code></pre></div></div>
 
-<h1 id="methodology">Methodology</h1>
+<h1 id="methodology-for-dynamic-programming">Methodology For Dynamic Programming</h1>
+<p>To find palindromic substring, we need to know the start index and end index for each substring. The start index and end index will range the substring as outter boundary. If the start element and end element are same, then we check if the substring of [start index + 1:end index] is palindromic. If it is and the current length of substring[start:end+1] is greater than maximum substring then we update the maxmium substring. Note that, single character is palindromic.</p>
+
+<h1 id="methodology-for-two-pointers">Methodology For Two Pointers</h1>
 <p>Iterate the whole string by each character.
 For each character, there are two pointers.</p>
 <ul>
@@ -166,7 +175,25 @@ If the returned string is longer than the longest string, replace the longest st
 
 <p>After done the iteration, return longest string as answer</p>
 
-<h1 id="code">Code</h1>
+<h1 id="code-1-dynamic-programming">Code 1 (Dynamic Programming)</h1>
+<pre><code class="language-Python">def longestPalindrome(self, s: str) -&gt; str:
+        longest = '' if not s else s[0]
+        max_len = 1
+        size = len(s)
+        dp=[[False]*size for _ in range(size)]
+        for start in range(size-1,-1,-1):
+            dp[start][start]=True
+            for end in range(start+1,size):
+                if s[start]==s[end]:
+                    if end - start == 1 or dp[start+1][end-1]:
+                        dp[start][end] = True
+                        if max_len &lt; end - start + 1:
+                            max_len = end - start + 1
+                            longest = s[start: end+ 1]
+        return longest
+</code></pre>
+
+<h1 id="code-2-two-pointers">Code 2 (Two Pointers)</h1>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">longestPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="n">longest</span> <span class="o">=</span> <span class="s">''</span>
         <span class="k">def</span> <span class="nf">findLongest</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
