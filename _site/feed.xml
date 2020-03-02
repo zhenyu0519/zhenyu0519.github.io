@@ -1,4 +1,71 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-03-01T14:06:37-08:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 304. Range Sum Query 2D - Immutable (Python)</title><link href="https://zhenyu0519.github.io/2020/03/01/lc304/" rel="alternate" type="text/html" title="leetcode 304. Range Sum Query 2D - Immutable (Python)" /><published>2020-03-01T00:00:00-08:00</published><updated>2020-03-01T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/03/01/lc304</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/01/lc304/">&lt;h1 id=&quot;leetcode-304-range-sum-query-2d---immutable-python&quot;&gt;Leetcode 304. Range Sum Query 2D - Immutable (Python)&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-03-01T17:24:33-08:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 647. Palindromic Substrings (Python)</title><link href="https://zhenyu0519.github.io/2020/03/01/lc647/" rel="alternate" type="text/html" title="leetcode 647. Palindromic Substrings (Python)" /><published>2020-03-01T00:00:00-08:00</published><updated>2020-03-01T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/03/01/lc647</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/01/lc647/">&lt;h1 id=&quot;leetcode-647-palindromic-substrings-python&quot;&gt;Leetcode 647. Palindromic Substrings (Python)&lt;/h1&gt;
+
+&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
+&lt;p&gt;Given a string, your task is to count how many palindromic substrings in this string.&lt;/p&gt;
+
+&lt;p&gt;The substrings with different start indexes or end indexes are counted as different substrings even they consist of same characters.&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: &quot;abc&quot;
+Output: 3
+Explanation: Three palindromic strings: &quot;a&quot;, &quot;b&quot;, &quot;c&quot;.
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: &quot;aaa&quot;
+Output: 6
+Explanation: Six palindromic strings: &quot;a&quot;, &quot;a&quot;, &quot;a&quot;, &quot;aa&quot;, &quot;aa&quot;, &quot;aaa&quot;.
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;## Note:
+ The input string length won’t exceed 1000.&lt;/p&gt;
+
+&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
+&lt;p&gt;This question can be solved by Dynamic Programming. However there are various way to implement DP. 
+To find palindromic substring, we need to know the start index and end index for each substring. The start index and end index will range the substring as outter boundary. If the start index and end index are same, then we go inner of the boundary by moving start and end index 1 cell inner until the start and end are overlaping or start’s next is end.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Find the base case:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;If there is 1 character, then there is 1 palindromic substring.
+If there are 2 character, then start and end character are same.&lt;/p&gt;
+
+&lt;p&gt;dp[start_index][end_index]=1, when there is 1 character&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Find the pattern:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;We will check start from substring contain 1 character to substring contain n character. For each check we use count to keep adding the number of palindromic substring. Every time we set the first element of this substring as start and last element of this substring as end. We compare the start and end if they are same then we compare start’s next element with end’s previous element, until start and end are overlaping. When they are overlaped, we get the count + previous count&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Answer:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Return the count as answer&lt;/p&gt;
+
+&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;countSubstrings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#each possible length when the string length is l&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#outer&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]):&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;#dp&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;Create dp list will cost O(n^2) and iterate the dp will cost (n^2/2) in total will be O(n^2*2/3)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 647. Palindromic Substrings (Python)</summary></entry><entry><title type="html">leetcode 304. Range Sum Query 2D - Immutable (Python)</title><link href="https://zhenyu0519.github.io/2020/03/01/lc304/" rel="alternate" type="text/html" title="leetcode 304. Range Sum Query 2D - Immutable (Python)" /><published>2020-03-01T00:00:00-08:00</published><updated>2020-03-01T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/03/01/lc304</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/01/lc304/">&lt;h1 id=&quot;leetcode-304-range-sum-query-2d---immutable-python&quot;&gt;Leetcode 304. Range Sum Query 2D - Immutable (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -384,50 +451,7 @@ Then we iterate the days list, if the current day not in days list, we let the c
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n), inside the iteration, we need to iterate the tickets which is O(3) So the total time complexity is O(3n) which is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 983. Minimum Cost For Tickets (Python)</summary></entry><entry><title type="html">leetcode 357. Count Numbers with Unique Digits (Python)</title><link href="https://zhenyu0519.github.io/2020/02/27/lc357/" rel="alternate" type="text/html" title="leetcode 357. Count Numbers with Unique Digits (Python)" /><published>2020-02-27T00:00:00-08:00</published><updated>2020-02-27T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/27/lc357</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/27/lc357/">&lt;h1 id=&quot;leetcode-357-count-numbers-with-unique-digits-python&quot;&gt;Leetcode 357. Count Numbers with Unique Digits (Python)&lt;/h1&gt;
-
-&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
-&lt;p&gt;Given a non-negative integer n, count all numbers with unique digits, x, where 0 ≤ x &amp;lt; 10^n.&lt;/p&gt;
-
-&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
-&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: 2
-Output: 91 
-Explanation: The answer should be the total numbers in the range of 0 ≤ x &amp;lt; 100,
-excluding 11,22,33,44,55,66,77,88,99
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
-&lt;p&gt;This question can be solved by Dynamic Programming. However, dp is not the only best solution.&lt;/p&gt;
-
-&lt;p&gt;This question is really easy to find the base case and pattern, basiclly you need find the the number of unique digits in current range and add the previous number to get the current total unique digits.&lt;/p&gt;
-
-&lt;h2 id=&quot;base-case&quot;&gt;Base case:&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;When n = 0, there is 1 and only digit so dp[0] = 1
-when n = 1, there is 10 unqiue digits so dp[1] = 10
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;pattern&quot;&gt;Pattern&lt;/h2&gt;
-&lt;p&gt;Every time when the n increase 1, there will be split to two range. The previous range which is [10^0,10^n-1) and the current range which is [10^n-1, 10^n). The current range you can apply permutation on it. Because the first digit always has 9 options, second has 8 options, third has 7 options….until you reach to the last digit.&lt;/p&gt;
-
-&lt;p&gt;After you get the current unique digits, the total unique digits is unique digits in current range plus the unique digits in previous range.&lt;/p&gt;
-
-&lt;h1 id=&quot;code-1&quot;&gt;Code 1&lt;/h1&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;countNumbersWithUniqueDigits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;    
-            &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;digit&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;digit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate the dp array, it will cost O(n+1), each iteration need to iterate O(n+1-1), so the total time complexity is O((n+1)/*n) which is O(n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 357. Count Numbers with Unique Digits (Python)</summary></entry><entry><title type="html">leetcode 322. Coin Change (Python)</title><link href="https://zhenyu0519.github.io/2020/02/27/lc322/" rel="alternate" type="text/html" title="leetcode 322. Coin Change (Python)" /><published>2020-02-27T00:00:00-08:00</published><updated>2020-02-27T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/27/lc322</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/27/lc322/">&lt;h1 id=&quot;leetcode-322-coin-change-python&quot;&gt;Leetcode 322. Coin Change (Python)&lt;/h1&gt;
+&lt;p&gt;We iterate all dp array, it will cost O(n), inside the iteration, we need to iterate the tickets which is O(3) So the total time complexity is O(3n) which is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 983. Minimum Cost For Tickets (Python)</summary></entry><entry><title type="html">leetcode 322. Coin Change (Python)</title><link href="https://zhenyu0519.github.io/2020/02/27/lc322/" rel="alternate" type="text/html" title="leetcode 322. Coin Change (Python)" /><published>2020-02-27T00:00:00-08:00</published><updated>2020-02-27T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/27/lc322</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/27/lc322/">&lt;h1 id=&quot;leetcode-322-coin-change-python&quot;&gt;Leetcode 322. Coin Change (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -551,62 +575,47 @@ Explanation: 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 is the sequence of the first 10 ugly
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;平日&quot;&gt;平日&lt;/h2&gt;
-&lt;p&gt;做大量的练习积累做题经验，然后总结概括，一定要能啃硬骨头。把每道题吃透，确保遇到类似的题可以做出来。&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html"></summary></entry><entry><title type="html">leetcode 279. Perfect Squares (Python)</title><link href="https://zhenyu0519.github.io/2020/02/26/lc279/" rel="alternate" type="text/html" title="leetcode 279. Perfect Squares (Python)" /><published>2020-02-26T00:00:00-08:00</published><updated>2020-02-26T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/26/lc279</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/26/lc279/">&lt;h1 id=&quot;leetcode-279-perfect-squares-python&quot;&gt;Leetcode 279. Perfect Squares (Python)&lt;/h1&gt;
+&lt;p&gt;做大量的练习积累做题经验，然后总结概括，一定要能啃硬骨头。把每道题吃透，确保遇到类似的题可以做出来。&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html"></summary></entry><entry><title type="html">leetcode 357. Count Numbers with Unique Digits (Python)</title><link href="https://zhenyu0519.github.io/2020/02/27/lc357/" rel="alternate" type="text/html" title="leetcode 357. Count Numbers with Unique Digits (Python)" /><published>2020-02-27T00:00:00-08:00</published><updated>2020-02-27T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/27/lc357</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/27/lc357/">&lt;h1 id=&quot;leetcode-357-count-numbers-with-unique-digits-python&quot;&gt;Leetcode 357. Count Numbers with Unique Digits (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
-&lt;p&gt;Given a positive integer n, find the least number of perfect square numbers (for example, 1, 4, 9, 16, …) which sum to n.&lt;/p&gt;
+&lt;p&gt;Given a non-negative integer n, count all numbers with unique digits, x, where 0 ≤ x &amp;lt; 10^n.&lt;/p&gt;
 
 &lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
 &lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: n = 12
-Output: 3 
-Explanation: 12 = 4 + 4 + 4.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: n = 13
-Output: 2
-Explanation: 13 = 4 + 9.
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: 2
+Output: 91 
+Explanation: The answer should be the total numbers in the range of 0 ≤ x &amp;lt; 100,
+excluding 11,22,33,44,55,66,77,88,99
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
-&lt;p&gt;This question can be solved by Dynamic Programming. However, dp is not the best solution.&lt;/p&gt;
+&lt;p&gt;This question can be solved by Dynamic Programming. However, dp is not the only best solution.&lt;/p&gt;
 
-&lt;p&gt;It took me long time to think about the dynamic programming solution. Here is my process of thinking:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;If the value is made up by square, then the least number of perfect square is 1.&lt;/li&gt;
-  &lt;li&gt;However, usually each value will have one more perfect square than previous value. Now I can get most number of perfect square which is dp[i-1]+1. Is there any way to make this number less or is there any way to calculate the number of perfect square differently?&lt;/li&gt;
-  &lt;li&gt;Continue to the second one. Yes. If you can eliminate 1 perfect square from current value then you probably will have a smaller number of square than dp[i-1]+1. But which square to eliminate?&lt;/li&gt;
-  &lt;li&gt;The proper square to eliminate is start from the 1st until the the last smaller one to the current value. There you go, we got the pattern.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;This question is really easy to find the base case and pattern, basiclly you need find the the number of unique digits in current range and add the previous number to get the current total unique digits.&lt;/p&gt;
 
 &lt;h2 id=&quot;base-case&quot;&gt;Base case:&lt;/h2&gt;
-&lt;p&gt;We create dp list and init each value to 1 because there at least 1 number of perfect square. Init 0 index as 0 because the number of perfect square for 0 is 0.&lt;/p&gt;
-
-&lt;p&gt;We also need a create a list of squares [1,4,9,16,…] The last square should never exceed the input number.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;When n = 0, there is 1 and only digit so dp[0] = 1
+when n = 1, there is 10 unqiue digits so dp[1] = 10
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;pattern&quot;&gt;Pattern&lt;/h2&gt;
-&lt;p&gt;Iterate the value if the value is in square, we skip the iteration to next. Otherwise, we give the most number of square to the current value for compare, each time we will update the number of square for current value. This means, compare the current number of square to the the new number of square which is got from square elimination until we get minimum.&lt;/p&gt;
+&lt;p&gt;Every time when the n increase 1, there will be split to two range. The previous range which is [10^0,10^n-1) and the current range which is [10^n-1, 10^n). The current range you can apply permutation on it. Because the first digit always has 9 options, second has 8 options, third has 7 options….until you reach to the last digit.&lt;/p&gt;
+
+&lt;p&gt;After you get the current unique digits, the total unique digits is unique digits in current range plus the unique digits in previous range.&lt;/p&gt;
 
 &lt;h1 id=&quot;code-1&quot;&gt;Code 1&lt;/h1&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;numSquares&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;squares&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;countNumbersWithUniqueDigits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;squares&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;square&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;squares&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;square&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;square&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;    
+            &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;digit&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;digit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate all dp array, it will cost O(n), inside the first iteration, we need to iterate the squares which is O(√n) So the total time complexity is O(n√n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 279. Perfect Squares (Python)</summary></entry></feed>
+&lt;p&gt;We iterate the dp array, it will cost O(n+1), each iteration need to iterate O(n+1-1), so the total time complexity is O((n+1)/*n) which is O(n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 357. Count Numbers with Unique Digits (Python)</summary></entry></feed>
