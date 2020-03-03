@@ -155,24 +155,18 @@ Explanation: Six palindromic strings: "a", "a", "a", "aa", "aa", "aaa".
 
 <p>To find palindromic substring, we need to know the start index and end index for each substring. The start index and end index will range the substring as outter boundary. If the start index and end index are same, then we go inner of the boundary by moving start and end index 1 cell inner until the start and end are overlaping or start’s next is end.</p>
 
-<ol>
-  <li>Find the base case:</li>
-</ol>
+<h3 id="find-the-base-case">Find the base case:</h3>
 
 <p>If there is 1 character, then there is 1 palindromic substring.
 If there are 2 character, then start and end character are same.</p>
 
 <p>dp[start_index][end_index]=1, when there is 1 character</p>
 
-<ol>
-  <li>Find the pattern:</li>
-</ol>
+<h3 id="find-the-pattern">Find the pattern:</h3>
 
 <p>We will check start from substring contain 1 character to substring contain n character. For each check we use count to keep adding the number of palindromic substring. Every time we set the first element of this substring as start and last element of this substring as end. We compare the start and end if they are same then we compare start’s next element with end’s previous element, until start and end are overlaping. When they are overlaped, we get the count + previous count</p>
 
-<ol>
-  <li>Answer:</li>
-</ol>
+<h3 id="answer">Answer:</h3>
 
 <p>Return the count as answer</p>
 

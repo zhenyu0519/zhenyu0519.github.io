@@ -178,17 +178,13 @@ Explanation: The maximum profit can be achieved by:
 
 <p>The answer should be when you not hold stock, the maxmium profit.</p>
 
-<ol>
-  <li>Find the base case:</li>
-</ol>
+<h3 id="find-the-base-case">Find the base case:</h3>
 
 <p>Create two dp list one is called hold, the other called unhold. each element represent the maxmium profit at the end of ith day.
 Init the first element of hold to -price[0]
 Init the first element of unhold to 0</p>
 
-<ol>
-  <li>Find the pattern:</li>
-</ol>
+<h3 id="find-the-pattern">Find the pattern:</h3>
 
 <p>There should be two patterns one for hold stock and the other one for unhold stock:</p>
 <ul>
@@ -196,9 +192,7 @@ Init the first element of unhold to 0</p>
   <li>unhold stock: max(you sold the stock today + transcation fee, you did not buy any stock after sold last stock)</li>
 </ul>
 
-<ol>
-  <li>Answer:</li>
-</ol>
+<h3 id="answer">Answer:</h3>
 
 <p>last element of unhold stock.</p>
 

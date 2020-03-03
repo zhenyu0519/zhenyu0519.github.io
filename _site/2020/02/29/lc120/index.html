@@ -152,22 +152,16 @@
 <h1 id="methodology">Methodology</h1>
 <p>This question solved by Dynamic Programming. It is similar with question 64 <a href="/2020/02/19/lc64/" target="_blank">64. Minimum Path Sum</a>.</p>
 
-<ol>
-  <li>
-    <p>Find the base case:
-The base case can be original 2D list, we will replace the value of each cell with minimum sum.</p>
-  </li>
-  <li>
-    <p>Find the pattern:</p>
+<h3 id="find-the-base-case">Find the base case:</h3>
+<p>The base case can be original 2D list, we will replace the value of each cell with minimum sum.</p>
 
-    <p>However, to use dynamic programming, we need to sum up each cell with it’s previous adjancent cell.</p>
-  </li>
-  <li>
-    <p>Answer:</p>
+<h3 id="find-the-pattern">Find the pattern:</h3>
 
-    <p>When reach to the bottom row, then minimum number in the bottom row will be the answer.</p>
-  </li>
-</ol>
+<p>However, to use dynamic programming, we need to sum up each cell with it’s previous adjancent cell.</p>
+
+<h3 id="answer">Answer:</h3>
+
+<p>When reach to the bottom row, then minimum number in the bottom row will be the answer.</p>
 
 <h1 id="code">Code</h1>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">minimumTotal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">triangle</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>

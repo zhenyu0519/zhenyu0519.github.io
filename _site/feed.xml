@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-03-02T21:47:43-08:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 300. Longest Increasing Subsequence (Python)</title><link href="https://zhenyu0519.github.io/2020/03/02/lc300/" rel="alternate" type="text/html" title="leetcode 300. Longest Increasing Subsequence (Python)" /><published>2020-03-02T00:00:00-08:00</published><updated>2020-03-02T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/03/02/lc300</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/02/lc300/">&lt;h1 id=&quot;leetcode-300-longest-increasing-subsequence-python&quot;&gt;Leetcode 300. Longest Increasing Subsequence (Python)&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-03-02T21:58:40-08:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 300. Longest Increasing Subsequence (Python)</title><link href="https://zhenyu0519.github.io/2020/03/02/lc300/" rel="alternate" type="text/html" title="leetcode 300. Longest Increasing Subsequence (Python)" /><published>2020-03-02T00:00:00-08:00</published><updated>2020-03-02T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/03/02/lc300</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/02/lc300/">&lt;h1 id=&quot;leetcode-300-longest-increasing-subsequence-python&quot;&gt;Leetcode 300. Longest Increasing Subsequence (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -28,15 +28,11 @@ Could you improve it to O(n log n) time complexity?&lt;/p&gt;
 
 &lt;p&gt;We want to creat a dp list to memorize the number of increasing subsequence. If the current element is greater than prevous element, then current number of increasing subsequence is the previous number of increasing subsequence + 1. Then we return the max number in dp list&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Find the base case:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&quot;find-the-base-case&quot;&gt;Find the base case:&lt;/h3&gt;
 
 &lt;p&gt;Init each element of dp list to 1 as there is at least 1 number of increasing subsequence unless the input is empty list.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Find the pattern:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&quot;find-the-pattern&quot;&gt;Find the pattern:&lt;/h3&gt;
 
 &lt;p&gt;If the current element is greater than prevous element, then current number of increasing subsequence is the previous number of increasing subsequence + 1.If the current element is greater than prevous element, then current number of increasing subsequence is the previous number of increasing subsequence + 1.&lt;/p&gt;
 
@@ -44,10 +40,7 @@ Could you improve it to O(n log n) time complexity?&lt;/p&gt;
 
 &lt;p&gt;The classic dynamic programming method will compare each previous element with the current element to update the current number of increasing subsequence. &lt;strong&gt;However I found this is not efficent. Once the current element is greater than the max element of previous, there is no need to compare more previous elements.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Answer:&lt;/li&gt;
-&lt;/ol&gt;
-
+&lt;h3 id=&quot;answer&quot;&gt;Answer:&lt;/h3&gt;
 &lt;p&gt;Return the max element of dp list&lt;/p&gt;
 
 &lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
@@ -93,21 +86,15 @@ Output: 4
 
 &lt;p&gt;To find the maxmium square, we need to find square first. 1 is a square with lenght equal to 1. Any square with lenght more than 2 can be made of square with length 2.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Find the base case:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&quot;find-the-base-case&quot;&gt;Find the base case:&lt;/h3&gt;
 
 &lt;p&gt;If there is 1 exist in the given input, then there is at least 1 square and the area is 1.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Find the pattern:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&quot;find-the-pattern&quot;&gt;Find the pattern:&lt;/h3&gt;
 
 &lt;p&gt;If any element equal to 1 then we check its left, right and upper left element if they are all greater than 1 then we know there is at least a square with length greater than 1. we need to find the minimum from it’s left, right and upper then + 1 to get the current square’s length. If the square is greater the maximum square then we update the maximum square.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Answer:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&quot;answer&quot;&gt;Answer:&lt;/h3&gt;
 
 &lt;p&gt;maximum square variable&lt;/p&gt;
 
@@ -163,24 +150,18 @@ Explanation: Six palindromic strings: &quot;a&quot;, &quot;a&quot;, &quot;a&quot
 
 &lt;p&gt;To find palindromic substring, we need to know the start index and end index for each substring. The start index and end index will range the substring as outter boundary. If the start index and end index are same, then we go inner of the boundary by moving start and end index 1 cell inner until the start and end are overlaping or start’s next is end.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Find the base case:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&quot;find-the-base-case&quot;&gt;Find the base case:&lt;/h3&gt;
 
 &lt;p&gt;If there is 1 character, then there is 1 palindromic substring.
 If there are 2 character, then start and end character are same.&lt;/p&gt;
 
 &lt;p&gt;dp[start_index][end_index]=1, when there is 1 character&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Find the pattern:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&quot;find-the-pattern&quot;&gt;Find the pattern:&lt;/h3&gt;
 
 &lt;p&gt;We will check start from substring contain 1 character to substring contain n character. For each check we use count to keep adding the number of palindromic substring. Every time we set the first element of this substring as start and last element of this substring as end. We compare the start and end if they are same then we compare start’s next element with end’s previous element, until start and end are overlaping. When they are overlaped, we get the count + previous count&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Answer:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&quot;answer&quot;&gt;Answer:&lt;/h3&gt;
 
 &lt;p&gt;Return the count as answer&lt;/p&gt;
 
@@ -232,21 +213,15 @@ If there are 2 character, then start and end character are same.&lt;/p&gt;
 
 &lt;p&gt;To get the sum of area D, get the &lt;strong&gt;Whole Area sum of area A,B,C,D&lt;/strong&gt; first. &lt;strong&gt;Then Whole Area - B - C + A because area B and area C both include A&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Find the base case:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&quot;find-the-base-case&quot;&gt;Find the base case:&lt;/h3&gt;
 
 &lt;p&gt;Create a 2D dp list and init all elements of the first row and first column to 0&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Find the pattern:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&quot;find-the-pattern&quot;&gt;Find the pattern:&lt;/h3&gt;
 
 &lt;p&gt;The area D = Then Whole Area - area B - area C + area A because area B and area C both include A&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Answer:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&quot;answer&quot;&gt;Answer:&lt;/h3&gt;
 
 &lt;p&gt;The area D&lt;/p&gt;
 
@@ -294,27 +269,23 @@ One possible longest palindromic subsequence is &quot;bb&quot;.
 
 &lt;p&gt;To find if the subsequence is palindromic, we need to set each element’s index as it’s start index then go through all element’s after the start index to find all the number of palindromic subsequence for the current element. If the current subsequence include the previous subsequence, then add 2 to the number of previous subsequence(1 for start and 1 for end). Otherwist, we need to get the maximum number from start element and end element.&lt;/p&gt;
 
+&lt;h3 id=&quot;find-the-base-case&quot;&gt;Find the base case:&lt;/h3&gt;
 &lt;ol&gt;
-  &lt;li&gt;Find the base case:
+  &lt;li&gt;If there is 1 character, then the length of palindromic subsequence is 1.&lt;/li&gt;
+  &lt;li&gt;If there are 2 character:
     &lt;ol&gt;
-      &lt;li&gt;If there is 1 character, then the length of palindromic subsequence is 1.&lt;/li&gt;
-      &lt;li&gt;If there are 2 character:
-        &lt;ol&gt;
-          &lt;li&gt;First element and last element are same, then length of palindromic subsequence is 2.&lt;/li&gt;
-          &lt;li&gt;First element and last element are different, then length of palindromic subsequence is 1&lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
+      &lt;li&gt;First element and last element are same, then length of palindromic subsequence is 2.&lt;/li&gt;
+      &lt;li&gt;First element and last element are different, then length of palindromic subsequence is 1&lt;/li&gt;
     &lt;/ol&gt;
   &lt;/li&gt;
-  &lt;li&gt;Find the pattern:&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;h3 id=&quot;find-the-pattern&quot;&gt;Find the pattern:&lt;/h3&gt;
 
 &lt;p&gt;We will check if each palindromic subsequence contain other palindromic subsequence. If the current palindromic subsequence contain other palindromic subsequence then current number is contained palindromic subsequence + 2. If the current palindromic subsequence contain does not contain other palindromic subsequence then current number is 2. If the current subsequence is not palindromic, then we need find the max number of it’s contained
 palindromic subsequence.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Answer:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&quot;answer&quot;&gt;Answer:&lt;/h3&gt;
 
 &lt;p&gt;Return the dp[0][n-1] as we start from last character of the string&lt;/p&gt;
 
@@ -389,17 +360,13 @@ Explanation: The maximum profit can be achieved by:
 
 &lt;p&gt;The answer should be when you not hold stock, the maxmium profit.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Find the base case:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&quot;find-the-base-case&quot;&gt;Find the base case:&lt;/h3&gt;
 
 &lt;p&gt;Create two dp list one is called hold, the other called unhold. each element represent the maxmium profit at the end of ith day.
 Init the first element of hold to -price[0]
 Init the first element of unhold to 0&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Find the pattern:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&quot;find-the-pattern&quot;&gt;Find the pattern:&lt;/h3&gt;
 
 &lt;p&gt;There should be two patterns one for hold stock and the other one for unhold stock:&lt;/p&gt;
 &lt;ul&gt;
@@ -407,9 +374,7 @@ Init the first element of unhold to 0&lt;/p&gt;
   &lt;li&gt;unhold stock: max(you sold the stock today + transcation fee, you did not buy any stock after sold last stock)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Answer:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&quot;answer&quot;&gt;Answer:&lt;/h3&gt;
 
 &lt;p&gt;last element of unhold stock.&lt;/p&gt;
 
@@ -455,22 +420,16 @@ Init the first element of unhold to 0&lt;/p&gt;
 &lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
 &lt;p&gt;This question solved by Dynamic Programming. It is similar with question 64 &lt;a href=&quot;/2020/02/19/lc64/&quot; target=&quot;_blank&quot;&gt;64. Minimum Path Sum&lt;/a&gt;.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Find the base case:
-The base case can be original 2D list, we will replace the value of each cell with minimum sum.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Find the pattern:&lt;/p&gt;
+&lt;h3 id=&quot;find-the-base-case&quot;&gt;Find the base case:&lt;/h3&gt;
+&lt;p&gt;The base case can be original 2D list, we will replace the value of each cell with minimum sum.&lt;/p&gt;
 
-    &lt;p&gt;However, to use dynamic programming, we need to sum up each cell with it’s previous adjancent cell.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Answer:&lt;/p&gt;
+&lt;h3 id=&quot;find-the-pattern&quot;&gt;Find the pattern:&lt;/h3&gt;
 
-    &lt;p&gt;When reach to the bottom row, then minimum number in the bottom row will be the answer.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;However, to use dynamic programming, we need to sum up each cell with it’s previous adjancent cell.&lt;/p&gt;
+
+&lt;h3 id=&quot;answer&quot;&gt;Answer:&lt;/h3&gt;
+
+&lt;p&gt;When reach to the bottom row, then minimum number in the bottom row will be the answer.&lt;/p&gt;
 
 &lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;minimumTotal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;triangle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
@@ -533,17 +492,13 @@ Explanation: transactions = [buy, sell, cooldown, buy, sell]
 
 &lt;p&gt;The answer should be when you not hold stock, the maxmium profit.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Find the base case:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&quot;find-the-base-case&quot;&gt;Find the base case:&lt;/h3&gt;
 
 &lt;p&gt;Create two dp list one is called hold, the other called unhold. each element represent the maxmium profit at the end of ith day.
 Init the first element of hold to -price[0]
 Init the first element of unhold to 0&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Find the pattern:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&quot;find-the-pattern&quot;&gt;Find the pattern:&lt;/h3&gt;
 
 &lt;p&gt;There should be two patterns one for hold stock and the other one for unhold stock:&lt;/p&gt;
 &lt;ul&gt;
@@ -551,9 +506,7 @@ Init the first element of unhold to 0&lt;/p&gt;
   &lt;li&gt;unhold stock: max(you sold the stock today, you did not buy any stock after sold last stock)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Answer:&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3 id=&quot;answer&quot;&gt;Answer:&lt;/h3&gt;
 
 &lt;p&gt;last element of unhold stock.&lt;/p&gt;
 

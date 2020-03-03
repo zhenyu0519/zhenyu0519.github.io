@@ -151,27 +151,23 @@ One possible longest palindromic subsequence is "bb".
 
 <p>To find if the subsequence is palindromic, we need to set each element’s index as it’s start index then go through all element’s after the start index to find all the number of palindromic subsequence for the current element. If the current subsequence include the previous subsequence, then add 2 to the number of previous subsequence(1 for start and 1 for end). Otherwist, we need to get the maximum number from start element and end element.</p>
 
+<h3 id="find-the-base-case">Find the base case:</h3>
 <ol>
-  <li>Find the base case:
+  <li>If there is 1 character, then the length of palindromic subsequence is 1.</li>
+  <li>If there are 2 character:
     <ol>
-      <li>If there is 1 character, then the length of palindromic subsequence is 1.</li>
-      <li>If there are 2 character:
-        <ol>
-          <li>First element and last element are same, then length of palindromic subsequence is 2.</li>
-          <li>First element and last element are different, then length of palindromic subsequence is 1</li>
-        </ol>
-      </li>
+      <li>First element and last element are same, then length of palindromic subsequence is 2.</li>
+      <li>First element and last element are different, then length of palindromic subsequence is 1</li>
     </ol>
   </li>
-  <li>Find the pattern:</li>
 </ol>
+
+<h3 id="find-the-pattern">Find the pattern:</h3>
 
 <p>We will check if each palindromic subsequence contain other palindromic subsequence. If the current palindromic subsequence contain other palindromic subsequence then current number is contained palindromic subsequence + 2. If the current palindromic subsequence contain does not contain other palindromic subsequence then current number is 2. If the current subsequence is not palindromic, then we need find the max number of it’s contained
 palindromic subsequence.</p>
 
-<ol>
-  <li>Answer:</li>
-</ol>
+<h3 id="answer">Answer:</h3>
 
 <p>Return the dp[0][n-1] as we start from last character of the string</p>
 

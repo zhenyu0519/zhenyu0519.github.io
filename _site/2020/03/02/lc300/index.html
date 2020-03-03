@@ -153,15 +153,11 @@ Could you improve it to O(n log n) time complexity?</p>
 
 <p>We want to creat a dp list to memorize the number of increasing subsequence. If the current element is greater than prevous element, then current number of increasing subsequence is the previous number of increasing subsequence + 1. Then we return the max number in dp list</p>
 
-<ol>
-  <li>Find the base case:</li>
-</ol>
+<h3 id="find-the-base-case">Find the base case:</h3>
 
 <p>Init each element of dp list to 1 as there is at least 1 number of increasing subsequence unless the input is empty list.</p>
 
-<ol>
-  <li>Find the pattern:</li>
-</ol>
+<h3 id="find-the-pattern">Find the pattern:</h3>
 
 <p>If the current element is greater than prevous element, then current number of increasing subsequence is the previous number of increasing subsequence + 1.If the current element is greater than prevous element, then current number of increasing subsequence is the previous number of increasing subsequence + 1.</p>
 
@@ -169,10 +165,7 @@ Could you improve it to O(n log n) time complexity?</p>
 
 <p>The classic dynamic programming method will compare each previous element with the current element to update the current number of increasing subsequence. <strong>However I found this is not efficent. Once the current element is greater than the max element of previous, there is no need to compare more previous elements.</strong></p>
 
-<ol>
-  <li>Answer:</li>
-</ol>
-
+<h3 id="answer">Answer:</h3>
 <p>Return the max element of dp list</p>
 
 <h1 id="code">Code</h1>
