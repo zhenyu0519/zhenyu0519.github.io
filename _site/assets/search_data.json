@@ -358,6 +358,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/02/lc334/"
+    } ,
+  
+    {
+      "title"    : "leetcode 673. Number of Longest Increasing Subsequence (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/03/lc673/"
     } 
   
 ]
