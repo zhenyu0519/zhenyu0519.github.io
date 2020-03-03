@@ -351,6 +351,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/02/lc300/"
+    } ,
+  
+    {
+      "title"    : "leetcode 334. Increasing Triplet Subsequence (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/02/lc334/"
     } 
   
 ]
