@@ -55,6 +55,8 @@
   
   
   
+  
+  
 
   
     {
@@ -335,6 +337,20 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/01/lc647/"
+    } ,
+  
+    {
+      "title"    : "leetcode 221. Maximal Square (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/02/lc221/"
+    } ,
+  
+    {
+      "title"    : "leetcode 300. Longest Increasing Subsequence (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/02/lc300/"
     } 
   
 ]
