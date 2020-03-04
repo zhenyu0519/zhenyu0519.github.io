@@ -5,28 +5,28 @@
   
     {
       "title"    : "Page Not Found",
-      "url"      : "https://zhenyu0519.github.io/404.html"
+      "url"      : "http://localhost:4000/404.html"
     } ,
   
   
   
     {
       "title"    : "About",
-      "url"      : "https://zhenyu0519.github.io/about/"
+      "url"      : "http://localhost:4000/about/"
     } ,
   
   
   
     {
       "title"    : "归档",
-      "url"      : "https://zhenyu0519.github.io/archives/"
+      "url"      : "http://localhost:4000/archives/"
     } ,
   
   
   
     {
       "title"    : "Categories",
-      "url"      : "https://zhenyu0519.github.io/categories/"
+      "url"      : "http://localhost:4000/categories/"
     } ,
   
   
@@ -35,7 +35,7 @@
   
     {
       "title"    : "Open Source Projects",
-      "url"      : "https://zhenyu0519.github.io/open-source/"
+      "url"      : "http://localhost:4000/open-source/"
     } ,
   
   
@@ -63,308 +63,315 @@
       "title"    : "新博客开篇，献给过去，现在，未来的自己",
       "category" : "Life",
       
-      "url"      : "https://zhenyu0519.github.io/2019/08/15/Intro/"
+      "url"      : "http://localhost:4000/2019/08/15/Intro/"
     } ,
   
     {
       "title"    : "简明的 Markdown 笔记",
       "category" : "Markdown",
       
-      "url"      : "https://zhenyu0519.github.io/2019/09/15/markdown/"
+      "url"      : "http://localhost:4000/2019/09/15/markdown/"
     } ,
   
     {
       "title"    : "MAC Mojave下，gem安装package(jekyll)出现的问题以及解决方法/Trouble shooting gem install packages (jekyll) under Mac Mojave(中文/英语)",
       "category" : "TroubleShoot",
       
-      "url"      : "https://zhenyu0519.github.io/2019/11/21/gem_install_jekyll_permission/"
+      "url"      : "http://localhost:4000/2019/11/21/gem_install_jekyll_permission/"
     } ,
   
     {
       "title"    : "记第一次白板面试",
       "category" : "Interview",
       
-      "url"      : "https://zhenyu0519.github.io/2019/11/21/first_white_boarding_interview/"
+      "url"      : "http://localhost:4000/2019/11/21/first_white_boarding_interview/"
     } ,
   
     {
       "title"    : "继续前行",
       "category" : "Life",
       
-      "url"      : "https://zhenyu0519.github.io/2019/11/26/keep_it_up/"
+      "url"      : "http://localhost:4000/2019/11/26/keep_it_up/"
     } ,
   
     {
       "title"    : "刷了300道题后的心得",
       "category" : "Interview",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/15/Leetcode_milestone/"
+      "url"      : "http://localhost:4000/2020/02/15/Leetcode_milestone/"
     } ,
   
     {
       "title"    : "leetcode 5. Longest Palindromic Substring (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/17/lc05/"
+      "url"      : "http://localhost:4000/2020/02/17/lc05/"
     } ,
   
     {
       "title"    : "leetcode 654. Maximum Binary Tree (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/17/lc654/"
+      "url"      : "http://localhost:4000/2020/02/17/lc654/"
     } ,
   
     {
       "title"    : "leetcode 1137. N-th Tribonacci Number (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/18/lc1137/"
+      "url"      : "http://localhost:4000/2020/02/18/lc1137/"
     } ,
   
     {
       "title"    : "leetcode 509. Fibonacci Number (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/18/lc509/"
+      "url"      : "http://localhost:4000/2020/02/18/lc509/"
     } ,
   
     {
       "title"    : "leetcode 53. Maximum Subarray (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/18/lc53/"
+      "url"      : "http://localhost:4000/2020/02/18/lc53/"
     } ,
   
     {
       "title"    : "leetcode 70. Climbing Stairs (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/18/lc70/"
+      "url"      : "http://localhost:4000/2020/02/18/lc70/"
     } ,
   
     {
       "title"    : "leetcode 746. Min Cost Climbing Stairs (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/18/lc746/"
+      "url"      : "http://localhost:4000/2020/02/18/lc746/"
     } ,
   
     {
       "title"    : "leetcode 62. Unique Paths (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/19/lc62/"
+      "url"      : "http://localhost:4000/2020/02/19/lc62/"
     } ,
   
     {
       "title"    : "leetcode 63. Unique Paths II (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/19/lc63/"
+      "url"      : "http://localhost:4000/2020/02/19/lc63/"
     } ,
   
     {
       "title"    : "leetcode 64. Minimum Path Sum (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/19/lc64/"
+      "url"      : "http://localhost:4000/2020/02/19/lc64/"
     } ,
   
     {
       "title"    : "leetcode 198. House Robber (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/20/lc198/"
+      "url"      : "http://localhost:4000/2020/02/20/lc198/"
     } ,
   
     {
       "title"    : "leetcode 91. Decode Ways (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/20/lc91/"
+      "url"      : "http://localhost:4000/2020/02/20/lc91/"
     } ,
   
     {
       "title"    : "leetcode 96. Unique Binary Search Trees (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/20/lc96/"
+      "url"      : "http://localhost:4000/2020/02/20/lc96/"
     } ,
   
     {
       "title"    : "好吧，二刷更难",
       "category" : "Life",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/21/second_time_leetcode/"
+      "url"      : "http://localhost:4000/2020/02/21/second_time_leetcode/"
     } ,
   
     {
       "title"    : "leetcode 213. House Robber II (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/21/lc213/"
+      "url"      : "http://localhost:4000/2020/02/21/lc213/"
     } ,
   
     {
       "title"    : "leetcode 256. Paint House (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/21/lc256/"
+      "url"      : "http://localhost:4000/2020/02/21/lc256/"
     } ,
   
     {
       "title"    : "leetcode 265. Paint House II (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/21/lc265/"
+      "url"      : "http://localhost:4000/2020/02/21/lc265/"
     } ,
   
     {
       "title"    : "leetcode 139. Word Break (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/22/lc139/"
+      "url"      : "http://localhost:4000/2020/02/22/lc139/"
     } ,
   
     {
       "title"    : "leetcode 338. Counting Bits (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/22/lc338/"
+      "url"      : "http://localhost:4000/2020/02/22/lc338/"
     } ,
   
     {
       "title"    : "leetcode 241. Different Ways to Add Parentheses (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/24/lc241/"
+      "url"      : "http://localhost:4000/2020/02/24/lc241/"
     } ,
   
     {
       "title"    : "leetcode 152. Maximum Product Subarray (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/25/lc152/"
+      "url"      : "http://localhost:4000/2020/02/25/lc152/"
     } ,
   
     {
       "title"    : "leetcode 238. Product of Array Except Self (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/25/lc238/"
+      "url"      : "http://localhost:4000/2020/02/25/lc238/"
     } ,
   
     {
       "title"    : "leetcode 279. Perfect Squares (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/26/lc279/"
+      "url"      : "http://localhost:4000/2020/02/26/lc279/"
     } ,
   
     {
       "title"    : "动态规划真的折磨人啊",
       "category" : "Life",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/27/Dynamic_Programming_Drive_Me_Crazy/"
+      "url"      : "http://localhost:4000/2020/02/27/Dynamic_Programming_Drive_Me_Crazy/"
     } ,
   
     {
       "title"    : "leetcode 264. Ugly Number II (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/27/lc264/"
+      "url"      : "http://localhost:4000/2020/02/27/lc264/"
     } ,
   
     {
       "title"    : "leetcode 322. Coin Change (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/27/lc322/"
+      "url"      : "http://localhost:4000/2020/02/27/lc322/"
     } ,
   
     {
       "title"    : "leetcode 357. Count Numbers with Unique Digits (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/27/lc357/"
+      "url"      : "http://localhost:4000/2020/02/27/lc357/"
     } ,
   
     {
       "title"    : "leetcode 983. Minimum Cost For Tickets (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/28/lc983/"
+      "url"      : "http://localhost:4000/2020/02/28/lc983/"
     } ,
   
     {
       "title"    : "leetcode 120. Triangle (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/29/lc120/"
+      "url"      : "http://localhost:4000/2020/02/29/lc120/"
     } ,
   
     {
       "title"    : "leetcode 309. Best Time to Buy and Sell Stock with Cooldown (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/29/lc309/"
+      "url"      : "http://localhost:4000/2020/02/29/lc309/"
     } ,
   
     {
       "title"    : "leetcode 714. Best Time to Buy and Sell Stock with Transaction Fee (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/02/29/lc714/"
+      "url"      : "http://localhost:4000/2020/02/29/lc714/"
     } ,
   
     {
       "title"    : "leetcode 304. Range Sum Query 2D - Immutable (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/03/01/lc304/"
+      "url"      : "http://localhost:4000/2020/03/01/lc304/"
     } ,
   
     {
       "title"    : "leetcode 516. Longest Palindromic Subsequence (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/03/01/lc516/"
+      "url"      : "http://localhost:4000/2020/03/01/lc516/"
     } ,
   
     {
       "title"    : "leetcode 647. Palindromic Substrings (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/03/01/lc647/"
+      "url"      : "http://localhost:4000/2020/03/01/lc647/"
     } ,
   
     {
       "title"    : "leetcode 221. Maximal Square (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/03/02/lc221/"
+      "url"      : "http://localhost:4000/2020/03/02/lc221/"
     } ,
   
     {
       "title"    : "leetcode 300. Longest Increasing Subsequence (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/03/02/lc300/"
+      "url"      : "http://localhost:4000/2020/03/02/lc300/"
     } ,
   
     {
       "title"    : "leetcode 334. Increasing Triplet Subsequence (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/03/02/lc334/"
+      "url"      : "http://localhost:4000/2020/03/02/lc334/"
+    } ,
+  
+    {
+      "title"    : "Mac下Pyenv的安装和使用",
+      "category" : "TroubleShoot",
+      
+      "url"      : "http://localhost:4000/2020/03/03/mac_pyenv/"
     } ,
   
     {
       "title"    : "leetcode 673. Number of Longest Increasing Subsequence (Python)",
       "category" : "Leetcode",
       
-      "url"      : "https://zhenyu0519.github.io/2020/03/03/lc673/"
+      "url"      : "http://localhost:4000/2020/03/03/lc673/"
     } 
   
 ]

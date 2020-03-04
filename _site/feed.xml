@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-03-03T14:59:41-08:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 673. Number of Longest Increasing Subsequence (Python)</title><link href="https://zhenyu0519.github.io/2020/03/03/lc673/" rel="alternate" type="text/html" title="leetcode 673. Number of Longest Increasing Subsequence (Python)" /><published>2020-03-03T00:00:00-08:00</published><updated>2020-03-03T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/03/03/lc673</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/03/lc673/">&lt;h1 id=&quot;leetcode-673-number-of-longest-increasing-subsequence-python&quot;&gt;Leetcode 673. Number of Longest Increasing Subsequence (Python)&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-03T21:45:45-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 673. Number of Longest Increasing Subsequence (Python)</title><link href="http://localhost:4000/2020/03/03/lc673/" rel="alternate" type="text/html" title="leetcode 673. Number of Longest Increasing Subsequence (Python)" /><published>2020-03-03T00:00:00-08:00</published><updated>2020-03-03T00:00:00-08:00</updated><id>http://localhost:4000/2020/03/03/lc673</id><content type="html" xml:base="http://localhost:4000/2020/03/03/lc673/">&lt;h1 id=&quot;leetcode-673-number-of-longest-increasing-subsequence-python&quot;&gt;Leetcode 673. Number of Longest Increasing Subsequence (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -66,7 +66,90 @@ count = [1]&lt;/em&gt;n&lt;/p&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;counts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lengths&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;longest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Create dp list will cost O(2n) and iterate the dp will cost ((n-1)*n) in total will be O((n-1)*n+2n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 673. Number of Longest Increasing Subsequence (Python)</summary></entry><entry><title type="html">leetcode 221. Maximal Square (Python)</title><link href="https://zhenyu0519.github.io/2020/03/02/lc221/" rel="alternate" type="text/html" title="leetcode 221. Maximal Square (Python)" /><published>2020-03-02T00:00:00-08:00</published><updated>2020-03-02T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/03/02/lc221</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/02/lc221/">&lt;h1 id=&quot;leetcode-221-maximal-square-python&quot;&gt;Leetcode 221. Maximal Square (Python)&lt;/h1&gt;
+&lt;p&gt;Create dp list will cost O(2n) and iterate the dp will cost ((n-1)*n) in total will be O((n-1)*n+2n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 673. Number of Longest Increasing Subsequence (Python)</summary></entry><entry><title type="html">Mac下Pyenv的安装和使用</title><link href="http://localhost:4000/2020/03/03/mac_pyenv/" rel="alternate" type="text/html" title="Mac下Pyenv的安装和使用" /><published>2020-03-03T00:00:00-08:00</published><updated>2020-03-03T00:00:00-08:00</updated><id>http://localhost:4000/2020/03/03/mac_pyenv</id><content type="html" xml:base="http://localhost:4000/2020/03/03/mac_pyenv/">&lt;h1 id=&quot;mac下pyenv的安装和使用&quot;&gt;Mac下Pyenv的安装和使用&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blog/pipenv.png&quot; alt=&quot;Pyenv&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;开发python项目的时候经常会遇到版本冲突问题。例如有时候需要用到python3.5，有时候又需要用到3.7。像node使用nvm一样，python也有类似的版本管理工具—pyenv。两个工具的功能基本一样。使用版本管理工具，可以方便的来回切换不同的版本以满足开发需求。而且简单易用。&lt;/p&gt;
+
+&lt;h2 id=&quot;下载与安装&quot;&gt;下载与安装&lt;/h2&gt;
+
+&lt;p&gt;下载的方式其实有很多。我使用的方式是最简单的。系统版本macOS Catalina，稍低一点的版本也OK。
+使用Homebrew 安装&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew update
+brew install pyenv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;下载安装完毕之后检查一下是否安装成功&quot;&gt;下载安装完毕之后检查一下是否安装成功&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pyenv --version 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;出现版本号即代表成功&lt;/p&gt;
+
+&lt;h3 id=&quot;查看现有的版本以及正在使用的版本&quot;&gt;查看现有的版本以及正在使用的版本&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pyenv versions
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;会出现&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;* system
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;说明目前全局使用的是系统默认的版本（通常为2.7)&lt;/p&gt;
+
+&lt;h3 id=&quot;安转其他python版本&quot;&gt;安转其他Python版本&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pyenv install 3.6.3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;列出可用的版本&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pyenv install -l
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;安装完之后查安装后的版本&quot;&gt;安装完之后查安装后的版本&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pyenv versions
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;会出现&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;* system
+3.6.7
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;添加路径到终端配置文件&quot;&gt;添加路径到终端配置文件&lt;/h3&gt;
+&lt;p&gt;我使用的是zsh，如果是bash也一样
+Zsh&lt;/p&gt;
+&lt;div class=&quot;language-zsh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'export PYENV_ROOT=&quot;$HOME/.pyenv&quot;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.zshrc
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.zshrc
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'eval &quot;$(pyenv init -)&quot;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Bash&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'export PYENV_ROOT=&quot;$HOME/.pyenv&quot;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bash_profile
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bash_profile
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'eval &quot;$(pyenv init -)&quot;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;重新启动shell来使用pyenv&quot;&gt;重新启动shell来使用pyenv&lt;/h3&gt;
+&lt;div class=&quot;language-zsh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$SHELL&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;使用&quot;&gt;使用&lt;/h2&gt;
+&lt;h3 id=&quot;切换版本&quot;&gt;切换版本&lt;/h3&gt;
+&lt;p&gt;这里pyenv有三个变量供你切换的时候选择&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;global: 设置全局的 Python 版本(系统)
+local: 设置 Python 本地版本（项目）
+shell: 设置面向 shell 的 Python 版本（终端）
+
+python 优先级: shell &amp;gt; local &amp;gt; global
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;例如切换全局python版本为3.6.3&lt;/p&gt;
+&lt;div class=&quot;language-zsh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pyenv global 3.6.3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;例如切换本地python版本为3.7.1&lt;/p&gt;
+&lt;div class=&quot;language-zsh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pyenv &lt;span class=&quot;nb&quot;&gt;local &lt;/span&gt;3.7.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;建议配合pipenv使用&quot;&gt;建议配合pipenv使用&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;根据项目要求，确定python使用版本，通常项目目录下的pipfile文件会列出python版本需求&lt;/li&gt;
+  &lt;li&gt;在项目目录下，使用pyenv切换到需求版本&lt;/li&gt;
+  &lt;li&gt;使用pipenv install安装需求的包即可&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Jeffrey</name></author><summary type="html">Mac下Pyenv的安装和使用</summary></entry><entry><title type="html">leetcode 221. Maximal Square (Python)</title><link href="http://localhost:4000/2020/03/02/lc221/" rel="alternate" type="text/html" title="leetcode 221. Maximal Square (Python)" /><published>2020-03-02T00:00:00-08:00</published><updated>2020-03-02T00:00:00-08:00</updated><id>http://localhost:4000/2020/03/02/lc221</id><content type="html" xml:base="http://localhost:4000/2020/03/02/lc221/">&lt;h1 id=&quot;leetcode-221-maximal-square-python&quot;&gt;Leetcode 221. Maximal Square (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -123,7 +206,7 @@ Output: 4
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Create dp list will cost O(n^2) and iterate the dp will cost (n^2) in total will be O(2n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 221. Maximal Square (Python)</summary></entry><entry><title type="html">leetcode 334. Increasing Triplet Subsequence (Python)</title><link href="https://zhenyu0519.github.io/2020/03/02/lc334/" rel="alternate" type="text/html" title="leetcode 334. Increasing Triplet Subsequence (Python)" /><published>2020-03-02T00:00:00-08:00</published><updated>2020-03-02T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/03/02/lc334</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/02/lc334/">&lt;h1 id=&quot;leetcode-334-increasing-triplet-subsequence-python&quot;&gt;Leetcode 334. Increasing Triplet Subsequence (Python)&lt;/h1&gt;
+&lt;p&gt;Create dp list will cost O(n^2) and iterate the dp will cost (n^2) in total will be O(2n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 221. Maximal Square (Python)</summary></entry><entry><title type="html">leetcode 334. Increasing Triplet Subsequence (Python)</title><link href="http://localhost:4000/2020/03/02/lc334/" rel="alternate" type="text/html" title="leetcode 334. Increasing Triplet Subsequence (Python)" /><published>2020-03-02T00:00:00-08:00</published><updated>2020-03-02T00:00:00-08:00</updated><id>http://localhost:4000/2020/03/02/lc334</id><content type="html" xml:base="http://localhost:4000/2020/03/02/lc334/">&lt;h1 id=&quot;leetcode-334-increasing-triplet-subsequence-python&quot;&gt;Leetcode 334. Increasing Triplet Subsequence (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -211,7 +294,7 @@ Output: false
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo-1&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;the total time consumption is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 334. Increasing Triplet Subsequence (Python)</summary></entry><entry><title type="html">leetcode 300. Longest Increasing Subsequence (Python)</title><link href="https://zhenyu0519.github.io/2020/03/02/lc300/" rel="alternate" type="text/html" title="leetcode 300. Longest Increasing Subsequence (Python)" /><published>2020-03-02T00:00:00-08:00</published><updated>2020-03-02T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/03/02/lc300</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/02/lc300/">&lt;h1 id=&quot;leetcode-300-longest-increasing-subsequence-python&quot;&gt;Leetcode 300. Longest Increasing Subsequence (Python)&lt;/h1&gt;
+&lt;p&gt;the total time consumption is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 334. Increasing Triplet Subsequence (Python)</summary></entry><entry><title type="html">leetcode 300. Longest Increasing Subsequence (Python)</title><link href="http://localhost:4000/2020/03/02/lc300/" rel="alternate" type="text/html" title="leetcode 300. Longest Increasing Subsequence (Python)" /><published>2020-03-02T00:00:00-08:00</published><updated>2020-03-02T00:00:00-08:00</updated><id>http://localhost:4000/2020/03/02/lc300</id><content type="html" xml:base="http://localhost:4000/2020/03/02/lc300/">&lt;h1 id=&quot;leetcode-300-longest-increasing-subsequence-python&quot;&gt;Leetcode 300. Longest Increasing Subsequence (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -274,7 +357,7 @@ Could you improve it to O(n log n) time complexity?&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Create dp list will cost O(n) and iterate the dp will cost ((n-1)^2) in total will be O((n-1)^2+n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 300. Longest Increasing Subsequence (Python)</summary></entry><entry><title type="html">leetcode 647. Palindromic Substrings (Python)</title><link href="https://zhenyu0519.github.io/2020/03/01/lc647/" rel="alternate" type="text/html" title="leetcode 647. Palindromic Substrings (Python)" /><published>2020-03-01T00:00:00-08:00</published><updated>2020-03-01T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/03/01/lc647</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/01/lc647/">&lt;h1 id=&quot;leetcode-647-palindromic-substrings-python&quot;&gt;Leetcode 647. Palindromic Substrings (Python)&lt;/h1&gt;
+&lt;p&gt;Create dp list will cost O(n) and iterate the dp will cost ((n-1)^2) in total will be O((n-1)^2+n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 300. Longest Increasing Subsequence (Python)</summary></entry><entry><title type="html">leetcode 647. Palindromic Substrings (Python)</title><link href="http://localhost:4000/2020/03/01/lc647/" rel="alternate" type="text/html" title="leetcode 647. Palindromic Substrings (Python)" /><published>2020-03-01T00:00:00-08:00</published><updated>2020-03-01T00:00:00-08:00</updated><id>http://localhost:4000/2020/03/01/lc647</id><content type="html" xml:base="http://localhost:4000/2020/03/01/lc647/">&lt;h1 id=&quot;leetcode-647-palindromic-substrings-python&quot;&gt;Leetcode 647. Palindromic Substrings (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -336,7 +419,7 @@ If there are 2 character, then start and end character are same.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Create dp list will cost O(n^2) and iterate the dp will cost (n^2/2) in total will be O(n^2*2/3)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 647. Palindromic Substrings (Python)</summary></entry><entry><title type="html">leetcode 304. Range Sum Query 2D - Immutable (Python)</title><link href="https://zhenyu0519.github.io/2020/03/01/lc304/" rel="alternate" type="text/html" title="leetcode 304. Range Sum Query 2D - Immutable (Python)" /><published>2020-03-01T00:00:00-08:00</published><updated>2020-03-01T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/03/01/lc304</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/01/lc304/">&lt;h1 id=&quot;leetcode-304-range-sum-query-2d---immutable-python&quot;&gt;Leetcode 304. Range Sum Query 2D - Immutable (Python)&lt;/h1&gt;
+&lt;p&gt;Create dp list will cost O(n^2) and iterate the dp will cost (n^2/2) in total will be O(n^2*2/3)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 647. Palindromic Substrings (Python)</summary></entry><entry><title type="html">leetcode 304. Range Sum Query 2D - Immutable (Python)</title><link href="http://localhost:4000/2020/03/01/lc304/" rel="alternate" type="text/html" title="leetcode 304. Range Sum Query 2D - Immutable (Python)" /><published>2020-03-01T00:00:00-08:00</published><updated>2020-03-01T00:00:00-08:00</updated><id>http://localhost:4000/2020/03/01/lc304</id><content type="html" xml:base="http://localhost:4000/2020/03/01/lc304/">&lt;h1 id=&quot;leetcode-304-range-sum-query-2d---immutable-python&quot;&gt;Leetcode 304. Range Sum Query 2D - Immutable (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -397,7 +480,7 @@ If there are 2 character, then start and end character are same.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Then iterate 2D dp lists, it will cost O(m*n). m is size of row and n is size of column. To get the sum of the region will cost O(1) so total is O(m*n+1)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 304. Range Sum Query 2D - Immutable (Python)</summary></entry><entry><title type="html">leetcode 516. Longest Palindromic Subsequence (Python)</title><link href="https://zhenyu0519.github.io/2020/03/01/lc516/" rel="alternate" type="text/html" title="leetcode 516. Longest Palindromic Subsequence (Python)" /><published>2020-03-01T00:00:00-08:00</published><updated>2020-03-01T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/03/01/lc516</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/01/lc516/">&lt;h1 id=&quot;leetcode-516-longest-palindromic-subsequence-python&quot;&gt;Leetcode 516. Longest Palindromic Subsequence (Python)&lt;/h1&gt;
+&lt;p&gt;Then iterate 2D dp lists, it will cost O(m*n). m is size of row and n is size of column. To get the sum of the region will cost O(1) so total is O(m*n+1)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 304. Range Sum Query 2D - Immutable (Python)</summary></entry><entry><title type="html">leetcode 516. Longest Palindromic Subsequence (Python)</title><link href="http://localhost:4000/2020/03/01/lc516/" rel="alternate" type="text/html" title="leetcode 516. Longest Palindromic Subsequence (Python)" /><published>2020-03-01T00:00:00-08:00</published><updated>2020-03-01T00:00:00-08:00</updated><id>http://localhost:4000/2020/03/01/lc516</id><content type="html" xml:base="http://localhost:4000/2020/03/01/lc516/">&lt;h1 id=&quot;leetcode-516-longest-palindromic-subsequence-python&quot;&gt;Leetcode 516. Longest Palindromic Subsequence (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -461,7 +544,7 @@ palindromic subsequence.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Create dp list will cost O(n^2) and iterate the dp will cost (n^2/2) in total will be O(n^2*2/3)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 516. Longest Palindromic Subsequence (Python)</summary></entry><entry><title type="html">leetcode 714. Best Time to Buy and Sell Stock with Transaction Fee (Python)</title><link href="https://zhenyu0519.github.io/2020/02/29/lc714/" rel="alternate" type="text/html" title="leetcode 714. Best Time to Buy and Sell Stock with Transaction Fee (Python)" /><published>2020-02-29T00:00:00-08:00</published><updated>2020-02-29T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/29/lc714</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/29/lc714/">&lt;h1 id=&quot;leetcode-714-best-time-to-buy-and-sell-stock-with-transaction-fee-python&quot;&gt;Leetcode 714. Best Time to Buy and Sell Stock with Transaction Fee (Python)&lt;/h1&gt;
+&lt;p&gt;Create dp list will cost O(n^2) and iterate the dp will cost (n^2/2) in total will be O(n^2*2/3)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 516. Longest Palindromic Subsequence (Python)</summary></entry><entry><title type="html">leetcode 714. Best Time to Buy and Sell Stock with Transaction Fee (Python)</title><link href="http://localhost:4000/2020/02/29/lc714/" rel="alternate" type="text/html" title="leetcode 714. Best Time to Buy and Sell Stock with Transaction Fee (Python)" /><published>2020-02-29T00:00:00-08:00</published><updated>2020-02-29T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/29/lc714</id><content type="html" xml:base="http://localhost:4000/2020/02/29/lc714/">&lt;h1 id=&quot;leetcode-714-best-time-to-buy-and-sell-stock-with-transaction-fee-python&quot;&gt;Leetcode 714. Best Time to Buy and Sell Stock with Transaction Fee (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -547,7 +630,7 @@ Init the first element of unhold to 0&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Then iterate both dp lists, it will cost O(2L). generally it is O(L)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 714. Best Time to Buy and Sell Stock with Transaction Fee (Python)</summary></entry><entry><title type="html">leetcode 120. Triangle (Python)</title><link href="https://zhenyu0519.github.io/2020/02/29/lc120/" rel="alternate" type="text/html" title="leetcode 120. Triangle (Python)" /><published>2020-02-29T00:00:00-08:00</published><updated>2020-02-29T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/29/lc120</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/29/lc120/">&lt;h1 id=&quot;leetcode-120-triangle-python&quot;&gt;Leetcode 120. Triangle (Python)&lt;/h1&gt;
+&lt;p&gt;Then iterate both dp lists, it will cost O(2L). generally it is O(L)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 714. Best Time to Buy and Sell Stock with Transaction Fee (Python)</summary></entry><entry><title type="html">leetcode 120. Triangle (Python)</title><link href="http://localhost:4000/2020/02/29/lc120/" rel="alternate" type="text/html" title="leetcode 120. Triangle (Python)" /><published>2020-02-29T00:00:00-08:00</published><updated>2020-02-29T00:00:00-08:00</updated><id>http://localhost:4000/2020/02/29/lc120</id><content type="html" xml:base="http://localhost:4000/2020/02/29/lc120/">&lt;h1 id=&quot;leetcode-120-triangle-python&quot;&gt;Leetcode 120. Triangle (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -601,84 +684,4 @@ Init the first element of unhold to 0&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Init the triangle will cost O(m-1). Then iterate all 2D dp array, it will cost O((m-2)*(m-4)). In total will cost (m-1+(m-2)*(m-4)) equal to (m^2-5m+7) so generally is O(n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 120. Triangle (Python)</summary></entry><entry><title type="html">leetcode 309. Best Time to Buy and Sell Stock with Cooldown (Python)</title><link href="https://zhenyu0519.github.io/2020/02/29/lc309/" rel="alternate" type="text/html" title="leetcode 309. Best Time to Buy and Sell Stock with Cooldown (Python)" /><published>2020-02-29T00:00:00-08:00</published><updated>2020-02-29T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/02/29/lc309</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/02/29/lc309/">&lt;h1 id=&quot;leetcode-309-best-time-to-buy-and-sell-stock-with-cooldown-python&quot;&gt;Leetcode 309. Best Time to Buy and Sell Stock with Cooldown (Python)&lt;/h1&gt;
-
-&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
-&lt;p&gt;Say you have an array for which the ith element is the price of a given stock on day i.&lt;/p&gt;
-
-&lt;p&gt;Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times) with the following restrictions:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).&lt;/li&gt;
-  &lt;li&gt;After you sell your stock, you cannot buy stock on next day. (ie, cooldown 1 day)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
-&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [1,2,3,0,2]
-Output: 3 
-Explanation: transactions = [buy, sell, cooldown, buy, sell]
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
-&lt;p&gt;This question solved by Dynamic Programming.&lt;/p&gt;
-
-&lt;p&gt;This question is hard. I found a great solution from some other sits.&lt;/p&gt;
-
-&lt;p&gt;Based on the question, each element should have three status which are buy, sell and cool down. I was struggled here for quite long time to try to make dp list. However, you can actually sort of convert these three status to 2 status. Hold stock or unhold stock:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Hold stock: At the end of today, the maxmium profit if you hold stock and these can be two conditions:
-    &lt;ol&gt;
-      &lt;li&gt;You bought the stock today&lt;/li&gt;
-      &lt;li&gt;You did not sell the stock that you bought before&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Unhold stock: At the end of today, the maxmium profit if you unhold stock and these can be two conditions as well:
-    &lt;ol&gt;
-      &lt;li&gt;You sold the stock today&lt;/li&gt;
-      &lt;li&gt;You did not buy any stock after you sold last stock&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The answer should be when you not hold stock, the maxmium profit.&lt;/p&gt;
-
-&lt;h3 id=&quot;find-the-base-case&quot;&gt;Find the base case:&lt;/h3&gt;
-
-&lt;p&gt;Create two dp list one is called hold, the other called unhold. each element represent the maxmium profit at the end of ith day.
-Init the first element of hold to -price[0]
-Init the first element of unhold to 0&lt;/p&gt;
-
-&lt;h3 id=&quot;find-the-pattern&quot;&gt;Find the pattern:&lt;/h3&gt;
-
-&lt;p&gt;There should be two patterns one for hold stock and the other one for unhold stock:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;hold stock: max(you bought the stock today, you bought the stock before but not sold it yet)&lt;/li&gt;
-  &lt;li&gt;unhold stock: max(you sold the stock today, you did not buy any stock after sold last stock)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;answer&quot;&gt;Answer:&lt;/h3&gt;
-
-&lt;p&gt;last element of unhold stock.&lt;/p&gt;
-
-&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;maxProfit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;hold&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#hold[i]: the ith day profit when you hold stock&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;unhold&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#unhold[i]: the ith day profit when you not hold stock&lt;/span&gt;
-        
-        &lt;span class=&quot;n&quot;&gt;hold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;unhold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-        
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;hold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unhold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;#max(today buy in, last buy in)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;unhold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unhold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;#max(today sell out, not sell out)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unhold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Then iterate both dp lists, it will cost O(2L). generally it is O(L)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 309. Best Time to Buy and Sell Stock with Cooldown (Python)</summary></entry></feed>
+&lt;p&gt;Init the triangle will cost O(m-1). Then iterate all 2D dp array, it will cost O((m-2)*(m-4)). In total will cost (m-1+(m-2)*(m-4)) equal to (m^2-5m+7) so generally is O(n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 120. Triangle (Python)</summary></entry></feed>
