@@ -139,7 +139,7 @@ brew install pyenv
 </code></pre></div></div>
 <p>出现版本号即代表成功</p>
 
-<h3 id="查看现有的版本以及正在使用的版本">查看现有的版本以及正在使用的版本</h3>
+<h3 id="查看现有的python版本以及正在使用的python版本">查看现有的Python版本以及正在使用的Python版本</h3>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pyenv versions
 </code></pre></div></div>
 <p>会出现</p>
@@ -159,7 +159,7 @@ brew install pyenv
 </code></pre></div></div>
 <p>会出现</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* system
-3.6.7
+  3.6.7
 </code></pre></div></div>
 
 <h3 id="添加路径到终端配置文件">添加路径到终端配置文件</h3>
@@ -167,12 +167,12 @@ brew install pyenv
 Zsh</p>
 <div class="language-zsh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'export PYENV_ROOT="$HOME/.pyenv"'</span> <span class="o">&gt;&gt;</span> ~/.zshrc
 <span class="nb">echo</span> <span class="s1">'export PATH="$PYENV_ROOT/bin:$PATH"'</span> <span class="o">&gt;&gt;</span> ~/.zshrc
-<span class="nb">echo</span> <span class="s1">'eval "$(pyenv init -)"'</span> <span class="o">&gt;&gt;</span> ~/.zshrc
+<span class="nb">echo</span> <span class="nt">-e</span> <span class="s1">'if command -v pyenv 1&gt;/dev/null 2&gt;&amp;1; then\n  eval "$(pyenv init -)"\nfi'</span> <span class="o">&gt;&gt;</span> ~/.zshrc
 </code></pre></div></div>
 <p>Bash</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'export PYENV_ROOT="$HOME/.pyenv"'</span> <span class="o">&gt;&gt;</span> ~/.bash_profile
 <span class="nb">echo</span> <span class="s1">'export PATH="$PYENV_ROOT/bin:$PATH"'</span> <span class="o">&gt;&gt;</span> ~/.bash_profile
-<span class="nb">echo</span> <span class="s1">'eval "$(pyenv init -)"'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">echo</span> <span class="nt">-e</span> <span class="s1">'if command -v pyenv 1&gt;/dev/null 2&gt;&amp;1; then\n  eval "$(pyenv init -)"\nfi'</span> <span class="o">&gt;&gt;</span> ~/.bash_profile
 </code></pre></div></div>
 <h3 id="重新启动shell来使用pyenv">重新启动shell来使用pyenv</h3>
 <div class="language-zsh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">exec</span> <span class="s2">"</span><span class="nv">$SHELL</span><span class="s2">"</span>
