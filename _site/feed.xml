@@ -1,54 +1,82 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-03-04T16:45:58-08:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 276. Paint Fence (Python)</title><link href="https://zhenyu0519.github.io/2020/03/04/lc276/" rel="alternate" type="text/html" title="leetcode 276. Paint Fence (Python)" /><published>2020-03-04T00:00:00-08:00</published><updated>2020-03-04T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/03/04/lc276</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/04/lc276/">&lt;h1 id=&quot;leetcode-276-paint-fence-python&quot;&gt;Leetcode 276. Paint Fence (Python)&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-05T02:35:23-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 978. Longest Turbulent Subarray (Python)</title><link href="http://localhost:4000/2020/03/04/lc978/" rel="alternate" type="text/html" title="leetcode 978. Longest Turbulent Subarray (Python)" /><published>2020-03-04T00:00:00-08:00</published><updated>2020-03-04T00:00:00-08:00</updated><id>http://localhost:4000/2020/03/04/lc978</id><content type="html" xml:base="http://localhost:4000/2020/03/04/lc978/">&lt;h1 id=&quot;leetcode-978-longest-turbulent-subarray-python&quot;&gt;Leetcode 978. Longest Turbulent Subarray (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
-&lt;p&gt;There is a fence with n posts, each post can be painted with one of the k colors.&lt;/p&gt;
+&lt;p&gt;A subarray A[i], A[i+1], …, A[j] of A is said to be turbulent if and only if:&lt;/p&gt;
 
-&lt;p&gt;You have to paint all the posts such that no more than two adjacent fence posts have the same color.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;For i &amp;lt;= k &amp;lt; j, A[k] &amp;gt; A[k+1] when k is odd, and A[k] &amp;lt; A[k+1] when k is even;&lt;/li&gt;
+  &lt;li&gt;OR, for i &amp;lt;= k &amp;lt; j, A[k] &amp;gt; A[k+1] when k is even, and A[k] &amp;lt; A[k+1] when k is odd.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Return the total number of ways you can paint the fence.&lt;/p&gt;
+&lt;p&gt;That is, the subarray is turbulent if the comparison sign flips between each adjacent pair of elements in the subarray.&lt;/p&gt;
+
+&lt;p&gt;Return the length of a maximum size turbulent subarray of A.&lt;/p&gt;
 
 &lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
 &lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: n = 3, k = 2
-Output: 6
-Explanation: Take c1 as color 1, c2 as color 2. All possible ways are:
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [9,4,2,10,7,8,8,1,9]
+Output: 5
+Explanation: (A[1] &amp;gt; A[2] &amp;lt; A[3] &amp;gt; A[4] &amp;lt; A[5])
 
-            post1  post2  post3      
- -----      -----  -----  -----       
-   1         c1     c1     c2 
-   2         c1     c2     c1 
-   3         c1     c2     c2 
-   4         c2     c1     c1  
-   5         c2     c1     c2
-   6         c2     c2     c1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [4,8,12,16]
+Output: 2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-3&quot;&gt;Example 3&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [100]
+Output: 1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;note&quot;&gt;Note:&lt;/h2&gt;
-&lt;p&gt;n and k are non-negative integers.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;1 &amp;lt;= A.length &amp;lt;= 40000&lt;/li&gt;
+  &lt;li&gt;0 &amp;lt;= A[i] &amp;lt;= 10^9&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
-&lt;p&gt;This question can be solved by Dynamic Programming implicitly. I did not figure out the solution until I found a great video from youtube. And the explaination is very clear. I am going to share here.&lt;/p&gt;
+&lt;p&gt;This question can be solved by Dynamic Programming. It is similar with question&lt;a href=&quot;/2020/03/03/lc646/&quot; target=&quot;_blank&quot;&gt; 646. Maximum Length of Pair Chain&lt;/a&gt;. But now, the question is asking how many numbers of the longest increasing subsequence.&lt;/p&gt;
 
-&lt;iframe width=&quot;500&quot; height=&quot;350&quot; src=&quot;https://www.youtube.com/embed/deh7UpSRaEY&quot;&gt;
-&lt;/iframe&gt;
+&lt;p&gt;The question is intentionally confused. In face, You can translate &lt;strong&gt;For i &amp;lt;= k &amp;lt; j, A[k] &amp;gt; A[k+1] when k is odd, and A[k] &amp;lt; A[k+1] when k is even; OR, for i &amp;lt;= k &amp;lt; j, A[k] &amp;gt; A[k+1] when k is even, and A[k] &amp;lt; A[k+1] when k is odd.&lt;/strong&gt; to find the longest sequence that in every three consective numbers, the middle number is either greater than others or smaller than others.&lt;/p&gt;
+
+&lt;h3 id=&quot;find-the-base-case&quot;&gt;Find the base case:&lt;/h3&gt;
+
+&lt;p&gt;If there is only 1 element, then we return 1. Otherwise, we init the first element as 1, others are 2 because for the first element, the length of sequence can only be 1, for others, the length of sequence can at least be 2&lt;/p&gt;
+
+&lt;h3 id=&quot;find-the-pattern&quot;&gt;Find the pattern:&lt;/h3&gt;
+&lt;p&gt;If the current element is greater than previous, then we need next to be smaller.
+If the current element is smaller than previous, then we need next to be greater.
+If the current element is equal to the previous, then we need make the current as a new start which is 1.&lt;/p&gt;
+
+&lt;h3 id=&quot;answer&quot;&gt;Answer:&lt;/h3&gt;
+&lt;p&gt;Return the maxmium value from dp list as maxmium value here is the longest length&lt;/p&gt;
 
 &lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;numWays&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;same&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dif&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;same&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dif&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dif&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;same&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dif&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;same&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dif&lt;/span&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;maxTurbulenceSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#1: need smaller and 0: need bigger&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;The total cost is will be O(n-2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 276. Paint Fence (Python)</summary></entry><entry><title type="html">leetcode 1155. Number of Dice Rolls With Target Sum (Python)</title><link href="https://zhenyu0519.github.io/2020/03/04/lc1155/" rel="alternate" type="text/html" title="leetcode 1155. Number of Dice Rolls With Target Sum (Python)" /><published>2020-03-04T00:00:00-08:00</published><updated>2020-03-04T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/03/04/lc1155</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/04/lc1155/">&lt;h1 id=&quot;leetcode-1155-number-of-dice-rolls-with-target-sum-python&quot;&gt;Leetcode 1155. Number of Dice Rolls With Target Sum (Python)&lt;/h1&gt;
+&lt;p&gt;Create dp list will cost O(n) and iterate the dp will cost ((n-1)) in total will be O(2n-1)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 978. Longest Turbulent Subarray (Python)</summary></entry><entry><title type="html">leetcode 1155. Number of Dice Rolls With Target Sum (Python)</title><link href="http://localhost:4000/2020/03/04/lc1155/" rel="alternate" type="text/html" title="leetcode 1155. Number of Dice Rolls With Target Sum (Python)" /><published>2020-03-04T00:00:00-08:00</published><updated>2020-03-04T00:00:00-08:00</updated><id>http://localhost:4000/2020/03/04/lc1155</id><content type="html" xml:base="http://localhost:4000/2020/03/04/lc1155/">&lt;h1 id=&quot;leetcode-1155-number-of-dice-rolls-with-target-sum-python&quot;&gt;Leetcode 1155. Number of Dice Rolls With Target Sum (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -127,85 +155,57 @@ The answer must be returned modulo 10^9 + 7.
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;counts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lengths&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;longest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Create dp list will cost O((target+1)*(d+1)) and iterate the dp will cost O(d*f*(target-f)) in total will be O(d*f*(target-f)+(target+1)*(d+1))&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 1155. Number of Dice Rolls With Target Sum (Python)</summary></entry><entry><title type="html">leetcode 978. Longest Turbulent Subarray (Python)</title><link href="https://zhenyu0519.github.io/2020/03/04/lc978/" rel="alternate" type="text/html" title="leetcode 978. Longest Turbulent Subarray (Python)" /><published>2020-03-04T00:00:00-08:00</published><updated>2020-03-04T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/03/04/lc978</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/04/lc978/">&lt;h1 id=&quot;leetcode-978-longest-turbulent-subarray-python&quot;&gt;Leetcode 978. Longest Turbulent Subarray (Python)&lt;/h1&gt;
+&lt;p&gt;Create dp list will cost O((target+1)*(d+1)) and iterate the dp will cost O(d*f*(target-f)) in total will be O(d*f*(target-f)+(target+1)*(d+1))&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 1155. Number of Dice Rolls With Target Sum (Python)</summary></entry><entry><title type="html">leetcode 276. Paint Fence (Python)</title><link href="http://localhost:4000/2020/03/04/lc276/" rel="alternate" type="text/html" title="leetcode 276. Paint Fence (Python)" /><published>2020-03-04T00:00:00-08:00</published><updated>2020-03-04T00:00:00-08:00</updated><id>http://localhost:4000/2020/03/04/lc276</id><content type="html" xml:base="http://localhost:4000/2020/03/04/lc276/">&lt;h1 id=&quot;leetcode-276-paint-fence-python&quot;&gt;Leetcode 276. Paint Fence (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
-&lt;p&gt;A subarray A[i], A[i+1], …, A[j] of A is said to be turbulent if and only if:&lt;/p&gt;
+&lt;p&gt;There is a fence with n posts, each post can be painted with one of the k colors.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;For i &amp;lt;= k &amp;lt; j, A[k] &amp;gt; A[k+1] when k is odd, and A[k] &amp;lt; A[k+1] when k is even;&lt;/li&gt;
-  &lt;li&gt;OR, for i &amp;lt;= k &amp;lt; j, A[k] &amp;gt; A[k+1] when k is even, and A[k] &amp;lt; A[k+1] when k is odd.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;You have to paint all the posts such that no more than two adjacent fence posts have the same color.&lt;/p&gt;
 
-&lt;p&gt;That is, the subarray is turbulent if the comparison sign flips between each adjacent pair of elements in the subarray.&lt;/p&gt;
-
-&lt;p&gt;Return the length of a maximum size turbulent subarray of A.&lt;/p&gt;
+&lt;p&gt;Return the total number of ways you can paint the fence.&lt;/p&gt;
 
 &lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
 &lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [9,4,2,10,7,8,8,1,9]
-Output: 5
-Explanation: (A[1] &amp;gt; A[2] &amp;lt; A[3] &amp;gt; A[4] &amp;lt; A[5])
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: n = 3, k = 2
+Output: 6
+Explanation: Take c1 as color 1, c2 as color 2. All possible ways are:
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+            post1  post2  post3      
+ -----      -----  -----  -----       
+   1         c1     c1     c2 
+   2         c1     c2     c1 
+   3         c1     c2     c2 
+   4         c2     c1     c1  
+   5         c2     c1     c2
+   6         c2     c2     c1
 
-&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [4,8,12,16]
-Output: 2
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;example-3&quot;&gt;Example 3&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [100]
-Output: 1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;note&quot;&gt;Note:&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;1 &amp;lt;= A.length &amp;lt;= 40000&lt;/li&gt;
-  &lt;li&gt;0 &amp;lt;= A[i] &amp;lt;= 10^9&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;n and k are non-negative integers.&lt;/p&gt;
 
 &lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
-&lt;p&gt;This question can be solved by Dynamic Programming. It is similar with question&lt;a href=&quot;/2020/03/03/lc646/&quot; target=&quot;_blank&quot;&gt; 646. Maximum Length of Pair Chain&lt;/a&gt;. But now, the question is asking how many numbers of the longest increasing subsequence.&lt;/p&gt;
+&lt;p&gt;This question can be solved by Dynamic Programming implicitly. I did not figure out the solution until I found a great video from youtube. And the explaination is very clear. I am going to share here.&lt;/p&gt;
 
-&lt;p&gt;The question is intentionally confused. In face, You can translate &lt;strong&gt;For i &amp;lt;= k &amp;lt; j, A[k] &amp;gt; A[k+1] when k is odd, and A[k] &amp;lt; A[k+1] when k is even; OR, for i &amp;lt;= k &amp;lt; j, A[k] &amp;gt; A[k+1] when k is even, and A[k] &amp;lt; A[k+1] when k is odd.&lt;/strong&gt; to find the longest sequence that in every three consective numbers, the middle number is either greater than others or smaller than others.&lt;/p&gt;
-
-&lt;h3 id=&quot;find-the-base-case&quot;&gt;Find the base case:&lt;/h3&gt;
-
-&lt;p&gt;If there is only 1 element, then we return 1. Otherwise, we init the first element as 1, others are 2 because for the first element, the length of sequence can only be 1, for others, the length of sequence can at least be 2&lt;/p&gt;
-
-&lt;h3 id=&quot;find-the-pattern&quot;&gt;Find the pattern:&lt;/h3&gt;
-&lt;p&gt;If the current element is greater than previous, then we need next to be smaller.
-If the current element is smaller than previous, then we need next to be greater.
-If the current element is equal to the previous, then we need make the current as a new start which is 1.&lt;/p&gt;
-
-&lt;h3 id=&quot;answer&quot;&gt;Answer:&lt;/h3&gt;
-&lt;p&gt;Return the maxmium value from dp list as maxmium value here is the longest length&lt;/p&gt;
+&lt;iframe width=&quot;500&quot; height=&quot;350&quot; src=&quot;https://www.youtube.com/embed/deh7UpSRaEY&quot;&gt;
+&lt;/iframe&gt;
 
 &lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;maxTurbulenceSize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#1: need smaller and 0: need bigger&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;numWays&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;same&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dif&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;same&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dif&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dif&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;same&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dif&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;same&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dif&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Create dp list will cost O(n) and iterate the dp will cost ((n-1)) in total will be O(2n-1)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 978. Longest Turbulent Subarray (Python)</summary></entry><entry><title type="html">leetcode 673. Number of Longest Increasing Subsequence (Python)</title><link href="https://zhenyu0519.github.io/2020/03/03/lc673/" rel="alternate" type="text/html" title="leetcode 673. Number of Longest Increasing Subsequence (Python)" /><published>2020-03-03T00:00:00-08:00</published><updated>2020-03-03T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/03/03/lc673</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/03/lc673/">&lt;h1 id=&quot;leetcode-673-number-of-longest-increasing-subsequence-python&quot;&gt;Leetcode 673. Number of Longest Increasing Subsequence (Python)&lt;/h1&gt;
+&lt;p&gt;The total cost is will be O(n-2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 276. Paint Fence (Python)</summary></entry><entry><title type="html">leetcode 673. Number of Longest Increasing Subsequence (Python)</title><link href="http://localhost:4000/2020/03/03/lc673/" rel="alternate" type="text/html" title="leetcode 673. Number of Longest Increasing Subsequence (Python)" /><published>2020-03-03T00:00:00-08:00</published><updated>2020-03-03T00:00:00-08:00</updated><id>http://localhost:4000/2020/03/03/lc673</id><content type="html" xml:base="http://localhost:4000/2020/03/03/lc673/">&lt;h1 id=&quot;leetcode-673-number-of-longest-increasing-subsequence-python&quot;&gt;Leetcode 673. Number of Longest Increasing Subsequence (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -273,7 +273,7 @@ count = [1]&lt;/em&gt;n&lt;/p&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;counts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lengths&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;longest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Create dp list will cost O(2n) and iterate the dp will cost ((n-1)*n) in total will be O((n-1)*n+2n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 673. Number of Longest Increasing Subsequence (Python)</summary></entry><entry><title type="html">Mac下Pyenv的安装和使用</title><link href="https://zhenyu0519.github.io/2020/03/03/mac_pyenv/" rel="alternate" type="text/html" title="Mac下Pyenv的安装和使用" /><published>2020-03-03T00:00:00-08:00</published><updated>2020-03-03T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/03/03/mac_pyenv</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/03/mac_pyenv/">&lt;h1 id=&quot;mac下pyenv的安装和使用&quot;&gt;Mac下Pyenv的安装和使用&lt;/h1&gt;
+&lt;p&gt;Create dp list will cost O(2n) and iterate the dp will cost ((n-1)*n) in total will be O((n-1)*n+2n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 673. Number of Longest Increasing Subsequence (Python)</summary></entry><entry><title type="html">Mac下Pyenv的安装和使用</title><link href="http://localhost:4000/2020/03/03/mac_pyenv/" rel="alternate" type="text/html" title="Mac下Pyenv的安装和使用" /><published>2020-03-03T00:00:00-08:00</published><updated>2020-03-03T00:00:00-08:00</updated><id>http://localhost:4000/2020/03/03/mac_pyenv</id><content type="html" xml:base="http://localhost:4000/2020/03/03/mac_pyenv/">&lt;h1 id=&quot;mac下pyenv的安装和使用&quot;&gt;Mac下Pyenv的安装和使用&lt;/h1&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/blog/pipenv.png&quot; alt=&quot;Pyenv&quot; /&gt;&lt;/p&gt;
 
@@ -356,7 +356,7 @@ python 优先级: shell &amp;gt; local &amp;gt; global
   &lt;li&gt;根据项目要求，确定python使用版本，通常项目目录下的pipfile文件会列出python版本需求&lt;/li&gt;
   &lt;li&gt;在项目目录下，使用pyenv切换到需求版本&lt;/li&gt;
   &lt;li&gt;使用pipenv install安装需求的包即可&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Jeffrey</name></author><summary type="html">Mac下Pyenv的安装和使用</summary></entry><entry><title type="html">leetcode 646. Maximum Length of Pair Chain (Python)</title><link href="https://zhenyu0519.github.io/2020/03/03/lc646/" rel="alternate" type="text/html" title="leetcode 646. Maximum Length of Pair Chain (Python)" /><published>2020-03-03T00:00:00-08:00</published><updated>2020-03-03T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/03/03/lc646</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/03/lc646/">&lt;h1 id=&quot;leetcode-646-maximum-length-of-pair-chain-python&quot;&gt;Leetcode 646. Maximum Length of Pair Chain (Python)&lt;/h1&gt;
+&lt;/ul&gt;</content><author><name>Jeffrey</name></author><summary type="html">Mac下Pyenv的安装和使用</summary></entry><entry><title type="html">leetcode 646. Maximum Length of Pair Chain (Python)</title><link href="http://localhost:4000/2020/03/03/lc646/" rel="alternate" type="text/html" title="leetcode 646. Maximum Length of Pair Chain (Python)" /><published>2020-03-03T00:00:00-08:00</published><updated>2020-03-03T00:00:00-08:00</updated><id>http://localhost:4000/2020/03/03/lc646</id><content type="html" xml:base="http://localhost:4000/2020/03/03/lc646/">&lt;h1 id=&quot;leetcode-646-maximum-length-of-pair-chain-python&quot;&gt;Leetcode 646. Maximum Length of Pair Chain (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -408,7 +408,7 @@ Explanation: The longest chain is [1,2] -&amp;gt; [3,4]
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Create dp list will cost O(n) and iterate the dp will cost ((n-1)^2) in total will be O((n-1)^2+2n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 646. Maximum Length of Pair Chain (Python)</summary></entry><entry><title type="html">leetcode 334. Increasing Triplet Subsequence (Python)</title><link href="https://zhenyu0519.github.io/2020/03/02/lc334/" rel="alternate" type="text/html" title="leetcode 334. Increasing Triplet Subsequence (Python)" /><published>2020-03-02T00:00:00-08:00</published><updated>2020-03-02T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/03/02/lc334</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/02/lc334/">&lt;h1 id=&quot;leetcode-334-increasing-triplet-subsequence-python&quot;&gt;Leetcode 334. Increasing Triplet Subsequence (Python)&lt;/h1&gt;
+&lt;p&gt;Create dp list will cost O(n) and iterate the dp will cost ((n-1)^2) in total will be O((n-1)^2+2n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 646. Maximum Length of Pair Chain (Python)</summary></entry><entry><title type="html">leetcode 334. Increasing Triplet Subsequence (Python)</title><link href="http://localhost:4000/2020/03/02/lc334/" rel="alternate" type="text/html" title="leetcode 334. Increasing Triplet Subsequence (Python)" /><published>2020-03-02T00:00:00-08:00</published><updated>2020-03-02T00:00:00-08:00</updated><id>http://localhost:4000/2020/03/02/lc334</id><content type="html" xml:base="http://localhost:4000/2020/03/02/lc334/">&lt;h1 id=&quot;leetcode-334-increasing-triplet-subsequence-python&quot;&gt;Leetcode 334. Increasing Triplet Subsequence (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -496,7 +496,7 @@ Output: false
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo-1&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;the total time consumption is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 334. Increasing Triplet Subsequence (Python)</summary></entry><entry><title type="html">leetcode 221. Maximal Square (Python)</title><link href="https://zhenyu0519.github.io/2020/03/02/lc221/" rel="alternate" type="text/html" title="leetcode 221. Maximal Square (Python)" /><published>2020-03-02T00:00:00-08:00</published><updated>2020-03-02T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/03/02/lc221</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/02/lc221/">&lt;h1 id=&quot;leetcode-221-maximal-square-python&quot;&gt;Leetcode 221. Maximal Square (Python)&lt;/h1&gt;
+&lt;p&gt;the total time consumption is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 334. Increasing Triplet Subsequence (Python)</summary></entry><entry><title type="html">leetcode 221. Maximal Square (Python)</title><link href="http://localhost:4000/2020/03/02/lc221/" rel="alternate" type="text/html" title="leetcode 221. Maximal Square (Python)" /><published>2020-03-02T00:00:00-08:00</published><updated>2020-03-02T00:00:00-08:00</updated><id>http://localhost:4000/2020/03/02/lc221</id><content type="html" xml:base="http://localhost:4000/2020/03/02/lc221/">&lt;h1 id=&quot;leetcode-221-maximal-square-python&quot;&gt;Leetcode 221. Maximal Square (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -553,7 +553,7 @@ Output: 4
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Create dp list will cost O(n^2) and iterate the dp will cost (n^2) in total will be O(2n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 221. Maximal Square (Python)</summary></entry><entry><title type="html">leetcode 300. Longest Increasing Subsequence (Python)</title><link href="https://zhenyu0519.github.io/2020/03/02/lc300/" rel="alternate" type="text/html" title="leetcode 300. Longest Increasing Subsequence (Python)" /><published>2020-03-02T00:00:00-08:00</published><updated>2020-03-02T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/03/02/lc300</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/02/lc300/">&lt;h1 id=&quot;leetcode-300-longest-increasing-subsequence-python&quot;&gt;Leetcode 300. Longest Increasing Subsequence (Python)&lt;/h1&gt;
+&lt;p&gt;Create dp list will cost O(n^2) and iterate the dp will cost (n^2) in total will be O(2n^2)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 221. Maximal Square (Python)</summary></entry><entry><title type="html">leetcode 300. Longest Increasing Subsequence (Python)</title><link href="http://localhost:4000/2020/03/02/lc300/" rel="alternate" type="text/html" title="leetcode 300. Longest Increasing Subsequence (Python)" /><published>2020-03-02T00:00:00-08:00</published><updated>2020-03-02T00:00:00-08:00</updated><id>http://localhost:4000/2020/03/02/lc300</id><content type="html" xml:base="http://localhost:4000/2020/03/02/lc300/">&lt;h1 id=&quot;leetcode-300-longest-increasing-subsequence-python&quot;&gt;Leetcode 300. Longest Increasing Subsequence (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;
@@ -616,7 +616,7 @@ Could you improve it to O(n log n) time complexity?&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Create dp list will cost O(n) and iterate the dp will cost ((n-1)^2) in total will be O((n-1)^2+n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 300. Longest Increasing Subsequence (Python)</summary></entry><entry><title type="html">leetcode 647. Palindromic Substrings (Python)</title><link href="https://zhenyu0519.github.io/2020/03/01/lc647/" rel="alternate" type="text/html" title="leetcode 647. Palindromic Substrings (Python)" /><published>2020-03-01T00:00:00-08:00</published><updated>2020-03-01T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/03/01/lc647</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/01/lc647/">&lt;h1 id=&quot;leetcode-647-palindromic-substrings-python&quot;&gt;Leetcode 647. Palindromic Substrings (Python)&lt;/h1&gt;
+&lt;p&gt;Create dp list will cost O(n) and iterate the dp will cost ((n-1)^2) in total will be O((n-1)^2+n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 300. Longest Increasing Subsequence (Python)</summary></entry><entry><title type="html">leetcode 647. Palindromic Substrings (Python)</title><link href="http://localhost:4000/2020/03/01/lc647/" rel="alternate" type="text/html" title="leetcode 647. Palindromic Substrings (Python)" /><published>2020-03-01T00:00:00-08:00</published><updated>2020-03-01T00:00:00-08:00</updated><id>http://localhost:4000/2020/03/01/lc647</id><content type="html" xml:base="http://localhost:4000/2020/03/01/lc647/">&lt;h1 id=&quot;leetcode-647-palindromic-substrings-python&quot;&gt;Leetcode 647. Palindromic Substrings (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Dynamic-Programming&lt;/a&gt;.&lt;/p&gt;

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" prefix="og: http://ogp.me/ns#" class="han-init">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Async与Sync比较以及JavaScript中callback, promise和async/await的理解 &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <!-- add google search console -->
+    <meta name="google-site-verification" content="Hh37wMK9MFpx6xtWD91RDJzIy-PTLn7ocpNyQ1kPI6M" />
+    <link rel="stylesheet" href="http://localhost:4000/assets/vendor/primer-css/css/primer.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/vendor/primer-markdown/dist/user-content.min.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/vendor/octicons/octicons/octicons.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/components/collection.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/components/repo-card.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/sections/repo-list.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/sections/mini-repo-list.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/components/boxed-group.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/globals/common.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/vendor/share.js/dist/css/share.min.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/globals/responsive.css">
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/posts/index.css">
+    <!-- Latest compiled and minified CSS -->
+    
+
+    
+    <link rel="canonical" href="http://localhost:4000/2019/03/05/async_and_sync/">
+    <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="http://localhost:4000/feed.xml">
+    <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+    
+    <meta property="og:title" content="Async与Sync比较以及JavaScript中callback, promise和async/await的理解">
+      
+    <meta name="keywords" content="Async,Sync,同步,异步,比较,JavaScript,callback,回调函数,promise,承诺,async,等待,await,理解,形象的理解">
+    <meta name="og:keywords" content="Async,Sync,同步,异步,比较,JavaScript,callback,回调函数,promise,承诺,async,等待,await,理解,形象的理解">
+      
+    <meta name="description" content="Async与Sync比较以及JavaScript中callback, promise和async/await的理解">
+    <meta name="og:description" content="Async与Sync比较以及JavaScript中callback, promise和async/await的理解">
+      
+    
+    
+        
+    
+    <meta property="og:url" content="http://localhost:4000/2019/03/05/async_and_sync/">
+    <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_CN" />
+    
+    <meta property="article:published_time" content="2019-03-05">
+    
+    <script src="http://localhost:4000/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="http://localhost:4000/assets/js/jquery-ui.js"></script>
+    <script src="http://localhost:4000/assets/js/main.js"></script>
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Async与Sync比较以及JavaScript中callback, promise和async/await的理解 | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Async与Sync比较以及JavaScript中callback, promise和async/await的理解" />
+<meta name="author" content="Jeffrey" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Async与Sync比较以及JavaScript中callback, promise和async/await的理解" />
+<meta property="og:description" content="Async与Sync比较以及JavaScript中callback, promise和async/await的理解" />
+<link rel="canonical" href="http://localhost:4000/2019/03/05/async_and_sync/" />
+<meta property="og:url" content="http://localhost:4000/2019/03/05/async_and_sync/" />
+<meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey’s Blog)" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-03-05T00:00:00-08:00" />
+<script type="application/ld+json">
+{"description":"Async与Sync比较以及JavaScript中callback, promise和async/await的理解","headline":"Async与Sync比较以及JavaScript中callback, promise和async/await的理解","dateModified":"2019-03-05T00:00:00-08:00","datePublished":"2019-03-05T00:00:00-08:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/03/05/async_and_sync/"},"url":"http://localhost:4000/2019/03/05/async_and_sync/","author":{"@type":"Person","name":"Jeffrey"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body class="" data-mz="">
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="http://localhost:4000/" title="杰弗里 · 时光博客(Jeffrey's Blog)"><span class="octicon octicon-mark-github"></span> 杰弗里 · 时光博客(Jeffrey's Blog)</a></h1>
+            <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <nav class="site-header-nav" role="navigation">
+                
+                <a href="http://localhost:4000/" class=" site-header-nav-item" target="" title="Home">Home</a>
+                
+                <a href="http://localhost:4000/categories/" class=" site-header-nav-item" target="" title="Categories">Categories</a>
+                
+                <a href="http://localhost:4000/about/" class=" site-header-nav-item" target="" title="About">About</a>
+                
+            </nav>
+        </div>
+    </header>
+    <!-- / header -->
+
+    <section class="collection-head small" data-pattern-id="Async与Sync比较以及J">
+  <div class="container">
+    <div class="columns">
+      <div class="column three-fourths">
+        <div class="collection-title">
+          <h1 class="collection-header">Async与Sync比较以及JavaScript中callback, promise和async/await的理解</h1>
+          <div class="collection-info">
+            
+            <span class="meta-info">
+              <span class="octicon octicon-calendar"></span> 05 Mar 2019
+            </span>
+            
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="http://localhost:4000/categories/#JavaScript" title="JavaScript">JavaScript</a>
+            </span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- / .banner -->
+<section class="container content">
+  <div class="columns">
+    <div class="column three-fourths">
+      <article class="article-content markdown-body">
+        <h1 id="async与sync比较以及javascript中callback-promise和asyncawait的理解">Async与Sync比较以及JavaScript中callback, promise和async/await的理解</h1>
+
+<p><img src="/images/blog/async_vs_sync.jpeg" alt="Async vs Sync" /></p>
+
+<h2 id="前言">前言</h2>
+
+<p>说真的写这篇帖子是在计划之外，因为看了一些知名度比较高的技术博主写的相关文章非但没有让人理解透彻反而让读者更加迷惑。所以打算稍稍理清一下思路。</p>
+
+<h2 id="同步与异步">同步与异步</h2>
+
+<p>首先要理解同步(Sync)和异步(Async)的概念。</p>
+
+<p>同步：就是完成一个任务再再开始执行下一个任务，任务按照先后顺序完成。比如你列了一个购物清单，要去超市买西红柿，苹果，草莓。严格按照购物清单上的顺序来寻找购买物品。先买西红柿，再买苹果，最后买草莓。尽管你先看到了草莓，但是因为还没有买到西红柿，所以你决定先去找西红柿，然后再找苹果，然后再回来买草莓。总结起来就是你有强迫症。</p>
+
+<p>异步：就是你执行一个任务的同时也在执行另外一个任务，任务并非按照先后开始的顺序依次完成。还是上面的例子，你的目的是买到西红柿，苹果和草莓。所以你进入超市，按照购物清单的顺序，首先开始寻找西红柿。结果你先看到了草莓，于是你把草莓放到购物篮里，继续去找西红柿。好巧不巧，你又看到了苹果，于是你把苹果放到篮子里，继续去找西红柿，最终你找到西红柿，买到了购物清单的所有东西。总结起来就是你脑筋灵活。</p>
+
+<p>理解了同步异步的概念。说说同步和异步的优劣对比。</p>
+
+<p>同步是从头到尾执行，按照顺序执行的好处就是好维护，每个任务都在我的掌握中，我随时知道进行到哪里了。同时如果出了问题，我也知道在哪里解决。坏处也很明显就是当其中的一个任务出了问题，就会导致下一个任务没法开始执行，形成堵塞。</p>
+
+<p>异步的执行不按照顺序来，好处是不会有堵塞，一个任务出了问题，先做下一个任务就好。坏处也很明显，例如好几个任务都出了问题，你解决起来就比较困难了。有时候你可能不知道到底是哪个环节出了问题。</p>
+
+<p>同步异步的概念介绍到这里。</p>
+
+<p>再来说一下，JavaScript中是如何应对同步异步问题的。</p>
+
+<p>最常见的案例就是，你需要先获取数据，然后将数据渲染到页面上。这个过程必须是异步的，因为获取大量数据相对其他操作来讲耗费时间比较长，为了不阻塞其他的操作，你只能边做接下来的事情边等待数据返回。那么如果数据返回了我该怎么去渲染？这时候就要用到异步函数，所谓的异步函数说白了就是等待结果返回后执行所需要的操作的意思。我们把异步函数安插在获取数据的函数上，一旦数据返回，触发了异步函数进而渲染页面，这个过程不会阻塞其他操作。</p>
+
+<h2 id="解决异步问题的方式异步函数">解决异步问题的方式—异步函数</h2>
+
+<h3 id="回调函数callback">回调函数（callback）</h3>
+<p>接下来说一下，异步函数有哪些实现方式。</p>
+
+<p>最早使用的就是回调函数，<strong>首先这里划重点，回调函数和异步同步没有关系。它只是一种特殊的函数而已。回调函数就是把函数当作参数传到另外一个函数里面，仅此而已。</strong>但是我们可以使用回调函数来实现异步操作。如下：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="s1">'Post One'</span><span class="p">,</span> <span class="na">body</span><span class="p">:</span> <span class="s1">'This is post one'</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="s1">'Post Two'</span><span class="p">,</span> <span class="na">body</span><span class="p">:</span> <span class="s1">'This is post two'</span> <span class="p">}</span>
+<span class="p">];</span>
+
+<span class="kd">function</span> <span class="nx">getPosts</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+    <span class="nx">posts</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">post</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">output</span> <span class="o">+=</span> <span class="s2">`&lt;li&gt;</span><span class="p">${</span><span class="nx">post</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="s2">&lt;/li&gt;`</span><span class="p">;</span>
+    <span class="p">});</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">output</span><span class="p">;</span>
+  <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">createPost</span><span class="p">(</span><span class="nx">post</span><span class="p">,</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">posts</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">post</span><span class="p">);</span>
+      <span class="nx">callback</span>
+    <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">createPost</span><span class="p">({</span> <span class="na">title</span><span class="p">:</span> <span class="s1">'Post Three'</span><span class="p">,</span> <span class="na">body</span><span class="p">:</span> <span class="s1">'This is post three'</span> <span class="p">},</span><span class="nx">getPosts</span><span class="p">)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'next'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>从上面的程序可以看出，我们从头开始运行，当遇到需要创建新的post的时候，我们把回调函数传进createPost里面去，而这时任务继续进行，此时会打印出‘next’字眼，过了三秒后，post添加完成。页面上渲染出新的post，整个过程没有阻塞。尽管我们最后才执行打印‘next’操作，但实际上，打印操作比渲染页面先一步完成。这就是异步函数的实际应用。</p>
+
+<h3 id="承诺对象promise-object">承诺对象（promise object）</h3>
+
+<p>接下来说一下Promise，和回调函数一样，promise也是用来处理异步操作的。那么既然callback已经解决了异步操作的问题为什么还需要promise? 答案是为了代码的可读性和可维护性以及方便纠错。</p>
+
+<p>callback实际上可以根据需求变得异常复杂。例如回调函数嵌套回调函数再嵌套回调函数，最终会形成所谓的回调地狱。由于多层嵌套的原因，代码变得非常难看，同时如果出了问题，需要一层一层的debug，维护性是非常差的。callback本身需要自己手动添加错误处理，这也提高了纠错的难度。因此promise应运而生.</p>
+
+<p><strong>与回调函数不同，promise是个构造函数，返回一个promise对象，这个对象里面有两个方法resolve和reject，分别用来处理返回成功和返回失败。</strong>同时如果返回成功，我们可以继续对结果进行操作这时候需要使用then(),如果返回失败，我们可以使用catch()让结果返回对应的错误信息。引入了ES6后，写法更是大大简化，因此可读性提高，维护性提高，并且也自带错误处理机制。美中不足的是，性能跟回调函数比要差一点，但是研发成本降低了，所以promise依然是个更好的解决方案。</p>
+
+<p>写法如下：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="s1">'Post One'</span><span class="p">,</span> <span class="na">body</span><span class="p">:</span> <span class="s1">'This is post one'</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="s1">'Post Two'</span><span class="p">,</span> <span class="na">body</span><span class="p">:</span> <span class="s1">'This is post two'</span> <span class="p">}</span>
+<span class="p">];</span>
+
+<span class="kd">function</span> <span class="nx">getPosts</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+    <span class="nx">posts</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">post</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">output</span> <span class="o">+=</span> <span class="s2">`&lt;li&gt;</span><span class="p">${</span><span class="nx">post</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="s2">&lt;/li&gt;`</span><span class="p">;</span>
+    <span class="p">});</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">output</span><span class="p">;</span>
+  <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">createPost</span><span class="p">(</span><span class="nx">post</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">posts</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">post</span><span class="p">);</span>
+      <span class="kd">const</span> <span class="nx">error</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">resolve</span><span class="p">();</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">reject</span><span class="p">(</span><span class="s1">'Error: Something went wrong'</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="nx">createPost</span><span class="p">({</span> <span class="na">title</span><span class="p">:</span> <span class="s1">'Post Three'</span><span class="p">,</span> <span class="na">body</span><span class="p">:</span> <span class="s1">'This is post three'</span> <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">getPosts</span><span class="p">)</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">));</span>
+</code></pre></div></div>
+<h3 id="asyncawait-异步等待">Async/await (异步/等待)</h3>
+<p>最后简单说一下async/await。
+其实<strong>async/await函数就是promise的语法糖</strong>，ES7引入的作用主要是让code更加美观易读，async 放在函数定义前代表这个函数是异步操作函数，await 放在函数调用前表必须等待当前函数返回才可以继续执行下异步操作。直接看代码吧：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">posts</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="s1">'Post One'</span><span class="p">,</span> <span class="na">body</span><span class="p">:</span> <span class="s1">'This is post one'</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="s1">'Post Two'</span><span class="p">,</span> <span class="na">body</span><span class="p">:</span> <span class="s1">'This is post two'</span> <span class="p">}</span>
+<span class="p">];</span>
+
+<span class="kd">function</span> <span class="nx">getPosts</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+    <span class="nx">posts</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">post</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">output</span> <span class="o">+=</span> <span class="s2">`&lt;li&gt;</span><span class="p">${</span><span class="nx">post</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="s2">&lt;/li&gt;`</span><span class="p">;</span>
+    <span class="p">});</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">output</span><span class="p">;</span>
+  <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">createPost</span><span class="p">(</span><span class="nx">post</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">posts</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">post</span><span class="p">);</span>
+    <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kr">await</span> <span class="nx">createPost</span><span class="p">({</span> <span class="na">title</span><span class="p">:</span> <span class="s1">'Post Three'</span><span class="p">,</span> <span class="na">body</span><span class="p">:</span> <span class="s1">'This is post three'</span> <span class="p">});</span>
+  <span class="nx">getPosts</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>祝读者开心！</p>
+
+      </article>
+      <div class="share">
+        <div class="share-component"></div>
+      </div>
+      <div class="comment">
+        
+
+  
+
+  
+        <div id="gitalk-container"></div>
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script>
+        var gitalk = new Gitalk({
+            id: '/2019/03/05/async_and_sync/',
+            clientID: '4cef70907f5b36353d59',
+            clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
+            repo: 'zhenyu0519.github.io',
+            owner: 'zhenyu0519',
+            admin: ['zhenyu0519'],
+            labels: ['gitment'],
+            perPage: 50,
+        })
+        gitalk.render('gitalk-container')
+        </script>
+  
+
+
+      </div>
+    </div>
+    <div class="column one-fourth">
+      
+<h3>Search</h3>
+<div id="site_search" class="site_search">
+    <input type="text" id="search_box" placeholder="Search">
+</div>
+
+<ul id="search_results"></ul>
+
+<link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/modules/sidebar-search.css">
+<script src="http://localhost:4000/assets/js/simple-jekyll-search.min.js"></script>
+<script src="http://localhost:4000/assets/js/search.js"></script>
+
+<script type="text/javascript">
+SimpleJekyllSearch({
+    searchInput: document.getElementById('search_box'),
+    resultsContainer: document.getElementById('search_results'),
+    json: 'http://localhost:4000/assets/search_data.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No results found',
+    fuzzy: false,
+    exclude: ['Welcome'],
+    limit: 10
+})
+</script>
+
+      
+<h3 class="post-directory-title mobile-hidden">Table of Contents</h3>
+<div id="post-directory-module" class="mobile-hidden">
+  <section class="post-directory">
+  <!-- Links that trigger the jumping -->
+  <!-- Added by javascript below -->
+  <dl></dl>
+  </section>
+</div>
+
+<script src="http://localhost:4000/assets/js/jquery.toc.js"></script>
+
+    </div>
+  </div>
+</section>
+<!-- /section.content -->
+    <footer class="container">
+        <div class="site-footer" role="contentinfo">
+            <div class="copyright left mobile-block">
+                    © 2019
+                    <span title="Jeffrey">Jeffrey</span>
+                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
+            </div>
+
+            <ul class="site-footer-links right mobile-hidden">
+                <li>
+                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
+                </li>
+            </ul>
+            <a href="https://github.com/zhenyu0519/zhenyu0519.github.io" target="_blank" aria-label="view source code">
+                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+            </a>
+            <ul class="site-footer-links mobile-hidden">
+                
+                <li>
+                    <a href="http://localhost:4000/" title="Home" target="">Home</a>
+                </li>
+                
+                <li>
+                    <a href="http://localhost:4000/categories/" title="Categories" target="">Categories</a>
+                </li>
+                
+                <li>
+                    <a href="http://localhost:4000/about/" title="About" target="">About</a>
+                </li>
+                
+                <li><a href="http://localhost:4000/feed.xml"><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
+            </ul>
+
+        </div>
+    </footer>
+    <div class="tools-wrapper">
+      <a class="gotop" href="#" title="回到顶部"><span class="octicon octicon-arrow-up"></span></a>
+    </div>
+    <!-- / footer -->
+    <script src="http://localhost:4000/assets/vendor/share.js/dist/js/share.min.js"></script>
+    <script src="http://localhost:4000/assets/js/geopattern.js"></script>
+    <script src="http://localhost:4000/assets/js/prism.js"></script>
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/globals/prism.css">
+    <script>
+      jQuery(document).ready(function($) {
+        // geopattern
+        $('.geopattern').each(function(){
+          $(this).geopattern($(this).data('pattern-id'));
+        });
+       // hljs.initHighlightingOnLoad();
+      });
+    </script>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div style="display:none">
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-113380665-1', 'auto');
+        ga('send', 'pageview');
+
+      </script>
+    </div>
+    
+</body>
+</html>
