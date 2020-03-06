@@ -57,6 +57,8 @@
   
   
   
+  
+  
 
   
     {
@@ -407,6 +409,13 @@
       "category" : "JavaScript",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/05/async_and_sync/"
+    } ,
+  
+    {
+      "title"    : "leetcode 200. Number of Islands (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/05/lc200/"
     } 
   
 ]
