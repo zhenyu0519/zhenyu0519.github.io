@@ -430,6 +430,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/06/lc695/"
+    } ,
+  
+    {
+      "title"    : "leetcode 130. Surrounded Regions (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/07/lc130/"
     } 
   
 ]

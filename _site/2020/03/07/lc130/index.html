@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>leetcode 695. Max Area of Island (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <title>leetcode 130. Surrounded Regions (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
     <!-- add google search console -->
     <meta name="google-site-verification" content="Hh37wMK9MFpx6xtWD91RDJzIy-PTLn7ocpNyQ1kPI6M" />
     <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-css/css/primer.css">
@@ -23,47 +23,47 @@
     
 
     
-    <link rel="canonical" href="https://zhenyu0519.github.io/2020/03/06/lc695/">
+    <link rel="canonical" href="https://zhenyu0519.github.io/2020/03/07/lc130/">
     <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="https://zhenyu0519.github.io/feed.xml">
     <link rel="shortcut icon" href="https://zhenyu0519.github.io/favicon.ico">
     
-    <meta property="og:title" content="leetcode 695. Max Area of Island (Python)">
+    <meta property="og:title" content="leetcode 130. Surrounded Regions (Python)">
       
-    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 695, Max Area of Island, zhenyu, Depth-First-Search, DFS, Depth First Search, 2D list, array">
-    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 695, Max Area of Island, zhenyu, Depth-First-Search, DFS, Depth First Search, 2D list, array">
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 130, Surrounded Regions, zhenyu, Depth-First-Search, DFS, Depth First Search, 2D list, array">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 130, Surrounded Regions, zhenyu, Depth-First-Search, DFS, Depth First Search, 2D list, array">
       
-    <meta name="description" content="Leetcode 695. Max Area of Island (Python)">
-    <meta name="og:description" content="Leetcode 695. Max Area of Island (Python)">
+    <meta name="description" content="Leetcode 130. Surrounded Regions (Python)">
+    <meta name="og:description" content="Leetcode 130. Surrounded Regions (Python)">
       
     
     
         
     
-    <meta property="og:url" content="https://zhenyu0519.github.io/2020/03/06/lc695/">
+    <meta property="og:url" content="https://zhenyu0519.github.io/2020/03/07/lc130/">
     <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="zh_CN" />
     
-    <meta property="article:published_time" content="2020-03-06">
+    <meta property="article:published_time" content="2020-03-07">
     
     <script src="https://zhenyu0519.github.io/assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="https://zhenyu0519.github.io/assets/js/jquery-ui.js"></script>
     <script src="https://zhenyu0519.github.io/assets/js/main.js"></script>
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>leetcode 695. Max Area of Island (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
+<title>leetcode 130. Surrounded Regions (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="leetcode 695. Max Area of Island (Python)" />
+<meta property="og:title" content="leetcode 130. Surrounded Regions (Python)" />
 <meta name="author" content="Jeffrey" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="leetcode 695. Max Area of Island (Python Solution)" />
-<meta property="og:description" content="leetcode 695. Max Area of Island (Python Solution)" />
-<link rel="canonical" href="https://zhenyu0519.github.io/2020/03/06/lc695/" />
-<meta property="og:url" content="https://zhenyu0519.github.io/2020/03/06/lc695/" />
+<meta name="description" content="leetcode 130. Surrounded Regions (Python Solution)" />
+<meta property="og:description" content="leetcode 130. Surrounded Regions (Python Solution)" />
+<link rel="canonical" href="https://zhenyu0519.github.io/2020/03/07/lc130/" />
+<meta property="og:url" content="https://zhenyu0519.github.io/2020/03/07/lc130/" />
 <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey’s Blog)" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-03-06T00:00:00-08:00" />
+<meta property="article:published_time" content="2020-03-07T00:00:00-08:00" />
 <script type="application/ld+json">
-{"description":"leetcode 695. Max Area of Island (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/03/06/lc695/"},"url":"https://zhenyu0519.github.io/2020/03/06/lc695/","headline":"leetcode 695. Max Area of Island (Python)","dateModified":"2020-03-06T00:00:00-08:00","datePublished":"2020-03-06T00:00:00-08:00","@context":"http://schema.org"}</script>
+{"description":"leetcode 130. Surrounded Regions (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/03/07/lc130/"},"url":"https://zhenyu0519.github.io/2020/03/07/lc130/","headline":"leetcode 130. Surrounded Regions (Python)","dateModified":"2020-03-07T00:00:00-08:00","datePublished":"2020-03-07T00:00:00-08:00","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -89,16 +89,16 @@
     </header>
     <!-- / header -->
 
-    <section class="collection-head small" data-pattern-id="leetcode 695. M">
+    <section class="collection-head small" data-pattern-id="leetcode 130. S">
   <div class="container">
     <div class="columns">
       <div class="column three-fourths">
         <div class="collection-title">
-          <h1 class="collection-header">leetcode 695. Max Area of Island (Python)</h1>
+          <h1 class="collection-header">leetcode 130. Surrounded Regions (Python)</h1>
           <div class="collection-info">
             
             <span class="meta-info">
-              <span class="octicon octicon-calendar"></span> 06 Mar 2020
+              <span class="octicon octicon-calendar"></span> 07 Mar 2020
             </span>
             
             
@@ -123,66 +123,71 @@
   <div class="columns">
     <div class="column three-fourths">
       <article class="article-content markdown-body">
-        <h1 id="leetcode-695-max-area-of-island-python">Leetcode 695. Max Area of Island (Python)</h1>
+        <h1 id="leetcode-130-surrounded-regions-python">Leetcode 130. Surrounded Regions (Python)</h1>
 
 <h1 id="related-topic">Related Topic</h1>
 <p><a href="/categories/#Depth-First-Search" target="_blank"> Depth-First-Search</a>.</p>
 
 <h1 id="description">Description</h1>
-<p>Given a non-empty 2D array grid of 0’s and 1’s, an island is a group of 1’s (representing land) connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water.</p>
+<p>Given a 2D board containing ‘X’ and ‘O’ (the letter O), capture all regions surrounded by ‘X’.</p>
 
-<p>Find the maximum area of an island in the given 2D array. (If there is no island, the maximum area is 0.)</p>
+<p>A region is captured by flipping all ‘O’s into ‘X’s in that surrounded region.</p>
 
 <h2 id="sample-io">Sample I/O</h2>
 <h3 id="example-1">Example 1</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[0,0,1,0,0,0,0,1,0,0,0,0,0],
- [0,0,0,0,0,0,0,1,1,1,0,0,0],
- [0,1,1,0,1,0,0,0,0,0,0,0,0],
- [0,1,0,0,1,1,0,0,1,0,1,0,0],
- [0,1,0,0,1,1,0,0,1,1,1,0,0],
- [0,0,0,0,0,0,0,0,0,0,1,0,0],
- [0,0,0,0,0,0,0,1,1,1,0,0,0],
- [0,0,0,0,0,0,0,1,1,0,0,0,0]]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>X X X X
+X O O X
+X X O X
+X O X X
 </code></pre></div></div>
-<p>Given the above grid, return 6. Note the answer is not 11, because the island must be connected 4-directionally.</p>
+<p>After running your function, the board should be:</p>
 
 <h3 id="example-2">Example 2</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[0,0,0,0,0,0,0,0]]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>X X X X
+X X X X
+X X X X
+X O X X
 </code></pre></div></div>
 <p>Given the above grid, return 0.</p>
 
-<h2 id="note">Note:</h2>
-<p>The length of each dimension in the given grid does not exceed 50.</p>
+<h2 id="explanation">Explanation:</h2>
+<p>Surrounded regions shouldn’t be on the border, which means that any ‘O’ on the border of the board are not flipped to ‘X’. Any ‘O’ that is not on the border and it is not connected to an ‘O’ on the border will be flipped to ‘X’. Two cells are connected if they are adjacent cells connected horizontally or vertically.</p>
 
 <h1 id="methodology">Methodology</h1>
-<p>This question can be solved by Depth First Search and It is similar with question<a href="/2020/03/06/lc200/" target="_blank"> 200. Number of Islands</a>.The difference is to find the largest island.</p>
+<p>This question can be solved by Depth First Search and It is similar with question<a href="/2020/03/06/lc200/" target="_blank"> 200. Number of Islands</a>. You can treat the regions to be islands inside the border(not on the border)</p>
 
-<p>To find the largest island, we need to get area of each island. When we find a island we start to count the number of 1s in this island. we can move to four directions and there is no repeating path. We need to compare area of each island to the current largest island. Finally, we will have the area of the largest island</p>
+<p>To find the surrounded regions, we can first find the on boarder regions and mark them. After we find all on border regions. Then we iterate the board again, make the surround regions to be ‘X’ and on border regions to be ‘O’</p>
 
 <h1 id="code">Code</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">maxAreaOfIsland</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="n">visited</span><span class="o">=</span><span class="nb">set</span><span class="p">()</span>
-        <span class="n">max_size</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">row</span><span class="p">,</span><span class="n">col</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">grid</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">board</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="s">"""
+        Do not return anything, modify board in-place instead.
+        """</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">board</span><span class="p">:</span> <span class="k">return</span> <span class="n">board</span>
+        <span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">board</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
         <span class="n">directions</span><span class="o">=</span><span class="p">[(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
-        <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-            <span class="n">area</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">visited</span><span class="o">=</span><span class="nb">set</span><span class="p">()</span>
+        <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">row</span><span class="o">-</span><span class="mi">1</span><span class="o">&lt;</span><span class="n">x</span> <span class="ow">or</span> <span class="n">x</span><span class="o">&lt;</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">col</span><span class="o">-</span><span class="mi">1</span><span class="o">&lt;</span><span class="n">y</span> <span class="ow">or</span> <span class="n">y</span><span class="o">&lt;</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">board</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">!=</span><span class="s">'O'</span> <span class="ow">or</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+                <span class="k">return</span>
+            <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+            <span class="n">board</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">=</span><span class="s">'G'</span>
             <span class="k">for</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="ow">in</span> <span class="n">directions</span><span class="p">:</span>
-                <span class="n">nx</span><span class="p">,</span><span class="n">ny</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">dx</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="n">dy</span>
-                <span class="k">if</span> <span class="mi">0</span><span class="o">&lt;=</span><span class="n">nx</span><span class="o">&lt;</span><span class="n">row</span> <span class="ow">and</span> <span class="mi">0</span><span class="o">&lt;=</span><span class="n">ny</span><span class="o">&lt;</span><span class="n">col</span> <span class="ow">and</span> <span class="p">(</span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span> <span class="ow">and</span> <span class="n">grid</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">]:</span>
-                    <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="p">))</span>
-                    <span class="n">area</span><span class="o">+=</span><span class="n">dfs</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">area</span>
-        
+                <span class="n">dfs</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">dx</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="n">dy</span><span class="p">)</span>
+                
         <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
             <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
-                <span class="k">if</span> <span class="n">grid</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="ow">and</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
-                    <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
-                    <span class="n">max_size</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dfs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span> <span class="n">max_size</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">max_size</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">x</span><span class="o">==</span><span class="n">row</span><span class="o">-</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">y</span><span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">y</span><span class="o">==</span><span class="n">col</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">board</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">==</span> <span class="s">'O'</span> <span class="ow">and</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+                    <span class="n">dfs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">==</span><span class="s">'O'</span><span class="p">:</span>
+                    <span class="n">board</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">=</span><span class="s">'X'</span>
+                <span class="k">elif</span> <span class="n">board</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">==</span><span class="s">'G'</span><span class="p">:</span>
+                    <span class="n">board</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span><span class="o">=</span><span class="s">'O'</span>
 </code></pre></div></div>
 <h1 id="bigo">BigO</h1>
-<p>We iterate each cell will cost O(m*n) where m*n is the size of the 2D list. Each cell will also iterate four directions, so in total is O(m*n*4)</p>
+<p>We iterate each cell will cost O(m*n) where m*n is the size of the 2D list. Each cell will also iterate four directions O(m*n*4) Then we iterate twice to render the on border regions and surrounded regions which take O(2*m*n). In total O(6*m*n)</p>
 
       </article>
       <div class="share">
@@ -199,7 +204,7 @@
         <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
         <script>
         var gitalk = new Gitalk({
-            id: '/2020/03/06/lc695/',
+            id: '/2020/03/07/lc130/',
             clientID: '4cef70907f5b36353d59',
             clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
             repo: 'zhenyu0519.github.io',
