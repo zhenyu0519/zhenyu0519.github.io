@@ -423,6 +423,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/06/lc694/"
+    } ,
+  
+    {
+      "title"    : "leetcode 695. Max Area of Island (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/06/lc695/"
     } 
   
 ]
