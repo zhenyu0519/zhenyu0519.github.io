@@ -416,6 +416,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/05/lc200/"
+    } ,
+  
+    {
+      "title"    : "leetcode 694. Number of Distinct Islands (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/06/lc694/"
     } 
   
 ]
