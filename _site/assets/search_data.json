@@ -437,6 +437,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/07/lc130/"
+    } ,
+  
+    {
+      "title"    : "leetcode 286. Walls and Gates (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/07/lc286/"
     } 
   
 ]
