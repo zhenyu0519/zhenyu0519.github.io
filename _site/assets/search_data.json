@@ -433,6 +433,13 @@
     } ,
   
     {
+      "title"    : "leetcode 104. Maximum Depth of Binary Tree (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/07/lc104/"
+    } ,
+  
+    {
       "title"    : "leetcode 130. Surrounded Regions (Python)",
       "category" : "Leetcode",
       
