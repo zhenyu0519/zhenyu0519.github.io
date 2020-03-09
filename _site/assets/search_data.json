@@ -458,6 +458,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/08/lc110/"
+    } ,
+  
+    {
+      "title"    : "leetcode 98. Validate Binary Search Tree (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/09/lc98/"
     } 
   
 ]
