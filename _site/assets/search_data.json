@@ -451,6 +451,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/07/lc286/"
+    } ,
+  
+    {
+      "title"    : "leetcode 110. Balanced Binary Tree (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/08/lc110/"
     } 
   
 ]
