@@ -491,6 +491,13 @@
     } ,
   
     {
+      "title"    : "leetcode 145. Binary Tree Postorder Traversal (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/10/lc145/"
+    } ,
+  
+    {
       "title"    : "leetcode 94. Binary Tree Inorder Traversal (Python)",
       "category" : "Leetcode",
       
