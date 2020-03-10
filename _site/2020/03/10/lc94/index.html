@@ -32,8 +32,8 @@
     <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 94, Binary Tree Inorder Traversal, zhenyu, Depth-First-Search, DFS, Depth First Search, Tree, tree, Inorder-Traversal,  Inorder Traversal">
     <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 94, Binary Tree Inorder Traversal, zhenyu, Depth-First-Search, DFS, Depth First Search, Tree, tree, Inorder-Traversal,  Inorder Traversal">
       
-    <meta name="description" content="Leetcode 98. Validate Binary Search Tree (Python)">
-    <meta name="og:description" content="Leetcode 98. Validate Binary Search Tree (Python)">
+    <meta name="description" content="Leetcode 94. Binary Tree Inorder Traversal (Python)">
+    <meta name="og:description" content="Leetcode 94. Binary Tree Inorder Traversal (Python)">
       
     
     
@@ -133,15 +133,15 @@
   <div class="columns">
     <div class="column three-fourths">
       <article class="article-content markdown-body">
-        <h1 id="leetcode-98-validate-binary-search-tree-python">Leetcode 98. Validate Binary Search Tree (Python)</h1>
+        <h1 id="leetcode-94-binary-tree-inorder-traversal-python">Leetcode 94. Binary Tree Inorder Traversal (Python)</h1>
 
 <h1 id="related-topic">Related Topic</h1>
 <p><a href="/categories/#Depth-First-Search" target="_blank"> Depth-First-Search</a>.
 <a href="/categories/#Tree" target="_blank"> Tree</a>.
-<a href="/categories/#Preorder-Traversal" target="_blank"> Preorder-Traversal</a>.</p>
+<a href="/categories/#Inorder-Traversal" target="_blank"> Inorder-Traversal</a>.</p>
 
 <h1 id="description">Description</h1>
-<p>Given a binary tree, return the preorder traversal of its nodes’ values.</p>
+<p>Given a binary tree, return the Inorder traversal of its nodes’ values.</p>
 
 <h2 id="sample-io">Sample I/O</h2>
 
@@ -153,7 +153,7 @@
     /
    3
 
-Output: [1,2,3]
+Output: [1,3,2]
 </code></pre></div></div>
 
 <h2 id="follow-up">Follow up</h2>
@@ -165,33 +165,36 @@ Output: [1,2,3]
 <p>This is very direction answer, you can apply dfs directly. However, for the follow up question, to solve it iteratively, you can use stack.</p>
 
 <h1 id="code-1-dfs">Code 1 (DFS)</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">preorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-        <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="p">:</span> <span class="k">return</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">inorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span> <span class="k">return</span> <span class="p">[]</span>
+        <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">res</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span> <span class="k">return</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">,</span><span class="n">res</span><span class="p">)</span>
             <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
-            <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span>
-            <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">,</span><span class="n">res</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">res</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="p">:</span> <span class="k">return</span> <span class="p">[]</span>
         <span class="k">return</span> <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,[])</span>
 </code></pre></div></div>
 <h1 id="bigo">BigO</h1>
 <p>We traversal all nodes of the tree once so O(n)</p>
 
 <h1 id="code-2-iteratively">Code 2 (Iteratively)</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">preorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">inorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
         <span class="n">stack</span> <span class="o">=</span> <span class="p">[</span><span class="n">root</span><span class="p">]</span>
         <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
             <span class="n">node</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
             <span class="k">if</span> <span class="n">node</span><span class="p">:</span>
-                <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
-                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
                 <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">res</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">stack</span><span class="p">:</span>
+                    <span class="n">node</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+                    <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
 </code></pre></div></div>
 <h1 id="bigo-1">BigO</h1>
-<p>We traversal all nodes of the tree once so O(n)</p>
+<p>We traversal all nodes of the tree once so total time complexity is O(n)</p>
 
       </article>
       <div class="share">
