@@ -461,6 +461,13 @@
     } ,
   
     {
+      "title"    : "leetcode 894. All Possible Full Binary Trees (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/08/lc894/"
+    } ,
+  
+    {
       "title"    : "leetcode 98. Validate Binary Search Tree (Python)",
       "category" : "Leetcode",
       
