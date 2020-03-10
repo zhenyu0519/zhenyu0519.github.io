@@ -454,7 +454,7 @@
     } ,
   
     {
-      "title"    : "leetcode 110. Balanced Binary Tree (Python)",
+      "title"    : "leetcode 110. Balanced Binary Tree (AVL tree) (Python)",
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/08/lc110/"
