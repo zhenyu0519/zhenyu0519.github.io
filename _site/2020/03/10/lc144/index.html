@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>leetcode 98. Validate Binary Search Tree (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <title>leetcode 144. Binary Tree Preorder Traversal (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
     <!-- add google search console -->
     <meta name="google-site-verification" content="Hh37wMK9MFpx6xtWD91RDJzIy-PTLn7ocpNyQ1kPI6M" />
     <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-css/css/primer.css">
@@ -23,14 +23,14 @@
     
 
     
-    <link rel="canonical" href="https://zhenyu0519.github.io/2020/03/09/lc98/">
+    <link rel="canonical" href="https://zhenyu0519.github.io/2020/03/10/lc144/">
     <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="https://zhenyu0519.github.io/feed.xml">
     <link rel="shortcut icon" href="https://zhenyu0519.github.io/favicon.ico">
     
-    <meta property="og:title" content="leetcode 98. Validate Binary Search Tree (Python)">
+    <meta property="og:title" content="leetcode 144. Binary Tree Preorder Traversal (Python)">
       
-    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 98, Validate Binary Search Tree, zhenyu, Depth-First-Search, DFS, Depth First Search, Tree, tree, Balanced-Binary-Tree, Inorder, Inorder Traversal">
-    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 98, Validate Binary Search Tree, zhenyu, Depth-First-Search, DFS, Depth First Search, Tree, tree, Balanced-Binary-Tree, Inorder, Inorder Traversal">
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 144, Binary Tree Preorder Traversal, zhenyu, Depth-First-Search, DFS, Depth First Search, Tree, tree, Preorder-Traversal,  order Traversal">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 144, Binary Tree Preorder Traversal, zhenyu, Depth-First-Search, DFS, Depth First Search, Tree, tree, Preorder-Traversal,  order Traversal">
       
     <meta name="description" content="Leetcode 98. Validate Binary Search Tree (Python)">
     <meta name="og:description" content="Leetcode 98. Validate Binary Search Tree (Python)">
@@ -39,31 +39,31 @@
     
         
     
-    <meta property="og:url" content="https://zhenyu0519.github.io/2020/03/09/lc98/">
+    <meta property="og:url" content="https://zhenyu0519.github.io/2020/03/10/lc144/">
     <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="zh_CN" />
     
-    <meta property="article:published_time" content="2020-03-09">
+    <meta property="article:published_time" content="2020-03-10">
     
     <script src="https://zhenyu0519.github.io/assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="https://zhenyu0519.github.io/assets/js/jquery-ui.js"></script>
     <script src="https://zhenyu0519.github.io/assets/js/main.js"></script>
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>leetcode 98. Validate Binary Search Tree (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
+<title>leetcode 144. Binary Tree Preorder Traversal (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="leetcode 98. Validate Binary Search Tree (Python)" />
+<meta property="og:title" content="leetcode 144. Binary Tree Preorder Traversal (Python)" />
 <meta name="author" content="Jeffrey" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="leetcode 98. Validate Binary Search Tree (Python Solution)" />
-<meta property="og:description" content="leetcode 98. Validate Binary Search Tree (Python Solution)" />
-<link rel="canonical" href="https://zhenyu0519.github.io/2020/03/09/lc98/" />
-<meta property="og:url" content="https://zhenyu0519.github.io/2020/03/09/lc98/" />
+<meta name="description" content="leetcode 144. Binary Tree Preorder Traversal (Python Solution)" />
+<meta property="og:description" content="leetcode 144. Binary Tree Preorder Traversal (Python Solution)" />
+<link rel="canonical" href="https://zhenyu0519.github.io/2020/03/10/lc144/" />
+<meta property="og:url" content="https://zhenyu0519.github.io/2020/03/10/lc144/" />
 <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey’s Blog)" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-03-09T00:00:00-07:00" />
+<meta property="article:published_time" content="2020-03-10T00:00:00-07:00" />
 <script type="application/ld+json">
-{"description":"leetcode 98. Validate Binary Search Tree (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/03/09/lc98/"},"url":"https://zhenyu0519.github.io/2020/03/09/lc98/","headline":"leetcode 98. Validate Binary Search Tree (Python)","dateModified":"2020-03-09T00:00:00-07:00","datePublished":"2020-03-09T00:00:00-07:00","@context":"http://schema.org"}</script>
+{"description":"leetcode 144. Binary Tree Preorder Traversal (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/03/10/lc144/"},"url":"https://zhenyu0519.github.io/2020/03/10/lc144/","headline":"leetcode 144. Binary Tree Preorder Traversal (Python)","dateModified":"2020-03-10T00:00:00-07:00","datePublished":"2020-03-10T00:00:00-07:00","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -89,16 +89,16 @@
     </header>
     <!-- / header -->
 
-    <section class="collection-head small" data-pattern-id="leetcode 98. Va">
+    <section class="collection-head small" data-pattern-id="leetcode 144. B">
   <div class="container">
     <div class="columns">
       <div class="column three-fourths">
         <div class="collection-title">
-          <h1 class="collection-header">leetcode 98. Validate Binary Search Tree (Python)</h1>
+          <h1 class="collection-header">leetcode 144. Binary Tree Preorder Traversal (Python)</h1>
           <div class="collection-info">
             
             <span class="meta-info">
-              <span class="octicon octicon-calendar"></span> 09 Mar 2020
+              <span class="octicon octicon-calendar"></span> 10 Mar 2020
             </span>
             
             
@@ -119,7 +119,7 @@
             
             <span class="meta-info">
               <span class="octicon octicon-file-directory"></span>
-              <a href="https://zhenyu0519.github.io/categories/#Inorder-Traversal" title="Inorder-Traversal">Inorder-Traversal</a>
+              <a href="https://zhenyu0519.github.io/categories/#Preorder-Traversal" title="Preorder-Traversal">Preorder-Traversal</a>
             </span>
             
           </div>
@@ -138,68 +138,60 @@
 <h1 id="related-topic">Related Topic</h1>
 <p><a href="/categories/#Depth-First-Search" target="_blank"> Depth-First-Search</a>.
 <a href="/categories/#Tree" target="_blank"> Tree</a>.
-<a href="/categories/#Inorder-Traversal" target="_blank"> Inorder-Traversal</a>.</p>
+<a href="/categories/#Preorder-Traversal" target="_blank"> Preorder-Traversal</a>.</p>
 
 <h1 id="description">Description</h1>
-<p>Given a binary tree, determine if it is a valid binary search tree (BST).</p>
-
-<p>Assume a BST is defined as follows:</p>
-
-<ul>
-  <li>The left subtree of a node contains only nodes with keys less than the node’s key.</li>
-  <li>The right subtree of a node contains only nodes with keys greater than the node’s key.</li>
-  <li>Both the left and right subtrees must also be binary search trees.</li>
-</ul>
+<p>Given a binary tree, return the preorder traversal of its nodes’ values.</p>
 
 <h2 id="sample-io">Sample I/O</h2>
 
 <h3 id="example-1">Example 1</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    2
-   / \
-  1   3
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: [1,null,2,3]
+   1
+    \
+     2
+    /
+   3
 
-Input: [2,1,3]
-Output: true
+Output: [1,2,3]
 </code></pre></div></div>
 
-<h3 id="example-2">Example 2</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    5
-   / \
-  1   4
-     / \
-    3   6
-
-Input: [5,1,4,null,null,3,6]
-Output: false
-Explanation: The root node's value is 5 but its right child's value is 4.
-</code></pre></div></div>
+<h2 id="follow-up">Follow up</h2>
+<p>Recursive solution is trivial, could you do it iteratively?</p>
 
 <h1 id="methodology">Methodology</h1>
-<p>This question can be solved by Depth First Search and Inorder Traversal.</p>
+<p>This question can be solved by Depth First Search.</p>
 
-<p>Use In Order Traversal to re-organize the input and get an inordered list, if the inordered list satisfy the binary serach requirements (in order traversal a binary search tree return a continous increament list) we return True else return False.</p>
+<p>This is very direction answer, you can apply dfs directly. However, for the follow up question, to solve it iteratively, you can use stack.</p>
 
-<h1 id="code">Code</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">isValidBST</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">True</span>
-        
-        <span class="k">def</span> <span class="nf">inOrder</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-                <span class="k">return</span>
-            <span class="n">inOrder</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">order</span><span class="p">)</span>
-            <span class="n">order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
-            <span class="n">inOrder</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">order</span><span class="p">)</span>
-            
-        <span class="n">order</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">inOrder</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">order</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">order</span><span class="p">)):</span>
-            <span class="k">if</span> <span class="n">order</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">order</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
-                <span class="k">return</span> <span class="bp">False</span>
-        <span class="k">return</span> <span class="bp">True</span>
+<h1 id="code-1-dfs">Code 1 (DFS)</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">preorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="p">:</span> <span class="k">return</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">res</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="p">:</span> <span class="k">return</span> <span class="p">[]</span>
+        <span class="k">return</span> <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,[])</span>
 </code></pre></div></div>
 <h1 id="bigo">BigO</h1>
-<p>We traversal the tree with in-order therefore the time complexity is O(n) and then we go through the inordered list the time complexity is O(n). In total is O(2n)</p>
+<p>We traversal all nodes of the tree once so O(n)</p>
+
+<h1 id="code-2-iteratively">Code 2 (Iteratively)</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">preorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="n">stack</span> <span class="o">=</span> <span class="p">[</span><span class="n">root</span><span class="p">]</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">node</span><span class="p">:</span>
+                <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span>
+</code></pre></div></div>
+<h1 id="bigo-1">BigO</h1>
+<p>We traversal all nodes of the tree once so O(n)</p>
 
       </article>
       <div class="share">
@@ -216,7 +208,7 @@ Explanation: The root node's value is 5 but its right child's value is 4.
         <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
         <script>
         var gitalk = new Gitalk({
-            id: '/2020/03/09/lc98/',
+            id: '/2020/03/10/lc144/',
             clientID: '4cef70907f5b36353d59',
             clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
             repo: 'zhenyu0519.github.io',

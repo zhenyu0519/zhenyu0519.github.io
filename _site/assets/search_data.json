@@ -59,6 +59,8 @@
   
   
   
+  
+  
 
   
     {
@@ -479,6 +481,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/09/lc98/"
+    } ,
+  
+    {
+      "title"    : "leetcode 144. Binary Tree Preorder Traversal (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/10/lc144/"
     } 
   
 ]
