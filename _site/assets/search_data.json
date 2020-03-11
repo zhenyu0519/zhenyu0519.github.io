@@ -522,6 +522,13 @@
       "title"    : "leetcode 108. Convert Sorted Array to Binary Search Tree (Python)",
       "category" : "Leetcode",
       
+      "url"      : "https://zhenyu0519.github.io/2020/03/11/lc108/"
+    } ,
+  
+    {
+      "title"    : "leetcode 109. Convert Sorted List to Binary Search Tree (Python)",
+      "category" : "Leetcode",
+      
       "url"      : "https://zhenyu0519.github.io/2020/03/11/lc109/"
     } 
   
