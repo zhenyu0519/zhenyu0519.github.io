@@ -484,6 +484,13 @@
     } ,
   
     {
+      "title"    : "树型结构的基本类型以及遍历方法",
+      "category" : "Tree",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/10/about_tree/"
+    } ,
+  
+    {
       "title"    : "leetcode 144. Binary Tree Preorder Traversal (Python)",
       "category" : "Leetcode",
       

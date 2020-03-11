@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" prefix="og: http://ogp.me/ns#" class="han-init">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>树型结构的基本类型以及遍历方法 &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <!-- add google search console -->
+    <meta name="google-site-verification" content="Hh37wMK9MFpx6xtWD91RDJzIy-PTLn7ocpNyQ1kPI6M" />
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-css/css/primer.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-markdown/dist/user-content.min.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/octicons/octicons/octicons.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/collection.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/repo-card.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/sections/repo-list.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/sections/mini-repo-list.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/boxed-group.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/common.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/share.js/dist/css/share.min.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/responsive.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/posts/index.css">
+    <!-- Latest compiled and minified CSS -->
+    
+
+    
+    <link rel="canonical" href="https://zhenyu0519.github.io/2020/03/10/about_tree/">
+    <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="https://zhenyu0519.github.io/feed.xml">
+    <link rel="shortcut icon" href="https://zhenyu0519.github.io/favicon.ico">
+    
+    <meta property="og:title" content="树型结构的基本类型以及遍历方法">
+      
+    <meta name="keywords" content="树型结构的基本类型以及遍历方法,二叉树，平衡二叉树，完全二叉树，满二叉树，二叉搜索树，前序遍历，中序遍历，后续遍历，遍历方法，树型结构，理解">
+    <meta name="og:keywords" content="树型结构的基本类型以及遍历方法,二叉树，平衡二叉树，完全二叉树，满二叉树，二叉搜索树，前序遍历，中序遍历，后续遍历，遍历方法，树型结构，理解">
+      
+    <meta name="description" content="树型结构的基本类型以及遍历方法">
+    <meta name="og:description" content="树型结构的基本类型以及遍历方法">
+      
+    
+    
+        
+    
+    <meta property="og:url" content="https://zhenyu0519.github.io/2020/03/10/about_tree/">
+    <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_CN" />
+    
+    <meta property="article:published_time" content="2020-03-10">
+    
+    <script src="https://zhenyu0519.github.io/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/jquery-ui.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/main.js"></script>
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>树型结构的基本类型以及遍历方法 | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="树型结构的基本类型以及遍历方法" />
+<meta name="author" content="Jeffrey" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="树型结构的基本类型以及遍历方法,二叉树，平衡二叉树，完全二叉树，满二叉树，二叉搜索树，前序遍历，中序遍历，后续遍历" />
+<meta property="og:description" content="树型结构的基本类型以及遍历方法,二叉树，平衡二叉树，完全二叉树，满二叉树，二叉搜索树，前序遍历，中序遍历，后续遍历" />
+<link rel="canonical" href="https://zhenyu0519.github.io/2020/03/10/about_tree/" />
+<meta property="og:url" content="https://zhenyu0519.github.io/2020/03/10/about_tree/" />
+<meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey’s Blog)" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-10T00:00:00-07:00" />
+<script type="application/ld+json">
+{"description":"树型结构的基本类型以及遍历方法,二叉树，平衡二叉树，完全二叉树，满二叉树，二叉搜索树，前序遍历，中序遍历，后续遍历","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/03/10/about_tree/"},"url":"https://zhenyu0519.github.io/2020/03/10/about_tree/","headline":"树型结构的基本类型以及遍历方法","dateModified":"2020-03-10T00:00:00-07:00","datePublished":"2020-03-10T00:00:00-07:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body class="" data-mz="">
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="https://zhenyu0519.github.io/" title="杰弗里 · 时光博客(Jeffrey's Blog)"><span class="octicon octicon-mark-github"></span> 杰弗里 · 时光博客(Jeffrey's Blog)</a></h1>
+            <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <nav class="site-header-nav" role="navigation">
+                
+                <a href="https://zhenyu0519.github.io/" class=" site-header-nav-item" target="" title="Home">Home</a>
+                
+                <a href="https://zhenyu0519.github.io/categories/" class=" site-header-nav-item" target="" title="Categories">Categories</a>
+                
+                <a href="https://zhenyu0519.github.io/about/" class=" site-header-nav-item" target="" title="About">About</a>
+                
+            </nav>
+        </div>
+    </header>
+    <!-- / header -->
+
+    <section class="collection-head small" data-pattern-id="树型结构的基本类型以及遍历方法">
+  <div class="container">
+    <div class="columns">
+      <div class="column three-fourths">
+        <div class="collection-title">
+          <h1 class="collection-header">树型结构的基本类型以及遍历方法</h1>
+          <div class="collection-info">
+            
+            <span class="meta-info">
+              <span class="octicon octicon-calendar"></span> 10 Mar 2020
+            </span>
+            
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Tree" title="Tree">Tree</a>
+            </span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- / .banner -->
+<section class="container content">
+  <div class="columns">
+    <div class="column three-fourths">
+      <article class="article-content markdown-body">
+        <h1 id="树型结构的基本类型以及遍历方法">树型结构的基本类型以及遍历方法</h1>
+
+<p><img src="/images/blog/tree.jpg" alt="Tree" /></p>
+
+<h2 id="前言">前言</h2>
+
+<p>最近在复习树型结构，就顺便总结一下树型结构的基本种类和遍历树的基本方法。</p>
+
+<h2 id="树的种类">树的种类</h2>
+
+<p>我们常用的树是二叉树（binary tree）很好理解，二叉树就是一棵树<strong>最多</strong>有两个分枝。当然树也可以是三个分枝，四个分枝，这里不做介绍。</p>
+
+<p>二叉树里面有哪些种类？</p>
+
+<h3 id="完全二叉树complete-binary-tree">完全二叉树(complete binary tree)</h3>
+<p>对于一颗二叉树，假设其深度为d（d&gt;1）。<strong>除了第d层外，其它各层的节点数目均已达最大值，且第d层所有节点从左向右连续地紧密排列</strong>，这样的二叉树被称为完全二叉树</p>
+
+<h3 id="满二叉树full-binary-tree">满二叉树(full binary tree)</h3>
+<p>这个由国内国外两种定义，国内认为满二叉树是完全二叉树的一种，<strong>即除最后一层结点均无任何子节点外，每一层的所有结点都有两个子结点的树</strong>
+而国际的定义则不相同，国际上认为满二叉树的<strong>每一个节点结点都恰好有零或两个孩子的树</strong>
+个人认为以国际为准</p>
+
+<h3 id="平衡二叉树balanced-binary-tree-avl-tree">平衡二叉树(balanced binary tree) AVL tree</h3>
+<p><strong>当且仅当任何节点的两棵子树的高度差不大于1的二叉树</strong>, 平衡二叉树也叫做AVL tree，其中红黑树是平衡二叉树的一种</p>
+
+<h3 id="二叉搜索树binary-search-tree">二叉搜索树(binary search tree)</h3>
+<ul>
+  <li>若任意节点的左子树不空，则左子树上所有节点的值均小于它的根节点的值；</li>
+  <li>若任意节点的右子树不空，则右子树上所有节点的值均大于或等于它的根节点的值；</li>
+  <li>任意节点的左、右子树也分别为二叉查找树；
+二叉搜索树通常用于查找</li>
+</ul>
+
+<h2 id="树的遍历">树的遍历</h2>
+
+<p>树的遍历方式有三种分别是前序遍历，中序遍历，后续遍历</p>
+
+<h3 id="前序遍历preorder-traversal">前序遍历(preorder traversal)</h3>
+<p>根结点 —&gt; 左子树 —&gt; 右子树</p>
+
+<h3 id="中序遍历inorder-traversal">中序遍历(inorder traversal)</h3>
+<p>左子树 —&gt; 根结点 —&gt; 右子树</p>
+
+<h3 id="后序遍历postorder-traversal">后序遍历(postorder traversal)</h3>
+<p>左子树 —&gt; 右子树 —&gt; 根结点</p>
+
+<p>以上遍历实现的方法通常有两种，递归方法(recursive solution)和迭代方法(iterative solution)，递归方法就是平时说的深度优先搜索算法(Depth-First-Search)而迭代方法就是广度优先搜索算法(Breadth-First-Search)</p>
+
+<p>具体实现是这样的：</p>
+
+<h3 id="前序遍历">前序遍历</h3>
+<h4 id="递归方法深度优先">递归方法(深度优先)</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">preorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="p">:</span> <span class="k">return</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">res</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="p">:</span> <span class="k">return</span> <span class="p">[]</span>
+        <span class="k">return</span> <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,[])</span>
+</code></pre></div></div>
+
+<h4 id="迭代方法广度优先">迭代方法(广度优先)</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">preorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="n">stack</span> <span class="o">=</span> <span class="p">[</span><span class="n">root</span><span class="p">]</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">node</span><span class="p">:</span>
+                <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span>
+</code></pre></div></div>
+
+<h3 id="中序遍历">中序遍历</h3>
+<h4 id="递归方法深度优先-1">递归方法(深度优先)</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">inorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span> <span class="k">return</span> <span class="p">[]</span>
+        <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">res</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span> <span class="k">return</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">,</span><span class="n">res</span><span class="p">)</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">,</span><span class="n">res</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">res</span>
+        <span class="k">return</span> <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,[])</span>
+</code></pre></div></div>
+
+<h4 id="迭代方法广度优先-1">迭代方法(广度优先)</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">inorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="n">stack</span> <span class="o">=</span> <span class="p">[</span><span class="n">root</span><span class="p">]</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">node</span><span class="p">:</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">stack</span><span class="p">:</span>
+                    <span class="n">node</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+                    <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="后序遍历">后序遍历</h3>
+<h4 id="递归方法深度优先-2">递归方法(深度优先)</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">preorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="p">:</span> <span class="k">return</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">res</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="p">:</span> <span class="k">return</span> <span class="p">[]</span>
+        <span class="k">return</span> <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,[])</span>
+</code></pre></div></div>
+
+<h4 id="迭代方法广度优先-2">迭代方法(广度优先)</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">preorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="n">stack</span> <span class="o">=</span> <span class="p">[</span><span class="n">root</span><span class="p">]</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">node</span><span class="p">:</span>
+                <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span>
+</code></pre></div></div>
+
+<h2 id="判断树型结构的具体问题">判断树型结构的具体问题</h2>
+
+<h3 id="判断一个树是否是完全二叉树">判断一个树是否是完全二叉树</h3>
+<p>根据完全二叉树的定义知道，判断它是否是完全二叉树主要看两个条件是否满足。一是这个树除了最后一层以外，其他层是否是满二叉树，也就是每层都被节点填满。第二就是最后一层的节点是否从左向右依次紧密相连。既然要看层是否被填满，那么用广度优先是最好的方法。按照每一次的顺序把每个出现的节点依次放到数组里面，看一下数组的长度和最后一个节点所代表的index是否一致。</p>
+
+<h3 id="判断一个树是满二叉树">判断一个树是满二叉树</h3>
+<p><strong>国内的满二叉树</strong>
+因为满二叉树是一种特殊的完全二叉树，与其不同的是满二叉树每一层都必须被节点填满，所以我们只需要看一下最后一个节点所代表的index是否和满二叉树该有的节点数量一致即可。那么满二叉树该有的节点数量怎么得到呢？答案是根据树的高度得到。一个二叉树最多节点的数量是=2^n-1这里n是树的高度(height)从n=1开始。此外还有个公式也很有用，那就是求层节点最大数量=2^(n-1)这里n是树的层数(level)从n=1开始。</p>
+
+<p><strong>国际的满二叉树</strong>
+国际定义的满二叉树相对国内定义要复杂的多，首先满二叉树的节点个树一定是奇数。其次一旦一个节点有左子节点，那么这个节点必然有右子节点。最后一个一旦一个节点没有左子节点，那么它必然也没有右子节点。一定用到深度优先算法。</p>
+
+<h3 id="判断一个树是平衡二叉树">判断一个树是平衡二叉树</h3>
+<p>这个相对复杂一些，根据定义，平衡二叉树的任何节点的两颗子树高度差不大于1。那么我们就要得到任何节点以及它的两棵子树。这里选择用深度优先搜索比较容易得到每个节点的子树。然后递归的比较两棵子树的高度差是否小于1</p>
+
+<p>树的只是先总结到这里，下次有机会说一下红黑树。</p>
+
+      </article>
+      <div class="share">
+        <div class="share-component"></div>
+      </div>
+      <div class="comment">
+        
+
+  
+
+  
+        <div id="gitalk-container"></div>
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script>
+        var gitalk = new Gitalk({
+            id: '/2020/03/10/about_tree/',
+            clientID: '4cef70907f5b36353d59',
+            clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
+            repo: 'zhenyu0519.github.io',
+            owner: 'zhenyu0519',
+            admin: ['zhenyu0519'],
+            labels: ['gitment'],
+            perPage: 50,
+        })
+        gitalk.render('gitalk-container')
+        </script>
+  
+
+
+      </div>
+    </div>
+    <div class="column one-fourth">
+      
+<h3>Search</h3>
+<div id="site_search" class="site_search">
+    <input type="text" id="search_box" placeholder="Search">
+</div>
+
+<ul id="search_results"></ul>
+
+<link rel="stylesheet" type="text/css" href="https://zhenyu0519.github.io/assets/css/modules/sidebar-search.css">
+<script src="https://zhenyu0519.github.io/assets/js/simple-jekyll-search.min.js"></script>
+<script src="https://zhenyu0519.github.io/assets/js/search.js"></script>
+
+<script type="text/javascript">
+SimpleJekyllSearch({
+    searchInput: document.getElementById('search_box'),
+    resultsContainer: document.getElementById('search_results'),
+    json: 'https://zhenyu0519.github.io/assets/search_data.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No results found',
+    fuzzy: false,
+    exclude: ['Welcome'],
+    limit: 10
+})
+</script>
+
+      
+<h3 class="post-directory-title mobile-hidden">Table of Contents</h3>
+<div id="post-directory-module" class="mobile-hidden">
+  <section class="post-directory">
+  <!-- Links that trigger the jumping -->
+  <!-- Added by javascript below -->
+  <dl></dl>
+  </section>
+</div>
+
+<script src="https://zhenyu0519.github.io/assets/js/jquery.toc.js"></script>
+
+    </div>
+  </div>
+</section>
+<!-- /section.content -->
+    <footer class="container">
+        <div class="site-footer" role="contentinfo">
+            <div class="copyright left mobile-block">
+                    © 2019
+                    <span title="Jeffrey">Jeffrey</span>
+                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
+            </div>
+
+            <ul class="site-footer-links right mobile-hidden">
+                <li>
+                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
+                </li>
+            </ul>
+            <a href="https://github.com/zhenyu0519/zhenyu0519.github.io" target="_blank" aria-label="view source code">
+                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+            </a>
+            <ul class="site-footer-links mobile-hidden">
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/" title="Home" target="">Home</a>
+                </li>
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/categories/" title="Categories" target="">Categories</a>
+                </li>
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/about/" title="About" target="">About</a>
+                </li>
+                
+                <li><a href="https://zhenyu0519.github.io/feed.xml"><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
+            </ul>
+
+        </div>
+    </footer>
+    <div class="tools-wrapper">
+      <a class="gotop" href="#" title="回到顶部"><span class="octicon octicon-arrow-up"></span></a>
+    </div>
+    <!-- / footer -->
+    <script src="https://zhenyu0519.github.io/assets/vendor/share.js/dist/js/share.min.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/geopattern.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/prism.js"></script>
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/prism.css">
+    <script>
+      jQuery(document).ready(function($) {
+        // geopattern
+        $('.geopattern').each(function(){
+          $(this).geopattern($(this).data('pattern-id'));
+        });
+       // hljs.initHighlightingOnLoad();
+      });
+    </script>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div style="display:none">
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-113380665-1', 'auto');
+        ga('send', 'pageview');
+
+      </script>
+    </div>
+    
+</body>
+</html>
