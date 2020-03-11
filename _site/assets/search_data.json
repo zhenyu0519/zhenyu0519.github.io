@@ -484,6 +484,13 @@
     } ,
   
     {
+      "title"    : "写给自己的一点忠告",
+      "category" : "Life",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/10/to_my_self/"
+    } ,
+  
+    {
       "title"    : "树型结构的基本类型以及遍历方法",
       "category" : "Tree",
       
