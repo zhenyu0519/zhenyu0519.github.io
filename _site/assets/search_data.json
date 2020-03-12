@@ -537,6 +537,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/11/lc109/"
+    } ,
+  
+    {
+      "title"    : "leetcode 106. Construct Binary Tree from Inorder and Postorder Traversal (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/12/lc106/"
     } 
   
 ]
