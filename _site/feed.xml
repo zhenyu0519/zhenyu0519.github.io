@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-03-11T13:18:04-07:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 109. Convert Sorted List to Binary Search Tree (Python)</title><link href="https://zhenyu0519.github.io/2020/03/11/lc109/" rel="alternate" type="text/html" title="leetcode 109. Convert Sorted List to Binary Search Tree (Python)" /><published>2020-03-11T00:00:00-07:00</published><updated>2020-03-11T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/11/lc109</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/11/lc109/">&lt;h1 id=&quot;leetcode-109-convert-sorted-list-to-binary-search-tree-python&quot;&gt;Leetcode 109. Convert Sorted List to Binary Search Tree (Python)&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-03-12T01:13:12-07:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 109. Convert Sorted List to Binary Search Tree (Python)</title><link href="https://zhenyu0519.github.io/2020/03/11/lc109/" rel="alternate" type="text/html" title="leetcode 109. Convert Sorted List to Binary Search Tree (Python)" /><published>2020-03-11T00:00:00-07:00</published><updated>2020-03-11T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/11/lc109</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/11/lc109/">&lt;h1 id=&quot;leetcode-109-convert-sorted-list-to-binary-search-tree-python&quot;&gt;Leetcode 109. Convert Sorted List to Binary Search Tree (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Depth-First-Search&quot; target=&quot;_blank&quot;&gt; Depth-First-Search&lt;/a&gt;.
@@ -30,7 +30,7 @@ One possible answer is: [0,-3,9,-10,null,5], which represents the following heig
 
 &lt;p&gt;&lt;strong&gt;To find the mid node in linkedlist, we can use fast and slow pointer. Every time fast will move two steps and slow will move step&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;code-1-dfs&quot;&gt;Code 1 (DFS)&lt;/h1&gt;
+&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sortedListToBST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ListNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
             &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
@@ -55,7 +55,75 @@ One possible answer is: [0,-3,9,-10,null,5], which represents the following heig
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We traversal all nodes of the input so it takes O(n) time complexity&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 109. Convert Sorted List to Binary Search Tree (Python)</summary></entry><entry><title type="html">leetcode 108. Convert Sorted Array to Binary Search Tree (Python)</title><link href="https://zhenyu0519.github.io/2020/03/11/lc108/" rel="alternate" type="text/html" title="leetcode 108. Convert Sorted Array to Binary Search Tree (Python)" /><published>2020-03-11T00:00:00-07:00</published><updated>2020-03-11T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/11/lc108</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/11/lc108/">&lt;h1 id=&quot;leetcode-108-convert-sorted-array-to-binary-search-tree-python&quot;&gt;Leetcode 108. Convert Sorted Array to Binary Search Tree (Python)&lt;/h1&gt;
+&lt;p&gt;We traversal all nodes of the input so it takes O(n) time complexity&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 109. Convert Sorted List to Binary Search Tree (Python)</summary></entry><entry><title type="html">leetcode 105. Construct Binary Tree from Preorder and Inorder Traversal (Python)</title><link href="https://zhenyu0519.github.io/2020/03/11/lc105/" rel="alternate" type="text/html" title="leetcode 105. Construct Binary Tree from Preorder and Inorder Traversal (Python)" /><published>2020-03-11T00:00:00-07:00</published><updated>2020-03-11T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/11/lc105</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/11/lc105/">&lt;h1 id=&quot;leetcode-105-construct-binary-tree-from-preorder-and-inorder-traversal-python&quot;&gt;Leetcode 105. Construct Binary Tree from Preorder and Inorder Traversal (Python)&lt;/h1&gt;
+
+&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;/categories/#Depth-First-Search&quot; target=&quot;_blank&quot;&gt; Depth-First-Search&lt;/a&gt;.
+&lt;a href=&quot;/categories/#Tree&quot; target=&quot;_blank&quot;&gt; Tree&lt;/a&gt;.
+&lt;a href=&quot;/categories/#Preorder-Traversal&quot; target=&quot;_blank&quot;&gt; Preorder-Traversal&lt;/a&gt;.
+&lt;a href=&quot;/categories/#Inorder-Traversal&quot; target=&quot;_blank&quot;&gt; Inorder-Traversal&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
+&lt;p&gt;Given preorder and inorder traversal of a tree, construct the binary tree.&lt;/p&gt;
+
+&lt;p&gt;Note:
+You may assume that duplicates do not exist in the tree.&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+
+&lt;p&gt;For example, given&lt;/p&gt;
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;preorder = [3,9,20,15,7]
+inorder = [9,3,15,20,7]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Return the following binary tree:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    3
+   / \
+  9  20
+    /  \
+   15   7
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
+&lt;p&gt;This question can be solved by Depth First Search.&lt;/p&gt;
+
+&lt;p&gt;This question is good one, it takes a special way to test the concept of tree traversal and also help you have deeper understand of tree traversal.&lt;/p&gt;
+
+&lt;p&gt;Before we do the question, we should have some knowledge about Preorder, Inoreder and Postorder in advanced.&lt;/p&gt;
+
+&lt;p&gt;Suppose we have three results array from binary tree traversal and they are Preorder, Inorder and Postorder. What we get from these informations?&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;The first node of Preorder and the last node of the Postorder are both the root node of the binary tree.&lt;/li&gt;
+  &lt;li&gt;If we know the root node, then from Inorder, we know that the left side of the root node will build left subtree and rigth side of root node will build right subtree.&lt;/li&gt;
+  &lt;li&gt;We know the result of Preorder is listed in [root, left, right] order&lt;/li&gt;
+  &lt;li&gt;We know the result of Postorder is listed in [left, right, root] order&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;From all the information above we can apply dfs to build the binary tree by using Preorder and Inorder or Postorder and Inorder.&lt;/p&gt;
+
+&lt;p&gt;To sum up, we need Preorder or Postorder to locate the root node, and we need Inorder to divide left subtree and right subtree nodes.&lt;/p&gt;
+
+&lt;p&gt;Ok, for this question,&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;We first get root node from Preorder&lt;/li&gt;
+  &lt;li&gt;Then we get the root node index from Inorder, now we know the amount of left subtree nodes and the amount of right subtree nodes. we also find the left part and right part of the inorder.&lt;/li&gt;
+  &lt;li&gt;Since we knwo both the amount of the left subtree node and right subtree nodes and we know Preorder is in this format [root,left,right], we will find the preorder of left part and right part.&lt;/li&gt;
+  &lt;li&gt;We recursively apply the new preorder list and inorder list to the function.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;buildTree&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;preorder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inorder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;preorder&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inorder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;preorder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;preorder_left_node_amount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inorder_root_index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inorder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;preorder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buildTree&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;preorder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;preorder_left_node_amount&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inorder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inorder_root_index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buildTree&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;preorder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;preorder_left_node_amount&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inorder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inorder_root_index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:])&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;We go through both preorder list and inorder list, so the total time complexity is O(2n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 105. Construct Binary Tree from Preorder and Inorder Traversal (Python)</summary></entry><entry><title type="html">leetcode 108. Convert Sorted Array to Binary Search Tree (Python)</title><link href="https://zhenyu0519.github.io/2020/03/11/lc108/" rel="alternate" type="text/html" title="leetcode 108. Convert Sorted Array to Binary Search Tree (Python)" /><published>2020-03-11T00:00:00-07:00</published><updated>2020-03-11T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/11/lc108</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/11/lc108/">&lt;h1 id=&quot;leetcode-108-convert-sorted-array-to-binary-search-tree-python&quot;&gt;Leetcode 108. Convert Sorted Array to Binary Search Tree (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Depth-First-Search&quot; target=&quot;_blank&quot;&gt; Depth-First-Search&lt;/a&gt;.
@@ -231,9 +299,11 @@ Output: [1,2,3]
 &lt;p&gt;二叉树里面有哪些种类？&lt;/p&gt;
 
 &lt;h3 id=&quot;完全二叉树complete-binary-tree&quot;&gt;完全二叉树(complete binary tree)&lt;/h3&gt;
+
 &lt;p&gt;对于一颗二叉树，假设其深度为d（d&amp;gt;1）。&lt;strong&gt;除了第d层外，其它各层的节点数目均已达最大值，且第d层所有节点从左向右连续地紧密排列&lt;/strong&gt;，这样的二叉树被称为完全二叉树&lt;/p&gt;
 
 &lt;h3 id=&quot;满二叉树full-binary-tree&quot;&gt;满二叉树(full binary tree)&lt;/h3&gt;
+
 &lt;p&gt;这个由国内国外两种定义，国内认为满二叉树是完全二叉树的一种，&lt;strong&gt;即除最后一层结点均无任何子节点外，每一层的所有结点都有两个子结点的树&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;而国际的定义则不相同，国际上认为满二叉树的&lt;strong&gt;每一个节点结点都恰好有零或两个孩子的树&lt;/strong&gt;&lt;/p&gt;
@@ -241,9 +311,11 @@ Output: [1,2,3]
 &lt;p&gt;个人认为以国际为准&lt;/p&gt;
 
 &lt;h3 id=&quot;平衡二叉树balanced-binary-tree-avl-tree&quot;&gt;平衡二叉树(balanced binary tree) AVL tree&lt;/h3&gt;
+
 &lt;p&gt;&lt;strong&gt;当且仅当任何节点的两棵子树的高度差不大于1的二叉树&lt;/strong&gt;, 平衡二叉树也叫做AVL tree，其中红黑树是平衡二叉树的一种&lt;/p&gt;
 
 &lt;h3 id=&quot;二叉搜索树binary-search-tree&quot;&gt;二叉搜索树(binary search tree)&lt;/h3&gt;
+
 &lt;ul&gt;
   &lt;li&gt;若任意节点的左子树不空，则左子树上所有节点的值均小于它的根节点的值；&lt;/li&gt;
   &lt;li&gt;若任意节点的右子树不空，则右子树上所有节点的值均大于或等于它的根节点的值；&lt;/li&gt;
@@ -256,12 +328,15 @@ Output: [1,2,3]
 &lt;p&gt;树的遍历方式有三种分别是前序遍历，中序遍历，后续遍历&lt;/p&gt;
 
 &lt;h3 id=&quot;前序遍历preorder-traversal&quot;&gt;前序遍历(preorder traversal)&lt;/h3&gt;
+
 &lt;p&gt;根结点 —&amp;gt; 左子树 —&amp;gt; 右子树&lt;/p&gt;
 
 &lt;h3 id=&quot;中序遍历inorder-traversal&quot;&gt;中序遍历(inorder traversal)&lt;/h3&gt;
+
 &lt;p&gt;左子树 —&amp;gt; 根结点 —&amp;gt; 右子树&lt;/p&gt;
 
 &lt;h3 id=&quot;后序遍历postorder-traversal&quot;&gt;后序遍历(postorder traversal)&lt;/h3&gt;
+
 &lt;p&gt;左子树 —&amp;gt; 右子树 —&amp;gt; 根结点&lt;/p&gt;
 
 &lt;p&gt;以上遍历实现的方法通常有两种，递归方法(recursive solution)和迭代方法(iterative solution)，递归方法就是平时说的深度优先搜索算法(Depth-First-Search)而迭代方法就是广度优先搜索算法(Breadth-First-Search)&lt;/p&gt;
@@ -269,6 +344,7 @@ Output: [1,2,3]
 &lt;p&gt;具体实现是这样的：&lt;/p&gt;
 
 &lt;h3 id=&quot;前序遍历&quot;&gt;前序遍历&lt;/h3&gt;
+
 &lt;h4 id=&quot;递归方法深度优先&quot;&gt;递归方法(深度优先)&lt;/h4&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;preorderTraversal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;dfs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
@@ -295,6 +371,7 @@ Output: [1,2,3]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;中序遍历&quot;&gt;中序遍历&lt;/h3&gt;
+
 &lt;h4 id=&quot;递归方法深度优先-1&quot;&gt;递归方法(深度优先)&lt;/h4&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;inorderTraversal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
@@ -324,6 +401,7 @@ Output: [1,2,3]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;后序遍历&quot;&gt;后序遍历&lt;/h3&gt;
+
 &lt;h4 id=&quot;递归方法深度优先-2&quot;&gt;递归方法(深度优先)&lt;/h4&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;preorderTraversal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;dfs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
@@ -348,13 +426,24 @@ Output: [1,2,3]
                 &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;根据前序中序后序遍历后的结果创造对应的二叉树&quot;&gt;根据前序中序后序遍历后的结果创造对应的二叉树&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;这里有个小技巧，前序遍历结果中的第一个node和后序遍历中的最后一个node一定是root node。&lt;/li&gt;
+  &lt;li&gt;而中序遍历结果中的root node一定是左子树和右子树的分界线。&lt;/li&gt;
+  &lt;li&gt;前序遍历的结果组成一定是[root,left,right]&lt;/li&gt;
+  &lt;li&gt;后续遍历的结果组成一定是[left,right,root]
+根据以上这些性质，只要得到前序中序的结果或者后序中序的结果，那么我们一定可以创造对应的二叉树。&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;判断树型结构的具体问题&quot;&gt;判断树型结构的具体问题&lt;/h2&gt;
 
 &lt;h3 id=&quot;判断一个树是否是完全二叉树&quot;&gt;判断一个树是否是完全二叉树&lt;/h3&gt;
+
 &lt;p&gt;根据完全二叉树的定义知道，判断它是否是完全二叉树主要看两个条件是否满足。一是这个树除了最后一层以外，其他层是否是满二叉树，也就是每层都被节点填满。第二就是最后一层的节点是否从左向右依次紧密相连。既然要看层是否被填满，那么用广度优先是最好的方法。按照每一次的顺序把每个出现的节点依次放到数组里面，看一下数组的长度和最后一个节点所代表的index是否一致。&lt;/p&gt;
 
 &lt;h3 id=&quot;判断一个树是满二叉树&quot;&gt;判断一个树是满二叉树&lt;/h3&gt;
+
 &lt;p&gt;&lt;strong&gt;国内的满二叉树&lt;/strong&gt;
 因为满二叉树是一种特殊的完全二叉树，与其不同的是满二叉树每一层都必须被节点填满，所以我们只需要看一下最后一个节点所代表的index是否和满二叉树该有的节点数量一致即可。那么满二叉树该有的节点数量怎么得到呢？答案是根据树的高度得到。一个二叉树最多节点的数量是=2^n-1这里n是树的高度(height)从n=1开始。此外还有个公式也很有用，那就是求层节点最大数量=2^(n-1)这里n是树的层数(level)从n=1开始。&lt;/p&gt;
 
@@ -362,6 +451,7 @@ Output: [1,2,3]
 国际定义的满二叉树相对国内定义要复杂的多，首先满二叉树的节点个树一定是奇数。其次一旦一个节点有左子节点，那么这个节点必然有右子节点。最后一个一旦一个节点没有左子节点，那么它必然也没有右子节点。一定用到深度优先算法。&lt;/p&gt;
 
 &lt;h3 id=&quot;判断一个树是平衡二叉树&quot;&gt;判断一个树是平衡二叉树&lt;/h3&gt;
+
 &lt;p&gt;这个相对复杂一些，根据定义，平衡二叉树的任何节点的两颗子树高度差不大于1。那么我们就要得到任何节点以及它的两棵子树。这里选择用深度优先搜索比较容易得到每个节点的子树。然后递归的比较两棵子树的高度差是否小于1&lt;/p&gt;
 
 &lt;p&gt;关于树先总结到这里，下次有机会说一下红黑树。&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">树型结构的基本类型以及遍历方法</summary></entry><entry><title type="html">写给自己的一点忠告</title><link href="https://zhenyu0519.github.io/2020/03/10/to_my_self/" rel="alternate" type="text/html" title="写给自己的一点忠告" /><published>2020-03-10T00:00:00-07:00</published><updated>2020-03-10T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/10/to_my_self</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/10/to_my_self/">&lt;h1 id=&quot;写给自己的一点忠告&quot;&gt;写给自己的一点忠告&lt;/h1&gt;
@@ -564,53 +654,4 @@ Explanation: The node with value 7 isn't as far left as possible.
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We go through all nodes once, so the total time complexity is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 958. Check Completeness of a Binary Tree</summary></entry><entry><title type="html">leetcode 894. All Possible Full Binary Trees (Python)</title><link href="https://zhenyu0519.github.io/2020/03/08/lc894/" rel="alternate" type="text/html" title="leetcode 894. All Possible Full Binary Trees (Python)" /><published>2020-03-08T00:00:00-08:00</published><updated>2020-03-08T00:00:00-08:00</updated><id>https://zhenyu0519.github.io/2020/03/08/lc894</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/08/lc894/">&lt;h1 id=&quot;leetcode-110-balanced-binary-tree-python&quot;&gt;Leetcode 110. Balanced Binary Tree (Python)&lt;/h1&gt;
-
-&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Depth-First-Search&quot; target=&quot;_blank&quot;&gt; Depth-First-Search&lt;/a&gt;.
-&lt;a href=&quot;/categories/#Tree&quot; target=&quot;_blank&quot;&gt; Tree&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
-&lt;p&gt;A full binary tree is a binary tree where each node has exactly 0 or 2 children.&lt;/p&gt;
-
-&lt;p&gt;Return a list of all possible full binary trees with N nodes.  Each element of the answer is the root node of one possible tree.&lt;/p&gt;
-
-&lt;p&gt;Each node of each tree in the answer must have node.val = 0.&lt;/p&gt;
-
-&lt;p&gt;You may return the final list of trees in any order.&lt;/p&gt;
-
-&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
-
-&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: 7
-Output: [[0,0,0,null,null,0,0,null,null,0,0],[0,0,0,null,null,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,null,null,null,null,0,0],[0,0,0,0,0,null,null,0,0]]
-Explanation:
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/images/blog/fivetrees.png&quot; alt=&quot;fivetrees&quot; /&gt;
-Return true.&lt;/p&gt;
-
-&lt;h3 id=&quot;note&quot;&gt;Note&lt;/h3&gt;
-&lt;p&gt;1 &amp;lt;= N &amp;lt;= 20&lt;/p&gt;
-
-&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
-
-&lt;p&gt;Full binary tree is a binary tree where each node has exactly 0 or 2 children. So the total number of the tree node must be odd. If it is even then the full binary tree is not exists.&lt;/p&gt;
-
-&lt;p&gt;We start build the full binary by selecting the number of left subtree nodes. The number of right subtree node should be Total number of nodes - 1 (root node) - the number of left subtree nodes. the number of every subtree node can only be odd. If there is only 1 node you can choose, then return list with 1 node&lt;/p&gt;
-
-&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;allPossibleFBT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;#select number of the left substree nodes&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;allPossibleFBT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;allPossibleFBT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We go through half number of the node as the number of left subtree therefore the time complexity is O(n/2) and each number of left subtree will go through O(n/2) times to get the left node. To find the right node, we need to go through O(n/2) times. In total O(n^3)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 110. Balanced Binary Tree (Python)</summary></entry></feed>
+&lt;p&gt;We go through all nodes once, so the total time complexity is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 958. Check Completeness of a Binary Tree</summary></entry></feed>

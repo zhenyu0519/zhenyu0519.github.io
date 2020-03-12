@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>leetcode 109. Convert Sorted List to Binary Search Tree (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <title>leetcode 105. Construct Binary Tree from Preorder and Inorder Traversal (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
     <!-- add google search console -->
     <meta name="google-site-verification" content="Hh37wMK9MFpx6xtWD91RDJzIy-PTLn7ocpNyQ1kPI6M" />
     <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-css/css/primer.css">
@@ -23,23 +23,23 @@
     
 
     
-    <link rel="canonical" href="https://zhenyu0519.github.io/2020/03/11/lc109/">
+    <link rel="canonical" href="https://zhenyu0519.github.io/2020/03/11/lc105/">
     <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="https://zhenyu0519.github.io/feed.xml">
     <link rel="shortcut icon" href="https://zhenyu0519.github.io/favicon.ico">
     
-    <meta property="og:title" content="leetcode 109. Convert Sorted List to Binary Search Tree (Python)">
+    <meta property="og:title" content="leetcode 105. Construct Binary Tree from Preorder and Inorder Traversal (Python)">
       
-    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 109, Convert Sorted List to Binary Search Tree, zhenyu, Depth-First-Search, DFS, Depth First Search, Tree, tree">
-    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 109, Convert Sorted List to Binary Search Tree, zhenyu, Depth-First-Search, DFS, Depth First Search, Tree, tree">
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 105, Construct Binary Tree from Preorder and Inorder Traversal, zhenyu, Depth-First-Search, DFS, Depth First Search, Tree, tree">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 105, Construct Binary Tree from Preorder and Inorder Traversal, zhenyu, Depth-First-Search, DFS, Depth First Search, Tree, tree">
       
-    <meta name="description" content="Leetcode 109. Convert Sorted List to Binary Search Tree (Python)">
-    <meta name="og:description" content="Leetcode 109. Convert Sorted List to Binary Search Tree (Python)">
+    <meta name="description" content="Leetcode 105. Construct Binary Tree from Preorder and Inorder Traversal (Python)">
+    <meta name="og:description" content="Leetcode 105. Construct Binary Tree from Preorder and Inorder Traversal (Python)">
       
     
     
         
     
-    <meta property="og:url" content="https://zhenyu0519.github.io/2020/03/11/lc109/">
+    <meta property="og:url" content="https://zhenyu0519.github.io/2020/03/11/lc105/">
     <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="zh_CN" />
@@ -50,20 +50,20 @@
     <script src="https://zhenyu0519.github.io/assets/js/jquery-ui.js"></script>
     <script src="https://zhenyu0519.github.io/assets/js/main.js"></script>
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>leetcode 109. Convert Sorted List to Binary Search Tree (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
+<title>leetcode 105. Construct Binary Tree from Preorder and Inorder Traversal (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="leetcode 109. Convert Sorted List to Binary Search Tree (Python)" />
+<meta property="og:title" content="leetcode 105. Construct Binary Tree from Preorder and Inorder Traversal (Python)" />
 <meta name="author" content="Jeffrey" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="leetcode 109. Convert Sorted List to Binary Search Tree (Python Solution)" />
-<meta property="og:description" content="leetcode 109. Convert Sorted List to Binary Search Tree (Python Solution)" />
-<link rel="canonical" href="https://zhenyu0519.github.io/2020/03/11/lc109/" />
-<meta property="og:url" content="https://zhenyu0519.github.io/2020/03/11/lc109/" />
+<meta name="description" content="leetcode 105. Construct Binary Tree from Preorder and Inorder Traversal (Python Solution)" />
+<meta property="og:description" content="leetcode 105. Construct Binary Tree from Preorder and Inorder Traversal (Python Solution)" />
+<link rel="canonical" href="https://zhenyu0519.github.io/2020/03/11/lc105/" />
+<meta property="og:url" content="https://zhenyu0519.github.io/2020/03/11/lc105/" />
 <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey’s Blog)" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-03-11T00:00:00-07:00" />
 <script type="application/ld+json">
-{"description":"leetcode 109. Convert Sorted List to Binary Search Tree (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/03/11/lc109/"},"url":"https://zhenyu0519.github.io/2020/03/11/lc109/","headline":"leetcode 109. Convert Sorted List to Binary Search Tree (Python)","dateModified":"2020-03-11T00:00:00-07:00","datePublished":"2020-03-11T00:00:00-07:00","@context":"http://schema.org"}</script>
+{"description":"leetcode 105. Construct Binary Tree from Preorder and Inorder Traversal (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/03/11/lc105/"},"url":"https://zhenyu0519.github.io/2020/03/11/lc105/","headline":"leetcode 105. Construct Binary Tree from Preorder and Inorder Traversal (Python)","dateModified":"2020-03-11T00:00:00-07:00","datePublished":"2020-03-11T00:00:00-07:00","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -89,12 +89,12 @@
     </header>
     <!-- / header -->
 
-    <section class="collection-head small" data-pattern-id="leetcode 109. C">
+    <section class="collection-head small" data-pattern-id="leetcode 105. C">
   <div class="container">
     <div class="columns">
       <div class="column three-fourths">
         <div class="collection-title">
-          <h1 class="collection-header">leetcode 109. Convert Sorted List to Binary Search Tree (Python)</h1>
+          <h1 class="collection-header">leetcode 105. Construct Binary Tree from Preorder and Inorder Traversal (Python)</h1>
           <div class="collection-info">
             
             <span class="meta-info">
@@ -122,6 +122,11 @@
               <a href="https://zhenyu0519.github.io/categories/#Preorder-Traversal" title="Preorder-Traversal">Preorder-Traversal</a>
             </span>
             
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Inorder-Traversal" title="Inorder-Traversal">Inorder-Traversal</a>
+            </span>
+            
           </div>
         </div>
       </div>
@@ -133,64 +138,75 @@
   <div class="columns">
     <div class="column three-fourths">
       <article class="article-content markdown-body">
-        <h1 id="leetcode-109-convert-sorted-list-to-binary-search-tree-python">Leetcode 109. Convert Sorted List to Binary Search Tree (Python)</h1>
+        <h1 id="leetcode-105-construct-binary-tree-from-preorder-and-inorder-traversal-python">Leetcode 105. Construct Binary Tree from Preorder and Inorder Traversal (Python)</h1>
 
 <h1 id="related-topic">Related Topic</h1>
 <p><a href="/categories/#Depth-First-Search" target="_blank"> Depth-First-Search</a>.
-<a href="/categories/#Tree" target="_blank"> Tree</a>.</p>
+<a href="/categories/#Tree" target="_blank"> Tree</a>.
+<a href="/categories/#Preorder-Traversal" target="_blank"> Preorder-Traversal</a>.
+<a href="/categories/#Inorder-Traversal" target="_blank"> Inorder-Traversal</a>.</p>
 
 <h1 id="description">Description</h1>
-<p>Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.</p>
+<p>Given preorder and inorder traversal of a tree, construct the binary tree.</p>
 
-<p>For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.</p>
+<p>Note:
+You may assume that duplicates do not exist in the tree.</p>
 
 <h2 id="sample-io">Sample I/O</h2>
 
+<p>For example, given</p>
 <h3 id="example-1">Example 1</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Given the sorted linked list: [-10,-3,0,5,9],
-
-One possible answer is: [0,-3,9,-10,null,5], which represents the following height balanced BST:
-
-      0
-     / \
-   -3   9
-   /   /
- -10  5
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>preorder = [3,9,20,15,7]
+inorder = [9,3,15,20,7]
+</code></pre></div></div>
+<p>Return the following binary tree:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    3
+   / \
+  9  20
+    /  \
+   15   7
 </code></pre></div></div>
 
 <h1 id="methodology">Methodology</h1>
-<p>This question can be solved by Depth First Search. It is similar with question<a href="/2020/03/11/lc108/" target="_blank"> 108. Convert Sorted Array to Binary Search Tree</a>.The difference is using linked list instead of array</p>
+<p>This question can be solved by Depth First Search.</p>
 
-<p>To ensure the depth of two substrees of each node never differ by more than one. We will start to use the mid node as root recursively. This will ensure the number of left node and right node for each root is either equal or differ by 1. Since the the input is already sorted. It will be easy to build a binary search tree.</p>
+<p>This question is good one, it takes a special way to test the concept of tree traversal and also help you have deeper understand of tree traversal.</p>
 
-<p><strong>To find the mid node in linkedlist, we can use fast and slow pointer. Every time fast will move two steps and slow will move step</strong></p>
+<p>Before we do the question, we should have some knowledge about Preorder, Inoreder and Postorder in advanced.</p>
+
+<p>Suppose we have three results array from binary tree traversal and they are Preorder, Inorder and Postorder. What we get from these informations?</p>
+
+<ol>
+  <li>The first node of Preorder and the last node of the Postorder are both the root node of the binary tree.</li>
+  <li>If we know the root node, then from Inorder, we know that the left side of the root node will build left subtree and rigth side of root node will build right subtree.</li>
+  <li>We know the result of Preorder is listed in [root, left, right] order</li>
+  <li>We know the result of Postorder is listed in [left, right, root] order</li>
+</ol>
+
+<p>From all the information above we can apply dfs to build the binary tree by using Preorder and Inorder or Postorder and Inorder.</p>
+
+<p>To sum up, we need Preorder or Postorder to locate the root node, and we need Inorder to divide left subtree and right subtree nodes.</p>
+
+<p>Ok, for this question,</p>
+<ol>
+  <li>We first get root node from Preorder</li>
+  <li>Then we get the root node index from Inorder, now we know the amount of left subtree nodes and the amount of right subtree nodes. we also find the left part and right part of the inorder.</li>
+  <li>Since we knwo both the amount of the left subtree node and right subtree nodes and we know Preorder is in this format [root,left,right], we will find the preorder of left part and right part.</li>
+  <li>We recursively apply the new preorder list and inorder list to the function.</li>
+</ol>
 
 <h1 id="code">Code</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sortedListToBST</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">ListNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TreeNode</span><span class="p">:</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">head</span><span class="p">:</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">buildTree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">preorder</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">inorder</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">TreeNode</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">preorder</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">inorder</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">None</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">head</span><span class="o">.</span><span class="nb">next</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">head</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
-        
-        <span class="k">def</span> <span class="nf">findMid</span><span class="p">(</span><span class="n">head</span><span class="p">):</span>
-            <span class="n">slow</span> <span class="o">=</span> <span class="n">fast</span> <span class="o">=</span> <span class="n">head</span>
-            <span class="n">prev</span> <span class="o">=</span> <span class="bp">None</span>
-            <span class="k">while</span> <span class="n">fast</span> <span class="ow">and</span> <span class="n">fast</span><span class="o">.</span><span class="nb">next</span><span class="p">:</span>
-                <span class="n">prev</span> <span class="o">=</span> <span class="n">slow</span>
-                <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="o">.</span><span class="nb">next</span>
-                <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="o">.</span><span class="nb">next</span><span class="o">.</span><span class="nb">next</span>
-            <span class="n">prev</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="bp">None</span>
-            <span class="k">return</span> <span class="n">slow</span>
-        
-        <span class="n">mid</span> <span class="o">=</span> <span class="n">findMid</span><span class="p">(</span><span class="n">head</span><span class="p">)</span>
-        <span class="n">root</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">mid</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
-        <span class="n">root</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sortedListToBST</span><span class="p">(</span><span class="n">head</span><span class="p">)</span>
-        <span class="n">root</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sortedListToBST</span><span class="p">(</span><span class="n">mid</span><span class="o">.</span><span class="nb">next</span><span class="p">)</span>
-        
+        <span class="n">root</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">preorder</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">preorder_left_node_amount</span> <span class="o">=</span> <span class="n">inorder_root_index</span> <span class="o">=</span> <span class="n">inorder</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">preorder</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buildTree</span><span class="p">(</span><span class="n">preorder</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">preorder_left_node_amount</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">inorder</span><span class="p">[:</span><span class="n">inorder_root_index</span><span class="p">])</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buildTree</span><span class="p">(</span><span class="n">preorder</span><span class="p">[</span><span class="n">preorder_left_node_amount</span><span class="o">+</span><span class="mi">1</span><span class="p">:],</span><span class="n">inorder</span><span class="p">[</span><span class="n">inorder_root_index</span><span class="o">+</span><span class="mi">1</span><span class="p">:])</span>
         <span class="k">return</span> <span class="n">root</span>
 </code></pre></div></div>
 <h1 id="bigo">BigO</h1>
-<p>We traversal all nodes of the input so it takes O(n) time complexity</p>
+<p>We go through both preorder list and inorder list, so the total time complexity is O(2n)</p>
 
       </article>
       <div class="share">
@@ -207,7 +223,7 @@ One possible answer is: [0,-3,9,-10,null,5], which represents the following heig
         <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
         <script>
         var gitalk = new Gitalk({
-            id: '/2020/03/11/lc109/',
+            id: '/2020/03/11/lc105/',
             clientID: '4cef70907f5b36353d59',
             clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
             repo: 'zhenyu0519.github.io',
