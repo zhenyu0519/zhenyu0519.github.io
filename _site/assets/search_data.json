@@ -61,6 +61,8 @@
   
   
   
+  
+  
 
   
     {
@@ -551,6 +553,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/12/lc106/"
+    } ,
+  
+    {
+      "title"    : "leetcode 199. Binary Tree Right Side View (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/12/lc199/"
     } 
   
 ]
