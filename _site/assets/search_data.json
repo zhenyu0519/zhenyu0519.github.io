@@ -540,6 +540,13 @@
     } ,
   
     {
+      "title"    : "leetcode 101. Symmetric Tree (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/12/lc101/"
+    } ,
+  
+    {
       "title"    : "leetcode 106. Construct Binary Tree from Inorder and Postorder Traversal (Python)",
       "category" : "Leetcode",
       
