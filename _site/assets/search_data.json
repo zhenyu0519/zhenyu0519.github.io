@@ -556,6 +556,13 @@
     } ,
   
     {
+      "title"    : "leetcode 116. Populating Next Right Pointers in Each Node (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/12/lc116/"
+    } ,
+  
+    {
       "title"    : "leetcode 199. Binary Tree Right Side View (Python)",
       "category" : "Leetcode",
       
