@@ -567,6 +567,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/12/lc199/"
+    } ,
+  
+    {
+      "title"    : "leetcode 117. Populating Next Right Pointers in Each Node II (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/13/lc117/"
     } 
   
 ]
