@@ -581,6 +581,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/13/lc545/"
+    } ,
+  
+    {
+      "title"    : "leetcode 114. Flatten Binary Tree to Linked List (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/14/lc114/"
     } 
   
 ]
