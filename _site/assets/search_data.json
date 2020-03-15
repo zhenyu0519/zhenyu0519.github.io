@@ -588,6 +588,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/14/lc114/"
+    } ,
+  
+    {
+      "title"    : "leetcode 430. Flatten a Multilevel Doubly Linked List (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/14/lc430/"
     } 
   
 ]

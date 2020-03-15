@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" prefix="og: http://ogp.me/ns#" class="han-init">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>leetcode 430. Flatten a Multilevel Doubly Linked List (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <!-- add google search console -->
+    <meta name="google-site-verification" content="Hh37wMK9MFpx6xtWD91RDJzIy-PTLn7ocpNyQ1kPI6M" />
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-css/css/primer.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-markdown/dist/user-content.min.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/octicons/octicons/octicons.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/collection.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/repo-card.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/sections/repo-list.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/sections/mini-repo-list.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/boxed-group.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/common.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/share.js/dist/css/share.min.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/responsive.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/posts/index.css">
+    <!-- Latest compiled and minified CSS -->
+    
+
+    
+    <link rel="canonical" href="https://zhenyu0519.github.io/2020/03/14/lc430/">
+    <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="https://zhenyu0519.github.io/feed.xml">
+    <link rel="shortcut icon" href="https://zhenyu0519.github.io/favicon.ico">
+    
+    <meta property="og:title" content="leetcode 430. Flatten a Multilevel Doubly Linked List (Python)">
+      
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 430, Flatten a Multilevel Doubly Linked List, zhenyu, Depth-First-Search, DFS, Depth First Search, Tree, tree">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 430, Flatten a Multilevel Doubly Linked List, zhenyu, Depth-First-Search, DFS, Depth First Search, Tree, tree">
+      
+    <meta name="description" content="Leetcode 430. Flatten a Multilevel Doubly Linked List (Python)">
+    <meta name="og:description" content="Leetcode 430. Flatten a Multilevel Doubly Linked List (Python)">
+      
+    
+    
+        
+    
+    <meta property="og:url" content="https://zhenyu0519.github.io/2020/03/14/lc430/">
+    <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_CN" />
+    
+    <meta property="article:published_time" content="2020-03-14">
+    
+    <script src="https://zhenyu0519.github.io/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/jquery-ui.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/main.js"></script>
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>leetcode 430. Flatten a Multilevel Doubly Linked List (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="leetcode 430. Flatten a Multilevel Doubly Linked List (Python)" />
+<meta name="author" content="Jeffrey" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="leetcode 430. Flatten a Multilevel Doubly Linked List (Python Solution)" />
+<meta property="og:description" content="leetcode 430. Flatten a Multilevel Doubly Linked List (Python Solution)" />
+<link rel="canonical" href="https://zhenyu0519.github.io/2020/03/14/lc430/" />
+<meta property="og:url" content="https://zhenyu0519.github.io/2020/03/14/lc430/" />
+<meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey’s Blog)" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-14T00:00:00-07:00" />
+<script type="application/ld+json">
+{"description":"leetcode 430. Flatten a Multilevel Doubly Linked List (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/03/14/lc430/"},"url":"https://zhenyu0519.github.io/2020/03/14/lc430/","headline":"leetcode 430. Flatten a Multilevel Doubly Linked List (Python)","dateModified":"2020-03-14T00:00:00-07:00","datePublished":"2020-03-14T00:00:00-07:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body class="" data-mz="">
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="https://zhenyu0519.github.io/" title="杰弗里 · 时光博客(Jeffrey's Blog)"><span class="octicon octicon-mark-github"></span> 杰弗里 · 时光博客(Jeffrey's Blog)</a></h1>
+            <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <nav class="site-header-nav" role="navigation">
+                
+                <a href="https://zhenyu0519.github.io/" class=" site-header-nav-item" target="" title="Home">Home</a>
+                
+                <a href="https://zhenyu0519.github.io/categories/" class=" site-header-nav-item" target="" title="Categories">Categories</a>
+                
+                <a href="https://zhenyu0519.github.io/about/" class=" site-header-nav-item" target="" title="About">About</a>
+                
+            </nav>
+        </div>
+    </header>
+    <!-- / header -->
+
+    <section class="collection-head small" data-pattern-id="leetcode 430. F">
+  <div class="container">
+    <div class="columns">
+      <div class="column three-fourths">
+        <div class="collection-title">
+          <h1 class="collection-header">leetcode 430. Flatten a Multilevel Doubly Linked List (Python)</h1>
+          <div class="collection-info">
+            
+            <span class="meta-info">
+              <span class="octicon octicon-calendar"></span> 14 Mar 2020
+            </span>
+            
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Leetcode" title="Leetcode">Leetcode</a>
+            </span>
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Depth-First-Search" title="Depth-First-Search">Depth-First-Search</a>
+            </span>
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Tree" title="Tree">Tree</a>
+            </span>
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Postorder-Traversal" title="Postorder-Traversal">Postorder-Traversal</a>
+            </span>
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Inorder-Traversal" title="Inorder-Traversal">Inorder-Traversal</a>
+            </span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- / .banner -->
+<section class="container content">
+  <div class="columns">
+    <div class="column three-fourths">
+      <article class="article-content markdown-body">
+        <h1 id="leetcode-430-flatten-a-multilevel-doubly-linked-list-python">Leetcode 430. Flatten a Multilevel Doubly Linked List (Python)</h1>
+
+<h1 id="related-topic">Related Topic</h1>
+<p><a href="/categories/#Depth-First-Search" target="_blank"> Depth-First-Search</a>.
+<a href="/categories/#Tree" target="_blank"> Tree</a>.
+<a href="/categories/#Postorder-Traversal" target="_blank"> Postorder-Traversal</a>.</p>
+
+<h1 id="description">Description</h1>
+
+<p>You are given a doubly linked list which in addition to the next and previous pointers, it could have a child pointer, which may or may not point to a separate doubly linked list. These child lists may have one or more children of their own, and so on, to produce a multilevel data structure, as shown in the example below.</p>
+
+<p>Flatten the list so that all the nodes appear in a single-level, doubly linked list. You are given the head of the first level of the list.</p>
+
+<h2 id="sample-io">Sample I/O</h2>
+<p>For example, given the following tree:</p>
+<h3 id="example-1">Example 1</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: head = [1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12]
+Output: [1,2,3,7,8,11,12,9,10,4,5,6]
+Explanation:
+
+The multilevel linked list in the input is as follows:
+</code></pre></div></div>
+<p><img src="/images/blog/multilevellinkedlist.png" alt="dll" /></p>
+
+<p>After flattening the multilevel linked list it becomes:</p>
+
+<p><img src="/images/blog/multilevellinkedlistflattened.png" alt="dll" /></p>
+
+<h3 id="example-2">Example 2</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: head = [1,2,null,3]
+Output: [1,3,2]
+Explanation:
+
+The input multilevel linked list is as follows:
+
+  1---2---NULL
+  |
+  3---NULL
+</code></pre></div></div>
+
+<h3 id="example-2-1">Example 2</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: head = []
+Output: []
+</code></pre></div></div>
+
+<p>How multilevel linked list is represented in test case:</p>
+
+<p>We use the multilevel linked list from Example 1 above:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 1---2---3---4---5---6--NULL
+         |
+         7---8---9---10--NULL
+             |
+             11--12--NULL
+</code></pre></div></div>
+
+<p>The serialization of each level is as follows:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1,2,3,4,5,6,null]
+[7,8,9,10,null]
+[11,12,null]
+</code></pre></div></div>
+
+<p>To serialize all levels together we will add nulls in each level to signify no node connects to the upper node of the previous level. The serialization becomes:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1,2,3,4,5,6,null]
+[null,null,7,8,9,10,null]
+[null,11,12,null]
+</code></pre></div></div>
+
+<p>Merging the serialization of each level and removing trailing nulls we obtain:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1,2,3,4,5,6,null,null,null,7,8,9,10,null,null,11,12]
+</code></pre></div></div>
+
+<p>Constraints:</p>
+
+<ul>
+  <li>Number of Nodes will not exceed 1000.</li>
+  <li>1 &lt;= Node.val &lt;= 10^5</li>
+</ul>
+
+<h1 id="methodology">Methodology</h1>
+<p>This question can be solved by Depth First Search. It is similar with question<a href="/2020/03/14/lc114/" target="_blank"> 114. Flatten Binary Tree to Linked List</a>. The difference is using doubly linked list this time.</p>
+
+<p>Start traversing the double linked list. Once meet a node with child, we first store the current node’s next node. Then we connect the current node to child node and traversal child node. After done traversing child node, we want to connet the tail of child node to the original current node’s next node. We can use dfs to recursivly connect the child node and even child’s child node.</p>
+
+<p>As this is doubly linked list, do not forget the prev pointer.</p>
+
+<h1 id="code">Code</h1>
+<p>```python
+def flatten(self, head: ‘Node’) -&gt; ‘Node’:
+        if head is None: return None</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    def flattenChild(node):
+        if node.next is None: return node
+        while node and node.next:
+            if node.child:
+                tmp = node.next
+                node.next, node.child.prev= node.child, node
+                node.child = None
+                node = flattenChild(node.next)
+                node.next, tmp.prev= tmp, node
+            node = node.next
+        return node
+            
+    node = head
+    while node:
+        if node.child:
+            tmp = node.next
+            node.next, node.child.prev= node.child, node
+            node.child = None
+            node = flattenChild(node.next)
+            if tmp:
+                node.next, tmp.prev= tmp, node
+        else:
+            node = node.next
+    return head # BigO We traversal all nodes once so the total time complexity is O(n)
+</code></pre></div></div>
+
+      </article>
+      <div class="share">
+        <div class="share-component"></div>
+      </div>
+      <div class="comment">
+        
+
+  
+
+  
+        <div id="gitalk-container"></div>
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script>
+        var gitalk = new Gitalk({
+            id: '/2020/03/14/lc430/',
+            clientID: '4cef70907f5b36353d59',
+            clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
+            repo: 'zhenyu0519.github.io',
+            owner: 'zhenyu0519',
+            admin: ['zhenyu0519'],
+            labels: ['gitment'],
+            perPage: 50,
+        })
+        gitalk.render('gitalk-container')
+        </script>
+  
+
+
+      </div>
+    </div>
+    <div class="column one-fourth">
+      
+<h3>Search</h3>
+<div id="site_search" class="site_search">
+    <input type="text" id="search_box" placeholder="Search">
+</div>
+
+<ul id="search_results"></ul>
+
+<link rel="stylesheet" type="text/css" href="https://zhenyu0519.github.io/assets/css/modules/sidebar-search.css">
+<script src="https://zhenyu0519.github.io/assets/js/simple-jekyll-search.min.js"></script>
+<script src="https://zhenyu0519.github.io/assets/js/search.js"></script>
+
+<script type="text/javascript">
+SimpleJekyllSearch({
+    searchInput: document.getElementById('search_box'),
+    resultsContainer: document.getElementById('search_results'),
+    json: 'https://zhenyu0519.github.io/assets/search_data.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No results found',
+    fuzzy: false,
+    exclude: ['Welcome'],
+    limit: 10
+})
+</script>
+
+      
+<h3 class="post-directory-title mobile-hidden">Table of Contents</h3>
+<div id="post-directory-module" class="mobile-hidden">
+  <section class="post-directory">
+  <!-- Links that trigger the jumping -->
+  <!-- Added by javascript below -->
+  <dl></dl>
+  </section>
+</div>
+
+<script src="https://zhenyu0519.github.io/assets/js/jquery.toc.js"></script>
+
+    </div>
+  </div>
+</section>
+<!-- /section.content -->
+    <footer class="container">
+        <div class="site-footer" role="contentinfo">
+            <div class="copyright left mobile-block">
+                    © 2019
+                    <span title="Jeffrey">Jeffrey</span>
+                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
+            </div>
+
+            <ul class="site-footer-links right mobile-hidden">
+                <li>
+                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
+                </li>
+            </ul>
+            <a href="https://github.com/zhenyu0519/zhenyu0519.github.io" target="_blank" aria-label="view source code">
+                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+            </a>
+            <ul class="site-footer-links mobile-hidden">
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/" title="Home" target="">Home</a>
+                </li>
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/categories/" title="Categories" target="">Categories</a>
+                </li>
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/about/" title="About" target="">About</a>
+                </li>
+                
+                <li><a href="https://zhenyu0519.github.io/feed.xml"><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
+            </ul>
+
+        </div>
+    </footer>
+    <div class="tools-wrapper">
+      <a class="gotop" href="#" title="回到顶部"><span class="octicon octicon-arrow-up"></span></a>
+    </div>
+    <!-- / footer -->
+    <script src="https://zhenyu0519.github.io/assets/vendor/share.js/dist/js/share.min.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/geopattern.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/prism.js"></script>
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/prism.css">
+    <script>
+      jQuery(document).ready(function($) {
+        // geopattern
+        $('.geopattern').each(function(){
+          $(this).geopattern($(this).data('pattern-id'));
+        });
+       // hljs.initHighlightingOnLoad();
+      });
+    </script>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div style="display:none">
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-113380665-1', 'auto');
+        ga('send', 'pageview');
+
+      </script>
+    </div>
+    
+</body>
+</html>
