@@ -595,6 +595,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/14/lc430/"
+    } ,
+  
+    {
+      "title"    : "leetcode 979. Distribute Coins in Binary Treet (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/14/lc979/"
     } 
   
 ]
