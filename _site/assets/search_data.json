@@ -614,6 +614,13 @@
     } ,
   
     {
+      "title"    : "leetcode 112. Path Sum (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/16/lc112/"
+    } ,
+  
+    {
       "title"    : "leetcode 257. Binary Tree Paths (Python)",
       "category" : "Leetcode",
       
