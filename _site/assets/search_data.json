@@ -616,6 +616,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/16/lc339/"
+    } ,
+  
+    {
+      "title"    : "leetcode 364. Nested List Weight Sum II (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/16/lc364/"
     } 
   
 ]
