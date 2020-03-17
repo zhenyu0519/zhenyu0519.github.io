@@ -653,6 +653,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/16/lc437/"
+    } ,
+  
+    {
+      "title"    : "leetcode 687. Longest Univalue Path (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/16/lc687/"
     } 
   
 ]
