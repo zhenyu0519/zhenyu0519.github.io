@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" prefix="og: http://ogp.me/ns#" class="han-init">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>leetcode 111. Minimum Depth of Binary Tree (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <!-- add google search console -->
+    <meta name="google-site-verification" content="Hh37wMK9MFpx6xtWD91RDJzIy-PTLn7ocpNyQ1kPI6M" />
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-css/css/primer.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-markdown/dist/user-content.min.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/octicons/octicons/octicons.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/collection.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/repo-card.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/sections/repo-list.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/sections/mini-repo-list.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/boxed-group.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/common.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/share.js/dist/css/share.min.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/responsive.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/posts/index.css">
+    <!-- Latest compiled and minified CSS -->
+    
+
+    
+    <link rel="canonical" href="https://zhenyu0519.github.io/2020/03/18/lc111/">
+    <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="https://zhenyu0519.github.io/feed.xml">
+    <link rel="shortcut icon" href="https://zhenyu0519.github.io/favicon.ico">
+    
+    <meta property="og:title" content="leetcode 111. Minimum Depth of Binary Tree (Python)">
+      
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 111. Minimum Depth of Binary Tree, zhenyu, Depth-First-Search, DFS, Depth First Search, Tree, tree">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 111. Minimum Depth of Binary Tree, zhenyu, Depth-First-Search, DFS, Depth First Search, Tree, tree">
+      
+    <meta name="description" content="Leetcode 111. Minimum Depth of Binary Tree (Python)">
+    <meta name="og:description" content="Leetcode 111. Minimum Depth of Binary Tree (Python)">
+      
+    
+    
+        
+    
+    <meta property="og:url" content="https://zhenyu0519.github.io/2020/03/18/lc111/">
+    <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_CN" />
+    
+    <meta property="article:published_time" content="2020-03-18">
+    
+    <script src="https://zhenyu0519.github.io/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/jquery-ui.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/main.js"></script>
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>leetcode 111. Minimum Depth of Binary Tree (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="leetcode 111. Minimum Depth of Binary Tree (Python)" />
+<meta name="author" content="Jeffrey" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="leetcode 111. Minimum Depth of Binary Tree (Python Solution)" />
+<meta property="og:description" content="leetcode 111. Minimum Depth of Binary Tree (Python Solution)" />
+<link rel="canonical" href="https://zhenyu0519.github.io/2020/03/18/lc111/" />
+<meta property="og:url" content="https://zhenyu0519.github.io/2020/03/18/lc111/" />
+<meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey’s Blog)" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-18T00:00:00-07:00" />
+<script type="application/ld+json">
+{"description":"leetcode 111. Minimum Depth of Binary Tree (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/03/18/lc111/"},"url":"https://zhenyu0519.github.io/2020/03/18/lc111/","headline":"leetcode 111. Minimum Depth of Binary Tree (Python)","dateModified":"2020-03-18T00:00:00-07:00","datePublished":"2020-03-18T00:00:00-07:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body class="" data-mz="">
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="https://zhenyu0519.github.io/" title="杰弗里 · 时光博客(Jeffrey's Blog)"><span class="octicon octicon-mark-github"></span> 杰弗里 · 时光博客(Jeffrey's Blog)</a></h1>
+            <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <nav class="site-header-nav" role="navigation">
+                
+                <a href="https://zhenyu0519.github.io/" class=" site-header-nav-item" target="" title="Home">Home</a>
+                
+                <a href="https://zhenyu0519.github.io/categories/" class=" site-header-nav-item" target="" title="Categories">Categories</a>
+                
+                <a href="https://zhenyu0519.github.io/about/" class=" site-header-nav-item" target="" title="About">About</a>
+                
+            </nav>
+        </div>
+    </header>
+    <!-- / header -->
+
+    <section class="collection-head small" data-pattern-id="leetcode 111. M">
+  <div class="container">
+    <div class="columns">
+      <div class="column three-fourths">
+        <div class="collection-title">
+          <h1 class="collection-header">leetcode 111. Minimum Depth of Binary Tree (Python)</h1>
+          <div class="collection-info">
+            
+            <span class="meta-info">
+              <span class="octicon octicon-calendar"></span> 18 Mar 2020
+            </span>
+            
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Leetcode" title="Leetcode">Leetcode</a>
+            </span>
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Depth-First-Search" title="Depth-First-Search">Depth-First-Search</a>
+            </span>
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Tree" title="Tree">Tree</a>
+            </span>
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Dynamic-Programming" title="Dynamic-Programming">Dynamic-Programming</a>
+            </span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- / .banner -->
+<section class="container content">
+  <div class="columns">
+    <div class="column three-fourths">
+      <article class="article-content markdown-body">
+        <h1 id="leetcode-111-minimum-depth-of-binary-tree-python">Leetcode 111. Minimum Depth of Binary Tree (Python)</h1>
+
+<h1 id="related-topic">Related Topic</h1>
+<p><a href="/categories/#Depth-First-Search" target="_blank"> Depth-First-Search</a>.
+<a href="/categories/#Tree" target="_blank"> Tree</a>.</p>
+
+<h1 id="description">Description</h1>
+<p>Given a binary tree, find its minimum depth.</p>
+
+<p>The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.</p>
+
+<p>Note: A leaf is a node with no children.</p>
+
+<h2 id="sample-io">Sample I/O</h2>
+
+<h3 id="example-1">Example 1</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Given binary tree [3,9,20,null,null,15,7],
+
+    3
+   / \
+  9  20
+    /  \
+   15   7
+
+return its minimum depth = 2.
+</code></pre></div></div>
+
+<h1 id="methodology">Methodology</h1>
+<p>This question can be solved by Depth First Search.</p>
+
+<p>This is a easy level question and it took me long time. To find the maxmium depth of the tree is fairly easy. However to find the minimum depth of a tree is not. There is a tricky thing here that took me long time to figure out.</p>
+
+<p>If a root has left subtree and right subtree, all we need to do is find which subtree has minimum depth min(left_subtree, right_subtree)+1 (for root itself). However if the root has only one subtree either left or right min(left_subtree, right_subtree) will give us 0 + 1 for(root itself), this is incorrect. Root itself can not be leaf node if it has at least one subtree. So if root has only 1 subtree, we are going to get max(leftsubtree, right_subtree)+1.</p>
+
+<h1 id="codedfs">Code(DFS)</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">minDepth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">root</span><span class="o">.</span><span class="n">left</span> <span class="ow">and</span> <span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">minDepth</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">minDepth</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">minDepth</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">minDepth</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div></div>
+<h1 id="bigo">BigO</h1>
+<p>We traversal all nodes of the tree once so time complexity is O(n)</p>
+
+      </article>
+      <div class="share">
+        <div class="share-component"></div>
+      </div>
+      <div class="comment">
+        
+
+  
+
+  
+        <div id="gitalk-container"></div>
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script>
+        var gitalk = new Gitalk({
+            id: '/2020/03/18/lc111/',
+            clientID: '4cef70907f5b36353d59',
+            clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
+            repo: 'zhenyu0519.github.io',
+            owner: 'zhenyu0519',
+            admin: ['zhenyu0519'],
+            labels: ['gitment'],
+            perPage: 50,
+        })
+        gitalk.render('gitalk-container')
+        </script>
+  
+
+
+      </div>
+    </div>
+    <div class="column one-fourth">
+      
+<h3>Search</h3>
+<div id="site_search" class="site_search">
+    <input type="text" id="search_box" placeholder="Search">
+</div>
+
+<ul id="search_results"></ul>
+
+<link rel="stylesheet" type="text/css" href="https://zhenyu0519.github.io/assets/css/modules/sidebar-search.css">
+<script src="https://zhenyu0519.github.io/assets/js/simple-jekyll-search.min.js"></script>
+<script src="https://zhenyu0519.github.io/assets/js/search.js"></script>
+
+<script type="text/javascript">
+SimpleJekyllSearch({
+    searchInput: document.getElementById('search_box'),
+    resultsContainer: document.getElementById('search_results'),
+    json: 'https://zhenyu0519.github.io/assets/search_data.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No results found',
+    fuzzy: false,
+    exclude: ['Welcome'],
+    limit: 10
+})
+</script>
+
+      
+<h3 class="post-directory-title mobile-hidden">Table of Contents</h3>
+<div id="post-directory-module" class="mobile-hidden">
+  <section class="post-directory">
+  <!-- Links that trigger the jumping -->
+  <!-- Added by javascript below -->
+  <dl></dl>
+  </section>
+</div>
+
+<script src="https://zhenyu0519.github.io/assets/js/jquery.toc.js"></script>
+
+    </div>
+  </div>
+</section>
+<!-- /section.content -->
+    <footer class="container">
+        <div class="site-footer" role="contentinfo">
+            <div class="copyright left mobile-block">
+                    © 2019
+                    <span title="Jeffrey">Jeffrey</span>
+                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
+            </div>
+
+            <ul class="site-footer-links right mobile-hidden">
+                <li>
+                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
+                </li>
+            </ul>
+            <a href="https://github.com/zhenyu0519/zhenyu0519.github.io" target="_blank" aria-label="view source code">
+                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+            </a>
+            <ul class="site-footer-links mobile-hidden">
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/" title="Home" target="">Home</a>
+                </li>
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/categories/" title="Categories" target="">Categories</a>
+                </li>
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/about/" title="About" target="">About</a>
+                </li>
+                
+                <li><a href="https://zhenyu0519.github.io/feed.xml"><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
+            </ul>
+
+        </div>
+    </footer>
+    <div class="tools-wrapper">
+      <a class="gotop" href="#" title="回到顶部"><span class="octicon octicon-arrow-up"></span></a>
+    </div>
+    <!-- / footer -->
+    <script src="https://zhenyu0519.github.io/assets/vendor/share.js/dist/js/share.min.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/geopattern.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/prism.js"></script>
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/prism.css">
+    <script>
+      jQuery(document).ready(function($) {
+        // geopattern
+        $('.geopattern').each(function(){
+          $(this).geopattern($(this).data('pattern-id'));
+        });
+       // hljs.initHighlightingOnLoad();
+      });
+    </script>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div style="display:none">
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-113380665-1', 'auto');
+        ga('send', 'pageview');
+
+      </script>
+    </div>
+    
+</body>
+</html>
