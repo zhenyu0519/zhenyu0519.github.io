@@ -65,6 +65,8 @@
   
   
   
+  
+  
 
   
     {
@@ -695,6 +697,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/18/lc529/"
+    } ,
+  
+    {
+      "title"    : "leetcode 690. Employee Importance (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/19/lc690/"
     } 
   
 ]
