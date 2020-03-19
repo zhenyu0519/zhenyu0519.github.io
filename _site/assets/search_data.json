@@ -688,6 +688,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/18/lc417/"
+    } ,
+  
+    {
+      "title"    : "leetcode 529. Minesweeper (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/18/lc529/"
     } 
   
 ]
