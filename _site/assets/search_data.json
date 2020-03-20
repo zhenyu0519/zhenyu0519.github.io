@@ -700,6 +700,13 @@
     } ,
   
     {
+      "title"    : "leetcode 542. 01 Matrix (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/19/lc542/"
+    } ,
+  
+    {
       "title"    : "leetcode 690. Employee Importance (Python)",
       "category" : "Leetcode",
       
