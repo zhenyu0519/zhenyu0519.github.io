@@ -753,6 +753,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/21/lc336/"
+    } ,
+  
+    {
+      "title"    : "leetcode 515. Find Largest Value in Each Tree Row (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/21/lc515/"
     } 
   
 ]
