@@ -797,6 +797,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/24/lc103/"
+    } ,
+  
+    {
+      "title"    : "leetcode 127. Word Ladder (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/24/lc127/"
     } 
   
 ]
