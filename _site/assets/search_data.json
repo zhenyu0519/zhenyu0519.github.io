@@ -811,6 +811,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/25/lc107/"
+    } ,
+  
+    {
+      "title"    : "994. Rotting Oranges (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/25/lc994/"
     } 
   
 ]
