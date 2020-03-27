@@ -69,6 +69,8 @@
   
   
   
+  
+  
 
   
     {
@@ -825,6 +827,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/25/lc994/"
+    } ,
+  
+    {
+      "title"    : "429. N-ary Tree Level Order Traversal (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/26/lc429/"
     } ,
   
     {
