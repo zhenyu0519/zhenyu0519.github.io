@@ -828,6 +828,13 @@
     } ,
   
     {
+      "title"    : "559. Maximum Depth of N-ary Tree (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/26/lc559/"
+    } ,
+  
+    {
       "title"    : "909. Snakes and Ladders (Python)",
       "category" : "Leetcode",
       
