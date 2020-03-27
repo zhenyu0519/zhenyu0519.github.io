@@ -1,173 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-03-26T21:58:24-07:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">429. N-ary Tree Level Order Traversal (Python)</title><link href="https://zhenyu0519.github.io/2020/03/26/lc429/" rel="alternate" type="text/html" title="429. N-ary Tree Level Order Traversal (Python)" /><published>2020-03-26T00:00:00-07:00</published><updated>2020-03-26T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/26/lc429</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/26/lc429/">&lt;h1 id=&quot;429-n-ary-tree-level-order-traversal-python&quot;&gt;429. N-ary Tree Level Order Traversal (Python)&lt;/h1&gt;
-
-&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Breadth-First-Search&quot; target=&quot;_blank&quot;&gt; Breadth-First-Search&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
-&lt;p&gt;Given an n-ary tree, return the level order traversal of its nodes’ values.&lt;/p&gt;
-
-&lt;p&gt;Nary-Tree input serialization is represented in their level order traversal, each group of children is separated by the null value (See examples).&lt;/p&gt;
-
-&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
-
-&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/images/blog/narytreeexample.png&quot; alt=&quot;orange&quot; /&gt;&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: root = [1,null,3,2,4,null,5,6]
-Output: [[1],[3,2,4],[5,6]]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/images/blog/sample_4_964.png&quot; alt=&quot;orange&quot; /&gt;&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: root = [1,null,2,3,4,5,null,null,6,7,null,8,null,9,10,null,null,11,null,12,null,13,null,null,14]
-Output: [[1],[2,3,4,5],[6,7,8,9,10],[11,12,13],[14]]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;note&quot;&gt;Note&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;The depth of the n-ary tree is less than or equal to 1000.&lt;/li&gt;
-  &lt;li&gt;The total number of nodes is between [0, 10^4].&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
-&lt;p&gt;This question is similart with question &lt;a href=&quot;/2020/03/26/lc559/&quot; target=&quot;_blank&quot;&gt; 559. Maximum Depth of N-ary Tree (Python) &lt;/a&gt; but this time we are going to get print nodes by level.&lt;/p&gt;
-
-&lt;p&gt;We need tmp list to append each level node’s then append the tmp list to final result list.&lt;/p&gt;
-
-&lt;h1 id=&quot;code-bfs&quot;&gt;Code (BFS)&lt;/h1&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;levelOrder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Node'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collections&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deque&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;popleft&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;child&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We traversal all elements of tree once so total time complexity is O(n) where is the size of the tree&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">429. N-ary Tree Level Order Traversal (Python)</summary></entry><entry><title type="html">559. Maximum Depth of N-ary Tree (Python)</title><link href="https://zhenyu0519.github.io/2020/03/26/lc559/" rel="alternate" type="text/html" title="559. Maximum Depth of N-ary Tree (Python)" /><published>2020-03-26T00:00:00-07:00</published><updated>2020-03-26T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/26/lc559</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/26/lc559/">&lt;h1 id=&quot;559-maximum-depth-of-n-ary-tree-python&quot;&gt;559. Maximum Depth of N-ary Tree (Python)&lt;/h1&gt;
-
-&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Breadth-First-Search&quot; target=&quot;_blank&quot;&gt; Breadth-First-Search&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
-&lt;p&gt;Given a n-ary tree, find its maximum depth.&lt;/p&gt;
-
-&lt;p&gt;The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.&lt;/p&gt;
-
-&lt;p&gt;Nary-Tree input serialization is represented in their level order traversal, each group of children is separated by the null value (See examples).&lt;/p&gt;
-
-&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
-
-&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/images/blog/narytreeexample.png&quot; alt=&quot;orange&quot; /&gt;&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: root = [1,null,3,2,4,null,5,6]
-Output: 3
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/images/blog/sample_4_964.png&quot; alt=&quot;orange&quot; /&gt;&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: root = [1,null,2,3,4,5,null,null,6,7,null,8,null,9,10,null,null,11,null,12,null,13,null,null,14]
-Output: 5
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;note&quot;&gt;Note&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;The depth of the n-ary tree is less than or equal to 1000.&lt;/li&gt;
-  &lt;li&gt;The total number of nodes is between [0, 10^4].&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
-&lt;p&gt;Create a queue and append the root and initial depth to queue. Use BFS traversal tree level by level from root. For each root, append the root’s children nodes and depth+1 to queue. The last node of the tree will also give us the final depth of the tree&lt;/p&gt;
-
-&lt;p&gt;We can also use DFS to get the answer but the performance is far worse than BFS.&lt;/p&gt;
-
-&lt;h1 id=&quot;code-bfs&quot;&gt;Code (BFS)&lt;/h1&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;maxDepth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Node'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collections&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deque&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;depth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;depth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;depth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;popleft&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;child&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;depth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;depth&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We traversal all elements of tree once so total time complexity is O(n) where is the size of the tree&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">559. Maximum Depth of N-ary Tree (Python)</summary></entry><entry><title type="html">1091. Shortest Path in Binary Matrix (Python)</title><link href="https://zhenyu0519.github.io/2020/03/26/lc1091/" rel="alternate" type="text/html" title="1091. Shortest Path in Binary Matrix (Python)" /><published>2020-03-26T00:00:00-07:00</published><updated>2020-03-26T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/26/lc1091</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/26/lc1091/">&lt;h1 id=&quot;1091-shortest-path-in-binary-matrix-python&quot;&gt;1091. Shortest Path in Binary Matrix (Python)&lt;/h1&gt;
-
-&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Breadth-First-Search&quot; target=&quot;_blank&quot;&gt; Breadth-First-Search&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
-&lt;p&gt;In an N by N square grid, each cell is either empty (0) or blocked (1).&lt;/p&gt;
-
-&lt;p&gt;A clear path from top-left to bottom-right has length k if and only if it is composed of cells C_1, C_2, …, C_k such that:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Adjacent cells C_i and C_{i+1} are connected 8-directionally (ie., they are different and share an edge or corner)&lt;/li&gt;
-  &lt;li&gt;C_1 is at location (0, 0) (ie. has value grid[0][0])&lt;/li&gt;
-  &lt;li&gt;C_k is at location (N-1, N-1) (ie. has value grid[N-1][N-1])&lt;/li&gt;
-  &lt;li&gt;If C_i is located at (r, c), then grid[r][c] is empty (ie. grid[r][c] == 0).
-Return the length of the shortest such clear path from top-left to bottom-right.  If such a path does not exist, return -1.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
-
-&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/images/blog/example1_1.png&quot; alt=&quot;ex1-1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/blog/example1_2.png&quot; alt=&quot;ex1-2&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/images/blog/example2_1.png&quot; alt=&quot;ex2-1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/blog/example2_2.png&quot; alt=&quot;ex2-2&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;note&quot;&gt;Note&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;1 &amp;lt;= grid.length == grid[0].length &amp;lt;= 100&lt;/li&gt;
-  &lt;li&gt;grid[r][c] is 0 or 1&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
-&lt;p&gt;Append the start path coordinate to queue. Use BFS traversal the 2D list from path coordinate pop out from queue. Each time expand the current path coordinate for 8 directions. And append the 8 directions’s path to queue. The first path to reach bottom right will return the steps.&lt;/p&gt;
-
-&lt;h1 id=&quot;code-bfs&quot;&gt;Code (BFS)&lt;/h1&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;shortestPathBinaryMatrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;dirs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;col&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collections&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deque&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;step&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;popleft&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dy&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dirs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ny&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dy&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ny&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ny&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ny&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                        &lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ny&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-                        &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ny&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-                        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ny&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;step&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;step&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We traversal all elements of 2D list once so total time complexity is O(mn) where m is the size of row and n is the size of column&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">1091. Shortest Path in Binary Matrix (Python)</summary></entry><entry><title type="html">909. Snakes and Ladders (Python)</title><link href="https://zhenyu0519.github.io/2020/03/26/lc909/" rel="alternate" type="text/html" title="909. Snakes and Ladders (Python)" /><published>2020-03-26T00:00:00-07:00</published><updated>2020-03-26T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/26/lc909</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/26/lc909/">&lt;h1 id=&quot;909-snakes-and-ladders-python&quot;&gt;909. Snakes and Ladders (Python)&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-03-26T22:52:48-07:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">909. Snakes and Ladders (Python)</title><link href="https://zhenyu0519.github.io/2020/03/26/lc909/" rel="alternate" type="text/html" title="909. Snakes and Ladders (Python)" /><published>2020-03-26T00:00:00-07:00</published><updated>2020-03-26T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/26/lc909</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/26/lc909/">&lt;h1 id=&quot;909-snakes-and-ladders-python&quot;&gt;909. Snakes and Ladders (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Breadth-First-Search&quot; target=&quot;_blank&quot;&gt; Breadth-First-Search&lt;/a&gt;.&lt;/p&gt;
@@ -256,7 +87,238 @@ It can be shown that you need at least 4 moves to reach the N*N-th square, so th
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We traversal all elements of 2D list once so total time complexity is O(n) where is the size of the 2D list&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">909. Snakes and Ladders (Python)</summary></entry><entry><title type="html">994. Rotting Oranges (Python)</title><link href="https://zhenyu0519.github.io/2020/03/25/lc994/" rel="alternate" type="text/html" title="994. Rotting Oranges (Python)" /><published>2020-03-25T00:00:00-07:00</published><updated>2020-03-25T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/25/lc994</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/25/lc994/">&lt;h1 id=&quot;994-rotting-oranges-python&quot;&gt;994. Rotting Oranges (Python)&lt;/h1&gt;
+&lt;p&gt;We traversal all elements of 2D list once so total time complexity is O(n) where is the size of the 2D list&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">909. Snakes and Ladders (Python)</summary></entry><entry><title type="html">429. N-ary Tree Level Order Traversal (Python)</title><link href="https://zhenyu0519.github.io/2020/03/26/lc429/" rel="alternate" type="text/html" title="429. N-ary Tree Level Order Traversal (Python)" /><published>2020-03-26T00:00:00-07:00</published><updated>2020-03-26T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/26/lc429</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/26/lc429/">&lt;h1 id=&quot;429-n-ary-tree-level-order-traversal-python&quot;&gt;429. N-ary Tree Level Order Traversal (Python)&lt;/h1&gt;
+
+&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;/categories/#Breadth-First-Search&quot; target=&quot;_blank&quot;&gt; Breadth-First-Search&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
+&lt;p&gt;Given an n-ary tree, return the level order traversal of its nodes’ values.&lt;/p&gt;
+
+&lt;p&gt;Nary-Tree input serialization is represented in their level order traversal, each group of children is separated by the null value (See examples).&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/narytreeexample.png&quot; alt=&quot;orange&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: root = [1,null,3,2,4,null,5,6]
+Output: [[1],[3,2,4],[5,6]]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/sample_4_964.png&quot; alt=&quot;orange&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: root = [1,null,2,3,4,5,null,null,6,7,null,8,null,9,10,null,null,11,null,12,null,13,null,null,14]
+Output: [[1],[2,3,4,5],[6,7,8,9,10],[11,12,13],[14]]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;note&quot;&gt;Note&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;The depth of the n-ary tree is less than or equal to 1000.&lt;/li&gt;
+  &lt;li&gt;The total number of nodes is between [0, 10^4].&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
+&lt;p&gt;This question is similart with question &lt;a href=&quot;/2020/03/26/lc559/&quot; target=&quot;_blank&quot;&gt; 559. Maximum Depth of N-ary Tree (Python) &lt;/a&gt; but this time we are going to get print nodes by level.&lt;/p&gt;
+
+&lt;p&gt;We need tmp list to append each level node’s then append the tmp list to final result list.&lt;/p&gt;
+
+&lt;h1 id=&quot;code-bfs&quot;&gt;Code (BFS)&lt;/h1&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;levelOrder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Node'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collections&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deque&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;popleft&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;child&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;We traversal all elements of tree once so total time complexity is O(n) where is the size of the tree&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">429. N-ary Tree Level Order Traversal (Python)</summary></entry><entry><title type="html">1091. Shortest Path in Binary Matrix (Python)</title><link href="https://zhenyu0519.github.io/2020/03/26/lc1091/" rel="alternate" type="text/html" title="1091. Shortest Path in Binary Matrix (Python)" /><published>2020-03-26T00:00:00-07:00</published><updated>2020-03-26T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/26/lc1091</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/26/lc1091/">&lt;h1 id=&quot;1091-shortest-path-in-binary-matrix-python&quot;&gt;1091. Shortest Path in Binary Matrix (Python)&lt;/h1&gt;
+
+&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;/categories/#Breadth-First-Search&quot; target=&quot;_blank&quot;&gt; Breadth-First-Search&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
+&lt;p&gt;In an N by N square grid, each cell is either empty (0) or blocked (1).&lt;/p&gt;
+
+&lt;p&gt;A clear path from top-left to bottom-right has length k if and only if it is composed of cells C_1, C_2, …, C_k such that:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Adjacent cells C_i and C_{i+1} are connected 8-directionally (ie., they are different and share an edge or corner)&lt;/li&gt;
+  &lt;li&gt;C_1 is at location (0, 0) (ie. has value grid[0][0])&lt;/li&gt;
+  &lt;li&gt;C_k is at location (N-1, N-1) (ie. has value grid[N-1][N-1])&lt;/li&gt;
+  &lt;li&gt;If C_i is located at (r, c), then grid[r][c] is empty (ie. grid[r][c] == 0).
+Return the length of the shortest such clear path from top-left to bottom-right.  If such a path does not exist, return -1.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/example1_1.png&quot; alt=&quot;ex1-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blog/example1_2.png&quot; alt=&quot;ex1-2&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/example2_1.png&quot; alt=&quot;ex2-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blog/example2_2.png&quot; alt=&quot;ex2-2&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;note&quot;&gt;Note&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;1 &amp;lt;= grid.length == grid[0].length &amp;lt;= 100&lt;/li&gt;
+  &lt;li&gt;grid[r][c] is 0 or 1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
+&lt;p&gt;Append the start path coordinate to queue. Use BFS traversal the 2D list from path coordinate pop out from queue. Each time expand the current path coordinate for 8 directions. And append the 8 directions’s path to queue. The first path to reach bottom right will return the steps.&lt;/p&gt;
+
+&lt;h1 id=&quot;code-bfs&quot;&gt;Code (BFS)&lt;/h1&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;shortestPathBinaryMatrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;dirs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;col&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collections&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deque&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;step&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;popleft&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dy&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dirs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ny&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dy&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ny&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ny&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ny&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                        &lt;span class=&quot;n&quot;&gt;visited&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ny&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+                        &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ny&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+                        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ny&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;step&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;step&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;We traversal all elements of 2D list once so total time complexity is O(mn) where m is the size of row and n is the size of column&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">1091. Shortest Path in Binary Matrix (Python)</summary></entry><entry><title type="html">993. Cousins in Binary Tree (Python)</title><link href="https://zhenyu0519.github.io/2020/03/26/lc993/" rel="alternate" type="text/html" title="993. Cousins in Binary Tree (Python)" /><published>2020-03-26T00:00:00-07:00</published><updated>2020-03-26T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/26/lc993</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/26/lc993/">&lt;h1 id=&quot;993-cousins-in-binary-tree-python&quot;&gt;993. Cousins in Binary Tree (Python)&lt;/h1&gt;
+
+&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;/categories/#Breadth-First-Search&quot; target=&quot;_blank&quot;&gt; Breadth-First-Search&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
+&lt;p&gt;In a binary tree, the root node is at depth 0, and children of each depth k node are at depth k+1.&lt;/p&gt;
+
+&lt;p&gt;Two nodes of a binary tree are cousins if they have the same depth, but have different parents.&lt;/p&gt;
+
+&lt;p&gt;We are given the root of a binary tree with unique values, and the values x and y of two different nodes in the tree.&lt;/p&gt;
+
+&lt;p&gt;Return true if and only if the nodes corresponding to the values x and y are cousins.&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/q1248-01.png&quot; alt=&quot;orange&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: root = [1,2,3,4], x = 4, y = 3
+Output: false
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/q1248-02.png&quot; alt=&quot;orange&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: root = [1,2,3,null,4,null,5], x = 5, y = 4
+Output: true
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-3&quot;&gt;Example 3&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/q1248-03.png&quot; alt=&quot;orange&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: root = [1,2,3,null,4], x = 2, y = 3
+Output: false
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;note&quot;&gt;Note&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;The number of nodes in the tree will be between 2 and 100.&lt;/li&gt;
+  &lt;li&gt;Each node has a unique integer value from 1 to 100.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
+&lt;p&gt;Use BFS traversal the tree level by level for each node, if the node have children. then append the node value (as parent), child value and depth to a dictionary. After traversal the tree. We need to find x, y node’s parent and depth from dictionary. If they have same depth but different parent return true otherwise return false.&lt;/p&gt;
+
+&lt;h1 id=&quot;code-bfs&quot;&gt;Code (BFS)&lt;/h1&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isCousins&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collections&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deque&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;depth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;popleft&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;depth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;depth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;depth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;depth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;x_parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x_depth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;y_parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y_depth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x_depth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y_depth&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x_parent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y_parent&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;We traversal all elements of tree once so total time complexity is O(n) where n is number of the tree nodes.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">993. Cousins in Binary Tree (Python)</summary></entry><entry><title type="html">559. Maximum Depth of N-ary Tree (Python)</title><link href="https://zhenyu0519.github.io/2020/03/26/lc559/" rel="alternate" type="text/html" title="559. Maximum Depth of N-ary Tree (Python)" /><published>2020-03-26T00:00:00-07:00</published><updated>2020-03-26T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/26/lc559</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/26/lc559/">&lt;h1 id=&quot;559-maximum-depth-of-n-ary-tree-python&quot;&gt;559. Maximum Depth of N-ary Tree (Python)&lt;/h1&gt;
+
+&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;/categories/#Breadth-First-Search&quot; target=&quot;_blank&quot;&gt; Breadth-First-Search&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
+&lt;p&gt;Given a n-ary tree, find its maximum depth.&lt;/p&gt;
+
+&lt;p&gt;The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.&lt;/p&gt;
+
+&lt;p&gt;Nary-Tree input serialization is represented in their level order traversal, each group of children is separated by the null value (See examples).&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/narytreeexample.png&quot; alt=&quot;orange&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: root = [1,null,3,2,4,null,5,6]
+Output: 3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/sample_4_964.png&quot; alt=&quot;orange&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: root = [1,null,2,3,4,5,null,null,6,7,null,8,null,9,10,null,null,11,null,12,null,13,null,null,14]
+Output: 5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;note&quot;&gt;Note&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;The depth of the n-ary tree is less than or equal to 1000.&lt;/li&gt;
+  &lt;li&gt;The total number of nodes is between [0, 10^4].&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
+&lt;p&gt;Create a queue and append the root and initial depth to queue. Use BFS traversal tree level by level from root. For each root, append the root’s children nodes and depth+1 to queue. The last node of the tree will also give us the final depth of the tree&lt;/p&gt;
+
+&lt;p&gt;We can also use DFS to get the answer but the performance is far worse than BFS.&lt;/p&gt;
+
+&lt;h1 id=&quot;code-bfs&quot;&gt;Code (BFS)&lt;/h1&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;maxDepth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Node'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collections&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deque&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;depth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;depth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;depth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;popleft&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;child&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;depth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;depth&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;We traversal all elements of tree once so total time complexity is O(n) where is the size of the tree&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">559. Maximum Depth of N-ary Tree (Python)</summary></entry><entry><title type="html">994. Rotting Oranges (Python)</title><link href="https://zhenyu0519.github.io/2020/03/25/lc994/" rel="alternate" type="text/html" title="994. Rotting Oranges (Python)" /><published>2020-03-25T00:00:00-07:00</published><updated>2020-03-25T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/25/lc994</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/25/lc994/">&lt;h1 id=&quot;994-rotting-oranges-python&quot;&gt;994. Rotting Oranges (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Breadth-First-Search&quot; target=&quot;_blank&quot;&gt; Breadth-First-Search&lt;/a&gt;.&lt;/p&gt;
@@ -330,55 +392,7 @@ Explanation:  Since there are already no fresh oranges at minute 0, the answer i
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;step&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fresh_set&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We traversal all elements of 2D list once so total time complexity is O(mn) where m is size of row and n is size of columns&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">994. Rotting Oranges (Python)</summary></entry><entry><title type="html">107. Binary Tree Level Order Traversal II (Python)</title><link href="https://zhenyu0519.github.io/2020/03/25/lc107/" rel="alternate" type="text/html" title="107. Binary Tree Level Order Traversal II (Python)" /><published>2020-03-25T00:00:00-07:00</published><updated>2020-03-25T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/25/lc107</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/25/lc107/">&lt;h1 id=&quot;107-binary-tree-level-order-traversal-ii-python&quot;&gt;107. Binary Tree Level Order Traversal II (Python)&lt;/h1&gt;
-
-&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Breadth-First-Search&quot; target=&quot;_blank&quot;&gt; Breadth-First-Search&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
-&lt;p&gt;Given a binary tree, return the bottom-up level order traversal of its nodes’ values. (ie, from left to right, level by level from leaf to root).&lt;/p&gt;
-
-&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
-
-&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;p&gt;For example:
-Given binary tree [3,9,20,null,null,15,7],&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    3
-   / \
-  9  20
-    /  \
-   15   7
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;return its bottom-up level order traversal as:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[
-  [15,7],
-  [9,20],
-  [3]
-]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
-&lt;p&gt;Use BFS to traversal the tree level by level, record each level and append to the result list, then reverse the result list&lt;/p&gt;
-
-&lt;h1 id=&quot;code-bfs&quot;&gt;Code (BFS)&lt;/h1&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;levelOrderBottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collections&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deque&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;popleft&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[::&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We traversal all elements of the tree once so total time complexity is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">107. Binary Tree Level Order Traversal II (Python)</summary></entry><entry><title type="html">743. Network Delay Time (Python)</title><link href="https://zhenyu0519.github.io/2020/03/25/lc743/" rel="alternate" type="text/html" title="743. Network Delay Time (Python)" /><published>2020-03-25T00:00:00-07:00</published><updated>2020-03-25T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/25/lc743</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/25/lc743/">&lt;h1 id=&quot;743-network-delay-time-python&quot;&gt;743. Network Delay Time (Python)&lt;/h1&gt;
+&lt;p&gt;We traversal all elements of 2D list once so total time complexity is O(mn) where m is size of row and n is size of columns&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">994. Rotting Oranges (Python)</summary></entry><entry><title type="html">743. Network Delay Time (Python)</title><link href="https://zhenyu0519.github.io/2020/03/25/lc743/" rel="alternate" type="text/html" title="743. Network Delay Time (Python)" /><published>2020-03-25T00:00:00-07:00</published><updated>2020-03-25T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/25/lc743</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/25/lc743/">&lt;h1 id=&quot;743-network-delay-time-python&quot;&gt;743. Network Delay Time (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Breadth-First-Search&quot; target=&quot;_blank&quot;&gt; Breadth-First-Search&lt;/a&gt;.&lt;/p&gt;
@@ -433,7 +447,55 @@ Output: 2
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;N&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Time Complexity: O(N^2 + E) where E is the length of times in the basic implementation, and O(ElogE) in the heap implementation, as potentially every edge gets added to the heap.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">743. Network Delay Time (Python)</summary></entry><entry><title type="html">leetcode 127. Word Ladder (Python)</title><link href="https://zhenyu0519.github.io/2020/03/24/lc127/" rel="alternate" type="text/html" title="leetcode 127. Word Ladder (Python)" /><published>2020-03-24T00:00:00-07:00</published><updated>2020-03-24T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/24/lc127</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/24/lc127/">&lt;h1 id=&quot;leetcode-127-word-ladder-python&quot;&gt;Leetcode 127. Word Ladder (Python)&lt;/h1&gt;
+&lt;p&gt;Time Complexity: O(N^2 + E) where E is the length of times in the basic implementation, and O(ElogE) in the heap implementation, as potentially every edge gets added to the heap.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">743. Network Delay Time (Python)</summary></entry><entry><title type="html">107. Binary Tree Level Order Traversal II (Python)</title><link href="https://zhenyu0519.github.io/2020/03/25/lc107/" rel="alternate" type="text/html" title="107. Binary Tree Level Order Traversal II (Python)" /><published>2020-03-25T00:00:00-07:00</published><updated>2020-03-25T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/25/lc107</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/25/lc107/">&lt;h1 id=&quot;107-binary-tree-level-order-traversal-ii-python&quot;&gt;107. Binary Tree Level Order Traversal II (Python)&lt;/h1&gt;
+
+&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;/categories/#Breadth-First-Search&quot; target=&quot;_blank&quot;&gt; Breadth-First-Search&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
+&lt;p&gt;Given a binary tree, return the bottom-up level order traversal of its nodes’ values. (ie, from left to right, level by level from leaf to root).&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+&lt;p&gt;For example:
+Given binary tree [3,9,20,null,null,15,7],&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    3
+   / \
+  9  20
+    /  \
+   15   7
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;return its bottom-up level order traversal as:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[
+  [15,7],
+  [9,20],
+  [3]
+]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
+&lt;p&gt;Use BFS to traversal the tree level by level, record each level and append to the result list, then reverse the result list&lt;/p&gt;
+
+&lt;h1 id=&quot;code-bfs&quot;&gt;Code (BFS)&lt;/h1&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;levelOrderBottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collections&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deque&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;popleft&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[::&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;We traversal all elements of the tree once so total time complexity is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">107. Binary Tree Level Order Traversal II (Python)</summary></entry><entry><title type="html">leetcode 127. Word Ladder (Python)</title><link href="https://zhenyu0519.github.io/2020/03/24/lc127/" rel="alternate" type="text/html" title="leetcode 127. Word Ladder (Python)" /><published>2020-03-24T00:00:00-07:00</published><updated>2020-03-24T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/24/lc127</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/24/lc127/">&lt;h1 id=&quot;leetcode-127-word-ladder-python&quot;&gt;Leetcode 127. Word Ladder (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Breadth-First-Search&quot; target=&quot;_blank&quot;&gt; Breadth-First-Search&lt;/a&gt;.&lt;/p&gt;
@@ -584,54 +646,4 @@ Given binary tree [3,9,20,null,null,15,7],&lt;/p&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[::&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo-1&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We traversal all elements of the tree once so total time complexity is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 103. Binary Tree Zigzag Level Order Traversal (Python)</summary></entry><entry><title type="html">leetcode 1145. Binary Tree Coloring Game (Python)</title><link href="https://zhenyu0519.github.io/2020/03/23/lc1145/" rel="alternate" type="text/html" title="leetcode 1145. Binary Tree Coloring Game (Python)" /><published>2020-03-23T00:00:00-07:00</published><updated>2020-03-23T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/03/23/lc1145</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/03/23/lc1145/">&lt;h1 id=&quot;leetcode-1145-binary-tree-coloring-game-python&quot;&gt;Leetcode 1145. Binary Tree Coloring Game (Python)&lt;/h1&gt;
-
-&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Depth-First-Search&quot; target=&quot;_blank&quot;&gt; Depth-First-Search&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
-&lt;p&gt;Two players play a turn based game on a binary tree.  We are given the root of this binary tree, and the number of nodes n in the tree.  n is odd, and each node has a distinct value from 1 to n.&lt;/p&gt;
-
-&lt;p&gt;Initially, the first player names a value x with 1 &amp;lt;= x &amp;lt;= n, and the second player names a value y with 1 &amp;lt;= y &amp;lt;= n and y != x.  The first player colors the node with value x red, and the second player colors the node with value y blue.&lt;/p&gt;
-
-&lt;p&gt;Then, the players take turns starting with the first player.  In each turn, that player chooses a node of their color (red if player 1, blue if player 2) and colors an uncolored neighbor of the chosen node (either the left child, right child, or parent of the chosen node.)&lt;/p&gt;
-
-&lt;p&gt;If (and only if) a player cannot choose such a node in this way, they must pass their turn.  If both players pass their turn, the game ends, and the winner is the player that colored more nodes.&lt;/p&gt;
-
-&lt;p&gt;You are the second player.  If it is possible to choose such a y to ensure you win the game, return true.  If it is not possible, return false.&lt;/p&gt;
-
-&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
-
-&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/images/blog/1480-binary-tree-coloring-game.png&quot; alt=&quot;smaple&quot; /&gt;&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: root = [1,2,3,4,5,6,7,8,9,10,11], n = 11, x = 3
-Output: true
-Explanation: The second player can choose the node with value 2.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h2 id=&quot;constraints&quot;&gt;Constraints&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;root is the root of a binary tree with n nodes and distinct node values from 1 to n.&lt;/li&gt;
-  &lt;li&gt;n is odd.&lt;/li&gt;
-  &lt;li&gt;1 &amp;lt;= x &amp;lt;= n &amp;lt;= 100&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
-&lt;p&gt;Every node may has three adjacent nodes include parent node, left child node and right child node except the root node does not have parent node. To win the game, the second player need to have more than half nodes. The second player can only choose one of the three adjacent node from the first player. So we need to get the number of left subtree nodes, right subtree nodes and parent node with other node of the first player’s node. And we will sum the largest number and second largest number and compare to the total number divde by 2.&lt;/p&gt;
-
-&lt;h1 id=&quot;codedfs&quot;&gt;Code(DFS)&lt;/h1&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;btreeGameWinningMove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;l_r_num&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;dfs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dfs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dfs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;l_r_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l_r_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;total&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dfs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;parent_num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l_r_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parent_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l_r_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We traversal all elements of the tree once so total time complexity is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 1145. Binary Tree Coloring Game (Python)</summary></entry></feed>
+&lt;p&gt;We traversal all elements of the tree once so total time complexity is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 103. Binary Tree Zigzag Level Order Traversal (Python)</summary></entry></feed>
