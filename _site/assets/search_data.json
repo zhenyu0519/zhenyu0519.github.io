@@ -865,6 +865,13 @@
     } ,
   
     {
+      "title"    : "323. Number of Connected Components in an Undirected Graph (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/27/lc323/"
+    } ,
+  
+    {
       "title"    : "752. Open the Lock (Python)",
       "category" : "Leetcode",
       
