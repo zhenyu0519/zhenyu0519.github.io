@@ -876,6 +876,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/27/lc752/"
+    } ,
+  
+    {
+      "title"    : "261. Graph Valid Tree (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/03/28/lc261/"
     } 
   
 ]
