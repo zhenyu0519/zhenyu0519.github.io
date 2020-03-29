@@ -176,22 +176,22 @@ If the returned string is longer than the longest string, replace the longest st
 <p>After done the iteration, return longest string as answer</p>
 
 <h1 id="code-1-dynamic-programming">Code 1 (Dynamic Programming)</h1>
-<pre><code class="language-Python">def longestPalindrome(self, s: str) -&gt; str:
-        longest = '' if not s else s[0]
-        max_len = 1
-        size = len(s)
-        dp=[[False]*size for _ in range(size)]
-        for start in range(size-1,-1,-1):
-            dp[start][start]=True
-            for end in range(start+1,size):
-                if s[start]==s[end]:
-                    if end - start == 1 or dp[start+1][end-1]:
-                        dp[start][end] = True
-                        if max_len &lt; end - start + 1:
-                            max_len = end - start + 1
-                            longest = s[start: end+ 1]
-        return longest
-</code></pre>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">longestPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">longest</span> <span class="o">=</span> <span class="s">''</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span> <span class="k">else</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">max_len</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="n">dp</span><span class="o">=</span><span class="p">[[</span><span class="bp">False</span><span class="p">]</span><span class="o">*</span><span class="n">size</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">start</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">start</span><span class="p">][</span><span class="n">start</span><span class="p">]</span><span class="o">=</span><span class="bp">True</span>
+            <span class="k">for</span> <span class="n">end</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">start</span><span class="p">]</span><span class="o">==</span><span class="n">s</span><span class="p">[</span><span class="n">end</span><span class="p">]:</span>
+                    <span class="k">if</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">dp</span><span class="p">[</span><span class="n">start</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">end</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+                        <span class="n">dp</span><span class="p">[</span><span class="n">start</span><span class="p">][</span><span class="n">end</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+                        <span class="k">if</span> <span class="n">max_len</span> <span class="o">&lt;</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+                            <span class="n">max_len</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">1</span>
+                            <span class="n">longest</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">start</span><span class="p">:</span> <span class="n">end</span><span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">longest</span>
+</code></pre></div></div>
 
 <h1 id="code-2-two-pointers">Code 2 (Two Pointers)</h1>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">longestPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>

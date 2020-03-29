@@ -153,15 +153,15 @@ Explanation: Cheapest is start on cost[0], and only step on 1s, skipping cost[3]
 </ol>
 
 <h1 id="methodology">Methodology</h1>
-<p>This question solved by Dynamic Programming. It is similar with question 70 <a href="https://leetcode.com/problems/climbing-stairs/" target="_blank">Click Here!</a></p>
+<p>This question solved by Dynamic Programming. It is similar with question<a href="https://leetcode.com/problems/climbing-stairs/" target="_blank">70. Climbing Stairs</a></p>
 
 <ol>
   <li>
     <p>Find the base case (Given [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]):</p>
 
     <ol>
-      <li>when there are 2 stars, there is only 1 cost which is cost of stair 1 here is cost[0] = 1</li>
-      <li>When there are 3 stars, you can either choose stair 1 or stair 2 to reach stair 3, we want the minimum cost, so we will choose the minimum between(cost[0], cost[1]) which is min(1, 100) = 1
+      <li>when there are 2 stairs, we choose the min cost from first two steps</li>
+      <li>When there are 3 stairs, you can either choose stair 1 or stair 2 to reach stair 3, we want the minimum cost, so we will choose the minimum between(cost[0], cost[1]) which is min(1, 100) = 1
 ….</li>
     </ol>
   </li>
@@ -188,8 +188,6 @@ Here the reason why we update current value is for next step cost if you have ne
 
 <h1 id="code">Code</h1>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">minCostClimbingStairs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cost</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span> <span class="c">#The base condition is optional here, it may slightly increase performance which is nearly no effection here</span>
-            <span class="k">return</span> <span class="n">cost</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">cost</span><span class="p">)):</span>
             <span class="n">cost</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">min</span><span class="p">(</span><span class="n">cost</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">cost</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
         <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">cost</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span><span class="n">cost</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
