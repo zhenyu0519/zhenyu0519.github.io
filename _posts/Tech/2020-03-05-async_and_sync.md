@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Async与Sync比较以及JavaScript中callback, promise和async/await的理解
-categories: JavaScript
+categories: Tech-Post JavaScript
 description: Async与Sync比较以及JavaScript中callback, promise和async/await的理解
 keywords: Async,Sync,同步,异步,比较,JavaScript,callback,回调函数,promise,承诺,async,等待,await,理解,形象的理解
 ---

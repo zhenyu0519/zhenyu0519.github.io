@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MAC Mojave下，gem安装package(jekyll)出现的问题以及解决方法/Trouble shooting gem install packages (jekyll) under Mac Mojave(中文/英语)
-categories: TroubleShoot
+categories: Tech-Post Jekyll
 description: MAC Mojave下，gem安装jekyll出现的问题以及解决方法
 keywords: MAC Mojave, jekyll, Github Pages, Failed to build gem native extension, Gem, Permission
 ---

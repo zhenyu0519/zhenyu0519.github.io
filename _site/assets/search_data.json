@@ -82,7 +82,7 @@
   
     {
       "title"    : "简明的 Markdown 笔记",
-      "category" : "Markdown",
+      "category" : "Tech-Post",
       
       "url"      : "https://zhenyu0519.github.io/2019/09/15/markdown/"
     } ,
@@ -96,7 +96,7 @@
   
     {
       "title"    : "MAC Mojave下，gem安装package(jekyll)出现的问题以及解决方法/Trouble shooting gem install packages (jekyll) under Mac Mojave(中文/英语)",
-      "category" : "TroubleShoot",
+      "category" : "Tech-Post",
       
       "url"      : "https://zhenyu0519.github.io/2019/11/21/gem_install_jekyll_permission/"
     } ,
@@ -376,7 +376,7 @@
   
     {
       "title"    : "Mac下Pyenv的安装和使用",
-      "category" : "TroubleShoot",
+      "category" : "Tech-Post",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/03/mac_pyenv/"
     } ,
@@ -418,7 +418,7 @@
   
     {
       "title"    : "Async与Sync比较以及JavaScript中callback, promise和async/await的理解",
-      "category" : "JavaScript",
+      "category" : "Tech-Post",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/05/async_and_sync/"
     } ,
@@ -502,7 +502,7 @@
   
     {
       "title"    : "树型结构的基本类型以及遍历方法",
-      "category" : "Tree",
+      "category" : "Tech-Post",
       
       "url"      : "https://zhenyu0519.github.io/2020/03/10/about_tree/"
     } ,
@@ -890,6 +890,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/04/01/lc11/"
+    } ,
+  
+    {
+      "title"    : "Compare QueryReference and Snapshot in firestore",
+      "category" : "Tech-Post",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/04/07/queryreference_snapshot/"
     } 
   
 ]

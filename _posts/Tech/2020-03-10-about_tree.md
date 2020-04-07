@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 树型结构的基本类型以及遍历方法
-categories: Tree
+categories: Tech-Post Data-Structure
 description: 树型结构的基本类型以及遍历方法,二叉树，平衡二叉树，完全二叉树，满二叉树，二叉搜索树，前序遍历，中序遍历，后续遍历
 keywords: 树型结构的基本类型以及遍历方法,二叉树，平衡二叉树，完全二叉树，满二叉树，二叉搜索树，前序遍历，中序遍历，后续遍历，遍历方法，树型结构，理解
 ---
