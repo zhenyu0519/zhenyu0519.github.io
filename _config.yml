@@ -34,9 +34,9 @@ navs:
     href: /categories/
     label: Categories
 
-#   -
-#     href: /archives/
-#     label: 归档
+  -
+    href: /open-source/
+    label: Github Repos
 
   -
     href: /about/
