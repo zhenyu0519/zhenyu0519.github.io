@@ -897,6 +897,13 @@
       "category" : "Tech-Post",
       
       "url"      : "https://zhenyu0519.github.io/2020/04/07/queryreference_snapshot/"
+    } ,
+  
+    {
+      "title"    : "161. One Edit Distance (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/06/03/lc161/"
     } 
   
 ]
