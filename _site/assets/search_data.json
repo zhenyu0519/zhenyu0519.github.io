@@ -920,6 +920,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/06/04/lc19/"
+    } ,
+  
+    {
+      "title"    : "876. Middle of the Linked List (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/06/04/lc876/"
     } 
   
 ]
