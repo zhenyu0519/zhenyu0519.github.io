@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>876. Middle of the Linked List (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <title>86. Partition List (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
     <!-- add google search console -->
     <meta name="google-site-verification" content="Hh37wMK9MFpx6xtWD91RDJzIy-PTLn7ocpNyQ1kPI6M" />
     <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-css/css/primer.css">
@@ -23,47 +23,47 @@
     
 
     
-    <link rel="canonical" href="https://zhenyu0519.github.io/2020/06/04/lc876/">
+    <link rel="canonical" href="https://zhenyu0519.github.io/2020/06/05/lc86/">
     <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="https://zhenyu0519.github.io/feed.xml">
     <link rel="shortcut icon" href="https://zhenyu0519.github.io/favicon.ico">
     
-    <meta property="og:title" content="876. Middle of the Linked List (Python)">
+    <meta property="og:title" content="86. Partition List (Python)">
       
-    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, 876. Middle of the Linked List, zhenyu, Linked List, Two Pointers">
-    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, 876. Middle of the Linked List, zhenyu, Linked List, Two Pointers">
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, 86. Partition List, zhenyu, Linked List, Two Pointers">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, 86. Partition List, zhenyu, Linked List, Two Pointers">
       
-    <meta name="description" content="876. Middle of the Linked List (Python)">
-    <meta name="og:description" content="876. Middle of the Linked List (Python)">
+    <meta name="description" content="86. Partition List (Python)">
+    <meta name="og:description" content="86. Partition List (Python)">
       
     
     
         
     
-    <meta property="og:url" content="https://zhenyu0519.github.io/2020/06/04/lc876/">
+    <meta property="og:url" content="https://zhenyu0519.github.io/2020/06/05/lc86/">
     <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="zh_CN" />
     
-    <meta property="article:published_time" content="2020-06-04">
+    <meta property="article:published_time" content="2020-06-05">
     
     <script src="https://zhenyu0519.github.io/assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="https://zhenyu0519.github.io/assets/js/jquery-ui.js"></script>
     <script src="https://zhenyu0519.github.io/assets/js/main.js"></script>
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Middle of the Linked List (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
+<title>Partition List (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Middle of the Linked List (Python)" />
+<meta property="og:title" content="Partition List (Python)" />
 <meta name="author" content="Jeffrey" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Middle of the Linked List (Python Solution)" />
-<meta property="og:description" content="Middle of the Linked List (Python Solution)" />
-<link rel="canonical" href="https://zhenyu0519.github.io/2020/06/04/lc876/" />
-<meta property="og:url" content="https://zhenyu0519.github.io/2020/06/04/lc876/" />
+<meta name="description" content="Partition List (Python Solution)" />
+<meta property="og:description" content="Partition List (Python Solution)" />
+<link rel="canonical" href="https://zhenyu0519.github.io/2020/06/05/lc86/" />
+<meta property="og:url" content="https://zhenyu0519.github.io/2020/06/05/lc86/" />
 <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey’s Blog)" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-06-04T00:00:00-07:00" />
+<meta property="article:published_time" content="2020-06-05T00:00:00-07:00" />
 <script type="application/ld+json">
-{"description":"Middle of the Linked List (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/06/04/lc876/"},"url":"https://zhenyu0519.github.io/2020/06/04/lc876/","headline":"Middle of the Linked List (Python)","dateModified":"2020-06-04T00:00:00-07:00","datePublished":"2020-06-04T00:00:00-07:00","@context":"http://schema.org"}</script>
+{"description":"Partition List (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/06/05/lc86/"},"url":"https://zhenyu0519.github.io/2020/06/05/lc86/","headline":"Partition List (Python)","dateModified":"2020-06-05T00:00:00-07:00","datePublished":"2020-06-05T00:00:00-07:00","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -91,16 +91,16 @@
     </header>
     <!-- / header -->
 
-    <section class="collection-head small" data-pattern-id="876. Middle of ">
+    <section class="collection-head small" data-pattern-id="86. Partition L">
   <div class="container">
     <div class="columns">
       <div class="column three-fourths">
         <div class="collection-title">
-          <h1 class="collection-header">876. Middle of the Linked List (Python)</h1>
+          <h1 class="collection-header">86. Partition List (Python)</h1>
           <div class="collection-info">
             
             <span class="meta-info">
-              <span class="octicon octicon-calendar"></span> 04 Jun 2020
+              <span class="octicon octicon-calendar"></span> 05 Jun 2020
             </span>
             
             
@@ -125,49 +125,70 @@
   <div class="columns">
     <div class="column three-fourths">
       <article class="article-content markdown-body">
-        <h1 id="876-middle-of-the-linked-list-python">876. Middle of the Linked List (Python)</h1>
+        <h1 id="86-partition-list-python">86. Partition List (Python)</h1>
 
 <h1 id="related-topic">Related Topic</h1>
 <p><a href="/categories/#Linked-List" target="_blank"> Linked-List</a>.
 <a href="/categories/#Two-Pointers" target="_blank"> Two-Pointers</a>.</p>
 <h1 id="description">Description</h1>
-<p>Given a non-empty, singly linked list with head node head, return a middle node of linked list.</p>
+<p>Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.</p>
 
-<p>If there are two middle nodes, return the second middle node.</p>
+<p>You should preserve the original relative order of the nodes in each of the two partitions.</p>
 
 <h2 id="sample-io">Sample I/O</h2>
 
 <h3 id="example-1">Example 1</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: [1,2,3,4,5]
-Output: Node 3 from this list (Serialization: [3,4,5])
-The returned node has value 3.  (The judge's serialization of this node is [3,4,5]).
-Note that we returned a ListNode object ans, such that:
-ans.val = 3, ans.next.val = 4, ans.next.next.val = 5, and ans.next.next.next = NULL.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: head = 1-&gt;4-&gt;3-&gt;2-&gt;5-&gt;2, x = 3
+Output: 1-&gt;2-&gt;2-&gt;4-&gt;3-&gt;5
 </code></pre></div></div>
-
-<h3 id="example-2">Example 2</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: [1,2,3,4,5,6]
-Output: Node 4 from this list (Serialization: [4,5,6])
-Since the list has two middle nodes with values 3 and 4, we return the second one.
-</code></pre></div></div>
-
-<h2 id="note">Note</h2>
-<p>The number of nodes in the given list will be between 1 and 100.</p>
 
 <h1 id="methodology">Methodology</h1>
-<p>The straight forward solution is iterate the linked list to get the size, then calculate the middle point of the size if the size . After that, we iterate the linked list again and stop at the middle point and return it.</p>
 
-<p>A better solution will be using fast and slow pointers, we create two pointers called slow and fast, for each move the fast pointer will go 2 steps and the slow pointer will go 1 step, the iteration will stop until the fast pointer reach to the end then the slow pointer is pointing the node that we want to return.</p>
+<h2 id="solution-1">Solution 1</h2>
+<p>We need to set a prev pointer to indicate the last node which less than target. We iterate the linked list until we find the current node is greater or equal than target and next node is less than target then we need to let prev node’s next pointer point to the current’s next node and update prev, we also need to let current node’s next pointer point to it’s next next node. Since there may be consective nodes that less than target, we need to keep tracking (do not updata head) until we find a node that greater or equal to target then we update head.</p>
 
-<h1 id="code-straight-forward-solution">Code (straight forward solution)</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">def</span> <span class="nf">middleNode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">ListNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ListNode</span><span class="p">:</span>
-        <span class="n">slow</span> <span class="o">=</span> <span class="n">fast</span> <span class="o">=</span> <span class="n">head</span>
-        <span class="k">while</span> <span class="n">fast</span> <span class="ow">and</span> <span class="n">fast</span><span class="o">.</span><span class="nb">next</span><span class="p">:</span>
-            <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="o">.</span><span class="nb">next</span>
-            <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="o">.</span><span class="nb">next</span><span class="o">.</span><span class="nb">next</span>
-        <span class="k">return</span> <span class="n">slow</span>
+<p>This may be hard to think, it would be easier if you draw on paper, here is an edge case 1-&gt;2-&gt;3-&gt;2-&gt;1 target is 3.</p>
+
+<h2 id="solution-2">Solution 2</h2>
+<p>We can also create two linked lists l1, l2, l1 for value less than target and l2 for value greater or equal than target. After that, we just append the l2 to l1 and return the new linked list.</p>
+
+<h1 id="code-solution-1">Code (solution 1)</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">ListNode</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ListNode</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">head</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">head</span><span class="o">.</span><span class="nb">next</span><span class="p">:</span> <span class="k">return</span> <span class="n">head</span>
+        <span class="n">dummy_head</span> <span class="o">=</span> <span class="n">prv</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="s">"inf"</span><span class="p">)</span>
+        <span class="n">prv</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">head</span>
+        <span class="k">while</span> <span class="n">head</span> <span class="ow">and</span> <span class="n">head</span><span class="o">.</span><span class="nb">next</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">head</span><span class="o">.</span><span class="n">val</span> <span class="o">&gt;=</span> <span class="n">x</span> <span class="ow">and</span> <span class="n">head</span><span class="o">.</span><span class="nb">next</span><span class="o">.</span><span class="n">val</span><span class="o">&lt;</span><span class="n">x</span><span class="p">:</span>
+                <span class="n">temp</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="nb">next</span><span class="o">.</span><span class="nb">next</span>
+                <span class="n">head</span><span class="o">.</span><span class="nb">next</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">prv</span><span class="o">.</span><span class="nb">next</span>
+                <span class="n">prv</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="nb">next</span>
+                <span class="n">head</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">temp</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="nb">next</span>
+            <span class="k">if</span> <span class="n">prv</span><span class="o">.</span><span class="nb">next</span><span class="o">.</span><span class="n">val</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span>
+                <span class="n">prv</span><span class="o">=</span><span class="n">prv</span><span class="o">.</span><span class="nb">next</span>
+        <span class="k">return</span> <span class="n">dummy_head</span><span class="o">.</span><span class="nb">next</span>
 </code></pre></div></div>
 <h1 id="bigo">BigO</h1>
+<p>Iterate the linked list once, so total time complexity is O(n)</p>
+
+<h1 id="code-solution-2">Code (solution 2)</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">h1</span> <span class="o">=</span> <span class="n">l1</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">h2</span> <span class="o">=</span> <span class="n">l2</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">while</span> <span class="n">head</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">head</span><span class="o">.</span><span class="n">val</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span>
+                <span class="n">l1</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">head</span>
+                <span class="n">l1</span> <span class="o">=</span> <span class="n">l1</span><span class="o">.</span><span class="nb">next</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">l2</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">head</span>
+                <span class="n">l2</span> <span class="o">=</span> <span class="n">l2</span><span class="o">.</span><span class="nb">next</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="nb">next</span>
+        <span class="n">l2</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">l1</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">h2</span><span class="o">.</span><span class="nb">next</span>
+        <span class="k">return</span> <span class="n">h1</span><span class="o">.</span><span class="nb">next</span>
+</code></pre></div></div>
+<h1 id="bigo-1">BigO</h1>
 <p>Iterate the linked list once, so total time complexity is O(n)</p>
 
       </article>
@@ -185,7 +206,7 @@ Since the list has two middle nodes with values 3 and 4, we return the second on
         <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
         <script>
         var gitalk = new Gitalk({
-            id: '/2020/06/04/lc876/',
+            id: '/2020/06/05/lc86/',
             clientID: '4cef70907f5b36353d59',
             clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
             repo: 'zhenyu0519.github.io',
