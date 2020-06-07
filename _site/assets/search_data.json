@@ -955,6 +955,20 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/06/06/lc445/"
+    } ,
+  
+    {
+      "title"    : "141. Linked List Cycle (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/06/07/lc141/"
+    } ,
+  
+    {
+      "title"    : "160. Intersection of Two Linked Lists (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/06/07/lc160/"
     } 
   
 ]

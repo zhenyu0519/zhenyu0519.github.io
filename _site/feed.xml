@@ -1,4 +1,183 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-06-06T23:47:05-07:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">234. Palindrome Linked List (Python)</title><link href="https://zhenyu0519.github.io/2020/06/06/lc234/" rel="alternate" type="text/html" title="234. Palindrome Linked List (Python)" /><published>2020-06-06T00:00:00-07:00</published><updated>2020-06-06T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/06/06/lc234</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/06/06/lc234/">&lt;h1 id=&quot;234-palindrome-linked-list-python&quot;&gt;234. Palindrome Linked List (Python)&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-06-07T00:53:08-07:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">141. Linked List Cycle (Python)</title><link href="https://zhenyu0519.github.io/2020/06/07/lc141/" rel="alternate" type="text/html" title="141. Linked List Cycle (Python)" /><published>2020-06-07T00:00:00-07:00</published><updated>2020-06-07T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/06/07/lc141</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/06/07/lc141/">&lt;h1 id=&quot;141-linked-list-cycle-python&quot;&gt;141. Linked List Cycle (Python)&lt;/h1&gt;
+
+&lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;/categories/#Linked-List&quot; target=&quot;_blank&quot;&gt; Linked-List&lt;/a&gt;.
+&lt;a href=&quot;/categories/#Two-Pointers&quot; target=&quot;_blank&quot;&gt; Two-Pointers&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
+&lt;p&gt;Given a linked list, determine if it has a cycle in it.&lt;/p&gt;
+
+&lt;p&gt;To represent a cycle in the given linked list, we use an integer pos which represents the position (0-indexed) in the linked list where tail connects to. If pos is -1, then there is no cycle in the linked list.&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/circularlinkedlist.png&quot; alt=&quot;example1&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: head = [3,2,0,-4], pos = 1
+Output: true
+Explanation: There is a cycle in the linked list, where tail connects to the second node.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/circularlinkedlist_test2.png&quot; alt=&quot;example1&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: head = [1,2], pos = 0
+Output: true
+Explanation: There is a cycle in the linked list, where tail connects to the first node.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-3&quot;&gt;Example 3&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/circularlinkedlist_test3.png&quot; alt=&quot;example1&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: head = [1], pos = -1
+Output: false
+Explanation: There is no cycle in the linked list.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;follow-up&quot;&gt;Follow Up&lt;/h2&gt;
+&lt;p&gt;Can you solve it using O(1) (i.e. constant) memory?&lt;/p&gt;
+
+&lt;h2 id=&quot;methodology&quot;&gt;Methodology&lt;/h2&gt;
+&lt;p&gt;Set fast and slow pointers on the linked list, fast pointer will move to step each time while the slow pointer will only move 1 step. If there is loop, then fast and slow pointers will finally be coincided.&lt;/p&gt;
+
+&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;hasCycle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ListNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;fast&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;slow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fast&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;fast&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;slow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;slow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fast&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;slow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;Iterate the both linked lists once, so total time complexity is O(m+n) where m steps of fast pointer and n is steps of slow pointer&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">141. Linked List Cycle (Python)</summary></entry><entry><title type="html">160. Intersection of Two Linked Lists (Python)</title><link href="https://zhenyu0519.github.io/2020/06/07/lc160/" rel="alternate" type="text/html" title="160. Intersection of Two Linked Lists (Python)" /><published>2020-06-07T00:00:00-07:00</published><updated>2020-06-07T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/06/07/lc160</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/06/07/lc160/">&lt;h1 id=&quot;160-intersection-of-two-linked-lists-python&quot;&gt;160. Intersection of Two Linked Lists (Python)&lt;/h1&gt;
+
+&lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;/categories/#Linked-List&quot; target=&quot;_blank&quot;&gt; Linked-List&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
+&lt;p&gt;Write a program to find the node at which the intersection of two singly linked lists begins.&lt;/p&gt;
+
+&lt;p&gt;For example, the following two linked lists:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blog/160_statement.png&quot; alt=&quot;160 sample&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/160_example_1.png&quot; alt=&quot;example1&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3
+Output: Reference of the node with value = 8
+Input Explanation: The intersected node's value is 8 (note that this must not be 0 if the two lists intersect). From the head of A, it reads as [4,1,8,4,5]. From the head of B, it reads as [5,0,1,8,4,5]. There are 2 nodes before the intersected node in A; There are 3 nodes before the intersected node in B.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/160_example_2.png&quot; alt=&quot;example1&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1
+Output: Reference of the node with value = 2
+Input Explanation: The intersected node's value is 2 (note that this must not be 0 if the two lists intersect). From the head of A, it reads as [0,9,1,2,4]. From the head of B, it reads as [3,2,4]. There are 3 nodes before the intersected node in A; There are 1 node before the intersected node in B.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-3&quot;&gt;Example 3&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/160_example_3.png&quot; alt=&quot;example1&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: intersectVal = 0, listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2
+Output: null
+Input Explanation: From the head of A, it reads as [2,6,4]. From the head of B, it reads as [1,5]. Since the two lists do not intersect, intersectVal must be 0, while skipA and skipB can be arbitrary values.
+Explanation: The two lists do not intersect, so return null.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;note&quot;&gt;Note&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;If the two linked lists have no intersection at all, return null.&lt;/li&gt;
+  &lt;li&gt;The linked lists must retain their original structure after the function returns.&lt;/li&gt;
+  &lt;li&gt;You may assume there are no cycles anywhere in the entire linked structure.&lt;/li&gt;
+  &lt;li&gt;Your code should preferably run in O(n) time and use only O(1) memory.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;methodology&quot;&gt;Methodology&lt;/h2&gt;
+&lt;p&gt;Once two linked list are intersected, the rest parts of both will be same to end. So we append l2 to l1 and append l1 to l2, then the intersected parts l1l2 and l2l1 has same length and there will be a intersected node at same posiion of both linked list to make the rest part intersected.&lt;/p&gt;
+
+&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getIntersectionNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+        :type head1, head1: ListNode
+        :rtype: ListNode
+        &quot;&quot;&quot;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;h1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headA&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;h2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headB&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;h1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;h1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headB&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;h1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
+            
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;h2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headA&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;h2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
+                
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;h1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;Iterate the both linked lists once, so total time complexity is O(m+n) where m is length of h1 and n is length of h2&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">160. Intersection of Two Linked Lists (Python)</summary></entry><entry><title type="html">445. Add Two Numbers II (Python)</title><link href="https://zhenyu0519.github.io/2020/06/06/lc445/" rel="alternate" type="text/html" title="445. Add Two Numbers II (Python)" /><published>2020-06-06T00:00:00-07:00</published><updated>2020-06-06T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/06/06/lc445</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/06/06/lc445/">&lt;h1 id=&quot;445-add-two-numbers-ii-python&quot;&gt;445. Add Two Numbers II (Python)&lt;/h1&gt;
+
+&lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;/categories/#Linked-List&quot; target=&quot;_blank&quot;&gt; Linked-List&lt;/a&gt;.
+&lt;a href=&quot;/categories/#Stack&quot; target=&quot;_blank&quot;&gt; Stack&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
+&lt;p&gt;You are given two non-empty linked lists representing two non-negative integers. The most significant digit comes first and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.&lt;/p&gt;
+
+&lt;p&gt;You may assume the two numbers do not contain any leading zero, except the number 0 itself.&lt;/p&gt;
+
+&lt;h2 id=&quot;follow-up&quot;&gt;Follow Up:&lt;/h2&gt;
+&lt;p&gt;What if you cannot modify the input lists? In other words, reversing the lists is not allowed.&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: (7 -&amp;gt; 2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4)
+Output: 7 -&amp;gt; 8 -&amp;gt; 0 -&amp;gt; 7
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;methodology&quot;&gt;Methodology&lt;/h2&gt;
+&lt;p&gt;This is an extention question of &lt;a href=&quot;https://zhenyu0519.github.io/2020/06/06/lc02/&quot; target=&quot;_blank&quot;&gt;02. Add Two Numbers&lt;/a&gt; The difference is now &lt;strong&gt;The most significant digit comes first&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The brutal force solution will iterate both Linked List and take out dights store in array and reverse the array, make them become a number then plus the two numbers to get the result number. Create a new LinkedList and insert the dights from result number, then return this LinkedList. However, take out digits from Linked List,store in array, reverse array, combine number, insert back to Linked List will cause lots of operations and the performance is aweful. The code may also be complicated to read.&lt;/p&gt;
+
+&lt;p&gt;My solution will use stack. 
+First, iterate L1 and L2 and store their digits into in l1, l2 stacks.
+Then, Pop the top from both stacks and do calculation to get value and asign the value to new created node.
+Create a head node init it as None. We point head’s next pointer to the new created node and update the new node become head node. 
+Finally we return head node.&lt;/p&gt;
+
+&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addTwoNumbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ListNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ListNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ListNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;stack_l1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;stack_l2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;stack_l1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;l1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;stack_l2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;l2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;carry&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack_l1&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack_l2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;v1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack_l1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack_l1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;v2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack_l2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack_l2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v2&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;carry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;divmod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;carry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ListNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;carry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ListNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;carry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;Iterate the linked list once, so total time complexity is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">445. Add Two Numbers II (Python)</summary></entry><entry><title type="html">234. Palindrome Linked List (Python)</title><link href="https://zhenyu0519.github.io/2020/06/06/lc234/" rel="alternate" type="text/html" title="234. Palindrome Linked List (Python)" /><published>2020-06-06T00:00:00-07:00</published><updated>2020-06-06T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/06/06/lc234</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/06/06/lc234/">&lt;h1 id=&quot;234-palindrome-linked-list-python&quot;&gt;234. Palindrome Linked List (Python)&lt;/h1&gt;
 
 &lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Linked-List&quot; target=&quot;_blank&quot;&gt; Linked-List&lt;/a&gt;.&lt;/p&gt;
@@ -63,66 +242,7 @@ Output: true
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo-1&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Iterate the linked list once, so total time complexity is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">234. Palindrome Linked List (Python)</summary></entry><entry><title type="html">445. Add Two Numbers II (Python)</title><link href="https://zhenyu0519.github.io/2020/06/06/lc445/" rel="alternate" type="text/html" title="445. Add Two Numbers II (Python)" /><published>2020-06-06T00:00:00-07:00</published><updated>2020-06-06T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/06/06/lc445</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/06/06/lc445/">&lt;h1 id=&quot;445-add-two-numbers-ii-python&quot;&gt;445. Add Two Numbers II (Python)&lt;/h1&gt;
-
-&lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Linked-List&quot; target=&quot;_blank&quot;&gt; Linked-List&lt;/a&gt;.
-&lt;a href=&quot;/categories/#Stack&quot; target=&quot;_blank&quot;&gt; Stack&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
-&lt;p&gt;You are given two non-empty linked lists representing two non-negative integers. The most significant digit comes first and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.&lt;/p&gt;
-
-&lt;p&gt;You may assume the two numbers do not contain any leading zero, except the number 0 itself.&lt;/p&gt;
-
-&lt;h2 id=&quot;follow-up&quot;&gt;Follow Up:&lt;/h2&gt;
-&lt;p&gt;What if you cannot modify the input lists? In other words, reversing the lists is not allowed.&lt;/p&gt;
-
-&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
-
-&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: (7 -&amp;gt; 2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4)
-Output: 7 -&amp;gt; 8 -&amp;gt; 0 -&amp;gt; 7
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;methodology&quot;&gt;Methodology&lt;/h2&gt;
-&lt;p&gt;This is an extention question of &lt;a href=&quot;https://zhenyu0519.github.io/2020/06/06/lc02/&quot; target=&quot;_blank&quot;&gt;02. Add Two Numbers&lt;/a&gt; The difference is now &lt;strong&gt;The most significant digit comes first&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;The brutal force solution will iterate both Linked List and take out dights store in array and reverse the array, make them become a number then plus the two numbers to get the result number. Create a new LinkedList and insert the dights from result number, then return this LinkedList. However, take out digits from Linked List,store in array, reverse array, combine number, insert back to Linked List will cause lots of operations and the performance is aweful. The code may also be complicated to read.&lt;/p&gt;
-
-&lt;p&gt;My solution will use stack. 
-First, iterate L1 and L2 and store their digits into in l1, l2 stacks.
-Then, Pop the top from both stacks and do calculation to get value and asign the value to new created node.
-Create a head node init it as None. We point head’s next pointer to the new created node and update the new node become head node. 
-Finally we return head node.&lt;/p&gt;
-
-&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addTwoNumbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ListNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ListNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ListNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;stack_l1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;stack_l2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;stack_l1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;l1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;stack_l2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;l2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;carry&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack_l1&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack_l2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;v1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack_l1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack_l1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;v2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack_l2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack_l2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v2&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;carry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;divmod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;carry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ListNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;carry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ListNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;carry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Iterate the linked list once, so total time complexity is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">445. Add Two Numbers II (Python)</summary></entry><entry><title type="html">2. Add Two Numbers (Python)</title><link href="https://zhenyu0519.github.io/2020/06/06/lc02/" rel="alternate" type="text/html" title="2. Add Two Numbers (Python)" /><published>2020-06-06T00:00:00-07:00</published><updated>2020-06-06T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/06/06/lc02</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/06/06/lc02/">&lt;h1 id=&quot;2-add-two-numbers-python&quot;&gt;2. Add Two Numbers (Python)&lt;/h1&gt;
+&lt;p&gt;Iterate the linked list once, so total time complexity is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">234. Palindrome Linked List (Python)</summary></entry><entry><title type="html">2. Add Two Numbers (Python)</title><link href="https://zhenyu0519.github.io/2020/06/06/lc02/" rel="alternate" type="text/html" title="2. Add Two Numbers (Python)" /><published>2020-06-06T00:00:00-07:00</published><updated>2020-06-06T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/06/06/lc02</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/06/06/lc02/">&lt;h1 id=&quot;2-add-two-numbers-python&quot;&gt;2. Add Two Numbers (Python)&lt;/h1&gt;
 
 &lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Linked-List&quot; target=&quot;_blank&quot;&gt; Linked-List&lt;/a&gt;.&lt;/p&gt;
@@ -443,97 +563,4 @@ Explanation: We can replace '0' with '1' to get t.
     &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
     &lt;p&gt;Iterate the element of the string once, so total time complexity is O(n)&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Jeffrey</name></author><summary type="html">161. One Edit Distance (Python)</summary></entry><entry><title type="html">Compare QueryReference and Snapshot in firestore</title><link href="https://zhenyu0519.github.io/2020/04/07/queryreference_snapshot/" rel="alternate" type="text/html" title="Compare QueryReference and Snapshot in firestore" /><published>2020-04-07T00:00:00-07:00</published><updated>2020-04-07T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/04/07/queryreference_snapshot</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/04/07/queryreference_snapshot/">&lt;h2 id=&quot;two-objects-from-firestore&quot;&gt;Two objects from firestore&lt;/h2&gt;
-&lt;p&gt;When we send query to firestore to give us somthing from the database. Firestore return us two types of objects: QueryReference object and Snapshot object. Of these objects, they can be either Document or Collection versions.
-&lt;strong&gt;Firestore will always return us these objects, even if nothing exists at from that query&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;QueryReference Object
-    &lt;ul&gt;
-      &lt;li&gt;DocumentReference&lt;/li&gt;
-      &lt;li&gt;CollectionReference&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;SnapshotObject
-    &lt;ul&gt;
-      &lt;li&gt;DocumentSnapshot&lt;/li&gt;
-      &lt;li&gt;CollectionSnapshot(which is called QuerySnapshot)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;queryreference-object&quot;&gt;QueryReference Object&lt;/h2&gt;
-&lt;p&gt;QueryReference object is an object that represents the &lt;strong&gt;‘current’ place in the database that we querying&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;We get them by calling either:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javaScript&quot;&gt;firestore.doc('/users/:userId')
-firestore.collections('/users')
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The queryReference object &lt;strong&gt;does not have the actuall data of the collection or document&lt;/strong&gt;. it instead has properties that tell us detail about it, or the method to get the snapshot object which gives us the data we looking for.&lt;/p&gt;
-
-&lt;h2 id=&quot;documentreference-vs-collectionreference&quot;&gt;DocumentReference vs CollectionReference&lt;/h2&gt;
-&lt;p&gt;We use documentReference objects to perform our CRUD methods(create, retrieve, update, delete).The documentReference methods are .set(), .get(), .update() and .delete() respectively&lt;/p&gt;
-
-&lt;p&gt;We can also add documents to collections using the collectionReference object using the .add() method (collectionRef.add(value:prop))&lt;/p&gt;
-
-&lt;h2 id=&quot;snapshot-object&quot;&gt;Snapshot Object&lt;/h2&gt;
-&lt;p&gt;We get the snapshot object from the referenceObject using the .get() method. ie. documentRef.get() or collectionRef.get()&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;documentRef returns a documentSnapshot object&lt;/li&gt;
-  &lt;li&gt;collectionRef return a querySnapshot object&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;documentsnapshot&quot;&gt;DocumentSnapshot&lt;/h2&gt;
-&lt;p&gt;We get a documentSnapshot object from our documentReference object.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The documentSnapshot object allow us to check if a document exists at this query using the .exists property which returns a boolean.&lt;/li&gt;
-  &lt;li&gt;We can also get the actual properties on the object by calling the .data() method, which returns us a JSON object of the document&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;querysnapshot&quot;&gt;QuerySnapshot&lt;/h2&gt;
-&lt;p&gt;We get a querySnapshot object from out collectionReference objcet.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;We can check if there are any documents in the collection by calling the .empty property which returns a boolean.&lt;/li&gt;
-  &lt;li&gt;We can get all the documents in the collection by calling the .docs property. It returns an array of our documents as documentSnapshot objects.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Jeffrey</name></author><summary type="html">Two objects from firestore When we send query to firestore to give us somthing from the database. Firestore return us two types of objects: QueryReference object and Snapshot object. Of these objects, they can be either Document or Collection versions. Firestore will always return us these objects, even if nothing exists at from that query.</summary></entry><entry><title type="html">11. Container With Most Water (Python)</title><link href="https://zhenyu0519.github.io/2020/04/01/lc11/" rel="alternate" type="text/html" title="11. Container With Most Water (Python)" /><published>2020-04-01T00:00:00-07:00</published><updated>2020-04-01T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/04/01/lc11</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/04/01/lc11/">&lt;h1 id=&quot;11-container-with-most-water-python&quot;&gt;11. Container With Most Water (Python)&lt;/h1&gt;
-
-&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Two-Pointers&quot; target=&quot;_blank&quot;&gt; Two-Pointers&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
-&lt;p&gt;Given n non-negative integers a1, a2, …, an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.&lt;/p&gt;
-
-&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
-
-&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;../../images/blog/question_11.jpg&quot; alt=&quot;question11&quot; /&gt;&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;note&quot;&gt;Note&lt;/h2&gt;
-&lt;p&gt;You may not slant the container and n is at least 2.&lt;/p&gt;
-
-&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
-&lt;p&gt;We use two pointers to solve this question. 
-First we set left pointer which is the start of the list and right pointer which is the end of the list. we compare the area of the container that made by left and right to the max area. If the current area is larger than the max area, we update the max area to the current area. We will move the pointer with shorter height closer to the other pointer until two pointer get touched.&lt;/p&gt;
-
-&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;maxArea&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-        
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;water&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;water&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;water&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Iterate the element of the list once, so total time complexity is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">11. Container With Most Water (Python)</summary></entry></feed>
+&lt;/ol&gt;</content><author><name>Jeffrey</name></author><summary type="html">161. One Edit Distance (Python)</summary></entry></feed>
