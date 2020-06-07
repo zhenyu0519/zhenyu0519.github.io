@@ -934,6 +934,27 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/06/05/lc86/"
+    } ,
+  
+    {
+      "title"    : "2. Add Two Numbers (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/06/06/lc02/"
+    } ,
+  
+    {
+      "title"    : "234. Palindrome Linked List (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/06/06/lc234/"
+    } ,
+  
+    {
+      "title"    : "445. Add Two Numbers II (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/06/06/lc445/"
     } 
   
 ]
