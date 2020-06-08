@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>155. Min Stack (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <title>232. Implement Queue using Stacks (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
     <!-- add google search console -->
     <meta name="google-site-verification" content="Hh37wMK9MFpx6xtWD91RDJzIy-PTLn7ocpNyQ1kPI6M" />
     <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-css/css/primer.css">
@@ -23,23 +23,23 @@
     
 
     
-    <link rel="canonical" href="https://zhenyu0519.github.io/2020/06/08/lc155/">
+    <link rel="canonical" href="https://zhenyu0519.github.io/2020/06/08/lc232/">
     <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="https://zhenyu0519.github.io/feed.xml">
     <link rel="shortcut icon" href="https://zhenyu0519.github.io/favicon.ico">
     
-    <meta property="og:title" content="155. Min Stack (Python)">
+    <meta property="og:title" content="232. Implement Queue using Stacks (Python)">
       
-    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, 155. Min Stack, zhenyu, Stack">
-    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, 155. Min Stack, zhenyu, Stack">
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, 232. Implement Queue using Stacks, zhenyu, Stack">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, 232. Implement Queue using Stacks, zhenyu, Stack">
       
-    <meta name="description" content="155. Min Stack (Python)">
-    <meta name="og:description" content="155. Min Stack (Python)">
+    <meta name="description" content="232. Implement Queue using Stacks (Python)">
+    <meta name="og:description" content="232. Implement Queue using Stacks (Python)">
       
     
     
         
     
-    <meta property="og:url" content="https://zhenyu0519.github.io/2020/06/08/lc155/">
+    <meta property="og:url" content="https://zhenyu0519.github.io/2020/06/08/lc232/">
     <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="zh_CN" />
@@ -50,20 +50,20 @@
     <script src="https://zhenyu0519.github.io/assets/js/jquery-ui.js"></script>
     <script src="https://zhenyu0519.github.io/assets/js/main.js"></script>
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Min Stack (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
+<title>Implement Queue using Stacks (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Min Stack (Python)" />
+<meta property="og:title" content="Implement Queue using Stacks (Python)" />
 <meta name="author" content="Jeffrey" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Min Stack (Python Solution)" />
-<meta property="og:description" content="Min Stack (Python Solution)" />
-<link rel="canonical" href="https://zhenyu0519.github.io/2020/06/08/lc155/" />
-<meta property="og:url" content="https://zhenyu0519.github.io/2020/06/08/lc155/" />
+<meta name="description" content="Implement Queue using Stacks (Python Solution)" />
+<meta property="og:description" content="Implement Queue using Stacks (Python Solution)" />
+<link rel="canonical" href="https://zhenyu0519.github.io/2020/06/08/lc232/" />
+<meta property="og:url" content="https://zhenyu0519.github.io/2020/06/08/lc232/" />
 <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey’s Blog)" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-06-08T00:00:00-07:00" />
 <script type="application/ld+json">
-{"description":"Min Stack (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/06/08/lc155/"},"url":"https://zhenyu0519.github.io/2020/06/08/lc155/","headline":"Min Stack (Python)","dateModified":"2020-06-08T00:00:00-07:00","datePublished":"2020-06-08T00:00:00-07:00","@context":"http://schema.org"}</script>
+{"description":"Implement Queue using Stacks (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/06/08/lc232/"},"url":"https://zhenyu0519.github.io/2020/06/08/lc232/","headline":"Implement Queue using Stacks (Python)","dateModified":"2020-06-08T00:00:00-07:00","datePublished":"2020-06-08T00:00:00-07:00","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -91,12 +91,12 @@
     </header>
     <!-- / header -->
 
-    <section class="collection-head small" data-pattern-id="155. Min Stack ">
+    <section class="collection-head small" data-pattern-id="232. Implement ">
   <div class="container">
     <div class="columns">
       <div class="column three-fourths">
         <div class="collection-title">
-          <h1 class="collection-header">155. Min Stack (Python)</h1>
+          <h1 class="collection-header">232. Implement Queue using Stacks (Python)</h1>
           <div class="collection-info">
             
             <span class="meta-info">
@@ -125,19 +125,19 @@
   <div class="columns">
     <div class="column three-fourths">
       <article class="article-content markdown-body">
-        <h1 id="155-min-stack-python">155. Min Stack (Python)</h1>
+        <h1 id="232-implement-queue-using-stacks-python">232. Implement Queue using Stacks (Python)</h1>
 
 <h2 id="related-topic">Related Topic</h2>
 <p><a href="/categories/#Stack" target="_blank"> Stack</a>.</p>
 
 <h2 id="description">Description</h2>
-<p>Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.</p>
+<p>Implement the following operations of a queue using stacks.</p>
 
 <ul>
-  <li>push(x) – Push element x onto stack.</li>
-  <li>pop() – Removes the element on top of the stack.</li>
-  <li>top() – Get the top element.</li>
-  <li>getMin() – Retrieve the minimum element in the stack.</li>
+  <li>push(x) – Push element x to the back of queue.</li>
+  <li>pop() – Removes the element from in front of queue.</li>
+  <li>peek() – Get the front element.</li>
+  <li>empty() – Return whether the queue is empty.</li>
 </ul>
 
 <h2 id="note">Note</h2>
@@ -146,77 +146,71 @@
 <h2 id="sample-io">Sample I/O</h2>
 
 <h3 id="example-1">Example 1</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input
-["MinStack","push","push","push","getMin","pop","top","getMin"]
-[[],[-2],[0],[-3],[],[],[],[]]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MyQueue queue = new MyQueue();
 
-Output
-[null,null,null,null,-3,null,0,-2]
-
-Explanation
-MinStack minStack = new MinStack();
-minStack.push(-2);
-minStack.push(0);
-minStack.push(-3);
-minStack.getMin(); // return -3
-minStack.pop();
-minStack.top();    // return 0
-minStack.getMin(); // return -2
+queue.push(1);
+queue.push(2);  
+queue.peek();  // returns 1
+queue.pop();   // returns 1
+queue.empty(); // returns false
 </code></pre></div></div>
 
-<h2 id="constraints">Constraints</h2>
+<h2 id="notes">Notes:</h2>
+
 <ul>
-  <li>Methods pop, top and getMin operations will always be called on non-empty stacks.</li>
+  <li>You must use only standard operations of a stack – which means only push to top, peek/pop from top, size, and is empty operations are valid.</li>
+  <li>Depending on your language, stack may not be supported natively. You may simulate a stack by using a list or deque (double-ended queue), as long as you use only standard operations of a stack.</li>
+  <li>You may assume that all operations are valid (for example, no pop or peek operations will be called on an empty queue).</li>
 </ul>
 
 <h2 id="methodology">Methodology</h2>
-<p>Push, pop and top are basic stack operations and they are easy to implemented by list. However, the hard part is getMin().
-To implement Push, pop and top, we have to keep the original order. To get min we somehow need to create extra space (min_stack) to stor the value in min order. If so, we have to compare the number with others each time when we insert the number into min_stack and this will cost a lot. The better way is to use index and priority level to mark each number in min_stack.</p>
+<p>To implement queue by using stack, the push and empty will be exactly same as stack. For pop and peek operations, we need to reorder the number in stack. However, since the operations are dynamic changing, to save the cost, the best way is to create extra space called pop_stack to append number that pop out from original stack, this will reverse order will minimum cost.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="s">"""
-        initialize your data structure here.
+        Initialize your data structure here.
         """</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">min_stack</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">min_index</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">min_value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s">"inf"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">push_stack</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pop_stack</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_value</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">min_stack</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">min_value</span> <span class="o">=</span> <span class="n">x</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">min_index</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_value</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">min_stack</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">min_index</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">+=</span><span class="mi">1</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="s">"""
+        Push element x to the back of queue.
+        """</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">push_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span>
-        <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_value</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">min_stack</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">min_index</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_stack</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">min_index</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">min_stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">min_index</span> <span class="o">-=</span> <span class="mi">1</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_index</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">min_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_stack</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">min_index</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">min_value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s">"inf"</span><span class="p">)</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_stack</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span> <span class="k">return</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">-=</span> <span class="mi">1</span>
-    <span class="k">def</span> <span class="nf">top</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
-    <span class="k">def</span> <span class="nf">getMin</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_value</span>
+    <span class="k">def</span> <span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="s">"""
+        Removes the element from in front of queue and returns that element.
+        """</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">empty</span><span class="p">():</span> <span class="k">return</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pop_stack</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop_stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">push_stack</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pop_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">push_stack</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop_stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">peek</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="s">"""
+        Get the front element.
+        """</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">empty</span><span class="p">():</span> <span class="k">return</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pop_stack</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop_stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">push_stack</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pop_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">push_stack</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pop_stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">empty</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="s">"""
+        Returns whether the queue is empty.
+        """</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">push_stack</span><span class="p">)</span><span class="o">==</span><span class="bp">False</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pop_stack</span><span class="p">)</span> <span class="o">==</span> <span class="bp">False</span>
 </code></pre></div></div>
 <h1 id="bigo">BigO</h1>
-<p>No need to iterate the stack or list, all operations push, pop, top and getMin are O(1)</p>
+<p>No need to iterate the stack or list for append and is empty but we do need to iterate the stack or list for pop and peek operations. This will cost O(n)</p>
 
 
       </article>
@@ -234,7 +228,7 @@ To implement Push, pop and top, we have to keep the original order. To get min w
         <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
         <script>
         var gitalk = new Gitalk({
-            id: '/2020/06/08/lc155/',
+            id: '/2020/06/08/lc232/',
             clientID: '4cef70907f5b36353d59',
             clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
             repo: 'zhenyu0519.github.io',

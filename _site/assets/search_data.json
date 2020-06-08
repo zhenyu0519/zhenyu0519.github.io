@@ -73,6 +73,8 @@
   
   
   
+  
+  
 
   
     {
@@ -983,6 +985,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/06/08/lc155/"
+    } ,
+  
+    {
+      "title"    : "232. Implement Queue using Stacks (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/06/08/lc232/"
     } 
   
 ]
