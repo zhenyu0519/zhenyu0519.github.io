@@ -969,6 +969,20 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/06/07/lc160/"
+    } ,
+  
+    {
+      "title"    : "142. Linked List Cycle II (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/06/08/lc142/"
+    } ,
+  
+    {
+      "title"    : "155. Min Stack (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/06/08/lc155/"
     } 
   
 ]
