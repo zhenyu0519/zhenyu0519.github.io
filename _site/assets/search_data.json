@@ -999,6 +999,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/06/09/lc20/"
+    } ,
+  
+    {
+      "title"    : "42. Trapping Rain Water (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/06/09/lc42/"
     } 
   
 ]
