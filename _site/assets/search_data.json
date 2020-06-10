@@ -1006,6 +1006,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/06/09/lc42/"
+    } ,
+  
+    {
+      "title"    : "71. Simplify Path (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/06/09/lc71/"
     } 
   
 ]
