@@ -1013,6 +1013,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/06/09/lc71/"
+    } ,
+  
+    {
+      "title"    : "739. Daily Temperatures (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/06/18/lc739/"
     } 
   
 ]
