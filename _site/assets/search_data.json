@@ -1020,6 +1020,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/06/18/lc739/"
+    } ,
+  
+    {
+      "title"    : "173. Binary Search Tree Iterator (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/06/19/lc173/"
     } 
   
 ]
