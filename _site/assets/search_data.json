@@ -75,6 +75,8 @@
   
   
   
+  
+  
 
   
     {
@@ -1055,6 +1057,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/06/22/lc496/"
+    } ,
+  
+    {
+      "title"    : "503. Next Greater Element II (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/06/29/lc503/"
     } 
   
 ]
