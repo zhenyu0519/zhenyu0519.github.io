@@ -29,8 +29,8 @@
     
     <meta property="og:title" content="leetcode 103. Binary Tree Zigzag Level Order Traversal (Python)">
       
-    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 103. Binary Tree Zigzag Level Order Traversal, zhenyu, Breadth-First-Search, BFS, Breadth First Search">
-    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 103. Binary Tree Zigzag Level Order Traversal, zhenyu, Breadth-First-Search, BFS, Breadth First Search">
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 103. Binary Tree Zigzag Level Order Traversal, zhenyu, Breadth-First-Search, BFS, Breadth First Search, Queue, Stack">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 103. Binary Tree Zigzag Level Order Traversal, zhenyu, Breadth-First-Search, BFS, Breadth First Search, Queue, Stack">
       
     <meta name="description" content="Leetcode 103. Binary Tree Zigzag Level Order Traversal (Python)">
     <meta name="og:description" content="Leetcode 103. Binary Tree Zigzag Level Order Traversal (Python)">
@@ -114,6 +114,16 @@
               <a href="https://zhenyu0519.github.io/categories/#Breadth-First-Search" title="Breadth-First-Search">Breadth-First-Search</a>
             </span>
             
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Queue" title="Queue">Queue</a>
+            </span>
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Stack" title="Stack">Stack</a>
+            </span>
+            
           </div>
         </div>
       </div>
@@ -128,7 +138,9 @@
         <h1 id="leetcode-103-binary-tree-zigzag-level-order-traversal-python">Leetcode 103. Binary Tree Zigzag Level Order Traversal (Python)</h1>
 
 <h1 id="related-topic">Related Topic</h1>
-<p><a href="/categories/#Breadth-First-Search" target="_blank"> Breadth-First-Search</a>.</p>
+<p><a href="/categories/#Breadth-First-Search" target="_blank"> Breadth-First-Search </a>.
+<a href="/categories/#Queue" target="_blank"> Queue </a>.
+<a href="/categories/#Stack" target="_blank"> Stack </a>.</p>
 
 <h1 id="description">Description</h1>
 <p>Given a binary tree, return the zigzag level order traversal of its nodes’ values. (ie, from left to right, then right to left for the next level and alternate between).</p>
@@ -153,10 +165,12 @@ Given binary tree [3,9,20,null,null,15,7],</p>
 ]
 </code></pre></div></div>
 
-<h1 id="methodology">Methodology</h1>
-<p>Use BFS to traversal the tree level by level. To append each level in zigzag order, if the current level nodes pop in left -&gt; right order, then to append children nodes of each node should be in right -&gt; left order; if the current level nodes pop in right-&gt;left order, then to append children nodes of each node should be in left -&gt; right order. This is a straight forward answer.</p>
-
-<p>We can also Use BFS to append each level node to the res list, then we only need focus on dealing with res list. We iterate the res list, each element is a list as well. If index of the element is dividable by 2 then we reverse this list element.</p>
+<h1 id="methodology-three-ways">Methodology (three ways)</h1>
+<ol>
+  <li>Use BFS to traversal the tree level by level. To append each level in zigzag order, if the current level nodes pop in left -&gt; right order, then to append children nodes of each node should be in right -&gt; left order; if the current level nodes pop in right-&gt;left order, then to append children nodes of each node should be in left -&gt; right order. This is a straight forward answer. This method need two way appending, so we choose deque which allow appending to front and to end.</li>
+  <li>We can also Use BFS to append each level node to the res list, then we only need focus on dealing with res list. We iterate the res list, each element is a list as well. If index of the element is dividable by 2 then we reverse this list element.</li>
+  <li>We use stack, the only difference is stack only allow append to the end. So we need a tmp stack for each level to avoid the appending affect the original stack. Then we append the each level nodes based on the zigzag order. After iteration of each level we replace stack with tmp stack and continue.</li>
+</ol>
 
 <h1 id="code1-bfs-straight-forward-answer">Code1 (BFS Straight Forward Answer)</h1>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">zigzagLevelOrder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
@@ -208,6 +222,33 @@ Given binary tree [3,9,20,null,null,15,7],</p>
         <span class="k">return</span> <span class="p">[</span><span class="n">arr</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">arr</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">arr</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">res</span><span class="p">)]</span>
 </code></pre></div></div>
 <h1 id="bigo-1">BigO</h1>
+<p>We traversal all elements of the tree once so total time complexity is O(n)</p>
+
+<h1 id="code3-bfs-stack-only">Code3 (BFS Stack only)</h1>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">zigzagLevelOrder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+        <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">stack</span> <span class="o">=</span> <span class="p">[</span><span class="n">root</span><span class="p">]</span>
+        <span class="n">left</span> <span class="o">=</span> <span class="bp">True</span> <span class="c"># True: left-&gt;right,  False: right-&gt;left</span>
+        <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
+            <span class="n">tmp</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">tmp_stack</span><span class="o">=</span><span class="p">[]</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stack</span><span class="p">)):</span>
+                <span class="n">node</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+                <span class="n">tmp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">left</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">:</span> <span class="n">tmp_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">:</span> <span class="n">tmp_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">:</span> <span class="n">tmp_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">:</span> <span class="n">tmp_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+            <span class="n">stack</span> <span class="o">=</span> <span class="n">tmp_stack</span>
+            <span class="n">left</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">left</span>
+        <span class="k">return</span> <span class="n">res</span>
+</code></pre></div></div>
+<h1 id="bigo-2">BigO</h1>
 <p>We traversal all elements of the tree once so total time complexity is O(n)</p>
 
       </article>
