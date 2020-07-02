@@ -1078,6 +1078,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/06/30/lc636/"
+    } ,
+  
+    {
+      "title"    : "856. Score of Parentheses (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/01/lc856/"
     } 
   
 ]
