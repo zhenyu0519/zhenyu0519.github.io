@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-07-03T11:40:59-07:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">225. Implement Stack using Queues (Python)</title><link href="https://zhenyu0519.github.io/2020/07/03/lc255/" rel="alternate" type="text/html" title="225. Implement Stack using Queues (Python)" /><published>2020-07-03T00:00:00-07:00</published><updated>2020-07-03T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/03/lc255</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/03/lc255/">&lt;h1 id=&quot;225-implement-stack-using-queues-python&quot;&gt;225. Implement Stack using Queues (Python)&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-07-03T18:20:47-07:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">225. Implement Stack using Queues (Python)</title><link href="https://zhenyu0519.github.io/2020/07/03/lc255/" rel="alternate" type="text/html" title="225. Implement Stack using Queues (Python)" /><published>2020-07-03T00:00:00-07:00</published><updated>2020-07-03T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/03/lc255</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/03/lc255/">&lt;h1 id=&quot;225-implement-stack-using-queues-python&quot;&gt;225. Implement Stack using Queues (Python)&lt;/h1&gt;
 
 &lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Stack&quot; target=&quot;_blank&quot;&gt; Stack&lt;/a&gt;.&lt;/p&gt;
@@ -74,7 +74,82 @@ stack.empty(); // returns false
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;This will give O(n) time complexity.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">225. Implement Stack using Queues (Python)</summary></entry><entry><title type="html">907. Sum of Subarray Minimums (Python)</title><link href="https://zhenyu0519.github.io/2020/07/02/lc907/" rel="alternate" type="text/html" title="907. Sum of Subarray Minimums (Python)" /><published>2020-07-02T00:00:00-07:00</published><updated>2020-07-02T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/02/lc907</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/02/lc907/">&lt;h1 id=&quot;907-sum-of-subarray-minimums-python&quot;&gt;907. Sum of Subarray Minimums (Python)&lt;/h1&gt;
+&lt;p&gt;This will give O(n) time complexity.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">225. Implement Stack using Queues (Python)</summary></entry><entry><title type="html">1249. Minimum Remove to Make Valid Parentheses (Python)</title><link href="https://zhenyu0519.github.io/2020/07/03/lc1249/" rel="alternate" type="text/html" title="1249. Minimum Remove to Make Valid Parentheses (Python)" /><published>2020-07-03T00:00:00-07:00</published><updated>2020-07-03T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/03/lc1249</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/03/lc1249/">&lt;h1 id=&quot;1249-minimum-remove-to-make-valid-parentheses-python&quot;&gt;1249. Minimum Remove to Make Valid Parentheses (Python)&lt;/h1&gt;
+
+&lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;/categories/#Stack&quot; target=&quot;_blank&quot;&gt; Stack&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
+&lt;p&gt;Given a string s of ‘(‘ , ‘)’ and lowercase English characters.&lt;/p&gt;
+
+&lt;p&gt;Your task is to remove the minimum number of parentheses ( ‘(‘ or ‘)’, in any positions ) so that the resulting parentheses string is valid and return any valid string.&lt;/p&gt;
+
+&lt;p&gt;Formally, a parentheses string is valid if and only if:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;It is the empty string, contains only lowercase characters, or&lt;/li&gt;
+  &lt;li&gt;It can be written as AB (A concatenated with B), where A and B are valid strings, or&lt;/li&gt;
+  &lt;li&gt;It can be written as (A), where A is a valid string.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: s = &quot;lee(t(c)o)de)&quot;
+Output: &quot;lee(t(c)o)de&quot;
+Explanation: &quot;lee(t(co)de)&quot; , &quot;lee(t(c)ode)&quot; would also be accepted.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: s = &quot;a)b(c)d&quot;
+Output: &quot;ab(c)d&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-3&quot;&gt;Example 3&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: s = &quot;))((&quot;
+Output: &quot;&quot;
+Explanation: An empty string is also valid.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-4&quot;&gt;Example 4&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: s = &quot;(a(b(c)d)&quot;
+Output: &quot;a(b(c)d)&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;note&quot;&gt;Note&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;1 &amp;lt;= s.length &amp;lt;= 10^5&lt;/li&gt;
+  &lt;li&gt;s[i] is one of  ‘(‘ , ‘)’ and lowercase English letters.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;methodology&quot;&gt;Methodology&lt;/h2&gt;
+&lt;p&gt;We need a stack to store all “(“’s index, and once we meet “)”, we will pop out index from stack. There are special cases: If the stack is empty and we meet “(“ then we store the index into tmp set. The tmp set will store all index that need to remove. If after the iteration, the stack still has “(“, then we store all index of stack into tmp set. Then we start iterate the string again, we will only keep the character which index is not in tmp set.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;minRemoveToMakeValid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;indexes_to_remove&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'()'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'('&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;indexes_to_remove&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;indexes_to_remove&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indexes_to_remove&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;union&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indexes_to_remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;We iterate the string twice so the total cost will be O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">1249. Minimum Remove to Make Valid Parentheses (Python)</summary></entry><entry><title type="html">907. Sum of Subarray Minimums (Python)</title><link href="https://zhenyu0519.github.io/2020/07/02/lc907/" rel="alternate" type="text/html" title="907. Sum of Subarray Minimums (Python)" /><published>2020-07-02T00:00:00-07:00</published><updated>2020-07-02T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/02/lc907</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/02/lc907/">&lt;h1 id=&quot;907-sum-of-subarray-minimums-python&quot;&gt;907. Sum of Subarray Minimums (Python)&lt;/h1&gt;
 
 &lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Stack&quot; target=&quot;_blank&quot;&gt; Stack&lt;/a&gt;.&lt;/p&gt;
@@ -557,75 +632,4 @@ We iterate the list. There are two types of elements&lt;/p&gt;
                 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Iterate the list will take O(n) the append and pop will take O(1) so in total O(n) where n is the length of the list&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">150. Evaluate Reverse Polish Notation (Python)</summary></entry><entry><title type="html">394. Decode String (Python)</title><link href="https://zhenyu0519.github.io/2020/06/20/lc394/" rel="alternate" type="text/html" title="394. Decode String (Python)" /><published>2020-06-20T00:00:00-07:00</published><updated>2020-06-20T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/06/20/lc394</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/06/20/lc394/">&lt;h1 id=&quot;394-decode-string-python&quot;&gt;394. Decode String (Python)&lt;/h1&gt;
-
-&lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Stack&quot; target=&quot;_blank&quot;&gt; Stack&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
-&lt;p&gt;Given an encoded string, return its decoded string.&lt;/p&gt;
-
-&lt;p&gt;The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets is being repeated exactly k times. Note that k is guaranteed to be a positive integer.&lt;/p&gt;
-
-&lt;p&gt;You may assume that the input string is always valid; No extra white spaces, square brackets are well-formed, etc.&lt;/p&gt;
-
-&lt;p&gt;Furthermore, you may assume that the original data does not contain any digits and that digits are only for those repeat numbers, k. For example, there won’t be input like 3a or 2[4].&lt;/p&gt;
-
-&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
-
-&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: s = &quot;3[a]2[bc]&quot;
-Output: &quot;aaabcbc&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: s = &quot;3[a2[c]]&quot;
-Output: &quot;accaccacc&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;example-3&quot;&gt;Example 3&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: s = &quot;2[abc]3[cd]ef&quot;
-Output: &quot;abcabccdcdcdef&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;example-4&quot;&gt;Example 4&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: s = &quot;abc3[cd]xyz&quot;
-Output: &quot;abccdcdcdxyz&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;methodology&quot;&gt;Methodology&lt;/h2&gt;
-&lt;p&gt;There are four types of elements in a string.&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;If the current char is digit (could be more than 10) we need to convert to int and assign to number&lt;/li&gt;
-  &lt;li&gt;If the current char is ‘[’ we need to append the previous string and the number to stack and those two will combine to be previous string for later use and clear string (become ‘’) and number (become 0)&lt;/li&gt;
-  &lt;li&gt;If the current char is alphabet, we need to concatenate the char to string.&lt;/li&gt;
-  &lt;li&gt;If the current char is ‘]’ we pop out the previous string and previous number and convert to new string by previous string + number * current string then assign to string for future use
-After iterate all elements, we return the string as result.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;decodeString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isdigit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;[&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isalpha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;']'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;pre_num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;pre_string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pre_string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pre_num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Iterate the string once so it take O(n) time complexity.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">394. Decode String (Python)</summary></entry></feed>
+&lt;p&gt;Iterate the list will take O(n) the append and pop will take O(1) so in total O(n) where n is the length of the list&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">150. Evaluate Reverse Polish Notation (Python)</summary></entry></feed>

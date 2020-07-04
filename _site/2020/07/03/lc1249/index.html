@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" prefix="og: http://ogp.me/ns#" class="han-init">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>1249. Minimum Remove to Make Valid Parentheses (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <!-- add google search console -->
+    <meta name="google-site-verification" content="Hh37wMK9MFpx6xtWD91RDJzIy-PTLn7ocpNyQ1kPI6M" />
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-css/css/primer.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-markdown/dist/user-content.min.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/octicons/octicons/octicons.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/collection.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/repo-card.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/sections/repo-list.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/sections/mini-repo-list.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/boxed-group.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/common.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/share.js/dist/css/share.min.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/responsive.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/posts/index.css">
+    <!-- Latest compiled and minified CSS -->
+    
+
+    
+    <link rel="canonical" href="https://zhenyu0519.github.io/2020/07/03/lc1249/">
+    <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="https://zhenyu0519.github.io/feed.xml">
+    <link rel="shortcut icon" href="https://zhenyu0519.github.io/favicon.ico">
+    
+    <meta property="og:title" content="1249. Minimum Remove to Make Valid Parentheses (Python)">
+      
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, 1249. Minimum Remove to Make Valid Parentheses, zhenyu, Stack">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, 1249. Minimum Remove to Make Valid Parentheses, zhenyu, Stack">
+      
+    <meta name="description" content="1249. Minimum Remove to Make Valid Parentheses (Python)">
+    <meta name="og:description" content="1249. Minimum Remove to Make Valid Parentheses (Python)">
+      
+    
+    
+        
+    
+    <meta property="og:url" content="https://zhenyu0519.github.io/2020/07/03/lc1249/">
+    <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_CN" />
+    
+    <meta property="article:published_time" content="2020-07-03">
+    
+    <script src="https://zhenyu0519.github.io/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/jquery-ui.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/main.js"></script>
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Minimum Remove to Make Valid Parentheses (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Minimum Remove to Make Valid Parentheses (Python)" />
+<meta name="author" content="Jeffrey" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Minimum Remove to Make Valid Parentheses (Python Solution)" />
+<meta property="og:description" content="Minimum Remove to Make Valid Parentheses (Python Solution)" />
+<link rel="canonical" href="https://zhenyu0519.github.io/2020/07/03/lc1249/" />
+<meta property="og:url" content="https://zhenyu0519.github.io/2020/07/03/lc1249/" />
+<meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey’s Blog)" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-07-03T00:00:00-07:00" />
+<script type="application/ld+json">
+{"description":"Minimum Remove to Make Valid Parentheses (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/07/03/lc1249/"},"url":"https://zhenyu0519.github.io/2020/07/03/lc1249/","headline":"Minimum Remove to Make Valid Parentheses (Python)","dateModified":"2020-07-03T00:00:00-07:00","datePublished":"2020-07-03T00:00:00-07:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body class="" data-mz="">
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="https://zhenyu0519.github.io/" title="杰弗里 · 时光博客(Jeffrey's Blog)"><span class="octicon octicon-mark-github"></span> 杰弗里 · 时光博客(Jeffrey's Blog)</a></h1>
+            <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <nav class="site-header-nav" role="navigation">
+                
+                <a href="https://zhenyu0519.github.io/" class=" site-header-nav-item" target="" title="Home">Home</a>
+                
+                <a href="https://zhenyu0519.github.io/categories/" class=" site-header-nav-item" target="" title="Categories">Categories</a>
+                
+                <a href="https://zhenyu0519.github.io/open-source/" class=" site-header-nav-item" target="" title="Github Repos">Github Repos</a>
+                
+                <a href="https://zhenyu0519.github.io/about/" class=" site-header-nav-item" target="" title="About">About</a>
+                
+            </nav>
+        </div>
+    </header>
+    <!-- / header -->
+
+    <section class="collection-head small" data-pattern-id="1249. Minimum R">
+  <div class="container">
+    <div class="columns">
+      <div class="column three-fourths">
+        <div class="collection-title">
+          <h1 class="collection-header">1249. Minimum Remove to Make Valid Parentheses (Python)</h1>
+          <div class="collection-info">
+            
+            <span class="meta-info">
+              <span class="octicon octicon-calendar"></span> 03 Jul 2020
+            </span>
+            
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Leetcode" title="Leetcode">Leetcode</a>
+            </span>
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Stack" title="Stack">Stack</a>
+            </span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- / .banner -->
+<section class="container content">
+  <div class="columns">
+    <div class="column three-fourths">
+      <article class="article-content markdown-body">
+        <h1 id="1249-minimum-remove-to-make-valid-parentheses-python">1249. Minimum Remove to Make Valid Parentheses (Python)</h1>
+
+<h2 id="related-topic">Related Topic</h2>
+<p><a href="/categories/#Stack" target="_blank"> Stack</a>.</p>
+
+<h2 id="description">Description</h2>
+<p>Given a string s of ‘(‘ , ‘)’ and lowercase English characters.</p>
+
+<p>Your task is to remove the minimum number of parentheses ( ‘(‘ or ‘)’, in any positions ) so that the resulting parentheses string is valid and return any valid string.</p>
+
+<p>Formally, a parentheses string is valid if and only if:</p>
+
+<ul>
+  <li>It is the empty string, contains only lowercase characters, or</li>
+  <li>It can be written as AB (A concatenated with B), where A and B are valid strings, or</li>
+  <li>It can be written as (A), where A is a valid string.</li>
+</ul>
+
+<h2 id="sample-io">Sample I/O</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: s = "lee(t(c)o)de)"
+Output: "lee(t(c)o)de"
+Explanation: "lee(t(co)de)" , "lee(t(c)ode)" would also be accepted.
+</code></pre></div></div>
+
+<h3 id="example-2">Example 2</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: s = "a)b(c)d"
+Output: "ab(c)d"
+</code></pre></div></div>
+
+<h3 id="example-3">Example 3</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: s = "))(("
+Output: ""
+Explanation: An empty string is also valid.
+</code></pre></div></div>
+
+<h3 id="example-4">Example 4</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: s = "(a(b(c)d)"
+Output: "a(b(c)d)"
+</code></pre></div></div>
+
+<h3 id="note">Note</h3>
+<ol>
+  <li>1 &lt;= s.length &lt;= 10^5</li>
+  <li>s[i] is one of  ‘(‘ , ‘)’ and lowercase English letters.</li>
+</ol>
+
+<h2 id="methodology">Methodology</h2>
+<p>We need a stack to store all “(“’s index, and once we meet “)”, we will pop out index from stack. There are special cases: If the stack is empty and we meet “(“ then we store the index into tmp set. The tmp set will store all index that need to remove. If after the iteration, the stack still has “(“, then we store all index of stack into tmp set. Then we start iterate the string again, we will only keep the character which index is not in tmp set.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">minRemoveToMakeValid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">stack</span><span class="o">=</span><span class="p">[]</span>
+        <span class="n">indexes_to_remove</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="s">''</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">c</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s">'()'</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="s">'('</span><span class="p">:</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="ow">not</span> <span class="n">stack</span><span class="p">:</span>
+                <span class="n">indexes_to_remove</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="n">indexes_to_remove</span> <span class="o">=</span> <span class="n">indexes_to_remove</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">stack</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">indexes_to_remove</span><span class="p">:</span>
+                <span class="n">res</span><span class="o">+=</span><span class="n">c</span>
+        <span class="k">return</span> <span class="n">res</span>
+</code></pre></div></div>
+<h1 id="bigo">BigO</h1>
+<p>We iterate the string twice so the total cost will be O(n)</p>
+
+      </article>
+      <div class="share">
+        <div class="share-component"></div>
+      </div>
+      <div class="comment">
+        
+
+  
+
+  
+        <div id="gitalk-container"></div>
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script>
+        var gitalk = new Gitalk({
+            id: '/2020/07/03/lc1249/',
+            clientID: '4cef70907f5b36353d59',
+            clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
+            repo: 'zhenyu0519.github.io',
+            owner: 'zhenyu0519',
+            admin: ['zhenyu0519'],
+            labels: ['gitment'],
+            perPage: 50,
+        })
+        gitalk.render('gitalk-container')
+        </script>
+  
+
+
+      </div>
+    </div>
+    <div class="column one-fourth">
+      
+<h3>Search</h3>
+<div id="site_search" class="site_search">
+    <input type="text" id="search_box" placeholder="Search">
+</div>
+
+<ul id="search_results"></ul>
+
+<link rel="stylesheet" type="text/css" href="https://zhenyu0519.github.io/assets/css/modules/sidebar-search.css">
+<script src="https://zhenyu0519.github.io/assets/js/simple-jekyll-search.min.js"></script>
+<script src="https://zhenyu0519.github.io/assets/js/search.js"></script>
+
+<script type="text/javascript">
+SimpleJekyllSearch({
+    searchInput: document.getElementById('search_box'),
+    resultsContainer: document.getElementById('search_results'),
+    json: 'https://zhenyu0519.github.io/assets/search_data.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No results found',
+    fuzzy: false,
+    exclude: ['Welcome'],
+    limit: 10
+})
+</script>
+
+      
+<h3 class="post-directory-title mobile-hidden">Table of Contents</h3>
+<div id="post-directory-module" class="mobile-hidden">
+  <section class="post-directory">
+  <!-- Links that trigger the jumping -->
+  <!-- Added by javascript below -->
+  <dl></dl>
+  </section>
+</div>
+
+<script src="https://zhenyu0519.github.io/assets/js/jquery.toc.js"></script>
+
+    </div>
+  </div>
+</section>
+<!-- /section.content -->
+    <footer class="container">
+        <div class="site-footer" role="contentinfo">
+            <div class="copyright left mobile-block">
+                    © 2019
+                    <span title="Jeffrey">Jeffrey</span>
+                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
+            </div>
+
+            <ul class="site-footer-links right mobile-hidden">
+                <li>
+                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
+                </li>
+            </ul>
+            <a href="https://github.com/zhenyu0519/zhenyu0519.github.io" target="_blank" aria-label="view source code">
+                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+            </a>
+            <ul class="site-footer-links mobile-hidden">
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/" title="Home" target="">Home</a>
+                </li>
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/categories/" title="Categories" target="">Categories</a>
+                </li>
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/open-source/" title="Github Repos" target="">Github Repos</a>
+                </li>
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/about/" title="About" target="">About</a>
+                </li>
+                
+                <li><a href="https://zhenyu0519.github.io/feed.xml"><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
+            </ul>
+
+        </div>
+    </footer>
+    <div class="tools-wrapper">
+      <a class="gotop" href="#" title="回到顶部"><span class="octicon octicon-arrow-up"></span></a>
+    </div>
+    <!-- / footer -->
+    <script src="https://zhenyu0519.github.io/assets/vendor/share.js/dist/js/share.min.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/geopattern.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/prism.js"></script>
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/prism.css">
+    <script>
+      jQuery(document).ready(function($) {
+        // geopattern
+        $('.geopattern').each(function(){
+          $(this).geopattern($(this).data('pattern-id'));
+        });
+       // hljs.initHighlightingOnLoad();
+      });
+    </script>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div style="display:none">
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-113380665-1', 'auto');
+        ga('send', 'pageview');
+
+      </script>
+    </div>
+    
+</body>
+</html>
