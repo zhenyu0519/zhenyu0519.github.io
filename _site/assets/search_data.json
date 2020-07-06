@@ -1106,6 +1106,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/07/03/lc255/"
+    } ,
+  
+    {
+      "title"    : "456. 132 Pattern (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/04/lc456/"
     } 
   
 ]
