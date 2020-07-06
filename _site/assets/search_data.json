@@ -1113,6 +1113,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/07/04/lc456/"
+    } ,
+  
+    {
+      "title"    : "1021. Remove Outermost Parentheses (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/05/lc1021/"
     } 
   
 ]
