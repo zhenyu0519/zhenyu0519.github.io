@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>leetcode 743. Network Delay Time (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <title>leetcode 605. Can Place Flowers (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
     <!-- add google search console -->
     <meta name="google-site-verification" content="Hh37wMK9MFpx6xtWD91RDJzIy-PTLn7ocpNyQ1kPI6M" />
     <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-css/css/primer.css">
@@ -23,47 +23,47 @@
     
 
     
-    <link rel="canonical" href="https://zhenyu0519.github.io/2020/03/25/lc743/">
+    <link rel="canonical" href="https://zhenyu0519.github.io/2020/07/05/lc605/">
     <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="https://zhenyu0519.github.io/feed.xml">
     <link rel="shortcut icon" href="https://zhenyu0519.github.io/favicon.ico">
     
-    <meta property="og:title" content="leetcode 743. Network Delay Time (Python)">
+    <meta property="og:title" content="leetcode 605. Can Place Flowers (Python)">
       
-    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, 743. Network Delay Time, zhenyu, Breadth-First-Search, BFS, Breadth First Search">
-    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, 743. Network Delay Time, zhenyu, Breadth-First-Search, BFS, Breadth First Search">
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, 605. Can Place Flowers, zhenyu, Array">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, 605. Can Place Flowers, zhenyu, Array">
       
-    <meta name="description" content="743. Network Delay Time (Python)">
-    <meta name="og:description" content="743. Network Delay Time (Python)">
+    <meta name="description" content="605. Can Place Flowers (Python)">
+    <meta name="og:description" content="605. Can Place Flowers (Python)">
       
     
     
         
     
-    <meta property="og:url" content="https://zhenyu0519.github.io/2020/03/25/lc743/">
+    <meta property="og:url" content="https://zhenyu0519.github.io/2020/07/05/lc605/">
     <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="zh_CN" />
     
-    <meta property="article:published_time" content="2020-03-25">
+    <meta property="article:published_time" content="2020-07-05">
     
     <script src="https://zhenyu0519.github.io/assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="https://zhenyu0519.github.io/assets/js/jquery-ui.js"></script>
     <script src="https://zhenyu0519.github.io/assets/js/main.js"></script>
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>leetcode 743. Network Delay Time (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
+<title>leetcode 605. Can Place Flowers (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="leetcode 743. Network Delay Time (Python)" />
+<meta property="og:title" content="leetcode 605. Can Place Flowers (Python)" />
 <meta name="author" content="Jeffrey" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Network Delay Time (Python Solution)" />
-<meta property="og:description" content="Network Delay Time (Python Solution)" />
-<link rel="canonical" href="https://zhenyu0519.github.io/2020/03/25/lc743/" />
-<meta property="og:url" content="https://zhenyu0519.github.io/2020/03/25/lc743/" />
+<meta name="description" content="Can Place Flowers (Python Solution)" />
+<meta property="og:description" content="Can Place Flowers (Python Solution)" />
+<link rel="canonical" href="https://zhenyu0519.github.io/2020/07/05/lc605/" />
+<meta property="og:url" content="https://zhenyu0519.github.io/2020/07/05/lc605/" />
 <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey’s Blog)" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-03-25T00:00:00-07:00" />
+<meta property="article:published_time" content="2020-07-05T00:00:00-07:00" />
 <script type="application/ld+json">
-{"description":"Network Delay Time (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/03/25/lc743/"},"url":"https://zhenyu0519.github.io/2020/03/25/lc743/","headline":"leetcode 743. Network Delay Time (Python)","dateModified":"2020-03-25T00:00:00-07:00","datePublished":"2020-03-25T00:00:00-07:00","@context":"http://schema.org"}</script>
+{"description":"Can Place Flowers (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/07/05/lc605/"},"url":"https://zhenyu0519.github.io/2020/07/05/lc605/","headline":"leetcode 605. Can Place Flowers (Python)","dateModified":"2020-07-05T00:00:00-07:00","datePublished":"2020-07-05T00:00:00-07:00","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -91,16 +91,16 @@
     </header>
     <!-- / header -->
 
-    <section class="collection-head small" data-pattern-id="leetcode 743. N">
+    <section class="collection-head small" data-pattern-id="leetcode 605. C">
   <div class="container">
     <div class="columns">
       <div class="column three-fourths">
         <div class="collection-title">
-          <h1 class="collection-header">leetcode 743. Network Delay Time (Python)</h1>
+          <h1 class="collection-header">leetcode 605. Can Place Flowers (Python)</h1>
           <div class="collection-info">
             
             <span class="meta-info">
-              <span class="octicon octicon-calendar"></span> 25 Mar 2020
+              <span class="octicon octicon-calendar"></span> 05 Jul 2020
             </span>
             
             
@@ -111,7 +111,7 @@
             
             <span class="meta-info">
               <span class="octicon octicon-file-directory"></span>
-              <a href="https://zhenyu0519.github.io/categories/#Breadth-First-Search" title="Breadth-First-Search">Breadth-First-Search</a>
+              <a href="https://zhenyu0519.github.io/categories/#Array" title="Array">Array</a>
             </span>
             
           </div>
@@ -125,62 +125,58 @@
   <div class="columns">
     <div class="column three-fourths">
       <article class="article-content markdown-body">
-        <h1 id="743-network-delay-time-python">743. Network Delay Time (Python)</h1>
+        <h1 id="605-can-place-flowers-python">605. Can Place Flowers (Python)</h1>
 
-<h1 id="related-topic">Related Topic</h1>
-<p><a href="/categories/#Breadth-First-Search" target="_blank"> Breadth-First-Search</a>.</p>
+<h2 id="related-topic">Related Topic</h2>
+<p><a href="/categories/#Array" target="_blank"> Array </a>.</p>
 
-<h1 id="description">Description</h1>
-<p>There are N network nodes, labelled 1 to N.</p>
+<h2 id="description">Description</h2>
+<p>Suppose you have a long flowerbed in which some of the plots are planted and some are not. However, flowers cannot be planted in adjacent plots - they would compete for water and both would die.</p>
 
-<p>Given times, a list of travel times as directed edges times[i] = (u, v, w), where u is the source node, v is the target node, and w is the time it takes for a signal to travel from source to target.</p>
-
-<p>Now, we send a signal from a certain node K. How long will it take for all nodes to receive the signal? If it is impossible, return -1.</p>
+<p>Given a flowerbed (represented as an array containing 0 and 1, where 0 means empty and 1 means not empty), and a number n, return if n new flowers can be planted in it without violating the no-adjacent-flowers rule.</p>
 
 <h2 id="sample-io">Sample I/O</h2>
 
 <h3 id="example-1">Example 1</h3>
-<p><img src="/images/blog/oranges.png" alt="orange" /></p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: times = [[2,1,1],[2,3,1],[3,4,1]], N = 4, K = 2
-Output: 2
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: flowerbed = [1,0,0,0,1], n = 1
+Output: True
 </code></pre></div></div>
 
-<h2 id="note">Note</h2>
-<ol>
-  <li>N will be in the range [1, 100].</li>
-  <li>K will be in the range [1, N].</li>
-  <li>The length of times will be in the range [1, 6000].</li>
-  <li>All edges times[i] = (u, v, w) will have 1 &lt;= u, v &lt;= N and 0 &lt;= w &lt;= 100.</li>
-</ol>
+<h3 id="example-2">Example 2</h3>
 
-<h1 id="methodology">Methodology</h1>
-<ol>
-  <li>Build a graph dictionary.</li>
-  <li>Use heap to store the pair of (current step, source node). The reason why using heap is if there are two source nodes head to same target node the heap will store these two source nodes in accending order by their current step value because we store the pair in this format(current step, source node) and current step is index[0] of the pair</li>
-  <li>Use BFS to find each source node’s target node, if the target node is not visited, we store it to visited_dictionary and if the target is visited, we continue. Then we turn these target value to source node and do the BFS again.</li>
-</ol>
-
-<h1 id="code-bfs">Code (BFS)</h1>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">networkDelayTime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">times</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">N</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">K</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="n">graph</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">w</span> <span class="ow">in</span> <span class="n">times</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">u</span> <span class="o">==</span> <span class="n">v</span><span class="p">:</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
-            <span class="n">graph</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">v</span><span class="p">,</span><span class="n">w</span><span class="p">))</span>
-        <span class="k">if</span> <span class="n">K</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">:</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
-        
-        <span class="n">pq</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span><span class="n">K</span><span class="p">)]</span>
-        <span class="nb">dict</span> <span class="o">=</span><span class="p">{}</span>
-        <span class="k">while</span> <span class="n">pq</span><span class="p">:</span>
-            <span class="n">step</span><span class="p">,</span> <span class="n">source</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">pq</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">source</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">:</span> <span class="k">continue</span>
-            <span class="nb">dict</span><span class="p">[</span><span class="n">source</span><span class="p">]</span><span class="o">=</span><span class="n">step</span>
-            <span class="k">for</span> <span class="n">target</span><span class="p">,</span> <span class="n">distance</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">source</span><span class="p">]:</span>
-                <span class="k">if</span> <span class="n">target</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">:</span>
-                    <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">pq</span><span class="p">,</span> <span class="p">(</span><span class="n">step</span><span class="o">+</span><span class="n">distance</span><span class="p">,</span> <span class="n">target</span><span class="p">))</span>
-        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="nb">dict</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span> <span class="o">==</span> <span class="n">N</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: flowerbed = [1,0,0,0,1], n = 2
+Output: False
 </code></pre></div></div>
+
+<h3 id="note">Note</h3>
+<ol>
+  <li>The input array won’t violate no-adjacent-flowers rule.</li>
+  <li>The input array size is in the range of [1, 20000].</li>
+  <li>n is a non-negative integer which won’t exceed the input array size.</li>
+</ol>
+
+<h2 id="methodology">Methodology</h2>
+<p>If n is 0, then return true.
+We wrap 2 available polts to original flowerbed in case if the first plot is available.
+We iterate the flowerbed. If the current plot is planted then we skip. Otherwise we compare last and next plot. If one of the them are not planted then we plant the flower and update the n, once n reach to 0, return true.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">def</span> <span class="nf">canPlaceFlowers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flowerbed</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span><span class="mi">0</span><span class="p">:</span> <span class="k">return</span> <span class="bp">True</span>
+        <span class="n">flowerbed</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">flowerbed</span> <span class="o">+</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">flowerbed</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">flowerbed</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="k">continue</span>
+            <span class="k">elif</span> <span class="n">flowerbed</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">flowerbed</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">n</span><span class="o">-=</span><span class="mi">1</span>
+                <span class="n">flowerbed</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span><span class="k">return</span> <span class="bp">True</span>
+        <span class="k">return</span> <span class="bp">False</span>
+</code></pre></div></div>
+
 <h1 id="bigo">BigO</h1>
-<p>Time Complexity: O(N^2 + E) where E is the length of times in the basic implementation, and O(ElogE) in the heap implementation, as potentially every edge gets added to the heap.</p>
+<p>We iterate the list once so the total cost will be O(n)</p>
 
       </article>
       <div class="share">
@@ -197,7 +193,7 @@ Output: 2
         <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
         <script>
         var gitalk = new Gitalk({
-            id: '/2020/03/25/lc743/',
+            id: '/2020/07/05/lc605/',
             clientID: '4cef70907f5b36353d59',
             clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
             repo: 'zhenyu0519.github.io',
