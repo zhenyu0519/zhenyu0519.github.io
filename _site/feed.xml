@@ -1,54 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-07-07T00:33:24-07:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 946. Validate Stack Sequences (Python)</title><link href="https://zhenyu0519.github.io/2020/07/05/lc946/" rel="alternate" type="text/html" title="leetcode 946. Validate Stack Sequences (Python)" /><published>2020-07-05T00:00:00-07:00</published><updated>2020-07-05T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/05/lc946</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/05/lc946/">&lt;h1 id=&quot;946-validate-stack-sequences-python&quot;&gt;946. Validate Stack Sequences (Python)&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-07-07T16:29:05-07:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 402. Remove K Digits (Python)</title><link href="https://zhenyu0519.github.io/2020/07/06/lc402/" rel="alternate" type="text/html" title="leetcode 402. Remove K Digits (Python)" /><published>2020-07-06T00:00:00-07:00</published><updated>2020-07-06T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/06/lc402</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/06/lc402/">&lt;h1 id=&quot;402-remove-k-digits-python&quot;&gt;402. Remove K Digits (Python)&lt;/h1&gt;
 
 &lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Stack&quot; target=&quot;_blank&quot;&gt; Stack&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
-&lt;p&gt;Given two sequences pushed and popped with distinct values, return true if and only if this could have been the result of a sequence of push and pop operations on an initially empty stack.&lt;/p&gt;
+&lt;p&gt;Given a non-negative integer num represented as a string, remove k digits from the number so that the new number is the smallest possible.&lt;/p&gt;
 
 &lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
 
 &lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: pushed = [1,2,3,4,5], popped = [4,5,3,2,1]
-Output: true
-Explanation: We might do the following sequence:
-push(1), push(2), push(3), push(4), pop() -&amp;gt; 4,
-push(5), pop() -&amp;gt; 5, pop() -&amp;gt; 3, pop() -&amp;gt; 2, pop() -&amp;gt; 1
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: num = &quot;1432219&quot;, k = 3
+Output: &quot;1219&quot;
+Explanation: Remove the three digits 4, 3, and 2 to form the new number 1219 which is the smallest.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: pushed = [1,2,3,4,5], popped = [4,3,5,1,2]
-Output: false
-Explanation: 1 cannot be popped before 2.
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: num = &quot;10200&quot;, k = 1
+Output: &quot;200&quot;
+Explanation: Remove the leading 1 and the number is 200. Note that the output must not contain leading zeroes.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-3&quot;&gt;Example 3&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: num = &quot;10&quot;, k = 2
+Output: &quot;0&quot;
+Explanation: Remove all the digits from the number and it is left with nothing which is 0.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;note&quot;&gt;Note&lt;/h3&gt;
 &lt;ol&gt;
-  &lt;li&gt;0 &amp;lt;= pushed.length == popped.length &amp;lt;= 1000&lt;/li&gt;
-  &lt;li&gt;0 &amp;lt;= pushed[i], popped[i] &amp;lt; 1000&lt;/li&gt;
-  &lt;li&gt;pushed is a permutation of popped.&lt;/li&gt;
-  &lt;li&gt;pushed and popped have distinct values.&lt;/li&gt;
+  &lt;li&gt;The length of num is less than 10002 and will be ≥ k.&lt;/li&gt;
+  &lt;li&gt;The given num does not contain any leading zero.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;methodology&quot;&gt;Methodology&lt;/h2&gt;
-&lt;p&gt;We need a stack to store temperoray value. Iterate the pushed list and append the value into stack if the peek value of stack is equal to the popped[index] value then pop the peek from stack and update the index. After iteration, if the stack is empty we know all values are operated and return true&lt;/p&gt;
+&lt;p&gt;Use stack to store the temperoray digit from num. If the current digit is smaller than peek of stack, then we pop the stack until the peek is greater or equal to the current digit.In the meanwhile k will keep updating, once k reach to 0, return the new string.
+After iteration, if the k is not 0, then we start to pop from stack until the k == 0. This method use stack and greedy, leetcode has very good explaination about this question. However I did a little improvement that when k == 0, stop iteration and appending. This will make performance a little better.&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;python (stack)
-    def validateStackSequences(self, pushed: List[int], popped: List[int]) -&amp;gt; bool:
+&lt;p&gt;```python (stack + greedy standard solution)
+    def removeKdigits(self, num: str, k: int) -&amp;gt; str:
+        size = len(num)
+        if size == k: return ‘0’
         stack = []
-        index = 0
-        for x in pushed:
-            stack.append(x)
-            while stack and stack[-1] == popped[index]:
+        for n in num:
+            while stack and k and stack[-1] &amp;gt; int(n):
                 stack.pop()
-                index += 1
-        return not stack
-&lt;/code&gt;&lt;/p&gt;
+                k -= 1
+            if len(stack) == 1 and stack[-1] == 0:# not leading 0
+                stack.pop()
+            stack.append(int(n))
+        while k:
+            stack.pop()
+            k -= 1
+        return ‘‘.join(map(str,stack))&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# BigO
+Time complexity : O(N). Although there are nested loops, the inner loop is bounded to be run at most kk times globally. Together with the outer loop, we have the exact (N + k)(N+k) number of operations. 
 
+```python (stack + greedy improved solution))
+    def removeKdigits(self, num: str, k: int) -&amp;gt; str:
+        size = len(num)
+        if size == k: return '0'
+        stack = []
+        for i, n in enumerate(num):
+            while stack and k and stack[-1]&amp;gt;n:
+                stack.pop()
+                k-=1
+            stack.append(n)
+            if len(stack)==1 and stack[-1] == '0': 
+                stack.pop()
+            if not k:
+                res = ''.join(stack)+num[i+1:]
+                return res if res else '0'
+        while k:
+            stack.pop()
+            k-=1
+        return ''.join(stack)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate the list once so the total cost will be O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">946. Validate Stack Sequences (Python)</summary></entry><entry><title type="html">leetcode 735. Asteroid Collision (Python)</title><link href="https://zhenyu0519.github.io/2020/07/05/lc735/" rel="alternate" type="text/html" title="leetcode 735. Asteroid Collision (Python)" /><published>2020-07-05T00:00:00-07:00</published><updated>2020-07-05T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/05/lc735</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/05/lc735/">&lt;h1 id=&quot;735-asteroid-collision-python&quot;&gt;735. Asteroid Collision (Python)&lt;/h1&gt;
+&lt;p&gt;Time complexity : O(N). Although there are nested loops, the inner loop is bounded to be run at most kk times globally. Together with the outer loop, we have the exact (N + k)(N+k) number of operations.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">402. Remove K Digits (Python)</summary></entry><entry><title type="html">leetcode 735. Asteroid Collision (Python)</title><link href="https://zhenyu0519.github.io/2020/07/05/lc735/" rel="alternate" type="text/html" title="leetcode 735. Asteroid Collision (Python)" /><published>2020-07-05T00:00:00-07:00</published><updated>2020-07-05T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/05/lc735</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/05/lc735/">&lt;h1 id=&quot;735-asteroid-collision-python&quot;&gt;735. Asteroid Collision (Python)&lt;/h1&gt;
 
 &lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Stack&quot; target=&quot;_blank&quot;&gt; Stack&lt;/a&gt;.&lt;/p&gt;
@@ -141,7 +172,58 @@ We iterate the list once so the total cost will be O(n)
         return ans
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate the list once so the total cost will be O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">735. Asteroid Collision (Python)</summary></entry><entry><title type="html">leetcode 56. Merge Intervals (Python)</title><link href="https://zhenyu0519.github.io/2020/07/05/lc56/" rel="alternate" type="text/html" title="leetcode 56. Merge Intervals (Python)" /><published>2020-07-05T00:00:00-07:00</published><updated>2020-07-05T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/05/lc56</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/05/lc56/">&lt;h1 id=&quot;56-merge-intervals-python&quot;&gt;56. Merge Intervals (Python)&lt;/h1&gt;
+&lt;p&gt;We iterate the list once so the total cost will be O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">735. Asteroid Collision (Python)</summary></entry><entry><title type="html">leetcode 605. Can Place Flowers (Python)</title><link href="https://zhenyu0519.github.io/2020/07/05/lc605/" rel="alternate" type="text/html" title="leetcode 605. Can Place Flowers (Python)" /><published>2020-07-05T00:00:00-07:00</published><updated>2020-07-05T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/05/lc605</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/05/lc605/">&lt;h1 id=&quot;605-can-place-flowers-python&quot;&gt;605. Can Place Flowers (Python)&lt;/h1&gt;
+
+&lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;/categories/#Array&quot; target=&quot;_blank&quot;&gt; Array &lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
+&lt;p&gt;Suppose you have a long flowerbed in which some of the plots are planted and some are not. However, flowers cannot be planted in adjacent plots - they would compete for water and both would die.&lt;/p&gt;
+
+&lt;p&gt;Given a flowerbed (represented as an array containing 0 and 1, where 0 means empty and 1 means not empty), and a number n, return if n new flowers can be planted in it without violating the no-adjacent-flowers rule.&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: flowerbed = [1,0,0,0,1], n = 1
+Output: True
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: flowerbed = [1,0,0,0,1], n = 2
+Output: False
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;note&quot;&gt;Note&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;The input array won’t violate no-adjacent-flowers rule.&lt;/li&gt;
+  &lt;li&gt;The input array size is in the range of [1, 20000].&lt;/li&gt;
+  &lt;li&gt;n is a non-negative integer which won’t exceed the input array size.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;methodology&quot;&gt;Methodology&lt;/h2&gt;
+&lt;p&gt;If n is 0, then return true.
+We wrap 2 available polts to original flowerbed in case if the first plot is available.
+We iterate the flowerbed. If the current plot is planted then we skip. Otherwise we compare last and next plot. If one of the them are not planted then we plant the flower and update the n, once n reach to 0, return true.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;canPlaceFlowers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;We iterate the list once so the total cost will be O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">605. Can Place Flowers (Python)</summary></entry><entry><title type="html">leetcode 56. Merge Intervals (Python)</title><link href="https://zhenyu0519.github.io/2020/07/05/lc56/" rel="alternate" type="text/html" title="leetcode 56. Merge Intervals (Python)" /><published>2020-07-05T00:00:00-07:00</published><updated>2020-07-05T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/05/lc56</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/05/lc56/">&lt;h1 id=&quot;56-merge-intervals-python&quot;&gt;56. Merge Intervals (Python)&lt;/h1&gt;
 
 &lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Array&quot; target=&quot;_blank&quot;&gt; Array&lt;/a&gt;.&lt;/p&gt;
@@ -330,58 +412,57 @@ We iterate the list twice so the total cost will be O(2n)
         return res
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate the list twice so the total cost will be roughly O(2n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">1021. Remove Outermost Parentheses (Python)</summary></entry><entry><title type="html">leetcode 605. Can Place Flowers (Python)</title><link href="https://zhenyu0519.github.io/2020/07/05/lc605/" rel="alternate" type="text/html" title="leetcode 605. Can Place Flowers (Python)" /><published>2020-07-05T00:00:00-07:00</published><updated>2020-07-05T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/05/lc605</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/05/lc605/">&lt;h1 id=&quot;605-can-place-flowers-python&quot;&gt;605. Can Place Flowers (Python)&lt;/h1&gt;
+&lt;p&gt;We iterate the list twice so the total cost will be roughly O(2n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">1021. Remove Outermost Parentheses (Python)</summary></entry><entry><title type="html">leetcode 946. Validate Stack Sequences (Python)</title><link href="https://zhenyu0519.github.io/2020/07/05/lc946/" rel="alternate" type="text/html" title="leetcode 946. Validate Stack Sequences (Python)" /><published>2020-07-05T00:00:00-07:00</published><updated>2020-07-05T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/05/lc946</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/05/lc946/">&lt;h1 id=&quot;946-validate-stack-sequences-python&quot;&gt;946. Validate Stack Sequences (Python)&lt;/h1&gt;
 
 &lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Array&quot; target=&quot;_blank&quot;&gt; Array &lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/categories/#Stack&quot; target=&quot;_blank&quot;&gt; Stack&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
-&lt;p&gt;Suppose you have a long flowerbed in which some of the plots are planted and some are not. However, flowers cannot be planted in adjacent plots - they would compete for water and both would die.&lt;/p&gt;
-
-&lt;p&gt;Given a flowerbed (represented as an array containing 0 and 1, where 0 means empty and 1 means not empty), and a number n, return if n new flowers can be planted in it without violating the no-adjacent-flowers rule.&lt;/p&gt;
+&lt;p&gt;Given two sequences pushed and popped with distinct values, return true if and only if this could have been the result of a sequence of push and pop operations on an initially empty stack.&lt;/p&gt;
 
 &lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
 
 &lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: flowerbed = [1,0,0,0,1], n = 1
-Output: True
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: pushed = [1,2,3,4,5], popped = [4,5,3,2,1]
+Output: true
+Explanation: We might do the following sequence:
+push(1), push(2), push(3), push(4), pop() -&amp;gt; 4,
+push(5), pop() -&amp;gt; 5, pop() -&amp;gt; 3, pop() -&amp;gt; 2, pop() -&amp;gt; 1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: flowerbed = [1,0,0,0,1], n = 2
-Output: False
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: pushed = [1,2,3,4,5], popped = [4,3,5,1,2]
+Output: false
+Explanation: 1 cannot be popped before 2.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;note&quot;&gt;Note&lt;/h3&gt;
 &lt;ol&gt;
-  &lt;li&gt;The input array won’t violate no-adjacent-flowers rule.&lt;/li&gt;
-  &lt;li&gt;The input array size is in the range of [1, 20000].&lt;/li&gt;
-  &lt;li&gt;n is a non-negative integer which won’t exceed the input array size.&lt;/li&gt;
+  &lt;li&gt;0 &amp;lt;= pushed.length == popped.length &amp;lt;= 1000&lt;/li&gt;
+  &lt;li&gt;0 &amp;lt;= pushed[i], popped[i] &amp;lt; 1000&lt;/li&gt;
+  &lt;li&gt;pushed is a permutation of popped.&lt;/li&gt;
+  &lt;li&gt;pushed and popped have distinct values.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;methodology&quot;&gt;Methodology&lt;/h2&gt;
-&lt;p&gt;If n is 0, then return true.
-We wrap 2 available polts to original flowerbed in case if the first plot is available.
-We iterate the flowerbed. If the current plot is planted then we skip. Otherwise we compare last and next plot. If one of the them are not planted then we plant the flower and update the n, once n reach to 0, return true.&lt;/p&gt;
+&lt;p&gt;We need a stack to store temperoray value. Iterate the pushed list and append the value into stack if the peek value of stack is equal to the popped[index] value then pop the peek from stack and update the index. After iteration, if the stack is empty we know all values are operated and return true&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;canPlaceFlowers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;python (stack)
+    def validateStackSequences(self, pushed: List[int], popped: List[int]) -&amp;gt; bool:
+        stack = []
+        index = 0
+        for x in pushed:
+            stack.append(x)
+            while stack and stack[-1] == popped[index]:
+                stack.pop()
+                index += 1
+        return not stack
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate the list once so the total cost will be O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">605. Can Place Flowers (Python)</summary></entry><entry><title type="html">leetcode 456. 132 Pattern (Python)</title><link href="https://zhenyu0519.github.io/2020/07/04/lc456/" rel="alternate" type="text/html" title="leetcode 456. 132 Pattern (Python)" /><published>2020-07-04T00:00:00-07:00</published><updated>2020-07-04T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/04/lc456</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/04/lc456/">&lt;h1 id=&quot;456-132-pattern-python&quot;&gt;456. 132 Pattern (Python)&lt;/h1&gt;
+&lt;p&gt;We iterate the list once so the total cost will be O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">946. Validate Stack Sequences (Python)</summary></entry><entry><title type="html">leetcode 456. 132 Pattern (Python)</title><link href="https://zhenyu0519.github.io/2020/07/04/lc456/" rel="alternate" type="text/html" title="leetcode 456. 132 Pattern (Python)" /><published>2020-07-04T00:00:00-07:00</published><updated>2020-07-04T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/04/lc456</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/04/lc456/">&lt;h1 id=&quot;456-132-pattern-python&quot;&gt;456. 132 Pattern (Python)&lt;/h1&gt;
 
 &lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Stack&quot; target=&quot;_blank&quot;&gt; Stack&lt;/a&gt;.&lt;/p&gt;
@@ -596,53 +677,4 @@ stack.empty(); // returns false
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;This will give O(n) time complexity.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">225. Implement Stack using Queues (Python)</summary></entry><entry><title type="html">leetcode 907. Sum of Subarray Minimums (Python)</title><link href="https://zhenyu0519.github.io/2020/07/02/lc907/" rel="alternate" type="text/html" title="leetcode 907. Sum of Subarray Minimums (Python)" /><published>2020-07-02T00:00:00-07:00</published><updated>2020-07-02T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/02/lc907</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/02/lc907/">&lt;h1 id=&quot;907-sum-of-subarray-minimums-python&quot;&gt;907. Sum of Subarray Minimums (Python)&lt;/h1&gt;
-
-&lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Stack&quot; target=&quot;_blank&quot;&gt; Stack&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
-&lt;p&gt;Given an array of integers A, find the sum of min(B), where B ranges over every (contiguous) subarray of A.&lt;/p&gt;
-
-&lt;p&gt;Since the answer may be large, return the answer modulo 10^9 + 7.&lt;/p&gt;
-
-&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
-
-&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [3,1,2,4]
-Output: 17
-Explanation: Subarrays are [3], [1], [2], [4], [3,1], [1,2], [2,4], [3,1,2], [1,2,4], [3,1,2,4]. 
-Minimums are 3, 1, 2, 4, 1, 1, 2, 1, 1, 1.  Sum is 17.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;note&quot;&gt;Note&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;1 &amp;lt;= A.length &amp;lt;= 30000&lt;/li&gt;
-  &lt;li&gt;1 &amp;lt;= A[i] &amp;lt;= 30000&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;methodology&quot;&gt;Methodology&lt;/h2&gt;
-&lt;p&gt;Maintain minimum stack is great way to solve this question. We create a stack to store the minimun value. Iterate the given list, since the answer at least inclued every number so for each iteration we init the count as 1. If stack has no value, then we append the current value and count to the stack and update the total_sum and pre_sum. If stack is not empty then we need to compare current value with the peek value of stack. There are 2 conditions here:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;If the peek value is smaller or equal to current value, we just append the current value to stack and update the total_sum and pre_sum and continue to next iteration.&lt;/li&gt;
-  &lt;li&gt;If peek value is greater than current value, to maintain the minimum stack, we need to pop out the peek value and we need minus peek value * it’s count from pre_sum and continue checking peek value of stack until we find the peek is equal or smaller than the current. Then we append the current value to stack and update the total_sum and pre_sum.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sumSubarrayMins&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;MOD&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pre_sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;pre_sum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;pre_sum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pre_sum&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MOD&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Time complexity is O(n) where n is size of A&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">907. Sum of Subarray Minimums (Python)</summary></entry></feed>
+&lt;p&gt;This will give O(n) time complexity.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">225. Implement Stack using Queues (Python)</summary></entry></feed>

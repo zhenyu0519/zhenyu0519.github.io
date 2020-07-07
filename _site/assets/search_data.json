@@ -1157,6 +1157,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/07/05/lc946/"
+    } ,
+  
+    {
+      "title"    : "leetcode 402. Remove K Digits (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/06/lc402/"
     } 
   
 ]
