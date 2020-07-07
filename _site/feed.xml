@@ -1,4 +1,55 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-07-06T19:10:16-07:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 735. Asteroid Collision (Python)</title><link href="https://zhenyu0519.github.io/2020/07/05/lc735/" rel="alternate" type="text/html" title="leetcode 735. Asteroid Collision (Python)" /><published>2020-07-05T00:00:00-07:00</published><updated>2020-07-05T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/05/lc735</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/05/lc735/">&lt;h1 id=&quot;735-asteroid-collision-python&quot;&gt;735. Asteroid Collision (Python)&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-07-06T21:30:09-07:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 605. Can Place Flowers (Python)</title><link href="https://zhenyu0519.github.io/2020/07/05/lc605/" rel="alternate" type="text/html" title="leetcode 605. Can Place Flowers (Python)" /><published>2020-07-05T00:00:00-07:00</published><updated>2020-07-05T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/05/lc605</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/05/lc605/">&lt;h1 id=&quot;605-can-place-flowers-python&quot;&gt;605. Can Place Flowers (Python)&lt;/h1&gt;
+
+&lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;/categories/#Array&quot; target=&quot;_blank&quot;&gt; Array &lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
+&lt;p&gt;Suppose you have a long flowerbed in which some of the plots are planted and some are not. However, flowers cannot be planted in adjacent plots - they would compete for water and both would die.&lt;/p&gt;
+
+&lt;p&gt;Given a flowerbed (represented as an array containing 0 and 1, where 0 means empty and 1 means not empty), and a number n, return if n new flowers can be planted in it without violating the no-adjacent-flowers rule.&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: flowerbed = [1,0,0,0,1], n = 1
+Output: True
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: flowerbed = [1,0,0,0,1], n = 2
+Output: False
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;note&quot;&gt;Note&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;The input array won’t violate no-adjacent-flowers rule.&lt;/li&gt;
+  &lt;li&gt;The input array size is in the range of [1, 20000].&lt;/li&gt;
+  &lt;li&gt;n is a non-negative integer which won’t exceed the input array size.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;methodology&quot;&gt;Methodology&lt;/h2&gt;
+&lt;p&gt;If n is 0, then return true.
+We wrap 2 available polts to original flowerbed in case if the first plot is available.
+We iterate the flowerbed. If the current plot is planted then we skip. Otherwise we compare last and next plot. If one of the them are not planted then we plant the flower and update the n, once n reach to 0, return true.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;canPlaceFlowers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;We iterate the list once so the total cost will be O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">605. Can Place Flowers (Python)</summary></entry><entry><title type="html">leetcode 735. Asteroid Collision (Python)</title><link href="https://zhenyu0519.github.io/2020/07/05/lc735/" rel="alternate" type="text/html" title="leetcode 735. Asteroid Collision (Python)" /><published>2020-07-05T00:00:00-07:00</published><updated>2020-07-05T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/05/lc735</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/05/lc735/">&lt;h1 id=&quot;735-asteroid-collision-python&quot;&gt;735. Asteroid Collision (Python)&lt;/h1&gt;
 
 &lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Stack&quot; target=&quot;_blank&quot;&gt; Stack&lt;/a&gt;.&lt;/p&gt;
@@ -229,58 +280,57 @@ We iterate the list twice so the total cost will be O(2n)
         return res
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate the list twice so the total cost will be roughly O(2n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">1021. Remove Outermost Parentheses (Python)</summary></entry><entry><title type="html">leetcode 605. Can Place Flowers (Python)</title><link href="https://zhenyu0519.github.io/2020/07/05/lc605/" rel="alternate" type="text/html" title="leetcode 605. Can Place Flowers (Python)" /><published>2020-07-05T00:00:00-07:00</published><updated>2020-07-05T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/05/lc605</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/05/lc605/">&lt;h1 id=&quot;605-can-place-flowers-python&quot;&gt;605. Can Place Flowers (Python)&lt;/h1&gt;
+&lt;p&gt;We iterate the list twice so the total cost will be roughly O(2n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">1021. Remove Outermost Parentheses (Python)</summary></entry><entry><title type="html">leetcode 946. Validate Stack Sequences (Python)</title><link href="https://zhenyu0519.github.io/2020/07/05/lc946/" rel="alternate" type="text/html" title="leetcode 946. Validate Stack Sequences (Python)" /><published>2020-07-05T00:00:00-07:00</published><updated>2020-07-05T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/05/lc946</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/05/lc946/">&lt;h1 id=&quot;946-validate-stack-sequences-python&quot;&gt;946. Validate Stack Sequences (Python)&lt;/h1&gt;
 
 &lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Array&quot; target=&quot;_blank&quot;&gt; Array &lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/categories/#Stack&quot; target=&quot;_blank&quot;&gt; Stack&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
-&lt;p&gt;Suppose you have a long flowerbed in which some of the plots are planted and some are not. However, flowers cannot be planted in adjacent plots - they would compete for water and both would die.&lt;/p&gt;
-
-&lt;p&gt;Given a flowerbed (represented as an array containing 0 and 1, where 0 means empty and 1 means not empty), and a number n, return if n new flowers can be planted in it without violating the no-adjacent-flowers rule.&lt;/p&gt;
+&lt;p&gt;Given two sequences pushed and popped with distinct values, return true if and only if this could have been the result of a sequence of push and pop operations on an initially empty stack.&lt;/p&gt;
 
 &lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
 
 &lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: flowerbed = [1,0,0,0,1], n = 1
-Output: True
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: pushed = [1,2,3,4,5], popped = [4,5,3,2,1]
+Output: true
+Explanation: We might do the following sequence:
+push(1), push(2), push(3), push(4), pop() -&amp;gt; 4,
+push(5), pop() -&amp;gt; 5, pop() -&amp;gt; 3, pop() -&amp;gt; 2, pop() -&amp;gt; 1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: flowerbed = [1,0,0,0,1], n = 2
-Output: False
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: pushed = [1,2,3,4,5], popped = [4,3,5,1,2]
+Output: false
+Explanation: 1 cannot be popped before 2.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;note&quot;&gt;Note&lt;/h3&gt;
 &lt;ol&gt;
-  &lt;li&gt;The input array won’t violate no-adjacent-flowers rule.&lt;/li&gt;
-  &lt;li&gt;The input array size is in the range of [1, 20000].&lt;/li&gt;
-  &lt;li&gt;n is a non-negative integer which won’t exceed the input array size.&lt;/li&gt;
+  &lt;li&gt;0 &amp;lt;= pushed.length == popped.length &amp;lt;= 1000&lt;/li&gt;
+  &lt;li&gt;0 &amp;lt;= pushed[i], popped[i] &amp;lt; 1000&lt;/li&gt;
+  &lt;li&gt;pushed is a permutation of popped.&lt;/li&gt;
+  &lt;li&gt;pushed and popped have distinct values.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;methodology&quot;&gt;Methodology&lt;/h2&gt;
-&lt;p&gt;If n is 0, then return true.
-We wrap 2 available polts to original flowerbed in case if the first plot is available.
-We iterate the flowerbed. If the current plot is planted then we skip. Otherwise we compare last and next plot. If one of the them are not planted then we plant the flower and update the n, once n reach to 0, return true.&lt;/p&gt;
+&lt;p&gt;We need a stack to store temperoray value. Iterate the pushed list and append the value into stack if the peek value of stack is equal to the popped[index] value then pop the peek from stack and update the index. After iteration, if the stack is empty we know all values are operated and return true&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;canPlaceFlowers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;flowerbed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;python (stack)
+    def validateStackSequences(self, pushed: List[int], popped: List[int]) -&amp;gt; bool:
+        stack = []
+        index = 0
+        for x in pushed:
+            stack.append(x)
+            while stack and stack[-1] == popped[index]:
+                stack.pop()
+                index += 1
+        return not stack
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;We iterate the list once so the total cost will be O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">605. Can Place Flowers (Python)</summary></entry><entry><title type="html">leetcode 456. 132 Pattern (Python)</title><link href="https://zhenyu0519.github.io/2020/07/04/lc456/" rel="alternate" type="text/html" title="leetcode 456. 132 Pattern (Python)" /><published>2020-07-04T00:00:00-07:00</published><updated>2020-07-04T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/04/lc456</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/04/lc456/">&lt;h1 id=&quot;456-132-pattern-python&quot;&gt;456. 132 Pattern (Python)&lt;/h1&gt;
+&lt;p&gt;We iterate the list once so the total cost will be O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">946. Validate Stack Sequences (Python)</summary></entry><entry><title type="html">leetcode 456. 132 Pattern (Python)</title><link href="https://zhenyu0519.github.io/2020/07/04/lc456/" rel="alternate" type="text/html" title="leetcode 456. 132 Pattern (Python)" /><published>2020-07-04T00:00:00-07:00</published><updated>2020-07-04T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/04/lc456</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/04/lc456/">&lt;h1 id=&quot;456-132-pattern-python&quot;&gt;456. 132 Pattern (Python)&lt;/h1&gt;
 
 &lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Stack&quot; target=&quot;_blank&quot;&gt; Stack&lt;/a&gt;.&lt;/p&gt;
@@ -610,73 +660,4 @@ Output: 6
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Iterate the string will cost O(n) and iterate stack will be totol O(n/2) so the time complexity is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">856. Score of Parentheses (Python)</summary></entry><entry><title type="html">leetcode 636. Exclusive Time of Functions (Python)</title><link href="https://zhenyu0519.github.io/2020/06/30/lc636/" rel="alternate" type="text/html" title="leetcode 636. Exclusive Time of Functions (Python)" /><published>2020-06-30T00:00:00-07:00</published><updated>2020-06-30T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/06/30/lc636</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/06/30/lc636/">&lt;h1 id=&quot;636-exclusive-time-of-functions-python&quot;&gt;636. Exclusive Time of Functions (Python)&lt;/h1&gt;
-
-&lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Stack&quot; target=&quot;_blank&quot;&gt; Stack&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
-&lt;p&gt;On a single threaded CPU, we execute some functions.  Each function has a unique id between 0 and N-1.&lt;/p&gt;
-
-&lt;p&gt;We store logs in timestamp order that describe when a function is entered or exited.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Each log is a string with this format: “{function_id}:{“start”&lt;/td&gt;
-      &lt;td&gt;“end”}:{timestamp}”.  For example, “0:start:3” means the function with id 0 started at the beginning of timestamp 3.  “1:end:2” means the function with id 1 ended at the end of timestamp 2.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;A function’s exclusive time is the number of units of time spent in this function.  Note that this does not include any recursive calls to child functions.&lt;/p&gt;
-
-&lt;p&gt;The CPU is single threaded which means that only one function is being executed at a given time unit.&lt;/p&gt;
-
-&lt;p&gt;Return the exclusive time of each function, sorted by their function id.&lt;/p&gt;
-
-&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
-
-&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/blog/diag1b.png&quot; alt=&quot;636 sample&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input:
-n = 2
-logs = [&quot;0:start:0&quot;,&quot;1:start:2&quot;,&quot;1:end:5&quot;,&quot;0:end:6&quot;]
-Output: [3, 4]
-Explanation:
-Function 0 starts at the beginning of time 0, then it executes 2 units of time and reaches the end of time 1.
-Now function 1 starts at the beginning of time 2, executes 4 units of time and ends at time 5.
-Function 0 is running again at the beginning of time 6, and also ends at the end of time 6, thus executing for 1 unit of time. 
-So function 0 spends 2 + 1 = 3 units of total time executing, and function 1 spends 4 units of total time executing.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;note&quot;&gt;Note&lt;/h3&gt;
-&lt;p&gt;1 &amp;lt;= n &amp;lt;= 100
-Two functions won’t start or end at the same time.
-Functions will always log when they exit.&lt;/p&gt;
-
-&lt;h2 id=&quot;methodology&quot;&gt;Methodology&lt;/h2&gt;
-&lt;p&gt;This is a classic stack question. Since return type is a list with size n so we init a res list with size n. For each log we have id, flag and timestamp properity. When flag is start, we append it to stack and update the res list value by correspond index. When flag is end, we pop out the peek element and update the corresponed res list based on index. Then we also need stack’s peek element’ timestamp to the current timestamp + 1.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;exclusiveTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;log&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;:&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;start&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;pre_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pre_ts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pre_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ts&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pre_ts&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;pre_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pre_ts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pre_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ts&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pre_ts&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ts&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;The time complexity will be O(n) since we iterate the logs once.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">636. Exclusive Time of Functions (Python)</summary></entry></feed>
+&lt;p&gt;Iterate the string will cost O(n) and iterate stack will be totol O(n/2) so the time complexity is O(n)&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">856. Score of Parentheses (Python)</summary></entry></feed>

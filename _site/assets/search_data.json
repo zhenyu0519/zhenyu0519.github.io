@@ -1143,6 +1143,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/07/05/lc735/"
+    } ,
+  
+    {
+      "title"    : "leetcode 946. Validate Stack Sequences (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/05/lc946/"
     } 
   
 ]
