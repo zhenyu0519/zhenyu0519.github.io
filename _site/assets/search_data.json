@@ -1125,6 +1125,13 @@
     } ,
   
     {
+      "title"    : "leetcode 255. Verify Preorder Sequence in Binary Search Tree (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/05/lc255/"
+    } ,
+  
+    {
       "title"    : "leetcode 56. Merge Intervals (Python)",
       "category" : "Leetcode",
       
