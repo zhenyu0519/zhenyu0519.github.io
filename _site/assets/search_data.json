@@ -1164,6 +1164,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/07/06/lc402/"
+    } ,
+  
+    {
+      "title"    : "leetcode 738. Monotone Increasing Digits (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/06/lc738/"
     } 
   
 ]
