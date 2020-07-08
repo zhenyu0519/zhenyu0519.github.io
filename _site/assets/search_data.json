@@ -1178,6 +1178,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/07/07/lc1047/"
+    } ,
+  
+    {
+      "title"    : "leetcode 844. Backspace String Compare (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/07/lc844/"
     } 
   
 ]
