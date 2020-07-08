@@ -1171,6 +1171,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/07/06/lc738/"
+    } ,
+  
+    {
+      "title"    : "leetcode 1047. Remove All Adjacent Duplicates In Stack (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/07/lc1047/"
     } 
   
 ]
