@@ -156,16 +156,15 @@ For example, in "abbaca" we could remove "bb" since the letters are adjacent and
 <h2 id="methodology">Methodology</h2>
 <p>Iterate the string and append each character to stack, if peek of stack is same as current then pop the peek out of stack and continue to next iteration. After done iteration, we join all element in stack to 1 string which is the result</p>
 
-<p><code class="highlighter-rouge">python (greedy)
-    def removeDuplicates(self, S: str) -&gt; str:
-        stack = []
-        for c in S:
-            if stack and stack[-1]==c:
-                stack.pop()
-                continue
-            stack.append(c)
-        return ''.join(stack)
-</code></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">def</span> <span class="nf">removeDuplicates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">S</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">S</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">stack</span> <span class="ow">and</span> <span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="n">c</span><span class="p">:</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+                <span class="k">continue</span>
+            <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">stack</span><span class="p">)</span>
+</code></pre></div></div>
 <h1 id="bigo">BigO</h1>
 <p>We iterate the string once the time complexity is O(N).</p>
 

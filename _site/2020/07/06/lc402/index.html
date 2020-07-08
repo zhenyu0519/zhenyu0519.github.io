@@ -172,46 +172,47 @@ Explanation: Remove all the digits from the number and it is left with nothing w
 <p>Use stack to store the temperoray digit from num. If the current digit is smaller than peek of stack, then we pop the stack until the peek is greater or equal to the current digit.In the meanwhile k will keep updating, once k reach to 0, return the new string.
 After iteration, if the k is not 0, then we start to pop from stack until the k == 0. This method use stack and greedy, leetcode has very good explaination about this question. However I did a little improvement that when k == 0, stop iteration and appending. This will make performance a little better.</p>
 
-<p>```python (stack + greedy standard solution)
-    def removeKdigits(self, num: str, k: int) -&gt; str:
-        size = len(num)
-        if size == k: return ‘0’
-        stack = []
-        for n in num:
-            while stack and k and stack[-1] &gt; int(n):
-                stack.pop()
-                k -= 1
-            if len(stack) == 1 and stack[-1] == 0:# not leading 0
-                stack.pop()
-            stack.append(int(n))
-        while k:
-            stack.pop()
-            k -= 1
-        return ‘‘.join(map(str,stack))</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># BigO
-Time complexity : O(N). Although there are nested loops, the inner loop is bounded to be run at most kk times globally. Together with the outer loop, we have the exact (N + k)(N+k) number of operations. 
-
-```python (stack + greedy improved solution))
-    def removeKdigits(self, num: str, k: int) -&gt; str:
-        size = len(num)
-        if size == k: return '0'
-        stack = []
-        for i, n in enumerate(num):
-            while stack and k and stack[-1]&gt;n:
-                stack.pop()
-                k-=1
-            stack.append(n)
-            if len(stack)==1 and stack[-1] == '0': 
-                stack.pop()
-            if not k:
-                res = ''.join(stack)+num[i+1:]
-                return res if res else '0'
-        while k:
-            stack.pop()
-            k-=1
-        return ''.join(stack)
+<p>stack + greedy standard solution</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">def</span> <span class="nf">removeKdigits</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">size</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span> <span class="k">return</span> <span class="s">'0'</span>
+        <span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">num</span><span class="p">:</span>
+            <span class="k">while</span> <span class="n">stack</span> <span class="ow">and</span> <span class="n">k</span> <span class="ow">and</span> <span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+                <span class="n">k</span> <span class="o">-=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">stack</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span><span class="c"># not leading 0</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+        <span class="k">while</span> <span class="n">k</span><span class="p">:</span>
+            <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">k</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="s">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="n">stack</span><span class="p">))</span>  
 </code></pre></div></div>
 <h1 id="bigo">BigO</h1>
+<p>Time complexity : O(N). Although there are nested loops, the inner loop is bounded to be run at most kk times globally. Together with the outer loop, we have the exact (N + k)(N+k) number of operations.</p>
+
+<p>stack + greedy improved solution</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">def</span> <span class="nf">removeKdigits</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">size</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span> <span class="k">return</span> <span class="s">'0'</span>
+        <span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+            <span class="k">while</span> <span class="n">stack</span> <span class="ow">and</span> <span class="n">k</span> <span class="ow">and</span> <span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">&gt;</span><span class="n">n</span><span class="p">:</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+                <span class="n">k</span><span class="o">-=</span><span class="mi">1</span>
+            <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">stack</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">'0'</span><span class="p">:</span> 
+                <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">k</span><span class="p">:</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="s">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">stack</span><span class="p">)</span><span class="o">+</span><span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span>
+                <span class="k">return</span> <span class="n">res</span> <span class="k">if</span> <span class="n">res</span> <span class="k">else</span> <span class="s">'0'</span>
+        <span class="k">while</span> <span class="n">k</span><span class="p">:</span>
+            <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">k</span><span class="o">-=</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="s">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">stack</span><span class="p">)</span>
+</code></pre></div></div>
+<h1 id="bigo-1">BigO</h1>
 <p>Time complexity : O(N). Although there are nested loops, the inner loop is bounded to be run at most kk times globally. Together with the outer loop, we have the exact (N + k)(N+k) number of operations.</p>
 
       </article>

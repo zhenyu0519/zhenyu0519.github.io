@@ -185,24 +185,24 @@ Asteroids moving the same direction never meet, so no asteroids will meet each o
 <h2 id="methodology">Methodology</h2>
 <p>Positive meaning left-&gt;right and negative meaning right-&gt;left. The collision only happend when current astero right-&gt;left and the last astero left-&gt;right. This means the last value have to be positive and the current value have to be negative then we can start to identify the collision.</p>
 
-<p>```python (stack)
-    def asteroidCollision(self, asteroids: List[int]) -&gt; List[int]:
-        stack = []
-        for id in asteroids:
-            if not stack or stack[-1]*id&gt;0 or stack[-1]&lt;0:
-                stack.append(id)
-            elif abs(id)&gt;=abs(stack[-1]):
-                while stack and stack[-1]&gt;0 and abs(id) &gt; abs(stack[-1]):
-                    stack.pop()
-                if not stack or stack[-1]&lt;0:
-                    stack.append(id)
-                elif stack[-1] == -id:
-                    stack.pop()
-        return stack</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># BigO
-We iterate the list once so the total cost will be O(n)
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">def</span> <span class="nf">asteroidCollision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">asteroids</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="nb">id</span> <span class="ow">in</span> <span class="n">asteroids</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">stack</span> <span class="ow">or</span> <span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="nb">id</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span><span class="o">&gt;=</span><span class="nb">abs</span><span class="p">(</span><span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+                <span class="k">while</span> <span class="n">stack</span> <span class="ow">and</span> <span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">abs</span><span class="p">(</span><span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+                    <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">stack</span> <span class="ow">or</span> <span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
+                    <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="nb">id</span><span class="p">:</span>
+                    <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">stack</span>
+</code></pre></div></div>
+<h1 id="bigo">BigO</h1>
+<p>We iterate the list once so the total cost will be O(n)</p>
 
-```python (easy way)
+<p><code class="highlighter-rouge">python (easy way)
     def asteroidCollision(self, asteroids):
         ans = []
         for id in asteroids:
@@ -216,8 +216,8 @@ We iterate the list once so the total cost will be O(n)
             else:
                 ans.append(id)
         return ans
-</code></pre></div></div>
-<h1 id="bigo">BigO</h1>
+</code></p>
+<h1 id="bigo-1">BigO</h1>
 <p>We iterate the list once so the total cost will be O(n)</p>
 
       </article>
