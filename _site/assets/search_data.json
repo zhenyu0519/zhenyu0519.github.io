@@ -1185,6 +1185,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/07/07/lc844/"
+    } ,
+  
+    {
+      "title"    : "leetcode 1209. Remove All Adjacent Duplicates in String II (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/08/lc1209/"
     } 
   
 ]
