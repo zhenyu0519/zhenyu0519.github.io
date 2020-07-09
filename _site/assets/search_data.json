@@ -79,6 +79,8 @@
   
   
   
+  
+  
 
   
     {
@@ -1199,6 +1201,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/07/08/lc901/"
+    } ,
+  
+    {
+      "title"    : "leetcode 921. Minimum Add to Make Parentheses Valid (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/08/lc921/"
     } 
   
 ]
