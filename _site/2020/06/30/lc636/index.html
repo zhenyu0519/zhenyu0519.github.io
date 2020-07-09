@@ -173,7 +173,7 @@ Two functions won’t start or end at the same time.
 Functions will always log when they exit.</p>
 
 <h2 id="methodology">Methodology</h2>
-<p>This is a classic stack question. Since return type is a list with size n so we init a res list with size n. For each log we have id, flag and timestamp properity. When flag is start, we append it to stack and update the res list value by correspond index. When flag is end, we pop out the peek element and update the corresponed res list based on index. Then we also need stack’s peek element’ timestamp to the current timestamp + 1.</p>
+<p>This is a classic stack question. Since return type is a list with size n so we init a res list with size n. For each log we have id, flag and timestamp properity. When flag is start, we append it to stack and update the res list value by correspond index. When flag is end, we pop out the top element and update the corresponed res list based on index. Then we also need stack’s top element’ timestamp to the current timestamp + 1.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">exclusiveTime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">logs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
         <span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>

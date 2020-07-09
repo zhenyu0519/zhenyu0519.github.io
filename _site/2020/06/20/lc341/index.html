@@ -154,7 +154,7 @@ the order of elements returned by next should be: [1,4,6].
 </code></pre></div></div>
 
 <h2 id="methodology">Methodology</h2>
-<p>The question offered interfaces to help us. We can use stack to store the elements in nestedList in reversed order. In the hasNext function we will pop out the peek element of the stack. If the peek element is integer, we will return True and let next function return the peek integer. If the peek element is not integer, which means it is the nestedList, we will use getList interface function to get the nested list that this nestedInteger holds, then concatenate it to the previous stack and assign it to stack, this will recusivelt get the integer. The next function will return the peek integer of the stack.</p>
+<p>The question offered interfaces to help us. We can use stack to store the elements in nestedList in reversed order. In the hasNext function we will pop out the top element of the stack. If the top element is integer, we will return True and let next function return the top integer. If the top element is not integer, which means it is the nestedList, we will use getList interface function to get the nested list that this nestedInteger holds, then concatenate it to the previous stack and assign it to stack, this will recusivelt get the integer. The next function will return the top integer of the stack.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># """</span>
 <span class="c"># This is the interface that allows for creating nested lists.</span>

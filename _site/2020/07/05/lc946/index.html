@@ -160,7 +160,7 @@ Explanation: 1 cannot be popped before 2.
 </ol>
 
 <h2 id="methodology">Methodology</h2>
-<p>We need a stack to store temperoray value. Iterate the pushed list and append the value into stack if the peek value of stack is equal to the popped[index] value then pop the peek from stack and update the index. After iteration, if the stack is empty we know all values are operated and return true</p>
+<p>We need a stack to store temperoray value. Iterate the pushed list and append the value into stack if the top value of stack is equal to the popped[index] value then pop the top from stack and update the index. After iteration, if the stack is empty we know all values are operated and return true</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">def</span> <span class="nf">validateStackSequences</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pushed</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">popped</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>

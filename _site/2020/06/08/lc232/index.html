@@ -158,13 +158,13 @@ queue.empty(); // returns false
 <h2 id="notes">Notes:</h2>
 
 <ul>
-  <li>You must use only standard operations of a stack – which means only push to top, peek/pop from top, size, and is empty operations are valid.</li>
+  <li>You must use only standard operations of a stack – which means only push to top, top/pop from top, size, and is empty operations are valid.</li>
   <li>Depending on your language, stack may not be supported natively. You may simulate a stack by using a list or deque (double-ended queue), as long as you use only standard operations of a stack.</li>
-  <li>You may assume that all operations are valid (for example, no pop or peek operations will be called on an empty queue).</li>
+  <li>You may assume that all operations are valid (for example, no pop or top operations will be called on an empty queue).</li>
 </ul>
 
 <h2 id="methodology">Methodology</h2>
-<p>To implement queue by using stack, the push and empty will be exactly same as stack. For pop and peek operations, we need to reorder the number in stack. However, since the operations are dynamic changing, to save the cost, the best way is to create extra space called pop_stack to append number that pop out from original stack, this will reverse order will minimum cost.</p>
+<p>To implement queue by using stack, the push and empty will be exactly same as stack. For pop and top operations, we need to reorder the number in stack. However, since the operations are dynamic changing, to save the cost, the best way is to create extra space called pop_stack to append number that pop out from original stack, this will reverse order will minimum cost.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="s">"""
@@ -210,7 +210,7 @@ queue.empty(); // returns false
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">push_stack</span><span class="p">)</span><span class="o">==</span><span class="bp">False</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pop_stack</span><span class="p">)</span> <span class="o">==</span> <span class="bp">False</span>
 </code></pre></div></div>
 <h1 id="bigo">BigO</h1>
-<p>No need to iterate the stack or list for append and is empty but we do need to iterate the stack or list for pop and peek operations. This will cost O(n)</p>
+<p>No need to iterate the stack or list for append and is empty but we do need to iterate the stack or list for pop and top operations. This will cost O(n)</p>
 
 
       </article>

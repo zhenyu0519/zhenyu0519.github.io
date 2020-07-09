@@ -155,7 +155,7 @@ iterator.hasNext(); // return false
 <h2 id="methodology">Methodology</h2>
 <p>The binary search has one important properity that is left node value is smaller than root value and right node value is greater than root value.
 You can use the brutal force method that each time call next you will traversal the tree and find the smallest node then remove it from tree recusively. This is not efficient.
-To better solve this question, you can try to use stack and preorder traversal (Root, Left, Right) to append the left node value into stack. Once you call next, you pop the peek of the stack. This will always return the smallest value from stack due to the property of BST. Then you append the right node the the poped node if it is existed because the right node is always greater than root and smaller than the root’s parent.</p>
+To better solve this question, you can try to use stack and preorder traversal (Root, Left, Right) to append the left node value into stack. Once you call next, you pop the top of the stack. This will always return the smallest value from stack due to the property of BST. Then you append the right node the the poped node if it is existed because the right node is always greater than root and smaller than the root’s parent.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">BSTIterator</span><span class="p">:</span>
 

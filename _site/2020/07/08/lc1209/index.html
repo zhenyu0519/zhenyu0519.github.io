@@ -172,7 +172,7 @@ Output: "ps"
 </ol>
 
 <h2 id="methodology">Methodology</h2>
-<p>Iterate the string, append the current character and count = 1 to stack if stack empty or peek character is not equal to current character. If current character is equal to the peek character then peek character’s count + 1 and If the count is equal to k, then pop the peek from stack. After iteration, there will be only characters which is not satisfied the requirement left. We iterate the stack and concatenate the character to the res string.</p>
+<p>Iterate the string, append the current character and count = 1 to stack if stack empty or top character is not equal to current character. If current character is equal to the top character then top character’s count + 1 and If the count is equal to k, then pop the top from stack. After iteration, there will be only characters which is not satisfied the requirement left. We iterate the stack and concatenate the character to the res string.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">removeDuplicates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
