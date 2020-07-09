@@ -1197,6 +1197,13 @@
     } ,
   
     {
+      "title"    : "leetcode 346. Moving Average from Data Stream (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/08/lc346/"
+    } ,
+  
+    {
       "title"    : "leetcode 901. Online Stock Span (Python)",
       "category" : "Leetcode",
       
