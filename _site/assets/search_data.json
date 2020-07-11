@@ -1215,6 +1215,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/07/08/lc921/"
+    } ,
+  
+    {
+      "title"    : "leetcode 23. Merge k Sorted Lists (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/09/lc23/"
     } 
   
 ]
