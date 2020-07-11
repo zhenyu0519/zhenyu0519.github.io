@@ -1222,6 +1222,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/07/09/lc23/"
+    } ,
+  
+    {
+      "title"    : "leetcode 21. Merge Two Sorted Lists (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/10/lc21/"
     } 
   
 ]
