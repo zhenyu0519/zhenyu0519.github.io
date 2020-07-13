@@ -1260,6 +1260,13 @@
     } ,
   
     {
+      "title"    : "leetcode 75. Sort Colors (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/12/lc75/"
+    } ,
+  
+    {
       "title"    : "leetcode 973. K Closest Points to Origin (Python)",
       "category" : "Leetcode",
       
