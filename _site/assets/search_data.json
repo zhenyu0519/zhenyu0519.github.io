@@ -1229,6 +1229,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/07/10/lc21/"
+    } ,
+  
+    {
+      "title"    : "leetcode 347. Top K Frequent Elements (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/11/lc347/"
     } 
   
 ]

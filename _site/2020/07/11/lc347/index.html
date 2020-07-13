@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>leetcode 21. Merge Two Sorted Lists (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <title>leetcode 347. Top K Frequent Elements (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
     <!-- add google search console -->
     <meta name="google-site-verification" content="Hh37wMK9MFpx6xtWD91RDJzIy-PTLn7ocpNyQ1kPI6M" />
     <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-css/css/primer.css">
@@ -23,47 +23,47 @@
     
 
     
-    <link rel="canonical" href="https://zhenyu0519.github.io/2020/07/10/lc21/">
+    <link rel="canonical" href="https://zhenyu0519.github.io/2020/07/11/lc347/">
     <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="https://zhenyu0519.github.io/feed.xml">
     <link rel="shortcut icon" href="https://zhenyu0519.github.io/favicon.ico">
     
-    <meta property="og:title" content="leetcode 21. Merge Two Sorted Lists (Python)">
+    <meta property="og:title" content="leetcode 347. Top K Frequent Elements (Python)">
       
-    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, 21. Merge Two Sorted Lists, zhenyu,">
-    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, 21. Merge Two Sorted Lists, zhenyu,">
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, 347. Top K Frequent Elements, zhenyu,">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, 347. Top K Frequent Elements, zhenyu,">
       
-    <meta name="description" content="21. Merge Two Sorted Lists (Python)">
-    <meta name="og:description" content="21. Merge Two Sorted Lists (Python)">
+    <meta name="description" content="347. Top K Frequent Elements (Python)">
+    <meta name="og:description" content="347. Top K Frequent Elements (Python)">
       
     
     
         
     
-    <meta property="og:url" content="https://zhenyu0519.github.io/2020/07/10/lc21/">
+    <meta property="og:url" content="https://zhenyu0519.github.io/2020/07/11/lc347/">
     <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="zh_CN" />
     
-    <meta property="article:published_time" content="2020-07-10">
+    <meta property="article:published_time" content="2020-07-11">
     
     <script src="https://zhenyu0519.github.io/assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="https://zhenyu0519.github.io/assets/js/jquery-ui.js"></script>
     <script src="https://zhenyu0519.github.io/assets/js/main.js"></script>
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>leetcode 21. Merge Two Sorted Lists (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
+<title>leetcode 347. Top K Frequent Elements (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="leetcode 21. Merge Two Sorted Lists (Python)" />
+<meta property="og:title" content="leetcode 347. Top K Frequent Elements (Python)" />
 <meta name="author" content="Jeffrey" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Merge Two Sorted Lists (Python Solution)" />
-<meta property="og:description" content="Merge Two Sorted Lists (Python Solution)" />
-<link rel="canonical" href="https://zhenyu0519.github.io/2020/07/10/lc21/" />
-<meta property="og:url" content="https://zhenyu0519.github.io/2020/07/10/lc21/" />
+<meta name="description" content="Top K Frequent Elements (Python Solution)" />
+<meta property="og:description" content="Top K Frequent Elements (Python Solution)" />
+<link rel="canonical" href="https://zhenyu0519.github.io/2020/07/11/lc347/" />
+<meta property="og:url" content="https://zhenyu0519.github.io/2020/07/11/lc347/" />
 <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey’s Blog)" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-07-10T00:00:00-07:00" />
+<meta property="article:published_time" content="2020-07-11T00:00:00-07:00" />
 <script type="application/ld+json">
-{"description":"Merge Two Sorted Lists (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/07/10/lc21/"},"url":"https://zhenyu0519.github.io/2020/07/10/lc21/","headline":"leetcode 21. Merge Two Sorted Lists (Python)","dateModified":"2020-07-10T00:00:00-07:00","datePublished":"2020-07-10T00:00:00-07:00","@context":"http://schema.org"}</script>
+{"description":"Top K Frequent Elements (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/07/11/lc347/"},"url":"https://zhenyu0519.github.io/2020/07/11/lc347/","headline":"leetcode 347. Top K Frequent Elements (Python)","dateModified":"2020-07-11T00:00:00-07:00","datePublished":"2020-07-11T00:00:00-07:00","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -91,16 +91,16 @@
     </header>
     <!-- / header -->
 
-    <section class="collection-head small" data-pattern-id="leetcode 21. Me">
+    <section class="collection-head small" data-pattern-id="leetcode 347. T">
   <div class="container">
     <div class="columns">
       <div class="column three-fourths">
         <div class="collection-title">
-          <h1 class="collection-header">leetcode 21. Merge Two Sorted Lists (Python)</h1>
+          <h1 class="collection-header">leetcode 347. Top K Frequent Elements (Python)</h1>
           <div class="collection-info">
             
             <span class="meta-info">
-              <span class="octicon octicon-calendar"></span> 10 Jul 2020
+              <span class="octicon octicon-calendar"></span> 11 Jul 2020
             </span>
             
             
@@ -125,45 +125,52 @@
   <div class="columns">
     <div class="column three-fourths">
       <article class="article-content markdown-body">
-        <h1 id="21-merge-two-sorted-lists-python">21. Merge Two Sorted Lists (Python)</h1>
+        <h1 id="347-top-k-frequent-elements-python">347. Top K Frequent Elements (Python)</h1>
 
 <h2 id="related-topic">Related Topic</h2>
 <p><a href="/categories/#Linked-List" target="_blank"> Linked-List</a>.</p>
 
 <h2 id="description">Description</h2>
-<p>Merge two sorted linked lists and return it as a new sorted list. The new list should be made by splicing together the nodes of the first two lists.</p>
+<p>Given a non-empty array of integers, return the k most frequent elements.</p>
 
 <h2 id="sample-io">Sample I/O</h2>
 
 <h3 id="example-1">Example 1</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: 1-&gt;2-&gt;4, 1-&gt;3-&gt;4
-Output: 1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: nums = [1,1,1,2,2,3], k = 2
+Output: [1,2]
 </code></pre></div></div>
 
+<h3 id="example-2">Example 2</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: nums = [1], k = 1
+Output: [1]
+</code></pre></div></div>
+<h2 id="note">Note</h2>
+<ul>
+  <li>You may assume k is always valid, 1 ≤ k ≤ number of unique elements.</li>
+  <li>Your algorithm’s time complexity must be better than O(n log n), where n is the array’s size.</li>
+  <li>It’s guaranteed that the answer is unique, in other words the set of the top k frequent elements is unique.</li>
+  <li>You can return the answer in any order.</li>
+</ul>
+
 <h2 id="methodology">Methodology</h2>
-<p>We need to creat a head node that allow us to return the head of the merged list. We need two pointers for each linked list. We will compare the value of each pointer and put the smaller value node into the merged linked list and update the pointer to next. We iterate both linked list at same time until one reach to end. Return the head. (We can also use heap to solve this question or even more complecated question for example merge k sorted linked lists where k is greater than 2)</p>
+<p>First we need count the appearence for each element store it in dictionary. Then we iterate the dictionary, and push the value-key pair (or count-value pair) into heap, if the the heap length less than k. When heap length is greater or equal than k, we push the current value-key pair into heap and pop one from the heap in order to keep the length of the heap equal to key. After iteration, we will get the k most frequent elements pair, we only need to return the value not the count.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">mergeTwoLists</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">l1</span><span class="p">:</span> <span class="n">ListNode</span><span class="p">,</span> <span class="n">l2</span><span class="p">:</span> <span class="n">ListNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ListNode</span><span class="p">:</span>
-        <span class="n">head</span> <span class="o">=</span> <span class="n">new_list</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-        
-        <span class="k">while</span><span class="p">(</span><span class="n">l1</span> <span class="ow">and</span> <span class="n">l2</span><span class="p">):</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">l1</span><span class="o">.</span><span class="n">val</span> <span class="o">&lt;</span> <span class="n">l2</span><span class="o">.</span><span class="n">val</span><span class="p">):</span>
-                <span class="n">new_list</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">l1</span>
-                <span class="n">l1</span> <span class="o">=</span> <span class="n">l1</span><span class="o">.</span><span class="nb">next</span>  
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">topKFrequent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="n">res</span><span class="o">=</span><span class="p">[]</span>
+        <span class="nb">dict</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">Counter</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">val</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="nb">dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">)</span><span class="o">&lt;</span><span class="n">k</span><span class="p">:</span>
+                <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">res</span><span class="p">,(</span><span class="n">count</span><span class="p">,</span><span class="n">val</span><span class="p">))</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">new_list</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">l2</span>
-                <span class="n">l2</span> <span class="o">=</span> <span class="n">l2</span><span class="o">.</span><span class="nb">next</span>
-            <span class="n">new_list</span> <span class="o">=</span> <span class="n">new_list</span><span class="o">.</span><span class="nb">next</span>
-
-        <span class="n">new_list</span><span class="o">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">l1</span> <span class="ow">or</span> <span class="n">l2</span>
-        <span class="k">return</span> <span class="n">head</span><span class="o">.</span><span class="nb">next</span>
+                <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">res</span><span class="p">,(</span><span class="n">count</span><span class="p">,</span><span class="n">val</span><span class="p">))</span>
+                <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">val</span> <span class="k">for</span> <span class="n">count</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
 </code></pre></div></div>
 
 <h1 id="bigo">BigO</h1>
-<p>Time complexity : O(n + m)</p>
-
-<p>Because exactly one of l1 and l2 is incremented on each loop iteration, the while loop runs for a number of iterations equal to the sum of the lengths of the two lists. All other work is constant, so the overall complexity is linear.</p>
+<p>Time complexity : O(n+m+k) which n is the size of input, m is the size of the dictionary and k is given.</p>
 
       </article>
       <div class="share">
@@ -180,7 +187,7 @@ Output: 1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4
         <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
         <script>
         var gitalk = new Gitalk({
-            id: '/2020/07/10/lc21/',
+            id: '/2020/07/11/lc347/',
             clientID: '4cef70907f5b36353d59',
             clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
             repo: 'zhenyu0519.github.io',
