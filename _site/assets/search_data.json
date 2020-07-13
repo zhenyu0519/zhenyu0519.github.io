@@ -1250,6 +1250,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/07/11/lc703/"
+    } ,
+  
+    {
+      "title"    : "leetcode 973. K Closest Points to Origin (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/12/lc973/"
     } 
   
 ]
