@@ -1253,6 +1253,13 @@
     } ,
   
     {
+      "title"    : "leetcode 280. Wiggle Sort (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/12/lc280/"
+    } ,
+  
+    {
       "title"    : "leetcode 973. K Closest Points to Origin (Python)",
       "category" : "Leetcode",
       
