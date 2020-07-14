@@ -1301,6 +1301,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/07/13/lc378/"
+    } ,
+  
+    {
+      "title"    : "leetcode 452. Minimum Number of Arrows to Burst Balloons (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/13/lc452/"
     } 
   
 ]
