@@ -1294,6 +1294,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/07/13/lc253/"
+    } ,
+  
+    {
+      "title"    : "leetcode 378. Kth Smallest Element in a Sorted Matrix (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/13/lc378/"
     } 
   
 ]
