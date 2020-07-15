@@ -1318,6 +1318,13 @@
     } ,
   
     {
+      "title"    : "leetcode 204. Count Primes (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/14/lc204/"
+    } ,
+  
+    {
       "title"    : "leetcode 263. Ugly Number (Python)",
       "category" : "Leetcode",
       
