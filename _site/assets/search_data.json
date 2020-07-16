@@ -1329,6 +1329,20 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/07/14/lc263/"
+    } ,
+  
+    {
+      "title"    : "leetcode 264. Ugly Number II (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/14/lc264/"
+    } ,
+  
+    {
+      "title"    : "leetcode 621. Task Scheduler (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/15/lc621/"
     } 
   
 ]

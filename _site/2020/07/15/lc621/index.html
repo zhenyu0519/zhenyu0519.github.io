@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" prefix="og: http://ogp.me/ns#" class="han-init">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>leetcode 621. Task Scheduler (Python) &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <!-- add google search console -->
+    <meta name="google-site-verification" content="Hh37wMK9MFpx6xtWD91RDJzIy-PTLn7ocpNyQ1kPI6M" />
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-css/css/primer.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-markdown/dist/user-content.min.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/octicons/octicons/octicons.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/collection.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/repo-card.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/sections/repo-list.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/sections/mini-repo-list.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/boxed-group.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/common.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/share.js/dist/css/share.min.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/responsive.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/posts/index.css">
+    <!-- Latest compiled and minified CSS -->
+    
+
+    
+    <link rel="canonical" href="https://zhenyu0519.github.io/2020/07/15/lc621/">
+    <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="https://zhenyu0519.github.io/feed.xml">
+    <link rel="shortcut icon" href="https://zhenyu0519.github.io/favicon.ico">
+    
+    <meta property="og:title" content="leetcode 621. Task Scheduler (Python)">
+      
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, 621. Task Scheduler, zhenyu, Greedy">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, 621. Task Scheduler, zhenyu, Greedy">
+      
+    <meta name="description" content="621. Task Scheduler (Python)">
+    <meta name="og:description" content="621. Task Scheduler (Python)">
+      
+    
+    
+        
+    
+    <meta property="og:url" content="https://zhenyu0519.github.io/2020/07/15/lc621/">
+    <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_CN" />
+    
+    <meta property="article:published_time" content="2020-07-15">
+    
+    <script src="https://zhenyu0519.github.io/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/jquery-ui.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/main.js"></script>
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>leetcode 621. Task Scheduler (Python) | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="leetcode 621. Task Scheduler (Python)" />
+<meta name="author" content="Jeffrey" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Task Scheduler (Python Solution)" />
+<meta property="og:description" content="Task Scheduler (Python Solution)" />
+<link rel="canonical" href="https://zhenyu0519.github.io/2020/07/15/lc621/" />
+<meta property="og:url" content="https://zhenyu0519.github.io/2020/07/15/lc621/" />
+<meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey’s Blog)" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-07-15T00:00:00-07:00" />
+<script type="application/ld+json">
+{"description":"Task Scheduler (Python Solution)","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/07/15/lc621/"},"url":"https://zhenyu0519.github.io/2020/07/15/lc621/","headline":"leetcode 621. Task Scheduler (Python)","dateModified":"2020-07-15T00:00:00-07:00","datePublished":"2020-07-15T00:00:00-07:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body class="" data-mz="">
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="https://zhenyu0519.github.io/" title="杰弗里 · 时光博客(Jeffrey's Blog)"><span class="octicon octicon-mark-github"></span> 杰弗里 · 时光博客(Jeffrey's Blog)</a></h1>
+            <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <nav class="site-header-nav" role="navigation">
+                
+                <a href="https://zhenyu0519.github.io/" class=" site-header-nav-item" target="" title="Home">Home</a>
+                
+                <a href="https://zhenyu0519.github.io/categories/" class=" site-header-nav-item" target="" title="Categories">Categories</a>
+                
+                <a href="https://zhenyu0519.github.io/open-source/" class=" site-header-nav-item" target="" title="Github Repos">Github Repos</a>
+                
+                <a href="https://zhenyu0519.github.io/about/" class=" site-header-nav-item" target="" title="About">About</a>
+                
+            </nav>
+        </div>
+    </header>
+    <!-- / header -->
+
+    <section class="collection-head small" data-pattern-id="leetcode 621. T">
+  <div class="container">
+    <div class="columns">
+      <div class="column three-fourths">
+        <div class="collection-title">
+          <h1 class="collection-header">leetcode 621. Task Scheduler (Python)</h1>
+          <div class="collection-info">
+            
+            <span class="meta-info">
+              <span class="octicon octicon-calendar"></span> 15 Jul 2020
+            </span>
+            
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Leetcode" title="Leetcode">Leetcode</a>
+            </span>
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Greedy" title="Greedy">Greedy</a>
+            </span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- / .banner -->
+<section class="container content">
+  <div class="columns">
+    <div class="column three-fourths">
+      <article class="article-content markdown-body">
+        <h1 id="621-task-scheduler-python">621. Task Scheduler (Python)</h1>
+
+<h2 id="related-topic">Related Topic</h2>
+<p><a href="/categories/#Greedy" target="_blank"> Greedy</a>.</p>
+
+<h2 id="description">Description</h2>
+<p>You are given a char array representing tasks CPU need to do. It contains capital letters A to Z where each letter represents a different task. Tasks could be done without the original order of the array. Each task is done in one unit of time. For each unit of time, the CPU could complete either one task or just be idle.</p>
+
+<p>However, there is a non-negative integer n that represents the cooldown period between two same tasks (the same letter in the array), that is that there must be at least n units of time between any two same tasks.</p>
+
+<p>You need to return the least number of units of times that the CPU will take to finish all the given tasks.</p>
+
+<h2 id="sample-io">Sample I/O</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: tasks = ["A","A","A","B","B","B"], n = 2
+Output: 8
+Explanation: 
+A -&gt; B -&gt; idle -&gt; A -&gt; B -&gt; idle -&gt; A -&gt; B
+There is at least 2 units of time between any two same tasks.
+</code></pre></div></div>
+
+<h3 id="example-2">Example 2</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: tasks = ["A","A","A","B","B","B"], n = 0
+Output: 6
+Explanation: On this case any permutation of size 6 would work since n = 0.
+["A","A","A","B","B","B"]
+["A","B","A","B","A","B"]
+["B","B","B","A","A","A"]
+...
+And so on.
+</code></pre></div></div>
+
+<h3 id="example-3">Example 3</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: tasks = ["A","A","A","A","A","A","B","C","D","E","F","G"], n = 2
+Output: 16
+Explanation: 
+One possible solution is
+A -&gt; B -&gt; C -&gt; A -&gt; D -&gt; E -&gt; A -&gt; F -&gt; G -&gt; A -&gt; idle -&gt; idle -&gt; A -&gt; idle -&gt; idle -&gt; A
+</code></pre></div></div>
+
+<h2 id="note">Note</h2>
+<ul>
+  <li>The number of tasks is in the range [1, 10000].</li>
+  <li>The integer n is in the range [0, 100].</li>
+</ul>
+
+<h2 id="methodology">Methodology</h2>
+<p>The total unit time is length of list + idld time.
+Count the frequence of each letter. Select the most frequent letter as boundary.The the number of room that between two boundaries is boundary - 1 and the idle time unit will be at least room * n. Split other letters into rooms and each room has no same letters. If all the idle time unit all use out, we are free to expand each room so we do not need more idle time unit. This will give the result as the lenght of the given list. Otherwise if the after fill all tasks into idle time unit and there are still idle time unit not been used then we add length of given list and the available idle time units to get the result.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">leastInterval</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tasks</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">count</span><span class="o">=</span><span class="p">[</span><span class="n">value</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">Counter</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+        <span class="n">count</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+        <span class="n">max_freq</span><span class="o">=</span><span class="n">count</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="n">room</span><span class="o">=</span><span class="n">max_freq</span><span class="o">-</span><span class="mi">1</span>
+        <span class="n">idle</span><span class="o">=</span><span class="p">(</span><span class="n">room</span><span class="p">)</span><span class="o">*</span><span class="n">n</span>
+        <span class="k">while</span> <span class="n">count</span> <span class="ow">and</span> <span class="n">idle</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">idle</span> <span class="o">-=</span> <span class="nb">min</span><span class="p">(</span><span class="n">room</span><span class="p">,</span> <span class="n">count</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">idle</span><span class="p">)</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h1 id="bigo">BigO</h1>
+<p>Time complexity : O(n) as we construct the counter will take O(n) time complexity.</p>
+
+      </article>
+      <div class="share">
+        <div class="share-component"></div>
+      </div>
+      <div class="comment">
+        
+
+  
+
+  
+        <div id="gitalk-container"></div>
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script>
+        var gitalk = new Gitalk({
+            id: '/2020/07/15/lc621/',
+            clientID: '4cef70907f5b36353d59',
+            clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
+            repo: 'zhenyu0519.github.io',
+            owner: 'zhenyu0519',
+            admin: ['zhenyu0519'],
+            labels: ['gitment'],
+            perPage: 50,
+        })
+        gitalk.render('gitalk-container')
+        </script>
+  
+
+
+      </div>
+    </div>
+    <div class="column one-fourth">
+      
+<h3>Search</h3>
+<div id="site_search" class="site_search">
+    <input type="text" id="search_box" placeholder="Search">
+</div>
+
+<ul id="search_results"></ul>
+
+<link rel="stylesheet" type="text/css" href="https://zhenyu0519.github.io/assets/css/modules/sidebar-search.css">
+<script src="https://zhenyu0519.github.io/assets/js/simple-jekyll-search.min.js"></script>
+<script src="https://zhenyu0519.github.io/assets/js/search.js"></script>
+
+<script type="text/javascript">
+SimpleJekyllSearch({
+    searchInput: document.getElementById('search_box'),
+    resultsContainer: document.getElementById('search_results'),
+    json: 'https://zhenyu0519.github.io/assets/search_data.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No results found',
+    fuzzy: false,
+    exclude: ['Welcome'],
+    limit: 10
+})
+</script>
+
+      
+<h3 class="post-directory-title mobile-hidden">Table of Contents</h3>
+<div id="post-directory-module" class="mobile-hidden">
+  <section class="post-directory">
+  <!-- Links that trigger the jumping -->
+  <!-- Added by javascript below -->
+  <dl></dl>
+  </section>
+</div>
+
+<script src="https://zhenyu0519.github.io/assets/js/jquery.toc.js"></script>
+
+    </div>
+  </div>
+</section>
+<!-- /section.content -->
+    <footer class="container">
+        <div class="site-footer" role="contentinfo">
+            <div class="copyright left mobile-block">
+                    © 2019
+                    <span title="Jeffrey">Jeffrey</span>
+                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
+            </div>
+
+            <ul class="site-footer-links right mobile-hidden">
+                <li>
+                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
+                </li>
+            </ul>
+            <a href="https://github.com/zhenyu0519/zhenyu0519.github.io" target="_blank" aria-label="view source code">
+                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+            </a>
+            <ul class="site-footer-links mobile-hidden">
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/" title="Home" target="">Home</a>
+                </li>
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/categories/" title="Categories" target="">Categories</a>
+                </li>
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/open-source/" title="Github Repos" target="">Github Repos</a>
+                </li>
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/about/" title="About" target="">About</a>
+                </li>
+                
+                <li><a href="https://zhenyu0519.github.io/feed.xml"><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
+            </ul>
+
+        </div>
+    </footer>
+    <div class="tools-wrapper">
+      <a class="gotop" href="#" title="回到顶部"><span class="octicon octicon-arrow-up"></span></a>
+    </div>
+    <!-- / footer -->
+    <script src="https://zhenyu0519.github.io/assets/vendor/share.js/dist/js/share.min.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/geopattern.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/prism.js"></script>
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/prism.css">
+    <script>
+      jQuery(document).ready(function($) {
+        // geopattern
+        $('.geopattern').each(function(){
+          $(this).geopattern($(this).data('pattern-id'));
+        });
+       // hljs.initHighlightingOnLoad();
+      });
+    </script>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div style="display:none">
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-113380665-1', 'auto');
+        ga('send', 'pageview');
+
+      </script>
+    </div>
+    
+</body>
+</html>
