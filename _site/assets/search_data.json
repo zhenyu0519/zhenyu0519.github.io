@@ -1341,6 +1341,13 @@
     } ,
   
     {
+      "title"    : "leetcode 1046. Last Stone Weight (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/15/lc1046/"
+    } ,
+  
+    {
       "title"    : "leetcode 621. Task Scheduler (Python)",
       "category" : "Leetcode",
       
