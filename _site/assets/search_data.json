@@ -83,6 +83,8 @@
   
   
   
+  
+  
 
   
     {
@@ -1343,6 +1345,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/07/15/lc621/"
+    } ,
+  
+    {
+      "title"    : "leetcode 767. Reorganize String (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/15/lc767/"
     } 
   
 ]
