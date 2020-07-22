@@ -1366,6 +1366,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/07/16/lc451/"
+    } ,
+  
+    {
+      "title"    : "leetcode 1197. Minimum Knight Moves (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/21/lc1197/"
     } 
   
 ]
