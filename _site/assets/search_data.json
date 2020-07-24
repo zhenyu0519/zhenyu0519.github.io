@@ -1380,6 +1380,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/07/22/lc787/"
+    } ,
+  
+    {
+      "title"    : "leetcode 207. Course Schedule (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/24/lc207/"
     } 
   
 ]
