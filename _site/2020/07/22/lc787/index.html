@@ -174,7 +174,17 @@ The cheapest price from city 0 to city 2 with at most 0 stop costs 500, as marke
 </ul>
 
 <h2 id="methodology">Methodology</h2>
-<p>This is a graph question. For each flight there are starting city, destination and cost. We will store it into dictionary with key is the starting city and value is another dictionary that contain destnation and cost pair. We also need a queue to implement the flight routes. The queue include starting city and cost (init to 0) initially. Now we pop the queue if the current starting city is destination then we find the smaller cost and update the cost. Otherwise we need to find the next station and cost in graph based on the current station. We append the next station and total cost into queue continuely until the queue is empty then we return the min cost.</p>
+<p>This is a graph question. We can solve it either by using BFS or Dijkstra.</p>
+
+<p>BFS:</p>
+
+<p>For each flight there are starting city, destination and cost. We will store it into dictionary with key is the starting city and value is another dictionary that contain destnation and cost pair. We also need a queue to implement the flight routes. The queue include starting city and cost (init to 0) initially. Now we pop the queue if the current starting city is destination then we find the smaller cost and update the cost. Otherwise we need to find the next station and cost in graph based on the current station. We append the next station and total cost into queue continuely until the queue is empty then we return the min cost.</p>
+
+<p>Dijkstra:</p>
+
+<p>Dijkstra is similar with BFS, the difference is using priority queue instand of queue. The priority will always pop the element with heigher priority. In this case, the cost is lower the priority is heigher. Once the pop src is equal to destination we will have the answer.</p>
+
+<p>BFS:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">findCheapestPrice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">flights</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">src</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">dst</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">K</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="n">graph</span><span class="o">=</span><span class="n">collections</span><span class="o">.</span><span class="n">defaultdict</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
@@ -199,6 +209,26 @@ The cheapest price from city 0 to city 2 with at most 0 stop costs 500, as marke
 
 <h1 id="bigo">BigO</h1>
 <p>Time complexity : O(E*K) where E is the number of edges and K is the number of stops given</p>
+
+<p>Dijkstra:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">findCheapestPrice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">flights</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">src</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">dst</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">K</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">pq</span><span class="p">,</span><span class="n">graph</span><span class="o">=</span><span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="n">src</span><span class="p">,</span> <span class="mi">0</span><span class="p">)],</span><span class="n">collections</span><span class="o">.</span><span class="n">defaultdict</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">w</span> <span class="ow">in</span> <span class="n">flights</span><span class="p">:</span>
+            <span class="n">graph</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span><span class="o">=</span><span class="n">w</span>
+        <span class="k">while</span> <span class="n">pq</span><span class="p">:</span>
+            <span class="n">total</span><span class="p">,</span> <span class="n">src</span><span class="p">,</span> <span class="n">stops</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">pq</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">src</span> <span class="o">==</span> <span class="n">dst</span><span class="p">:</span> <span class="k">return</span> <span class="n">total</span>
+            <span class="k">if</span> <span class="n">stops</span> <span class="o">&gt;</span> <span class="n">K</span><span class="p">:</span> <span class="k">continue</span>
+            <span class="k">for</span> <span class="n">dest</span><span class="p">,</span> <span class="n">cost</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">src</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">pq</span><span class="p">,(</span><span class="n">total</span><span class="o">+</span><span class="n">cost</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">stops</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</code></pre></div></div>
+
+<h1 id="bigo-1">BigO</h1>
+<p>Time Complexity: Let EE represent the number of flights and VV represent the number of cities. The time complexity is mainly governed by the number of times we pop and push into the heap. We will process each node (city) atleast once and for each city popped from the queue, we iterate over its adjacency matrix and can potentially add all its neighbors to the heap. Thus, the time taken for extract min and then addition to the heap (or simply, heap replace) would be \text{O}(\text{V}^2 \cdot \text{log V})O(V 
+2
+ ⋅log V).</p>
 
       </article>
       <div class="share">
