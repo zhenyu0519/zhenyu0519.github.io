@@ -1394,6 +1394,13 @@
       "category" : "Leetcode",
       
       "url"      : "https://zhenyu0519.github.io/2020/07/24/lc210/"
+    } ,
+  
+    {
+      "title"    : "leetcode 100. Same Tree (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/25/lc100/"
     } 
   
 ]
