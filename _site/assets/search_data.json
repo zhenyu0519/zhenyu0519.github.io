@@ -1427,6 +1427,13 @@
     } ,
   
     {
+      "title"    : "leetcode 121. Best Time to Buy and Sell Stock (Python)",
+      "category" : "Leetcode",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/07/28/lc121/"
+    } ,
+  
+    {
       "title"    : "leetcode 737. Sentence Similarity II (Python)",
       "category" : "Leetcode",
       
