@@ -29,8 +29,8 @@
     
     <meta property="og:title" content="leetcode 53. Maximum Subarray (Python)">
       
-    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 53, Maximum Subarray, zhenyu">
-    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 53, Maximum Subarray, zhenyu">
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 53, Maximum Subarray, zhenyu, Dynamic-Programming, Greedy">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 53, Maximum Subarray, zhenyu, Dynamic-Programming, Greedy">
       
     <meta name="description" content="Leetcode 53. Maximum Subarray (Python)">
     <meta name="og:description" content="Leetcode 53. Maximum Subarray (Python)">
@@ -114,6 +114,11 @@
               <a href="https://zhenyu0519.github.io/categories/#Dynamic-Programming" title="Dynamic-Programming">Dynamic-Programming</a>
             </span>
             
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Greedy" title="Greedy">Greedy</a>
+            </span>
+            
           </div>
         </div>
       </div>
@@ -128,7 +133,8 @@
         <h1 id="leetcode-53-maximum-subarray-python">Leetcode 53. Maximum Subarray (Python)</h1>
 
 <h1 id="related-topic">Related Topic</h1>
-<p><a href="/categories/#Dynamic-Programming" target="_blank"> Dynamic-Programming</a>.</p>
+<p><a href="/categories/#Dynamic-Programming" target="_blank"> Dynamic-Programming</a>.
+<a href="/categories/#Greedy" target="_blank"> Greedy</a>.</p>
 
 <h1 id="description">Description</h1>
 <p>Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p>
@@ -141,7 +147,9 @@ Explanation: [4,-1,2,1] has the largest sum = 6.
 </code></pre></div></div>
 
 <h1 id="methodology">Methodology</h1>
-<p>This question solved by Dynamic Programming.</p>
+<p>This question solved by Dynamic Programming or greedy.</p>
+
+<p>For dynamic programming:</p>
 
 <ol>
   <li>Find the base case
@@ -158,7 +166,17 @@ The basic idea is append the current value to the subarry of largest sum.
   <li>To use dynamic programming for this question, we actually do not need continously create or abandon subarray. we can use prefix sum to always get the maxmium sum of previous subarry and compare the current value with this sum. This will lead to same result.</li>
 </ol>
 
-<h1 id="code">Code</h1>
+<p>For greedy:</p>
+
+<ol>
+  <li>If all numbers are negative, then we return the largest negative number. Otherwise, there must be positive number.</li>
+  <li>We iterate the numbers, if the current sum + number is less than 0, then there is new subarray start, we will store the sum of the previous the subarray. Otherwise we will continue to append the number to the current subarray.
+    <h1 id="code">Code</h1>
+  </li>
+</ol>
+
+<p>Dynamic Programming:</p>
+
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">maxSubArray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
         <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -171,6 +189,21 @@ The basic idea is append the current value to the subarry of largest sum.
 
 <h1 id="bigo">BigO</h1>
 <p>We iterate all dp array, it will cost O(n), each current value will compare with the sum of current value and last value, it will cost (1+1), in total will be O(n+n) and It is O(n)</p>
+
+<p>Greedy:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">maxSubArray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">max</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+        <span class="n">curr_sum</span><span class="p">,</span> <span class="n">max_sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+            <span class="n">curr_sum</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">curr_sum</span> <span class="o">+</span> <span class="n">num</span><span class="p">)</span>
+            <span class="n">max_sum</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">curr_sum</span><span class="p">,</span> <span class="n">max_sum</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">max_sum</span>
+</code></pre></div></div>
+
+<h1 id="bigo-1">BigO</h1>
+<p>Time complexity : O(N) since it’s one pass along the array.</p>
 
       </article>
       <div class="share">
