@@ -29,8 +29,8 @@
     
     <meta property="og:title" content="leetcode 121. Best Time to Buy and Sell Stock (Python)">
       
-    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 509, Fibonacci Number, zhenyu">
-    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 509, Fibonacci Number, zhenyu">
+    <meta name="keywords" content="2020， Leetcode， Algorithem, Python, leetcode 509, Fibonacci Number, zhenyu, Greedy">
+    <meta name="og:keywords" content="2020， Leetcode， Algorithem, Python, leetcode 509, Fibonacci Number, zhenyu, Greedy">
       
     <meta name="description" content="Leetcode 121. Best Time to Buy and Sell Stock (Python)">
     <meta name="og:description" content="Leetcode 121. Best Time to Buy and Sell Stock (Python)">
@@ -114,6 +114,11 @@
               <a href="https://zhenyu0519.github.io/categories/#Dynamic-Programming" title="Dynamic-Programming">Dynamic-Programming</a>
             </span>
             
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Greedy" title="Greedy">Greedy</a>
+            </span>
+            
           </div>
         </div>
       </div>
@@ -128,7 +133,7 @@
         <h1 id="leetcode-121-best-time-to-buy-and-sell-stock-python">Leetcode 121. Best Time to Buy and Sell Stock (Python)</h1>
 
 <h1 id="related-topic">Related Topic</h1>
-<p><a href="/categories/#Dynamic-Programming" target="_blank"> Dynamic-Programming</a>.</p>
+<p><a href="/categories/#Dynamic-Programming" target="_blank"> Greedy</a>.</p>
 
 <h1 id="description">Description</h1>
 <p>Say you have an array for which the ith element is the price of a given stock on day i.</p>
@@ -156,9 +161,10 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 </code></pre></div></div>
 
 <h1 id="methodology">Methodology</h1>
-<p>max_profit = max_sell - min_buy. use dynamic programing here to compare each price and min_price to update the min_price. Find the profit by substracting price to min_price and compare the profit to max_profit. As result we return the max_profit.</p>
+<p>max_profit = max_sell - min_buy. use Greedy here to compare each price and min_price to update the min_price. Find the profit by substracting price to min_price and compare the profit to max_profit. As result we return the max_profit.</p>
 
 <h1 id="code">Code</h1>
+
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">maxProfit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prices</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="n">max_profit</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">min_buy</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s">'inf'</span><span class="p">)</span>
