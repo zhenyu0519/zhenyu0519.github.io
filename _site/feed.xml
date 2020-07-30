@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-07-29T01:16:44-07:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 737. Sentence Similarity II (Python)</title><link href="https://zhenyu0519.github.io/2020/07/28/lc737/" rel="alternate" type="text/html" title="leetcode 737. Sentence Similarity II (Python)" /><published>2020-07-28T00:00:00-07:00</published><updated>2020-07-28T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/28/lc737</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/28/lc737/">&lt;h1 id=&quot;737-sentence-similarity-ii-python&quot;&gt;737. Sentence Similarity II (Python)&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-07-29T22:05:07-07:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">leetcode 737. Sentence Similarity II (Python)</title><link href="https://zhenyu0519.github.io/2020/07/28/lc737/" rel="alternate" type="text/html" title="leetcode 737. Sentence Similarity II (Python)" /><published>2020-07-28T00:00:00-07:00</published><updated>2020-07-28T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/28/lc737</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/28/lc737/">&lt;h1 id=&quot;737-sentence-similarity-ii-python&quot;&gt;737. Sentence Similarity II (Python)&lt;/h1&gt;
 
 &lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Depth-First-Search&quot; target=&quot;_blank&quot;&gt; Depth-First-Search&lt;/a&gt;.
@@ -57,7 +57,7 @@
 &lt;p&gt;Time Complexity: O(NP), where NN is the maximum length of words1 and words2, and PP is the length of pairs. Each of NN searches could search the entire graph.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">737. Sentence Similarity II (Python)</summary></entry><entry><title type="html">leetcode 121. Best Time to Buy and Sell Stock (Python)</title><link href="https://zhenyu0519.github.io/2020/07/28/lc121/" rel="alternate" type="text/html" title="leetcode 121. Best Time to Buy and Sell Stock (Python)" /><published>2020-07-28T00:00:00-07:00</published><updated>2020-07-28T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/28/lc121</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/28/lc121/">&lt;h1 id=&quot;leetcode-121-best-time-to-buy-and-sell-stock-python&quot;&gt;Leetcode 121. Best Time to Buy and Sell Stock (Python)&lt;/h1&gt;
 
 &lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Dynamic-Programming&quot; target=&quot;_blank&quot;&gt; Greedy&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/categories/#Greedy&quot; target=&quot;_blank&quot;&gt; Greedy&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
 &lt;p&gt;Say you have an array for which the ith element is the price of a given stock on day i.&lt;/p&gt;
@@ -85,7 +85,7 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
-&lt;p&gt;max_profit = max_sell - min_buy. use Greedy here to compare each price and min_price to update the min_price. Find the profit by substracting price to min_price and compare the profit to max_profit. As result we return the max_profit.&lt;/p&gt;
+&lt;p&gt;max_profit = max_sell - min_buy. use greedy here to compare each price and min_price to update the min_price. Find the profit by substracting price to min_price and compare the profit to max_profit. As result we return the max_profit.&lt;/p&gt;
 
 &lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
 
