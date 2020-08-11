@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" prefix="og: http://ogp.me/ns#" class="han-init">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>第一部分 作用域和闭包 第三章 函数作用域和块作用域 &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <!-- add google search console -->
+    <meta name="google-site-verification" content="Hh37wMK9MFpx6xtWD91RDJzIy-PTLn7ocpNyQ1kPI6M" />
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-css/css/primer.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-markdown/dist/user-content.min.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/octicons/octicons/octicons.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/collection.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/repo-card.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/sections/repo-list.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/sections/mini-repo-list.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/boxed-group.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/common.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/share.js/dist/css/share.min.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/responsive.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/posts/index.css">
+    <!-- Latest compiled and minified CSS -->
+    
+
+    
+    <link rel="canonical" href="https://zhenyu0519.github.io/2020/08/11/you_don't_know_js_chapter1.3/">
+    <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="https://zhenyu0519.github.io/feed.xml">
+    <link rel="shortcut icon" href="https://zhenyu0519.github.io/favicon.ico">
+    
+    <meta property="og:title" content="第一部分 作用域和闭包 第三章 函数作用域和块作用域">
+      
+    <meta name="keywords" content="你不知道的JavaScript 第三章 函数作用域和块作用域 第一部分 作用域和闭包">
+    <meta name="og:keywords" content="你不知道的JavaScript 第三章 函数作用域和块作用域 第一部分 作用域和闭包">
+      
+    <meta name="description" content="第三章 函数作用域和块作用域">
+    <meta name="og:description" content="第三章 函数作用域和块作用域">
+      
+    
+    
+        
+    
+    <meta property="og:url" content="https://zhenyu0519.github.io/2020/08/11/you_don't_know_js_chapter1.3/">
+    <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_CN" />
+    
+    <meta property="article:published_time" content="2020-08-11">
+    
+    <script src="https://zhenyu0519.github.io/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/jquery-ui.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/main.js"></script>
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>第一部分 作用域和闭包 第三章 函数作用域和块作用域 | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="第一部分 作用域和闭包 第三章 函数作用域和块作用域" />
+<meta name="author" content="Jeffrey" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="从你不知道的JavaScript书中总结复习知识点，力求精通JavaScript" />
+<meta property="og:description" content="从你不知道的JavaScript书中总结复习知识点，力求精通JavaScript" />
+<link rel="canonical" href="https://zhenyu0519.github.io/2020/08/11/you_don't_know_js_chapter1.3/" />
+<meta property="og:url" content="https://zhenyu0519.github.io/2020/08/11/you_don't_know_js_chapter1.3/" />
+<meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey’s Blog)" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-08-11T00:00:00-07:00" />
+<script type="application/ld+json">
+{"description":"从你不知道的JavaScript书中总结复习知识点，力求精通JavaScript","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/08/11/you_don't_know_js_chapter1.3/"},"url":"https://zhenyu0519.github.io/2020/08/11/you_don't_know_js_chapter1.3/","headline":"第一部分 作用域和闭包 第三章 函数作用域和块作用域","dateModified":"2020-08-11T00:00:00-07:00","datePublished":"2020-08-11T00:00:00-07:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body class="" data-mz="">
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="https://zhenyu0519.github.io/" title="杰弗里 · 时光博客(Jeffrey's Blog)"><span class="octicon octicon-mark-github"></span> 杰弗里 · 时光博客(Jeffrey's Blog)</a></h1>
+            <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <nav class="site-header-nav" role="navigation">
+                
+                <a href="https://zhenyu0519.github.io/" class=" site-header-nav-item" target="" title="Home">Home</a>
+                
+                <a href="https://zhenyu0519.github.io/categories/" class=" site-header-nav-item" target="" title="Categories">Categories</a>
+                
+                <a href="https://zhenyu0519.github.io/open-source/" class=" site-header-nav-item" target="" title="Github Repos">Github Repos</a>
+                
+                <a href="https://zhenyu0519.github.io/about/" class=" site-header-nav-item" target="" title="About">About</a>
+                
+            </nav>
+        </div>
+    </header>
+    <!-- / header -->
+
+    <section class="collection-head small" data-pattern-id="第一部分 作用域和闭包 第三章">
+  <div class="container">
+    <div class="columns">
+      <div class="column three-fourths">
+        <div class="collection-title">
+          <h1 class="collection-header">第一部分 作用域和闭包 第三章 函数作用域和块作用域</h1>
+          <div class="collection-info">
+            
+            <span class="meta-info">
+              <span class="octicon octicon-calendar"></span> 11 Aug 2020
+            </span>
+            
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Tech-Post" title="Tech-Post">Tech-Post</a>
+            </span>
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#JavaScript" title="JavaScript">JavaScript</a>
+            </span>
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#你不知道的JavaScript" title="你不知道的JavaScript">你不知道的JavaScript</a>
+            </span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- / .banner -->
+<section class="container content">
+  <div class="columns">
+    <div class="column three-fourths">
+      <article class="article-content markdown-body">
+        <h1 id="第三章-函数作用域和块作用域">第三章 函数作用域和块作用域</h1>
+
+<p><img src="/images/blog/you_dont_know_js.png" alt="book" /></p>
+
+<h3 id="函数中的作用域">函数中的作用域</h3>
+
+<p>函数作用域的含义是指，属于这个函数的全部变量都可以在整个函数的范围内使用及复用（事实上在嵌套的作用域中也可以使用），这种设计方案可以根据需要动态的改变值。</p>
+
+<h3 id="隐藏内部实现">隐藏内部实现</h3>
+
+<p>函数的传统认知就是声明一个函数，然后想函数体内添加代码。倘若我们从函数体内挑选出任意代码，然后用心的函数声明对其进行封装，那么我们就成功的把这部分代码隐藏了起来。实际上我们是在这段代码周边创建了新的作用域气泡，这段代码被包裹在这个新的作用域气泡内，而不是之前的作用域了，所以对于之前的作用域来说，这段代码被隐藏了起来。</p>
+
+<p>隐藏作用域有很多好处，可以规避相同命名带来的冲突, 也非常符合最小特权或者最小暴露原则。在软件设计中，应该最小限度的暴露必要内容来控制对函数和变量的访问权限。例如：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">(){</span>
+  <span class="kd">function</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">a</span><span class="p">){</span>
+    <span class="nx">i</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="nx">bar</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">foo</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>上述例子中会出现无限循环，因为for里面的i与bar里面的i实际上在同一个作用域里面，因此bar里面的i会不断把for里面的i改写为3，导致无限循环。解决的方法是将bar里面的i改写为var i = 3，这样两个i就在不同的作用域里面了，或者也可以把i变成j。</p>
+
+<p>变量冲突是很容易发生的，尤其是当你使用了大量第三方库的时候很容易会出现白娘冲突问题。可以通过全局命名空间来解决，即在全剧作用域中声明一个名字足够独特的变量，通常是一个对象。这的对象被用作库的命名空间，所有需要暴露给外界的功能都会成为这个对象的属性，而不是将自己的标识符暴露在顶级的词法作用域中。</p>
+
+<p>另外还可以通过模块管理来规避冲突。使用模块管理工具，任何库都无需将标识符加入到全局作用域中，而是通过依赖管理器的机制将酷的标识符显式的导入到另一个特定的作用域中。他只是利用作用域的规则强制所有标识符都不能注入到共享作用域中，而是保持在私有，无冲突的作用域中。这样也可以规避冲突。</p>
+
+<h3 id="函数的作用域">函数的作用域</h3>
+<p>本节主要介绍了函数表达式（包装函数），匿名函数和自调用。函数表达式的出现是为了防止函数定义（函数名）污染全局作用域，他也可以把函数本身隐藏起来。匿名函数多半使用在回调函数里面，所以他的函数名并不是必要的。而自调用则可以让函数不用通过显式的调用函数名来运行。自调用函数大多是为包装函数服务的。</p>
+
+<p>函数表达式（function expression）非常好理解，与函数声明不同，函数表达式包裹函数的声明以“（function ”开头而不再仅仅式“function”开头，这个区别看上去很小但是却有本质的区别，用（）包裹函数后，函数会被当作表达式而不是在是一个函数声明了。函数声明和函数表达式之间最重要的区别是他们的名称标识符将会绑定在何处。函数表达式只能在所代表的位置中被访问，外部的作用域访问不了。</p>
+
+<p>匿名函数顾名思义就是没有函数名的函数，常见于setTime等回调函数中使用。在回调函数中，函数名存在的意义不大，因此可以匿名，这样做方便书写是业界提倡的，但是也会有一点不变，比如调试相对困难，引用的时候会比较麻烦，阅读性相对比较差，所以当遇到上述三种情况的时候尽量还是给一个有意义的名字比较好，这个是情况而定。</p>
+
+<p>自调用函数或者叫做立即执行函数表达式。他的用法就是在函数表达式的末尾加“（）”来立即执行这个函数。专业术语叫做IIFE（Immediately Invoked Function Expression）他最常见的用法就是在匿名函数表达式中使用。</p>
+
+<p>IIFE的进阶用法可以参考下面的两个例子，第一个把自调用函数当作函数调用并传递参数进去。</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">(</span><span class="kd">function</span> <span class="nx">IIFE</span><span class="p">(</span><span class="nb">global</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="c1">//3</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">global</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span><span class="c1">//2</span>
+<span class="p">})(</span><span class="nb">window</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="c1">//2</span>
+</code></pre></div></div>
+
+<p>第二个倒置代码的运行顺序，将需要运行的函数放在第二位，在IIFE执行之后当作参数传递进去。这种模式在UMD（universal module definition)项目中被广泛使用。</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="p">(</span><span class="kd">function</span> <span class="nx">IIFE</span><span class="p">(</span><span class="nx">def</span><span class="p">){</span>
+    <span class="nx">def</span><span class="p">(</span><span class="nb">window</span><span class="p">);</span>
+<span class="p">})(</span><span class="kd">function</span> <span class="nx">def</span><span class="p">(</span><span class="nb">global</span><span class="p">)){</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="c1">//3</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">global</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span><span class="c1">//2</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>函数表达式def定义在片段的第二部分，然后当作参数被传递进IIFE函数第一的第一部分中。最后，参数def被调用，并将window传入当作global参数的值。</p>
+
+<h3 id="块作用域">块作用域</h3>
+<p>函数作用域是最常见的作用域单元，但是其他类型的作用域也是存在的。
+块作用的出现是为了使变量的声明距离使用的地方越近越好，同时也可以避免变量名冲突导致作用域污染，并最大限度的本地化。</p>
+
+<p>ES6之后，引入了let关键字，let关键字可以讲变量绑定到所在的任意作用域中（通常是{..}内部）。换句话说，let为其声明的变量隐式的劫持了所在的块作用域。通常来讲，显式的代码优于隐式或一些精巧但不清晰的代码。显式的块作用域风格非常容易书写，并且和其他语言中块作用域的工作原理一致。显式的作用域通过用{}来包裹即可。</p>
+
+<p>另一个块作用域非常有用的原因和闭包及回收内存垃圾的回收机制相关。
+例如</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">process</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+    <span class="c1">//somthing</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">someBigData</span><span class="o">=</span><span class="p">{...};</span>
+<span class="nx">process</span><span class="p">(</span><span class="nx">someBigData</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"my button"</span><span class="p">);</span>
+<span class="nx">btn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">click</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"button clicked"</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></div></div>
+<p>click函数的点击回调并不需要someBigData变量。理论上这意味着当process(..)执行后，在内存中占用大量空间的数据结构就可以被垃圾回收了。但是，由于click函数形成了一个覆盖整个作用域的闭包，JavaScript引擎极有可能依然保存着这个结构（取决于具体实现）。块作用域可以打消这种顾虑
+改成</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">process</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+    <span class="c1">//somthing</span>
+<span class="p">}</span>
+<span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">someBigData</span><span class="o">=</span><span class="p">{...};</span>
+    <span class="nx">process</span><span class="p">(</span><span class="nx">someBigData</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"my button"</span><span class="p">);</span>
+<span class="nx">btn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">click</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"button clicked"</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></div></div>
+<p>为变量显式声明块作用域，并对变量进行本地绑定是非常有用的工具，可以把它添加到你的代码工具箱中了</p>
+
+<p>还有一个比较经典的例子，面试会时常出现，那就是let 循环，例如</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span><span class="c1">//ReferenceError</span>
+</code></pre></div></div>
+
+<p>for循环头部的let不仅将i绑定到了for循环的块中，事实上他将其重新绑定到了循环的每一个迭代中，以确保使用上一个循环迭代结束时的值重新进行赋值。
+上述的代码可以理解为下面的代码</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">j</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">j</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>const也是ES6新加入的，同样也可以创建块作用域变量，但是他的值是固定的，任何的修改都会引起错误。</p>
+
+      </article>
+      <div class="share">
+        <div class="share-component"></div>
+      </div>
+      <div class="comment">
+        
+
+  
+
+  
+        <div id="gitalk-container"></div>
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script>
+        var gitalk = new Gitalk({
+            id: '/2020/08/11/you_don't_know_js_chapter1.3/',
+            clientID: '4cef70907f5b36353d59',
+            clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
+            repo: 'zhenyu0519.github.io',
+            owner: 'zhenyu0519',
+            admin: ['zhenyu0519'],
+            labels: ['gitment'],
+            perPage: 50,
+        })
+        gitalk.render('gitalk-container')
+        </script>
+  
+
+
+      </div>
+    </div>
+    <div class="column one-fourth">
+      
+<h3>Search</h3>
+<div id="site_search" class="site_search">
+    <input type="text" id="search_box" placeholder="Search">
+</div>
+
+<ul id="search_results"></ul>
+
+<link rel="stylesheet" type="text/css" href="https://zhenyu0519.github.io/assets/css/modules/sidebar-search.css">
+<script src="https://zhenyu0519.github.io/assets/js/simple-jekyll-search.min.js"></script>
+<script src="https://zhenyu0519.github.io/assets/js/search.js"></script>
+
+<script type="text/javascript">
+SimpleJekyllSearch({
+    searchInput: document.getElementById('search_box'),
+    resultsContainer: document.getElementById('search_results'),
+    json: 'https://zhenyu0519.github.io/assets/search_data.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No results found',
+    fuzzy: false,
+    exclude: ['Welcome'],
+    limit: 10
+})
+</script>
+
+      
+<h3 class="post-directory-title mobile-hidden">Table of Contents</h3>
+<div id="post-directory-module" class="mobile-hidden">
+  <section class="post-directory">
+  <!-- Links that trigger the jumping -->
+  <!-- Added by javascript below -->
+  <dl></dl>
+  </section>
+</div>
+
+<script src="https://zhenyu0519.github.io/assets/js/jquery.toc.js"></script>
+
+    </div>
+  </div>
+</section>
+<!-- /section.content -->
+    <footer class="container">
+        <div class="site-footer" role="contentinfo">
+            <div class="copyright left mobile-block">
+                    © 2019
+                    <span title="Jeffrey">Jeffrey</span>
+                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
+            </div>
+
+            <ul class="site-footer-links right mobile-hidden">
+                <li>
+                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
+                </li>
+            </ul>
+            <a href="https://github.com/zhenyu0519/zhenyu0519.github.io" target="_blank" aria-label="view source code">
+                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+            </a>
+            <ul class="site-footer-links mobile-hidden">
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/" title="Home" target="">Home</a>
+                </li>
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/categories/" title="Categories" target="">Categories</a>
+                </li>
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/open-source/" title="Github Repos" target="">Github Repos</a>
+                </li>
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/about/" title="About" target="">About</a>
+                </li>
+                
+                <li><a href="https://zhenyu0519.github.io/feed.xml"><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
+            </ul>
+
+        </div>
+    </footer>
+    <div class="tools-wrapper">
+      <a class="gotop" href="#" title="回到顶部"><span class="octicon octicon-arrow-up"></span></a>
+    </div>
+    <!-- / footer -->
+    <script src="https://zhenyu0519.github.io/assets/vendor/share.js/dist/js/share.min.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/geopattern.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/prism.js"></script>
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/prism.css">
+    <script>
+      jQuery(document).ready(function($) {
+        // geopattern
+        $('.geopattern').each(function(){
+          $(this).geopattern($(this).data('pattern-id'));
+        });
+       // hljs.initHighlightingOnLoad();
+      });
+    </script>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div style="display:none">
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-113380665-1', 'auto');
+        ga('send', 'pageview');
+
+      </script>
+    </div>
+    
+</body>
+</html>

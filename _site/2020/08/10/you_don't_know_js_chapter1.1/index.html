@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>第二章 词法作用域 &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <title>第一部分 作用域和闭包 第一章 作用域是什么 &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
     <!-- add google search console -->
     <meta name="google-site-verification" content="Hh37wMK9MFpx6xtWD91RDJzIy-PTLn7ocpNyQ1kPI6M" />
     <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-css/css/primer.css">
@@ -23,23 +23,23 @@
     
 
     
-    <link rel="canonical" href="https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter2/">
+    <link rel="canonical" href="https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter1.1/">
     <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="https://zhenyu0519.github.io/feed.xml">
     <link rel="shortcut icon" href="https://zhenyu0519.github.io/favicon.ico">
     
-    <meta property="og:title" content="第二章 词法作用域">
+    <meta property="og:title" content="第一部分 作用域和闭包 第一章 作用域是什么">
       
-    <meta name="keywords" content="你不知道的JavaScript 词法作用域 精通JavaScript 作用域 词法">
-    <meta name="og:keywords" content="你不知道的JavaScript 词法作用域 精通JavaScript 作用域 词法">
+    <meta name="keywords" content="你不知道的JavaScript 作用域 精通JavaScript 第一部分 作用域和闭包 第一章 作用域是什么">
+    <meta name="og:keywords" content="你不知道的JavaScript 作用域 精通JavaScript 第一部分 作用域和闭包 第一章 作用域是什么">
       
-    <meta name="description" content="第二章 词法作用域">
-    <meta name="og:description" content="第二章 词法作用域">
+    <meta name="description" content="第一章 作用域是什么">
+    <meta name="og:description" content="第一章 作用域是什么">
       
     
     
         
     
-    <meta property="og:url" content="https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter2/">
+    <meta property="og:url" content="https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter1.1/">
     <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="zh_CN" />
@@ -50,20 +50,20 @@
     <script src="https://zhenyu0519.github.io/assets/js/jquery-ui.js"></script>
     <script src="https://zhenyu0519.github.io/assets/js/main.js"></script>
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>第二章 词法作用域 | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
+<title>第一部分 作用域和闭包 第一章 作用域是什么 | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="第二章 词法作用域" />
+<meta property="og:title" content="第一部分 作用域和闭包 第一章 作用域是什么" />
 <meta name="author" content="Jeffrey" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="从你不知道的JavaScript书中总结复习知识点，力求精通JavaScript" />
 <meta property="og:description" content="从你不知道的JavaScript书中总结复习知识点，力求精通JavaScript" />
-<link rel="canonical" href="https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter2/" />
-<meta property="og:url" content="https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter2/" />
+<link rel="canonical" href="https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter1.1/" />
+<meta property="og:url" content="https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter1.1/" />
 <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey’s Blog)" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-08-10T00:00:00-07:00" />
 <script type="application/ld+json">
-{"description":"从你不知道的JavaScript书中总结复习知识点，力求精通JavaScript","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter2/"},"url":"https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter2/","headline":"第二章 词法作用域","dateModified":"2020-08-10T00:00:00-07:00","datePublished":"2020-08-10T00:00:00-07:00","@context":"http://schema.org"}</script>
+{"description":"从你不知道的JavaScript书中总结复习知识点，力求精通JavaScript","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter1.1/"},"url":"https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter1.1/","headline":"第一部分 作用域和闭包 第一章 作用域是什么","dateModified":"2020-08-10T00:00:00-07:00","datePublished":"2020-08-10T00:00:00-07:00","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -91,12 +91,12 @@
     </header>
     <!-- / header -->
 
-    <section class="collection-head small" data-pattern-id="第二章 词法作用域">
+    <section class="collection-head small" data-pattern-id="第一部分 作用域和闭包 第一章">
   <div class="container">
     <div class="columns">
       <div class="column three-fourths">
         <div class="collection-title">
-          <h1 class="collection-header">第二章 词法作用域</h1>
+          <h1 class="collection-header">第一部分 作用域和闭包 第一章 作用域是什么</h1>
           <div class="collection-info">
             
             <span class="meta-info">
@@ -130,50 +130,72 @@
   <div class="columns">
     <div class="column three-fourths">
       <article class="article-content markdown-body">
-        <h1 id="第二章-词法作用域">第二章 词法作用域</h1>
+        <h1 id="第一章-作用域是什么">第一章 作用域是什么</h1>
 
 <p><img src="/images/blog/you_dont_know_js.png" alt="book" /></p>
 
-<h2 id="词法作用域">词法作用域</h2>
+<h2 id="前言">前言</h2>
 
-<p>作用域有两种工作模型，一种是词法作用域，也是本章讨论的重点，另一种叫做动态作用域，Bash, Perl等语言仍在使用。</p>
+<p>最近在看一本不错的书《你不知道的JavaScript》，曾经作为前端程序员虽然每天都在使用JavaScript, 然而因为任务以结果导向，并没有花时间去理解，只是了解一些使用技巧，经常遇到棘手的问题时束手无策。这种囫囵吞枣的方式，让我一直如鲠在喉，我认为想要真正的熟悉JavaScript选择一本好书是非常重要的。而这本书的好处在于它不同于一般的工具书，用大段的篇幅去学习基本语法，而是旨在升华提高你对这门语言的理解，以及一些所谓JavaSript的隐秘角落。请不要小看这些所谓的隐秘角落，这些才是这门语言的精髓所在。如果不理解这些而只求用代码完成任务，那么你将永远停留在初学者的阶段。从今天开始，我将系统地阅读这门书，在这里做好笔记，既方便自己查看也方便小伙伴们一起交流。话不多说，我们一起学习吧。</p>
 
-<h3 id="词法阶段">词法阶段</h3>
-<p>大部分标准语言编译器的第一个工作阶段叫做词法化也叫做单词话。词法作用域顾名思义就是定义在词法阶段的作用域。通俗一点说，词法作用域由写代码时将变量和块写在哪里来决定的。
-例如：</p>
+<h2 id="作用域是什么">作用域是什么</h2>
 
-<pre><code class="language-JavaScript">function foo(a){
-    var b = a * 2;
-    function bar(c){
-        console.log(a,b,c)
-    }
-    bar(b * 3)
-}
+<p>简单的说作用域为程序提供了状态，它能够存储变量中的值，并且能再之后对这个值进行访问和修改。那么什么是作用域？ 作用域是一套良好的设计规则用来存储变量，并且之后能方便的找到这些变量。</p>
 
-foo(2); //2,3,12
-</code></pre>
+<h3 id="编译原理">编译原理</h3>
+<p>JavaScript通常归类为动态或解释执行语言，但其实它是一门编译语言。这部分依然存在争议，那么什么是解释执行语言，什么是编译语言呢？</p>
 
+<ul>
+  <li><strong>编译型语言</strong>：编译型语言的首先将源代码编译生成机器码，再由机器运行机器码（二进制）。例如C/C++等等。程序在执行之前需要一个专门的编译过程，把程序编译成为机器语言的文件，运行时不需要重新翻译，直接使用编译的结果就行了。程序执行效率高，依赖编译器，跨平台性差些。</li>
+  <li><strong>解释执行语言</strong>：执行源代码直接由解释器对其进行解释运行。例如python,shell等等。程序不需要编译，程序在运行时才翻译成机器语言，每执行一次都要翻译一次。因此效率比较低。</li>
+</ul>
+
+<p>JavaScript与传统的编译语言不通，它不是提前编译的，编译结果也不能在分布式系统中进行移植。</p>
+
+<p>传统编译语言中，源代码执行前要经历三个步骤。</p>
 <ol>
-  <li>包含着整个全局作用域，其中只有标识符： foo</li>
-  <li>包含着foo所创建的作用域，其中有三个标识符： a, bar, b</li>
-  <li>包含着bar所创建的作用域，其中有一个标识符： c</li>
+  <li><strong>分词/词法分析（Tokenizing/Lexing)</strong>: 这个过程会将由字符组成的字符串分解成有意义的代码块，这些代码被称为词法单元（token）</li>
+  <li><strong>解析/语法分析（parsing)</strong>: 这个过程是将词法单元流（数组）转换成一个由元素主机嵌套所组成的程序语法结构树。这个树被称为抽象语法树（Abstract Syntax Tree, AST)</li>
+  <li><strong>代码生成</strong>：将AST转换成为可执行代码的过程。这个过程与语言，目标平台相关。抛开具体细节，简单来说，就是有某种方法可以讲var a = 2；的AST转化成一组机器指令，用来创建一个叫做a的变量，并将一个只存储在a中。</li>
 </ol>
 
-<p>作用域由其对应的作用域块代码写在哪里决定，他们是逐级包含的。引擎在寻找标识符的时候会从当前作用域开始向上查找直到全局作用域为止。作用域查找会在找到第一个匹配的标识符时候停止。</p>
+<p>JavaScript引擎要复杂得多，他不会想起他编译语言一样有充足的时间来优化，他的编译过程发生在代码执行前的几微秒。在我们讨论的作用域背后，JavaScript引擎用尽各种方法（JIT）来保证性能。简单说JavaScript代码片段在只向前都要进行编译。</p>
 
-<p>在多层嵌套作用域中可以定义同名的标识符，这叫做遮蔽效应即内部标识符遮蔽外部标识符。</p>
+<h3 id="理解作用域">理解作用域</h3>
+<p>程序的处理需要三方合作，分别是引擎，编译器和作用域。</p>
 
-<p>词法作用域查找只会查找一级标识符，比如a、b和c。如果代码中引用了foo.bar.baz，词法作用域查找只会试图查找foo标识符，找到这个变量后，对象属性访问规则会分别接管对bar和baz属性的访问。</p>
+<ul>
+  <li><strong>引擎</strong>：负责整个JavaScript的编译以及执行过程</li>
+  <li><strong>编译器</strong>： 负责语法分析以及代码生成</li>
+  <li><strong>作用域</strong>： 负责收集并维护所有声明的标识符（变量）组成的一系列查询，并实施一套严格的规则，确定当前执行的代码对这些标识符的访问权限。</li>
+</ul>
 
-<h3 id="欺骗词法">欺骗词法</h3>
-<p>JavaScript中有两种机制可以欺骗词法作用域，不推荐使用，因为其会导致性能下降。</p>
-
+<p>当需要处理一段程序的时候，流程是这样的。</p>
 <ol>
-  <li>eval： JavaScript中eval()函数接受一个字符串为参数，将其中的内容视为代码，这样就可以起到修改词法作用域的目的。而引擎并不知道代码是以动态形式插入进来的，只会如往常一样进行词法作用域查找。</li>
-  <li>with： 通常被当作重复引用同一个对象中的多个属性的快捷方式，可以不需要重复引用对象本身。with 可以讲一个没有或者有多个属性的对象处理为一个完全隔离的词法作用域，因此这个对象的属性也会被定义为这个作用域中的词法标识符。</li>
+  <li>编译器首先会将这段程序分解成词法单元，然后将词法单元解析成一个树结构，紧接着开始生成代码。</li>
+  <li>编译器生成代码时与一般的预期有所不同，这里编译器会先询问作用域是否已经有相同名称的变量存在于同一个作用域的集合中。如果是，编译器会忽略该声明，继续进行编译；否则他会要求作用域在当前作用域的集合中声明一个新的变量，并以该名称命名。</li>
+  <li>接下来编译器会为引擎生成运行时所需的代码，引擎运行时会询问作用域，在当前作用域集合是否存在相同名称的变量，如果是，引擎会使用这个变量；否则，引擎会继续查找，如果最终没有找到，则会抛出异常。</li>
 </ol>
 
-<p>eval和with会导致引擎停止做任何优化，从而导致性能问题。并且严格模式下，这两个函数是禁用的。</p>
+<h4 id="拓展一下">拓展一下</h4>
+<p>引擎在执行编译器生成的代码时，会执行查询变量操作来判断该变量是否已经被声明。该查询过程是由作用域协作完成的。这里有两种查询类型，即LHS和RHS查询。这个很好理解，一般来说LHS和RHS以赋值符号为界限。</p>
+
+<ul>
+  <li><strong>LHS</strong>: 出现在赋值符号左侧，为赋值符号右边的值赋值到一个容器里面去，可以理解为存储操作。</li>
+  <li><strong>RHS</strong>: 笼统地说出现在赋值符号的右侧，但实际上很多情况下是隐式的。可以理解为找到某个值的源头，所以是取值操作。</li>
+</ul>
+
+<p>LHS和RHS的含义是“赋值操作的左侧或右侧”并不一定意味着就是“=赋值操作符的左侧或右侧”。赋值操作还有其他几种形式，因此在概念上最好将其理解为“赋值操作的目标是谁（LHS）”以及“谁是赋值操作的源头（RHS）”。</p>
+
+<h3 id="作用域嵌套">作用域嵌套</h3>
+<p>作用域嵌套的概念不难理解，一个作用域里面有可能会嵌套另一个作用域。因此在当前作用域里面无法找到某个变量时，引擎就会在外层嵌套的作用域中继续查找，直到找到该变量，或者抵达最外层的作用域（全剧作用域）为止。</p>
+
+<h3 id="异常">异常</h3>
+<p>这个小节简单的讨论一下异常。在RHS（取值）查询操作中，如果无法找到该变量，那么将会返回ReferenceError，因为其是未声明变量。而在LHS（存储）查询操作中，如果无法找到该目标变量，则有两种可能：非严格模式下，全剧作用域会创建一个具有该名称的变量，并将其返回给引擎；而严格模式下，将不会创建全局变量，而是抛出ReferenceError查询失败的异常。</p>
+
+<p>如果RHS查询找到了一个变量，但是你对这个变量的值进行不合理操作，例如试图对一个非汉属类型的值进行函数调用，或者引用null， undefin类型中的属性，那么引擎会抛出另外一种类型的异常， 叫做TypeError。</p>
+
+<p><strong>ReferenceError</strong>同作用域判别失败相关，而<strong>TypeError</strong>则代表作用域判别成功，但是对结果操作是非法的。</p>
 
       </article>
       <div class="share">
@@ -190,7 +212,7 @@ foo(2); //2,3,12
         <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
         <script>
         var gitalk = new Gitalk({
-            id: '/2020/08/10/you_don't_know_js_chapter2/',
+            id: '/2020/08/10/you_don't_know_js_chapter1.1/',
             clientID: '4cef70907f5b36353d59',
             clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
             repo: 'zhenyu0519.github.io',

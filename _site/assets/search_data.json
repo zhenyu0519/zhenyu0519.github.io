@@ -1441,17 +1441,24 @@
     } ,
   
     {
-      "title"    : "第一章 作用域是什么",
+      "title"    : "第一部分 作用域和闭包 第一章 作用域是什么",
       "category" : "Tech-Post",
       
-      "url"      : "https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter1/"
+      "url"      : "https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter1.1/"
     } ,
   
     {
-      "title"    : "第二章 词法作用域",
+      "title"    : "第一部分 作用域和闭包 第二章 词法作用域",
       "category" : "Tech-Post",
       
-      "url"      : "https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter2/"
+      "url"      : "https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter1.2/"
+    } ,
+  
+    {
+      "title"    : "第一部分 作用域和闭包 第三章 函数作用域和块作用域",
+      "category" : "Tech-Post",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/08/11/you_don't_know_js_chapter1.3/"
     } 
   
 ]

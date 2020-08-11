@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 第二章 词法作用域
+title: 第一部分 作用域和闭包 第二章 词法作用域
 categories: Tech-Post JavaScript 你不知道的JavaScript
 description: 从你不知道的JavaScript书中总结复习知识点，力求精通JavaScript
-keywords: 你不知道的JavaScript 词法作用域 精通JavaScript 作用域 词法
+keywords: 你不知道的JavaScript 词法作用域 精通JavaScript 作用域 词法 第一部分 作用域和闭包
 ---
 
 # 第二章 词法作用域
