@@ -1,4 +1,67 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-08-11T15:34:23-07:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">第一部分 作用域和闭包 第三章 函数作用域和块作用域</title><link href="https://zhenyu0519.github.io/2020/08/11/you_don't_know_js_chapter1.3/" rel="alternate" type="text/html" title="第一部分 作用域和闭包 第三章 函数作用域和块作用域" /><published>2020-08-11T00:00:00-07:00</published><updated>2020-08-11T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/08/11/you_don't_know_js_chapter1.3</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/08/11/you_don't_know_js_chapter1.3/">&lt;h1 id=&quot;第三章-函数作用域和块作用域&quot;&gt;第三章 函数作用域和块作用域&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-08-12T00:34:37-07:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">第一部分 作用域和闭包 第四章 提升</title><link href="https://zhenyu0519.github.io/2020/08/11/you_don't_know_js_chapter1.4/" rel="alternate" type="text/html" title="第一部分 作用域和闭包 第四章 提升" /><published>2020-08-11T00:00:00-07:00</published><updated>2020-08-11T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/08/11/you_don't_know_js_chapter1.4</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/08/11/you_don't_know_js_chapter1.4/">&lt;h1 id=&quot;第四章-提升&quot;&gt;第四章 提升&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blog/you_dont_know_js.png&quot; alt=&quot;book&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;先有鸡还是先有蛋&quot;&gt;先有鸡还是先有蛋&lt;/h3&gt;
+
+&lt;p&gt;我们一般认为JavaScript代码是自上而下，逐行执行的，其实不然，这里存在一种特殊情况。给出两个例子来引入提升这个话题。&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;输出的结果并非undefined而是2。&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;输出的结果并非抛出ReferenceError而是undefined。
+声明和赋值之间存在微妙的关系&lt;/p&gt;
+
+&lt;h3 id=&quot;编译器再度来袭&quot;&gt;编译器再度来袭&lt;/h3&gt;
+
+&lt;p&gt;引擎在解释JavaScript代码之前首先对其进行编译。编译阶段中的一部分工作就是找到所有的声明，并用合适的作用域将他们关联起来。这也是词法作用域的核心内容。因此变量和函数在内的所有声明都会在任何代码执行前首先被处理。例如，var a = 2 我们认为这是一个声明， 而JavaScript会将它看作两个声明 var a 和 a = 2。第一个定义声明是在编译阶段进行的。第二个赋值声明会被留在原地等待执行阶段。结合两个例子了解一下。&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;第一部分是编译，第二部分是执行。&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//undefined&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;第一部分是编译，第二部分是执行。&lt;/p&gt;
+
+&lt;p&gt;这个过程好像变量和函数声明从他们在代码中出现的位置被移动到了最上面，这个过程就叫做提升（Hoisting）。所以声明和赋值的关系是先有声明，再来赋值。只有声明本身会被提升，而赋值或者其他运行逻辑则会留在原地。如果提升改变了代码执行顺序会造成严重的破坏。提升存在于每个作用域中。&lt;/p&gt;
+
+&lt;p&gt;此外函数声明会被提升，但是函数表但是却不会被提升，看下面的例子。&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//TypeError&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//ReferenceError&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//....&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;注意此处foo()抛出的是TypeError而不是ReferenceError。这说明变量foo的声明被成功的提升并且分配到全局作用域中了，所以foo()不会导致ReferenceError。但是foo此时并没有赋值，你当然不可以直接函数调用，foo()相当于对一个undefined的值进行函数调用，所以会抛出TypeError。&lt;/p&gt;
+
+&lt;h3 id=&quot;函数优先&quot;&gt;函数优先&lt;/h3&gt;
+
+&lt;p&gt;函数声明和变量声明都会被提升，但是函数会首先被提升，然后才是变量。&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// 1&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;会输出1而不是2！&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">第四章 提升</summary></entry><entry><title type="html">第一部分 作用域和闭包 第三章 函数作用域和块作用域</title><link href="https://zhenyu0519.github.io/2020/08/11/you_don't_know_js_chapter1.3/" rel="alternate" type="text/html" title="第一部分 作用域和闭包 第三章 函数作用域和块作用域" /><published>2020-08-11T00:00:00-07:00</published><updated>2020-08-11T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/08/11/you_don't_know_js_chapter1.3</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/08/11/you_don't_know_js_chapter1.3/">&lt;h1 id=&quot;第三章-函数作用域和块作用域&quot;&gt;第三章 函数作用域和块作用域&lt;/h1&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/blog/you_dont_know_js.png&quot; alt=&quot;book&quot; /&gt;&lt;/p&gt;
 
@@ -130,19 +193,19 @@
 &lt;p&gt;作用域有两种工作模型，一种是词法作用域，也是本章讨论的重点，另一种叫做动态作用域，Bash, Perl等语言仍在使用。&lt;/p&gt;
 
 &lt;h3 id=&quot;词法阶段&quot;&gt;词法阶段&lt;/h3&gt;
-&lt;p&gt;大部分标准语言编译器的第一个工作阶段叫做词法化也叫做单词话。词法作用域顾名思义就是定义在词法阶段的作用域。通俗一点说，词法作用域由写代码时将变量和块写在哪里来决定的。
+&lt;p&gt;大部分标准语言编译器的第一个工作阶段叫做词法化也叫做单词化。词法作用域顾名思义就是定义在词法阶段的作用域。通俗一点说，词法作用域由写代码时将变量和块写在哪里来决定的。
 例如：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-JavaScript&quot;&gt;function foo(a){
-    var b = a * 2;
-    function bar(c){
-        console.log(a,b,c)
-    }
-    bar(b * 3)
-}
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-foo(2); //2,3,12
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//2,3,12&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ol&gt;
   &lt;li&gt;包含着整个全局作用域，其中只有标识符： foo&lt;/li&gt;
@@ -193,7 +256,7 @@ foo(2); //2,3,12
   &lt;li&gt;&lt;strong&gt;代码生成&lt;/strong&gt;：将AST转换成为可执行代码的过程。这个过程与语言，目标平台相关。抛开具体细节，简单来说，就是有某种方法可以讲var a = 2；的AST转化成一组机器指令，用来创建一个叫做a的变量，并将一个只存储在a中。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;JavaScript引擎要复杂得多，他不会想起他编译语言一样有充足的时间来优化，他的编译过程发生在代码执行前的几微秒。在我们讨论的作用域背后，JavaScript引擎用尽各种方法（JIT）来保证性能。简单说JavaScript代码片段在只向前都要进行编译。&lt;/p&gt;
+&lt;p&gt;JavaScript引擎要复杂得多，他不会像其他编译语言一样有充足的时间来优化，他的编译过程发生在代码执行前的几微秒。在我们讨论的作用域背后，JavaScript引擎用尽各种方法（JIT）来保证性能。简单说JavaScript代码片段在执行前都要进行编译。&lt;/p&gt;
 
 &lt;h3 id=&quot;理解作用域&quot;&gt;理解作用域&lt;/h3&gt;
 &lt;p&gt;程序的处理需要三方合作，分别是引擎，编译器和作用域。&lt;/p&gt;
@@ -229,52 +292,7 @@ foo(2); //2,3,12
 
 &lt;p&gt;如果RHS查询找到了一个变量，但是你对这个变量的值进行不合理操作，例如试图对一个非汉属类型的值进行函数调用，或者引用null， undefin类型中的属性，那么引擎会抛出另外一种类型的异常， 叫做TypeError。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;ReferenceError&lt;/strong&gt;同作用域判别失败相关，而&lt;strong&gt;TypeError&lt;/strong&gt;则代表作用域判别成功，但是对结果操作是非法的。&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">第一章 作用域是什么</summary></entry><entry><title type="html">leetcode 121. Best Time to Buy and Sell Stock (Python)</title><link href="https://zhenyu0519.github.io/2020/07/28/lc121/" rel="alternate" type="text/html" title="leetcode 121. Best Time to Buy and Sell Stock (Python)" /><published>2020-07-28T00:00:00-07:00</published><updated>2020-07-28T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/28/lc121</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/28/lc121/">&lt;h1 id=&quot;leetcode-121-best-time-to-buy-and-sell-stock-python&quot;&gt;Leetcode 121. Best Time to Buy and Sell Stock (Python)&lt;/h1&gt;
-
-&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Greedy&quot; target=&quot;_blank&quot;&gt; Greedy&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
-&lt;p&gt;Say you have an array for which the ith element is the price of a given stock on day i.&lt;/p&gt;
-
-&lt;p&gt;If you were only permitted to complete at most one transaction (i.e., buy one and sell one share of the stock), design an algorithm to find the maximum profit.&lt;/p&gt;
-
-&lt;p&gt;Note that you cannot sell a stock before you buy one.&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;F(0) = 0,   F(1) = 1
-F(N) = F(N - 1) + F(N - 2), for N &amp;gt; 1.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Given N, calculate F(N).&lt;/p&gt;
-
-&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
-&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [7,1,5,3,6,4]
-Output: 5
-Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
-             Not 7-1 = 6, as selling price needs to be larger than buying price.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [7,6,4,3,1]
-Output: 0
-Explanation: In this case, no transaction is done, i.e. max profit = 0.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
-&lt;p&gt;max_profit = max_sell - min_buy. use greedy here to compare each price and min_price to update the min_price. Find the profit by substracting price to min_price and compare the profit to max_profit. As result we return the max_profit.&lt;/p&gt;
-
-&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;maxProfit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;max_profit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;min_buy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'inf'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;min_buy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;min_buy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;max_profit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_profit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;min_buy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max_profit&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Time complexity : O(n)O(n). Only a single pass is needed.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 121. Best Time to Buy and Sell Stock (Python)</summary></entry><entry><title type="html">leetcode 737. Sentence Similarity II (Python)</title><link href="https://zhenyu0519.github.io/2020/07/28/lc737/" rel="alternate" type="text/html" title="leetcode 737. Sentence Similarity II (Python)" /><published>2020-07-28T00:00:00-07:00</published><updated>2020-07-28T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/28/lc737</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/28/lc737/">&lt;h1 id=&quot;737-sentence-similarity-ii-python&quot;&gt;737. Sentence Similarity II (Python)&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;ReferenceError&lt;/strong&gt;同作用域判别失败相关，而&lt;strong&gt;TypeError&lt;/strong&gt;则代表作用域判别成功，但是对结果操作是非法的。&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">第一章 作用域是什么</summary></entry><entry><title type="html">leetcode 737. Sentence Similarity II (Python)</title><link href="https://zhenyu0519.github.io/2020/07/28/lc737/" rel="alternate" type="text/html" title="leetcode 737. Sentence Similarity II (Python)" /><published>2020-07-28T00:00:00-07:00</published><updated>2020-07-28T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/28/lc737</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/28/lc737/">&lt;h1 id=&quot;737-sentence-similarity-ii-python&quot;&gt;737. Sentence Similarity II (Python)&lt;/h1&gt;
 
 &lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Depth-First-Search&quot; target=&quot;_blank&quot;&gt; Depth-First-Search&lt;/a&gt;.
@@ -330,7 +348,52 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h2 id=&quot;bigo&quot;&gt;BigO&lt;/h2&gt;
-&lt;p&gt;Time Complexity: O(NP), where NN is the maximum length of words1 and words2, and PP is the length of pairs. Each of NN searches could search the entire graph.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">737. Sentence Similarity II (Python)</summary></entry><entry><title type="html">leetcode 721. Accounts Merge (Python)</title><link href="https://zhenyu0519.github.io/2020/07/27/lc721/" rel="alternate" type="text/html" title="leetcode 721. Accounts Merge (Python)" /><published>2020-07-27T00:00:00-07:00</published><updated>2020-07-27T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/27/lc721</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/27/lc721/">&lt;h1 id=&quot;721-accounts-merge-python&quot;&gt;721. Accounts Merge (Python)&lt;/h1&gt;
+&lt;p&gt;Time Complexity: O(NP), where NN is the maximum length of words1 and words2, and PP is the length of pairs. Each of NN searches could search the entire graph.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">737. Sentence Similarity II (Python)</summary></entry><entry><title type="html">leetcode 121. Best Time to Buy and Sell Stock (Python)</title><link href="https://zhenyu0519.github.io/2020/07/28/lc121/" rel="alternate" type="text/html" title="leetcode 121. Best Time to Buy and Sell Stock (Python)" /><published>2020-07-28T00:00:00-07:00</published><updated>2020-07-28T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/28/lc121</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/28/lc121/">&lt;h1 id=&quot;leetcode-121-best-time-to-buy-and-sell-stock-python&quot;&gt;Leetcode 121. Best Time to Buy and Sell Stock (Python)&lt;/h1&gt;
+
+&lt;h1 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;/categories/#Greedy&quot; target=&quot;_blank&quot;&gt; Greedy&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;description&quot;&gt;Description&lt;/h1&gt;
+&lt;p&gt;Say you have an array for which the ith element is the price of a given stock on day i.&lt;/p&gt;
+
+&lt;p&gt;If you were only permitted to complete at most one transaction (i.e., buy one and sell one share of the stock), design an algorithm to find the maximum profit.&lt;/p&gt;
+
+&lt;p&gt;Note that you cannot sell a stock before you buy one.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;F(0) = 0,   F(1) = 1
+F(N) = F(N - 1) + F(N - 2), for N &amp;gt; 1.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Given N, calculate F(N).&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
+&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [7,1,5,3,6,4]
+Output: 5
+Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+             Not 7-1 = 6, as selling price needs to be larger than buying price.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [7,6,4,3,1]
+Output: 0
+Explanation: In this case, no transaction is done, i.e. max profit = 0.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;methodology&quot;&gt;Methodology&lt;/h1&gt;
+&lt;p&gt;max_profit = max_sell - min_buy. use greedy here to compare each price and min_price to update the min_price. Find the profit by substracting price to min_price and compare the profit to max_profit. As result we return the max_profit.&lt;/p&gt;
+
+&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;maxProfit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;max_profit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;min_buy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'inf'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;min_buy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;min_buy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;max_profit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_profit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;min_buy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max_profit&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
+&lt;p&gt;Time complexity : O(n)O(n). Only a single pass is needed.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 121. Best Time to Buy and Sell Stock (Python)</summary></entry><entry><title type="html">leetcode 721. Accounts Merge (Python)</title><link href="https://zhenyu0519.github.io/2020/07/27/lc721/" rel="alternate" type="text/html" title="leetcode 721. Accounts Merge (Python)" /><published>2020-07-27T00:00:00-07:00</published><updated>2020-07-27T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/27/lc721</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/27/lc721/">&lt;h1 id=&quot;721-accounts-merge-python&quot;&gt;721. Accounts Merge (Python)&lt;/h1&gt;
 
 &lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Depth-First-Search&quot; target=&quot;_blank&quot;&gt; Depth-First-Search&lt;/a&gt;.
@@ -575,71 +638,4 @@ Output: false
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p_array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q_array&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h2 id=&quot;bigo&quot;&gt;BigO&lt;/h2&gt;
-&lt;p&gt;Time complexity: O(n) where n is the number of the nodes of both trees.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">100. Same Tree (Python)</summary></entry><entry><title type="html">leetcode 210. Course Schedule II (Python)</title><link href="https://zhenyu0519.github.io/2020/07/24/lc210/" rel="alternate" type="text/html" title="leetcode 210. Course Schedule II (Python)" /><published>2020-07-24T00:00:00-07:00</published><updated>2020-07-24T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/24/lc210</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/24/lc210/">&lt;h1 id=&quot;210-course-schedule-ii-python&quot;&gt;210. Course Schedule II (Python)&lt;/h1&gt;
-
-&lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Breadth-First-Search&quot; target=&quot;_blank&quot;&gt; Breadth-First-Search&lt;/a&gt;.
-&lt;a href=&quot;/categories/#Topological-Sort&quot; target=&quot;_blank&quot;&gt; Topological-Sort&lt;/a&gt;.
-&lt;a href=&quot;/categories/#Graph&quot; target=&quot;_blank&quot;&gt; Graph&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
-&lt;p&gt;There are a total of n courses you have to take, labeled from 0 to n-1.&lt;/p&gt;
-
-&lt;p&gt;Some courses may have prerequisites, for example to take course 0 you have to first take course 1, which is expressed as a pair: [0,1]&lt;/p&gt;
-
-&lt;p&gt;Given the total number of courses and a list of prerequisite pairs, return the ordering of courses you should take to finish all courses.&lt;/p&gt;
-
-&lt;p&gt;There may be multiple correct orders, you just need to return one of them. If it is impossible to finish all courses, return an empty array.&lt;/p&gt;
-
-&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
-
-&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: 2, [[1,0]] 
-Output: [0,1]
-Explanation: There are a total of 2 courses to take. To take course 1 you should have finished   
-             course 0. So the correct course order is [0,1] .
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;example-2&quot;&gt;Example 2&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: 4, [[1,0],[2,0],[3,1],[3,2]]
-Output: [0,1,2,3] or [0,2,1,3]
-Explanation: There are a total of 4 courses to take. To take course 3 you should have finished both     
-             courses 1 and 2. Both courses 1 and 2 should be taken after you finished course 0. 
-             So one correct course order is [0,1,2,3]. Another correct ordering is [0,2,1,3] .
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;constrains&quot;&gt;Constrains&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;The input prerequisites is a graph represented by a list of edges, not adjacency matrices. Read more about how a graph is represented.&lt;/li&gt;
-  &lt;li&gt;You may assume that there are no duplicate edges in the input prerequisites.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;methodology&quot;&gt;Methodology&lt;/h2&gt;
-&lt;p&gt;This is a graph question. Any graph question to get directed acyclic graph (DAG) should think about using the topologic sort. This question is similar with question&lt;a href=&quot;/2020/07/24/lc207/&quot; target=&quot;_blank&quot;&gt; 207. Course Schedule&lt;/a&gt;. The only difference is now we are not just detecting if there is cycle. Moreover, we want to find one correct order of the courses if there are not cycles.&lt;/p&gt;
-
-&lt;p&gt;BFS:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findOrder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numCourses&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prerequisites&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;courses&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collections&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;defaultdict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;pres&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collections&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;defaultdict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;course&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pre&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prerequisites&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;courses&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;course&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;pres&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;course&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numCourses&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;courses&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;no_pre&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;no_pre&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;course&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pres&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;no_pre&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;courses&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;course&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;no_pre&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;courses&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;course&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;course&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numCourses&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Time Complexity: O(E+V) where V is the number of courses, and E is the number of dependencies.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">210. Course Schedule II (Python)</summary></entry></feed>
+&lt;p&gt;Time complexity: O(n) where n is the number of the nodes of both trees.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">100. Same Tree (Python)</summary></entry></feed>
