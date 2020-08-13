@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" prefix="og: http://ogp.me/ns#" class="han-init">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>第一部分 作用域和闭包 第五章 作用域闭包 &mdash; 杰弗里 · 时光博客(Jeffrey's Blog)</title>
+    <!-- add google search console -->
+    <meta name="google-site-verification" content="Hh37wMK9MFpx6xtWD91RDJzIy-PTLn7ocpNyQ1kPI6M" />
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-css/css/primer.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/primer-markdown/dist/user-content.min.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/octicons/octicons/octicons.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/collection.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/repo-card.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/sections/repo-list.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/sections/mini-repo-list.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/components/boxed-group.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/common.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/vendor/share.js/dist/css/share.min.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/responsive.css">
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/posts/index.css">
+    <!-- Latest compiled and minified CSS -->
+    
+
+    
+    <link rel="canonical" href="https://zhenyu0519.github.io/2020/08/12/you_don't_know_js_chapter1.5/">
+    <link rel="alternate" type="application/atom+xml" title="杰弗里 · 时光博客(Jeffrey's Blog)" href="https://zhenyu0519.github.io/feed.xml">
+    <link rel="shortcut icon" href="https://zhenyu0519.github.io/favicon.ico">
+    
+    <meta property="og:title" content="第一部分 作用域和闭包 第五章 作用域闭包">
+      
+    <meta name="keywords" content="你不知道的JavaScript 第五章 作用域闭包  第一部分 作用域和闭包">
+    <meta name="og:keywords" content="你不知道的JavaScript 第五章 作用域闭包  第一部分 作用域和闭包">
+      
+    <meta name="description" content="第五章 作用域闭包">
+    <meta name="og:description" content="第五章 作用域闭包">
+      
+    
+    
+        
+    
+    <meta property="og:url" content="https://zhenyu0519.github.io/2020/08/12/you_don't_know_js_chapter1.5/">
+    <meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey's Blog)">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_CN" />
+    
+    <meta property="article:published_time" content="2020-08-12">
+    
+    <script src="https://zhenyu0519.github.io/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/jquery-ui.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/main.js"></script>
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>第一部分 作用域和闭包 第五章 作用域闭包 | 杰弗里 · 时光博客(Jeffrey’s Blog)</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="第一部分 作用域和闭包 第五章 作用域闭包" />
+<meta name="author" content="Jeffrey" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="从你不知道的JavaScript书中总结复习知识点，力求精通JavaScript" />
+<meta property="og:description" content="从你不知道的JavaScript书中总结复习知识点，力求精通JavaScript" />
+<link rel="canonical" href="https://zhenyu0519.github.io/2020/08/12/you_don't_know_js_chapter1.5/" />
+<meta property="og:url" content="https://zhenyu0519.github.io/2020/08/12/you_don't_know_js_chapter1.5/" />
+<meta property="og:site_name" content="杰弗里 · 时光博客(Jeffrey’s Blog)" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-08-12T00:00:00-07:00" />
+<script type="application/ld+json">
+{"description":"从你不知道的JavaScript书中总结复习知识点，力求精通JavaScript","author":{"@type":"Person","name":"Jeffrey"},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhenyu0519.github.io/2020/08/12/you_don't_know_js_chapter1.5/"},"url":"https://zhenyu0519.github.io/2020/08/12/you_don't_know_js_chapter1.5/","headline":"第一部分 作用域和闭包 第五章 作用域闭包","dateModified":"2020-08-12T00:00:00-07:00","datePublished":"2020-08-12T00:00:00-07:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body class="" data-mz="">
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="https://zhenyu0519.github.io/" title="杰弗里 · 时光博客(Jeffrey's Blog)"><span class="octicon octicon-mark-github"></span> 杰弗里 · 时光博客(Jeffrey's Blog)</a></h1>
+            <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <nav class="site-header-nav" role="navigation">
+                
+                <a href="https://zhenyu0519.github.io/" class=" site-header-nav-item" target="" title="Home">Home</a>
+                
+                <a href="https://zhenyu0519.github.io/categories/" class=" site-header-nav-item" target="" title="Categories">Categories</a>
+                
+                <a href="https://zhenyu0519.github.io/open-source/" class=" site-header-nav-item" target="" title="Github Repos">Github Repos</a>
+                
+                <a href="https://zhenyu0519.github.io/about/" class=" site-header-nav-item" target="" title="About">About</a>
+                
+            </nav>
+        </div>
+    </header>
+    <!-- / header -->
+
+    <section class="collection-head small" data-pattern-id="第一部分 作用域和闭包 第五章">
+  <div class="container">
+    <div class="columns">
+      <div class="column three-fourths">
+        <div class="collection-title">
+          <h1 class="collection-header">第一部分 作用域和闭包 第五章 作用域闭包</h1>
+          <div class="collection-info">
+            
+            <span class="meta-info">
+              <span class="octicon octicon-calendar"></span> 12 Aug 2020
+            </span>
+            
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#Tech-Post" title="Tech-Post">Tech-Post</a>
+            </span>
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#JavaScript" title="JavaScript">JavaScript</a>
+            </span>
+            
+            <span class="meta-info">
+              <span class="octicon octicon-file-directory"></span>
+              <a href="https://zhenyu0519.github.io/categories/#你不知道的JavaScript" title="你不知道的JavaScript">你不知道的JavaScript</a>
+            </span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- / .banner -->
+<section class="container content">
+  <div class="columns">
+    <div class="column three-fourths">
+      <article class="article-content markdown-body">
+        <h1 id="第五章-作用域闭包">第五章 作用域闭包</h1>
+
+<p><img src="/images/blog/you_dont_know_js.png" alt="book" /></p>
+
+<h3 id="实质问题">实质问题</h3>
+
+<p>闭包的直接定义： 当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在当前词法作用域之外执行。直接看代码</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span>
+
+    <span class="kd">function</span> <span class="nx">bar</span><span class="p">(){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="c1">// 2</span>
+    <span class="p">}</span>
+    <span class="nx">bar</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="nx">foo</span><span class="p">()</span>
+</code></pre></div></div>
+<p>以上这段代码看似符和闭包定义，但其实并不是真正意义上的闭包，更确切地说是bar()对a的引用方法是词法作用域的查找规则，它只是闭包的一部分。</p>
+
+<p>接下来看一下真正的闭包是怎样的。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span>
+
+    <span class="kd">function</span> <span class="nx">bar</span><span class="p">(){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="c1">// 2</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">bar</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">baz</span> <span class="o">=</span> <span class="nx">foo</span><span class="p">();</span>
+<span class="nx">baz</span><span class="p">();</span> <span class="c1">//2 这才是闭包的效果</span>
+</code></pre></div></div>
+<p>函数bar()的词法作用域能够访问foo()的内部作用域。然后将bar()函数本身当作一个值类型进行传递。在这个例子中，bar所引用的函数对象本身当作返回值。</p>
+
+<p>在foo()执行后，其返回值赋给变量baz并调用baz()，实际上是通过不同的标识符引用调用了内部的函数bar。在这个例子中bar()在自己定义的词法作用域以外的地方执行。</p>
+
+<p>在foo()执行后，通常会期待foo()的整个内部作用域都被销毁，因为引擎的垃圾回收机制。由于看上去foo()的内容不会再被使用，所以很自然地会考虑对其进行回收。</p>
+
+<p>而闭包的神奇之处是可以做值垃圾回收。事实上，内部作用域依然存在，因此没有被回收。因为bar()本身在使用。由于bar()声明的位置涵盖foo()内部作用域的闭包，所以该作用域会一直存活，以供bar()再之后任何时间进行引用。bar()依然持有对该作用域的引用，而这个引用就叫作闭包。</p>
+
+<p>这个函数在定义时的词法作用域以外的地方被调用。闭包使得函数可以继续访问定义时的词法作用域。</p>
+
+<p>下面多给几个关于闭包的例子自己体会</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span>
+
+    <span class="kd">function</span> <span class="nx">bar</span><span class="p">(){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span><span class="c1">// 2</span>
+    <span class="p">}</span>
+    <span class="nx">bar</span><span class="p">(</span><span class="nx">baz</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">fn</span><span class="p">){</span>
+    <span class="nx">fn</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">fn</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span>
+
+    <span class="kd">function</span> <span class="nx">bar</span><span class="p">(){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">fn</span> <span class="o">=</span> <span class="nx">baz</span><span class="p">;</span> <span class="c1">//将baz分配给全局变量</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">fn</span><span class="p">){</span>
+    <span class="nx">fn</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="nx">foo</span><span class="p">()</span>
+
+<span class="nx">bar</span><span class="p">()</span><span class="c1">// 2</span>
+</code></pre></div></div>
+<p>看完这些例子之后再想想，感觉闭包就是，函数在自己的词法作用域以外执行并且词法作用域因需要被外部调用而被完整保持。换句话说，我们可以把闭包理解为一个手提包，手提包里面装了很多日用品，平时这个手提包是关上的，我们看不到里面，但是当我们需要不同的日用品的时候，我们就打开手提包把需要的东西取出来。闭包创建了一个封闭的作用域，外界需要执行的时候，就进入这个作用域中执行代码。</p>
+
+<h3 id="现在我懂了">现在我懂了</h3>
+
+<p>闭包的引用非常广泛，并非是罕见的。常用的有setTimeout()等，当然闭包在实际开发中的应用涵盖了各个方面，例如定时器，事件监听，ajax请求，跨窗口通信，或者任何其他异步的任务中，只要用到了回调函数，实际上就是在使用闭包。</p>
+
+<p>至于立即执行函数，很多人认为是闭包，其实不是的，原因是立即执行函数并非是在它本身的词法作用域以外执行的，而是在他定义是所在的作用域中执行的。</p>
+
+<h3 id="循环和闭包">循环和闭包</h3>
+
+<p>这一小节主要讲了一道经典的面试题，由此来理解闭包在循环中的执行。直接上代码。</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;=</span><span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="nx">timer</span><span class="p">(){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+    <span class="p">},</span> <span class="nx">i</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="c1">//6</span>
+</code></pre></div></div>
+<p>这段代码我们希望分别输出1 ～ 5， 每秒一次，每次一个。但是实际输出是会以每秒一次的频率输出五次6。导致这个结果的原因是看似循环中的每次迭代在运行时都会给自己捕获一个i的副本。实际上尽管循环中的五个函数在各个迭代中是分别定义的，但是他们都被封闭在一个共享的全局作用域中（因为var），因此实际上只有一个i。注意i存在于全局作用域中，因此可以打印出i。</p>
+
+<p>正确的修改方法是:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;=</span><span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="nx">timer</span><span class="p">(){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+    <span class="p">},</span> <span class="nx">i</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="c1">// i is not defined</span>
+</code></pre></div></div>
+<p>这时候输出的就是预期的结果，注意在全局作用域中i变成了undefined说明i不存在于全局作用域，而是存在于每次迭代的块作用域中，原因是因为let将代码块封闭在了块作用域中。</p>
+
+<p>这一段可以细细品味一番。</p>
+
+<h3 id="模块">模块</h3>
+
+<p>闭包的另一个强大作用是模块。
+我们先看一下函数作用域嵌套的函数是如何转换成模块的。</p>
+
+<p>作用域嵌套的代码</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">foo</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">something</span> <span class="o">=</span> <span class="s1">'cool'</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">another</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span>
+
+    <span class="kd">function</span> <span class="nx">doSomething</span><span class="p">(){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">something</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">doAnother</span><span class="p">(){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">another</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">'!'</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>变成模块</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">CoolModule</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">something</span> <span class="o">=</span> <span class="s1">'cool'</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">another</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span>
+
+    <span class="kd">function</span> <span class="nx">doSomething</span><span class="p">(){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">something</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">doAnother</span><span class="p">(){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">another</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">'!'</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="na">doSomething</span><span class="p">:</span> <span class="nx">doSomething</span><span class="p">,</span>
+        <span class="na">doAnother</span><span class="p">:</span> <span class="nx">doAnother</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="nx">CoolModule</span><span class="p">();</span>
+<span class="nx">foo</span><span class="p">.</span><span class="nx">doSomething</span><span class="p">()</span> <span class="c1">// cool</span>
+<span class="nx">foo</span><span class="p">.</span><span class="nx">doAnother</span><span class="p">()</span> <span class="c1">// 1!2!3!</span>
+</code></pre></div></div>
+
+<ul>
+  <li>CoolModule()只是一个函数，必须要通过调用它来创建模块实例，如果不执行外部，那么作用域和闭包都无法被创建。</li>
+  <li>CoolModule()返回一个用对象字面量语法来表示的对象，这个返回对象中含有对内部函数的引用。内部变量是私有且隐藏的状态。可以讲这个对象类型的返回值看作是该模块的API。</li>
+  <li>这个对象类型的返回值最终被赋值给外部的变量foo，然后通过它来访问API中的方法。</li>
+</ul>
+
+<p>因此我们总结出模块的两个必备条件</p>
+<ol>
+  <li>必须有外部的封闭函数，该函数必须至少被调用一次，用来创建一个新的模块实例</li>
+  <li>封闭函数必须返回至少一个内部函数，这样内部函数才能在私有作用域中形成闭包，并且可以访问或者修改私有状态</li>
+</ol>
+
+<p>模块也是函数，也可以接受参数</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">CoolModule</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+
+    <span class="kd">function</span> <span class="nx">identify</span><span class="p">(){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="na">identify</span><span class="p">:</span> <span class="nx">identify</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">foo1</span> <span class="o">=</span> <span class="nx">CoolModule</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">foo2</span> <span class="o">=</span> <span class="nx">CoolModule</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="nx">foo1</span><span class="p">.</span><span class="nx">identify</span><span class="p">()</span> <span class="c1">// 1</span>
+<span class="nx">foo2</span><span class="p">.</span><span class="nx">identify</span><span class="p">()</span> <span class="c1">// 2</span>
+</code></pre></div></div>
+
+<p>最后说一下 import 和 export, import 可以将一个模块中的一个或多个API导入到当前作用域中，并分别绑定在一个变量上。module会将整个模块的API导入并绑定到一个变量上。export会将当前模块的一个标识符导出为公共API。这些操作可以在模块定义中根据需要使用任意多次。</p>
+
+      </article>
+      <div class="share">
+        <div class="share-component"></div>
+      </div>
+      <div class="comment">
+        
+
+  
+
+  
+        <div id="gitalk-container"></div>
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script>
+        var gitalk = new Gitalk({
+            id: '/2020/08/12/you_don't_know_js_chapter1.5/',
+            clientID: '4cef70907f5b36353d59',
+            clientSecret: '94b120bec4f51b07c796df03ad3ece5a99f71ed6',
+            repo: 'zhenyu0519.github.io',
+            owner: 'zhenyu0519',
+            admin: ['zhenyu0519'],
+            labels: ['gitment'],
+            perPage: 50,
+        })
+        gitalk.render('gitalk-container')
+        </script>
+  
+
+
+      </div>
+    </div>
+    <div class="column one-fourth">
+      
+<h3>Search</h3>
+<div id="site_search" class="site_search">
+    <input type="text" id="search_box" placeholder="Search">
+</div>
+
+<ul id="search_results"></ul>
+
+<link rel="stylesheet" type="text/css" href="https://zhenyu0519.github.io/assets/css/modules/sidebar-search.css">
+<script src="https://zhenyu0519.github.io/assets/js/simple-jekyll-search.min.js"></script>
+<script src="https://zhenyu0519.github.io/assets/js/search.js"></script>
+
+<script type="text/javascript">
+SimpleJekyllSearch({
+    searchInput: document.getElementById('search_box'),
+    resultsContainer: document.getElementById('search_results'),
+    json: 'https://zhenyu0519.github.io/assets/search_data.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No results found',
+    fuzzy: false,
+    exclude: ['Welcome'],
+    limit: 10
+})
+</script>
+
+      
+<h3 class="post-directory-title mobile-hidden">Table of Contents</h3>
+<div id="post-directory-module" class="mobile-hidden">
+  <section class="post-directory">
+  <!-- Links that trigger the jumping -->
+  <!-- Added by javascript below -->
+  <dl></dl>
+  </section>
+</div>
+
+<script src="https://zhenyu0519.github.io/assets/js/jquery.toc.js"></script>
+
+    </div>
+  </div>
+</section>
+<!-- /section.content -->
+    <footer class="container">
+        <div class="site-footer" role="contentinfo">
+            <div class="copyright left mobile-block">
+                    © 2019
+                    <span title="Jeffrey">Jeffrey</span>
+                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
+            </div>
+
+            <ul class="site-footer-links right mobile-hidden">
+                <li>
+                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
+                </li>
+            </ul>
+            <a href="https://github.com/zhenyu0519/zhenyu0519.github.io" target="_blank" aria-label="view source code">
+                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+            </a>
+            <ul class="site-footer-links mobile-hidden">
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/" title="Home" target="">Home</a>
+                </li>
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/categories/" title="Categories" target="">Categories</a>
+                </li>
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/open-source/" title="Github Repos" target="">Github Repos</a>
+                </li>
+                
+                <li>
+                    <a href="https://zhenyu0519.github.io/about/" title="About" target="">About</a>
+                </li>
+                
+                <li><a href="https://zhenyu0519.github.io/feed.xml"><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
+            </ul>
+
+        </div>
+    </footer>
+    <div class="tools-wrapper">
+      <a class="gotop" href="#" title="回到顶部"><span class="octicon octicon-arrow-up"></span></a>
+    </div>
+    <!-- / footer -->
+    <script src="https://zhenyu0519.github.io/assets/vendor/share.js/dist/js/share.min.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/geopattern.js"></script>
+    <script src="https://zhenyu0519.github.io/assets/js/prism.js"></script>
+    <link rel="stylesheet" href="https://zhenyu0519.github.io/assets/css/globals/prism.css">
+    <script>
+      jQuery(document).ready(function($) {
+        // geopattern
+        $('.geopattern').each(function(){
+          $(this).geopattern($(this).data('pattern-id'));
+        });
+       // hljs.initHighlightingOnLoad();
+      });
+    </script>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div style="display:none">
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-113380665-1', 'auto');
+        ga('send', 'pageview');
+
+      </script>
+    </div>
+    
+</body>
+</html>
