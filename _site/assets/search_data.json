@@ -1473,6 +1473,13 @@
       "category" : "Tech-Post",
       
       "url"      : "https://zhenyu0519.github.io/2020/08/12/you_don't_know_js_chapter1.5/"
+    } ,
+  
+    {
+      "title"    : "第一部分 作用域和闭包 附录",
+      "category" : "Tech-Post",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/08/13/you_don't_know_js_chapter1.x/"
     } 
   
 ]
