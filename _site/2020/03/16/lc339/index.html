@@ -171,17 +171,17 @@ Explanation: One 1 at depth 1, one 4 at depth 2, and one 6 at depth 3; 1 + 4*2 +
 <p>Weight sum is level depth times sum. We will go throught the list, if the element is digit, we sum up. If element is list, we use dfs to get into new depth and go through the new list again. The depth is start from 1.</p>
 
 <h1 id="code">Code</h1>
-<p>```python
-def depthSum(self, nestedList: List[NestedInteger]) -&gt; int:    <br />
-        def DFS(nestedList, depth):
-            temp_sum = 0
-            for elem in nestedList:
-                if elem.isInteger():
-                    temp_sum += elem.getInteger() * depth
-                else:
-                    temp_sum += DFS(elem.getList(),depth+1)
-            return temp_sum
-        return DFS(nestedList,1)</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">depthSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nestedList</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">NestedInteger</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>      
+        <span class="k">def</span> <span class="nf">DFS</span><span class="p">(</span><span class="n">nestedList</span><span class="p">,</span> <span class="n">depth</span><span class="p">):</span>
+            <span class="n">temp_sum</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">nestedList</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">elem</span><span class="o">.</span><span class="n">isInteger</span><span class="p">():</span>
+                    <span class="n">temp_sum</span> <span class="o">+=</span> <span class="n">elem</span><span class="o">.</span><span class="n">getInteger</span><span class="p">()</span> <span class="o">*</span> <span class="n">depth</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">temp_sum</span> <span class="o">+=</span> <span class="n">DFS</span><span class="p">(</span><span class="n">elem</span><span class="o">.</span><span class="n">getList</span><span class="p">(),</span><span class="n">depth</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">temp_sum</span>
+        <span class="k">return</span> <span class="n">DFS</span><span class="p">(</span><span class="n">nestedList</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
 <h1 id="bigo">BigO</h1>
 <p>We traversal all elements of nested list so total time complexity is O(n)</p>
 
