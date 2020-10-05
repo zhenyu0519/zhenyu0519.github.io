@@ -158,7 +158,7 @@
 <span class="kd">let</span> <span class="nx">newObject</span> <span class="o">=</span> <span class="nx">shallowCopy</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span>
 
 <span class="kd">function</span> <span class="nx">shallowCopy</span><span class="p">(</span><span class="nx">obj</span><span class="p">){</span>
-    <span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">obj</span> <span class="k">instanceof</span> <span class="nb">Array</span><span class="p">?[]:{}</span>
     <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">prop</span> <span class="k">in</span> <span class="nx">obj</span><span class="p">){</span>
         <span class="c1">// This is to ensure the prop is from obj not from obj's prototype</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">prop</span><span class="p">)){</span>

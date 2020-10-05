@@ -42,7 +42,7 @@ let obj = {
 let newObject = shallowCopy(obj)
 
 function shallowCopy(obj){
-    let output = {}
+    let output = obj instanceof Array?[]:{}
     for (let prop in obj){
         // This is to ensure the prop is from obj not from obj's prototype
         if (obj.hasOwnProperty(prop)){
