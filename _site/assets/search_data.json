@@ -1480,6 +1480,13 @@
       "category" : "Tech-Post",
       
       "url"      : "https://zhenyu0519.github.io/2020/08/13/you_don't_know_js_chapter1.x/"
+    } ,
+  
+    {
+      "title"    : "Shallow Copy VS Deep Copy in JavaScript",
+      "category" : "Tech-Post",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/10/05/compare_deepcopy_and_shallowcopy/"
     } 
   
 ]
