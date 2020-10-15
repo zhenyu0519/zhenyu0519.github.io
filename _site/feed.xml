@@ -1,4 +1,80 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-10-05T14:45:02-07:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">Shallow Copy VS Deep Copy in JavaScript</title><link href="https://zhenyu0519.github.io/2020/10/05/compare_deepcopy_and_shallowcopy/" rel="alternate" type="text/html" title="Shallow Copy VS Deep Copy in JavaScript" /><published>2020-10-05T00:00:00-07:00</published><updated>2020-10-05T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/10/05/compare_deepcopy_and_shallowcopy</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/10/05/compare_deepcopy_and_shallowcopy/">&lt;p&gt;&lt;img src=&quot;/images/blog/deepcopy_vs_shallowcopy.png&quot; alt=&quot;deepcopy_vs_shallowcopy&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://zhenyu0519.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhenyu0519.github.io/" rel="alternate" type="text/html" /><updated>2020-10-14T19:35:39-07:00</updated><id>https://zhenyu0519.github.io/feed.xml</id><title type="html">杰弗里 · 时光博客(Jeffrey’s Blog)</title><subtitle>Personal Blog</subtitle><author><name>Jeffrey</name></author><entry><title type="html">__proto__ vs prototype in JavaScript</title><link href="https://zhenyu0519.github.io/2020/10/13/proto_vs_prototype/" rel="alternate" type="text/html" title="__proto__ vs prototype in JavaScript" /><published>2020-10-13T00:00:00-07:00</published><updated>2020-10-13T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/10/13/proto_vs_prototype</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/10/13/proto_vs_prototype/">&lt;p&gt;&lt;img src=&quot;/images/blog/__proto__%20vs%20prototype.jpeg&quot; alt=&quot;__proto__ vs prototype&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;why-we-need-to-know-prototype&quot;&gt;Why we need to know prototype?&lt;/h2&gt;
+
+&lt;p&gt;JavaScript is dynamic proramming language, it does now provide class like Java or Python. The class keyword is introduced in ES6, but is syntactical sugar, JavaScript remains prototype-based.&lt;/p&gt;
+
+&lt;p&gt;Prototype is a must known topic in JavaScript and it is the foundation of JavaScript class especially when we talking about the inheritance. Prototype may not appear often in the work but it is everywhere in the package, open sourced library and frameworks.&lt;/p&gt;
+
+&lt;h2 id=&quot;__-proto__-vs-prototype&quot;&gt;__ proto__ vs prototype&lt;/h2&gt;
+
+&lt;p&gt;Each class has prototype and each instance has __ proto__,the prototype of class is equal to __ proto__ of instance that create from same class.&lt;/p&gt;
+
+&lt;h3 id=&quot;example-of-inheritance&quot;&gt;Example of inheritance&lt;/h3&gt;
+&lt;p&gt;We create the people class and the student class that inherit from people class.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;People&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  	&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Student&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;People&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;major&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;major&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;major&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;study&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  	&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; is studing &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;major&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now let us find what the prototype of Student class&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Student&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;__proto__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/*
+People {constructor: ƒ, study: ƒ}
+constructor: class Student
+study: ƒ study()
+__proto__: Object
+*/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And what the prototype of Student class&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;john&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Student&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;John&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Computer Science&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;john&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/*
+People {constructor: ƒ, study: ƒ}
+constructor: class Student
+study: ƒ study()
+__proto__: Object
+*/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;let compare the Student.prototype and john.__ proto__&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Student&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;===&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;john&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;__proto__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Yes they are equal, so the prototype of a class is equal to the __ proto__ from instance that created from same class.&lt;/p&gt;
+
+&lt;p&gt;Also, the prototype of class or __ proto__ of instance is an object from their parent class. This means if you want to find prototype of their parent class, you can try three different ways.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;People&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Student&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;__proto__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;john&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;__proto__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;__proto__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you print out the result from above, it is like below&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{constructor: ƒ}
+constructor: class People
+__proto__: Object
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This means the final prototype of the class will point to the Object class. The Object class is like a world builder. It is the top and final class. This class give us the whole world of the javascript. The prorotype from final class is null as it does not have parent class.&lt;/p&gt;
+
+&lt;h2 id=&quot;prototype-chain&quot;&gt;Prototype Chain&lt;/h2&gt;
+&lt;p&gt;Now we should know what is prototpye chain.  Each object has a private property which holds a link to another object called its prototype. That prototype object has a prototype of its own, and so on until an object is reached with null as its prototype. Those prototypes that help connect object to other object is a chain of prototype, we called prototype chain.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html"></summary></entry><entry><title type="html">Shallow Copy VS Deep Copy in JavaScript</title><link href="https://zhenyu0519.github.io/2020/10/05/compare_deepcopy_and_shallowcopy/" rel="alternate" type="text/html" title="Shallow Copy VS Deep Copy in JavaScript" /><published>2020-10-05T00:00:00-07:00</published><updated>2020-10-05T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/10/05/compare_deepcopy_and_shallowcopy</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/10/05/compare_deepcopy_and_shallowcopy/">&lt;p&gt;&lt;img src=&quot;/images/blog/deepcopy_vs_shallowcopy.png&quot; alt=&quot;deepcopy_vs_shallowcopy&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;content&quot;&gt;Content&lt;/h2&gt;
 
@@ -609,50 +685,7 @@
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;会输出1而不是2！&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">第四章 提升</summary></entry><entry><title type="html">第一部分 作用域和闭包 第二章 词法作用域</title><link href="https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter1.2/" rel="alternate" type="text/html" title="第一部分 作用域和闭包 第二章 词法作用域" /><published>2020-08-10T00:00:00-07:00</published><updated>2020-08-10T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter1.2</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter1.2/">&lt;h1 id=&quot;第二章-词法作用域&quot;&gt;第二章 词法作用域&lt;/h1&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/blog/you_dont_know_js.png&quot; alt=&quot;book&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;词法作用域&quot;&gt;词法作用域&lt;/h2&gt;
-
-&lt;p&gt;作用域有两种工作模型，一种是词法作用域，也是本章讨论的重点，另一种叫做动态作用域，Bash, Perl等语言仍在使用。&lt;/p&gt;
-
-&lt;h3 id=&quot;词法阶段&quot;&gt;词法阶段&lt;/h3&gt;
-&lt;p&gt;大部分标准语言编译器的第一个工作阶段叫做词法化也叫做单词化。词法作用域顾名思义就是定义在词法阶段的作用域。通俗一点说，词法作用域由写代码时将变量和块写在哪里来决定的。
-例如：&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//2,3,12&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;包含着整个全局作用域，其中只有标识符： foo&lt;/li&gt;
-  &lt;li&gt;包含着foo所创建的作用域，其中有三个标识符： a, bar, b&lt;/li&gt;
-  &lt;li&gt;包含着bar所创建的作用域，其中有一个标识符： c&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;作用域由其对应的作用域块代码写在哪里决定，他们是逐级包含的。引擎在寻找标识符的时候会从当前作用域开始向上查找直到全局作用域为止。作用域查找会在找到第一个匹配的标识符时候停止。&lt;/p&gt;
-
-&lt;p&gt;在多层嵌套作用域中可以定义同名的标识符，这叫做遮蔽效应即内部标识符遮蔽外部标识符。&lt;/p&gt;
-
-&lt;p&gt;词法作用域查找只会查找一级标识符，比如a、b和c。如果代码中引用了foo.bar.baz，词法作用域查找只会试图查找foo标识符，找到这个变量后，对象属性访问规则会分别接管对bar和baz属性的访问。&lt;/p&gt;
-
-&lt;h3 id=&quot;欺骗词法&quot;&gt;欺骗词法&lt;/h3&gt;
-&lt;p&gt;JavaScript中有两种机制可以欺骗词法作用域，不推荐使用，因为其会导致性能下降。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;eval： JavaScript中eval()函数接受一个字符串为参数，将其中的内容视为代码，这样就可以起到修改词法作用域的目的。而引擎并不知道代码是以动态形式插入进来的，只会如往常一样进行词法作用域查找。&lt;/li&gt;
-  &lt;li&gt;with： 通常被当作重复引用同一个对象中的多个属性的快捷方式，可以不需要重复引用对象本身。with 可以讲一个没有或者有多个属性的对象处理为一个完全隔离的词法作用域，因此这个对象的属性也会被定义为这个作用域中的词法标识符。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;eval和with会导致引擎停止做任何优化，从而导致性能问题。并且严格模式下，这两个函数是禁用的。&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">第二章 词法作用域</summary></entry><entry><title type="html">第一部分 作用域和闭包 第一章 作用域是什么</title><link href="https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter1.1/" rel="alternate" type="text/html" title="第一部分 作用域和闭包 第一章 作用域是什么" /><published>2020-08-10T00:00:00-07:00</published><updated>2020-08-10T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter1.1</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter1.1/">&lt;h1 id=&quot;第一章-作用域是什么&quot;&gt;第一章 作用域是什么&lt;/h1&gt;
+&lt;p&gt;会输出1而不是2！&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">第四章 提升</summary></entry><entry><title type="html">第一部分 作用域和闭包 第一章 作用域是什么</title><link href="https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter1.1/" rel="alternate" type="text/html" title="第一部分 作用域和闭包 第一章 作用域是什么" /><published>2020-08-10T00:00:00-07:00</published><updated>2020-08-10T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter1.1</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter1.1/">&lt;h1 id=&quot;第一章-作用域是什么&quot;&gt;第一章 作用域是什么&lt;/h1&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/blog/you_dont_know_js.png&quot; alt=&quot;book&quot; /&gt;&lt;/p&gt;
 
@@ -717,7 +750,50 @@
 
 &lt;p&gt;如果RHS查询找到了一个变量，但是你对这个变量的值进行不合理操作，例如试图对一个非汉属类型的值进行函数调用，或者引用null， undefin类型中的属性，那么引擎会抛出另外一种类型的异常， 叫做TypeError。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;ReferenceError&lt;/strong&gt;同作用域判别失败相关，而&lt;strong&gt;TypeError&lt;/strong&gt;则代表作用域判别成功，但是对结果操作是非法的。&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">第一章 作用域是什么</summary></entry><entry><title type="html">leetcode 737. Sentence Similarity II (Python)</title><link href="https://zhenyu0519.github.io/2020/07/28/lc737/" rel="alternate" type="text/html" title="leetcode 737. Sentence Similarity II (Python)" /><published>2020-07-28T00:00:00-07:00</published><updated>2020-07-28T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/28/lc737</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/28/lc737/">&lt;h1 id=&quot;737-sentence-similarity-ii-python&quot;&gt;737. Sentence Similarity II (Python)&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;ReferenceError&lt;/strong&gt;同作用域判别失败相关，而&lt;strong&gt;TypeError&lt;/strong&gt;则代表作用域判别成功，但是对结果操作是非法的。&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">第一章 作用域是什么</summary></entry><entry><title type="html">第一部分 作用域和闭包 第二章 词法作用域</title><link href="https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter1.2/" rel="alternate" type="text/html" title="第一部分 作用域和闭包 第二章 词法作用域" /><published>2020-08-10T00:00:00-07:00</published><updated>2020-08-10T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter1.2</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/08/10/you_don't_know_js_chapter1.2/">&lt;h1 id=&quot;第二章-词法作用域&quot;&gt;第二章 词法作用域&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/blog/you_dont_know_js.png&quot; alt=&quot;book&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;词法作用域&quot;&gt;词法作用域&lt;/h2&gt;
+
+&lt;p&gt;作用域有两种工作模型，一种是词法作用域，也是本章讨论的重点，另一种叫做动态作用域，Bash, Perl等语言仍在使用。&lt;/p&gt;
+
+&lt;h3 id=&quot;词法阶段&quot;&gt;词法阶段&lt;/h3&gt;
+&lt;p&gt;大部分标准语言编译器的第一个工作阶段叫做词法化也叫做单词化。词法作用域顾名思义就是定义在词法阶段的作用域。通俗一点说，词法作用域由写代码时将变量和块写在哪里来决定的。
+例如：&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//2,3,12&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;包含着整个全局作用域，其中只有标识符： foo&lt;/li&gt;
+  &lt;li&gt;包含着foo所创建的作用域，其中有三个标识符： a, bar, b&lt;/li&gt;
+  &lt;li&gt;包含着bar所创建的作用域，其中有一个标识符： c&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;作用域由其对应的作用域块代码写在哪里决定，他们是逐级包含的。引擎在寻找标识符的时候会从当前作用域开始向上查找直到全局作用域为止。作用域查找会在找到第一个匹配的标识符时候停止。&lt;/p&gt;
+
+&lt;p&gt;在多层嵌套作用域中可以定义同名的标识符，这叫做遮蔽效应即内部标识符遮蔽外部标识符。&lt;/p&gt;
+
+&lt;p&gt;词法作用域查找只会查找一级标识符，比如a、b和c。如果代码中引用了foo.bar.baz，词法作用域查找只会试图查找foo标识符，找到这个变量后，对象属性访问规则会分别接管对bar和baz属性的访问。&lt;/p&gt;
+
+&lt;h3 id=&quot;欺骗词法&quot;&gt;欺骗词法&lt;/h3&gt;
+&lt;p&gt;JavaScript中有两种机制可以欺骗词法作用域，不推荐使用，因为其会导致性能下降。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;eval： JavaScript中eval()函数接受一个字符串为参数，将其中的内容视为代码，这样就可以起到修改词法作用域的目的。而引擎并不知道代码是以动态形式插入进来的，只会如往常一样进行词法作用域查找。&lt;/li&gt;
+  &lt;li&gt;with： 通常被当作重复引用同一个对象中的多个属性的快捷方式，可以不需要重复引用对象本身。with 可以讲一个没有或者有多个属性的对象处理为一个完全隔离的词法作用域，因此这个对象的属性也会被定义为这个作用域中的词法标识符。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;eval和with会导致引擎停止做任何优化，从而导致性能问题。并且严格模式下，这两个函数是禁用的。&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">第二章 词法作用域</summary></entry><entry><title type="html">leetcode 737. Sentence Similarity II (Python)</title><link href="https://zhenyu0519.github.io/2020/07/28/lc737/" rel="alternate" type="text/html" title="leetcode 737. Sentence Similarity II (Python)" /><published>2020-07-28T00:00:00-07:00</published><updated>2020-07-28T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/28/lc737</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/28/lc737/">&lt;h1 id=&quot;737-sentence-similarity-ii-python&quot;&gt;737. Sentence Similarity II (Python)&lt;/h1&gt;
 
 &lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;/categories/#Depth-First-Search&quot; target=&quot;_blank&quot;&gt; Depth-First-Search&lt;/a&gt;.
@@ -818,78 +894,4 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;bigo&quot;&gt;BigO&lt;/h1&gt;
-&lt;p&gt;Time complexity : O(n)O(n). Only a single pass is needed.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 121. Best Time to Buy and Sell Stock (Python)</summary></entry><entry><title type="html">leetcode 897. Increasing Order Search Tree (Python)</title><link href="https://zhenyu0519.github.io/2020/07/27/lc897/" rel="alternate" type="text/html" title="leetcode 897. Increasing Order Search Tree (Python)" /><published>2020-07-27T00:00:00-07:00</published><updated>2020-07-27T00:00:00-07:00</updated><id>https://zhenyu0519.github.io/2020/07/27/lc897</id><content type="html" xml:base="https://zhenyu0519.github.io/2020/07/27/lc897/">&lt;h1 id=&quot;897-increasing-order-search-tree-python&quot;&gt;897. Increasing Order Search Tree (Python)&lt;/h1&gt;
-
-&lt;h2 id=&quot;related-topic&quot;&gt;Related Topic&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;/categories/#Depth-First-Search&quot; target=&quot;_blank&quot;&gt; Depth-First-Search&lt;/a&gt;.
-&lt;a href=&quot;/categories/#Tree&quot; target=&quot;_blank&quot;&gt; Tree&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
-
-&lt;p&gt;Given a binary search tree, rearrange the tree in in-order so that the leftmost node in the tree is now the root of the tree, and every node has no left child and only 1 right child.&lt;/p&gt;
-
-&lt;h2 id=&quot;sample-io&quot;&gt;Sample I/O&lt;/h2&gt;
-
-&lt;h3 id=&quot;example-1&quot;&gt;Example 1&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Example 1:
-Input: [5,3,6,2,4,null,8,1,null,null,null,7,9]
-
-       5
-      / \
-    3    6
-   / \    \
-  2   4    8
- /        / \ 
-1        7   9
-
-Output: [1,null,2,null,3,null,4,null,5,null,6,null,7,null,8,null,9]
-
- 1
-  \
-   2
-    \
-     3
-      \
-       4
-        \
-         5
-          \
-           6
-            \
-             7
-              \
-               8
-                \
-                 9  
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;constraints&quot;&gt;Constraints:&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The number of nodes in the given tree will be between 1 and 100.&lt;/li&gt;
-  &lt;li&gt;Each node will have a unique integer value from 0 to 1000.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;methodology&quot;&gt;Methodology&lt;/h2&gt;
-&lt;p&gt;Use DFS to append all tree node value into array in inorder. Then build a new tree with all nodes on the right.&lt;/p&gt;
-
-&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;increasingBST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;inOrder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;inOrder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;inOrder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inOrder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h2 id=&quot;bigo&quot;&gt;BigO&lt;/h2&gt;
-&lt;p&gt;Time complexity: O(n) where n is the number of the nodes of both trees.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">897. Increasing Order Search Tree (Python)</summary></entry></feed>
+&lt;p&gt;Time complexity : O(n)O(n). Only a single pass is needed.&lt;/p&gt;</content><author><name>Jeffrey</name></author><summary type="html">Leetcode 121. Best Time to Buy and Sell Stock (Python)</summary></entry></feed>

@@ -87,6 +87,8 @@
   
   
   
+  
+  
 
   
     {
@@ -1487,6 +1489,13 @@
       "category" : "Tech-Post",
       
       "url"      : "https://zhenyu0519.github.io/2020/10/05/compare_deepcopy_and_shallowcopy/"
+    } ,
+  
+    {
+      "title"    : "__proto__ vs prototype in JavaScript",
+      "category" : "Tech-Post",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/10/13/proto_vs_prototype/"
     } 
   
 ]
