@@ -6,7 +6,7 @@ description: The difference between __proto__ vs prototype in JavaScript
 keywords: JavaScript __proto__ prototype object
 ---
 
-![proto_vs_prototype](/images/blog/_proto_vs_prototype.jpeg)
+![proto_vs_prototype](/images/blog/proto_vs_prototype.jpeg)
 
 
 ## Why we need to know prototype?
