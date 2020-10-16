@@ -1496,6 +1496,13 @@
       "category" : "Tech-Post",
       
       "url"      : "https://zhenyu0519.github.io/2020/10/13/proto_vs_prototype/"
+    } ,
+  
+    {
+      "title"    : "再谈JavaScript中的闭包",
+      "category" : "Tech-Post",
+      
+      "url"      : "https://zhenyu0519.github.io/2020/10/14/clouse_again/"
     } 
   
 ]
