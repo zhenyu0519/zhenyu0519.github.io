@@ -188,23 +188,24 @@ so the 0th and 2nd students are indirect friends. All of them are in the same fr
 <p>We are using the dfs to find the students’ friends and the student’s friends’ friends and so on and store them as 1 friend circle. If other student in this circle then we skip until we find a student not in this circle, this student will start another circle.</p>
 
 <h1 id="code">Code</h1>
-<p>```python
-def findCircleNum(self, M: List[List[int]]) -&gt; int:
-        visited = set()
-        count = 0
-        def dfs(student, visited):
-            for class_mate, is_friend in enumerate(M[student]):
-                if class_mate not in visited and is_friend:
-                    visited.add(class_mate)
-                    dfs(class_mate, visited)</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    for student in range(len(M)):
-        if student not in visited:
-            visited.add(student)
-            count+=1
-            dfs(student, visited)
-    return count # BigO We traversal all students and all students\' classmates so total time complexity is O(n^2)
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">findCircleNum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">M</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">student</span><span class="p">,</span> <span class="n">visited</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">class_mate</span><span class="p">,</span> <span class="n">is_friend</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">student</span><span class="p">]):</span>
+                <span class="k">if</span> <span class="n">class_mate</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span> <span class="ow">and</span> <span class="n">is_friend</span><span class="p">:</span>
+                    <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">class_mate</span><span class="p">)</span>
+                    <span class="n">dfs</span><span class="p">(</span><span class="n">class_mate</span><span class="p">,</span> <span class="n">visited</span><span class="p">)</span>
+                    
+        <span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">student</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+                <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
+                <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
+                <span class="n">dfs</span><span class="p">(</span><span class="n">student</span><span class="p">,</span> <span class="n">visited</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">count</span>
 </code></pre></div></div>
+<h1 id="bigo">BigO</h1>
+<p>We traversal all students and all students' classmates so total time complexity is O(n^2)</p>
 
       </article>
       <div class="share">

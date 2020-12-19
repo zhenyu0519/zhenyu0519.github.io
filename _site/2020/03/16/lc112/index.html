@@ -166,7 +166,7 @@ return true, as there exist a root-to-leaf path 5-&gt;4-&gt;11-&gt;2 which sum i
 <h1 id="methodology">Methodology</h1>
 <p>This question can be solved by Depth First Search.</p>
 
-<p>We use dfs to traversal the tree. Each time we compare the sum and the current root value if the they are same and the root does not have left child and right child (root is leaf), then we find a path that equal to give sum. Otherwist, we make the sum equal to sum - root.val and continue recursively find the next root.</p>
+<p>We use dfs to traversal the tree. Each time we compare the sum and the current root value if they are same and the root does not have left child and right child (root is leaf), then we find a path that equal to give sum. Otherwist, we make the sum equal to sum - root.val and continue recursively find the next root.</p>
 
 <h1 id="codedfs">Code(DFS)</h1>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">hasPathSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">,</span> <span class="nb">sum</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
