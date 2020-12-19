@@ -228,35 +228,36 @@ Output: []
 <p>As this is doubly linked list, do not forget the prev pointer.</p>
 
 <h1 id="code">Code</h1>
-<p>```python
-def flatten(self, head: ‘Node’) -&gt; ‘Node’:
-        if head is None: return None</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    def flattenChild(node):
-        if node.next is None: return node
-        while node and node.next:
-            if node.child:
-                tmp = node.next
-                node.next, node.child.prev= node.child, node
-                node.child = None
-                node = flattenChild(node.next)
-                node.next, tmp.prev= tmp, node
-            node = node.next
-        return node
-            
-    node = head
-    while node:
-        if node.child:
-            tmp = node.next
-            node.next, node.child.prev= node.child, node
-            node.child = None
-            node = flattenChild(node.next)
-            if tmp:
-                node.next, tmp.prev= tmp, node
-        else:
-            node = node.next
-    return head # BigO We traversal all nodes once so the total time complexity is O(n)
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="s">'Node'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s">'Node'</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">head</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span> <span class="k">return</span> <span class="bp">None</span>
+        
+        <span class="k">def</span> <span class="nf">flattenChild</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="nb">next</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span> <span class="k">return</span> <span class="n">node</span>
+            <span class="k">while</span> <span class="n">node</span> <span class="ow">and</span> <span class="n">node</span><span class="o">.</span><span class="nb">next</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">child</span><span class="p">:</span>
+                    <span class="n">tmp</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="nb">next</span>
+                    <span class="n">node</span><span class="o">.</span><span class="nb">next</span><span class="p">,</span> <span class="n">node</span><span class="o">.</span><span class="n">child</span><span class="o">.</span><span class="n">prev</span><span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">child</span><span class="p">,</span> <span class="n">node</span>
+                    <span class="n">node</span><span class="o">.</span><span class="n">child</span> <span class="o">=</span> <span class="bp">None</span>
+                    <span class="n">node</span> <span class="o">=</span> <span class="n">flattenChild</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="nb">next</span><span class="p">)</span>
+                    <span class="n">node</span><span class="o">.</span><span class="nb">next</span><span class="p">,</span> <span class="n">tmp</span><span class="o">.</span><span class="n">prev</span><span class="o">=</span> <span class="n">tmp</span><span class="p">,</span> <span class="n">node</span>
+                <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="nb">next</span>
+            <span class="k">return</span> <span class="n">node</span>
+                
+        <span class="n">node</span> <span class="o">=</span> <span class="n">head</span>
+        <span class="k">while</span> <span class="n">node</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">child</span><span class="p">:</span>
+                <span class="n">tmp</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="nb">next</span>
+                <span class="n">node</span><span class="o">.</span><span class="nb">next</span><span class="p">,</span> <span class="n">node</span><span class="o">.</span><span class="n">child</span><span class="o">.</span><span class="n">prev</span><span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">child</span><span class="p">,</span> <span class="n">node</span>
+                <span class="n">node</span><span class="o">.</span><span class="n">child</span> <span class="o">=</span> <span class="bp">None</span>
+                <span class="n">node</span> <span class="o">=</span> <span class="n">flattenChild</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="nb">next</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">tmp</span><span class="p">:</span>
+                    <span class="n">node</span><span class="o">.</span><span class="nb">next</span><span class="p">,</span> <span class="n">tmp</span><span class="o">.</span><span class="n">prev</span><span class="o">=</span> <span class="n">tmp</span><span class="p">,</span> <span class="n">node</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="nb">next</span>
+        <span class="k">return</span> <span class="n">head</span>
 </code></pre></div></div>
+<h1 id="bigo">BigO</h1>
+<p>We traversal all nodes once so the total time complexity is O(n)</p>
 
       </article>
       <div class="share">

@@ -198,20 +198,21 @@ For example, if the total coins of a subtree, which include root, left edge and 
 <p>This question make me have deeper understand of recursion, it is a great one.</p>
 
 <h1 id="code">Code</h1>
-<p>```python
-def distributeCoins(self, root: TreeNode) -&gt; int:
-        def dfs(root, result):
-            if not root:
-                return 0
-            left_edge = dfs(root.left, result) 
-            right_edge = dfs(root.right, result)
-            result[0] += abs(left_edge) + abs(right_edge)
-            return root.val + left_edge + right_edge - 1</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">distributeCoins</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">0</span>
+            <span class="n">left_edge</span> <span class="o">=</span> <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span> 
+            <span class="n">right_edge</span> <span class="o">=</span> <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+            <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">left_edge</span><span class="p">)</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="n">right_edge</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">root</span><span class="o">.</span><span class="n">val</span> <span class="o">+</span> <span class="n">left_edge</span> <span class="o">+</span> <span class="n">right_edge</span> <span class="o">-</span> <span class="mi">1</span>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    result = [0]
-    dfs(root, result)
-    return result[0] # BigO We traversal all nodes once so the total time complexity is O(n)
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div></div>
+<h1 id="bigo">BigO</h1>
+<p>We traversal all nodes once so the total time complexity is O(n)</p>
 
       </article>
       <div class="share">
